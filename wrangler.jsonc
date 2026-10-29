@@ -5,7 +5,7 @@
   "compatibility_date": "2026-09-01",
   "assets": { "directory": "./public" },
   "d1_databases": [
-    { "binding": "DB", "database_name": "lacasa", "database_id": "REPLACE_WITH_YOUR_D1_ID", "migrations_dir": "migrations" }
+    { "binding": "DB", "database_name": "lacasa", "database_id": "8bf6b65c-cb07-43b9-a0be-bb9b88f717ba", "migrations_dir": "migrations" }
   ],
   "observability": { "enabled": true }
 }
