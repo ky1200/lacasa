@@ -1,0 +1,3100 @@
+{
+  "version": "3.0",
+  "updated": "2026-10-29",
+  "admin": "KY",
+  "budget": null,
+  "people": [
+    {
+      "code": "KY",
+      "name": "KY",
+      "room": "ky-room"
+    },
+    {
+      "code": "KX",
+      "name": "KX",
+      "room": "kx-room"
+    },
+    {
+      "code": "KS",
+      "name": "KS",
+      "room": "ks-room"
+    }
+  ],
+  "stages": [
+    {
+      "id": "contractor",
+      "chip": "🔴",
+      "label": "11 Nov · tell contractor",
+      "decideBy": "2026-11-10"
+    },
+    {
+      "id": "on_site",
+      "chip": "🟠",
+      "label": "3 Dec · on site",
+      "decideBy": "2026-12-02"
+    },
+    {
+      "id": "move_in",
+      "chip": "🟢",
+      "label": "Jan–Feb · before move-in",
+      "decideBy": "2026-12-31"
+    },
+    {
+      "id": "later",
+      "chip": "⚪",
+      "label": "2027 · after move-in",
+      "decideBy": null
+    }
+  ],
+  "sales": [
+    {
+      "id": "11.11",
+      "label": "11.11",
+      "date": "2026-11-11"
+    },
+    {
+      "id": "black_friday",
+      "label": "Black Friday",
+      "date": "2026-11-27"
+    },
+    {
+      "id": "12.12",
+      "label": "12.12",
+      "date": "2026-12-12"
+    }
+  ],
+  "milestones": [
+    {
+      "label": "Contractor visit",
+      "date": "2026-11-11"
+    },
+    {
+      "label": "Key collection",
+      "date": "2026-12-03"
+    },
+    {
+      "label": "Move-in",
+      "date": "2027-01-15",
+      "approximate": true
+    }
+  ],
+  "areas": [
+    {
+      "id": "entrance",
+      "name": "Entrance & outside",
+      "kind": "shared",
+      "photos": []
+    },
+    {
+      "id": "living",
+      "name": "Living room",
+      "kind": "shared",
+      "photos": [],
+      "measurements": [
+        "Living area about 295 × 388 cm"
+      ]
+    },
+    {
+      "id": "dining",
+      "name": "Dining",
+      "kind": "shared",
+      "photos": [],
+      "measurements": [
+        "Dining zone about 195 × 175 cm"
+      ]
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen",
+      "kind": "shared",
+      "photos": [],
+      "measurements": [
+        "Current fridge 70 × 75 cm, 180 cm high (known to fit)"
+      ]
+    },
+    {
+      "id": "yard",
+      "name": "Yard & laundry",
+      "kind": "shared",
+      "photos": [],
+      "measurements": [
+        "Current washer 75 × 67 cm (known to fit)",
+        "Laundry rack ceiling length 120 cm"
+      ]
+    },
+    {
+      "id": "common-bath",
+      "name": "Common bathroom",
+      "kind": "shared",
+      "photos": []
+    },
+    {
+      "id": "master-bath",
+      "name": "Master bathroom",
+      "kind": "shared",
+      "photos": []
+    },
+    {
+      "id": "whole-home",
+      "name": "Whole home",
+      "kind": "shared",
+      "photos": []
+    },
+    {
+      "id": "ky-room",
+      "name": "KY's room",
+      "kind": "bedroom",
+      "owner": "KY",
+      "photos": []
+    },
+    {
+      "id": "kx-room",
+      "name": "KX's room",
+      "kind": "bedroom",
+      "owner": "KX",
+      "photos": []
+    },
+    {
+      "id": "ks-room",
+      "name": "KS's room",
+      "kind": "bedroom",
+      "owner": "KS",
+      "photos": []
+    }
+  ],
+  "decisions": [
+    {
+      "id": "LVF01",
+      "slug": "lighting",
+      "area": "living",
+      "category": "Lighting",
+      "group": "fittings",
+      "priority": "essential",
+      "title": "Living room lighting",
+      "question": "Which lighting look do we want?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [
+        "Cove lighting + downlights + ceiling fan",
+        "Downlights + track/spotlights",
+        "Ceiling fan light only (+ floor lamp)"
+      ],
+      "roughBudget": {
+        "min": 1200,
+        "max": 1200,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "contractorNote": "Positions of cove, downlights and track; warm/adjustable white with dimming; accessible drivers; a physical wall switch even if app-controlled.",
+      "mustKnow": [
+        "Living area about 295 × 388 cm"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "living-living-room-lighting"
+      ],
+      "space": {
+        "label": "Living area",
+        "width": 295,
+        "depth": 388,
+        "source": "Approximate room dimensions",
+        "opening": true,
+        "measured": false
+      }
+    },
+    {
+      "id": "LV-FAN",
+      "slug": "ceiling-fan",
+      "area": "living",
+      "category": "Fans & ventilation",
+      "group": "fittings",
+      "priority": "essential",
+      "title": "Living room ceiling fan",
+      "question": "Which fan with light? (Pick “No fan” if our lighting look has none.)",
+      "stage": "on_site",
+      "status": "draft",
+      "candidates": [
+        "Adamas",
+        "KDK",
+        "Fanco",
+        "No fan"
+      ],
+      "contractorNote": "Fan point position, ceiling height and blade clearance.",
+      "mustKnow": [
+        "Measure ceiling height on 11 Nov",
+        "Bought in JB? Check the SG Safety Mark and who honours the warranty here"
+      ],
+      "options": [],
+      "roughBudget": {
+        "min": 300,
+        "max": 600,
+        "source": "Rough guess, to research"
+      },
+      "legacySlugs": [
+        "living-living-room-ceiling-fan"
+      ],
+      "space": {
+        "label": "Living area",
+        "width": 295,
+        "depth": 388,
+        "source": "Approximate room dimensions",
+        "opening": true,
+        "measured": false
+      }
+    },
+    {
+      "id": "DNF01",
+      "slug": "fan-with-light",
+      "area": "dining",
+      "category": "Fans & ventilation",
+      "group": "fittings",
+      "priority": "essential",
+      "title": "Dining fan with light",
+      "question": "Which small fan with LED light over the table?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [
+        "Riegen Mini 30\" (reference)",
+        "KDK",
+        "Fanco"
+      ],
+      "roughBudget": {
+        "min": 350,
+        "max": 350,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "contractorNote": "Replace the existing ceiling light with a fan; check ceiling support.",
+      "mustKnow": [
+        "Blade sweep must suit the table size we choose"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "dining-dining-fan-with-light"
+      ],
+      "space": {
+        "label": "Dining zone",
+        "width": 195,
+        "depth": 175,
+        "source": "Approximate room dimensions",
+        "opening": true,
+        "measured": false
+      }
+    },
+    {
+      "id": "YA05",
+      "slug": "fan",
+      "area": "yard",
+      "category": "Fans & ventilation",
+      "group": "fittings",
+      "priority": "nice",
+      "title": "Yard fan",
+      "question": "Which corner/ceiling fan for the yard?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [
+        "Fanco Vino-type (~46 cm)"
+      ],
+      "roughBudget": {
+        "min": 350,
+        "max": 350,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "contractorNote": "Position clear of the laundry rack, cupboards and cooking area.",
+      "mustKnow": [
+        "Check the sweep against the laundry rack when lowered"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "yard-yard-fan"
+      ]
+    },
+    {
+      "id": "YA04",
+      "slug": "automated-laundry-rack",
+      "area": "yard",
+      "category": "Kitchen & laundry",
+      "group": "fittings",
+      "priority": "essential",
+      "title": "Automated laundry rack",
+      "question": "Which automated drying rack?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [
+        "Steigen Mini"
+      ],
+      "roughBudget": {
+        "min": 1100,
+        "max": 1100,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "contractorNote": "Ceiling anchors and a power point; installer site check.",
+      "mustKnow": [
+        "Ceiling length available: 120 cm",
+        "Steigen Mini needs at least 110 × 60 cm of ceiling (per brief)",
+        "Check it fully lowered with bedding hanging"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "yard-automated-laundry-rack"
+      ],
+      "space": {
+        "label": "Ceiling length",
+        "width": 120,
+        "source": "Known ceiling length; width unmeasured",
+        "measured": false
+      }
+    },
+    {
+      "id": "CB-PKG",
+      "slug": "fittings",
+      "area": "common-bath",
+      "category": "Bathroom",
+      "group": "fittings",
+      "priority": "essential",
+      "title": "Common bathroom fittings",
+      "question": "How much of the common bathroom do we refresh?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [
+        "Keep existing if sound",
+        "RIGEL WC only",
+        "Full RIGEL refresh (WC, basin + cabinet, tap, shower set, glass, mirror)"
+      ],
+      "roughBudget": {
+        "min": 0,
+        "max": 4480,
+        "source": "Brief allowance, 6 Oct, excluding ventilation fan"
+      },
+      "contractorNote": "Inspect heater, water pressure, WC rough-in and leaks first; price each fitting separately.",
+      "mustKnow": [
+        "Safe working fittings can stay and be upgraded later",
+        "Ventilation fan is a separate decision (CB07)"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "common-bath-common-bathroom-fittings"
+      ]
+    },
+    {
+      "id": "CB07",
+      "slug": "ventilation-fan",
+      "area": "common-bath",
+      "category": "Fans & ventilation",
+      "group": "fittings",
+      "priority": "nice",
+      "title": "Bathroom ventilation fan",
+      "question": "Which window extraction fan?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [
+        "KDK window extraction fan",
+        "None"
+      ],
+      "roughBudget": {
+        "min": 0,
+        "max": 450,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "contractorNote": "A new window panel for the fan needs management approval.",
+      "mustKnow": [],
+      "options": [],
+      "legacySlugs": [
+        "common-bath-bathroom-ventilation-fan"
+      ]
+    },
+    {
+      "id": "MB-PKG",
+      "slug": "fittings",
+      "area": "master-bath",
+      "category": "Bathroom",
+      "group": "fittings",
+      "priority": "nice",
+      "title": "Master bathroom fittings",
+      "question": "What do we change in the master bathroom?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [
+        "Keep existing",
+        "RIGEL WC only",
+        "RIGEL WC + shower set"
+      ],
+      "roughBudget": {
+        "min": 0,
+        "max": 1950,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "contractorNote": "WC rough-in and heater/supply check.",
+      "mustKnow": [],
+      "options": [],
+      "legacySlugs": [
+        "master-bath-master-bathroom-fittings"
+      ]
+    },
+    {
+      "id": "EL-SW",
+      "slug": "light-switches",
+      "area": "whole-home",
+      "category": "Electrical",
+      "group": "fittings",
+      "priority": "essential",
+      "title": "Light switches",
+      "question": "Which kind of switches?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [
+        "Standard switches",
+        "Smart switches",
+        "Standard switches + app/remote for living lights"
+      ],
+      "contractorNote": "Switch type and brand go into the electrical quote.",
+      "mustKnow": [],
+      "options": [],
+      "roughBudget": {
+        "min": 300,
+        "max": 1000,
+        "source": "Rough guess, to research"
+      },
+      "legacySlugs": [
+        "whole-home-light-switches"
+      ]
+    },
+    {
+      "id": "KT-WATER",
+      "slug": "water-dispenser-tap",
+      "area": "kitchen",
+      "category": "Air & water",
+      "group": "fittings",
+      "priority": "nice",
+      "title": "Water dispenser tap",
+      "question": "Which hot/warm/cold drinking-water tap?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [
+        "Happie Miracle (reference)",
+        "Aqua Luxe (reference)",
+        "None"
+      ],
+      "contractorNote": "These usually need an under-sink power socket, a tap hole in the sink or counter and a cold-water inlet — confirm for the chosen model.",
+      "mustKnow": [
+        "Check under-sink space for the unit",
+        "Hot water: look for a child lock"
+      ],
+      "options": [],
+      "roughBudget": {
+        "min": 800,
+        "max": 1800,
+        "source": "Rough guess, to research"
+      },
+      "legacySlugs": [
+        "kitchen-water-dispenser-tap"
+      ]
+    },
+    {
+      "id": "EN01",
+      "slug": "digital-door-lock",
+      "area": "entrance",
+      "category": "Security",
+      "group": "fittings",
+      "priority": "essential",
+      "title": "Smart door lock",
+      "question": "Which digital lock for the main door?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [],
+      "contractorNote": "Check the door/frame fire label and MCST conditions. If fire-rated, verify the exact lock in the door Certificate of Conformity or an individual fire certificate with sufficient rating and mechanical fail-safe. Assess thickness, backset, existing handle, gate clearance and permitted drilling. Quote all alterations before purchase.",
+      "mustKnow": [
+        "Wooden does not establish fire-door suitability",
+        "Matching fire-door certificate unverified for these locks",
+        "Separate handle and door work may cost extra",
+        "Test hands-free entry on the actual approach route"
+      ],
+      "options": [
+        {
+          "label": "Aqara U400",
+          "name": "Aqara U400 wooden-door kit",
+          "kind": "product",
+          "tier": "Mid",
+          "price": 649,
+          "priceNote": "standard install + M100; Apple hub and door work TBC",
+          "images": [
+            {
+              "src": "/images/entrance/digital-door-lock-u400-official.webp",
+              "caption": "Aqara U400 wooden-door kit",
+              "kind": "product",
+              "source": "https://us.aqara.com/products/smart-lock-u400",
+              "width": 1600,
+              "height": 1600
+            }
+          ],
+          "headline": "Unlock with your phone still pocketed",
+          "love": "Approach entry with fingerprint available as backup.",
+          "watchOut": "Approach reliability varies; ready stock and door fit remain unverified.",
+          "bestFor": "Your requested hands-free Apple setup.",
+          "pros": [
+            "Hands-free entry",
+            "Fingerprint backup",
+            "Automatic locking"
+          ],
+          "cons": [
+            "Apple equipment required",
+            "Rechargeable battery needs attention",
+            "Door alterations may cost extra"
+          ],
+          "ownersSay": [
+            {
+              "text": "Exact U400 owner reported approach-sensitive hands-free entry; a later update improved results at a matching approach height. One report does not establish a failure rate.",
+              "source": "https://www.reddit.com/r/Aqara/comments/1qehpgm/i_wanted_to_like_the_aqara_u400/",
+              "when": "January 2026"
+            }
+          ],
+          "offers": [
+            {
+              "shop": "Harvey Norman",
+              "price": 649,
+              "priceNote": "installed",
+              "stock": "stock unverified",
+              "checked": "2026-10-23",
+              "url": "https://www.harveynorman.com.sg/smart-tech-and-phones/smart-home/smart-security/aqara-u400-smart-door-lock-kit-with-installation-timber-door-black-dl-d06d.html"
+            },
+            {
+              "shop": "HomeSmart",
+              "price": 649,
+              "stock": "Ready stock — exact installed variant",
+              "checked": "2026-10-29 12:22 SGT",
+              "url": "https://homesmart.sg/product/aqara-u400-smart-lock-kit/",
+              "priceNote": "GST, standard wooden-door installation and M100 included; extra work TBC"
+            }
+          ],
+          "buyTiming": "Wait for door assessment; target S$649 or less installed with written onsite support.",
+          "confidence": {
+            "level": "Limited",
+            "why": "mixed ownership reports and less than one year of model history."
+          },
+          "specs": {
+            "Hands-free approach unlock": "Yes",
+            "Fingerprint": "Yes",
+            "Apple tap-to-unlock": "Yes",
+            "Physical key": "Yes",
+            "Automatic locking": "Yes",
+            "Door handle included": "No",
+            "Door thickness": "35–55 mm",
+            "Backset": "60 or 70 mm",
+            "Main connection": "Matter over Thread",
+            "Battery type": "Rechargeable",
+            "Claimed endurance": "Up to six months",
+            "HomeSmart lock warranty": "24 months onsite",
+            "Rechargeable battery warranty": "Six months",
+            "Observed installed price": "S$649",
+            "Ready stock verified": "No"
+          },
+          "id": "50abd293-6a8f-4b29-953a-2c261103b71a",
+          "display": {
+            "headline": "Hands-free Apple entry with fingerprint backup",
+            "love": "Hands-free approach entry with fingerprint backup.",
+            "watchOut": "Fire-door approval, fit and final cost unconfirmed.",
+            "bestFor": "Hands-free Apple entry",
+            "buyTiming": "Door assessment and complete written quote first; no purchase recommendation before approval.",
+            "priceNote": "standard install + M100; Apple hub and door work TBC"
+          },
+          "table": {
+            "love": "Hands-free entry; fingerprint backup",
+            "watchOut": "Fire approval and final cost unconfirmed",
+            "bestFor": "Hands-free Apple entry"
+          },
+          "highlights": [
+            {
+              "icon": "feature",
+              "value": "Hands-free",
+              "label": "Apple entry"
+            },
+            {
+              "icon": "size",
+              "value": "35–55 mm",
+              "label": "Door thickness"
+            },
+            {
+              "icon": "battery",
+              "value": "≤6 months",
+              "label": "Claimed battery"
+            }
+          ],
+          "legacyImages": [
+            {
+              "src": "/images/entrance/digital-door-lock-aqara-u400-1.webp",
+              "caption": "Aqara U400 · product image 1",
+              "kind": "product"
+            },
+            {
+              "src": "/images/entrance/digital-door-lock-aqara-u400-2.webp",
+              "caption": "Aqara U400 · product image 2",
+              "kind": "product"
+            }
+          ],
+          "video": {
+            "youtubeId": "sw8mI_Lgzqc",
+            "title": "Aqara U400: six-month review",
+            "channel": "6 Months Later",
+            "note": "Exact model",
+            "kind": "review",
+            "checked": "2026-10-29",
+            "thumbnail": "/images/videos/sw8mI_Lgzqc.webp",
+            "thumbnailSource": "https://img.youtube.com/vi/sw8mI_Lgzqc/hqdefault.jpg",
+            "scope": "exact"
+          },
+          "costIncomplete": true,
+          "tableSpecs": {
+            "Ready stock verified": "Yes",
+            "Included Aqara hub": "M100 included",
+            "Additional Apple hub": "Required if no compatible hub",
+            "Door/handle work": "TBC after assessment",
+            "Final installed total": "TBC",
+            "Singapore fire-door certificate": "Not verified"
+          },
+          "publication": {
+            "stock": {
+              "verified": true,
+              "status": "ready",
+              "source": "https://homesmart.sg/product/aqara-u400-smart-lock-kit/",
+              "checked": "2026-10-29 12:22 SGT",
+              "variant": "Wooden door",
+              "evidence": "Exact selected variant is_in_stock=true and is_purchasable=true"
+            },
+            "owner": {
+              "exactModel": true,
+              "source": "https://www.reddit.com/r/Aqara/comments/1qehpgm/i_wanted_to_like_the_aqara_u400/",
+              "checked": "2026-10-29"
+            }
+          },
+          "costBreakdown": [
+            {
+              "label": "Lock, GST and standard installation",
+              "value": "S$649",
+              "source": "https://homesmart.sg/product/aqara-u400-smart-lock-kit/"
+            },
+            {
+              "label": "Aqara M100 hub",
+              "value": "Included",
+              "source": "https://homesmart.sg/product/aqara-u400-smart-lock-kit/"
+            },
+            {
+              "label": "Apple home hub",
+              "value": "Existing compatible hub: no new cost; otherwise TBC",
+              "source": "https://www.aqara.com/apple-home"
+            },
+            {
+              "label": "Handle, door and frame work",
+              "value": "TBC after door assessment"
+            },
+            {
+              "label": "Final installed total",
+              "value": "TBC — full quote required"
+            }
+          ],
+          "shopper": {
+            "headline": "Unlock on approach",
+            "love": "Unlock without taking out a phone.",
+            "watchOut": "Approach unlock: iPhone 11 or newer, except SE, 16e and 17e. Fingerprint, passcode and key need no phone.",
+            "bestFor": "Hands-free entry",
+            "ownerReviews": "Mixed",
+            "ownerSummary": "Some owners need to adjust their approach.",
+            "priceNote": "Standard fitting included; extra door work costs more.",
+            "chips": [
+              "Battery up to 6 months",
+              "Fits door 35–55 mm",
+              "Fingerprint backup"
+            ],
+            "specs": {
+              "Fits our door": "Check on 11 Nov",
+              "Door thickness": "35–55 mm",
+              "Handle included": "No",
+              "Unlock on approach": "Yes",
+              "Fingerprint entry": "Yes",
+              "Tap phone to unlock": "Yes",
+              "Spare key": "Yes",
+              "Locks automatically": "Yes",
+              "Works with": "Fingerprint, passcode, key; Apple phone tapping",
+              "Price": "S$649",
+              "In stock": "Yes",
+              "Fitting": "Standard wooden door included",
+              "Extra door work": "Price TBC",
+              "Battery life": "Up to 6 months",
+              "Battery type": "Rechargeable",
+              "Warranty": "2 years, home visit",
+              "Passcode keypad": "Yes",
+              "Works without a phone": "Yes: fingerprint, passcode, key",
+              "Fire-rated door OK": "Check with management"
+            },
+            "offers": [
+              {
+                "shop": "HomeSmart",
+                "url": "https://homesmart.sg/product/aqara-u400-smart-lock-kit/",
+                "price": 649,
+                "priceNote": "Standard fitting included",
+                "stock": "In stock",
+                "checked": "2026-10-29 12:22 SGT"
+              }
+            ],
+            "videoNote": "U400 review",
+            "compare": {
+              "watchOut": "Approach: iPhone 11+ (not SE/16e/17e)"
+            }
+          }
+        },
+        {
+          "label": "Aqara U100",
+          "name": "Aqara U100 installed kit",
+          "kind": "product",
+          "tier": "Budget",
+          "price": 499,
+          "priceNote": "standard install + E1; door work TBC",
+          "images": [
+            {
+              "src": "/images/entrance/digital-door-lock-u100-official.webp",
+              "caption": "Aqara U100 installed kit",
+              "kind": "product",
+              "source": "https://us.aqara.com/products/smart-lock-u100",
+              "width": 1200,
+              "height": 1200
+            }
+          ],
+          "headline": "Fingerprint entry for S$150 less",
+          "love": "Fingerprint and Apple tapping at a lower listed installation price.",
+          "watchOut": "It cannot provide U400 hands-free approach unlocking.",
+          "bestFor": "Choosing to save money and accepting touch or tap entry.",
+          "pros": [
+            "Lower listed price",
+            "Replaceable AA batteries",
+            "Apple Home Key"
+          ],
+          "cons": [
+            "No hands-free UWB",
+            "Separate handle required",
+            "Ready stock unverified"
+          ],
+          "ownersSay": [
+            {
+              "text": "Exact U100 owners reported idle chiming and battery drain in early firmware; replies include mixed firmware experiences, without a universal current fix.",
+              "source": "https://www.reddit.com/r/Aqara/comments/14ec7a5/u100_keeps_chiming_when_closedidle_battery_drain/",
+              "when": "June 2023"
+            }
+          ],
+          "offers": [
+            {
+              "shop": "HomeSmart",
+              "price": 499,
+              "priceNote": "GST, standard wooden-door installation and E1 included; extra work TBC",
+              "stock": "Ready stock — exact installed variant",
+              "checked": "2026-10-29 12:22 SGT",
+              "url": "https://homesmart.sg/product/aqara-u100-smart-lock/"
+            }
+          ],
+          "buyTiming": "Consider only if giving up hands-free entry; target S$499 or less installed after fit and stock checks.",
+          "confidence": {
+            "level": "Limited",
+            "why": "longer model history, but no dependable comparative failure-rate data."
+          },
+          "specs": {
+            "Hands-free approach unlock": "No",
+            "Fingerprint": "Yes",
+            "Apple tap-to-unlock": "Yes",
+            "Physical key": "Yes",
+            "Automatic locking": "Yes",
+            "Door handle included": "No",
+            "Door thickness": "35–55 mm",
+            "Backset": "60 or 70 mm",
+            "Main connection": "Bluetooth and Zigbee",
+            "Battery type": "Four AA batteries",
+            "Claimed endurance": "Up to eight months",
+            "HomeSmart lock warranty": "24 months onsite",
+            "Rechargeable battery warranty": "Not applicable",
+            "Observed installed price": "S$499",
+            "Ready stock verified": "No"
+          },
+          "id": "bf33f296-fdc4-41f0-b8d1-9bb0bb5a80db",
+          "display": {
+            "headline": "Fingerprint and Apple tap entry",
+            "love": "Fingerprint and Apple tap entry; S$150 less.",
+            "watchOut": "Fire-door approval, fit and final cost unconfirmed.",
+            "bestFor": "Lower-cost touch or tap entry",
+            "buyTiming": "Door assessment and complete written quote first; no purchase recommendation before approval.",
+            "priceNote": "standard install + E1; door work TBC"
+          },
+          "table": {
+            "love": "Fingerprint and Apple tap entry",
+            "watchOut": "Fire approval and final cost unconfirmed",
+            "bestFor": "Lower-cost touch or tap entry"
+          },
+          "highlights": [
+            {
+              "icon": "feature",
+              "value": "Fingerprint",
+              "label": "Entry"
+            },
+            {
+              "icon": "battery",
+              "value": "4 AA",
+              "label": "Replaceable batteries"
+            },
+            {
+              "icon": "power",
+              "value": "≤8 months",
+              "label": "Claimed battery"
+            }
+          ],
+          "legacyImages": [
+            {
+              "src": "/images/entrance/digital-door-lock-aqara-u100-1.webp",
+              "caption": "Aqara U100 · product image 1",
+              "kind": "product"
+            },
+            {
+              "src": "/images/entrance/digital-door-lock-aqara-u100-2.webp",
+              "caption": "Aqara U100 · product image 2",
+              "kind": "product"
+            }
+          ],
+          "video": {
+            "youtubeId": "8kVw0dRN5-Q",
+            "title": "Aqara U100: six-month review",
+            "channel": "Adam’s Tech Life",
+            "note": "Overseas version; regional warranty differs",
+            "kind": "review",
+            "checked": "2026-10-29",
+            "thumbnail": "/images/videos/8kVw0dRN5-Q.webp",
+            "thumbnailSource": "https://img.youtube.com/vi/8kVw0dRN5-Q/hqdefault.jpg",
+            "scope": "exact"
+          },
+          "costIncomplete": true,
+          "tableSpecs": {
+            "Ready stock verified": "Yes",
+            "Included Aqara hub": "E1 included",
+            "Additional Apple hub": "Optional; setup dependent",
+            "Door/handle work": "TBC after assessment",
+            "Final installed total": "TBC",
+            "Singapore fire-door certificate": "Not verified"
+          },
+          "publication": {
+            "stock": {
+              "verified": true,
+              "status": "ready",
+              "source": "https://homesmart.sg/product/aqara-u100-smart-lock/",
+              "checked": "2026-10-29 12:22 SGT",
+              "variant": "Lock + installation",
+              "evidence": "Exact selected variant is_in_stock=true and is_purchasable=true"
+            },
+            "owner": {
+              "exactModel": true,
+              "source": "https://www.reddit.com/r/Aqara/comments/14ec7a5/u100_keeps_chiming_when_closedidle_battery_drain/",
+              "checked": "2026-10-29"
+            }
+          },
+          "costBreakdown": [
+            {
+              "label": "Lock, GST and standard installation",
+              "value": "S$499",
+              "source": "https://homesmart.sg/product/aqara-u100-smart-lock/"
+            },
+            {
+              "label": "Aqara E1 hub",
+              "value": "Included",
+              "source": "https://homesmart.sg/product/aqara-u100-smart-lock/"
+            },
+            {
+              "label": "Apple home hub",
+              "value": "Optional for extended Apple setup; cost TBC",
+              "source": "https://www.aqara.com/apple-home"
+            },
+            {
+              "label": "Handle, door and frame work",
+              "value": "TBC after door assessment"
+            },
+            {
+              "label": "Final installed total",
+              "value": "TBC — full quote required"
+            }
+          ],
+          "shopper": {
+            "headline": "Fingerprint entry for S$150 less",
+            "love": "Fingerprint or phone-tap entry.",
+            "watchOut": "No approach unlocking; fingerprint, passcode and key need no phone.",
+            "bestFor": "Lower-cost entry",
+            "ownerReviews": "Mixed",
+            "ownerSummary": "Some owners report battery drain.",
+            "priceNote": "Standard fitting included; extra door work costs more.",
+            "chips": [
+              "Battery up to 8 months",
+              "Fits door 35–55 mm",
+              "4 AA batteries"
+            ],
+            "specs": {
+              "Fits our door": "Check on 11 Nov",
+              "Door thickness": "35–55 mm",
+              "Handle included": "No",
+              "Unlock on approach": "No",
+              "Fingerprint entry": "Yes",
+              "Tap phone to unlock": "Yes",
+              "Spare key": "Yes",
+              "Locks automatically": "Yes",
+              "Works with": "Fingerprint, passcode, key; Apple phone tapping",
+              "Price": "S$499",
+              "In stock": "Yes",
+              "Fitting": "Standard wooden door included",
+              "Extra door work": "Price TBC",
+              "Battery life": "Up to 8 months",
+              "Battery type": "4 AA batteries",
+              "Warranty": "2 years, home visit",
+              "Passcode keypad": "Yes",
+              "Works without a phone": "Yes: fingerprint, passcode, key",
+              "Fire-rated door OK": "Check with management"
+            },
+            "offers": [
+              {
+                "shop": "HomeSmart",
+                "url": "https://homesmart.sg/product/aqara-u100-smart-lock/",
+                "price": 499,
+                "priceNote": "Standard fitting included",
+                "stock": "In stock",
+                "checked": "2026-10-29 12:22 SGT"
+              }
+            ],
+            "videoNote": "U100 review; overseas version",
+            "compare": {
+              "watchOut": "No approach unlock; separate handle needed"
+            }
+          }
+        }
+      ],
+      "legacySlugs": [
+        "entrance-digital-door-lock"
+      ],
+      "qty": 1,
+      "budget": null,
+      "sales": [
+        "11.11",
+        "black_friday"
+      ],
+      "salesNote": "11.11 and Black Friday expected; lock-specific offers unconfirmed",
+      "answer10s": "Pursue Aqara U400 for hands-free Apple entry with fingerprint backup. Confirm Apple devices, door fit and ready stock before paying.",
+      "summary": "Compared U400 hands-free entry against the cheaper U100 fingerprint and tap-to-unlock alternative. U400 matches the requested experience; U100 is the cheaper compromise.",
+      "tiers": [
+        {
+          "name": "Budget",
+          "min": 400,
+          "max": 500,
+          "estimated": true,
+          "note": "installed"
+        },
+        {
+          "name": "Mid",
+          "min": 600,
+          "max": 700,
+          "estimated": true,
+          "note": "installed"
+        },
+        {
+          "name": "Splurge",
+          "min": 850,
+          "max": null
+        }
+      ],
+      "fullReport": null,
+      "specGroups": [
+        {
+          "group": "Entry",
+          "rows": [
+            "Hands-free approach unlock",
+            "Fingerprint",
+            "Apple tap-to-unlock",
+            "Physical key"
+          ]
+        },
+        {
+          "group": "Locking",
+          "rows": [
+            "Automatic locking"
+          ]
+        },
+        {
+          "group": "Size & fit",
+          "rows": [
+            "Door handle included",
+            "Door thickness",
+            "Backset"
+          ]
+        },
+        {
+          "group": "Connectivity",
+          "rows": [
+            "Main connection"
+          ]
+        },
+        {
+          "group": "Power",
+          "rows": [
+            "Battery type",
+            "Claimed endurance"
+          ]
+        },
+        {
+          "group": "Support",
+          "rows": [
+            "HomeSmart lock warranty",
+            "Rechargeable battery warranty"
+          ]
+        },
+        {
+          "group": "Buying",
+          "rows": [
+            "Observed installed price",
+            "Ready stock verified"
+          ]
+        },
+        {
+          "group": "Size & fit",
+          "rows": [
+            "Singapore fire-door certificate"
+          ]
+        },
+        {
+          "group": "Buying",
+          "rows": [
+            "Included Aqara hub",
+            "Additional Apple hub",
+            "Door/handle work",
+            "Final installed total"
+          ]
+        }
+      ],
+      "display": {
+        "answer10s": "U400 adds hands-free Apple entry. U100 costs S$150 less for fingerprint and tap entry. Fire-door approval, fit and final installed totals remain unconfirmed.",
+        "summary": "Two stocked Aqara kits compared with Yale ByYou D Pro. Yale remains outside the shortlist because ready stock is ambiguous; exact fire-door approval remains unverified for all three."
+      },
+      "researchHistory": [
+        {
+          "superseded": "2026-10-29 audit round 2",
+          "status": "voting",
+          "answer10s": "Pursue Aqara U400 for hands-free Apple entry with fingerprint backup. Confirm Apple devices, door fit and ready stock before paying.",
+          "summary": "Compared U400 hands-free entry against the cheaper U100 fingerprint and tap-to-unlock alternative. U400 matches the requested experience; U100 is the cheaper compromise.",
+          "display": {
+            "answer10s": "U400: hands-free Apple entry. U100: fingerprint and tap entry for S$150 less. Apple compatibility, door fit and stock require confirmation.",
+            "summary": "U400 adds hands-free approach unlocking. U100 offers fingerprint and Apple tap entry at a lower listed installation price."
+          },
+          "mustKnow": [
+            "U400 needs suitable Apple equipment",
+            "No door handle included",
+            "Ready stock unverified",
+            "Test actual approach route"
+          ],
+          "contractorNote": "Assess existing lock and handle | Check door thickness and backset | Use manufacturer drilling template | Check frame, gate clearance and applicable approvals",
+          "specGroups": [
+            {
+              "group": "Entry",
+              "rows": [
+                "Hands-free approach unlock",
+                "Fingerprint",
+                "Apple tap-to-unlock",
+                "Physical key"
+              ]
+            },
+            {
+              "group": "Locking",
+              "rows": [
+                "Automatic locking"
+              ]
+            },
+            {
+              "group": "Size & fit",
+              "rows": [
+                "Door handle included",
+                "Door thickness",
+                "Backset"
+              ]
+            },
+            {
+              "group": "Connectivity",
+              "rows": [
+                "Main connection"
+              ]
+            },
+            {
+              "group": "Power",
+              "rows": [
+                "Battery type",
+                "Claimed endurance"
+              ]
+            },
+            {
+              "group": "Support",
+              "rows": [
+                "HomeSmart lock warranty",
+                "Rechargeable battery warranty"
+              ]
+            },
+            {
+              "group": "Buying",
+              "rows": [
+                "Observed installed price",
+                "Ready stock verified"
+              ]
+            }
+          ],
+          "options": [
+            {
+              "id": "50abd293-6a8f-4b29-953a-2c261103b71a",
+              "price": 649,
+              "priceNote": "installed, plus Apple hub if needed and any door alterations",
+              "display": {
+                "headline": "Hands-free Apple entry with fingerprint backup",
+                "love": "Hands-free approach entry with fingerprint backup.",
+                "watchOut": "Compatible Apple equipment required. Door fit and stock unverified.",
+                "bestFor": "Hands-free Apple entry",
+                "buyTiming": "Door assessment first. Target S$649 installed; confirm onsite support.",
+                "priceNote": "Installed; Apple hub/alterations may cost extra"
+              },
+              "table": {
+                "love": "Hands-free entry; fingerprint backup",
+                "watchOut": "Apple equipment required; fit/stock unverified",
+                "bestFor": "Hands-free Apple entry"
+              },
+              "specs": {
+                "Hands-free approach unlock": "Yes",
+                "Fingerprint": "Yes",
+                "Apple tap-to-unlock": "Yes",
+                "Physical key": "Yes",
+                "Automatic locking": "Yes",
+                "Door handle included": "No",
+                "Door thickness": "35–55 mm",
+                "Backset": "60 or 70 mm",
+                "Main connection": "Matter over Thread",
+                "Battery type": "Rechargeable",
+                "Claimed endurance": "Up to six months",
+                "HomeSmart lock warranty": "24 months onsite",
+                "Rechargeable battery warranty": "Six months",
+                "Observed installed price": "S$649",
+                "Ready stock verified": "No"
+              },
+              "ownersSay": [
+                {
+                  "text": "Useful but approach-sensitive; one critical owner improved results by changing approach height",
+                  "source": "https://www.reddit.com/r/Aqara/comments/1qehpgm/i_wanted_to_like_the_aqara_u400/",
+                  "when": "January 2026"
+                }
+              ],
+              "offers": [
+                {
+                  "shop": "Harvey Norman",
+                  "price": 649,
+                  "priceNote": "installed",
+                  "stock": "stock unverified",
+                  "checked": "2026-10-23",
+                  "url": "https://www.harveynorman.com.sg/smart-tech-and-phones/smart-home/smart-security/aqara-u400-smart-door-lock-kit-with-installation-timber-door-black-dl-d06d.html"
+                },
+                {
+                  "shop": "HomeSmart",
+                  "price": null,
+                  "priceText": "S$469–849 across variants, exact installed variant price to confirm",
+                  "stock": "stock unverified",
+                  "checked": "2026-10-23",
+                  "url": "https://homesmart.sg/product/aqara-u400-smart-lock-kit/"
+                }
+              ],
+              "buyTiming": "Wait for door assessment; target S$649 or less installed with written onsite support.",
+              "confidence": {
+                "level": "Limited",
+                "why": "mixed ownership reports and less than one year of model history."
+              },
+              "video": {
+                "youtubeId": "sw8mI_Lgzqc",
+                "title": "Aqara U400: six-month review",
+                "channel": "6 Months Later",
+                "note": "Exact model",
+                "kind": "review",
+                "checked": "2026-10-29",
+                "thumbnail": "/images/videos/sw8mI_Lgzqc.webp",
+                "thumbnailSource": "https://img.youtube.com/vi/sw8mI_Lgzqc/hqdefault.jpg",
+                "scope": "exact"
+              }
+            },
+            {
+              "id": "bf33f296-fdc4-41f0-b8d1-9bb0bb5a80db",
+              "price": 499,
+              "priceNote": "installed, subject to stock and fit",
+              "display": {
+                "headline": "Fingerprint and Apple tap entry",
+                "love": "Fingerprint and Apple tap entry; S$150 less.",
+                "watchOut": "No hands-free approach unlocking. Fit and stock unverified.",
+                "bestFor": "Lower-cost touch or tap entry",
+                "buyTiming": "Target S$499 installed after stock and fit checks.",
+                "priceNote": "Installed; subject to stock and fit"
+              },
+              "table": {
+                "love": "Fingerprint and Apple tap entry",
+                "watchOut": "No hands-free entry; stock unverified",
+                "bestFor": "Lower-cost touch or tap entry"
+              },
+              "specs": {
+                "Hands-free approach unlock": "No",
+                "Fingerprint": "Yes",
+                "Apple tap-to-unlock": "Yes",
+                "Physical key": "Yes",
+                "Automatic locking": "Yes",
+                "Door handle included": "No",
+                "Door thickness": "35–55 mm",
+                "Backset": "60 or 70 mm",
+                "Main connection": "Bluetooth and Zigbee",
+                "Battery type": "Four AA batteries",
+                "Claimed endurance": "Up to eight months",
+                "HomeSmart lock warranty": "24 months onsite",
+                "Rechargeable battery warranty": "Not applicable",
+                "Observed installed price": "S$499",
+                "Ready stock verified": "No"
+              },
+              "ownersSay": [
+                {
+                  "text": "Older owners reported idle chiming and battery drain; replies did not establish a universal fix",
+                  "source": "https://www.reddit.com/r/Aqara/comments/14ec7a5/u100_keeps_chiming_when_closedidle_battery_drain/",
+                  "when": "June 2023"
+                }
+              ],
+              "offers": [
+                {
+                  "shop": "HomeSmart",
+                  "price": 499,
+                  "priceNote": "installed",
+                  "stock": "stock unverified",
+                  "checked": "2026-10-23",
+                  "url": "https://homesmart.sg/product/aqara-u100-smart-lock/"
+                }
+              ],
+              "buyTiming": "Consider only if giving up hands-free entry; target S$499 or less installed after fit and stock checks.",
+              "confidence": {
+                "level": "Limited",
+                "why": "longer model history, but no dependable comparative failure-rate data."
+              },
+              "video": {
+                "youtubeId": "8kVw0dRN5-Q",
+                "title": "Aqara U100: six-month review",
+                "channel": "Adam’s Tech Life",
+                "note": "Overseas version; regional warranty differs",
+                "kind": "review",
+                "checked": "2026-10-29",
+                "thumbnail": "/images/videos/8kVw0dRN5-Q.webp",
+                "thumbnailSource": "https://img.youtube.com/vi/8kVw0dRN5-Q/hqdefault.jpg",
+                "scope": "exact"
+              }
+            }
+          ]
+        }
+      ],
+      "publicationPolicy": "stock-owner-video-v1",
+      "researchedAt": "2026-10-29",
+      "requiredBrands": [
+        "Aqara",
+        "Yale"
+      ],
+      "brandReview": [
+        {
+          "brand": "Aqara",
+          "reason": "U400 S$649 and U100 S$499 include standard installation and Aqara hubs; fire-door approval and final door-work costs remain unverified.",
+          "source": "https://homesmart.sg/product/aqara-u400-smart-lock-kit/"
+        },
+        {
+          "brand": "Yale",
+          "reason": "ByYou D Pro: S$739 installed; conflicting stock and fire-door approval unverified.",
+          "source": "https://www.yalesmart.com/sg/sgaa-yale-byyou-d-pro",
+          "details": "Fingerprint deadbolt with Bluetooth, PIN, card and key; remote access needs an optional Connect hub. Official listing shows both In stock and Currently unavailable. Exact independent owner/video evidence and a matching fire-door certificate were not established.",
+          "sources": [
+            "https://www.yalesmart.com/sg/installation"
+          ]
+        }
+      ],
+      "publicationHolds": [
+        "Confirm whether the existing wooden condo door is fire-rated and obtain a matching lock Certificate of Conformity if required.",
+        "Confirm door, handle, frame and gate fit; obtain a written door-work quote.",
+        "Confirm compatible Apple equipment and any extra hub cost; final installed totals are TBC."
+      ],
+      "researchSources": [
+        {
+          "label": "SCDF fire-door lock requirements",
+          "url": "https://www.scdf.gov.sg/fire-safety-services-listing/permits-and-certifications/digital-locksets-on-fire-rated-doors",
+          "checked": "2026-10-29"
+        },
+        {
+          "label": "Aqara Apple Home compatibility",
+          "url": "https://www.aqara.com/apple-home",
+          "checked": "2026-10-29"
+        },
+        {
+          "label": "Aqara U400 official access modes",
+          "url": "https://www.aqara.com/en/product/smart-lock-u400/",
+          "checked": "2026-10-30"
+        },
+        {
+          "label": "Aqara U100 official access modes",
+          "url": "https://www.aqara.com/en/product/smart-lock-u100/",
+          "checked": "2026-10-30"
+        }
+      ],
+      "researchMissing": [
+        "Confirm whether the existing wooden condo door is fire-rated and obtain a matching lock Certificate of Conformity if required.",
+        "Confirm door, handle, frame and gate fit; obtain a written door-work quote.",
+        "Confirm compatible Apple equipment and any extra hub cost; final installed totals are TBC."
+      ],
+      "shopper": {
+        "answer10s": "U400 unlocks on approach with a compatible iPhone or Apple Watch. U100 saves S$150 with fingerprint or tap entry.",
+        "alsoConsidered": [
+          {
+            "brand": "Yale ByYou D Pro",
+            "reason": "S$739; S$90 above U400"
+          }
+        ],
+        "mustKnow": [
+          "Both locks work without a phone: fingerprint, passcode or key.",
+          "Both need a separate handle.",
+          "On 11 Nov, check the door, handle and gate clearance.",
+          "For a fire-rated door, check the exact lock approval with management."
+        ],
+        "contractorNote": "",
+        "groups": [
+          {
+            "group": "Size & fit",
+            "rows": [
+              "Fits our door",
+              "Door thickness",
+              "Handle included",
+              "Fire-rated door OK"
+            ]
+          },
+          {
+            "group": "Features",
+            "rows": [
+              "Unlock on approach",
+              "Fingerprint entry",
+              "Passcode keypad",
+              "Works without a phone",
+              "Tap phone to unlock",
+              "Spare key",
+              "Locks automatically",
+              "Works with"
+            ]
+          },
+          {
+            "group": "Price & stock",
+            "rows": [
+              "Price",
+              "In stock",
+              "Fitting",
+              "Extra door work"
+            ]
+          },
+          {
+            "group": "Running costs",
+            "rows": [
+              "Battery life",
+              "Battery type"
+            ]
+          },
+          {
+            "group": "Warranty & support",
+            "rows": [
+              "Warranty"
+            ]
+          }
+        ],
+        "compatibility": [
+          "Approach unlock: iPhone 11 or newer, except SE, 16e and 17e. Update iPhone software before setup.",
+          "Or Apple Watch Series 6 or newer, except SE. Update watch software before setup.",
+          "Apple setup also needs a compatible HomePod or Apple TV home controller.",
+          "Others can use fingerprint, passcode or a key without a phone."
+        ]
+      }
+    },
+    {
+      "id": "LV01-SIZE",
+      "slug": "tv-size-and-mounting",
+      "area": "living",
+      "category": "TV & audio",
+      "group": "fittings",
+      "priority": "nice",
+      "title": "TV size and mounting",
+      "question": "How big, and wall-mounted or on the console?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [
+        "75\" on console",
+        "85\" wall-mounted",
+        "98\" wall-mounted"
+      ],
+      "roughBudget": {
+        "min": 0,
+        "max": 250,
+        "source": "Brief allowance for bracket, 6 Oct"
+      },
+      "contractorNote": "Wall backing, concealed trunking and sockets at the TV position. Only size and mounting are needed now; the model can wait.",
+      "mustKnow": [
+        "Brief range: 80–100 inch",
+        "Living room is about 388 cm deep — check the sofa-to-TV distance"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "living-tv-size-and-mounting"
+      ],
+      "space": {
+        "label": "Living area",
+        "width": 295,
+        "depth": 388,
+        "source": "Approximate room dimensions",
+        "opening": true,
+        "measured": false
+      }
+    },
+    {
+      "id": "LV01",
+      "slug": "tv",
+      "area": "living",
+      "category": "TV & audio",
+      "group": "loose",
+      "priority": "nice",
+      "title": "TV",
+      "question": "Which TV?",
+      "stage": "move_in",
+      "sales": [
+        "11.11",
+        "black_friday",
+        "12.12"
+      ],
+      "status": "draft",
+      "candidates": [
+        "LG (TBC)"
+      ],
+      "roughBudget": {
+        "min": 3000,
+        "max": 4000,
+        "source": "Group chat"
+      },
+      "mustKnow": [
+        "Size follows the TV size vote"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "living-tv"
+      ],
+      "space": {
+        "label": "Living area",
+        "width": 295,
+        "depth": 388,
+        "source": "Approximate room dimensions",
+        "opening": true,
+        "measured": false
+      }
+    },
+    {
+      "id": "LV04",
+      "slug": "soundbar",
+      "area": "living",
+      "category": "TV & audio",
+      "group": "loose",
+      "priority": "nice",
+      "title": "Soundbar",
+      "question": "Soundbar now, or none for now?",
+      "stage": "move_in",
+      "sales": [
+        "11.11",
+        "black_friday",
+        "12.12"
+      ],
+      "status": "draft",
+      "candidates": [
+        "Soundbar under S$1,000 (TBC)",
+        "None for now"
+      ],
+      "roughBudget": {
+        "min": 0,
+        "max": 1000,
+        "source": "Group chat"
+      },
+      "mustKnow": [
+        "A subwoofer is wanted (brief) — it needs a socket near its spot"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "living-soundbar"
+      ],
+      "space": {
+        "label": "Living area",
+        "width": 295,
+        "depth": 388,
+        "source": "Approximate room dimensions",
+        "opening": true,
+        "measured": false
+      }
+    },
+    {
+      "id": "LV02",
+      "slug": "tv-console",
+      "area": "living",
+      "category": "Furniture",
+      "group": "loose",
+      "priority": "nice",
+      "title": "TV console",
+      "question": "Which TV console?",
+      "stage": "move_in",
+      "status": "draft",
+      "candidates": [
+        "VHAUS"
+      ],
+      "mustKnow": [
+        "Loose console, no built-in carpentry",
+        "Leave room for cables and device ventilation"
+      ],
+      "options": [],
+      "roughBudget": {
+        "min": 300,
+        "max": 800,
+        "source": "Rough guess, to research"
+      },
+      "legacySlugs": [
+        "living-tv-console"
+      ],
+      "space": {
+        "label": "Living area",
+        "width": 295,
+        "depth": 388,
+        "source": "Approximate room dimensions",
+        "opening": true,
+        "measured": false
+      }
+    },
+    {
+      "id": "LV03",
+      "slug": "sofa",
+      "area": "living",
+      "category": "Furniture",
+      "group": "loose",
+      "priority": "nice",
+      "title": "Sofa",
+      "question": "Which L-shaped 4-seater?",
+      "stage": "move_in",
+      "status": "draft",
+      "candidates": [
+        "VHAUS"
+      ],
+      "mustKnow": [
+        "Living area about 295 × 388 cm",
+        "Decide the chaise side; tape it out on 11 Nov"
+      ],
+      "options": [],
+      "roughBudget": {
+        "min": 1500,
+        "max": 3500,
+        "source": "Rough guess, to research"
+      },
+      "legacySlugs": [
+        "living-sofa"
+      ],
+      "space": {
+        "label": "Living area",
+        "width": 295,
+        "depth": 388,
+        "source": "Approximate room dimensions",
+        "opening": true,
+        "measured": false
+      }
+    },
+    {
+      "id": "DN01",
+      "slug": "table-and-chairs",
+      "area": "dining",
+      "category": "Furniture",
+      "group": "loose",
+      "priority": "essential",
+      "title": "Dining table and chairs",
+      "question": "Which table and four chairs?",
+      "stage": "move_in",
+      "status": "draft",
+      "candidates": [
+        "VHAUS 180 cm (preferred, to confirm)"
+      ],
+      "mustKnow": [
+        "Dining zone about 195 × 175 cm",
+        "A 180 cm table leaves about 7 cm at each end",
+        "Chairs usually need about 75–90 cm behind them to pull out",
+        "Tape out the table and chair space on 11 Nov"
+      ],
+      "options": [],
+      "roughBudget": {
+        "min": 800,
+        "max": 2000,
+        "source": "Rough guess, to research"
+      },
+      "legacySlugs": [
+        "dining-dining-table-and-chairs"
+      ],
+      "space": {
+        "label": "Dining zone",
+        "width": 195,
+        "depth": 175,
+        "source": "Approximate room dimensions",
+        "opening": true,
+        "measured": false
+      }
+    },
+    {
+      "id": "KT01",
+      "slug": "fridge",
+      "area": "kitchen",
+      "category": "Kitchen & laundry",
+      "group": "loose",
+      "priority": "essential",
+      "title": "Fridge",
+      "question": "Which fridge?",
+      "stage": "move_in",
+      "sales": [
+        "11.11",
+        "black_friday",
+        "12.12"
+      ],
+      "status": "draft",
+      "candidates": [
+        "Toshiba",
+        "Hitachi"
+      ],
+      "roughBudget": {
+        "min": 1000,
+        "max": 1000,
+        "source": "Group chat"
+      },
+      "mustKnow": [
+        "The owner's current fridge (70 × 75 cm, 180 cm high) fits — a slightly bigger one may fit",
+        "Check the niche on 11 Nov: hinge side, door swing, ventilation gap",
+        "Delivery must wait until after works and cleaning"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "kitchen-fridge"
+      ],
+      "space": {
+        "label": "Fridge reference",
+        "width": 70,
+        "depth": 75,
+        "source": "Existing fridge footprint, known to fit",
+        "opening": false,
+        "measured": false
+      }
+    },
+    {
+      "id": "YA01",
+      "slug": "washing-machine",
+      "area": "yard",
+      "category": "Kitchen & laundry",
+      "group": "loose",
+      "priority": "essential",
+      "title": "Washing machine",
+      "question": "Which front-load washer?",
+      "stage": "move_in",
+      "sales": [
+        "11.11",
+        "black_friday",
+        "12.12"
+      ],
+      "status": "draft",
+      "candidates": [
+        "LG 14 kg front-load (seen at S$1,849; model and shop to confirm)"
+      ],
+      "roughBudget": {
+        "min": 1849,
+        "max": 1849,
+        "source": "Group chat"
+      },
+      "mustKnow": [
+        "The owner's current washer (75 × 67 cm) fits — a slightly bigger one may fit",
+        "Big blankets + a full bedding set in one load: check the bedding programme, not just the kg rating",
+        "If a dryer may go on top later, check the stacking kit now"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "yard-washing-machine"
+      ],
+      "space": {
+        "label": "Washer reference",
+        "width": 75,
+        "depth": 67,
+        "source": "Existing washer footprint, known to fit",
+        "opening": false,
+        "measured": false
+      }
+    },
+    {
+      "id": "YA07",
+      "slug": "robot-vacuum",
+      "area": "whole-home",
+      "category": "Cleaning",
+      "group": "loose",
+      "priority": "nice",
+      "title": "Robot vacuum",
+      "question": "Which robot vacuum and mop?",
+      "stage": "move_in",
+      "sales": [
+        "11.11",
+        "black_friday",
+        "12.12"
+      ],
+      "status": "draft",
+      "candidates": [
+        "Dreame (TBC)"
+      ],
+      "contractorNote": "A socket for the dock in a dry, level spot (yard).",
+      "mustKnow": [
+        "Auto-empty and mop washing wanted; no pets; not for bathrooms"
+      ],
+      "options": [],
+      "roughBudget": {
+        "min": 600,
+        "max": 1500,
+        "source": "Rough guess, to research"
+      },
+      "legacySlugs": [
+        "whole-home-robot-vacuum"
+      ]
+    },
+    {
+      "id": "HH-VAC",
+      "slug": "handheld-vacuum",
+      "area": "whole-home",
+      "category": "Cleaning",
+      "group": "loose",
+      "priority": "nice",
+      "title": "Handheld vacuum",
+      "question": "Which handheld vacuum?",
+      "stage": "move_in",
+      "sales": [
+        "11.11",
+        "black_friday",
+        "12.12"
+      ],
+      "status": "voting",
+      "candidates": [],
+      "mustKnow": [
+        "Small clean-ups rather than whole-floor cleaning",
+        "Both use small dust containers",
+        "Confirm battery and filter support",
+        "Keep renovation dust and liquids away"
+      ],
+      "options": [
+        {
+          "label": "Kärcher Anniversary",
+          "name": "Kärcher CVH Anniversary Edition",
+          "kind": "product",
+          "tier": "Mid",
+          "price": 130,
+          "images": [
+            {
+              "src": "/images/whole-home/handheld-vacuum-karcher-anniversary-official.webp",
+              "caption": "Kärcher CVH Anniversary Edition",
+              "kind": "product",
+              "source": "https://www.kaercher.com/sg/discontinued-machines/cvh-anniversary-edition-11983550.html",
+              "width": 1600,
+              "height": 1600
+            }
+          ],
+          "headline": "Save S$69 for everyday crumbs",
+          "love": "USB-C charging and two power settings in a compact cleaner.",
+          "watchOut": "Discontinued edition; replacement battery and filter costs are unverified.",
+          "bestFor": "Affordable supplementary cleaning around the home",
+          "pros": [
+            "S$69 cheaper",
+            "Up to 20 minutes on low",
+            "USB-C charging"
+          ],
+          "cons": [
+            "Discontinued",
+            "Replacement-part costs unverified",
+            "About four hours to recharge"
+          ],
+          "ownersSay": [
+            {
+              "text": "Verified purchase for exact Anniversary Edition, posted about ten months ago; likes compact size, USB-C, two settings, metal filter; criticises noise, perceived build quality and price. Review age is not ownership duration.",
+              "source": "https://www.galaxus.de/de/productrating/ueberrissener-preis-9983223",
+              "when": "checked October 2026"
+            },
+            {
+              "text": "Verified purchase, exact edition, posted about ten months ago; praises compactness and suction. No durability follow-up.",
+              "source": "https://www.galaxus.de/de/productrating/kaercher-cvh-10001921",
+              "when": "checked October 2026"
+            },
+            {
+              "text": "Exact 1.198-355.0 owner comments May–August 2025. Four visible, all less than one month use: two mention short runtime; others praise compact car cleaning. Regional supply/warranty differ; not failure-rate evidence.",
+              "source": "https://www.vseinstrumenti.ru/product/ruchnoj-pylesos-karcher-cvh-anniversary-edition-1-198-355-0-18719748/otzyvy/",
+              "when": "checked October 2026"
+            }
+          ],
+          "offers": [
+            {
+              "shop": "Best Denki",
+              "price": 130,
+              "priceNote": "collected or S$140 with published standard delivery",
+              "stock": "Low stock — 4 left when checked",
+              "checked": "2026-10-29 12:18 SGT",
+              "url": "https://www.bestdenki.com.sg/1106154-karcher-handheld-vacuum-cvh-anniversary-edition.html"
+            }
+          ],
+          "buyTiming": "Wait for 11.11 price check; target S$120 collected. If stock disappears, consider option B.",
+          "confidence": {
+            "level": "Limited",
+            "why": "Exact owners report mixed runtime and noise experiences; no dependable long-term failure rate. Replacement-part costs unverified."
+          },
+          "specs": {
+            "Collected price": "S$130",
+            "Published standard delivered total": "S$140",
+            "Verified stock listing": "Low stock",
+            "Model status": "Discontinued edition, remaining new stock",
+            "Size W × D × H (cm)": "7.6 × 38 × 7.6",
+            "Weight": "0.52 kg in manual; datasheet conflicts",
+            "Dust container": "150 ml",
+            "Power settings": "Two",
+            "Maximum low-setting runtime": "20 minutes",
+            "Maximum high-setting runtime": "9 minutes",
+            "Full recharge": "About 4 hours",
+            "Charging connection": "USB-C",
+            "Charging dock included": "No",
+            "Cleaning attachments": "Combined crevice and brush tool",
+            "Filter specification": "HEPA 12 in manual",
+            "Washable filter": "Yes",
+            "Liquid pickup": "No",
+            "Manufacturer sound power": "78 dB(A)",
+            "Local replacement-filter price": "Not stated",
+            "Local replacement-battery price": "Not stated",
+            "Singapore warranty": "Two years, qualifying faults",
+            "Provider": "Kärcher Singapore; consumer servicing by DWS"
+          },
+          "id": "64021ad1-9b94-4950-a24e-972bb4b94b65",
+          "display": {
+            "headline": "USB-C cleaning for S$130",
+            "love": "Compact handheld with USB-C charging and two settings.",
+            "watchOut": "Discontinued clearance. Battery and filter costs unverified.",
+            "bestFor": "Lower-cost occasional clean-ups",
+            "buyTiming": "11.11 price check; target S$120 collected. Shark is the stock fallback."
+          },
+          "table": {
+            "love": "USB-C charging; two power settings",
+            "watchOut": "Discontinued; replacement-part costs unverified",
+            "bestFor": "Lower-cost small clean-ups"
+          },
+          "highlights": [
+            {
+              "icon": "power",
+              "value": "20 min",
+              "label": "Low setting"
+            },
+            {
+              "icon": "volume",
+              "value": "150 ml",
+              "label": "Dust container"
+            },
+            {
+              "icon": "battery",
+              "value": "USB-C",
+              "label": "Charging"
+            }
+          ],
+          "tableSpecs": {
+            "Model status": "Discontinued; remaining new stock",
+            "Weight": "0.52 kg; official documents conflict",
+            "Local replacement-filter price": "Not stated",
+            "Singapore warranty": "2 years; qualifying faults",
+            "Provider": "Kärcher Singapore; servicing by DWS",
+            "Verified stock listing": "Low stock"
+          },
+          "legacyImages": [
+            {
+              "src": "/images/whole-home/handheld-vacuum-karcher-anniversary-1.webp",
+              "caption": "Kärcher CVH Anniversary Edition · product image 1 · Kärcher Singapore",
+              "kind": "product",
+              "source": "https://www.kaercher.com/sg/discontinued-machines/cvh-anniversary-edition-11983550.html"
+            }
+          ],
+          "video": {
+            "youtubeId": "rzN-Ye4L3ts",
+            "title": "CVH Anniversary: brand demonstration",
+            "channel": "Kärcher Kazakhstan",
+            "note": "Exact model · official demonstration · Russian",
+            "kind": "brand demonstration",
+            "checked": "2026-10-29",
+            "thumbnail": "/images/videos/rzN-Ye4L3ts.webp",
+            "thumbnailSource": "https://img.youtube.com/vi/rzN-Ye4L3ts/hqdefault.jpg",
+            "scope": "exact",
+            "displayAllowed": false
+          },
+          "publication": {
+            "stock": {
+              "verified": true,
+              "status": "low",
+              "source": "https://www.bestdenki.com.sg/1106154-karcher-handheld-vacuum-cvh-anniversary-edition.html",
+              "checked": "2026-10-30 SGT",
+              "evidence": "4 left, exact retailer page"
+            },
+            "owner": {
+              "exactModel": true,
+              "source": "https://www.galaxus.de/de/productrating/ueberrissener-preis-9983223",
+              "checked": "2026-10-29"
+            }
+          },
+          "shopper": {
+            "headline": "USB-C (phone-style cable) for S$130",
+            "love": "Longer battery life for brief clean-ups.",
+            "watchOut": "Around 4 hours to recharge.",
+            "bestFor": "Occasional clean-ups",
+            "ownerReviews": "Mixed",
+            "ownerSummary": "Owners like its size; some dislike the noise.",
+            "priceNote": "Free collection; delivery S$140 total.",
+            "chips": [
+              "Battery up to 20 min",
+              "Charge time about 4 hours",
+              "Dust container 150 ml"
+            ],
+            "specs": {
+              "Dust container": "150 ml",
+              "Charge time": "About 4 hours",
+              "Noise": "78 dB (like a hair dryer)",
+              "Works with": "USB-C (common charging cable)",
+              "Charging stand included": "No",
+              "Sofa tool included": "No",
+              "Washable filter": "Yes",
+              "Picks up liquids": "No",
+              "Price": "S$130",
+              "Price with delivery": "S$140",
+              "In stock": "Yes",
+              "Last stock: model being replaced": "Yes",
+              "Replacement filter": "Price TBC",
+              "Warranty": "2 years, service centre",
+              "Size (Length × Width × Height)": "38 × 7.6 × 7.6 cm",
+              "Battery": "Up to 20 min low; 9 min high"
+            },
+            "offers": [
+              {
+                "shop": "Best Denki",
+                "url": "https://www.bestdenki.com.sg/1106154-karcher-handheld-vacuum-cvh-anniversary-edition.html",
+                "price": 130,
+                "priceNote": "Free collection; S$10 standard delivery",
+                "stock": "In stock",
+                "checked": "2026-10-30 SGT"
+              }
+            ],
+            "videoNote": "Kärcher Anniversary demonstration · Russian"
+          }
+        },
+        {
+          "label": "Shark WV204",
+          "name": "Shark Wandvac WV204 Black",
+          "kind": "product",
+          "tier": "Splurge",
+          "price": 199,
+          "images": [
+            {
+              "src": "/images/whole-home/handheld-vacuum-shark-wv204-official.webp",
+              "caption": "Shark Wandvac WV204 Black",
+              "kind": "product",
+              "source": "https://sharkninja.sg/products/shark-cordfree-handheld-vacuum-wv203?variant=52474115228019",
+              "width": 1600,
+              "height": 1600
+            }
+          ],
+          "headline": "Charging dock keeps it easy to grab",
+          "love": "Dock storage, one-button emptying and a wider upholstery attachment.",
+          "watchOut": "Short runtime and overseas Wandvac-family reports of charging failures.",
+          "bestFor": "Frequent brief clean-ups where dock convenience matters",
+          "pros": [
+            "Charging dock included",
+            "Upholstery tool included",
+            "About 2.5-hour recharge"
+          ],
+          "cons": [
+            "Approximately 10-minute runtime",
+            "Tiny 100 ml container",
+            "Battery replacement support unverified"
+          ],
+          "ownersSay": [
+            {
+              "text": "Three visible exact WV204 owner comments: February and May 2022, March 2026. Praise quick small-area/car cleaning; May 2022 owner accepts short battery life. No documented long-term follow-up.",
+              "source": "https://www.courts.com.sg/shark-cordless-handheld-vacuum---black-wv204-IP170645.html",
+              "when": "February/May 2022 and March 2026"
+            }
+          ],
+          "offers": [
+            {
+              "shop": "Best Denki",
+              "price": 199,
+              "priceNote": "collected or S$209 with published standard delivery",
+              "stock": "Ready stock — 14 left when checked",
+              "checked": "2026-10-29 12:18 SGT",
+              "url": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html"
+            },
+            {
+              "shop": "Harvey Norman",
+              "price": 199,
+              "priceNote": "listed before delivery",
+              "stock": "Stock unverified",
+              "checked": "2026-10-23",
+              "url": "https://www.harveynorman.com.sg/home-appliances/vacuum-cleaners-en-2/stick-and-handheld-vacuum-cleaners/shark-cordfree-handheld-vacuum-black-wv204.html"
+            }
+          ],
+          "buyTiming": "Wait for 11.11 or 12.12; target S$179 collected. Target is not an advertised offer.",
+          "confidence": {
+            "level": "Limited",
+            "why": "Exact local owners praise brief clean-ups. Current local support is verified, but long-term durability and comparative failure rates are unproven."
+          },
+          "specs": {
+            "Collected price": "S$199",
+            "Published standard delivered total": "S$209",
+            "Verified stock listing": "Ready stock",
+            "Model status": "Listed in current Singapore range",
+            "Size W × D × H (cm)": "9.5 × 22 × 38.5, official listed dimensions",
+            "Weight": "0.64 kg",
+            "Dust container": "100 ml",
+            "Power settings": "One",
+            "Maximum low-setting runtime": "10 minutes, single setting",
+            "Maximum high-setting runtime": "10 minutes, single setting",
+            "Full recharge": "About 2.5 hours",
+            "Charging connection": "Dedicated dock",
+            "Charging dock included": "Yes",
+            "Cleaning attachments": "Duster crevice and upholstery tools",
+            "Filter specification": "HEPA listed by Singapore brand",
+            "Washable filter": "Yes",
+            "Liquid pickup": "No",
+            "Manufacturer sound power": "Not stated",
+            "Local replacement-filter price": "WV203-family filter listed S$7.99; confirm WV204 fit",
+            "Local replacement-battery price": "Not stated",
+            "Singapore warranty": "Two-year limited replacement warranty",
+            "Provider": "SharkNinja Singapore"
+          },
+          "id": "04a1346c-1958-47ed-a4c4-703225239207",
+          "display": {
+            "headline": "Charging dock for quick clean-ups",
+            "love": "Charging dock, one-button emptying and upholstery tool.",
+            "watchOut": "About 10 minutes per charge. Long-term durability evidence limited.",
+            "bestFor": "Frequent clean-ups with dock storage",
+            "buyTiming": "11.11 or 12.12; target S$179 collected. Target is not an advertised offer."
+          },
+          "table": {
+            "love": "Charging dock and upholstery tool",
+            "watchOut": "10-minute runtime; limited durability evidence",
+            "bestFor": "Frequent brief clean-ups"
+          },
+          "highlights": [
+            {
+              "icon": "power",
+              "value": "10 min",
+              "label": "Runtime"
+            },
+            {
+              "icon": "weight",
+              "value": "0.64 kg",
+              "label": "Weight"
+            },
+            {
+              "icon": "volume",
+              "value": "100 ml",
+              "label": "Dust container"
+            }
+          ],
+          "tableSpecs": {
+            "Model status": "Current Singapore range",
+            "Size W × D × H (cm)": "9.5 × 22 × 38.5 cm",
+            "Maximum low-setting runtime": "10 minutes; single setting",
+            "Maximum high-setting runtime": "10 minutes; single setting",
+            "Local replacement-filter price": "S$7.99 WV203 filter; WV204 fit unverified",
+            "Singapore warranty": "2-year limited replacement warranty",
+            "Verified stock listing": "Ready stock"
+          },
+          "legacyImages": [
+            {
+              "src": "/images/whole-home/handheld-vacuum-shark-wv204-1.webp",
+              "caption": "Shark Wandvac WV204 Black · product image 1 · Best Denki",
+              "kind": "product",
+              "source": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html"
+            },
+            {
+              "src": "/images/whole-home/handheld-vacuum-shark-wv204-2.webp",
+              "caption": "Shark Wandvac WV204 Black · product image 2 · Best Denki",
+              "kind": "product",
+              "source": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html"
+            }
+          ],
+          "video": {
+            "youtubeId": "e_IQr7F4ib4",
+            "title": "Wandvac WV203: brand demonstration",
+            "channel": "Shark Ninja Singapore",
+            "note": "WV203 near-model · official demonstration; exact WV204 independent review not found",
+            "kind": "brand demonstration",
+            "checked": "2026-10-29",
+            "thumbnail": "/images/videos/e_IQr7F4ib4.webp",
+            "thumbnailSource": "https://img.youtube.com/vi/e_IQr7F4ib4/hqdefault.jpg",
+            "scope": "near-model",
+            "displayAllowed": false
+          },
+          "publication": {
+            "stock": {
+              "verified": true,
+              "status": "ready",
+              "source": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html",
+              "checked": "2026-10-30 SGT",
+              "evidence": "14 left in fresh exact retailer HTML"
+            },
+            "owner": {
+              "exactModel": true,
+              "source": "https://www.courts.com.sg/shark-cordless-handheld-vacuum---black-wv204-IP170645.html",
+              "checked": "2026-10-29"
+            }
+          },
+          "shopper": {
+            "headline": "Charging stand and sofa tool",
+            "love": "Stored charged and ready to grab.",
+            "watchOut": "Around 10 minutes of cleaning.",
+            "bestFor": "Frequent sofa and car clean-ups",
+            "ownerReviews": "Mostly good",
+            "ownerSummary": "Owners like quick car and small-area cleaning.",
+            "priceNote": "Free collection; delivery S$209 total.",
+            "chips": [
+              "Battery up to 10 min",
+              "Charge time about 2.5 hours",
+              "Dust container 100 ml"
+            ],
+            "specs": {
+              "Dust container": "100 ml",
+              "Charge time": "About 2.5 hours",
+              "Noise": "Not stated",
+              "Works with": "Included charging stand",
+              "Charging stand included": "Yes",
+              "Sofa tool included": "Yes",
+              "Washable filter": "Yes",
+              "Picks up liquids": "No",
+              "Price": "S$199",
+              "Price with delivery": "S$209",
+              "In stock": "Yes",
+              "Last stock: model being replaced": "No",
+              "Replacement filter": "Price TBC",
+              "Warranty": "2 years, replacement for covered faults",
+              "Size (Length × Width × Height)": "38.5 × 22 × 9.5 cm",
+              "Battery": "Up to 10 min (one power level)"
+            },
+            "offers": [
+              {
+                "shop": "Best Denki",
+                "url": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html",
+                "price": 199,
+                "priceNote": "Free collection; S$10 standard delivery",
+                "stock": "In stock",
+                "checked": "2026-10-30 SGT"
+              }
+            ],
+            "videoNote": "Shark WV203 demonstration · similar model"
+          }
+        }
+      ],
+      "legacySlugs": [
+        "whole-home-handheld-vacuum"
+      ],
+      "qty": 1,
+      "budget": 300,
+      "salesNote": "11.11, Black Friday, 12.12; handheld-specific deals unconfirmed",
+      "answer10s": "Choose the Kärcher Anniversary at S$130 for small clean-ups if you accept remaining stock of a discontinued edition. Choose the S$199 Shark for its charging dock and upholstery tool.",
+      "summary": "Compared compact cordless handheld vacuums for crumbs, shelves, sofa gaps and occasional car cleaning. These two have explicit Singapore stock listings; exact-model long-term reliability evidence remains limited.",
+      "tiers": [
+        {
+          "name": "Budget",
+          "min": 50,
+          "max": 99
+        },
+        {
+          "name": "Mid",
+          "min": 100,
+          "max": 179
+        },
+        {
+          "name": "Splurge",
+          "min": 180,
+          "max": 300
+        }
+      ],
+      "contractorNote": null,
+      "fullReport": null,
+      "specGroups": [
+        {
+          "group": "Price & stock",
+          "rows": [
+            "Collected price",
+            "Published standard delivered total",
+            "Verified stock listing",
+            "Model status"
+          ]
+        },
+        {
+          "group": "Size & fit",
+          "rows": [
+            "Size W × D × H (cm)",
+            "Weight",
+            "Dust container"
+          ]
+        },
+        {
+          "group": "Performance",
+          "rows": [
+            "Power settings",
+            "Maximum low-setting runtime",
+            "Maximum high-setting runtime"
+          ]
+        },
+        {
+          "group": "Charging",
+          "rows": [
+            "Full recharge",
+            "Charging connection",
+            "Charging dock included"
+          ]
+        },
+        {
+          "group": "Tools",
+          "rows": [
+            "Cleaning attachments"
+          ]
+        },
+        {
+          "group": "Filters",
+          "rows": [
+            "Filter specification",
+            "Washable filter"
+          ]
+        },
+        {
+          "group": "Cleaning",
+          "rows": [
+            "Liquid pickup"
+          ]
+        },
+        {
+          "group": "Noise",
+          "rows": [
+            "Manufacturer sound power"
+          ]
+        },
+        {
+          "group": "Running costs",
+          "rows": [
+            "Local replacement-filter price"
+          ]
+        },
+        {
+          "group": "Repairability",
+          "rows": [
+            "Local replacement-battery price"
+          ]
+        },
+        {
+          "group": "Warranty & support",
+          "rows": [
+            "Singapore warranty",
+            "Provider"
+          ]
+        }
+      ],
+      "roughBudget": {
+        "min": 150,
+        "max": 400,
+        "source": "Rough guess, to research"
+      },
+      "display": {
+        "answer10s": "Shark WV204 adds a charging dock and a two-year local replacement warranty at S$199. Kärcher Anniversary saves S$69, but is discontinued clearance. Neither has dependable comparative failure-rate data.",
+        "summary": "Two compact handhelds below S$300. Shark is preferred for current Singapore support; Kärcher is a verified-stock clearance alternative. Long-term reliability remains uncertain."
+      },
+      "researchHistory": [
+        {
+          "superseded": "2026-10-29 audit round 2",
+          "status": "voting",
+          "answer10s": "Choose the Kärcher Anniversary at S$130 for small clean-ups if you accept remaining stock of a discontinued edition. Choose the S$199 Shark for its charging dock and upholstery tool.",
+          "summary": "Compared compact cordless handheld vacuums for crumbs, shelves, sofa gaps and occasional car cleaning. These two have explicit Singapore stock listings; exact-model long-term reliability evidence remains limited.",
+          "display": {
+            "answer10s": "Kärcher: S$130, USB-C, discontinued clearance stock. Shark: S$199, charging dock and upholstery tool. Both suit brief clean-ups.",
+            "summary": "Compact cordless handhelds for crumbs, shelves, sofa gaps and occasional car cleaning. Long-term exact-model reliability evidence is limited."
+          },
+          "mustKnow": [
+            "Small clean-ups rather than whole-floor cleaning",
+            "Both use small dust containers",
+            "Confirm battery and filter support",
+            "Keep renovation dust and liquids away"
+          ],
+          "contractorNote": null,
+          "specGroups": [
+            {
+              "group": "Purchase",
+              "rows": [
+                "Collected price",
+                "Published standard delivered total",
+                "Verified stock listing",
+                "Model status"
+              ]
+            },
+            {
+              "group": "Size & fit",
+              "rows": [
+                "Size W × D × H (cm)",
+                "Weight",
+                "Dust container"
+              ]
+            },
+            {
+              "group": "Performance",
+              "rows": [
+                "Power settings",
+                "Maximum low-setting runtime",
+                "Maximum high-setting runtime"
+              ]
+            },
+            {
+              "group": "Charging",
+              "rows": [
+                "Full recharge",
+                "Charging connection",
+                "Charging dock included"
+              ]
+            },
+            {
+              "group": "Tools",
+              "rows": [
+                "Cleaning attachments"
+              ]
+            },
+            {
+              "group": "Filters",
+              "rows": [
+                "Filter specification",
+                "Washable filter"
+              ]
+            },
+            {
+              "group": "Cleaning",
+              "rows": [
+                "Liquid pickup"
+              ]
+            },
+            {
+              "group": "Noise",
+              "rows": [
+                "Manufacturer sound power"
+              ]
+            },
+            {
+              "group": "Running costs",
+              "rows": [
+                "Local replacement-filter price"
+              ]
+            },
+            {
+              "group": "Repairability",
+              "rows": [
+                "Local replacement-battery price"
+              ]
+            },
+            {
+              "group": "Warranty & support",
+              "rows": [
+                "Singapore warranty",
+                "Provider"
+              ]
+            }
+          ],
+          "options": [
+            {
+              "id": "64021ad1-9b94-4950-a24e-972bb4b94b65",
+              "price": 130,
+              "display": {
+                "headline": "USB-C charging and two power settings",
+                "love": "Compact handheld with USB-C charging and two settings.",
+                "watchOut": "Discontinued edition. Battery and filter costs unverified.",
+                "bestFor": "Lower-cost small clean-ups",
+                "buyTiming": "11.11 price check; target S$120 collected. Shark is the stock fallback."
+              },
+              "table": {
+                "love": "USB-C charging; two power settings",
+                "watchOut": "Discontinued; replacement-part costs unverified",
+                "bestFor": "Lower-cost small clean-ups"
+              },
+              "tableSpecs": {
+                "Model status": "Discontinued; remaining new stock",
+                "Weight": "0.52 kg; official documents conflict",
+                "Local replacement-filter price": "Not stated",
+                "Singapore warranty": "2 years; qualifying faults",
+                "Provider": "Kärcher Singapore; servicing by DWS"
+              },
+              "specs": {
+                "Collected price": "S$130",
+                "Published standard delivered total": "S$140",
+                "Verified stock listing": "Low stock",
+                "Model status": "Discontinued edition, remaining new stock",
+                "Size W × D × H (cm)": "7.6 × 38 × 7.6",
+                "Weight": "0.52 kg in manual; datasheet conflicts",
+                "Dust container": "150 ml",
+                "Power settings": "Two",
+                "Maximum low-setting runtime": "20 minutes",
+                "Maximum high-setting runtime": "9 minutes",
+                "Full recharge": "About 4 hours",
+                "Charging connection": "USB-C",
+                "Charging dock included": "No",
+                "Cleaning attachments": "Combined crevice and brush tool",
+                "Filter specification": "HEPA 12 in manual",
+                "Washable filter": "Yes",
+                "Liquid pickup": "No",
+                "Manufacturer sound power": "78 dB(A)",
+                "Local replacement-filter price": "Not stated",
+                "Local replacement-battery price": "Not stated",
+                "Singapore warranty": "Two years, qualifying faults",
+                "Provider": "Kärcher Singapore; consumer servicing by DWS"
+              },
+              "ownersSay": [
+                {
+                  "text": "Substantial exact-model long-term owner evidence was not found. Lowyat users discussing compact Kärchers questioned future battery availability; this is a general concern, not a confirmed defect in this edition.",
+                  "source": "https://forum.lowyat.net/topic/5566347",
+                  "when": "May 2026"
+                }
+              ],
+              "offers": [
+                {
+                  "shop": "Best Denki",
+                  "price": 130,
+                  "priceNote": "collected or S$140 with published standard delivery",
+                  "stock": "Low stock",
+                  "checked": "2026-10-23 at 14:23 SGT",
+                  "url": "https://www.bestdenki.com.sg/1106154-karcher-handheld-vacuum-cvh-anniversary-edition.html"
+                }
+              ],
+              "buyTiming": "Wait for 11.11 price check; target S$120 collected. If stock disappears, consider option B.",
+              "confidence": {
+                "level": "Limited",
+                "why": "few exact-model long-term reports and unverified replacement-part costs"
+              },
+              "video": {
+                "youtubeId": "rzN-Ye4L3ts",
+                "title": "CVH Anniversary: brand demonstration",
+                "channel": "Kärcher Kazakhstan",
+                "note": "Brand demonstration · Russian",
+                "kind": "brand demonstration",
+                "checked": "2026-10-29",
+                "thumbnail": "/images/videos/rzN-Ye4L3ts.webp",
+                "thumbnailSource": "https://img.youtube.com/vi/rzN-Ye4L3ts/hqdefault.jpg",
+                "scope": "exact"
+              }
+            },
+            {
+              "id": "04a1346c-1958-47ed-a4c4-703225239207",
+              "price": 199,
+              "display": {
+                "headline": "Charging dock and upholstery tool",
+                "love": "Charging dock, one-button emptying and upholstery tool.",
+                "watchOut": "About 10-minute runtime. Overseas family reports include charging failures.",
+                "bestFor": "Frequent brief clean-ups",
+                "buyTiming": "11.11 or 12.12; target S$179 collected. Target is not an advertised offer."
+              },
+              "table": {
+                "love": "Charging dock and upholstery tool",
+                "watchOut": "Short runtime; overseas charging complaints",
+                "bestFor": "Frequent brief clean-ups"
+              },
+              "tableSpecs": {
+                "Model status": "Current Singapore range",
+                "Size W × D × H (cm)": "9.5 × 22 × 38.5 cm",
+                "Maximum low-setting runtime": "10 minutes; single setting",
+                "Maximum high-setting runtime": "10 minutes; single setting",
+                "Local replacement-filter price": "S$7.99 WV203 filter; WV204 fit unverified",
+                "Singapore warranty": "2-year limited replacement warranty"
+              },
+              "specs": {
+                "Collected price": "S$199",
+                "Published standard delivered total": "S$209",
+                "Verified stock listing": "Ready stock",
+                "Model status": "Listed in current Singapore range",
+                "Size W × D × H (cm)": "9.5 × 22 × 38.5, official listed dimensions",
+                "Weight": "0.64 kg",
+                "Dust container": "100 ml",
+                "Power settings": "One",
+                "Maximum low-setting runtime": "10 minutes, single setting",
+                "Maximum high-setting runtime": "10 minutes, single setting",
+                "Full recharge": "About 2.5 hours",
+                "Charging connection": "Dedicated dock",
+                "Charging dock included": "Yes",
+                "Cleaning attachments": "Duster crevice and upholstery tools",
+                "Filter specification": "HEPA listed by Singapore brand",
+                "Washable filter": "Yes",
+                "Liquid pickup": "No",
+                "Manufacturer sound power": "Not stated",
+                "Local replacement-filter price": "WV203-family filter listed S$7.99; confirm WV204 fit",
+                "Local replacement-battery price": "Not stated",
+                "Singapore warranty": "Two-year limited replacement warranty",
+                "Provider": "SharkNinja Singapore"
+              },
+              "ownersSay": [
+                {
+                  "text": "Singapore retailer comments praise convenient small-area and car cleaning.",
+                  "source": "https://www.courts.com.sg/shark-cordless-handheld-vacuum---black-wv204-IP170645.html",
+                  "when": "March 2026"
+                },
+                {
+                  "text": "Australian WV203 owners report mixed experiences, including charging problems; regional version and warranty differ.",
+                  "source": "https://www.productreview.com.au/listings/shark-wv203anz",
+                  "when": "accessed October 2026"
+                }
+              ],
+              "offers": [
+                {
+                  "shop": "Best Denki",
+                  "price": 199,
+                  "priceNote": "collected or S$209 with published standard delivery",
+                  "stock": "Ready stock",
+                  "checked": "2026-10-23 at 14:23 SGT",
+                  "url": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html"
+                },
+                {
+                  "shop": "Harvey Norman",
+                  "price": 199,
+                  "priceNote": "listed before delivery",
+                  "stock": "Stock unverified",
+                  "checked": "2026-10-23",
+                  "url": "https://www.harveynorman.com.sg/home-appliances/vacuum-cleaners-en-2/stick-and-handheld-vacuum-cleaners/shark-cordfree-handheld-vacuum-black-wv204.html"
+                }
+              ],
+              "buyTiming": "Wait for 11.11 or 12.12; target S$179 collected. Target is not an advertised offer.",
+              "confidence": {
+                "level": "Limited",
+                "why": "positive local reports, mixed overseas family reports and little exact Singapore durability evidence"
+              },
+              "video": {
+                "youtubeId": "e_IQr7F4ib4",
+                "title": "Wandvac WV203: brand demonstration",
+                "channel": "Shark Ninja Singapore",
+                "note": "Related WV203 model; exact WV204 review unavailable",
+                "kind": "brand demonstration",
+                "checked": "2026-10-29",
+                "thumbnail": "/images/videos/e_IQr7F4ib4.webp",
+                "thumbnailSource": "https://img.youtube.com/vi/e_IQr7F4ib4/hqdefault.jpg",
+                "scope": "near-model"
+              }
+            }
+          ]
+        }
+      ],
+      "publicationPolicy": "stock-owner-video-v1",
+      "researchedAt": "2026-10-29",
+      "requiredBrands": [
+        "Kärcher",
+        "Shark",
+        "Airbot",
+        "Xiaomi"
+      ],
+      "publicationHolds": [],
+      "brandReview": [
+        {
+          "brand": "Kärcher",
+          "reason": "CVH Anniversary: S$130, low stock and two-year local warranty; discontinued clearance.",
+          "source": "https://www.bestdenki.com.sg/1106154-karcher-handheld-vacuum-cvh-anniversary-edition.html"
+        },
+        {
+          "brand": "Shark",
+          "reason": "WV204: S$199, ready stock, dock and two-year local replacement warranty; preferred for support.",
+          "source": "https://sharkninja.sg/products/shark-cordfree-handheld-vacuum-wv203?variant=52474115228019"
+        },
+        {
+          "brand": "Airbot",
+          "reason": "Supersonics 4.0 has a 1.3 kg handle; the compact finalists weigh 0.52–0.64 kg.",
+          "source": "https://www.fairprice.com.sg/product/airbot-supersonics-40-multi-purpose-cordless-vacuum-cleaner",
+          "details": "Exact owner is satisfied; do not call brand unreliable. Official page stock ambiguous; official FairPrice offer out of stock. Stock not needed to justify format exclusion.",
+          "sources": [
+            "https://airbot.sg/products/airbot-supersonics-4-0",
+            "https://www.fairprice.com.sg/product/airbot-supersonics-40-multi-purpose-cordless-vacuum-cleaner",
+            "https://www.reddit.com/r/askSingapore/comments/1lls5pj/airbot_vacuum_cleaner_vs_other_vacuum/",
+            "https://airbot.sg/pages/warranty-1"
+          ]
+        },
+        {
+          "brand": "Xiaomi",
+          "reason": "Mi Mini costs S$55; selected-seller manufacturer warranty and replacement-battery support remain unverified.",
+          "source": "https://dasher.sg/products/xiaomi-vacuum-cleaner-mini",
+          "details": "Ready stock explicitly listed by Dasher. Exact owner reports include charging failures, but evidence cannot establish a higher failure rate. Seller filter bundle exists. Do not say unavailable or no owner reports.",
+          "sources": [
+            "https://dasher.sg/products/xiaomi-vacuum-cleaner-mini",
+            "https://www.mi.com/sg/support/faq/details/KA-07624/",
+            "https://www.mi.com/sg/support/warranty/",
+            "https://indifference.jp/xiaomi-mi-vacuum-cleaner-mini/",
+            "https://www.reddit.com/r/Xiaomi/comments/oxuixd/xiaomi_mi_vacuum_cleaner_mini_problem/"
+          ]
+        },
+        {
+          "brand": "Bosch",
+          "reason": "Official BHN20L offer is pre-order only.",
+          "source": "https://www.bosch-home.com.sg/en/product/vacuum-cleaners/rechargeable-handheld-vacuum-cleaners/BHN20L",
+          "sources": [
+            "https://www.bosch-home.com.sg/en/product/vacuum-cleaners/rechargeable-handheld-vacuum-cleaners/BHN20L"
+          ]
+        }
+      ],
+      "researchSources": [
+        {
+          "label": "Best Denki collection and delivery",
+          "url": "https://www.bestdenki.com.sg/online-collection-delivery-services",
+          "checked": "2026-10-29"
+        },
+        {
+          "label": "Kärcher local warranty and servicing",
+          "url": "https://www.kaercher.com/sg/register-your-karcher-product.html",
+          "checked": "2026-10-29"
+        },
+        {
+          "label": "Shark regional manual and warranty",
+          "url": "https://cdn.shopify.com/s/files/1/0282/2625/6999/files/WV200SM_Series_IB_EN_CH_MY_MP_Mv4_LOW.pdf?v=1759115059",
+          "checked": "2026-10-29"
+        }
+      ],
+      "researchMissing": [],
+      "shopper": {
+        "answer10s": "Shark WV204: S$199 with a charging stand and sofa tool. Kärcher: S$130, a common USB-C charging cable and longer battery life.",
+        "alsoConsidered": [
+          {
+            "brand": "Airbot",
+            "reason": "Heavier to hold"
+          },
+          {
+            "brand": "Xiaomi",
+            "reason": "no charging stand"
+          },
+          {
+            "brand": "Bosch",
+            "reason": "not in stock"
+          }
+        ],
+        "mustKnow": [
+          "For crumbs, shelves and sofa gaps.",
+          "Dry dirt only; no liquids or renovation dust."
+        ],
+        "groups": [
+          {
+            "group": "Size & fit",
+            "rows": [
+              "Size (Length × Width × Height)",
+              "Dust container"
+            ]
+          },
+          {
+            "group": "Performance",
+            "rows": [
+              "Battery",
+              "Charge time",
+              "Noise"
+            ]
+          },
+          {
+            "group": "Features",
+            "rows": [
+              "Works with",
+              "Charging stand included",
+              "Sofa tool included",
+              "Washable filter",
+              "Picks up liquids"
+            ]
+          },
+          {
+            "group": "Price & stock",
+            "rows": [
+              "Price",
+              "Price with delivery",
+              "In stock",
+              "Last stock: model being replaced"
+            ]
+          },
+          {
+            "group": "Running costs",
+            "rows": [
+              "Replacement filter"
+            ]
+          },
+          {
+            "group": "Warranty & support",
+            "rows": [
+              "Warranty"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "LV08",
+      "slug": "air-purifier",
+      "area": "living",
+      "category": "Air & water",
+      "group": "loose",
+      "priority": "nice",
+      "title": "Air purifier",
+      "question": "Which air purifier for the living room?",
+      "stage": "later",
+      "status": "draft",
+      "candidates": [
+        "Levoit (TBC)"
+      ],
+      "mustKnow": [
+        "Needs a permanent socket and space for airflow"
+      ],
+      "options": [],
+      "roughBudget": {
+        "min": 200,
+        "max": 500,
+        "source": "Rough guess, to research"
+      },
+      "legacySlugs": [
+        "living-air-purifier"
+      ],
+      "space": {
+        "label": "Living area",
+        "width": 295,
+        "depth": 388,
+        "source": "Approximate room dimensions",
+        "opening": true,
+        "measured": false
+      }
+    },
+    {
+      "id": "GW07",
+      "slug": "post-renovation-cleaning",
+      "area": "whole-home",
+      "category": "Services",
+      "group": "loose",
+      "priority": "essential",
+      "title": "Post-renovation cleaning",
+      "question": "Which cleaning company?",
+      "stage": "move_in",
+      "status": "draft",
+      "candidates": [
+        "DW",
+        "Be Mitey Clean"
+      ],
+      "roughBudget": {
+        "min": 500,
+        "max": 500,
+        "source": "Group chat"
+      },
+      "contractorNote": "Check whether the contractor's quote already includes final cleaning (brief item GW07) so we don't pay twice.",
+      "mustKnow": [
+        "Book for after works finish, before furniture deliveries"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "whole-home-post-renovation-cleaning"
+      ]
+    },
+    {
+      "id": "KYF03",
+      "slug": "fan-with-light",
+      "area": "ky-room",
+      "category": "Fans & ventilation",
+      "group": "fittings",
+      "priority": "essential",
+      "title": "Bedroom fan with light",
+      "question": "Which fan for KY's room?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [
+        "KDK F40GP 100 cm (requested)"
+      ],
+      "roughBudget": {
+        "min": 500,
+        "max": 500,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "contractorNote": "Installer must confirm wall clearance and height for a 100 cm fan.",
+      "mustKnow": [
+        "Brief: centred in a 250 cm room, blade tips are only about 75 cm from the walls"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "ky-room-bedroom-fan-with-light"
+      ],
+      "space": {
+        "label": "Room width",
+        "width": 250,
+        "source": "Room width from brief; depth unmeasured",
+        "measured": false
+      }
+    },
+    {
+      "id": "KYF05",
+      "slug": "ambient-cove-led",
+      "area": "ky-room",
+      "category": "Lighting",
+      "group": "fittings",
+      "priority": "nice",
+      "title": "Ambient / cove LED",
+      "question": "Ambient LED in KY's room?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [
+        "Cove/ambient LED",
+        "None"
+      ],
+      "roughBudget": {
+        "min": 0,
+        "max": 350,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "contractorNote": "Accessible drivers; useful working light.",
+      "mustKnow": [],
+      "options": [],
+      "legacySlugs": [
+        "ky-room-ambient-cove-led"
+      ]
+    },
+    {
+      "id": "KY06",
+      "slug": "bed-frame",
+      "area": "ky-room",
+      "category": "Beds & curtains",
+      "group": "loose",
+      "priority": "essential",
+      "title": "Bed frame",
+      "question": "Which super-single storage bed?",
+      "stage": "move_in",
+      "status": "draft",
+      "candidates": [
+        "Hydraulic storage bed 108 × 199 cm"
+      ],
+      "roughBudget": {
+        "min": 500,
+        "max": 500,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "mustKnow": [
+        "Hydraulic lift-up, not drawers"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "ky-room-bed-frame"
+      ]
+    },
+    {
+      "id": "KY07",
+      "slug": "mattress",
+      "area": "ky-room",
+      "category": "Beds & curtains",
+      "group": "loose",
+      "priority": "essential",
+      "title": "Mattress",
+      "question": "Which super-single mattress?",
+      "stage": "move_in",
+      "sales": [
+        "11.11",
+        "black_friday",
+        "12.12"
+      ],
+      "status": "draft",
+      "candidates": [
+        "Branded, from JB"
+      ],
+      "roughBudget": {
+        "min": 650,
+        "max": 650,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "mustKnow": [
+        "Must suit the hydraulic frame's lift mechanism"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "ky-room-mattress"
+      ]
+    },
+    {
+      "id": "KXF03",
+      "slug": "fan-with-light",
+      "area": "kx-room",
+      "category": "Fans & ventilation",
+      "group": "fittings",
+      "priority": "essential",
+      "title": "Bedroom fan with light",
+      "question": "Which small fan for KX's room?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [
+        "Small locally supported fan with light"
+      ],
+      "roughBudget": {
+        "min": 400,
+        "max": 400,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "contractorNote": "Fit and mounting check.",
+      "mustKnow": [],
+      "options": [],
+      "legacySlugs": [
+        "kx-room-bedroom-fan-with-light"
+      ]
+    },
+    {
+      "id": "KXF04",
+      "slug": "warm-led-downlights",
+      "area": "kx-room",
+      "category": "Lighting",
+      "group": "fittings",
+      "priority": "nice",
+      "title": "Warm LED / downlights",
+      "question": "Extra warm lighting in KX's room?",
+      "stage": "contractor",
+      "status": "draft",
+      "candidates": [
+        "Warm LED/spot/downlights",
+        "None"
+      ],
+      "roughBudget": {
+        "min": 0,
+        "max": 350,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "contractorNote": "Accessible supply.",
+      "mustKnow": [],
+      "options": [],
+      "legacySlugs": [
+        "kx-room-warm-led-downlights"
+      ]
+    },
+    {
+      "id": "KXF05",
+      "slug": "blackout-curtains",
+      "area": "kx-room",
+      "category": "Beds & curtains",
+      "group": "loose",
+      "priority": "essential",
+      "title": "Blackout curtains",
+      "question": "Which manual blackout curtains and track?",
+      "stage": "move_in",
+      "status": "draft",
+      "candidates": [
+        "Manual blackout curtains + track"
+      ],
+      "roughBudget": {
+        "min": 450,
+        "max": 450,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "mustKnow": [
+        "Needed for privacy at move-in (brief)",
+        "Check edge light leakage and bay-window clearance"
+      ],
+      "options": [],
+      "legacySlugs": [
+        "kx-room-blackout-curtains"
+      ]
+    },
+    {
+      "id": "KX05",
+      "slug": "bed-frame",
+      "area": "kx-room",
+      "category": "Beds & curtains",
+      "group": "loose",
+      "priority": "essential",
+      "title": "Bed frame",
+      "question": "Which super-single bed frame?",
+      "stage": "move_in",
+      "status": "draft",
+      "candidates": [
+        "TBC"
+      ],
+      "roughBudget": {
+        "min": 450,
+        "max": 450,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "mustKnow": [],
+      "options": [],
+      "legacySlugs": [
+        "kx-room-bed-frame"
+      ]
+    },
+    {
+      "id": "KX06",
+      "slug": "mattress",
+      "area": "kx-room",
+      "category": "Beds & curtains",
+      "group": "loose",
+      "priority": "essential",
+      "title": "Mattress",
+      "question": "Which super-single mattress?",
+      "stage": "move_in",
+      "sales": [
+        "11.11",
+        "black_friday",
+        "12.12"
+      ],
+      "status": "draft",
+      "candidates": [
+        "Branded, from JB"
+      ],
+      "roughBudget": {
+        "min": 650,
+        "max": 650,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "mustKnow": [],
+      "options": [],
+      "legacySlugs": [
+        "kx-room-mattress"
+      ]
+    },
+    {
+      "id": "KS01",
+      "slug": "bed-frame",
+      "area": "ks-room",
+      "category": "Beds & curtains",
+      "group": "loose",
+      "priority": "essential",
+      "title": "Bed frame",
+      "question": "Which queen bed frame?",
+      "stage": "move_in",
+      "status": "draft",
+      "candidates": [
+        "TBC"
+      ],
+      "roughBudget": {
+        "min": 650,
+        "max": 650,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "mustKnow": [],
+      "options": [],
+      "legacySlugs": [
+        "ks-room-bed-frame"
+      ]
+    },
+    {
+      "id": "KS02",
+      "slug": "mattress",
+      "area": "ks-room",
+      "category": "Beds & curtains",
+      "group": "loose",
+      "priority": "essential",
+      "title": "Mattress",
+      "question": "Which queen mattress?",
+      "stage": "move_in",
+      "sales": [
+        "11.11",
+        "black_friday",
+        "12.12"
+      ],
+      "status": "draft",
+      "candidates": [
+        "Branded, from JB"
+      ],
+      "roughBudget": {
+        "min": 1000,
+        "max": 1000,
+        "source": "Brief allowance, 6 Oct"
+      },
+      "mustKnow": [],
+      "options": [],
+      "legacySlugs": [
+        "ks-room-mattress"
+      ]
+    }
+  ]
+}

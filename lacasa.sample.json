@@ -1,0 +1,472 @@
+{
+  "version": "3.0",
+  "sample": true,
+  "note": "Made-up test content. Shown to the authenticated owner in sample mode and in the read-only Claude audit. Never counted in the list or totals.",
+  "decisions": [
+    {
+      "id": "SAMPLE-FRIDGE",
+      "slug": "sample-fridge",
+      "sample": true,
+      "area": "kitchen",
+      "category": "Kitchen & laundry",
+      "group": "loose",
+      "priority": "essential",
+      "title": "SAMPLE · Fridge",
+      "question": "Which fridge? (sample data)",
+      "stage": "move_in",
+      "sales": [
+        "11.11",
+        "12.12"
+      ],
+      "status": "voting",
+      "qty": 1,
+      "budget": 1200,
+      "answer10s": "Pick Beta: quiet and about S$25 a year cheaper to run than Alpha. Choose Gamma only if the niche measures wider than 70 cm.",
+      "summary": "Made-up models to test voting and Compare. Not real products or prices.",
+      "tiers": [
+        {
+          "name": "Budget",
+          "min": 800,
+          "max": 1000
+        },
+        {
+          "name": "Mid",
+          "min": 1000,
+          "max": 1400
+        },
+        {
+          "name": "Splurge",
+          "min": 1400,
+          "max": null
+        }
+      ],
+      "mustKnow": [
+        "Sample: current fridge 70 × 75 cm, 180 cm high fits",
+        "Sample: leave 5 cm at the back for ventilation"
+      ],
+      "contractorNote": null,
+      "fullReport": null,
+      "specGroups": [
+        {
+          "group": "Size & fit",
+          "rows": [
+            "Size W × D × H (cm)",
+            "Capacity (L)",
+            "Doors"
+          ]
+        },
+        {
+          "group": "Running costs",
+          "rows": [
+            "Energy ticks",
+            "Yearly energy (kWh)"
+          ]
+        },
+        {
+          "group": "Features",
+          "rows": [
+            "Ice maker",
+            "Inverter compressor"
+          ]
+        },
+        {
+          "group": "Warranty & support",
+          "rows": [
+            "Warranty",
+            "SG service centre"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "SAMPLE-FRIDGE-A",
+          "label": "Alpha",
+          "name": "Samplebrand Alpha 400",
+          "kind": "product",
+          "tier": "Budget",
+          "price": 899,
+          "images": [],
+          "headline": "Cheapest that fits, nothing fancy",
+          "love": "Leaves S$300 for other things and fits with room to spare.",
+          "watchOut": "Owners say it hums at night; only 2 energy ticks.",
+          "bestFor": "Keeping the budget tight",
+          "pros": [
+            "Lowest price",
+            "Fits the space with room to spare",
+            "Simple to clean"
+          ],
+          "cons": [
+            "Smaller freezer",
+            "Louder at night",
+            "Only 2 energy ticks"
+          ],
+          "ownersSay": [
+            {
+              "text": "Sample owner comment about noise.",
+              "source": "https://example.invalid/alpha-review",
+              "when": "Sep 2026"
+            }
+          ],
+          "offers": [
+            {
+              "shop": "Sample Store A",
+              "price": 899,
+              "stock": "Ready stock",
+              "checked": "2026-10-22",
+              "url": "https://example.invalid/alpha"
+            }
+          ],
+          "confidence": {
+            "level": "Moderate",
+            "why": "Sample: several owner reports, one model year"
+          },
+          "specs": {
+            "Size W × D × H (cm)": "60 × 65 × 170",
+            "Capacity (L)": "400",
+            "Doors": "2-door",
+            "Energy ticks": "2",
+            "Yearly energy (kWh)": "380",
+            "Ice maker": "No",
+            "Inverter compressor": "Yes",
+            "Warranty": "2 years",
+            "SG service centre": "Yes"
+          },
+          "buyTiming": "Wait for 11.11; target S$849",
+          "display": {
+            "headline": "Lowest price and smaller freezer",
+            "love": "Lower price; compact dimensions.",
+            "watchOut": "Night-time hum; 2 energy ticks.",
+            "bestFor": "Lower purchase cost"
+          },
+          "table": {
+            "love": "Lower price; compact dimensions.",
+            "watchOut": "Night-time hum; 2 energy ticks.",
+            "bestFor": "Lower purchase cost"
+          }
+        },
+        {
+          "id": "SAMPLE-FRIDGE-B",
+          "label": "Beta",
+          "name": "Samplebrand Beta 450",
+          "kind": "product",
+          "tier": "Mid",
+          "price": 1199,
+          "images": [],
+          "headline": "Quietest here, you won't hear it",
+          "love": "Silent at night and S$25 a year cheaper to run than Alpha.",
+          "watchOut": "Costs S$300 more than Alpha; delivery takes 2 weeks.",
+          "bestFor": "Most of us: the safe all-rounder",
+          "pros": [
+            "Quiet",
+            "3 energy ticks",
+            "Bigger freezer"
+          ],
+          "cons": [
+            "Costs S$300 more than Alpha",
+            "Fingerprints on the door",
+            "Delivery takes 2 weeks"
+          ],
+          "ownersSay": [
+            {
+              "text": "Sample owner comment about running cost.",
+              "source": "https://example.invalid/beta-review",
+              "when": "Aug 2026"
+            }
+          ],
+          "offers": [
+            {
+              "shop": "Sample Store B",
+              "price": 1199,
+              "stock": "Ready stock",
+              "checked": "2026-10-22",
+              "url": "https://example.invalid/beta"
+            }
+          ],
+          "confidence": {
+            "level": "Strong",
+            "why": "Sample: many owners over 2 years, few repeat faults"
+          },
+          "specs": {
+            "Size W × D × H (cm)": "65 × 70 × 178",
+            "Capacity (L)": "450",
+            "Doors": "2-door",
+            "Energy ticks": "3",
+            "Yearly energy (kWh)": "300",
+            "Ice maker": "No",
+            "Inverter compressor": "Yes",
+            "Warranty": "3 years",
+            "SG service centre": "Yes"
+          },
+          "buyTiming": "Buy at 12.12; target S$1,099",
+          "display": {
+            "headline": "Quiet operation and lower running costs",
+            "love": "Silent at night; lower annual running costs.",
+            "watchOut": "S$300 more; 2-week delivery.",
+            "bestFor": "Quiet operation"
+          },
+          "table": {
+            "love": "Quiet; S$25/year less than Alpha",
+            "watchOut": "S$300 more; 2-week delivery.",
+            "bestFor": "Quiet operation"
+          }
+        },
+        {
+          "id": "SAMPLE-FRIDGE-C",
+          "label": "Gamma",
+          "name": "Samplebrand Gamma 520",
+          "kind": "product",
+          "tier": "Splurge",
+          "price": 1699,
+          "images": [],
+          "headline": "Biggest and greenest, if it fits",
+          "love": "Room for a week of groceries, plus ice on tap.",
+          "watchOut": "Only just fits the niche, and it's S$500 over budget.",
+          "bestFor": "Only if the niche measures bigger on 11 Nov",
+          "pros": [
+            "Largest capacity",
+            "Ice maker",
+            "4 energy ticks"
+          ],
+          "cons": [
+            "Tight fit: check the niche",
+            "Most expensive",
+            "Needs a water line for ice"
+          ],
+          "ownersSay": [
+            {
+              "text": "Sample owner comment about fit.",
+              "source": "https://example.invalid/gamma-review",
+              "when": "Jul 2026"
+            }
+          ],
+          "offers": [
+            {
+              "shop": "Sample Store A",
+              "price": 1699,
+              "stock": "Low stock",
+              "checked": "2026-10-22",
+              "url": "https://example.invalid/gamma"
+            }
+          ],
+          "confidence": {
+            "level": "Limited",
+            "why": "Sample: new model, few owner reports yet"
+          },
+          "specs": {
+            "Size W × D × H (cm)": "70 × 74 × 180",
+            "Capacity (L)": "520",
+            "Doors": "2-door",
+            "Energy ticks": "4",
+            "Yearly energy (kWh)": "260",
+            "Ice maker": "Yes",
+            "Inverter compressor": "Yes",
+            "Warranty": "3 years",
+            "SG service centre": "Not stated"
+          },
+          "buyTiming": "Only if the niche measures bigger",
+          "display": {
+            "headline": "Largest capacity with an ice maker",
+            "love": "520 L capacity and ice maker.",
+            "watchOut": "Tight fit; S$500 over sample budget.",
+            "bestFor": "Larger measured spaces"
+          },
+          "table": {
+            "love": "520 L capacity and ice maker.",
+            "watchOut": "Tight fit; S$500 over sample budget.",
+            "bestFor": "Larger measured spaces"
+          }
+        }
+      ]
+    },
+    {
+      "id": "SAMPLE-LIGHTS",
+      "slug": "sample-lighting",
+      "legacySlugs": [
+        "sample-living-room-lighting"
+      ],
+      "sample": true,
+      "area": "living",
+      "category": "Lighting",
+      "group": "fittings",
+      "priority": "essential",
+      "title": "SAMPLE · Living room lighting look",
+      "question": "Which lighting look? (sample data)",
+      "stage": "contractor",
+      "status": "voting",
+      "qty": 1,
+      "answer10s": "Pick Cove + fan for a warm, hotel-like room; Downlights + track if reading light matters most.",
+      "summary": "Made-up scenarios to test look-style options with concept photos.",
+      "mustKnow": [
+        "Sample: keep a physical wall switch"
+      ],
+      "contractorNote": "Sample: positions of cove, downlights and fan point.",
+      "specGroups": [
+        {
+          "group": "What's included",
+          "rows": [
+            "Cove lighting",
+            "Downlights",
+            "Track/spotlights",
+            "Ceiling fan"
+          ]
+        },
+        {
+          "group": "Feel",
+          "rows": [
+            "Mood",
+            "Brightness for reading"
+          ]
+        }
+      ],
+      "options": [
+        {
+          "id": "SAMPLE-LIGHTS-A",
+          "label": "Cove + fan",
+          "name": "Cove lighting + downlights + ceiling fan",
+          "kind": "look",
+          "tier": "Splurge",
+          "price": 1200,
+          "paidVia": "contractor",
+          "images": [],
+          "headline": "Warm, soft, hotel-like evenings",
+          "love": "The ceiling glows and the corners never feel dark.",
+          "watchOut": "Most expensive, and the cove collects dust.",
+          "bestFor": "Relaxing and movie nights",
+          "pros": [
+            "Soft light",
+            "Hides the ceiling edges",
+            "Fan included"
+          ],
+          "cons": [
+            "Most expensive",
+            "Drivers need access",
+            "Dust on the cove"
+          ],
+          "ownersSay": [],
+          "offers": [],
+          "confidence": {
+            "level": "Moderate",
+            "why": "Sample"
+          },
+          "specs": {
+            "Cove lighting": "Yes",
+            "Downlights": "Yes",
+            "Track/spotlights": "No",
+            "Ceiling fan": "Yes",
+            "Mood": "Warm, soft",
+            "Brightness for reading": "Medium"
+          },
+          "display": {
+            "headline": "Cove lighting and ceiling fan",
+            "love": "Soft ceiling and corner lighting.",
+            "watchOut": "Higher cost; cove collects dust.",
+            "bestFor": "Soft ambient lighting"
+          },
+          "table": {
+            "love": "Soft ceiling and corner lighting.",
+            "watchOut": "Higher cost; cove collects dust.",
+            "bestFor": "Soft ambient lighting"
+          }
+        },
+        {
+          "id": "SAMPLE-LIGHTS-B",
+          "label": "Downlights + track",
+          "name": "Downlights + track/spotlights",
+          "kind": "look",
+          "tier": "Mid",
+          "price": 900,
+          "paidVia": "contractor",
+          "images": [],
+          "headline": "Bright and aimable, great for reading",
+          "love": "Point light exactly at the sofa or the TV wall.",
+          "watchOut": "Can feel like a shop, and there's no fan.",
+          "bestFor": "Reading, working, bright evenings",
+          "pros": [
+            "Can aim at the sofa or TV wall",
+            "Bright for reading",
+            "No cove to clean"
+          ],
+          "cons": [
+            "Can feel like a shop",
+            "No fan",
+            "Track is visible"
+          ],
+          "ownersSay": [],
+          "offers": [],
+          "confidence": {
+            "level": "Moderate",
+            "why": "Sample"
+          },
+          "specs": {
+            "Cove lighting": "No",
+            "Downlights": "Yes",
+            "Track/spotlights": "Yes",
+            "Ceiling fan": "No",
+            "Mood": "Bright, modern",
+            "Brightness for reading": "High"
+          },
+          "display": {
+            "headline": "Directional lighting for reading",
+            "love": "Adjustable light direction.",
+            "watchOut": "Visible track; no ceiling fan.",
+            "bestFor": "Reading and working"
+          },
+          "table": {
+            "love": "Adjustable light direction.",
+            "watchOut": "Visible track; no ceiling fan.",
+            "bestFor": "Reading and working"
+          }
+        },
+        {
+          "id": "SAMPLE-LIGHTS-C",
+          "label": "Fan light only",
+          "name": "Ceiling fan with light only",
+          "kind": "look",
+          "tier": "Budget",
+          "price": 450,
+          "paidVia": "contractor",
+          "images": [],
+          "headline": "Simplest and cheapest, one fitting",
+          "love": "One switch, one fitting, almost nothing to maintain.",
+          "watchOut": "Dim corners; you'll likely want a floor lamp.",
+          "bestFor": "Saving money for furniture",
+          "pros": [
+            "Lowest cost",
+            "One fitting to maintain",
+            "Fan included"
+          ],
+          "cons": [
+            "Dim corners",
+            "One light source",
+            "Needs a floor lamp"
+          ],
+          "ownersSay": [],
+          "offers": [],
+          "confidence": {
+            "level": "Moderate",
+            "why": "Sample"
+          },
+          "specs": {
+            "Cove lighting": "No",
+            "Downlights": "No",
+            "Track/spotlights": "No",
+            "Ceiling fan": "Yes",
+            "Mood": "Plain",
+            "Brightness for reading": "Low"
+          },
+          "display": {
+            "headline": "Single fitting with light and fan",
+            "love": "One fitting and switch.",
+            "watchOut": "Dim corners; floor lamp may be needed.",
+            "bestFor": "Lower installation cost"
+          },
+          "table": {
+            "love": "One fitting and switch.",
+            "watchOut": "Dim corners; floor lamp needed",
+            "bestFor": "Lower installation cost"
+          }
+        }
+      ]
+    }
+  ]
+}

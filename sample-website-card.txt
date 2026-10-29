@@ -1,0 +1,69 @@
+WEBSITE CARD · LaCasa
+ITEM: SAMPLE · Fridge
+ROOM: Kitchen
+QUANTITY: 1
+BUDGET: S$1,200
+DEADLINE: Before move-in
+SALES WORTH WAITING FOR: 11.11, 12.12
+10-SECOND ANSWER: Pick Beta: quiet and about S$25 a year cheaper to run than Alpha. Choose Gamma only if the niche measures wider than 70 cm.
+SUMMARY: Made-up models to test voting and Compare. Not real products or prices.
+PRICE TIERS: Budget S$800–1,000 · Mid S$1,000–1,400 · Splurge S$1,400+
+MUST KNOW: Sample: current fridge 70 × 75 cm, 180 cm high fits | Sample: leave 5 cm at the back for ventilation
+CONTRACTOR NEEDS TO KNOW: None
+FULL REPORT: None
+
+OPTION A
+Name: Samplebrand Alpha 400
+Tier: Budget
+Planned price: S$899
+Headline: Cheapest that fits, nothing fancy
+Why you'll love it: Leaves S$300 for other things and fits with room to spare.
+Watch out: Owners say it hums at night; only 2 energy ticks.
+Best for: Keeping the budget tight
+Pros: Lowest price | Fits the space with room to spare | Simple to clean
+Cons: Smaller freezer | Louder at night | Only 2 energy ticks
+Owners say: Sample owner comment about noise. (https://example.invalid/alpha-review, Sep 2026)
+Where to buy: Sample Store A · S$899 · Ready stock · checked 2026-10-22 · https://example.invalid/alpha
+Buy timing: Wait for 11.11; target S$849
+Reliability confidence: Moderate — Sample: several owner reports, one model year
+
+OPTION B
+Name: Samplebrand Beta 450
+Tier: Mid
+Planned price: S$1,199
+Headline: Quietest here, you won't hear it
+Why you'll love it: Silent at night and S$25 a year cheaper to run than Alpha.
+Watch out: Costs S$300 more than Alpha; delivery takes 2 weeks.
+Best for: Most of us: the safe all-rounder
+Pros: Quiet | 3 energy ticks | Bigger freezer
+Cons: Costs S$300 more than Alpha | Fingerprints on the door | Delivery takes 2 weeks
+Owners say: Sample owner comment about running cost. (https://example.invalid/beta-review, Aug 2026)
+Where to buy: Sample Store B · S$1,199 · Ready stock · checked 2026-10-22 · https://example.invalid/beta
+Buy timing: Buy at 12.12; target S$1,099
+Reliability confidence: Strong — Sample: many owners over 2 years, few repeat faults
+
+OPTION C
+Name: Samplebrand Gamma 520
+Tier: Splurge
+Planned price: S$1,699
+Headline: Biggest and greenest, if it fits
+Why you'll love it: Room for a week of groceries, plus ice on tap.
+Watch out: Only just fits the niche, and it's S$500 over budget.
+Best for: Only if the niche measures bigger on 11 Nov
+Pros: Largest capacity | Ice maker | 4 energy ticks
+Cons: Tight fit: check the niche | Most expensive | Needs a water line for ice
+Owners say: Sample owner comment about fit. (https://example.invalid/gamma-review, Jul 2026)
+Where to buy: Sample Store A · S$1,699 · Low stock · checked 2026-10-22 · https://example.invalid/gamma
+Buy timing: Only if the niche measures bigger
+Reliability confidence: Limited — Sample: new model, few owner reports yet
+
+COMPARE TABLE
+Size & fit | Size W × D × H (cm) | 60 × 65 × 170 | 65 × 70 × 178 | 70 × 74 × 180
+Size & fit | Capacity (L) | 400 | 450 | 520
+Size & fit | Doors | 2-door | 2-door | 2-door
+Running costs | Energy ticks | 2 | 3 | 4
+Running costs | Yearly energy (kWh) | 380 | 300 | 260
+Features | Ice maker | No | No | Yes
+Features | Inverter compressor | Yes | Yes | Yes
+Warranty & support | Warranty | 2 years | 3 years | 3 years
+Warranty & support | SG service centre | Yes | Yes | Not stated

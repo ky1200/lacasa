@@ -1,0 +1,61 @@
+WEBSITE CARD · LaCasa
+ITEM: Smart door lock
+ROOM: Entrance
+QUANTITY: 1
+BUDGET: Not specified
+DEADLINE: Tell contractor by 11 Nov
+SALES WORTH WAITING FOR: 11.11 and Black Friday expected; lock-specific offers unconfirmed
+10-SECOND ANSWER: Pursue Aqara U400 for hands-free Apple entry with fingerprint backup. Confirm Apple devices, door fit and ready stock before paying.
+SUMMARY: Compared U400 hands-free entry against the cheaper U100 fingerprint and tap-to-unlock alternative. U400 matches the requested experience; U100 is the cheaper compromise.
+PRICE TIERS: Budget about S$400–500 installed · Mid about S$600–700 installed · Splurge S$850+
+MUST KNOW: U400 needs suitable Apple equipment | No door handle included | Ready stock unverified | Test actual approach route
+CONTRACTOR NEEDS TO KNOW: Assess existing lock and handle | Check door thickness and backset | Use manufacturer drilling template | Check frame, gate clearance and applicable approvals
+FULL REPORT: None
+
+OPTION A
+Name: Aqara U400 wooden-door kit
+Tier: Mid
+Planned price: S$649 installed, plus Apple hub if needed and any door alterations
+Headline: Unlock with your phone still pocketed
+Why you'll love it: Approach entry with fingerprint available as backup.
+Watch out: Approach reliability varies; ready stock and door fit remain unverified.
+Best for: Your requested hands-free Apple setup.
+Pros: Hands-free entry | Fingerprint backup | Automatic locking
+Cons: Apple equipment required | Rechargeable battery needs attention | Door alterations may cost extra
+Owners say: Useful but approach-sensitive; one critical owner improved results by changing approach height (https://www.reddit.com/r/Aqara/comments/1qehpgm/i_wanted_to_like_the_aqara_u400/, January 2026)
+Where to buy: Harvey Norman · S$649 installed · stock unverified · checked 2026-10-23 · https://www.harveynorman.com.sg/smart-tech-and-phones/smart-home/smart-security/aqara-u400-smart-door-lock-kit-with-installation-timber-door-black-dl-d06d.html | HomeSmart · S$469–849 across variants, exact installed variant price to confirm · stock unverified · checked 2026-10-23 · https://homesmart.sg/product/aqara-u400-smart-lock-kit/
+Buy timing: Wait for door assessment; target S$649 or less installed with written onsite support.
+Reliability confidence: Limited — mixed ownership reports and less than one year of model history.
+
+OPTION B
+Name: Aqara U100 installed kit
+Tier: Budget
+Planned price: S$499 installed, subject to stock and fit
+Headline: Fingerprint entry for S$150 less
+Why you'll love it: Fingerprint and Apple tapping at a lower listed installation price.
+Watch out: It cannot provide U400 hands-free approach unlocking.
+Best for: Choosing to save money and accepting touch or tap entry.
+Pros: Lower listed price | Replaceable AA batteries | Apple Home Key
+Cons: No hands-free UWB | Separate handle required | Ready stock unverified
+Owners say: Older owners reported idle chiming and battery drain; replies did not establish a universal fix (https://www.reddit.com/r/Aqara/comments/14ec7a5/u100_keeps_chiming_when_closedidle_battery_drain/, June 2023)
+Where to buy: HomeSmart · S$499 installed · stock unverified · checked 2026-10-23 · https://homesmart.sg/product/aqara-u100-smart-lock/
+Buy timing: Consider only if giving up hands-free entry; target S$499 or less installed after fit and stock checks.
+Reliability confidence: Limited — longer model history, but no dependable comparative failure-rate data.
+
+COMPARE TABLE
+Group | Row | Aqara U400 | Aqara U100
+Entry | Hands-free approach unlock | Yes | No
+Entry | Fingerprint | Yes | Yes
+Entry | Apple tap-to-unlock | Yes | Yes
+Entry | Physical key | Yes | Yes
+Locking | Automatic locking | Yes | Yes
+Size & fit | Door handle included | No | No
+Size & fit | Door thickness | 35–55 mm | 35–55 mm
+Size & fit | Backset | 60 or 70 mm | 60 or 70 mm
+Connectivity | Main connection | Matter over Thread | Bluetooth and Zigbee
+Power | Battery type | Rechargeable | Four AA batteries
+Power | Claimed endurance | Up to six months | Up to eight months
+Support | HomeSmart lock warranty | 24 months onsite | 24 months onsite
+Support | Rechargeable battery warranty | Six months | Not applicable
+Buying | Observed installed price | S$649 | S$499
+Buying | Ready stock verified | No | No

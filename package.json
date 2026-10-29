@@ -1,0 +1,13 @@
+{
+  "name": "lacasa",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/showcase/*.test.mjs",
+    "dev": "wrangler dev",
+    "deploy": "wrangler d1 migrations apply DB --remote && wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "4.149.0"
+  }
+}
