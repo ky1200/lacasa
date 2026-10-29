@@ -57,6 +57,16 @@ async function trusted(request, env) {
   if (await ownerCookieValid(request, env)) headers.set('oai-authenticated-user-id', INTERNAL_OWNER);
   return new Request(request, { headers });
 }
+// Create the two tables if the deploy step didn't run the migration (safe to repeat).
+let schemaReady = null;
+function ensureSchema(env) {
+  if (!env.DB) return Promise.resolve();
+  schemaReady ??= env.DB.batch([
+    env.DB.prepare(`CREATE TABLE IF NOT EXISTS votes (code TEXT NOT NULL CHECK (code IN ('KY','KX','KS')), decision_id TEXT NOT NULL, pick TEXT NOT NULL, lean TEXT, updated_at TEXT NOT NULL, updated_after_reveal INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (code, decision_id), CHECK (lean IS NULL OR lean <> pick))`),
+    env.DB.prepare(`CREATE TABLE IF NOT EXISTS finals (decision_id TEXT PRIMARY KEY NOT NULL, option_id TEXT NOT NULL, reason TEXT NOT NULL CHECK (reason IN ('tie','overdue','lock')), at TEXT NOT NULL)`),
+  ]).catch(e => { schemaReady = null; throw e; });
+  return schemaReady;
+}
 const showcaseEnv = env => ({ DB: env.DB, OWNER_SITE_USER_ID: env.OWNER_PASSWORD ? INTERNAL_OWNER : undefined });
 
 async function ownerLogin(request, env, u) {
@@ -96,7 +106,8 @@ async function page(request, env, u) {
   try {
     const state = await loadState(request, sEnv, content, samples), rendered = renderPage(state, request.url);
     return new Response(rendered.html, { status: rendered.status, headers: pageHeaders });
-  } catch {
+  } catch (e) {
+    console.error('page failed', e?.stack ?? e);
     return new Response('<!doctype html><html lang="en"><meta name="viewport" content="width=device-width"><title>LaCasa</title><body><h1>LaCasa is unavailable</h1><p>Please try again shortly.</p><a href="/">Try again</a></body></html>', { status: 503, headers: pageHeaders });
   }
 }
@@ -107,6 +118,7 @@ export default {
     if (u.pathname === '/owner/login' && incoming.method === 'POST') return ownerLogin(incoming, env, u);
     if (u.pathname === '/owner/logout') return ownerLogout(u);
     const request = await trusted(incoming, env);
+    try { await ensureSchema(env); } catch (e) { console.error('schema setup failed', e?.stack ?? e); }
     if (u.pathname.startsWith('/api/')) return api(request, showcaseEnv(env), content, samples);
     if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method not allowed', { status: 405 });
     return page(request, env, u);
