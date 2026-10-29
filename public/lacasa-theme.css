@@ -1,0 +1,179 @@
+/* LaCasa theme: a materials board for a Japandi home.
+   Plaster walls, oak and tile swatches, indigo for actions, moss for decided.
+   Loaded after showcase.css and product-pages.css; overrides tokens and key components. */
+:root{
+  --plaster:#ecebe6;     /* page */
+  --linen:#fbfaf7;       /* raised surfaces */
+  --sumi:#24221e;        /* headings and prices */
+  --body:#45423b;        /* running text */
+  --muted:#77736a;       /* secondary text */
+  --line:#dcd9d1;        /* hairlines */
+  --oak:#b9915f;         /* wood swatches */
+  --oak-dark:#8e6a40;
+  --indigo:#273c66;      /* actions */
+  --indigo-soft:#e3e7ef;
+  --moss:#3f6a4e;        /* decided / your pick */
+  --moss-soft:#e1ebe3;
+  --paper:var(--plaster); --ink:var(--sumi); --accent:var(--indigo); --soft:var(--indigo-soft);
+  --font:"Zen Kaku Gothic New","Hiragino Sans","Segoe UI",system-ui,sans-serif;
+  font-family:var(--font);
+  background:var(--plaster);
+  color:var(--body);
+}
+body{background:var(--plaster);font-family:var(--font);-webkit-font-smoothing:antialiased;font-feature-settings:"palt" 0}
+h1,h2,h3,h4{font-family:var(--font);color:var(--sumi);text-wrap:balance}
+h1{font-weight:700;letter-spacing:-.03em;line-height:1.08}
+h2{font-weight:700;letter-spacing:-.02em}
+h3{font-weight:700;letter-spacing:-.01em}
+p,li{text-wrap:pretty}
+small{font-size:13px}
+.price,.grand-total strong,.list-totals strong,.subtotal,.deadline-count{font-variant-numeric:tabular-nums}
+
+/* Labels: sentence case, no tracked-out caps */
+.eyebrow{text-transform:none;letter-spacing:0;font-size:14px;font-weight:500;color:var(--muted);margin-bottom:10px}
+.quick-answer .eyebrow{font-size:13px;color:var(--indigo)}
+
+/* Header and bottom nav: solid plaster, readable labels */
+.site-header{background:rgba(236,235,230,.96);border-bottom:1px solid var(--line)}
+.site-header nav a{font-size:14px}
+.brand{font-weight:700;letter-spacing:-.02em}
+.brand-mark{color:var(--oak-dark)}
+.mobile-nav{background:var(--plaster);border-top:1px solid var(--line)}
+.mobile-nav a{font-size:12px;color:var(--muted)}
+.mobile-nav a.active{color:var(--sumi);font-weight:700}
+
+/* Buttons */
+.button{border-radius:12px;font-weight:700;font-size:15px;min-height:48px}
+.button.primary,.button.pick{background:var(--indigo);color:#fff}
+.button.primary:hover,.button.pick:hover{background:#1c2c4d}
+.button.secondary{background:var(--linen);border-color:var(--line);color:var(--sumi)}
+.button.selected{background:var(--moss)!important;border-color:var(--moss)!important;color:#fff!important}
+.text-link{color:var(--indigo);font-size:15px}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--oak-dark);outline-offset:3px}
+
+/* Chips and status */
+.chip{font-size:13px;border-radius:999px;background:var(--linen);border-color:var(--line);padding:5px 11px}
+.status{font-size:13px;border-radius:999px;background:#e2e0d9;color:#5c5850;padding:5px 11px}
+.status.good{background:var(--moss-soft);color:var(--moss)}
+.tag{font-size:12px;border-radius:999px}
+.text-chips span{background:var(--plaster);border:1px solid var(--line);border-radius:999px;font-size:13px;padding:6px 12px;color:var(--sumi)}
+
+/* Home */
+.home-hero h1{font-size:clamp(44px,12vw,76px)}
+.milestone-card{background:var(--linen);border:1px solid var(--line)}
+.calendar-day{font-variant-numeric:tabular-nums}
+.ready-card{background:var(--linen);border-color:var(--line);border-radius:18px}
+.ready-card h3{font-size:26px}
+.ready-photos{background:#fff;border-radius:12px}
+
+/* Area tiles: each room gets a material swatch */
+.area-art{height:132px;border:0;border-radius:14px;color:var(--sumi);position:relative;overflow:hidden;
+  background-color:#e4e1da}
+.area-art svg{width:30px;height:30px;padding:9px;box-sizing:content-box;background:rgba(251,250,247,.92);border-radius:50%;color:var(--sumi);stroke-width:1.5}
+.area-tile:nth-child(3n+2) .area-art,.area-tile:nth-child(3n) .area-art{background-color:#e4e1da;color:var(--sumi);border:0}
+/* oak: living, dining */
+.area-tile[href$="/living"] .area-art,.area-tile[href$="/dining"] .area-art{
+  background:repeating-linear-gradient(91deg,rgba(255,255,255,0) 0 6px,rgba(255,255,255,.12) 6px 7px,rgba(0,0,0,0) 7px 15px,rgba(110,72,30,.10) 15px 16px),
+  linear-gradient(180deg,#c9a272,#b48a59)}
+/* walnut: entrance door */
+.area-tile[href$="/entrance"] .area-art{
+  background:repeating-linear-gradient(90deg,rgba(0,0,0,0) 0 9px,rgba(0,0,0,.09) 9px 10px,rgba(255,255,255,0) 10px 22px,rgba(255,255,255,.06) 22px 23px),
+  linear-gradient(180deg,#7d5a3c,#694a30)}
+/* glazed tile: kitchen, bathrooms */
+.area-tile[href$="/kitchen"] .area-art,.area-tile[href$="/common-bath"] .area-art,.area-tile[href$="/master-bath"] .area-art{
+  background:linear-gradient(rgba(255,255,255,.9) 1px,transparent 1px) 0 0/22px 22px,
+  linear-gradient(90deg,rgba(255,255,255,.9) 1px,transparent 1px) 0 0/22px 22px,
+  linear-gradient(160deg,#dde3e2,#cfd7d6)}
+.area-tile[href$="/kitchen"] .area-art{background:linear-gradient(rgba(255,255,255,.85) 1px,transparent 1px) 0 0/44px 18px,linear-gradient(90deg,rgba(255,255,255,.85) 1px,transparent 1px) 0 0/44px 18px,linear-gradient(160deg,#e6e2d6,#d9d3c3)}
+/* cement terrazzo: yard */
+.area-tile[href$="/yard"] .area-art{
+  background:radial-gradient(circle at 20% 30%,#b9b4aa 0 2px,transparent 3px) 0 0/26px 26px,
+  radial-gradient(circle at 70% 60%,#f4f2ee 0 1.5px,transparent 2.5px) 0 0/19px 19px,
+  linear-gradient(160deg,#cfcbc3,#c3beb4)}
+/* plaster: whole home */
+.area-tile[href$="/whole-home"] .area-art{background:radial-gradient(120% 90% at 30% 20%,#f2f0eb,#dcd8cf)}
+/* linen: bedrooms */
+.area-tile[href$="-room"] .area-art{
+  background:repeating-linear-gradient(0deg,rgba(255,255,255,.35) 0 1px,transparent 1px 3px),
+  repeating-linear-gradient(90deg,rgba(120,105,80,.10) 0 1px,transparent 1px 3px),
+  linear-gradient(160deg,#e3dccd,#d6ccb8)}
+.tile-caption{padding-top:10px}
+.tile-caption h3{font-size:16px}
+.tile-caption>span{font-size:12px}
+
+/* Item page */
+.item-photos figure,.product-hero-photo,.product-hero-photo .photo-button{background:#fff}
+.item-photos figure{border-radius:16px;padding:14px 10px 12px;border:1px solid var(--line)}
+.item-photos figcaption{font-size:15px;color:var(--sumi)}
+.quick-answer{background:var(--indigo-soft);border-radius:16px;padding:18px 20px}
+.quick-answer p{color:#1f2f52;font-size:17px;line-height:1.55;font-weight:500}
+.option-card{background:var(--linen);border-color:var(--line);border-radius:20px;padding:22px}
+.option-card.own-pick{border:2px solid var(--moss)}
+.option-card h2{font-size:22px}
+.headline,.option-card .headline{font-size:20px;font-weight:500;letter-spacing:-.01em;color:var(--body)}
+.price{font-size:34px;font-weight:700;letter-spacing:-.03em;color:var(--sumi)}
+.price small,.price-note{font-size:13px;font-weight:400;letter-spacing:0;color:var(--muted)}
+.quick-lines,.owner-reviews,.best-for{font-size:16px}
+.option-card details summary,.full-specs summary{font-size:15px;font-weight:700;color:var(--indigo)}
+.note-box{background:var(--linen);border:1px solid var(--line);border-radius:16px}
+.result-box{background:var(--linen);border:1px solid var(--line);border-radius:16px}
+.also-considered{font-size:15px}
+
+/* Compare */
+.compare-table .headline{font-size:14px;color:var(--body)}
+.compare-table .price{font-size:22px}
+.compare-label{font-size:13px;color:var(--muted)}
+.compare-group{font-size:15px;color:var(--sumi);font-weight:700}
+.compare-values{font-size:14px}
+.compare-photo .photo-button{background:#fff;border-radius:12px}
+.feature-yes{color:var(--moss);font-weight:700}
+.lowest{background:var(--moss-soft);color:var(--moss)}
+
+/* Shopping list */
+.list-totals .grand-total{background:var(--sumi);border-radius:16px}
+.shopping-row{font-size:15px}
+.shopping-row>strong{font-size:15px;font-variant-numeric:tabular-nums}
+.subtotal{color:var(--sumi);font-weight:700}
+
+/* Name chooser */
+.person-choice{background:var(--linen);border-color:var(--line);border-radius:20px}
+.person-choice:hover{background:#fff;border-color:var(--oak)}
+.person-choice strong{font-size:28px;font-weight:700}
+.person-choice>span:last-child{font-size:13px}
+.choose-screen h1{font-size:clamp(40px,11vw,60px)}
+
+/* Small text floor for phones */
+@media (max-width:640px){
+  .chip,.status{font-size:12.5px}
+  .tile-caption>span{font-size:12px}
+  .price{font-size:30px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* Calendar and budget strip in the board's palette */
+.calendar-month,.mini-calendar th,.calendar-key{color:var(--muted)}
+.calendar-month{font-size:13px}
+.mini-calendar{font-size:13px}
+.mini-calendar th{font-size:11px}
+.calendar-key{font-size:12px}
+.calendar-day{color:#a29e94}
+.calendar-day.available{color:var(--sumi);background:#e7dccb}
+.calendar-key>span{background:#e7dccb}
+.calendar-day.today{background:#fff;outline-color:var(--sumi)}
+.calendar-day.deadline{background:var(--indigo)}
+.total-strip{background:var(--linen);border:1px solid var(--line);border-radius:16px}
+.total-strip .eyebrow{font-size:13px}
+.total-strip strong{font-weight:700;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.total-strip>div:nth-child(2),.total-strip .text-link{font-size:13px}
+.total-strip>div:nth-child(2){border-top-color:var(--line)}
+
+/* List controls and totals */
+.segmented{background:var(--linen);border-color:var(--line);border-radius:12px}
+.segmented a{font-size:14px;border-radius:9px}
+.segmented a.active{background:var(--indigo-soft);color:var(--indigo);font-weight:700}
+.list-totals{background:var(--linen);border:1px solid var(--line);border-radius:18px}
+.list-totals .grand-total{border-radius:0}
+
+/* Compare: tighter chips in two narrow columns */
+.compare-table .text-chips span{font-size:12.5px;border-radius:10px;padding:5px 9px}
+.compare-table .headline{font-size:14px;line-height:1.45}
