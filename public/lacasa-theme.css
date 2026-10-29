@@ -192,3 +192,122 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
   .deadline-card .calendar,.deadline-card .calendar-key{display:none}
   .deadline-card>.chip{grid-column:1/-1;justify-self:start;margin-top:10px}
 }
+
+/* ---- Polish pass 2 (taste, Emil Kowalski, Apple, break-ui reviews) ---- */
+:root{--ease-out:cubic-bezier(.23,1,.32,1)}
+
+/* Type floor: nothing a phone has to read is below 12.5px */
+.eyebrow,.page-top .eyebrow,.section-heading .eyebrow,.milestone-card .eyebrow,.total-strip .eyebrow,.note-box .eyebrow,.quick-answer .eyebrow,.family-strip .eyebrow,.measurements .eyebrow{font-size:14px;letter-spacing:0;text-transform:none;font-weight:500}
+.quick-answer .eyebrow{color:var(--indigo)}
+.hero-actions>span,.progress-caption,.section-heading>.muted,.list-totals span,.list-caveats,.total-strip>div:nth-child(2),.total-strip>.text-link,.milestone-card p,.question>.muted,.item-actions>a:not(.button),.tiers,.measurements,.item-row p,.family-strip span:not(.eyebrow),.family-strip .text-link,.empty-photo>span,.private-label,.admin-box small{font-size:13.5px}
+.tag,.sale,.option-label,.quick-lines strong,.more-content small,.compare-label th,.compare-values td small{font-size:12.5px}
+.status,.chip{font-size:13px}
+
+/* Surfaces: separated by tone, not outlines */
+.site-header{border-bottom:0;background:var(--plaster)}
+.mobile-nav{border-top:0;background:#e3e1da}
+.milestone-card,.note-box,.result-box,.total-strip,.list-totals,.ready-card,.option-card,.person-choice,.segmented,.button.secondary{border-color:transparent}
+.item-photos figure{border:0}
+.text-chips span{border:0;background:#e3e1da}
+.total-strip>div:nth-child(2){border-top:0;padding-top:4px}
+
+/* Buttons: fully round, decided once. Press feedback on pointer-down. */
+.button{border-radius:999px;transition:transform 140ms var(--ease-out),background-color 160ms ease}
+.button:active,.person-choice:active,.area-tile:active .area-art,.segmented a:active{transform:scale(.97)}
+.person-choice,.area-art{transition:transform 140ms var(--ease-out)}
+.segmented{border-radius:999px;padding:4px}
+.segmented a{border-radius:999px;font-size:14px;white-space:nowrap;justify-content:center;padding:10px 12px}
+
+/* Big money: the number leads, qualifiers sit small beside it */
+.money-q{font-size:.5em;font-weight:500;letter-spacing:0;color:inherit;opacity:.7;vertical-align:.35em}
+.money-tbc{display:block;font-size:14px;font-weight:500;letter-spacing:0;opacity:.75;margin-top:6px}
+.list-totals strong,.total-strip strong{overflow-wrap:anywhere}
+
+/* Shopping rows: name column may shrink, the price never breaks mid-number */
+.shopping-row{font-size:15px;gap:16px;border-bottom-color:#dedbd3}
+.shopping-row>div{min-width:0;flex:1}
+.shopping-row a{font-size:16px}
+.shopping-row small{font-size:13px;color:var(--muted)}
+.shopping-row p{font-size:14px}
+.shopping-row>strong{font-size:15px;white-space:nowrap;max-width:none;flex-shrink:0}
+.shopping-row .price-note,.shopping-row .allowance-note{display:block}
+
+/* Photos: product first, source link quiet */
+.item-photos figure a,.compare-photo a,.photo-source{font-size:12.5px;color:var(--muted)}
+.ready-photos img,.item-photos img{font-size:0}
+@media (max-width:640px){.shopping-row>strong{font-size:14px}}
+/* List totals on phones: label left, number right, one line each */
+@media (max-width:640px){
+  .list-totals{display:block}
+  .list-totals>div:not(.grand-total){display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:16px 20px}
+  .list-totals>div:not(.grand-total)+div:not(.grand-total){padding-top:0}
+  .list-totals>div:not(.grand-total) strong{font-size:20px;text-align:right;white-space:nowrap}
+  .list-totals>div:not(.grand-total) .money-q{vertical-align:baseline;font-size:13px}
+  .list-totals>div:not(.grand-total) .money-tbc{font-size:12.5px;margin-top:2px}
+}
+.grand-total .money-tbc{opacity:.85}
+.section-heading .subtotal{font-size:14px}
+.list-actions .button{font-size:14px}
+/* Home details */
+.home-hero .eyebrow,.home-hero>.eyebrow,main .home-hero .eyebrow{font-size:14px!important}
+.hero-actions>.button{font-size:15px}
+.hero-actions>span{font-size:14px;max-width:none}
+.deadline-card>.chip,.milestone-card.deadline-card>.chip{font-size:13px;padding:6px 12px}
+.tile-caption>span,.tile-caption>span{font-size:13.5px}
+.site-footer{font-size:13.5px;border-top:0}
+.total-strip>div:nth-child(2){font-size:14px;color:var(--muted)}
+.total-strip strong{font-size:30px}
+
+/* Readable floor, phone included (beats base media-query sizes) */
+html body .eyebrow{font-size:14px!important;letter-spacing:0;text-transform:none}
+html body .chip,html body .chip.sale,html body .status{font-size:13px!important}
+html body .tag,html body .lowest.tag{font-size:12.5px!important}
+html body .button{font-size:15px!important}
+html body .compare-table .button,html body .vote-buttons.compact .button{font-size:13.5px!important}
+html body .price-note,html body .price small{font-size:13px!important}
+html body .page-top p,html body .result-box p,html body .participation,html body .product-summary,html body .toggle span{font-size:15px!important}
+html body .comparison-tools small{font-size:13px!important}
+html body .compare-values td,html body .compare-values td small{font-size:14px!important}
+html body .queue-bar strong{font-size:14px!important}
+html body .choose-screen p,html body .choose-screen small,html body .person-choice small{font-size:14px!important}
+html body .mobile-nav a{font-size:12.5px!important}
+html body .small-avatar{font-size:11px!important}
+/* Budget strip: number on its own line, link underneath */
+html body .total-strip strong{white-space:nowrap;font-size:clamp(24px,7.4vw,32px)!important}
+html body .total-strip>.text-link{grid-column:1/-1;justify-self:start;font-size:15px!important}
+/* Every model keeps its photo; on phones two per row, an odd last one centred */
+html body .item-photos figure:nth-child(3){display:block}
+@media (max-width:640px){
+  html body .item-photos{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  html body .item-photos figure:last-child:nth-child(odd){grid-column:1/-1;width:calc(50% - 6px);justify-self:center}
+}
+html body .full-specs dt,html body .full-specs dd,html body details summary{font-size:14px!important}
+html body .compare-table .price-note,html body .compare-table .price small{font-size:12.5px!important}
+html body details section p,html body details section a{font-size:14px!important}
+html body .total-strip{grid-template-columns:1fr}
+html body .total-strip>div:first-child{grid-row:1;grid-column:1}
+html body .total-strip>div:nth-child(2){grid-row:2;grid-column:1}
+html body .total-strip>.text-link{grid-row:3;grid-column:1}
+html body .compare-table select{font-size:14px!important}
+/* Area page rows: iOS-style disclosure chevron */
+.row-arrow{font-size:26px!important;line-height:1;color:#a39f95;font-weight:300}
+.item-row{border-bottom-color:#dedbd3}
+html body .item-row p{font-size:15px!important}
+html body .item-row h3{font-size:19px}
+/* Empty room photos: a short placeholder, not a hero-sized void */
+html body .current-photos .empty-photo{height:auto;min-height:0;padding:18px;flex-direction:row;gap:12px;border:0;background:#e3e1da}
+html body .current-photos .empty-photo svg{width:22px;height:22px}
+html body .empty-photo>span{font-size:14px!important}
+/* Chooser: the big initials already name the person */
+.person-choice .avatar{display:none}
+body:has(.choose-screen) .site-footer{display:none}
+@media (max-width:370px){html body .segmented a{font-size:13px!important;padding:9px 9px}}
+/* Motion only where it answers a tap: opening a section, confirming a pick */
+@keyframes lc-reveal{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+details[open]>*:not(summary){animation:lc-reveal 200ms var(--ease-out)}
+.button.selected{animation:lc-pop 220ms var(--ease-out)}
+@keyframes lc-pop{0%{transform:scale(.96)}100%{transform:scale(1)}}
+summary{cursor:pointer}
+@media (prefers-reduced-motion:reduce){details[open]>*:not(summary),.button.selected{animation:none}}
+html{background:var(--plaster)}
+html body .person-choice{min-height:0;padding:22px 8px 20px}

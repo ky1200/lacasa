@@ -5,10 +5,11 @@ export const todaySG = (now = new Date()) => new Intl.DateTimeFormat('en-CA', {t
 export const slug = value => String(value).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 export const money = value => value == null ? 'Price TBC' : `S$${Math.round(value).toLocaleString('en-SG')}`;
 export const range = (min,max) => min === max ? money(min) : `${money(min)}–${Math.round(max).toLocaleString('en-SG')}`;
-export const estimated = (value,estimate=false) => estimate ? `${value} · rough` : value;
+export const estimated = (value,estimate=false) => estimate ? `about ${value}` : value;
+export const tbcCount = n => `${n} ${n===1?'price':'prices'} TBC`;
 export function costSummary({min,max,priced,tbc=0,rough=0}) {
- const amount=priced===0&&tbc>0?'Price TBC':estimated(range(min,max),rough>0);
- return amount+(tbc?` · ${tbc} TBC`:'');
+ if(priced===0&&tbc>0)return tbc===1?'Price TBC':tbcCount(tbc);
+ return estimated(range(min,max),rough>0)+(tbc?` + ${tbcCount(tbc)}`:'');
 }
 export function deadlineCalendar(today,deadline) {
  const day=86400000,start=Date.parse(today+'T00:00:00Z'),end=Date.parse(deadline+'T00:00:00Z');

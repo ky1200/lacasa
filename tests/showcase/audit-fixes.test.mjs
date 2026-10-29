@@ -18,13 +18,13 @@ test('unknown line prices and an all-unpriced subtotal never become S$0',()=>{
  const s=state([real('unknown',{status:'draft',options:[],roughBudget:undefined})]);
  const html=renderPage(s,'/list').html;
  assert.match(html,/<strong>Price TBC<\/strong>/);
- assert.match(html,/<span class="subtotal">Price TBC · 1 TBC<\/span>/);
+ assert.match(html,/<span class="subtotal">Price TBC<\/span>/);
  assert.match(listText(s),/unknown: Price TBC/);
  assert.doesNotMatch(html,/<span class="subtotal">S\$0/);
 });
 test('mixed group subtotals retain the priced range and TBC count',()=>{
  const s=state([real('known',{options:[{id:'a',price:900},{id:'b',price:1200}]}),real('unknown',{options:[],roughBudget:undefined})]);
- assert.match(renderPage(s,'/list').html,/<span class="subtotal">S\$900–1,200 · 1 TBC<\/span>/);
+ assert.match(renderPage(s,'/list').html,/<span class="subtotal">S\$900–1,200 \+ 1 price TBC<\/span>/);
  const totals=listTotals(s.content,s.results);assert.deepEqual([totals.min,totals.max,totals.tbc],[900,1200,1]);
 });
 test('a genuine zero-price none option stays zero',()=>{
@@ -33,11 +33,11 @@ test('a genuine zero-price none option stays zero',()=>{
  assert.match(renderPage(s,'/list').html,/<span class="subtotal">S\$0<\/span>/);
  assert.match(listText(s),/none: S\$0 · None/);
 });
-test('estimates use rough labels without braces in lines, subtotals, totals and copied text',()=>{
+test('estimates read "about"  without braces in lines, subtotals, totals and copied text',()=>{
  const s=state([real('estimate',{options:[],roughBudget:{min:1500,max:3500,source:'Rough guess, to research'}})]),html=renderPage(s,'/list').html;
- assert.match(html,/<span class="subtotal">S\$1,500–3,500 · rough<\/span>/);
- assert.match(html,/<strong>S\$1,500–3,500 · rough<\/strong>/);
- assert.match(listText(s),/estimate: S\$1,500–3,500 · rough/);
+ assert.match(html,/<span class="subtotal">about S\$1,500–3,500<\/span>/);
+ assert.match(html,/<strong>about S\$1,500–3,500<\/strong>/);
+ assert.match(listText(s),/estimate: about S\$1,500–3,500/);
  assert.doesNotMatch(visible(html),/[{}]/);
 });
 test('all nine requested budget allowances are present with their provenance',()=>{
