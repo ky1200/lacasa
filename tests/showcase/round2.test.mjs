@@ -56,7 +56,7 @@ test('queue Back returns to the previous visited item even if now answered',()=>
 });
 test('audit vote queue uses actual ready items and never fictional samples',()=>{
  const s=visitorState(content,samples,{audit:true},[],[]),html=visible(renderPage(s,'/audit/vote').html);
- assert.match(html,/Handheld vacuum/);assert.doesNotMatch(html,/SAMPLE|Sample fridge|data-item="EN01"/);assert.match(html,/Skip for now/);
+ assert.match(html,/Handheld vacuum|Bathroom ventilation fan/);assert.doesNotMatch(html,/SAMPLE|Sample fridge|data-item="EN01"/);assert.match(html,/Skip for now/);
  assert.doesNotMatch(visible(renderPage(s,'/audit/').html),/\byou\b/i);
 });
 test('all four video thumbnails are genuine separate local media assets',()=>{

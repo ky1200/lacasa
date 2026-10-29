@@ -112,11 +112,24 @@ async function page(request, env, u) {
   }
 }
 
+// Official product photos linked in lacasa.json are fetched and cached by the site.
+// Only URLs that appear in the content are allowed, so this can't be used as an open proxy.
+const remoteImages = new Set(content.decisions.flatMap(d => d.options ?? []).flatMap(o => o.images ?? []).map(i => i.src).filter(s => /^https:\/\//.test(s ?? '')));
+async function remoteImage(u) {
+  const src = u.searchParams.get('src');
+  if (!src || !remoteImages.has(src)) return new Response('Not found', { status: 404 });
+  const upstream = await fetch(src, { cf: { cacheEverything: true, cacheTtl: 604800 }, headers: { Accept: 'image/avif,image/webp,image/*' } });
+  const type = upstream.headers.get('content-type') ?? '';
+  if (!upstream.ok || !type.startsWith('image/') || type.includes('svg')) return new Response('Image unavailable', { status: 502 });
+  return new Response(upstream.body, { headers: { 'Content-Type': type, 'Cache-Control': 'public, max-age=604800', 'X-Content-Type-Options': 'nosniff' } });
+}
+
 export default {
   async fetch(incoming, env) {
     const u = new URL(incoming.url);
     if (u.pathname === '/owner/login' && incoming.method === 'POST') return ownerLogin(incoming, env, u);
     if (u.pathname === '/owner/logout') return ownerLogout(u);
+    if (u.pathname === '/img' && incoming.method === 'GET') return remoteImage(u);
     const request = await trusted(incoming, env);
     try { await ensureSchema(env); } catch (e) { console.error('schema setup failed', e?.stack ?? e); }
     if (u.pathname.startsWith('/api/')) return api(request, showcaseEnv(env), content, samples);

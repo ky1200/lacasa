@@ -177,3 +177,18 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,su
 /* Compare: tighter chips in two narrow columns */
 .compare-table .text-chips span{font-size:12.5px;border-radius:10px;padding:5px 9px}
 .compare-table .headline{font-size:14px;line-height:1.45}
+
+/* Home on phones: a compact deadline row instead of a full calendar */
+@media (max-width:640px){
+  .home-hero{padding:28px 0 20px}
+  .milestone-card.deadline-card{min-height:0;max-width:none;text-align:left;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center;margin-top:24px}
+  .deadline-card .eyebrow{grid-column:1/-1;margin:0}
+  .deadline-card .deadline-heading{display:block}
+  .deadline-card .deadline-heading h2{font-size:22px}
+  .deadline-card .deadline-heading time{display:block;color:var(--muted);font-size:15px;margin-top:2px}
+  .deadline-card .deadline-count{grid-column:2;grid-row:2;display:flex;flex-direction:column;align-items:flex-end;line-height:1}
+  .deadline-card .deadline-count strong{font-size:44px;font-weight:700;letter-spacing:-.03em;color:var(--sumi)}
+  .deadline-card .deadline-count span{font-size:13px;color:var(--muted);margin-top:4px}
+  .deadline-card .calendar,.deadline-card .calendar-key{display:none}
+  .deadline-card>.chip{grid-column:1/-1;justify-self:start;margin-top:10px}
+}

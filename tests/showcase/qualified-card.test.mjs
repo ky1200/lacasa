@@ -33,5 +33,5 @@ test('supplied images and option identities remain while door verification block
  for(const [i,model]of ['u400','u100'].entries())for(const [j,p]of d.options[i].legacyImages.entries()){
   assert.equal(p.src,`/images/entrance/digital-door-lock-aqara-${model}-${j+1}.webp`);assert.equal(p.kind,'product');const path=new URL('../../public'+p.src,import.meta.url);assert.ok(statSync(path).size<300000);assert.equal(readFileSync(path).toString('ascii',0,4),'RIFF');
  }
- for(const code of ['KY','KX','KS']){const s=stateFor(content,samples,code);assert.match(validateVote(content,d,code,{pick:d.options[0].id},s.results[d.id]),/still being researched/);assert.equal(s.progress[code].total,1);}
+ for(const code of ['KY','KX','KS']){const s=stateFor(content,samples,code);assert.match(validateVote(content,d,code,{pick:d.options[0].id},s.results[d.id]),/still being researched/);assert.equal(s.progress[code].total,content.decisions.filter(x=>x.status==='voting'&&!x.area.endsWith('-room')).length);}
 });

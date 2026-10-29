@@ -164,3 +164,10 @@ Backbone, editor rules, real draft content, sample content and research standard
 - Database: only `votes` and `finals` (both were empty at export; the 10 legacy rows were not carried over because nothing reads them).
 - Local checks: 97 tests pass; Worker smoke test passes for pages, images, name entry, voting, the list, owner sign-in (wrong password 401, missing origin 403), forged owner header ignored, owner export 200.
 - Not yet: deployed to Cloudflare, redesign.
+
+## 30 October 2026: Redesign and first new research item
+- Materials-board theme (`public/lacasa-theme.css`): plaster background, oak/tile/linen swatches per room, indigo actions, Zen Kaku Gothic New, larger type; compact deadline card on phones.
+- Bathroom ventilation fan researched and ready to vote: KDK 15WUD, 15WHPCT, 20WUD, 20WHCT.
+- Official product photos can be linked by URL; the Worker fetches and caches them at `/img?src=…`, only for URLs listed in `lacasa.json`.
+- Readiness gate: a pre-order counts as stock when it arrives before the item is needed on site.
+- Content snapshot tests turned into rule checks so new items don't break them. 97 tests pass.

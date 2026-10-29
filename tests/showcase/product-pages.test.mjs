@@ -36,8 +36,8 @@ test('comparison rows are short, grouped consistently and distinguish yes/no fro
 });
 test('sharp official product photos retain source links and historical pictures',()=>{
  for(const d of content.decisions.filter(d=>d.options.length))for(const o of d.options){
-  assert.ok(o.legacyImages.length);assert.ok(o.images.length);assert.ok(o.headline.split(' ').length<=8);
-  for(const i of o.images){assert.ok(Math.max(i.width,i.height)>=1000);assert.match(i.source,/^https:\/\/(?:us\.aqara\.com|www\.kaercher\.com|sharkninja\.sg)\//);assert.ok(statSync(new URL('../../public'+i.src,import.meta.url)).size<300000);}
+  if(o.legacyImages)assert.ok(o.legacyImages.length);assert.ok(o.images.length);assert.ok(o.headline.split(' ').length<=8);
+  for(const i of o.images){assert.ok(Math.max(i.width,i.height)>=1000);assert.match(i.source,/^https:\/\//);if(i.src.startsWith('/images/'))assert.ok(statSync(new URL('../../public'+i.src,import.meta.url)).size<300000);else assert.match(i.src,/^https:\/\//);}
  }
 });
 test('only exact English video fixtures create an origin-bearing player on tap',()=>{
