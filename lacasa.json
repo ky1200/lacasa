@@ -801,8 +801,8 @@
        "kind": "product",
        "source": "https://youkain.com.sg/product/vigor-yj-717/",
        "alt": "Youkain Vigor YJ-717 30-inch ceiling fan",
-       "width": 1200,
-       "height": 1200
+       "width": 1000,
+       "height": 1000
       }
      ],
      "headline": "Compact, with a dimmable light",
@@ -912,8 +912,8 @@
        "kind": "product",
        "source": "https://mayer.sg/products/mistral-36-inch-ceiling-fan-space-36",
        "alt": "Mistral Space 36 ceiling fan",
-       "width": 800,
-       "height": 800
+       "width": 801,
+       "height": 801
       }
      ],
      "headline": "Most for the money, installed",
@@ -1127,8 +1127,8 @@
        "kind": "product",
        "source": "https://fanco.com.sg/portfolio-item/bee/",
        "alt": "Fanco BEE ceiling fan",
-       "width": 1200,
-       "height": 1200
+       "width": 1733,
+       "height": 1415
       }
      ],
      "headline": "Smallest fan, longest warranty",
@@ -1231,17 +1231,7 @@
      "kind": "product",
      "tier": "Budget",
      "price": 249,
-     "images": [
-      {
-       "src": "https://fanco.com.sg/wp-content/uploads/2024/05/B-STAR-52-WH.png",
-       "caption": "Fanco B-Star (52-inch shown; same design)",
-       "kind": "product",
-       "source": "https://fanco.com.sg/portfolio-item/b-star-f-star/",
-       "alt": "Fanco B-Star (52-inch shown; same design)",
-       "width": 1200,
-       "height": 1200
-      }
-     ],
+     "images": [],
      "headline": "Low price, 4-year warranty",
      "love": "Cheap, with 4 years on-site cover.",
      "watchOut": "Bigger; light does not dim.",
@@ -1577,8 +1567,8 @@
        "kind": "product",
        "source": "https://fanco.com.sg/portfolio-item/dono/",
        "alt": "Fanco Dono corner fan",
-       "width": 1200,
-       "height": 1200
+       "width": 1066,
+       "height": 1600
       }
      ],
      "headline": "Corner or ceiling mount",
@@ -1919,8 +1909,8 @@
        "kind": "product",
        "source": "https://fanco.com.sg/portfolio-item/vino/",
        "alt": "Fanco Vino corner fan",
-       "width": 1200,
-       "height": 1200
+       "width": 1364,
+       "height": 2048
       }
      ],
      "headline": "Bigger corner fan, costs more",
@@ -2228,17 +2218,7 @@
      "kind": "product",
      "tier": "Mid",
      "price": 999,
-     "images": [
-      {
-       "src": "https://www.goodliving.sg/wp-content/uploads/2024/06/PLATINUM-MINI-2.0-CERAMIC-WHITE-V1-copy.png",
-       "caption": "GoodLiving Platinum Mini 2.0 laundry rack",
-       "kind": "product",
-       "source": "https://www.goodliving.sg/product/platinum-mini/",
-       "alt": "GoodLiving Platinum Mini 2.0 laundry rack",
-       "width": 1200,
-       "height": 1200
-      }
-     ],
+     "images": [],
      "headline": "Longer poles if there is room",
      "love": "Poles extend to 180 cm for more hanging space.",
      "watchOut": "Get the warranty in writing; pages differ.",
@@ -5791,17 +5771,7 @@
      "kind": "product",
      "tier": "Budget",
      "price": 759,
-     "images": [
-      {
-       "src": "https://web-res.midea.com/content/dam/midea-aem/sg/sg-new/pd/domestic-appliances/water-purifier/jl2245t/jl2245t-5243x5243.jpg",
-       "caption": "Midea JL2245T water dispenser",
-       "kind": "product",
-       "source": "https://www.midea.com/sg/domestic-appliances/water-purifier/midea-water-purifier-jl2245t.jl2245t",
-       "alt": "Midea JL2245T water dispenser",
-       "width": 5243,
-       "height": 5243
-      }
-     ],
+     "images": [],
      "headline": "Cheaper, fills itself",
      "love": "S$190 cheaper, with several temperature settings.",
      "watchOut": "1-year warranty; cold store size not stated.",
@@ -8783,8 +8753,8 @@
        "kind": "product",
        "source": "https://www.crestarfan.com.sg/products/airis-plus-smart-ceiling-fan",
        "alt": "Crestar Airis+ 33-inch ceiling fan, maple",
-       "width": 1200,
-       "height": 1200
+       "width": 1080,
+       "height": 1080
       }
      ],
      "headline": "Smaller, with softer bedtime light",
@@ -8872,17 +8842,7 @@
      "kind": "product",
      "tier": "Budget",
      "price": 249,
-     "images": [
-      {
-       "src": "https://fanco.com.sg/wp-content/uploads/2024/05/B-STAR-52-WH.png",
-       "caption": "Fanco B-Star (52-inch shown; same design)",
-       "kind": "product",
-       "source": "https://fanco.com.sg/portfolio-item/b-star-f-star/",
-       "alt": "Fanco B-Star (52-inch shown; same design)",
-       "width": 1200,
-       "height": 1200
-      }
-     ],
+     "images": [],
      "headline": "Sensible low-cost choice",
      "love": "Cheap, with 4 years on-site cover.",
      "watchOut": "Light doesn't dim; check low-speed hum.",
@@ -8991,8 +8951,8 @@
        "kind": "product",
        "source": "https://fanco.com.sg/portfolio-item/bee/",
        "alt": "Fanco BEE ceiling fan",
-       "width": 1200,
-       "height": 1200
+       "width": 1733,
+       "height": 1415
       }
      ],
      "headline": "More room around cupboards and curtains",
@@ -9617,8 +9577,8 @@
        "kind": "product",
        "source": "https://mayer.sg/products/mistral-36-inch-ceiling-fan-space-36",
        "alt": "Mistral Space 36 ceiling fan",
-       "width": 800,
-       "height": 800
+       "width": 801,
+       "height": 801
       }
      ],
      "headline": "Same features, S$30 less",
