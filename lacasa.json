@@ -453,8 +453,8 @@
        "kind": "product",
        "source": "https://pfetech.com/aqara/product/aqara-smart-downlights-t2/",
        "alt": "Aqara Smart Downlight T2",
-       "width": 1200,
-       "height": 1200
+       "width": 1000,
+       "height": 1000
       },
       {
        "src": "https://ecom.pfetech.com/static/1783251852170-Aqara-LED-Strip-T1-Product-Picture.jpg",
@@ -934,8 +934,8 @@
        "kind": "product",
        "source": "https://www.americanstandard.com.sg/",
        "alt": "American Standard Loven CCAS1862 toilet",
-       "width": 1200,
-       "height": 1200
+       "width": 2560,
+       "height": 2560
       }
      ],
      "headline": "Best value if it fits",
@@ -1019,8 +1019,8 @@
        "kind": "product",
        "source": "https://www.rigel-group.com/",
        "alt": "RIGEL Gallant WO9030FA-HKM toilet",
-       "width": 1200,
-       "height": 1200
+       "width": 1500,
+       "height": 1500
       }
      ],
      "headline": "Shorter, for a tight bathroom",
@@ -1104,8 +1104,8 @@
        "kind": "product",
        "source": "https://www.rigel-group.com/",
        "alt": "RIGEL WO8007FA toilet",
-       "width": 1200,
-       "height": 1200
+       "width": 1000,
+       "height": 1000
       }
      ],
      "headline": "Cheaper RIGEL, longer body",
@@ -1189,8 +1189,8 @@
        "kind": "product",
        "source": "https://www.rigel-group.com/",
        "alt": "RIGEL Impression WO5387F toilet",
-       "width": 1200,
-       "height": 1200
+       "width": 1000,
+       "height": 1000
       }
      ],
      "headline": "Shortest toilet here",
@@ -1274,8 +1274,8 @@
        "kind": "product",
        "source": "https://www.watelier.com/product/bathroom-sanitary-wares-toilets-one-piece/toto-one-piece-toilet-c889desi",
        "alt": "TOTO C889DESI toilet",
-       "width": 1200,
-       "height": 1200
+       "width": 800,
+       "height": 800
       }
      ],
      "headline": "Premium TOTO, over budget",
@@ -1574,7 +1574,7 @@
      "price": 225,
      "images": [
       {
-       "src": "https://www.ikea.com/sg/en/images/products/enhet-tvaellen-wash-stnd-w-drawers-wash-basin-white__1485793_pe1002168_s5.jpg?f=u",
+       "src": "https://www.ikea.com/sg/en/images/products/enhet-tvaellen-wash-stnd-w-drawers-wash-basin-white__1485793_pe1002168_s5.jpg?f=xl",
        "caption": "IKEA ENHET / TVÄLLEN wash stand",
        "kind": "product",
        "source": "https://www.ikea.com/sg/en/p/enhet-tvaellen-wash-stnd-w-drawers-wash-basin-white-s99616042/",
@@ -2303,7 +2303,7 @@
      "price": 235,
      "images": [
       {
-       "src": "https://www.ikea.com/sg/en/images/products/treasjoen-mirror-cab-1-door-built-in-lighting__1241592_pe919884_s5.jpg?f=u",
+       "src": "https://www.ikea.com/sg/en/images/products/treasjoen-mirror-cab-1-door-built-in-lighting__1241592_pe919884_s5.jpg?f=xl",
        "caption": "IKEA TREASJÖN mirror cabinet 50 cm",
        "kind": "product",
        "source": "https://www.ikea.com/sg/en/p/treasjoen-mirror-cab-1-door-built-in-lighting-50580049/",
@@ -2390,7 +2390,7 @@
      "price": 295,
      "images": [
       {
-       "src": "https://www.ikea.com/sg/en/images/products/treasjoen-mirror-cab-2-door-built-in-lighting__1241593_pe919883_s5.jpg?f=u",
+       "src": "https://www.ikea.com/sg/en/images/products/treasjoen-mirror-cab-2-door-built-in-lighting__1241593_pe919883_s5.jpg?f=xl",
        "caption": "IKEA TREASJÖN mirror cabinet 80 cm",
        "kind": "product",
        "source": "https://www.ikea.com/sg/en/p/treasjoen-mirror-cab-2-door-built-in-lighting-30580050/",
@@ -2477,7 +2477,7 @@
      "price": 409.9,
      "images": [
       {
-       "src": "https://www.ikea.com/sg/en/images/products/faxaelven-mirror-cabinet-w-built-in-lighting-white__1195481_pe902461_s5.jpg?f=u",
+       "src": "https://www.ikea.com/sg/en/images/products/faxaelven-mirror-cabinet-w-built-in-lighting-white__1195481_pe902461_s5.jpg?f=xl",
        "caption": "IKEA FAXÄLVEN mirror cabinet 60 cm",
        "kind": "product",
        "source": "https://www.ikea.com/sg/en/p/faxaelven-mirror-cabinet-w-built-in-lighting-white-s49525737/",
@@ -4018,7 +4018,7 @@
        "source": "https://www.aqara.com/en/product/dual-relay-module-t2/",
        "alt": "Aqara Dual Relay Module T2",
        "width": 2560,
-       "height": 2560
+       "height": 2099
       }
      ],
      "headline": "Two lights, one hidden module",
@@ -5832,8 +5832,8 @@
        "kind": "product",
        "source": "https://www.kaercher.com/sg/home-garden/vacuum-cleaners/cvh-3-11983540.html",
        "alt": "Kärcher CVH 3 handheld vacuum",
-       "width": 1200,
-       "height": 1200
+       "width": 1600,
+       "height": 1600
       }
      ],
      "headline": "Light and simple for everyday crumbs",
@@ -5931,8 +5931,8 @@
        "kind": "product",
        "source": "https://asia.blackanddecker.global/product/hlvc320b-b1/slim-pelican-12v-hand-vac-20ah",
        "alt": "Black+Decker HLVC320B handheld vacuum",
-       "width": 1200,
-       "height": 1200
+       "width": 2000,
+       "height": 2000
       }
      ],
      "headline": "Cheapest with a charging stand",
@@ -6186,8 +6186,8 @@
        "kind": "product",
        "source": "https://www.bosch-home.com.sg/en/product/vacuum-cleaners/rechargeable-handheld-vacuum-cleaners/BHN20L",
        "alt": "Bosch BHN20L handheld vacuum",
-       "width": 1200,
-       "height": 1200
+       "width": 2532,
+       "height": 1685
       }
      ],
      "headline": "Longest battery, biggest bin",
@@ -6399,17 +6399,7 @@
      "kind": "product",
      "tier": "Budget",
      "price": 55,
-     "images": [
-      {
-       "src": "https://i02.appmifile.com/762_operator_sg/09/07/2021/589f22745ac4ab10f48715c3f66060cd.jpg",
-       "caption": "Xiaomi Mi Vacuum Cleaner Mini",
-       "kind": "product",
-       "source": "https://www.mi.com/sg/product/mi-vacuum-cleaner-mini/",
-       "alt": "Xiaomi Mi Vacuum Cleaner Mini",
-       "width": 1200,
-       "height": 1200
-      }
-     ],
+     "images": [],
      "headline": "Cheapest, for desk-size messes",
      "love": "Tiny, light and only S$55.",
      "watchOut": "50 ml bin; shop warranty, not Xiaomi's.",
