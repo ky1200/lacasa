@@ -221,7 +221,7 @@
       {
        "shop": "Pantrade",
        "price": 28.9,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.pantrade.com.sg/collections/wiz/products/wiz-smart-recessed-downlight-rgb-11w-rd5-822-65",
        "priceNote": "Each downlight (WiZ Gen2 11W)"
@@ -229,7 +229,7 @@
       {
        "shop": "Pantrade",
        "price": 98.9,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.pantrade.com.sg/collections/wiz/products/wiz-wi-fi-led-strip-2m-1600lm-starter-kit-and-1m-800lm-extension",
        "priceNote": "2 m strip kit; 1 m extensions S$23.90"
@@ -245,7 +245,7 @@
       "Hub needed": "No",
       "Dims": "Yes",
       "Lights price (4 downlights + strip)": "S$262.30",
-      "In stock": "Can order (Pantrade)",
+      "In stock": "Yes (Pantrade)",
       "Power (each downlight)": "11 W",
       "Warranty": "2 years"
      },
@@ -271,7 +271,7 @@
        "Hub needed": "No",
        "Dims": "Yes",
        "Lights price (4 downlights + strip)": "S$262.30",
-       "In stock": "Can order (Pantrade)",
+       "In stock": "Yes (Pantrade)",
        "Power (each downlight)": "11 W",
        "Warranty": "2 years"
       },
@@ -279,7 +279,7 @@
        {
         "shop": "Pantrade",
         "price": 28.9,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.pantrade.com.sg/collections/wiz/products/wiz-smart-recessed-downlight-rgb-11w-rd5-822-65",
         "priceNote": "Each downlight (WiZ Gen2 11W)"
@@ -287,7 +287,7 @@
        {
         "shop": "Pantrade",
         "price": 98.9,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.pantrade.com.sg/collections/wiz/products/wiz-wi-fi-led-strip-2m-1600lm-starter-kit-and-1m-800lm-extension",
         "priceNote": "2 m strip kit; 1 m extensions S$23.90"
@@ -299,7 +299,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://www.pantrade.com.sg/collections/wiz/products/wiz-smart-recessed-downlight-rgb-11w-rd5-822-65"
       },
       "owner": {
@@ -477,7 +477,7 @@
       {
        "shop": "Aqara Singapore (PFE)",
        "price": 99,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://pfetech.com/aqara/product/aqara-smart-downlights-t2/",
        "priceNote": "Each downlight T2"
@@ -485,7 +485,7 @@
       {
        "shop": "Light Avenue",
        "price": 99,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://www.lightavenuesg.com/products/aqara-smart-downlights-t2",
        "priceNote": "Each downlight T2"
@@ -509,7 +509,7 @@
       "Hub needed": "Yes, Aqara hub",
       "Dims": "Yes",
       "Lights price (4 downlights + strip)": "S$515 + hub",
-      "In stock": "Can order (Aqara Singapore)",
+      "In stock": "Yes (Aqara Singapore)",
       "Power (each downlight)": "10 W",
       "Warranty": "2 years lights, 1 year strip"
      },
@@ -535,7 +535,7 @@
        "Hub needed": "Yes, Aqara hub",
        "Dims": "Yes",
        "Lights price (4 downlights + strip)": "S$515 + hub",
-       "In stock": "Can order (Aqara Singapore)",
+       "In stock": "Yes (Aqara Singapore)",
        "Power (each downlight)": "10 W",
        "Warranty": "2 years lights, 1 year strip"
       },
@@ -543,7 +543,7 @@
        {
         "shop": "Aqara Singapore (PFE)",
         "price": 99,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://pfetech.com/aqara/product/aqara-smart-downlights-t2/",
         "priceNote": "Each downlight T2"
@@ -551,7 +551,7 @@
        {
         "shop": "Light Avenue",
         "price": 99,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://www.lightavenuesg.com/products/aqara-smart-downlights-t2",
         "priceNote": "Each downlight T2"
@@ -571,7 +571,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://pfetech.com/aqara/product/aqara-smart-downlights-t2/"
       },
       "owner": {
@@ -590,7 +590,17 @@
      "kind": "product",
      "tier": "Mid",
      "price": null,
-     "images": [],
+     "images": [
+      {
+       "src": "https://ecom.pfetech.com/static/1783251848652-Aqara-Smart-LED-Strips.jpg",
+       "caption": "Aqara COB LED strip",
+       "kind": "product",
+       "source": "https://pfetech.com/aqara/product/aqara-smart-led-strips/",
+       "alt": "Aqara COB LED strip",
+       "width": 1000,
+       "height": 1000
+      }
+     ],
      "headline": "Smoothest strip; get a quote first",
      "love": "One smooth line of light, no dots.",
      "watchOut": "Full price known only after a quote.",
@@ -816,7 +826,7 @@
       {
        "shop": "Sembawang Lighting House",
        "price": 248,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.sembawanglightinghouse.com/youkain-vigor-downrod-yj-717-30-42-small-ceiling-fan/",
        "priceNote": "Fan only; basic installation S$40–60"
@@ -824,7 +834,7 @@
       {
        "shop": "Youkain",
        "price": 248,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://youkain.com.sg/product/vigor-yj-717/",
        "priceNote": "Fan only"
@@ -838,7 +848,7 @@
       "Remote": "Yes",
       "Fan price": "S$248",
       "With basic installation": "S$288–308",
-      "In stock": "Can order (Sembawang Lighting)",
+      "In stock": "Yes (Sembawang Lighting)",
       "Warranty": "2 years on-site"
      },
      "shopper": {
@@ -861,14 +871,14 @@
        "Remote": "Yes",
        "Fan price": "S$248",
        "With basic installation": "S$288–308",
-       "In stock": "Can order (Sembawang Lighting)",
+       "In stock": "Yes (Sembawang Lighting)",
        "Warranty": "2 years on-site"
       },
       "offers": [
        {
         "shop": "Sembawang Lighting House",
         "price": 248,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.sembawanglightinghouse.com/youkain-vigor-downrod-yj-717-30-42-small-ceiling-fan/",
         "priceNote": "Fan only; basic installation S$40–60"
@@ -876,7 +886,7 @@
        {
         "shop": "Youkain",
         "price": 248,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://youkain.com.sg/product/vigor-yj-717/",
         "priceNote": "Fan only"
@@ -888,7 +898,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://www.sembawanglightinghouse.com/youkain-vigor-downrod-yj-717-30-42-small-ceiling-fan/"
       },
       "owner": {
@@ -927,7 +937,7 @@
       {
        "shop": "Chinmega Electric",
        "price": 199,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://chinmega.com.sg/products/free-basic-installation-mistral-space-36-ceiling-fan-dc-motor-tricolor-dimmable-5-fan-speeds",
        "priceNote": "With basic installation"
@@ -935,7 +945,7 @@
       {
        "shop": "Mayer",
        "price": 199,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://mayer.sg/products/mistral-36-inch-ceiling-fan-space-36",
        "priceNote": "Fan only"
@@ -949,7 +959,7 @@
       "Remote": "Yes",
       "Fan price": "S$199",
       "With basic installation": "S$199 (bundle, existing point)",
-      "In stock": "Can order (Chinmega)",
+      "In stock": "Available online (Chinmega)",
       "Warranty": "2 years, motor 10 years"
      },
      "shopper": {
@@ -972,14 +982,14 @@
        "Remote": "Yes",
        "Fan price": "S$199",
        "With basic installation": "S$199 (bundle, existing point)",
-       "In stock": "Can order (Chinmega)",
+       "In stock": "Available online (Chinmega)",
        "Warranty": "2 years, motor 10 years"
       },
       "offers": [
        {
         "shop": "Chinmega Electric",
         "price": 199,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://chinmega.com.sg/products/free-basic-installation-mistral-space-36-ceiling-fan-dc-motor-tricolor-dimmable-5-fan-speeds",
         "priceNote": "With basic installation"
@@ -987,7 +997,7 @@
        {
         "shop": "Mayer",
         "price": 199,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://mayer.sg/products/mistral-36-inch-ceiling-fan-space-36",
         "priceNote": "Fan only"
@@ -1029,7 +1039,7 @@
       {
        "shop": "Sembawang Lighting House",
        "price": 188,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.sembawanglightinghouse.com/bestar-raptor-33-38-48-ceiling-fan/",
        "priceNote": "Fan only; basic installation S$40–60"
@@ -1037,7 +1047,7 @@
       {
        "shop": "Hoe Kee",
        "price": 188,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.hoekee.com.sg/ceiling-fans/bestar-raptor-33-38-48-ceiling-fan-with-light-option.html",
        "priceNote": "Choose 33-inch with light"
@@ -1051,7 +1061,7 @@
       "Remote": "Yes",
       "Fan price": "S$188",
       "With basic installation": "S$228–248",
-      "In stock": "Can order (Sembawang Lighting)",
+      "In stock": "Yes (Hoe Kee, Sembawang Lighting)",
       "Warranty": "2 years on-site"
      },
      "shopper": {
@@ -1074,14 +1084,14 @@
        "Remote": "Yes",
        "Fan price": "S$188",
        "With basic installation": "S$228–248",
-       "In stock": "Can order (Sembawang Lighting)",
+       "In stock": "Yes (Hoe Kee, Sembawang Lighting)",
        "Warranty": "2 years on-site"
       },
       "offers": [
        {
         "shop": "Sembawang Lighting House",
         "price": 188,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.sembawanglightinghouse.com/bestar-raptor-33-38-48-ceiling-fan/",
         "priceNote": "Fan only; basic installation S$40–60"
@@ -1089,7 +1099,7 @@
        {
         "shop": "Hoe Kee",
         "price": 188,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.hoekee.com.sg/ceiling-fans/bestar-raptor-33-38-48-ceiling-fan-with-light-option.html",
         "priceNote": "Choose 33-inch with light"
@@ -1101,8 +1111,8 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
-       "source": "https://www.sembawanglightinghouse.com/bestar-raptor-33-38-48-ceiling-fan/"
+       "status": "ready",
+       "source": "https://www.hoekee.com.sg/ceiling-fans/bestar-raptor-33-38-48-ceiling-fan-with-light-option.html"
       },
       "owner": {
        "checked": "2026-10-30",
@@ -1142,7 +1152,7 @@
       {
        "shop": "Sembawang Lighting House",
        "price": 258,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.sembawanglightinghouse.com/9-9-sale-fanco-bee-26-dc-ceiling-fan/",
        "priceNote": "Fan only; basic installation S$40–60"
@@ -1164,7 +1174,7 @@
       "Remote": "Yes",
       "Fan price": "S$258",
       "With basic installation": "S$298–318",
-      "In stock": "Can order (Sembawang Lighting)",
+      "In stock": "Yes (Sembawang Lighting)",
       "Warranty": "4 years on-site"
      },
      "shopper": {
@@ -1187,14 +1197,14 @@
        "Remote": "Yes",
        "Fan price": "S$258",
        "With basic installation": "S$298–318",
-       "In stock": "Can order (Sembawang Lighting)",
+       "In stock": "Yes (Sembawang Lighting)",
        "Warranty": "4 years on-site"
       },
       "offers": [
        {
         "shop": "Sembawang Lighting House",
         "price": 258,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.sembawanglightinghouse.com/9-9-sale-fanco-bee-26-dc-ceiling-fan/",
         "priceNote": "Fan only; basic installation S$40–60"
@@ -1214,7 +1224,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://www.sembawanglightinghouse.com/9-9-sale-fanco-bee-26-dc-ceiling-fan/"
       },
       "owner": {
@@ -1231,7 +1241,17 @@
      "kind": "product",
      "tier": "Budget",
      "price": 249,
-     "images": [],
+     "images": [
+      {
+       "src": "https://houseoffans.sg/cdn/shop/files/Fanco_Bstar_Black.jpg?v=1773728457",
+       "caption": "Fanco B-Star ceiling fan, black",
+       "kind": "product",
+       "source": "https://houseoffans.sg/products/fanco-b-star-ceiling-fan",
+       "alt": "Fanco B-Star ceiling fan, black",
+       "width": 1000,
+       "height": 1000
+      }
+     ],
      "headline": "Low price, 4-year warranty",
      "love": "Cheap, with 4 years on-site cover.",
      "watchOut": "Bigger; light does not dim.",
@@ -1243,7 +1263,7 @@
       {
        "shop": "Sembawang Lighting House",
        "price": 189,
-       "stock": "Can order online",
+       "stock": "Limited stock",
        "checked": "2026-10-30",
        "url": "https://www.sembawanglightinghouse.com/fanco-bstar-36-46-52-dc-ceiling-fan/",
        "priceNote": "Fan only; limited stock; installation S$40–60"
@@ -1265,7 +1285,7 @@
       "Remote": "Yes",
       "Fan price": "S$189",
       "With basic installation": "S$229–249",
-      "In stock": "Can order (Sembawang Lighting)",
+      "In stock": "Limited stock (Sembawang Lighting)",
       "Warranty": "4 years on-site"
      },
      "shopper": {
@@ -1288,14 +1308,14 @@
        "Remote": "Yes",
        "Fan price": "S$189",
        "With basic installation": "S$229–249",
-       "In stock": "Can order (Sembawang Lighting)",
+       "In stock": "Limited stock (Sembawang Lighting)",
        "Warranty": "4 years on-site"
       },
       "offers": [
        {
         "shop": "Sembawang Lighting House",
         "price": 189,
-        "stock": "Can order online",
+        "stock": "Limited stock",
         "checked": "2026-10-30",
         "url": "https://www.sembawanglightinghouse.com/fanco-bstar-36-46-52-dc-ceiling-fan/",
         "priceNote": "Fan only; limited stock; installation S$40–60"
@@ -1454,7 +1474,7 @@
       {
        "shop": "COURTS",
        "price": 161,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.courts.com.sg/kdk-16-in-wall-fan-black-m40ms-black-IP018816.html",
        "priceNote": "Fan only"
@@ -1478,7 +1498,7 @@
       "Turns side to side": "Yes",
       "Fan price": "S$161",
       "Installed and delivered": "S$244 (KDK)",
-      "In stock": "Yes (Best Denki)",
+      "In stock": "Yes (Best Denki, COURTS)",
       "Power": "Up to 57.5 W",
       "Electricity a month (4 h a day)": "About S$2",
       "Warranty": "1 year, walk-in"
@@ -1505,7 +1525,7 @@
        "Turns side to side": "Yes",
        "Fan price": "S$161",
        "Installed and delivered": "S$244 (KDK)",
-       "In stock": "Yes (Best Denki)",
+       "In stock": "Yes (Best Denki, COURTS)",
        "Power": "Up to 57.5 W",
        "Electricity a month (4 h a day)": "About S$2",
        "Warranty": "1 year, walk-in"
@@ -1522,7 +1542,7 @@
        {
         "shop": "COURTS",
         "price": 161,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.courts.com.sg/kdk-16-in-wall-fan-black-m40ms-black-IP018816.html",
         "priceNote": "Fan only"
@@ -1582,7 +1602,7 @@
       {
        "shop": "Sembawang Lighting House",
        "price": 199,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.sembawanglightinghouse.com/fanco-dono-16-corner-wall-fan/",
        "priceNote": "Fan only; S$40 ceiling installation"
@@ -1590,7 +1610,7 @@
       {
        "shop": "Regal Lighting",
        "price": 199,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.regallighting.com.sg/product/fanco-dono-corner-fan/",
        "priceNote": "Fan only"
@@ -1606,7 +1626,7 @@
       "Turns side to side": "Yes, 90°",
       "Fan price": "S$199",
       "Installed and delivered": "S$239 (ceiling, existing point)",
-      "In stock": "Can order (Sembawang Lighting)",
+      "In stock": "Yes (Sembawang Lighting)",
       "Power": "33 W",
       "Electricity a month (4 h a day)": "About S$1.20",
       "Warranty": "4 years on-site; get it in writing"
@@ -1633,7 +1653,7 @@
        "Turns side to side": "Yes, 90°",
        "Fan price": "S$199",
        "Installed and delivered": "S$239 (ceiling, existing point)",
-       "In stock": "Can order (Sembawang Lighting)",
+       "In stock": "Yes (Sembawang Lighting)",
        "Power": "33 W",
        "Electricity a month (4 h a day)": "About S$1.20",
        "Warranty": "4 years on-site; get it in writing"
@@ -1642,7 +1662,7 @@
        {
         "shop": "Sembawang Lighting House",
         "price": 199,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.sembawanglightinghouse.com/fanco-dono-16-corner-wall-fan/",
         "priceNote": "Fan only; S$40 ceiling installation"
@@ -1650,7 +1670,7 @@
        {
         "shop": "Regal Lighting",
         "price": 199,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.regallighting.com.sg/product/fanco-dono-corner-fan/",
         "priceNote": "Fan only"
@@ -1662,7 +1682,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://www.sembawanglightinghouse.com/fanco-dono-16-corner-wall-fan/"
       },
       "owner": {
@@ -1805,7 +1825,7 @@
       {
        "shop": "KDK",
        "price": 120,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.kdk.sg/products/wall-fan-m30cs",
        "priceNote": "Fan; S$60 installation and S$12 delivery extra"
@@ -1813,7 +1833,7 @@
       {
        "shop": "Harvey Norman",
        "price": 120,
-       "stock": "Can order online",
+       "stock": "Out of stock",
        "checked": "2026-10-30",
        "url": "https://www.harveynorman.com.sg/home-appliances/fans/wall-fans-en/kdk-fan-wall-30cm-m30cs.html",
        "priceNote": "Fan only"
@@ -1829,7 +1849,7 @@
       "Turns side to side": "Yes",
       "Fan price": "S$120",
       "Installed and delivered": "S$192 (KDK)",
-      "In stock": "Can order (KDK)",
+      "In stock": "Yes (KDK)",
       "Power": "Up to 38 W",
       "Electricity a month (4 h a day)": "About S$1.40",
       "Warranty": "1 year, walk-in"
@@ -1856,7 +1876,7 @@
        "Turns side to side": "Yes",
        "Fan price": "S$120",
        "Installed and delivered": "S$192 (KDK)",
-       "In stock": "Can order (KDK)",
+       "In stock": "Yes (KDK)",
        "Power": "Up to 38 W",
        "Electricity a month (4 h a day)": "About S$1.40",
        "Warranty": "1 year, walk-in"
@@ -1865,7 +1885,7 @@
        {
         "shop": "KDK",
         "price": 120,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.kdk.sg/products/wall-fan-m30cs",
         "priceNote": "Fan; S$60 installation and S$12 delivery extra"
@@ -1873,7 +1893,7 @@
        {
         "shop": "Harvey Norman",
         "price": 120,
-        "stock": "Can order online",
+        "stock": "Out of stock",
         "checked": "2026-10-30",
         "url": "https://www.harveynorman.com.sg/home-appliances/fans/wall-fans-en/kdk-fan-wall-30cm-m30cs.html",
         "priceNote": "Fan only"
@@ -1885,7 +1905,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://www.kdk.sg/products/wall-fan-m30cs"
       },
       "owner": {
@@ -1924,7 +1944,7 @@
       {
        "shop": "Mega Discount Store",
        "price": 259,
-       "stock": "Can order online",
+       "stock": "In stock (black)",
        "checked": "2026-10-30",
        "url": "https://megadiscountstore.com.sg/products/vino-corner-dc-fan",
        "priceNote": "Fan only"
@@ -1932,7 +1952,7 @@
       {
        "shop": "Regal Lighting",
        "price": 259,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.regallighting.com.sg/product/fanco-vino-18/",
        "priceNote": "Fan only"
@@ -1948,7 +1968,7 @@
       "Turns side to side": "Yes, 90°",
       "Fan price": "S$259",
       "Installed and delivered": "About S$299 (check the order)",
-      "In stock": "Can order (Mega Discount Store)",
+      "In stock": "Yes (Mega Discount Store, black)",
       "Power": "33 W",
       "Electricity a month (4 h a day)": "About S$1.20",
       "Warranty": "4 years on-site; get it in writing"
@@ -1975,7 +1995,7 @@
        "Turns side to side": "Yes, 90°",
        "Fan price": "S$259",
        "Installed and delivered": "About S$299 (check the order)",
-       "In stock": "Can order (Mega Discount Store)",
+       "In stock": "Yes (Mega Discount Store, black)",
        "Power": "33 W",
        "Electricity a month (4 h a day)": "About S$1.20",
        "Warranty": "4 years on-site; get it in writing"
@@ -1984,7 +2004,7 @@
        {
         "shop": "Mega Discount Store",
         "price": 259,
-        "stock": "Can order online",
+        "stock": "In stock (black)",
         "checked": "2026-10-30",
         "url": "https://megadiscountstore.com.sg/products/vino-corner-dc-fan",
         "priceNote": "Fan only"
@@ -1992,7 +2012,7 @@
        {
         "shop": "Regal Lighting",
         "price": 259,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.regallighting.com.sg/product/fanco-vino-18/",
         "priceNote": "Fan only"
@@ -2004,7 +2024,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://megadiscountstore.com.sg/products/vino-corner-dc-fan"
       },
       "owner": {
@@ -2116,7 +2136,7 @@
      "name": "Steigen Solar, Mini size",
      "kind": "product",
      "tier": "Mid",
-     "price": 799,
+     "price": 899,
      "images": [
       {
        "src": "https://www.steigen.com.sg/cdn/shop/files/B11-solar-white.png?v=1781007802&width=2880",
@@ -2130,7 +2150,7 @@
      ],
      "headline": "Compact everyday rack, lower price",
      "love": "Dries a normal load overnight; local repairs.",
-     "watchOut": "Price depends on the set-up chosen.",
+     "watchOut": "Small hanging area; labour charged after year 2.",
      "bestFor": "Small yard, heat now and then",
      "pros": [],
      "cons": [],
@@ -2138,11 +2158,11 @@
      "offers": [
       {
        "shop": "Steigen",
-       "price": 799,
-       "stock": "Can order online",
+       "price": 899,
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://www.steigen.com.sg/products/steigen-dryer",
-       "priceNote": "From; price depends on set-up"
+       "priceNote": "Mini, Solar, white; installation included"
       }
      ],
      "specs": {
@@ -2152,20 +2172,20 @@
       "Fans and heat": "Yes",
       "Remote / app": "Yes / Yes",
       "Blanket poles": "Queen bedding (brand guide)",
-      "Price": "From S$799",
+      "Price": "S$899 (Mini, Solar, white)",
       "Installation": "Standard installation included",
-      "In stock": "Can order (Steigen)",
+      "In stock": "Available online (Steigen)",
       "Warranty": "5 years parts, 2 years labour"
      },
      "shopper": {
       "headline": "Compact everyday rack, lower price",
       "love": "Dries a normal load overnight; local repairs.",
-      "watchOut": "Price depends on the set-up chosen.",
+      "watchOut": "Small hanging area; labour charged after year 2.",
       "bestFor": "Small yard, heat now and then",
       "ownerReviews": "Mostly good",
       "ownerSummary": "Owners of older Steigen racks report years of use; one needed a heater repair.",
       "chips": [
-       "From S$799",
+       "S$899",
        "7 poles",
        "Fans and heat"
       ],
@@ -2176,23 +2196,23 @@
        "Fans and heat": "Yes",
        "Remote / app": "Yes / Yes",
        "Blanket poles": "Queen bedding (brand guide)",
-       "Price": "From S$799",
+       "Price": "S$899 (Mini, Solar, white)",
        "Installation": "Standard installation included",
-       "In stock": "Can order (Steigen)",
+       "In stock": "Available online (Steigen)",
        "Warranty": "5 years parts, 2 years labour"
       },
       "offers": [
        {
         "shop": "Steigen",
-        "price": 799,
-        "stock": "Can order online",
+        "price": 899,
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://www.steigen.com.sg/products/steigen-dryer",
-        "priceNote": "From; price depends on set-up"
+        "priceNote": "Mini, Solar, white; installation included"
        }
       ],
       "priceNote": "Installed; final price after choosing the set-up",
-      "priceText": "From S$799"
+      "priceText": "S$899"
      },
      "publication": {
       "stock": {
@@ -2209,7 +2229,7 @@
       }
      },
      "priceNote": "Installed; final price after choosing the set-up",
-     "priceText": "From S$799"
+     "priceText": "S$899"
     },
     {
      "id": "eb412f04-cb75-4be2-8579-c4b5623ed271",
@@ -2218,7 +2238,17 @@
      "kind": "product",
      "tier": "Mid",
      "price": 999,
-     "images": [],
+     "images": [
+      {
+       "src": "https://www.goodliving.sg/wp-content/uploads/2025/02/PLATINUM-MINI-2.0-CERAMIC-WHITE-V1.png",
+       "caption": "GoodLiving Platinum Mini 2.0 laundry rack",
+       "kind": "product",
+       "source": "https://www.goodliving.sg/product/platinum-mini/",
+       "alt": "GoodLiving Platinum Mini 2.0 laundry rack",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
      "headline": "Longer poles if there is room",
      "love": "Poles extend to 180 cm for more hanging space.",
      "watchOut": "Get the warranty in writing; pages differ.",
@@ -2328,12 +2358,12 @@
     "11.11",
     "black_friday"
    ],
-   "answer10s": "Steigen Solar Mini for drying overnight, if it fits and the set-up price stays near S$799. GoodLiving Platinum Mini 2.0 if its longer poles have room.",
-   "summary": "Two compact motorised racks with fans and heat, about S$800–1,000 installed.",
+   "answer10s": "Steigen Solar Mini (S$899) for drying overnight, if it fits. GoodLiving Platinum Mini 2.0 (S$999 installed) if its longer poles have room.",
+   "summary": "Two compact motorised racks with fans and heat, S$899–999.",
    "researchedAt": "2026-10-30",
    "publicationPolicy": "stock-owner-video-v1",
    "shopper": {
-    "answer10s": "Steigen Solar Mini for drying overnight, if it fits and the set-up price stays near S$799. GoodLiving Platinum Mini 2.0 if its longer poles have room.",
+    "answer10s": "Steigen Solar Mini (S$899) for drying overnight, if it fits. GoodLiving Platinum Mini 2.0 (S$999 installed) if its longer poles have room.",
     "mustKnow": [
      "A full 9–10 kg wash may not all fit; some may need hanging elsewhere.",
      "Bedding is washed and dried separately.",
@@ -2423,7 +2453,7 @@
       {
        "shop": "Hoe Kee",
        "price": 399,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.hoekee.com.sg/bathroom/american-standard-ccas1862-1320411s0-loven-1-pc-concealed-floor-standing-water-closet-ccasc162-seat-cover-5-9.html"
       }
@@ -2434,7 +2464,7 @@
       "Rimless bowl": "Yes",
       "Flush (full / half)": "4 / 3 L",
       "Price": "S$399",
-      "In stock": "Can order (Hoe Kee)"
+      "In stock": "Yes (Hoe Kee)"
      },
      "shopper": {
       "headline": "Best value if it fits",
@@ -2454,13 +2484,13 @@
        "Rimless bowl": "Yes",
        "Flush (full / half)": "4 / 3 L",
        "Price": "S$399",
-       "In stock": "Can order (Hoe Kee)"
+       "In stock": "Yes (Hoe Kee)"
       },
       "offers": [
        {
         "shop": "Hoe Kee",
         "price": 399,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.hoekee.com.sg/bathroom/american-standard-ccas1862-1320411s0-loven-1-pc-concealed-floor-standing-water-closet-ccasc162-seat-cover-5-9.html"
        }
@@ -2470,7 +2500,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://www.hoekee.com.sg/bathroom/american-standard-ccas1862-1320411s0-loven-1-pc-concealed-floor-standing-water-closet-ccasc162-seat-cover-5-9.html"
       },
       "owner": {
@@ -2508,7 +2538,7 @@
       {
        "shop": "Light Avenue",
        "price": 525,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://www.lightavenuesg.com/products/rigel-wo9030fa-hkm-one-piece-water-closet"
       }
@@ -2519,7 +2549,7 @@
       "Rimless bowl": "Yes",
       "Flush (full / half)": "4.5–6 / 3 L",
       "Price": "S$525",
-      "In stock": "Can order (Light Avenue)"
+      "In stock": "Available online (Light Avenue)"
      },
      "shopper": {
       "headline": "Shorter, for a tight bathroom",
@@ -2539,13 +2569,13 @@
        "Rimless bowl": "Yes",
        "Flush (full / half)": "4.5–6 / 3 L",
        "Price": "S$525",
-       "In stock": "Can order (Light Avenue)"
+       "In stock": "Available online (Light Avenue)"
       },
       "offers": [
        {
         "shop": "Light Avenue",
         "price": 525,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://www.lightavenuesg.com/products/rigel-wo9030fa-hkm-one-piece-water-closet"
        }
@@ -2593,7 +2623,7 @@
       {
        "shop": "Light Avenue",
        "price": 485,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://www.lightavenuesg.com/products/rigel-wo8007fa-one-piece-water-closet"
       }
@@ -2604,7 +2634,7 @@
       "Rimless bowl": "Yes",
       "Flush (full / half)": "4 / 3 L",
       "Price": "S$485",
-      "In stock": "Can order (Light Avenue)"
+      "In stock": "Available online (Light Avenue)"
      },
      "shopper": {
       "headline": "Cheaper RIGEL, longer body",
@@ -2624,13 +2654,13 @@
        "Rimless bowl": "Yes",
        "Flush (full / half)": "4 / 3 L",
        "Price": "S$485",
-       "In stock": "Can order (Light Avenue)"
+       "In stock": "Available online (Light Avenue)"
       },
       "offers": [
        {
         "shop": "Light Avenue",
         "price": 485,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://www.lightavenuesg.com/products/rigel-wo8007fa-one-piece-water-closet"
        }
@@ -2678,7 +2708,7 @@
       {
        "shop": "Light Avenue",
        "price": 680,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://www.lightavenuesg.com/products/rigel-wo5387f-one-piece-water-closet"
       }
@@ -2689,7 +2719,7 @@
       "Rimless bowl": "Yes",
       "Flush (full / half)": "4.5–6 / 3 L",
       "Price": "S$680",
-      "In stock": "Can order (Light Avenue)"
+      "In stock": "Available online (Light Avenue)"
      },
      "shopper": {
       "headline": "Shortest toilet here",
@@ -2709,13 +2739,13 @@
        "Rimless bowl": "Yes",
        "Flush (full / half)": "4.5–6 / 3 L",
        "Price": "S$680",
-       "In stock": "Can order (Light Avenue)"
+       "In stock": "Available online (Light Avenue)"
       },
       "offers": [
        {
         "shop": "Light Avenue",
         "price": 680,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://www.lightavenuesg.com/products/rigel-wo5387f-one-piece-water-closet"
        }
@@ -2882,7 +2912,17 @@
      "kind": "product",
      "tier": "Mid",
      "price": 515,
-     "images": [],
+     "images": [
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0781/9005/1626/files/ESHOP-RUBINE_8.png?v=1772096491",
+       "caption": "Rubine 60 cm cabinet in three finishes",
+       "kind": "product",
+       "source": "https://shop.casa.sg/products/60cm-pull-to-open-vanity-cabinet-insert-basin",
+       "alt": "Rubine 60 cm cabinet in three finishes",
+       "width": 900,
+       "height": 900
+      }
+     ],
      "headline": "Practical, water-safe cabinet",
      "love": "PVC body copes with water; basin included.",
      "watchOut": "60 cm wide; check it fits.",
@@ -2894,7 +2934,7 @@
       {
        "shop": "CASA",
        "price": 515,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://shop.casa.sg/products/60cm-pull-to-open-vanity-cabinet-insert-basin"
       }
@@ -2905,7 +2945,7 @@
       "Basin and drain included": "Yes",
       "Opening": "Pull to open",
       "Price": "S$515",
-      "In stock": "Can order (CASA)",
+      "In stock": "Available online (CASA)",
       "Warranty": "1 year parts and service"
      },
      "shopper": {
@@ -2926,14 +2966,14 @@
        "Basin and drain included": "Yes",
        "Opening": "Pull to open",
        "Price": "S$515",
-       "In stock": "Can order (CASA)",
+       "In stock": "Available online (CASA)",
        "Warranty": "1 year parts and service"
       },
       "offers": [
        {
         "shop": "CASA",
         "price": 515,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://shop.casa.sg/products/60cm-pull-to-open-vanity-cabinet-insert-basin"
        }
@@ -2959,7 +2999,17 @@
      "kind": "product",
      "tier": "Mid",
      "price": 515,
-     "images": [],
+     "images": [
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0781/9005/1626/files/ESHOP-RUBINE_8.png?v=1772096491",
+       "caption": "Rubine 60 cm cabinet in three finishes",
+       "kind": "product",
+       "source": "https://shop.casa.sg/products/60cm-press-to-open-vanity-cabinet-insert-basin",
+       "alt": "Rubine 60 cm cabinet in three finishes",
+       "width": 900,
+       "height": 900
+      }
+     ],
      "headline": "Same cabinet, push-open drawer",
      "love": "Clean, handle-free front.",
      "watchOut": "Try the push-open action in a shop.",
@@ -2971,7 +3021,7 @@
       {
        "shop": "CASA",
        "price": 515,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://shop.casa.sg/products/60cm-press-to-open-vanity-cabinet-insert-basin"
       }
@@ -2982,7 +3032,7 @@
       "Basin and drain included": "Yes",
       "Opening": "Push to open",
       "Price": "S$515",
-      "In stock": "Can order (CASA)",
+      "In stock": "Available online (CASA)",
       "Warranty": "1 year parts and service"
      },
      "shopper": {
@@ -3003,14 +3053,14 @@
        "Basin and drain included": "Yes",
        "Opening": "Push to open",
        "Price": "S$515",
-       "In stock": "Can order (CASA)",
+       "In stock": "Available online (CASA)",
        "Warranty": "1 year parts and service"
       },
       "offers": [
        {
         "shop": "CASA",
         "price": 515,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://shop.casa.sg/products/60cm-press-to-open-vanity-cabinet-insert-basin"
        }
@@ -3058,7 +3108,7 @@
       {
        "shop": "IKEA",
        "price": 225,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://www.ikea.com/sg/en/p/enhet-tvaellen-wash-stnd-w-drawers-wash-basin-white-s99616042/"
       }
@@ -3069,7 +3119,7 @@
       "Basin and drain included": "Basin and trap; check the waste",
       "Opening": "Drawers (handles extra)",
       "Price": "S$225",
-      "In stock": "Can order (IKEA)",
+      "In stock": "Available online (IKEA)",
       "Warranty": "10-year limited guarantee"
      },
      "shopper": {
@@ -3090,14 +3140,14 @@
        "Basin and drain included": "Basin and trap; check the waste",
        "Opening": "Drawers (handles extra)",
        "Price": "S$225",
-       "In stock": "Can order (IKEA)",
+       "In stock": "Available online (IKEA)",
        "Warranty": "10-year limited guarantee"
       },
       "offers": [
        {
         "shop": "IKEA",
         "price": 225,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://www.ikea.com/sg/en/p/enhet-tvaellen-wash-stnd-w-drawers-wash-basin-white-s99616042/"
        }
@@ -3185,89 +3235,12 @@
    ],
    "options": [
     {
-     "id": "3329a0ee-54f4-4e13-9af5-9981997ab5f7",
-     "label": "American Standard Loven tap",
-     "name": "American Standard Loven FFAS1M01",
-     "kind": "product",
-     "tier": "Budget",
-     "price": 149,
-     "images": [],
-     "headline": "Sensible tap, no frills",
-     "love": "Trusted brand; pop-up drain included.",
-     "watchOut": "Check the model code on the invoice.",
-     "bestFor": "Value package",
-     "pros": [],
-     "cons": [],
-     "ownersSay": [],
-     "offers": [
-      {
-       "shop": "Bathroomshopsg",
-       "price": 149,
-       "stock": "Can order online",
-       "checked": "2026-10-30",
-       "url": "https://bathroom.com.sg/products/american-standard-loven-basin-mixer-with-pop-up-drain-ffas1m01-101500bc0"
-      }
-     ],
-     "specs": {
-      "Fits the basin": "Check reach on the basin",
-      "Hot and cold": "Yes",
-      "Drain included": "Yes (pop-up)",
-      "Handle": "Single lever",
-      "Price": "S$149",
-      "In stock": "Can order (Bathroomshopsg)",
-      "Warranty": "5 years, if eligible"
-     },
-     "shopper": {
-      "headline": "Sensible tap, no frills",
-      "love": "Trusted brand; pop-up drain included.",
-      "watchOut": "Check the model code on the invoice.",
-      "bestFor": "Value package",
-      "ownerReviews": "Few yet",
-      "ownerSummary": "",
-      "chips": [
-       "Pop-up drain",
-       "5-year tap guarantee",
-       "S$149"
-      ],
-      "specs": {
-       "Fits the basin": "Check reach on the basin",
-       "Hot and cold": "Yes",
-       "Drain included": "Yes (pop-up)",
-       "Handle": "Single lever",
-       "Price": "S$149",
-       "In stock": "Can order (Bathroomshopsg)",
-       "Warranty": "5 years, if eligible"
-      },
-      "offers": [
-       {
-        "shop": "Bathroomshopsg",
-        "price": 149,
-        "stock": "Can order online",
-        "checked": "2026-10-30",
-        "url": "https://bathroom.com.sg/products/american-standard-loven-basin-mixer-with-pop-up-drain-ffas1m01-101500bc0"
-       }
-      ]
-     },
-     "publication": {
-      "stock": {
-       "verified": true,
-       "checked": "2026-10-30",
-       "status": "order",
-       "source": "https://bathroom.com.sg/products/american-standard-loven-basin-mixer-with-pop-up-drain-ffas1m01-101500bc0"
-      },
-      "owner": {
-       "checked": "2026-10-30",
-       "reason": "Few owner reviews of this exact model yet."
-      }
-     }
-    },
-    {
      "id": "72ae6cff-adff-473b-8ad4-cab19708c3c9",
      "label": "GROHE BauEdge",
      "name": "GROHE BauEdge 32858000",
      "kind": "product",
      "tier": "Budget",
-     "price": 169,
+     "price": 189,
      "images": [],
      "headline": "GROHE at a sensible price",
      "love": "Metal lever, smooth ceramic valve.",
@@ -3279,8 +3252,8 @@
      "offers": [
       {
        "shop": "Hoe Kee",
-       "price": 169,
-       "stock": "Can order online",
+       "price": 189,
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.hoekee.com.sg/bathroom/grohe-bauedge-single-lever-basin-mixer-s-size.html"
       }
@@ -3290,8 +3263,8 @@
       "Hot and cold": "Yes",
       "Drain included": "Check with the shop",
       "Handle": "Metal single lever",
-      "Price": "S$169",
-      "In stock": "Can order (Hoe Kee)",
+      "Price": "S$189",
+      "In stock": "Yes (Hoe Kee)",
       "Warranty": "Ask the shop"
      },
      "shopper": {
@@ -3304,22 +3277,22 @@
       "chips": [
        "Metal lever",
        "Ceramic valve",
-       "S$169"
+       "S$189"
       ],
       "specs": {
        "Fits the basin": "Check reach on the basin",
        "Hot and cold": "Yes",
        "Drain included": "Check with the shop",
        "Handle": "Metal single lever",
-       "Price": "S$169",
-       "In stock": "Can order (Hoe Kee)",
+       "Price": "S$189",
+       "In stock": "Yes (Hoe Kee)",
        "Warranty": "Ask the shop"
       },
       "offers": [
        {
         "shop": "Hoe Kee",
-        "price": 169,
-        "stock": "Can order online",
+        "price": 189,
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.hoekee.com.sg/bathroom/grohe-bauedge-single-lever-basin-mixer-s-size.html"
        }
@@ -3329,7 +3302,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://www.hoekee.com.sg/bathroom/grohe-bauedge-single-lever-basin-mixer-s-size.html"
       },
       "owner": {
@@ -3345,10 +3318,20 @@
      "kind": "product",
      "tier": "Mid",
      "price": 213.9,
-     "images": [],
+     "images": [
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0912/1618/3330/files/Add_a_heading_17.png?v=1791357717",
+       "caption": "GROHE Eurosmart basin tap",
+       "kind": "product",
+       "source": "https://www.lightavenuesg.com/products/grohe-23-922-003-eurosmart-basin-mixer-s-size",
+       "alt": "GROHE Eurosmart basin tap",
+       "width": 1000,
+       "height": 1000
+      }
+     ],
      "headline": "Try the handle first",
      "love": "Adjustable flow and a nice feel.",
-     "watchOut": "Costs more than equally good taps.",
+     "watchOut": "S$25 more than the BauEdge.",
      "bestFor": "If it feels better in hand",
      "pros": [],
      "cons": [],
@@ -3357,7 +3340,7 @@
       {
        "shop": "Light Avenue",
        "price": 213.9,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://www.lightavenuesg.com/products/grohe-23-922-003-eurosmart-basin-mixer-s-size"
       }
@@ -3368,13 +3351,13 @@
       "Drain included": "Not stated",
       "Handle": "Metal single lever",
       "Price": "S$213.90",
-      "In stock": "Can order (Light Avenue)",
+      "In stock": "Available online (Light Avenue)",
       "Warranty": "5 years, if eligible"
      },
      "shopper": {
       "headline": "Try the handle first",
       "love": "Adjustable flow and a nice feel.",
-      "watchOut": "Costs more than equally good taps.",
+      "watchOut": "S$25 more than the BauEdge.",
       "bestFor": "If it feels better in hand",
       "ownerReviews": "Few yet",
       "ownerSummary": "",
@@ -3389,14 +3372,14 @@
        "Drain included": "Not stated",
        "Handle": "Metal single lever",
        "Price": "S$213.90",
-       "In stock": "Can order (Light Avenue)",
+       "In stock": "Available online (Light Avenue)",
        "Warranty": "5 years, if eligible"
       },
       "offers": [
        {
         "shop": "Light Avenue",
         "price": 213.9,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://www.lightavenuesg.com/products/grohe-23-922-003-eurosmart-basin-mixer-s-size"
        }
@@ -3416,8 +3399,8 @@
      }
     }
    ],
-   "answer10s": "American Standard Loven (S$149) is the sensible pick. Pay more for GROHE only if the handle feels better in the shop.",
-   "summary": "Three single-lever basin taps from S$149 to S$213.90.",
+   "answer10s": "GROHE BauEdge (S$189, in stock at Hoe Kee) is the sensible pick. The Eurosmart (S$213.90) only if its handle feels better in the shop.",
+   "summary": "Two GROHE single-lever basin taps, S$189 and S$213.90.",
    "researchedAt": "2026-10-30",
    "mustKnow": [
     "Match the tap's reach to the basin before buying."
@@ -3425,12 +3408,17 @@
    "contractorNote": "Check the tap suits the basin hole and reach.",
    "publicationPolicy": "stock-owner-video-v1",
    "shopper": {
-    "answer10s": "American Standard Loven (S$149) is the sensible pick. Pay more for GROHE only if the handle feels better in the shop.",
+    "answer10s": "GROHE BauEdge (S$189, in stock at Hoe Kee) is the sensible pick. The Eurosmart (S$213.90) only if its handle feels better in the shop.",
     "mustKnow": [
      "Match the tap's reach to the basin before buying."
     ],
     "contractorNote": "Check the tap suits the basin hole and reach.",
-    "alsoConsidered": [],
+    "alsoConsidered": [
+     {
+      "brand": "American Standard Loven tap",
+      "reason": "Sold out at the only shop listing it"
+     }
+    ],
     "groups": [
      {
       "group": "Size & fit",
@@ -3488,7 +3476,17 @@
      "kind": "product",
      "tier": "Mid",
      "price": 829,
-     "images": [],
+     "images": [
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0912/1618/3330/files/Add_a_heading_15_e2150eb2-2225-4ba2-b918-5e0f29e6c839.png?v=1791428972",
+       "caption": "GROHE Tempesta Cosmopolitan 250 shower set",
+       "kind": "product",
+       "source": "https://www.lightavenuesg.com/products/grohe-26-674-001-tempesta-cosmopolitian-250-shower-system",
+       "alt": "GROHE Tempesta Cosmopolitan 250 shower set",
+       "width": 1000,
+       "height": 1000
+      }
+     ],
      "headline": "Rain head, hand shower and bath spout",
      "love": "25 cm rain head, hand shower and spout.",
      "watchOut": "No thermostat; set temperature by hand.",
@@ -3500,7 +3498,7 @@
       {
        "shop": "Light Avenue",
        "price": 829,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://www.lightavenuesg.com/products/grohe-26-674-001-tempesta-cosmopolitian-250-shower-system"
       }
@@ -3510,7 +3508,7 @@
       "Bath spout": "Yes",
       "Thermostat": "No",
       "Price": "S$829",
-      "In stock": "Can order (Light Avenue)"
+      "In stock": "Available online (Light Avenue)"
      },
      "shopper": {
       "headline": "Rain head, hand shower and bath spout",
@@ -3529,13 +3527,13 @@
        "Bath spout": "Yes",
        "Thermostat": "No",
        "Price": "S$829",
-       "In stock": "Can order (Light Avenue)"
+       "In stock": "Available online (Light Avenue)"
       },
       "offers": [
        {
         "shop": "Light Avenue",
         "price": 829,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://www.lightavenuesg.com/products/grohe-26-674-001-tempesta-cosmopolitian-250-shower-system"
        }
@@ -3561,7 +3559,17 @@
      "kind": "product",
      "tier": "Splurge",
      "price": 1099,
-     "images": [],
+     "images": [
+      {
+       "src": "https://modeste.sg/wp-content/uploads/2026/05/grohe-26114002-euphoria-system-260-shower-system-with-bath-thermostat-for-wall-mounting-codex-square-main.jpg",
+       "caption": "GROHE Euphoria System 260 shower set",
+       "kind": "product",
+       "source": "https://modeste.sg/product/grohe-26114002-euphoria-system-260-shower-system-with-bath-thermostat-for-wall-mounting/",
+       "alt": "GROHE Euphoria System 260 shower set",
+       "width": 1400,
+       "height": 1400
+      }
+     ],
      "headline": "Steady temperature, costs more",
      "love": "Thermostat keeps the water temperature steady.",
      "watchOut": "S$270 more; leaves little budget spare.",
@@ -3633,10 +3641,20 @@
      "name": "RIGEL TSME14459T",
      "kind": "product",
      "tier": "Budget",
-     "price": 515,
-     "images": [],
+     "price": 439,
+     "images": [
+      {
+       "src": "https://www.lightavenuesg.com/cdn/shop/files/Add_a_heading_90.png?v=1791538043&width=1600",
+       "caption": "RIGEL TSME14459T shower set",
+       "kind": "product",
+       "source": "https://www.lightavenuesg.com/products/rigel-tsme14459t-thermostatic-3-in-1-shower-set-brushed",
+       "alt": "RIGEL TSME14459T shower set",
+       "width": 1000,
+       "height": 1000
+      }
+     ],
      "headline": "Cheaper thermostat; see it first",
-     "love": "Thermostat and adjustable height for S$515.",
+     "love": "Thermostat and adjustable height from S$439.",
      "watchOut": "Ask for a demo of the bath spout.",
      "bestFor": "Only after a shop demo",
      "pros": [],
@@ -3645,23 +3663,23 @@
      "offers": [
       {
        "shop": "Light Avenue",
-       "price": 515,
-       "stock": "Can order online",
+       "price": 439,
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://www.lightavenuesg.com/products/rigel-tsme14459t-thermostatic-3-in-1-shower-set-brushed",
-       "priceNote": "Brushed finish"
+       "priceNote": "Chrome; black matte S$515"
       }
      ],
      "specs": {
       "Rain head and hand shower": "Yes",
       "Bath spout": "Check in the shop",
       "Thermostat": "Yes",
-      "Price": "S$515 (brushed finish)",
-      "In stock": "Can order (Light Avenue)"
+      "Price": "S$439 chrome, S$515 black",
+      "In stock": "Available online (Light Avenue)"
      },
      "shopper": {
       "headline": "Cheaper thermostat; see it first",
-      "love": "Thermostat and adjustable height for S$515.",
+      "love": "Thermostat and adjustable height from S$439.",
       "watchOut": "Ask for a demo of the bath spout.",
       "bestFor": "Only after a shop demo",
       "ownerReviews": "Few yet",
@@ -3669,23 +3687,23 @@
       "chips": [
        "Thermostat",
        "Adjustable height",
-       "S$515"
+       "From S$439"
       ],
       "specs": {
        "Rain head and hand shower": "Yes",
        "Bath spout": "Check in the shop",
        "Thermostat": "Yes",
-       "Price": "S$515 (brushed finish)",
-       "In stock": "Can order (Light Avenue)"
+       "Price": "S$439 chrome, S$515 black",
+       "In stock": "Available online (Light Avenue)"
       },
       "offers": [
        {
         "shop": "Light Avenue",
-        "price": 515,
-        "stock": "Can order online",
+        "price": 439,
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://www.lightavenuesg.com/products/rigel-tsme14459t-thermostatic-3-in-1-shower-set-brushed",
-        "priceNote": "Brushed finish"
+        "priceNote": "Chrome; black matte S$515"
        }
       ]
      },
@@ -3787,7 +3805,7 @@
       {
        "shop": "IKEA",
        "price": 235,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://www.ikea.com/sg/en/p/treasjoen-mirror-cab-1-door-built-in-lighting-50580049/"
       }
@@ -3797,7 +3815,7 @@
       "Light colour": "Cool white (4000K)",
       "Waterproof cabinet": "No",
       "Price": "S$235",
-      "In stock": "Can order (IKEA)",
+      "In stock": "Available online (IKEA)",
       "Power": "5 W",
       "Electricity per year (2 h a day)": "About S$1"
      },
@@ -3818,7 +3836,7 @@
        "Light colour": "Cool white (4000K)",
        "Waterproof cabinet": "No",
        "Price": "S$235",
-       "In stock": "Can order (IKEA)",
+       "In stock": "Available online (IKEA)",
        "Power": "5 W",
        "Electricity per year (2 h a day)": "About S$1"
       },
@@ -3826,7 +3844,7 @@
        {
         "shop": "IKEA",
         "price": 235,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://www.ikea.com/sg/en/p/treasjoen-mirror-cab-1-door-built-in-lighting-50580049/"
        }
@@ -3874,7 +3892,7 @@
       {
        "shop": "IKEA",
        "price": 295,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://www.ikea.com/sg/en/p/treasjoen-mirror-cab-2-door-built-in-lighting-30580050/"
       }
@@ -3884,7 +3902,7 @@
       "Light colour": "Cool white (4000K)",
       "Waterproof cabinet": "No",
       "Price": "S$295",
-      "In stock": "Can order (IKEA)",
+      "In stock": "Available online (IKEA)",
       "Power": "8 W",
       "Electricity per year (2 h a day)": "About S$2"
      },
@@ -3905,7 +3923,7 @@
        "Light colour": "Cool white (4000K)",
        "Waterproof cabinet": "No",
        "Price": "S$295",
-       "In stock": "Can order (IKEA)",
+       "In stock": "Available online (IKEA)",
        "Power": "8 W",
        "Electricity per year (2 h a day)": "About S$2"
       },
@@ -3913,7 +3931,7 @@
        {
         "shop": "IKEA",
         "price": 295,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://www.ikea.com/sg/en/p/treasjoen-mirror-cab-2-door-built-in-lighting-30580050/"
        }
@@ -3961,7 +3979,7 @@
       {
        "shop": "IKEA",
        "price": 409.9,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://www.ikea.com/sg/en/p/faxaelven-mirror-cabinet-w-built-in-lighting-white-s49525737/"
       }
@@ -3971,7 +3989,7 @@
       "Light colour": "Warm white (2700K)",
       "Waterproof cabinet": "No",
       "Price": "S$409.90",
-      "In stock": "Can order (IKEA)",
+      "In stock": "Available online (IKEA)",
       "Power": "Not stated",
       "Electricity per year (2 h a day)": "Not stated"
      },
@@ -3992,7 +4010,7 @@
        "Light colour": "Warm white (2700K)",
        "Waterproof cabinet": "No",
        "Price": "S$409.90",
-       "In stock": "Can order (IKEA)",
+       "In stock": "Available online (IKEA)",
        "Power": "Not stated",
        "Electricity per year (2 h a day)": "Not stated"
       },
@@ -4000,7 +4018,7 @@
        {
         "shop": "IKEA",
         "price": 409.9,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://www.ikea.com/sg/en/p/faxaelven-mirror-cabinet-w-built-in-lighting-white-s49525737/"
        }
@@ -5112,7 +5130,7 @@
       {
        "shop": "HomeSmart",
        "price": 55,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://homesmart.sg/product/aqara-h1-smart-wall-switch/",
        "priceNote": "S$55–99 by version"
@@ -5127,7 +5145,7 @@
       "Needs neutral wire": "Separate versions",
       "Hub needed": "Aqara Zigbee hub",
       "Price": "S$55–99 a plate",
-      "In stock": "Can order (HomeSmart)",
+      "In stock": "Yes (HomeSmart)",
       "Warranty": "2 years, carry-in"
      },
      "shopper": {
@@ -5151,14 +5169,14 @@
        "Needs neutral wire": "Separate versions",
        "Hub needed": "Aqara Zigbee hub",
        "Price": "S$55–99 a plate",
-       "In stock": "Can order (HomeSmart)",
+       "In stock": "Yes (HomeSmart)",
        "Warranty": "2 years, carry-in"
       },
       "offers": [
        {
         "shop": "HomeSmart",
         "price": 55,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://homesmart.sg/product/aqara-h1-smart-wall-switch/",
         "priceNote": "S$55–99 by version"
@@ -5171,7 +5189,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://homesmart.sg/product/aqara-h1-smart-wall-switch/"
       },
       "owner": {
@@ -5212,7 +5230,7 @@
       {
        "shop": "HomeSmart",
        "price": 45,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://homesmart.sg/product/aqara-d1-smart-wall-switch/",
        "priceNote": "S$45–65 by version"
@@ -5227,7 +5245,7 @@
       "Needs neutral wire": "Separate versions",
       "Hub needed": "Aqara hub",
       "Price": "S$45–65 a plate",
-      "In stock": "Can order (HomeSmart)",
+      "In stock": "Yes (HomeSmart)",
       "Warranty": "1 year, carry-in"
      },
      "shopper": {
@@ -5251,14 +5269,14 @@
        "Needs neutral wire": "Separate versions",
        "Hub needed": "Aqara hub",
        "Price": "S$45–65 a plate",
-       "In stock": "Can order (HomeSmart)",
+       "In stock": "Yes (HomeSmart)",
        "Warranty": "1 year, carry-in"
       },
       "offers": [
        {
         "shop": "HomeSmart",
         "price": 45,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://homesmart.sg/product/aqara-d1-smart-wall-switch/",
         "priceNote": "S$45–65 by version"
@@ -5270,7 +5288,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://homesmart.sg/product/aqara-d1-smart-wall-switch/"
       },
       "owner": {
@@ -5386,7 +5404,17 @@
      "kind": "product",
      "tier": "Budget",
      "price": 35,
-     "images": [],
+     "images": [
+      {
+       "src": "https://homesmart.sg/wp-content/uploads/2022/06/Aqara-Single-Switch-Module-T1.jpg",
+       "caption": "Aqara Single Switch Module T1",
+       "kind": "product",
+       "source": "https://homesmart.sg/product/aqara-smart-switch-module-t1/",
+       "alt": "Aqara Single Switch Module T1",
+       "width": 1100,
+       "height": 1100
+      }
+     ],
      "headline": "Smart, hidden behind a normal switch",
      "love": "Keeps a normal-looking switch, adds phone control.",
      "watchOut": "Needs a neutral wire and space behind.",
@@ -5398,7 +5426,7 @@
       {
        "shop": "HomeSmart",
        "price": 35,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://homesmart.sg/product/aqara-smart-switch-module-t1/",
        "priceNote": "S$35–39 by version"
@@ -5413,7 +5441,7 @@
       "Needs neutral wire": "Yes",
       "Hub needed": "Aqara Zigbee hub",
       "Price": "S$35 + normal plate",
-      "In stock": "Can order (HomeSmart)",
+      "In stock": "Yes (HomeSmart)",
       "Warranty": "2 years, carry-in"
      },
      "shopper": {
@@ -5437,14 +5465,14 @@
        "Needs neutral wire": "Yes",
        "Hub needed": "Aqara Zigbee hub",
        "Price": "S$35 + normal plate",
-       "In stock": "Can order (HomeSmart)",
+       "In stock": "Yes (HomeSmart)",
        "Warranty": "2 years, carry-in"
       },
       "offers": [
        {
         "shop": "HomeSmart",
         "price": 35,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://homesmart.sg/product/aqara-smart-switch-module-t1/",
         "priceNote": "S$35–39 by version"
@@ -5456,7 +5484,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://homesmart.sg/product/aqara-smart-switch-module-t1/"
       },
       "owner": {
@@ -5496,7 +5524,7 @@
       {
        "shop": "HomeSmart",
        "price": 69,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://homesmart.sg/product/aqara-dual-relay-module-t2/"
       }
@@ -5510,7 +5538,7 @@
       "Needs neutral wire": "Yes",
       "Hub needed": "Aqara Zigbee hub",
       "Price": "S$69 + normal plates",
-      "In stock": "Can order (HomeSmart)",
+      "In stock": "Yes (HomeSmart)",
       "Warranty": "2 years, carry-in"
      },
      "shopper": {
@@ -5534,14 +5562,14 @@
        "Needs neutral wire": "Yes",
        "Hub needed": "Aqara Zigbee hub",
        "Price": "S$69 + normal plates",
-       "In stock": "Can order (HomeSmart)",
+       "In stock": "Yes (HomeSmart)",
        "Warranty": "2 years, carry-in"
       },
       "offers": [
        {
         "shop": "HomeSmart",
         "price": 69,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://homesmart.sg/product/aqara-dual-relay-module-t2/"
        }
@@ -5552,7 +5580,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://homesmart.sg/product/aqara-dual-relay-module-t2/"
       },
       "owner": {
@@ -5678,7 +5706,7 @@
       {
        "shop": "Mega Discount Store",
        "price": 949,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://megadiscountstore.com.sg/products/twp-w2255tsg-water-purifier",
        "priceNote": "With basic installation"
@@ -5686,7 +5714,7 @@
       {
        "shop": "Everjoint",
        "price": 856,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://everjointelectrical.com.sg/product/toshiba-twp-w2255tsgw-water-purifier-2-0l/",
        "priceNote": "Unit only; 2 years carry-in"
@@ -5700,7 +5728,7 @@
       "Warm water": "Mix hot and room water",
       "Child lock on hot": "Yes",
       "Price": "S$949 with basic installation",
-      "In stock": "Can order (Mega Discount Store)",
+      "In stock": "Yes (Mega Discount Store)",
       "Filter change": "Every 6 months or 1,800 L",
       "Filters and servicing a year": "Ask for a quote",
       "Warranty": "2 years (Toshiba)"
@@ -5725,7 +5753,7 @@
        "Warm water": "Mix hot and room water",
        "Child lock on hot": "Yes",
        "Price": "S$949 with basic installation",
-       "In stock": "Can order (Mega Discount Store)",
+       "In stock": "Yes (Mega Discount Store)",
        "Filter change": "Every 6 months or 1,800 L",
        "Filters and servicing a year": "Ask for a quote",
        "Warranty": "2 years (Toshiba)"
@@ -5734,7 +5762,7 @@
        {
         "shop": "Mega Discount Store",
         "price": 949,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://megadiscountstore.com.sg/products/twp-w2255tsg-water-purifier",
         "priceNote": "With basic installation"
@@ -5742,7 +5770,7 @@
        {
         "shop": "Everjoint",
         "price": 856,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://everjointelectrical.com.sg/product/toshiba-twp-w2255tsgw-water-purifier-2-0l/",
         "priceNote": "Unit only; 2 years carry-in"
@@ -5754,7 +5782,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://megadiscountstore.com.sg/products/twp-w2255tsg-water-purifier"
       },
       "owner": {
@@ -5771,7 +5799,17 @@
      "kind": "product",
      "tier": "Budget",
      "price": 759,
-     "images": [],
+     "images": [
+      {
+       "src": "https://www.courts.com.sg/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dwfe5e212b/images/hires/media/catalog/product/i/p/ip193662_00.jpg",
+       "caption": "Midea JL2245T water dispenser",
+       "kind": "product",
+       "source": "https://www.courts.com.sg/midea-water-purifier-dispenser---black-jl2245t-IP193662.html",
+       "alt": "Midea JL2245T water dispenser",
+       "width": 1600,
+       "height": 1600
+      }
+     ],
      "headline": "Cheaper, fills itself",
      "love": "S$190 cheaper, with several temperature settings.",
      "watchOut": "1-year warranty; cold store size not stated.",
@@ -5783,7 +5821,7 @@
       {
        "shop": "Mega Discount Store",
        "price": 759,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://megadiscountstore.com.sg/collections/water-purifier/products/jl2245t-multi-functional-water-dispenser",
        "priceNote": "With basic installation"
@@ -5805,7 +5843,7 @@
       "Warm water": "Preset settings",
       "Child lock on hot": "Yes",
       "Price": "S$759 with basic installation",
-      "In stock": "Can order (Mega Discount Store)",
+      "In stock": "Yes (Mega Discount Store)",
       "Filter change": "Not stated",
       "Filters and servicing a year": "Ask for a quote",
       "Warranty": "1 year (Midea)"
@@ -5830,7 +5868,7 @@
        "Warm water": "Preset settings",
        "Child lock on hot": "Yes",
        "Price": "S$759 with basic installation",
-       "In stock": "Can order (Mega Discount Store)",
+       "In stock": "Yes (Mega Discount Store)",
        "Filter change": "Not stated",
        "Filters and servicing a year": "Ask for a quote",
        "Warranty": "1 year (Midea)"
@@ -5839,7 +5877,7 @@
        {
         "shop": "Mega Discount Store",
         "price": 759,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://megadiscountstore.com.sg/collections/water-purifier/products/jl2245t-multi-functional-water-dispenser",
         "priceNote": "With basic installation"
@@ -5859,7 +5897,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://megadiscountstore.com.sg/collections/water-purifier/products/jl2245t-multi-functional-water-dispenser"
       },
       "owner": {
@@ -7604,6 +7642,13 @@
        "stock": "Made to order",
        "checked": "2026-10-30",
        "url": "https://www.courts.com.sg/karcher-handheld-vacuum-cleaner-cvh-3-IP225158.html"
+      },
+      {
+       "shop": "Kärcher",
+       "price": 130,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.kaercher.com/sg/home-garden/vacuum-cleaners/cvh-3-11983540.html"
       }
      ],
      "specs": {
@@ -7616,7 +7661,7 @@
       "Charges on": "USB-C cable",
       "Tools": "Narrow-gap nozzle",
       "Price": "S$130",
-      "In stock": "Made to order (COURTS)",
+      "In stock": "Yes (Kärcher); COURTS made to order",
       "Replacement filter": "Not stated",
       "Warranty": "2 years, Kärcher"
      },
@@ -7642,11 +7687,18 @@
        "Charges on": "USB-C cable",
        "Tools": "Narrow-gap nozzle",
        "Price": "S$130",
-       "In stock": "Made to order (COURTS)",
+       "In stock": "Yes (Kärcher); COURTS made to order",
        "Replacement filter": "Not stated",
        "Warranty": "2 years, Kärcher"
       },
       "offers": [
+       {
+        "shop": "Kärcher",
+        "price": 130,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.kaercher.com/sg/home-garden/vacuum-cleaners/cvh-3-11983540.html"
+       },
        {
         "shop": "COURTS",
         "price": 130,
@@ -7661,8 +7713,8 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
-       "source": "https://www.courts.com.sg/karcher-handheld-vacuum-cleaner-cvh-3-IP225158.html"
+       "status": "ready",
+       "source": "https://www.kaercher.com/sg/home-garden/vacuum-cleaners/cvh-3-11983540.html"
       },
       "owner": {
        "checked": "2026-10-30",
@@ -7700,7 +7752,7 @@
       {
        "shop": "Selffix",
        "price": 81.8,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.selffix.com/black-decker-hlvc320b-12v-slim-pelican-handheld-vacuum/"
       },
@@ -7722,7 +7774,7 @@
       "Charges on": "Charging stand",
       "Tools": "Narrow-gap and brush tools",
       "Price": "S$81.80",
-      "In stock": "Can order online (Selffix)",
+      "In stock": "Yes (Selffix)",
       "Replacement filter": "Not stated",
       "Warranty": "1 year"
      },
@@ -7748,7 +7800,7 @@
        "Charges on": "Charging stand",
        "Tools": "Narrow-gap and brush tools",
        "Price": "S$81.80",
-       "In stock": "Can order online (Selffix)",
+       "In stock": "Yes (Selffix)",
        "Replacement filter": "Not stated",
        "Warranty": "1 year"
       },
@@ -7756,7 +7808,7 @@
        {
         "shop": "Selffix",
         "price": 81.8,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.selffix.com/black-decker-hlvc320b-12v-slim-pelican-handheld-vacuum/"
        },
@@ -7774,7 +7826,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://www.selffix.com/black-decker-hlvc320b-12v-slim-pelican-handheld-vacuum/"
       },
       "owner": {
@@ -7821,7 +7873,7 @@
       {
        "shop": "COURTS",
        "price": 199,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.courts.com.sg/shark-cordless-handheld-vacuum---black-wv204-IP170645.html"
       }
@@ -7836,7 +7888,7 @@
       "Charges on": "Charging dock",
       "Tools": "Narrow-gap, duster and sofa tools",
       "Price": "S$199 (S$209 delivered)",
-      "In stock": "Yes (Best Denki)",
+      "In stock": "Yes (Best Denki, COURTS)",
       "Replacement filter": "About S$8 (check it fits)",
       "Warranty": "2 years, SharkNinja Singapore"
      },
@@ -7862,7 +7914,7 @@
        "Charges on": "Charging dock",
        "Tools": "Narrow-gap, duster and sofa tools",
        "Price": "S$199 (S$209 delivered)",
-       "In stock": "Yes (Best Denki)",
+       "In stock": "Yes (Best Denki, COURTS)",
        "Replacement filter": "About S$8 (check it fits)",
        "Warranty": "2 years, SharkNinja Singapore"
       },
@@ -7878,7 +7930,7 @@
        {
         "shop": "COURTS",
         "price": 199,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.courts.com.sg/shark-cordless-handheld-vacuum---black-wv204-IP170645.html"
        }
@@ -8054,7 +8106,7 @@
       {
        "shop": "Best Denki",
        "price": 130,
-       "stock": "In stock",
+       "stock": "Low stock, 4 left",
        "checked": "2026-10-30",
        "url": "https://www.bestdenki.com.sg/1106154-karcher-handheld-vacuum-cvh-anniversary-edition.html",
        "priceNote": "S$140 delivered"
@@ -8070,7 +8122,7 @@
       "Charges on": "USB-C cable",
       "Tools": "Narrow-gap brush nozzle",
       "Price": "S$130 (S$140 delivered)",
-      "In stock": "Yes (Best Denki), last stock",
+      "In stock": "Low stock (Best Denki, 4 left)",
       "Replacement filter": "Not stated",
       "Warranty": "2 years, Kärcher"
      },
@@ -8096,7 +8148,7 @@
        "Charges on": "USB-C cable",
        "Tools": "Narrow-gap brush nozzle",
        "Price": "S$130 (S$140 delivered)",
-       "In stock": "Yes (Best Denki), last stock",
+       "In stock": "Low stock (Best Denki, 4 left)",
        "Replacement filter": "Not stated",
        "Warranty": "2 years, Kärcher"
       },
@@ -8104,7 +8156,7 @@
        {
         "shop": "Best Denki",
         "price": 130,
-        "stock": "In stock",
+        "stock": "Low stock, 4 left",
         "checked": "2026-10-30",
         "url": "https://www.bestdenki.com.sg/1106154-karcher-handheld-vacuum-cvh-anniversary-edition.html",
         "priceNote": "S$140 delivered"
@@ -8116,7 +8168,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "ready",
+       "status": "low",
        "source": "https://www.bestdenki.com.sg/1106154-karcher-handheld-vacuum-cvh-anniversary-edition.html"
       },
       "owner": {
@@ -8153,7 +8205,17 @@
      "kind": "product",
      "tier": "Budget",
      "price": 55,
-     "images": [],
+     "images": [
+      {
+       "src": "https://dasher.sg/cdn/shop/products/XiaomiVacuumCleanerMini.jpg?v=1673248455",
+       "caption": "Xiaomi Mi Vacuum Cleaner Mini",
+       "kind": "product",
+       "source": "https://dasher.sg/products/xiaomi-vacuum-cleaner-mini",
+       "alt": "Xiaomi Mi Vacuum Cleaner Mini",
+       "width": 1000,
+       "height": 1000
+      }
+     ],
      "headline": "Cheapest, for desk-size messes",
      "love": "Tiny, light and only S$55.",
      "watchOut": "50 ml bin; shop warranty, not Xiaomi's.",
@@ -8768,7 +8830,7 @@
       {
        "shop": "Regal Lighting",
        "price": 380,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.regallighting.com.sg/product/crestar-airis-3-blades-with-led-lightkit-smartseries/",
        "priceNote": "Fan only; 33-inch with light"
@@ -8782,7 +8844,7 @@
       "Remote": "Yes, 6 speeds",
       "Fan price": "S$380",
       "With basic installation": "Quote; keep under S$500",
-      "In stock": "Can order (Regal Lighting)",
+      "In stock": "Yes (Regal Lighting)",
       "Warranty": "1 year on-site, motor 10"
      },
      "shopper": {
@@ -8805,14 +8867,14 @@
        "Remote": "Yes, 6 speeds",
        "Fan price": "S$380",
        "With basic installation": "Quote; keep under S$500",
-       "In stock": "Can order (Regal Lighting)",
+       "In stock": "Yes (Regal Lighting)",
        "Warranty": "1 year on-site, motor 10"
       },
       "offers": [
        {
         "shop": "Regal Lighting",
         "price": 380,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.regallighting.com.sg/product/crestar-airis-3-blades-with-led-lightkit-smartseries/",
         "priceNote": "Fan only; 33-inch with light"
@@ -8824,7 +8886,7 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
+       "status": "ready",
        "source": "https://www.regallighting.com.sg/product/crestar-airis-3-blades-with-led-lightkit-smartseries/"
       },
       "owner": {
@@ -8842,7 +8904,17 @@
      "kind": "product",
      "tier": "Budget",
      "price": 249,
-     "images": [],
+     "images": [
+      {
+       "src": "https://houseoffans.sg/cdn/shop/files/Fanco_Bstar_Black.jpg?v=1773728457",
+       "caption": "Fanco B-Star ceiling fan, black",
+       "kind": "product",
+       "source": "https://houseoffans.sg/products/fanco-b-star-ceiling-fan",
+       "alt": "Fanco B-Star ceiling fan, black",
+       "width": 1000,
+       "height": 1000
+      }
+     ],
      "headline": "Sensible low-cost choice",
      "love": "Cheap, with 4 years on-site cover.",
      "watchOut": "Light doesn't dim; check low-speed hum.",
@@ -8854,7 +8926,7 @@
       {
        "shop": "Sembawang Lighting House",
        "price": 189,
-       "stock": "Can order online",
+       "stock": "Limited stock",
        "checked": "2026-10-30",
        "url": "https://www.sembawanglightinghouse.com/fanco-bstar-36-46-52-dc-ceiling-fan/",
        "priceNote": "Fan only; installation S$40–60"
@@ -8862,7 +8934,7 @@
       {
        "shop": "Regal Lighting",
        "price": 189,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.regallighting.com.sg/product/bstar/",
        "priceNote": "Fan only"
@@ -8876,7 +8948,7 @@
       "Remote": "Yes",
       "Fan price": "S$189",
       "With basic installation": "S$229–249",
-      "In stock": "Can order (Sembawang Lighting)",
+      "In stock": "Yes (Regal Lighting)",
       "Warranty": "4 years on-site"
      },
      "shopper": {
@@ -8899,14 +8971,14 @@
        "Remote": "Yes",
        "Fan price": "S$189",
        "With basic installation": "S$229–249",
-       "In stock": "Can order (Sembawang Lighting)",
+       "In stock": "Yes (Regal Lighting)",
        "Warranty": "4 years on-site"
       },
       "offers": [
        {
         "shop": "Sembawang Lighting House",
         "price": 189,
-        "stock": "Can order online",
+        "stock": "Limited stock",
         "checked": "2026-10-30",
         "url": "https://www.sembawanglightinghouse.com/fanco-bstar-36-46-52-dc-ceiling-fan/",
         "priceNote": "Fan only; installation S$40–60"
@@ -8914,7 +8986,7 @@
        {
         "shop": "Regal Lighting",
         "price": 189,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.regallighting.com.sg/product/bstar/",
         "priceNote": "Fan only"
@@ -8926,8 +8998,8 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
-       "source": "https://www.sembawanglightinghouse.com/fanco-bstar-36-46-52-dc-ceiling-fan/"
+       "status": "ready",
+       "source": "https://www.regallighting.com.sg/product/bstar/"
       },
       "owner": {
        "checked": "2026-10-30",
@@ -8966,7 +9038,7 @@
       {
        "shop": "Sembawang Lighting House",
        "price": 258,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://www.sembawanglightinghouse.com/9-9-sale-fanco-bee-26-dc-ceiling-fan/",
        "priceNote": "Fan only; installation S$40–60"
@@ -8974,7 +9046,7 @@
       {
        "shop": "Mega Discount Store",
        "price": 258,
-       "stock": "Can order online",
+       "stock": "In stock",
        "checked": "2026-10-30",
        "url": "https://megadiscountstore.com.sg/collections/climate-voucher-eligible-products/products/bee-dc-ceiling-fan",
        "priceNote": "Fan only"
@@ -8988,7 +9060,7 @@
       "Remote": "Yes, 5 speeds",
       "Fan price": "S$258",
       "With basic installation": "S$298–318",
-      "In stock": "Can order (Sembawang Lighting)",
+      "In stock": "Yes (Mega Discount Store)",
       "Warranty": "4 years on-site"
      },
      "shopper": {
@@ -9011,14 +9083,22 @@
        "Remote": "Yes, 5 speeds",
        "Fan price": "S$258",
        "With basic installation": "S$298–318",
-       "In stock": "Can order (Sembawang Lighting)",
+       "In stock": "Yes (Mega Discount Store)",
        "Warranty": "4 years on-site"
       },
       "offers": [
        {
+        "shop": "Mega Discount Store",
+        "price": 258,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/collections/climate-voucher-eligible-products/products/bee-dc-ceiling-fan",
+        "priceNote": "Fan only"
+       },
+       {
         "shop": "Sembawang Lighting House",
         "price": 258,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://www.sembawanglightinghouse.com/9-9-sale-fanco-bee-26-dc-ceiling-fan/",
         "priceNote": "Fan only; installation S$40–60"
@@ -9026,7 +9106,7 @@
        {
         "shop": "Mega Discount Store",
         "price": 258,
-        "stock": "Can order online",
+        "stock": "In stock",
         "checked": "2026-10-30",
         "url": "https://megadiscountstore.com.sg/collections/climate-voucher-eligible-products/products/bee-dc-ceiling-fan",
         "priceNote": "Fan only"
@@ -9038,8 +9118,8 @@
       "stock": {
        "verified": true,
        "checked": "2026-10-30",
-       "status": "order",
-       "source": "https://www.sembawanglightinghouse.com/9-9-sale-fanco-bee-26-dc-ceiling-fan/"
+       "status": "ready",
+       "source": "https://megadiscountstore.com.sg/collections/climate-voucher-eligible-products/products/bee-dc-ceiling-fan"
       },
       "owner": {
        "checked": "2026-10-30",
@@ -9148,7 +9228,17 @@
      "kind": "product",
      "tier": "Mid",
      "price": null,
-     "images": [],
+     "images": [
+      {
+       "src": "https://ecom.pfetech.com/static/1783251848652-Aqara-Smart-LED-Strips.jpg",
+       "caption": "Aqara COB LED strip",
+       "kind": "product",
+       "source": "https://pfetech.com/aqara/product/aqara-smart-led-strips/",
+       "alt": "Aqara COB LED strip",
+       "width": 1000,
+       "height": 1000
+      }
+     ],
      "headline": "Smooth glow around every edge",
      "love": "One continuous line of light, no dots.",
      "watchOut": "Full price only after a quote.",
@@ -9233,7 +9323,17 @@
      "kind": "product",
      "tier": "Budget",
      "price": null,
-     "images": [],
+     "images": [
+      {
+       "src": "https://ecom.pfetech.com/static/1783251852170-Aqara-LED-Strip-T1-Product-Picture.jpg",
+       "caption": "Aqara LED Strip T1",
+       "kind": "product",
+       "source": "https://pfetech.com/aqara/product/aqara-led-strip-t1/",
+       "alt": "Aqara LED Strip T1",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
      "headline": "Maybe cheaper; check for dots",
      "love": "Same light and app, maybe cheaper.",
      "watchOut": "Ask for a sample: dots may show.",
@@ -9480,7 +9580,7 @@
       {
        "shop": "Chinmega Electric",
        "price": 229,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://chinmega.com.sg/products/free-installation-mistral-solar-36-inch-ceiling-fan-hugger-series",
        "priceNote": "With basic installation"
@@ -9488,7 +9588,7 @@
       {
        "shop": "Harvey Norman",
        "price": 249,
-       "stock": "Can order online",
+       "stock": "Out of stock",
        "checked": "2026-10-30",
        "url": "https://www.harveynorman.com.sg/home-appliances/fans/dc-motor-fans/mistral-solar36-wd-wh-36-solar36-3-blades-ceiling-fan-wood-white.html",
        "priceNote": "Fan only"
@@ -9502,7 +9602,7 @@
       "Remote": "Yes, 5 speeds",
       "Fan price": "S$249 (Harvey Norman)",
       "With basic installation": "S$229 (bundle, Chinmega)",
-      "In stock": "Can order (Chinmega)",
+      "In stock": "Available online (Chinmega)",
       "Warranty": "2 years, motor 10 years"
      },
      "shopper": {
@@ -9525,14 +9625,14 @@
        "Remote": "Yes, 5 speeds",
        "Fan price": "S$249 (Harvey Norman)",
        "With basic installation": "S$229 (bundle, Chinmega)",
-       "In stock": "Can order (Chinmega)",
+       "In stock": "Available online (Chinmega)",
        "Warranty": "2 years, motor 10 years"
       },
       "offers": [
        {
         "shop": "Chinmega Electric",
         "price": 229,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://chinmega.com.sg/products/free-installation-mistral-solar-36-inch-ceiling-fan-hugger-series",
         "priceNote": "With basic installation"
@@ -9540,7 +9640,7 @@
        {
         "shop": "Harvey Norman",
         "price": 249,
-        "stock": "Can order online",
+        "stock": "Out of stock",
         "checked": "2026-10-30",
         "url": "https://www.harveynorman.com.sg/home-appliances/fans/dc-motor-fans/mistral-solar36-wd-wh-36-solar36-3-blades-ceiling-fan-wood-white.html",
         "priceNote": "Fan only"
@@ -9592,7 +9692,7 @@
       {
        "shop": "Chinmega Electric",
        "price": 199,
-       "stock": "Can order online",
+       "stock": "Available online",
        "checked": "2026-10-30",
        "url": "https://chinmega.com.sg/products/free-basic-installation-mistral-space-36-ceiling-fan-dc-motor-tricolor-dimmable-5-fan-speeds",
        "priceNote": "With basic installation"
@@ -9600,7 +9700,7 @@
       {
        "shop": "Best Denki",
        "price": 199,
-       "stock": "Low stock",
+       "stock": "Low stock, 1 left (white)",
        "checked": "2026-10-30",
        "url": "https://www.bestdenki.com.sg/1503298-mistral-ceiling-fan-space36-wh-wh.html",
        "priceNote": "Fan only, white"
@@ -9614,7 +9714,7 @@
       "Remote": "Yes, 5 speeds",
       "Fan price": "S$199",
       "With basic installation": "S$199 (bundle, Chinmega)",
-      "In stock": "Can order (Chinmega)",
+      "In stock": "Available online (Chinmega)",
       "Warranty": "2 years, motor 10 years"
      },
      "shopper": {
@@ -9637,14 +9737,14 @@
        "Remote": "Yes, 5 speeds",
        "Fan price": "S$199",
        "With basic installation": "S$199 (bundle, Chinmega)",
-       "In stock": "Can order (Chinmega)",
+       "In stock": "Available online (Chinmega)",
        "Warranty": "2 years, motor 10 years"
       },
       "offers": [
        {
         "shop": "Chinmega Electric",
         "price": 199,
-        "stock": "Can order online",
+        "stock": "Available online",
         "checked": "2026-10-30",
         "url": "https://chinmega.com.sg/products/free-basic-installation-mistral-space-36-ceiling-fan-dc-motor-tricolor-dimmable-5-fan-speeds",
         "priceNote": "With basic installation"
@@ -9652,7 +9752,7 @@
        {
         "shop": "Best Denki",
         "price": 199,
-        "stock": "Low stock",
+        "stock": "Low stock, 1 left (white)",
         "checked": "2026-10-30",
         "url": "https://www.bestdenki.com.sg/1503298-mistral-ceiling-fan-space36-wh-wh.html",
         "priceNote": "Fan only, white"
