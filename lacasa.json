@@ -184,12 +184,12 @@
     "max": 1200,
     "source": "Installed, target S$900–1,100, no more than S$1,200"
    },
-   "contractorNote": "Check the existing ceiling. Separate power for downlights, strip and fan. Keep the strip's power box reachable. No normal wall dimmer on smart lights. Check glare, fan shadows and how low the lights dim.",
+   "contractorNote": "Check the existing ceiling. Separate power for the downlights and the strip. Keep the strip's power box reachable. No normal wall dimmer on smart lights. Check glare and how low the lights dim.",
    "mustKnow": [
-    "Plan: hidden light strip along the ceiling edge, four downlights and the ceiling fan.",
+    "Plan: hidden light strip along the ceiling edge and four downlights.",
     "Installed budget S$900–1,100; no more than S$1,200.",
     "Don't fit a normal wall dimmer to smart lights.",
-    "Simpler fallback: fan light plus a floor lamp."
+    "Simpler fallback: more downlights plus a floor lamp."
    ],
    "options": [
     {
@@ -701,12 +701,12 @@
    "shopper": {
     "answer10s": "WiZ warm kit: one hidden light strip of about 3.9 m plus four smart downlights, all in Apple Home. Ask for a quote on the Aqara COB strip too.",
     "mustKnow": [
-     "Plan: hidden light strip along the ceiling edge, four downlights and the ceiling fan.",
+     "Plan: hidden light strip along the ceiling edge and four downlights.",
      "Installed budget S$900–1,100; no more than S$1,200.",
      "Don't fit a normal wall dimmer to smart lights.",
-     "Simpler fallback: fan light plus a floor lamp."
+     "Simpler fallback: more downlights plus a floor lamp."
     ],
-    "contractorNote": "Check the existing ceiling. Separate power for downlights, strip and fan. Keep the strip's power box reachable. No normal wall dimmer on smart lights. Check glare, fan shadows and how low the lights dim.",
+    "contractorNote": "Check the existing ceiling. Separate power for the downlights and the strip. Keep the strip's power box reachable. No normal wall dimmer on smart lights. Check glare and how low the lights dim.",
     "alsoConsidered": [
      {
       "brand": "Spotlights on a track",
@@ -760,46 +760,6 @@
    }
   },
   {
-   "id": "LV-FAN",
-   "slug": "ceiling-fan",
-   "area": "living",
-   "category": "Fans & ventilation",
-   "group": "fittings",
-   "priority": "essential",
-   "title": "Living room ceiling fan",
-   "question": "Which fan with light? (Pick “No fan” if our lighting look has none.)",
-   "stage": "on_site",
-   "status": "draft",
-   "candidates": [
-    "Adamas",
-    "KDK",
-    "Fanco",
-    "No fan"
-   ],
-   "contractorNote": "Fan point position, ceiling height and blade clearance.",
-   "mustKnow": [
-    "Measure ceiling height on 11 Nov",
-    "Bought in JB? Check the SG Safety Mark and who honours the warranty here"
-   ],
-   "options": [],
-   "roughBudget": {
-    "min": 300,
-    "max": 600,
-    "source": "Rough guess, to research"
-   },
-   "legacySlugs": [
-    "living-living-room-ceiling-fan"
-   ],
-   "space": {
-    "label": "Living area",
-    "width": 295,
-    "depth": 388,
-    "source": "Approximate room dimensions",
-    "opening": true,
-    "measured": false
-   }
-  },
-  {
    "id": "DNF01",
    "slug": "fan-with-light",
    "area": "dining",
@@ -807,9 +767,9 @@
    "group": "fittings",
    "priority": "essential",
    "title": "Dining fan with light",
-   "question": "Which small fan with LED light over the table?",
+   "question": "Which small fan with light over the dining table?",
    "stage": "contractor",
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "Riegen Mini 30\" (reference)",
     "KDK",
@@ -820,11 +780,564 @@
     "max": 350,
     "source": "Brief allowance, 6 Oct"
    },
-   "contractorNote": "Replace the existing ceiling light with a fan; check ceiling support.",
+   "contractorNote": "Measure the ceiling and anything nearby. Confirm a concrete mount, the existing power point and switch. Check blade height above the floor. Test fan and light after fitting.",
    "mustKnow": [
-    "Blade sweep must suit the table size we choose"
+    "An open dining area still needs clear space around the blades.",
+    "Warm light is not the same as dimmable.",
+    "Listen to it in a showroom for noise."
    ],
-   "options": [],
+   "options": [
+    {
+     "id": "a99c3489-49b1-4fe0-b0f6-e8959b8d5c2a",
+     "label": "Youkain Vigor 30\"",
+     "name": "Youkain Vigor YJ-717 30-inch",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 308,
+     "images": [
+      {
+       "src": "https://youkain.com.sg/wp-content/uploads/2025/05/YJ-717-LED-30-MBK.jpg",
+       "caption": "Youkain Vigor YJ-717 30-inch ceiling fan",
+       "kind": "product",
+       "source": "https://youkain.com.sg/product/vigor-yj-717/",
+       "alt": "Youkain Vigor YJ-717 30-inch ceiling fan",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Compact, with a dimmable light",
+     "love": "Small 76 cm size; light dims for dinner.",
+     "watchOut": "Check how far it hangs down.",
+     "bestFor": "A compact dining spot",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Sembawang Lighting House",
+       "price": 248,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.sembawanglightinghouse.com/youkain-vigor-downrod-yj-717-30-42-small-ceiling-fan/",
+       "priceNote": "Fan only; basic installation S$40–60"
+      },
+      {
+       "shop": "Youkain",
+       "price": 248,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://youkain.com.sg/product/vigor-yj-717/",
+       "priceNote": "Fan only"
+      }
+     ],
+     "specs": {
+      "Blade size": "76 cm (30-inch)",
+      "Hangs down": "Not stated",
+      "Warm light": "Yes",
+      "Dims the light": "Yes",
+      "Remote": "Yes",
+      "Fan price": "S$248",
+      "With basic installation": "S$288–308",
+      "In stock": "Can order (Sembawang Lighting)",
+      "Warranty": "2 years on-site"
+     },
+     "shopper": {
+      "headline": "Compact, with a dimmable light",
+      "love": "Small 76 cm size; light dims for dinner.",
+      "watchOut": "Check how far it hangs down.",
+      "bestFor": "A compact dining spot",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "76 cm blades",
+       "Dimmable light",
+       "Remote"
+      ],
+      "specs": {
+       "Blade size": "76 cm (30-inch)",
+       "Hangs down": "Not stated",
+       "Warm light": "Yes",
+       "Dims the light": "Yes",
+       "Remote": "Yes",
+       "Fan price": "S$248",
+       "With basic installation": "S$288–308",
+       "In stock": "Can order (Sembawang Lighting)",
+       "Warranty": "2 years on-site"
+      },
+      "offers": [
+       {
+        "shop": "Sembawang Lighting House",
+        "price": 248,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.sembawanglightinghouse.com/youkain-vigor-downrod-yj-717-30-42-small-ceiling-fan/",
+        "priceNote": "Fan only; basic installation S$40–60"
+       },
+       {
+        "shop": "Youkain",
+        "price": 248,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://youkain.com.sg/product/vigor-yj-717/",
+        "priceNote": "Fan only"
+       }
+      ],
+      "priceNote": "With basic installation; target S$300"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.sembawanglightinghouse.com/youkain-vigor-downrod-yj-717-30-42-small-ceiling-fan/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this fan yet; support is through Acorn in Singapore."
+      }
+     },
+     "priceNote": "With basic installation; target S$300"
+    },
+    {
+     "id": "63686c20-9ab5-4fee-8d65-ce7fcc026a64",
+     "label": "Mistral Space 36",
+     "name": "Mistral Space 36",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 199,
+     "images": [
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0680/8682/5277/files/WHWD_800x800px_3.png?v=1772188293",
+       "caption": "Mistral Space 36 ceiling fan",
+       "kind": "product",
+       "source": "https://mayer.sg/products/mistral-36-inch-ceiling-fan-space-36",
+       "alt": "Mistral Space 36 ceiling fan",
+       "width": 800,
+       "height": 800
+      }
+     ],
+     "headline": "Most for the money, installed",
+     "love": "Dimmable light and installation for S$199.",
+     "watchOut": "Larger 91 cm; hangs 35–48 cm down.",
+     "bestFor": "Best value, if the bigger size fits",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Chinmega Electric",
+       "price": 199,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://chinmega.com.sg/products/free-basic-installation-mistral-space-36-ceiling-fan-dc-motor-tricolor-dimmable-5-fan-speeds",
+       "priceNote": "With basic installation"
+      },
+      {
+       "shop": "Mayer",
+       "price": 199,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://mayer.sg/products/mistral-36-inch-ceiling-fan-space-36",
+       "priceNote": "Fan only"
+      }
+     ],
+     "specs": {
+      "Blade size": "91.5 cm (36-inch)",
+      "Hangs down": "35–47.7 cm",
+      "Warm light": "Yes",
+      "Dims the light": "Yes",
+      "Remote": "Yes",
+      "Fan price": "S$199",
+      "With basic installation": "S$199 (bundle, existing point)",
+      "In stock": "Can order (Chinmega)",
+      "Warranty": "2 years, motor 10 years"
+     },
+     "shopper": {
+      "headline": "Most for the money, installed",
+      "love": "Dimmable light and installation for S$199.",
+      "watchOut": "Larger 91 cm; hangs 35–48 cm down.",
+      "bestFor": "Best value, if the bigger size fits",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "An early owner praises the airflow and adjustable light.",
+      "chips": [
+       "S$199 installed",
+       "Dimmable light",
+       "91 cm blades"
+      ],
+      "specs": {
+       "Blade size": "91.5 cm (36-inch)",
+       "Hangs down": "35–47.7 cm",
+       "Warm light": "Yes",
+       "Dims the light": "Yes",
+       "Remote": "Yes",
+       "Fan price": "S$199",
+       "With basic installation": "S$199 (bundle, existing point)",
+       "In stock": "Can order (Chinmega)",
+       "Warranty": "2 years, motor 10 years"
+      },
+      "offers": [
+       {
+        "shop": "Chinmega Electric",
+        "price": 199,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://chinmega.com.sg/products/free-basic-installation-mistral-space-36-ceiling-fan-dc-motor-tricolor-dimmable-5-fan-speeds",
+        "priceNote": "With basic installation"
+       },
+       {
+        "shop": "Mayer",
+        "price": 199,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://mayer.sg/products/mistral-36-inch-ceiling-fan-space-36",
+        "priceNote": "Fan only"
+       }
+      ],
+      "priceNote": "With basic installation on an existing point"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://chinmega.com.sg/products/free-basic-installation-mistral-space-36-ceiling-fan-dc-motor-tricolor-dimmable-5-fan-speeds"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/asksg/comments/1wwlcee/ceiling_fan_with_light_recomendations/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "With basic installation on an existing point"
+    },
+    {
+     "id": "9096571d-e310-4aec-acdd-cadb49c084e0",
+     "label": "Bestar Raptor 33\"",
+     "name": "Bestar Raptor 33-inch with light",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 248,
+     "images": [],
+     "headline": "Middle size at a low price",
+     "love": "33-inch size at a low installed price.",
+     "watchOut": "Reviews cover all Raptor sizes, not 33\".",
+     "bestFor": "When 36-inch is too big",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Sembawang Lighting House",
+       "price": 188,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.sembawanglightinghouse.com/bestar-raptor-33-38-48-ceiling-fan/",
+       "priceNote": "Fan only; basic installation S$40–60"
+      },
+      {
+       "shop": "Hoe Kee",
+       "price": 188,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.hoekee.com.sg/ceiling-fans/bestar-raptor-33-38-48-ceiling-fan-with-light-option.html",
+       "priceNote": "Choose 33-inch with light"
+      }
+     ],
+     "specs": {
+      "Blade size": "84 cm (33-inch)",
+      "Hangs down": "31 cm",
+      "Warm light": "Yes",
+      "Dims the light": "Not stated",
+      "Remote": "Yes",
+      "Fan price": "S$188",
+      "With basic installation": "S$228–248",
+      "In stock": "Can order (Sembawang Lighting)",
+      "Warranty": "2 years on-site"
+     },
+     "shopper": {
+      "headline": "Middle size at a low price",
+      "love": "33-inch size at a low installed price.",
+      "watchOut": "Reviews cover all Raptor sizes, not 33\".",
+      "bestFor": "When 36-inch is too big",
+      "ownerReviews": "Mostly good",
+      "ownerSummary": "Buyers like the simple controls, airflow and light (all Raptor sizes).",
+      "chips": [
+       "84 cm blades",
+       "S$248 installed",
+       "2-year on-site"
+      ],
+      "specs": {
+       "Blade size": "84 cm (33-inch)",
+       "Hangs down": "31 cm",
+       "Warm light": "Yes",
+       "Dims the light": "Not stated",
+       "Remote": "Yes",
+       "Fan price": "S$188",
+       "With basic installation": "S$228–248",
+       "In stock": "Can order (Sembawang Lighting)",
+       "Warranty": "2 years on-site"
+      },
+      "offers": [
+       {
+        "shop": "Sembawang Lighting House",
+        "price": 188,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.sembawanglightinghouse.com/bestar-raptor-33-38-48-ceiling-fan/",
+        "priceNote": "Fan only; basic installation S$40–60"
+       },
+       {
+        "shop": "Hoe Kee",
+        "price": 188,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.hoekee.com.sg/ceiling-fans/bestar-raptor-33-38-48-ceiling-fan-with-light-option.html",
+        "priceNote": "Choose 33-inch with light"
+       }
+      ],
+      "priceNote": "With basic installation; target S$240"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.sembawanglightinghouse.com/bestar-raptor-33-38-48-ceiling-fan/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.fortytwo.sg/review/product/list/NDJDb25maWctMjAyMDA5MjgtMDE=",
+       "exactModel": false,
+       "reason": "Reviews cover the Raptor range; few for the 33-inch size."
+      }
+     },
+     "priceNote": "With basic installation; target S$240"
+    },
+    {
+     "id": "99564bbf-2b68-4815-b385-87cad3d7e74c",
+     "label": "Fanco BEE 26\"",
+     "name": "Fanco BEE 26-inch",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 318,
+     "images": [
+      {
+       "src": "https://fanco.com.sg/wp-content/uploads/2024/09/image4-2.jpeg",
+       "caption": "Fanco BEE ceiling fan",
+       "kind": "product",
+       "source": "https://fanco.com.sg/portfolio-item/bee/",
+       "alt": "Fanco BEE ceiling fan",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Smallest fan, longest warranty",
+     "love": "Smallest here; 4 years on-site cover.",
+     "watchOut": "Check air reaches both table ends.",
+     "bestFor": "Tight spots near walls or lights",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Sembawang Lighting House",
+       "price": 258,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.sembawanglightinghouse.com/9-9-sale-fanco-bee-26-dc-ceiling-fan/",
+       "priceNote": "Fan only; basic installation S$40–60"
+      },
+      {
+       "shop": "Home First",
+       "price": 258,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.homefirst.com.sg/product-page/fanco-bee-26",
+       "priceNote": "Fan only"
+      }
+     ],
+     "specs": {
+      "Blade size": "About 66 cm (26-inch)",
+      "Hangs down": "Not stated",
+      "Warm light": "Yes",
+      "Dims the light": "Not stated",
+      "Remote": "Yes",
+      "Fan price": "S$258",
+      "With basic installation": "S$298–318",
+      "In stock": "Can order (Sembawang Lighting)",
+      "Warranty": "4 years on-site"
+     },
+     "shopper": {
+      "headline": "Smallest fan, longest warranty",
+      "love": "Smallest here; 4 years on-site cover.",
+      "watchOut": "Check air reaches both table ends.",
+      "bestFor": "Tight spots near walls or lights",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "66 cm blades",
+       "4-year on-site",
+       "Warm light"
+      ],
+      "specs": {
+       "Blade size": "About 66 cm (26-inch)",
+       "Hangs down": "Not stated",
+       "Warm light": "Yes",
+       "Dims the light": "Not stated",
+       "Remote": "Yes",
+       "Fan price": "S$258",
+       "With basic installation": "S$298–318",
+       "In stock": "Can order (Sembawang Lighting)",
+       "Warranty": "4 years on-site"
+      },
+      "offers": [
+       {
+        "shop": "Sembawang Lighting House",
+        "price": 258,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.sembawanglightinghouse.com/9-9-sale-fanco-bee-26-dc-ceiling-fan/",
+        "priceNote": "Fan only; basic installation S$40–60"
+       },
+       {
+        "shop": "Home First",
+        "price": 258,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.homefirst.com.sg/product-page/fanco-bee-26",
+        "priceNote": "Fan only"
+       }
+      ],
+      "priceNote": "With basic installation; target S$300"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.sembawanglightinghouse.com/9-9-sale-fanco-bee-26-dc-ceiling-fan/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few reviews of the BEE; Fanco owners overall are mixed."
+      }
+     },
+     "priceNote": "With basic installation; target S$300"
+    },
+    {
+     "id": "61989d0e-fb8a-4d1a-b7cd-bb0bcb22ee95",
+     "label": "Fanco B-Star 36\"",
+     "name": "Fanco B-Star 36-inch with light",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 249,
+     "images": [
+      {
+       "src": "https://fanco.com.sg/wp-content/uploads/2024/05/B-STAR-52-WH.png",
+       "caption": "Fanco B-Star (52-inch shown; same design)",
+       "kind": "product",
+       "source": "https://fanco.com.sg/portfolio-item/b-star-f-star/",
+       "alt": "Fanco B-Star (52-inch shown; same design)",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Low price, 4-year warranty",
+     "love": "Cheap, with 4 years on-site cover.",
+     "watchOut": "Bigger; light does not dim.",
+     "bestFor": "Longer cover on a budget",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Sembawang Lighting House",
+       "price": 189,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.sembawanglightinghouse.com/fanco-bstar-36-46-52-dc-ceiling-fan/",
+       "priceNote": "Fan only; limited stock; installation S$40–60"
+      },
+      {
+       "shop": "House of Fans",
+       "price": 189,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://houseoffans.sg/products/fanco-b-star-ceiling-fan",
+       "priceNote": "Fan only; installation S$50–60"
+      }
+     ],
+     "specs": {
+      "Blade size": "About 91 cm (36-inch)",
+      "Hangs down": "About 26 cm to blades",
+      "Warm light": "Yes",
+      "Dims the light": "Not stated",
+      "Remote": "Yes",
+      "Fan price": "S$189",
+      "With basic installation": "S$229–249",
+      "In stock": "Can order (Sembawang Lighting)",
+      "Warranty": "4 years on-site"
+     },
+     "shopper": {
+      "headline": "Low price, 4-year warranty",
+      "love": "Cheap, with 4 years on-site cover.",
+      "watchOut": "Bigger; light does not dim.",
+      "bestFor": "Longer cover on a budget",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Older Fanco owners report long-lasting lights but some remote and control repairs.",
+      "chips": [
+       "91 cm blades",
+       "4-year on-site",
+       "Remembers settings"
+      ],
+      "specs": {
+       "Blade size": "About 91 cm (36-inch)",
+       "Hangs down": "About 26 cm to blades",
+       "Warm light": "Yes",
+       "Dims the light": "Not stated",
+       "Remote": "Yes",
+       "Fan price": "S$189",
+       "With basic installation": "S$229–249",
+       "In stock": "Can order (Sembawang Lighting)",
+       "Warranty": "4 years on-site"
+      },
+      "offers": [
+       {
+        "shop": "Sembawang Lighting House",
+        "price": 189,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.sembawanglightinghouse.com/fanco-bstar-36-46-52-dc-ceiling-fan/",
+        "priceNote": "Fan only; limited stock; installation S$40–60"
+       },
+       {
+        "shop": "House of Fans",
+        "price": 189,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://houseoffans.sg/products/fanco-b-star-ceiling-fan",
+        "priceNote": "Fan only; installation S$50–60"
+       }
+      ],
+      "priceNote": "With basic installation; target S$230"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "low",
+       "source": "https://www.sembawanglightinghouse.com/fanco-bstar-36-46-52-dc-ceiling-fan/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://forums.hardwarezone.com.sg/threads/which-ceiling-fan-light-is-better.6435833/",
+       "exactModel": false,
+       "reason": "Older Fanco owners report long-lasting lights and some control repairs."
+      }
+     },
+     "priceNote": "With basic installation; target S$230"
+    }
+   ],
    "legacySlugs": [
     "dining-dining-fan-with-light"
    ],
@@ -835,6 +1348,57 @@
     "source": "Approximate room dimensions",
     "opening": true,
     "measured": false
+   },
+   "qty": 1,
+   "sales": [
+    "11.11",
+    "black_friday",
+    "12.12"
+   ],
+   "answer10s": "Youkain Vigor 30-inch (S$308 installed) for a compact size and dimmable light. Mistral Space 36 is best value at S$199 installed, if the bigger fan fits.",
+   "summary": "Five compact fans with lights, S$199–318 with basic installation.",
+   "researchedAt": "2026-10-30",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Youkain Vigor 30-inch (S$308 installed) for a compact size and dimmable light. Mistral Space 36 is best value at S$199 installed, if the bigger fan fits.",
+    "mustKnow": [
+     "An open dining area still needs clear space around the blades.",
+     "Warm light is not the same as dimmable.",
+     "Listen to it in a showroom for noise."
+    ],
+    "contractorNote": "Measure the ceiling and anything nearby. Confirm a concrete mount, the existing power point and switch. Check blade height above the floor. Test fan and light after fitting.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Blade size",
+       "Hangs down"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Warm light",
+       "Dims the light",
+       "Remote"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Fan price",
+       "With basic installation",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
    }
   },
   {
@@ -845,9 +1409,9 @@
    "group": "fittings",
    "priority": "nice",
    "title": "Yard fan",
-   "question": "Which corner/ceiling fan for the yard?",
+   "question": "Which fan for the yard?",
    "stage": "contractor",
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "Fanco Vino-type (~46 cm)"
    ],
@@ -856,14 +1420,679 @@
     "max": 350,
     "source": "Brief allowance, 6 Oct"
    },
-   "contractorNote": "Position clear of the laundry rack, cupboards and cooking area.",
+   "contractorNote": "Measure the clothes rack raised, lowered and moving. Check the fan’s swing and tilt. Confirm mounting and power. Aim it at people, adjustable towards laundry. Keep the whole job within S$350.",
    "mustKnow": [
-    "Check the sweep against the laundry rack when lowered"
+    "Leave room for the clothes rack when lowered with clothes on.",
+    "Basic installation assumes an existing power point.",
+    "Fit is checked by the contractor."
    ],
-   "options": [],
+   "options": [
+    {
+     "id": "9eb7c66d-2fa6-4e81-b024-755cf2f3b286",
+     "label": "KDK M40MS",
+     "name": "KDK M40MS",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 244,
+     "images": [
+      {
+       "src": "https://www.kdk.sg/cdn/shop/files/M40MS_BLACK.jpg?v=1773989409&width=1200",
+       "caption": "KDK M40MS wall fan, black",
+       "kind": "product",
+       "source": "https://www.kdk.sg/products/wall-fan-m40ms",
+       "alt": "KDK M40MS wall fan, black",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Proven wall fan, with a guard",
+     "love": "Guarded, with remote and timer; long track record.",
+     "watchOut": "Needs a wall spot; repairs at service centre.",
+     "bestFor": "Our default for the yard",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Best Denki",
+       "price": 161,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.bestdenki.com.sg/1500852-kdk-wall-fan-m40ms-black.html",
+       "priceNote": "Fan only"
+      },
+      {
+       "shop": "COURTS",
+       "price": 161,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.courts.com.sg/kdk-16-in-wall-fan-black-m40ms-black-IP018816.html",
+       "priceNote": "Fan only"
+      },
+      {
+       "shop": "KDK",
+       "price": 172,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.kdk.sg/products/wall-fan-m40ms",
+       "priceNote": "Fan; S$60 installation and S$12 delivery extra"
+      }
+     ],
+     "specs": {
+      "Blade size": "40 cm",
+      "Height or drop": "53.6 cm tall",
+      "Mounting": "Wall",
+      "Safety grille": "Yes",
+      "Air moved": "84 m³/min",
+      "Speeds and control": "3 speeds, remote",
+      "Turns side to side": "Yes",
+      "Fan price": "S$161",
+      "Installed and delivered": "S$244 (KDK)",
+      "In stock": "Yes (Best Denki)",
+      "Power": "Up to 57.5 W",
+      "Electricity a month (4 h a day)": "About S$2",
+      "Warranty": "1 year, walk-in"
+     },
+     "shopper": {
+      "headline": "Proven wall fan, with a guard",
+      "love": "Guarded, with remote and timer; long track record.",
+      "watchOut": "Needs a wall spot; repairs at service centre.",
+      "bestFor": "Our default for the yard",
+      "ownerReviews": "Mostly good",
+      "ownerSummary": "Owners buy it again; one heard humming after seven years.",
+      "chips": [
+       "Safety grille",
+       "Remote and timer",
+       "84 m³/min"
+      ],
+      "specs": {
+       "Blade size": "40 cm",
+       "Height or drop": "53.6 cm tall",
+       "Mounting": "Wall",
+       "Safety grille": "Yes",
+       "Air moved": "84 m³/min",
+       "Speeds and control": "3 speeds, remote",
+       "Turns side to side": "Yes",
+       "Fan price": "S$161",
+       "Installed and delivered": "S$244 (KDK)",
+       "In stock": "Yes (Best Denki)",
+       "Power": "Up to 57.5 W",
+       "Electricity a month (4 h a day)": "About S$2",
+       "Warranty": "1 year, walk-in"
+      },
+      "offers": [
+       {
+        "shop": "Best Denki",
+        "price": 161,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.bestdenki.com.sg/1500852-kdk-wall-fan-m40ms-black.html",
+        "priceNote": "Fan only"
+       },
+       {
+        "shop": "COURTS",
+        "price": 161,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.courts.com.sg/kdk-16-in-wall-fan-black-m40ms-black-IP018816.html",
+        "priceNote": "Fan only"
+       },
+       {
+        "shop": "KDK",
+        "price": 172,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.kdk.sg/products/wall-fan-m40ms",
+        "priceNote": "Fan; S$60 installation and S$12 delivery extra"
+       }
+      ],
+      "priceNote": "KDK fan, installation and delivery"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.bestdenki.com.sg/1500852-kdk-wall-fan-m40ms-black.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.courts.com.sg/kdk-16-in-wall-fan-black-m40ms-black-IP018816.html",
+       "exactModel": true
+      }
+     },
+     "priceNote": "KDK fan, installation and delivery"
+    },
+    {
+     "id": "f065b72c-37f4-4794-ac7c-aa3d92a4429e",
+     "label": "Fanco Dono 16\"",
+     "name": "Fanco Dono 16-inch",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 239,
+     "images": [
+      {
+       "src": "https://fanco.com.sg/wp-content/uploads/2024/05/image0-4.jpeg",
+       "caption": "Fanco Dono corner fan",
+       "kind": "product",
+       "source": "https://fanco.com.sg/portfolio-item/dono/",
+       "alt": "Fanco Dono corner fan",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Corner or ceiling mount",
+     "love": "Fits a corner or ceiling; swings 90°.",
+     "watchOut": "Open blades; hangs about 60 cm.",
+     "bestFor": "Where a wall fan fits badly",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Sembawang Lighting House",
+       "price": 199,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.sembawanglightinghouse.com/fanco-dono-16-corner-wall-fan/",
+       "priceNote": "Fan only; S$40 ceiling installation"
+      },
+      {
+       "shop": "Regal Lighting",
+       "price": 199,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.regallighting.com.sg/product/fanco-dono-corner-fan/",
+       "priceNote": "Fan only"
+      }
+     ],
+     "specs": {
+      "Blade size": "40.6 cm",
+      "Height or drop": "About 60 cm drop",
+      "Mounting": "Wall or ceiling",
+      "Safety grille": "No",
+      "Air moved": "Not stated",
+      "Speeds and control": "5 speeds, remote",
+      "Turns side to side": "Yes, 90°",
+      "Fan price": "S$199",
+      "Installed and delivered": "S$239 (ceiling, existing point)",
+      "In stock": "Can order (Sembawang Lighting)",
+      "Power": "33 W",
+      "Electricity a month (4 h a day)": "About S$1.20",
+      "Warranty": "4 years on-site; get it in writing"
+     },
+     "shopper": {
+      "headline": "Corner or ceiling mount",
+      "love": "Fits a corner or ceiling; swings 90°.",
+      "watchOut": "Open blades; hangs about 60 cm.",
+      "bestFor": "Where a wall fan fits badly",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "One owner liked it in a tight space but disliked needing the remote and a repair charge.",
+      "chips": [
+       "Corner or ceiling",
+       "Swings 90°",
+       "5 speeds"
+      ],
+      "specs": {
+       "Blade size": "40.6 cm",
+       "Height or drop": "About 60 cm drop",
+       "Mounting": "Wall or ceiling",
+       "Safety grille": "No",
+       "Air moved": "Not stated",
+       "Speeds and control": "5 speeds, remote",
+       "Turns side to side": "Yes, 90°",
+       "Fan price": "S$199",
+       "Installed and delivered": "S$239 (ceiling, existing point)",
+       "In stock": "Can order (Sembawang Lighting)",
+       "Power": "33 W",
+       "Electricity a month (4 h a day)": "About S$1.20",
+       "Warranty": "4 years on-site; get it in writing"
+      },
+      "offers": [
+       {
+        "shop": "Sembawang Lighting House",
+        "price": 199,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.sembawanglightinghouse.com/fanco-dono-16-corner-wall-fan/",
+        "priceNote": "Fan only; S$40 ceiling installation"
+       },
+       {
+        "shop": "Regal Lighting",
+        "price": 199,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.regallighting.com.sg/product/fanco-dono-corner-fan/",
+        "priceNote": "Fan only"
+       }
+      ],
+      "priceNote": "Fan plus basic ceiling installation"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.sembawanglightinghouse.com/fanco-dono-16-corner-wall-fan/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/askSingapore/comments/1sgol3t/recommendations_for_bto_kitchen_corner_fan/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Fan plus basic ceiling installation"
+    },
+    {
+     "id": "c4b6c4e8-45f5-409e-aadf-098a49342b3a",
+     "label": "KDK JV40S",
+     "name": "KDK JV40S",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 271,
+     "images": [
+      {
+       "src": "https://www.kdk.sg/cdn/shop/files/JV40S_Black_5c8f5e39-96f8-4c7f-b204-bb134934780c.jpg?v=1776822407&width=1200",
+       "caption": "KDK JV40S wall fan, black",
+       "kind": "product",
+       "source": "https://www.kdk.sg/products/8-speed-dc-wall-fan-with-remote-control-40cm-16",
+       "alt": "KDK JV40S wall fan, black",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Finer speed control",
+     "love": "8 speeds and a quiet DC motor.",
+     "watchOut": "Moves less air than the M40MS.",
+     "bestFor": "Liking fine speed control",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "KDK",
+       "price": 199,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.kdk.sg/products/8-speed-dc-wall-fan-with-remote-control-40cm-16",
+       "priceNote": "Fan; S$60 installation and S$12 delivery extra"
+      }
+     ],
+     "specs": {
+      "Blade size": "40 cm",
+      "Height or drop": "52.4 cm tall",
+      "Mounting": "Wall",
+      "Safety grille": "Yes",
+      "Air moved": "60 m³/min",
+      "Speeds and control": "8 speeds, remote and display",
+      "Turns side to side": "Yes",
+      "Fan price": "S$199",
+      "Installed and delivered": "S$271 (KDK)",
+      "In stock": "Yes (KDK)",
+      "Power": "39 W",
+      "Electricity a month (4 h a day)": "About S$1.40",
+      "Warranty": "1 year, walk-in"
+     },
+     "shopper": {
+      "headline": "Finer speed control",
+      "love": "8 speeds and a quiet DC motor.",
+      "watchOut": "Moves less air than the M40MS.",
+      "bestFor": "Liking fine speed control",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "8 speeds",
+       "DC motor",
+       "Safety grille"
+      ],
+      "specs": {
+       "Blade size": "40 cm",
+       "Height or drop": "52.4 cm tall",
+       "Mounting": "Wall",
+       "Safety grille": "Yes",
+       "Air moved": "60 m³/min",
+       "Speeds and control": "8 speeds, remote and display",
+       "Turns side to side": "Yes",
+       "Fan price": "S$199",
+       "Installed and delivered": "S$271 (KDK)",
+       "In stock": "Yes (KDK)",
+       "Power": "39 W",
+       "Electricity a month (4 h a day)": "About S$1.40",
+       "Warranty": "1 year, walk-in"
+      },
+      "offers": [
+       {
+        "shop": "KDK",
+        "price": 199,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.kdk.sg/products/8-speed-dc-wall-fan-with-remote-control-40cm-16",
+        "priceNote": "Fan; S$60 installation and S$12 delivery extra"
+       }
+      ],
+      "priceNote": "KDK fan, installation and delivery"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.kdk.sg/products/8-speed-dc-wall-fan-with-remote-control-40cm-16"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "A newer model with few owner reviews yet; KDK has local service."
+      }
+     },
+     "priceNote": "KDK fan, installation and delivery"
+    },
+    {
+     "id": "ea5248a4-b2d6-4e6e-917a-c442cc8011f6",
+     "label": "KDK M30CS",
+     "name": "KDK M30CS",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 192,
+     "images": [
+      {
+       "src": "https://www.kdk.sg/cdn/shop/files/M30CSGREY.jpg?v=1772436600&width=1200",
+       "caption": "KDK M30CS wall fan, grey",
+       "kind": "product",
+       "source": "https://www.kdk.sg/products/wall-fan-m30cs",
+       "alt": "KDK M30CS wall fan, grey",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Simple fan for a tight spot",
+     "love": "Smaller and cheapest; simple pull switches.",
+     "watchOut": "No remote or timer; less air.",
+     "bestFor": "Spending least, or a tight wall",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "KDK",
+       "price": 120,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.kdk.sg/products/wall-fan-m30cs",
+       "priceNote": "Fan; S$60 installation and S$12 delivery extra"
+      },
+      {
+       "shop": "Harvey Norman",
+       "price": 120,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.harveynorman.com.sg/home-appliances/fans/wall-fans-en/kdk-fan-wall-30cm-m30cs.html",
+       "priceNote": "Fan only"
+      }
+     ],
+     "specs": {
+      "Blade size": "30 cm",
+      "Height or drop": "48.1 cm tall",
+      "Mounting": "Wall",
+      "Safety grille": "Yes",
+      "Air moved": "45 m³/min",
+      "Speeds and control": "3 speeds, pull switches",
+      "Turns side to side": "Yes",
+      "Fan price": "S$120",
+      "Installed and delivered": "S$192 (KDK)",
+      "In stock": "Can order (KDK)",
+      "Power": "Up to 38 W",
+      "Electricity a month (4 h a day)": "About S$1.40",
+      "Warranty": "1 year, walk-in"
+     },
+     "shopper": {
+      "headline": "Simple fan for a tight spot",
+      "love": "Smaller and cheapest; simple pull switches.",
+      "watchOut": "No remote or timer; less air.",
+      "bestFor": "Spending least, or a tight wall",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "30 cm blades",
+       "Pull switches",
+       "S$192 installed"
+      ],
+      "specs": {
+       "Blade size": "30 cm",
+       "Height or drop": "48.1 cm tall",
+       "Mounting": "Wall",
+       "Safety grille": "Yes",
+       "Air moved": "45 m³/min",
+       "Speeds and control": "3 speeds, pull switches",
+       "Turns side to side": "Yes",
+       "Fan price": "S$120",
+       "Installed and delivered": "S$192 (KDK)",
+       "In stock": "Can order (KDK)",
+       "Power": "Up to 38 W",
+       "Electricity a month (4 h a day)": "About S$1.40",
+       "Warranty": "1 year, walk-in"
+      },
+      "offers": [
+       {
+        "shop": "KDK",
+        "price": 120,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.kdk.sg/products/wall-fan-m30cs",
+        "priceNote": "Fan; S$60 installation and S$12 delivery extra"
+       },
+       {
+        "shop": "Harvey Norman",
+        "price": 120,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.harveynorman.com.sg/home-appliances/fans/wall-fans-en/kdk-fan-wall-30cm-m30cs.html",
+        "priceNote": "Fan only"
+       }
+      ],
+      "priceNote": "KDK fan, installation and delivery"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.kdk.sg/products/wall-fan-m30cs"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this model; KDK has local service."
+      }
+     },
+     "priceNote": "KDK fan, installation and delivery"
+    },
+    {
+     "id": "37f8b779-e228-485b-8caf-b8ca6fb4ce46",
+     "label": "Fanco Vino 18\"",
+     "name": "Fanco Vino 18-inch",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 299,
+     "images": [
+      {
+       "src": "https://fanco.com.sg/wp-content/uploads/2024/09/image0-3.jpeg",
+       "caption": "Fanco Vino corner fan",
+       "kind": "product",
+       "source": "https://fanco.com.sg/portfolio-item/vino/",
+       "alt": "Fanco Vino corner fan",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Bigger corner fan, costs more",
+     "love": "The 18-inch corner fan first asked for.",
+     "watchOut": "S$60 more than Dono for little gain.",
+     "bestFor": "If its airflow or look wins",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Mega Discount Store",
+       "price": 259,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/vino-corner-dc-fan",
+       "priceNote": "Fan only"
+      },
+      {
+       "shop": "Regal Lighting",
+       "price": 259,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.regallighting.com.sg/product/fanco-vino-18/",
+       "priceNote": "Fan only"
+      }
+     ],
+     "specs": {
+      "Blade size": "45.7 cm",
+      "Height or drop": "About 62.5 cm drop",
+      "Mounting": "Wall or ceiling",
+      "Safety grille": "No",
+      "Air moved": "Not stated",
+      "Speeds and control": "5–6 speeds, remote",
+      "Turns side to side": "Yes, 90°",
+      "Fan price": "S$259",
+      "Installed and delivered": "About S$299 (check the order)",
+      "In stock": "Can order (Mega Discount Store)",
+      "Power": "33 W",
+      "Electricity a month (4 h a day)": "About S$1.20",
+      "Warranty": "4 years on-site; get it in writing"
+     },
+     "shopper": {
+      "headline": "Bigger corner fan, costs more",
+      "love": "The 18-inch corner fan first asked for.",
+      "watchOut": "S$60 more than Dono for little gain.",
+      "bestFor": "If its airflow or look wins",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "Two buyers praise the airflow; one finds it a bit noisy.",
+      "chips": [
+       "Corner or ceiling",
+       "45.7 cm blades",
+       "Swings 90°"
+      ],
+      "specs": {
+       "Blade size": "45.7 cm",
+       "Height or drop": "About 62.5 cm drop",
+       "Mounting": "Wall or ceiling",
+       "Safety grille": "No",
+       "Air moved": "Not stated",
+       "Speeds and control": "5–6 speeds, remote",
+       "Turns side to side": "Yes, 90°",
+       "Fan price": "S$259",
+       "Installed and delivered": "About S$299 (check the order)",
+       "In stock": "Can order (Mega Discount Store)",
+       "Power": "33 W",
+       "Electricity a month (4 h a day)": "About S$1.20",
+       "Warranty": "4 years on-site; get it in writing"
+      },
+      "offers": [
+       {
+        "shop": "Mega Discount Store",
+        "price": 259,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/vino-corner-dc-fan",
+        "priceNote": "Fan only"
+       },
+       {
+        "shop": "Regal Lighting",
+        "price": 259,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.regallighting.com.sg/product/fanco-vino-18/",
+        "priceNote": "Fan only"
+       }
+      ],
+      "priceNote": "With installation, to confirm"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://megadiscountstore.com.sg/products/vino-corner-dc-fan"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.fortytwo.sg/review/product/list/VklOTy0xOC1JTkNILQ==?page=1",
+       "exactModel": true
+      }
+     },
+     "priceNote": "With installation, to confirm"
+    }
+   ],
    "legacySlugs": [
     "yard-yard-fan"
-   ]
+   ],
+   "qty": 1,
+   "sales": [
+    "11.11",
+    "black_friday"
+   ],
+   "answer10s": "KDK M40MS: a guarded wall fan with a long track record. Fanco Dono if a corner or ceiling mount suits the clothes rack better.",
+   "summary": "Five wall and corner fans, about S$190–300 installed.",
+   "researchedAt": "2026-10-30",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "KDK M40MS: a guarded wall fan with a long track record. Fanco Dono if a corner or ceiling mount suits the clothes rack better.",
+    "mustKnow": [
+     "Leave room for the clothes rack when lowered with clothes on.",
+     "Basic installation assumes an existing power point.",
+     "Fit is checked by the contractor."
+    ],
+    "contractorNote": "Measure the clothes rack raised, lowered and moving. Check the fan’s swing and tilt. Confirm mounting and power. Aim it at people, adjustable towards laundry. Keep the whole job within S$350.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Blade size",
+       "Height or drop",
+       "Mounting",
+       "Safety grille"
+      ]
+     },
+     {
+      "group": "Performance",
+      "rows": [
+       "Air moved"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Speeds and control",
+       "Turns side to side"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Fan price",
+       "Installed and delivered",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Running costs",
+      "rows": [
+       "Power",
+       "Electricity a month (4 h a day)"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "YA04",
@@ -872,10 +2101,10 @@
    "category": "Kitchen & laundry",
    "group": "fittings",
    "priority": "essential",
-   "title": "Automated laundry rack",
-   "question": "Which automated drying rack?",
+   "title": "Motorised clothes rack",
+   "question": "Which motorised clothes rack for the yard?",
    "stage": "contractor",
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "Steigen Mini"
    ],
@@ -884,13 +2113,227 @@
     "max": 1100,
     "source": "Brief allowance, 6 Oct"
    },
-   "contractorNote": "Ceiling anchors and a power point; installer site check.",
+   "contractorNote": "Measure the ceiling and space at pole height; check the 145 cm sideways option. Confirm power and a solid mount. Leave room for a future stacked dryer.",
    "mustKnow": [
-    "Ceiling length available: 120 cm",
-    "Steigen Mini needs at least 110 × 60 cm of ceiling (per brief)",
-    "Check it fully lowered with bedding hanging"
+    "A full 9–10 kg wash may not all fit; some may need hanging elsewhere.",
+    "Bedding is washed and dried separately.",
+    "Using the heater needs some air flow in the yard."
    ],
-   "options": [],
+   "options": [
+    {
+     "id": "13c74a16-338d-4286-b555-c7f9abe5f4f3",
+     "label": "Steigen Solar Mini",
+     "name": "Steigen Solar, Mini size",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 799,
+     "images": [
+      {
+       "src": "https://www.steigen.com.sg/cdn/shop/files/B11-solar-white.png?v=1781007802&width=2880",
+       "caption": "Steigen Solar laundry rack (series photo)",
+       "kind": "product",
+       "source": "https://www.steigen.com.sg/products/steigen-dryer",
+       "alt": "Steigen Solar laundry rack (series photo)",
+       "width": 2880,
+       "height": 2880
+      }
+     ],
+     "headline": "Compact everyday rack, lower price",
+     "love": "Dries a normal load overnight; local repairs.",
+     "watchOut": "Price depends on the set-up chosen.",
+     "bestFor": "Small yard, heat now and then",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Steigen",
+       "price": 799,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.steigen.com.sg/products/steigen-dryer",
+       "priceNote": "From; price depends on set-up"
+      }
+     ],
+     "specs": {
+      "Ceiling space needed": "110 × 60 cm",
+      "Pole length": "100–160 cm",
+      "Poles": "7",
+      "Fans and heat": "Yes",
+      "Remote / app": "Yes / Yes",
+      "Blanket poles": "Queen bedding (brand guide)",
+      "Price": "From S$799",
+      "Installation": "Standard installation included",
+      "In stock": "Can order (Steigen)",
+      "Warranty": "5 years parts, 2 years labour"
+     },
+     "shopper": {
+      "headline": "Compact everyday rack, lower price",
+      "love": "Dries a normal load overnight; local repairs.",
+      "watchOut": "Price depends on the set-up chosen.",
+      "bestFor": "Small yard, heat now and then",
+      "ownerReviews": "Mostly good",
+      "ownerSummary": "Owners of older Steigen racks report years of use; one needed a heater repair.",
+      "chips": [
+       "From S$799",
+       "7 poles",
+       "Fans and heat"
+      ],
+      "specs": {
+       "Ceiling space needed": "110 × 60 cm",
+       "Pole length": "100–160 cm",
+       "Poles": "7",
+       "Fans and heat": "Yes",
+       "Remote / app": "Yes / Yes",
+       "Blanket poles": "Queen bedding (brand guide)",
+       "Price": "From S$799",
+       "Installation": "Standard installation included",
+       "In stock": "Can order (Steigen)",
+       "Warranty": "5 years parts, 2 years labour"
+      },
+      "offers": [
+       {
+        "shop": "Steigen",
+        "price": 799,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.steigen.com.sg/products/steigen-dryer",
+        "priceNote": "From; price depends on set-up"
+       }
+      ],
+      "priceNote": "Installed; final price after choosing the set-up",
+      "priceText": "From S$799"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.steigen.com.sg/products/steigen-dryer"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/asksg/comments/1u6kdm7/automated_laundry_rack_reviews/",
+       "exactModel": false,
+       "reason": "Owners of older Steigen racks report years of use, including one heater repair."
+      }
+     },
+     "priceNote": "Installed; final price after choosing the set-up",
+     "priceText": "From S$799"
+    },
+    {
+     "id": "eb412f04-cb75-4be2-8579-c4b5623ed271",
+     "label": "GoodLiving Platinum Mini 2.0",
+     "name": "GoodLiving Platinum Mini 2.0",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 999,
+     "images": [
+      {
+       "src": "https://www.goodliving.sg/wp-content/uploads/2024/06/PLATINUM-MINI-2.0-CERAMIC-WHITE-V1-copy.png",
+       "caption": "GoodLiving Platinum Mini 2.0 laundry rack",
+       "kind": "product",
+       "source": "https://www.goodliving.sg/product/platinum-mini/",
+       "alt": "GoodLiving Platinum Mini 2.0 laundry rack",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Longer poles if there is room",
+     "love": "Poles extend to 180 cm for more hanging space.",
+     "watchOut": "Get the warranty in writing; pages differ.",
+     "bestFor": "A short ceiling with open space beside",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Home First",
+       "price": 999,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.homefirst.com.sg/product-page/goodliving-platinum-mini-2-0",
+       "priceNote": "With standard installation"
+      },
+      {
+       "shop": "GoodLiving",
+       "price": 999,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.goodliving.sg/product/platinum-mini/"
+      }
+     ],
+     "specs": {
+      "Ceiling space needed": "100 × 40 cm base",
+      "Pole length": "100–180 cm",
+      "Poles": "7 (check the package)",
+      "Fans and heat": "Yes",
+      "Remote / app": "Yes / check app",
+      "Blanket poles": "Yes",
+      "Price": "S$999",
+      "Installation": "Concrete ceiling under 3.5 m included",
+      "In stock": "Can order (Home First)",
+      "Warranty": "10 years motor, 5 parts, 2 on-site"
+     },
+     "shopper": {
+      "headline": "Longer poles if there is room",
+      "love": "Poles extend to 180 cm for more hanging space.",
+      "watchOut": "Get the warranty in writing; pages differ.",
+      "bestFor": "A short ceiling with open space beside",
+      "ownerReviews": "Mostly good",
+      "ownerSummary": "Early owners are mostly happy; many reviews are about the installation visit.",
+      "chips": [
+       "Poles to 180 cm",
+       "Blanket poles",
+       "S$999 installed"
+      ],
+      "specs": {
+       "Ceiling space needed": "100 × 40 cm base",
+       "Pole length": "100–180 cm",
+       "Poles": "7 (check the package)",
+       "Fans and heat": "Yes",
+       "Remote / app": "Yes / check app",
+       "Blanket poles": "Yes",
+       "Price": "S$999",
+       "Installation": "Concrete ceiling under 3.5 m included",
+       "In stock": "Can order (Home First)",
+       "Warranty": "10 years motor, 5 parts, 2 on-site"
+      },
+      "offers": [
+       {
+        "shop": "Home First",
+        "price": 999,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.homefirst.com.sg/product-page/goodliving-platinum-mini-2-0",
+        "priceNote": "With standard installation"
+       },
+       {
+        "shop": "GoodLiving",
+        "price": 999,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.goodliving.sg/product/platinum-mini/"
+       }
+      ],
+      "priceNote": "With standard installation; site extras extra"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.homefirst.com.sg/product-page/goodliving-platinum-mini-2-0"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.goodliving.sg/product/platinum-mini/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "With standard installation; site extras extra"
+    }
+   ],
    "legacySlugs": [
     "yard-automated-laundry-rack"
    ],
@@ -899,6 +2342,57 @@
     "width": 120,
     "source": "Known ceiling length; width unmeasured",
     "measured": false
+   },
+   "qty": 1,
+   "sales": [
+    "11.11",
+    "black_friday"
+   ],
+   "answer10s": "Steigen Solar Mini for drying overnight, if it fits and the set-up price stays near S$799. GoodLiving Platinum Mini 2.0 if its longer poles have room.",
+   "summary": "Two compact motorised racks with fans and heat, about S$800–1,000 installed.",
+   "researchedAt": "2026-10-30",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Steigen Solar Mini for drying overnight, if it fits and the set-up price stays near S$799. GoodLiving Platinum Mini 2.0 if its longer poles have room.",
+    "mustKnow": [
+     "A full 9–10 kg wash may not all fit; some may need hanging elsewhere.",
+     "Bedding is washed and dried separately.",
+     "Using the heater needs some air flow in the yard."
+    ],
+    "contractorNote": "Measure the ceiling and space at pole height; check the 145 cm sideways option. Confirm power and a solid mount. Leave room for a future stacked dryer.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Ceiling space needed",
+       "Pole length",
+       "Poles"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Fans and heat",
+       "Remote / app",
+       "Blanket poles"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "Installation",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
    }
   },
   {
@@ -4159,21 +5653,253 @@
    "category": "Air & water",
    "group": "fittings",
    "priority": "nice",
-   "title": "Water dispenser tap",
-   "question": "Which hot/warm/cold drinking-water tap?",
+   "title": "Water dispenser",
+   "question": "Which hot and cold water dispenser for the kitchen?",
    "stage": "contractor",
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "Happie Miracle (reference)",
     "Aqua Luxe (reference)",
     "None"
    ],
-   "contractorNote": "These usually need an under-sink power socket, a tap hole in the sink or counter and a cold-water inlet — confirm for the chosen model.",
+   "contractorNote": "Cold-water feed with a reachable shut-off valve, a safe socket and a tube route. Measure the counter and cupboard. Leave space for air and servicing.",
    "mustKnow": [
-    "Check under-sink space for the unit",
-    "Hot water: look for a child lock"
+    "Connects to the water pipe and fills itself.",
+    "Before buying: fill two bottles in a row; both should stay cold.",
+    "Yearly filter and servicing cost still to ask."
    ],
-   "options": [],
+   "options": [
+    {
+     "id": "3ebc3926-b1f8-4874-abfd-96c5dce32cba",
+     "label": "Toshiba TWP-W2255TSG",
+     "name": "Toshiba TWP-W2255TSG",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 949,
+     "images": [
+      {
+       "src": "https://web-res.midea.com/content/dam/toshiba-aem/sg/sg-new/pdp/water-purifier/twp-w2255tsg%28w%29/pdp-twp-w2255tsg%28w%29-1-1200x1200.png",
+       "caption": "Toshiba TWP-W2255TSG water dispenser",
+       "kind": "product",
+       "source": "https://www.toshiba-lifestyle.com/sg/domestic-appliances/water-care/water-purifier/toshiba-japandi-water-purifier-twp-w2255tsg-w",
+       "alt": "Toshiba TWP-W2255TSG water dispenser",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Bigger cold-water store, simple settings",
+     "love": "2 L of cold water stored; fills itself.",
+     "watchOut": "Mix hot and room water for warm.",
+     "bestFor": "Countertop, if cold water keeps up",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Mega Discount Store",
+       "price": 949,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/twp-w2255tsg-water-purifier",
+       "priceNote": "With basic installation"
+      },
+      {
+       "shop": "Everjoint",
+       "price": 856,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://everjointelectrical.com.sg/product/toshiba-twp-w2255tsgw-water-purifier-2-0l/",
+       "priceNote": "Unit only; 2 years carry-in"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "26 × 46 × 43 cm",
+      "Cold water stored": "2 L",
+      "Cold water refill": "3 L an hour",
+      "Connects to the water pipe": "Yes",
+      "Warm water": "Mix hot and room water",
+      "Child lock on hot": "Yes",
+      "Price": "S$949 with basic installation",
+      "In stock": "Can order (Mega Discount Store)",
+      "Filter change": "Every 6 months or 1,800 L",
+      "Filters and servicing a year": "Ask for a quote",
+      "Warranty": "2 years (Toshiba)"
+     },
+     "shopper": {
+      "headline": "Bigger cold-water store, simple settings",
+      "love": "2 L of cold water stored; fills itself.",
+      "watchOut": "Mix hot and room water for warm.",
+      "bestFor": "Countertop, if cold water keeps up",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "Few owner reviews of the Singapore model; one Malaysian owner mentions a leak.",
+      "chips": [
+       "2 L cold tank",
+       "Fills itself",
+       "UV cleaning"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "26 × 46 × 43 cm",
+       "Cold water stored": "2 L",
+       "Cold water refill": "3 L an hour",
+       "Connects to the water pipe": "Yes",
+       "Warm water": "Mix hot and room water",
+       "Child lock on hot": "Yes",
+       "Price": "S$949 with basic installation",
+       "In stock": "Can order (Mega Discount Store)",
+       "Filter change": "Every 6 months or 1,800 L",
+       "Filters and servicing a year": "Ask for a quote",
+       "Warranty": "2 years (Toshiba)"
+      },
+      "offers": [
+       {
+        "shop": "Mega Discount Store",
+        "price": 949,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/twp-w2255tsg-water-purifier",
+        "priceNote": "With basic installation"
+       },
+       {
+        "shop": "Everjoint",
+        "price": 856,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://everjointelectrical.com.sg/product/toshiba-twp-w2255tsgw-water-purifier-2-0l/",
+        "priceNote": "Unit only; 2 years carry-in"
+       }
+      ],
+      "priceNote": "With basic installation; target about S$900"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://megadiscountstore.com.sg/products/twp-w2255tsg-water-purifier"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of the Singapore model; one Malaysian owner mentions a leak."
+      }
+     },
+     "priceNote": "With basic installation; target about S$900"
+    },
+    {
+     "id": "f29c5804-3376-4fe7-abc6-b6436d9de28d",
+     "label": "Midea JL2245T",
+     "name": "Midea JL2245T",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 759,
+     "images": [
+      {
+       "src": "https://web-res.midea.com/content/dam/midea-aem/sg/sg-new/pd/domestic-appliances/water-purifier/jl2245t/jl2245t-5243x5243.jpg",
+       "caption": "Midea JL2245T water dispenser",
+       "kind": "product",
+       "source": "https://www.midea.com/sg/domestic-appliances/water-purifier/midea-water-purifier-jl2245t.jl2245t",
+       "alt": "Midea JL2245T water dispenser",
+       "width": 5243,
+       "height": 5243
+      }
+     ],
+     "headline": "Cheaper, fills itself",
+     "love": "S$190 cheaper, with several temperature settings.",
+     "watchOut": "1-year warranty; cold store size not stated.",
+     "bestFor": "Spending less, if cold water keeps up",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Mega Discount Store",
+       "price": 759,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/collections/water-purifier/products/jl2245t-multi-functional-water-dispenser",
+       "priceNote": "With basic installation"
+      },
+      {
+       "shop": "COURTS",
+       "price": 749,
+       "stock": "Made to order",
+       "checked": "2026-10-30",
+       "url": "https://www.courts.com.sg/midea-water-purifier-dispenser---black-jl2245t-IP193662.html",
+       "priceNote": "Installation extra; 1 year on-site"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "26 × 48.5 × 43.5 cm",
+      "Cold water stored": "Not stated",
+      "Cold water refill": "Not stated",
+      "Connects to the water pipe": "Yes",
+      "Warm water": "Preset settings",
+      "Child lock on hot": "Yes",
+      "Price": "S$759 with basic installation",
+      "In stock": "Can order (Mega Discount Store)",
+      "Filter change": "Not stated",
+      "Filters and servicing a year": "Ask for a quote",
+      "Warranty": "1 year (Midea)"
+     },
+     "shopper": {
+      "headline": "Cheaper, fills itself",
+      "love": "S$190 cheaper, with several temperature settings.",
+      "watchOut": "1-year warranty; cold store size not stated.",
+      "bestFor": "Spending less, if cold water keeps up",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Several temperatures",
+       "Fills itself",
+       "Child lock"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "26 × 48.5 × 43.5 cm",
+       "Cold water stored": "Not stated",
+       "Cold water refill": "Not stated",
+       "Connects to the water pipe": "Yes",
+       "Warm water": "Preset settings",
+       "Child lock on hot": "Yes",
+       "Price": "S$759 with basic installation",
+       "In stock": "Can order (Mega Discount Store)",
+       "Filter change": "Not stated",
+       "Filters and servicing a year": "Ask for a quote",
+       "Warranty": "1 year (Midea)"
+      },
+      "offers": [
+       {
+        "shop": "Mega Discount Store",
+        "price": 759,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/collections/water-purifier/products/jl2245t-multi-functional-water-dispenser",
+        "priceNote": "With basic installation"
+       },
+       {
+        "shop": "COURTS",
+        "price": 749,
+        "stock": "Made to order",
+        "checked": "2026-10-30",
+        "url": "https://www.courts.com.sg/midea-water-purifier-dispenser---black-jl2245t-IP193662.html",
+        "priceNote": "Installation extra; 1 year on-site"
+       }
+      ],
+      "priceNote": "With basic installation; target about S$750"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://megadiscountstore.com.sg/collections/water-purifier/products/jl2245t-multi-functional-water-dispenser"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this model yet."
+      }
+     },
+     "priceNote": "With basic installation; target about S$750"
+    }
+   ],
    "roughBudget": {
     "min": 800,
     "max": 1800,
@@ -4181,7 +5907,75 @@
    },
    "legacySlugs": [
     "kitchen-water-dispenser-tap"
-   ]
+   ],
+   "qty": 1,
+   "sales": [
+    "11.11",
+    "black_friday",
+    "12.12"
+   ],
+   "answer10s": "Toshiba (S$949 installed) is the first to try; Midea (S$759) is the cheaper choice. Before buying, check two bottles in a row stay cold and ask the yearly filter cost.",
+   "summary": "Two countertop dispensers that connect to the water pipe, S$759–949 installed.",
+   "researchedAt": "2026-10-30",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Toshiba (S$949 installed) is the first to try; Midea (S$759) is the cheaper choice. Before buying, check two bottles in a row stay cold and ask the yearly filter cost.",
+    "mustKnow": [
+     "Connects to the water pipe and fills itself.",
+     "Before buying: fill two bottles in a row; both should stay cold.",
+     "Yearly filter and servicing cost still to ask."
+    ],
+    "contractorNote": "Cold-water feed with a reachable shut-off valve, a safe socket and a tube route. Measure the counter and cupboard. Leave space for air and servicing.",
+    "alsoConsidered": [
+     {
+      "brand": "AquaLuxe",
+      "reason": "Too few long-term owner reports"
+     }
+    ],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Size (width × depth × height)"
+      ]
+     },
+     {
+      "group": "Performance",
+      "rows": [
+       "Cold water stored",
+       "Cold water refill"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Connects to the water pipe",
+       "Warm water",
+       "Child lock on hot"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Running costs",
+      "rows": [
+       "Filter change",
+       "Filters and servicing a year"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "EN01",
@@ -6957,9 +8751,9 @@
    "group": "fittings",
    "priority": "essential",
    "title": "Bedroom fan with light",
-   "question": "Which fan for KY's room?",
+   "question": "Which fan with light for KY’s room?",
    "stage": "contractor",
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "KDK F40GP 100 cm (requested)"
    ],
@@ -6968,11 +8762,333 @@
     "max": 500,
     "source": "Brief allowance, 6 Oct"
    },
-   "contractorNote": "Installer must confirm wall clearance and height for a 100 cm fan.",
+   "contractorNote": "Measure the finished ceiling height and anything in the way (partition, wardrobe, curtains, hidden lights). Follow the fan manual’s clearances. Fit after the dusty work.",
    "mustKnow": [
-    "Brief: centred in a 250 cm room, blade tips are only about 75 cm from the walls"
+    "Room is about 300 × 250 cm.",
+    "Warm light is not the same as dimmable.",
+    "A DC motor is not always silent; listen first."
    ],
-   "options": [],
+   "options": [
+    {
+     "id": "c31bc8b2-e43b-45bf-a0bb-74efa94057e1",
+     "label": "Crestar Airis+ 33\"",
+     "name": "Crestar Airis+ 33-inch, 3 blades, dimmable light",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 380,
+     "images": [
+      {
+       "src": "https://www.crestarfan.com.sg/cdn/shop/files/Airis_-3B-33-Maple.png?v=1716699524&width=1200",
+       "caption": "Crestar Airis+ 33-inch ceiling fan, maple",
+       "kind": "product",
+       "source": "https://www.crestarfan.com.sg/products/airis-plus-smart-ceiling-fan",
+       "alt": "Crestar Airis+ 33-inch ceiling fan, maple",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Smaller, with softer bedtime light",
+     "love": "Compact 84 cm; light dims for bedtime.",
+     "watchOut": "Only 1 year on-site cover.",
+     "bestFor": "A smaller fan and soft evening light",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Regal Lighting",
+       "price": 380,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.regallighting.com.sg/product/crestar-airis-3-blades-with-led-lightkit-smartseries/",
+       "priceNote": "Fan only; 33-inch with light"
+      }
+     ],
+     "specs": {
+      "Blade size": "84 cm (33-inch)",
+      "Hangs down": "About 36 cm with light",
+      "Warm light": "Yes",
+      "Dims the light": "Yes",
+      "Remote": "Yes, 6 speeds",
+      "Fan price": "S$380",
+      "With basic installation": "Quote; keep under S$500",
+      "In stock": "Can order (Regal Lighting)",
+      "Warranty": "1 year on-site, motor 10"
+     },
+     "shopper": {
+      "headline": "Smaller, with softer bedtime light",
+      "love": "Compact 84 cm; light dims for bedtime.",
+      "watchOut": "Only 1 year on-site cover.",
+      "bestFor": "A smaller fan and soft evening light",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "84 cm blades",
+       "Dimmable light",
+       "Remote and app"
+      ],
+      "specs": {
+       "Blade size": "84 cm (33-inch)",
+       "Hangs down": "About 36 cm with light",
+       "Warm light": "Yes",
+       "Dims the light": "Yes",
+       "Remote": "Yes, 6 speeds",
+       "Fan price": "S$380",
+       "With basic installation": "Quote; keep under S$500",
+       "In stock": "Can order (Regal Lighting)",
+       "Warranty": "1 year on-site, motor 10"
+      },
+      "offers": [
+       {
+        "shop": "Regal Lighting",
+        "price": 380,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.regallighting.com.sg/product/crestar-airis-3-blades-with-led-lightkit-smartseries/",
+        "priceNote": "Fan only; 33-inch with light"
+       }
+      ],
+      "priceNote": "Fan only; installed must stay under S$500"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.regallighting.com.sg/product/crestar-airis-3-blades-with-led-lightkit-smartseries/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of the 33-inch size; Crestar has local support."
+      }
+     },
+     "priceNote": "Fan only; installed must stay under S$500",
+     "costIncomplete": true
+    },
+    {
+     "id": "feed09ed-69dd-4d3d-94e2-32f5b7fc101e",
+     "label": "Fanco B-Star 36\"",
+     "name": "Fanco B-Star 36-inch with light",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 249,
+     "images": [
+      {
+       "src": "https://fanco.com.sg/wp-content/uploads/2024/05/B-STAR-52-WH.png",
+       "caption": "Fanco B-Star (52-inch shown; same design)",
+       "kind": "product",
+       "source": "https://fanco.com.sg/portfolio-item/b-star-f-star/",
+       "alt": "Fanco B-Star (52-inch shown; same design)",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Sensible low-cost choice",
+     "love": "Cheap, with 4 years on-site cover.",
+     "watchOut": "Light doesn't dim; check low-speed hum.",
+     "bestFor": "Value, with a bedside lamp",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Sembawang Lighting House",
+       "price": 189,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.sembawanglightinghouse.com/fanco-bstar-36-46-52-dc-ceiling-fan/",
+       "priceNote": "Fan only; installation S$40–60"
+      },
+      {
+       "shop": "Regal Lighting",
+       "price": 189,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.regallighting.com.sg/product/bstar/",
+       "priceNote": "Fan only"
+      }
+     ],
+     "specs": {
+      "Blade size": "About 91 cm (36-inch)",
+      "Hangs down": "About 26 cm to blades",
+      "Warm light": "Yes",
+      "Dims the light": "No",
+      "Remote": "Yes",
+      "Fan price": "S$189",
+      "With basic installation": "S$229–249",
+      "In stock": "Can order (Sembawang Lighting)",
+      "Warranty": "4 years on-site"
+     },
+     "shopper": {
+      "headline": "Sensible low-cost choice",
+      "love": "Cheap, with 4 years on-site cover.",
+      "watchOut": "Light doesn't dim; check low-speed hum.",
+      "bestFor": "Value, with a bedside lamp",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Buyers praise the value and quietness; one owner heard a high-pitched whine.",
+      "chips": [
+       "S$249 installed",
+       "4-year on-site",
+       "91 cm blades"
+      ],
+      "specs": {
+       "Blade size": "About 91 cm (36-inch)",
+       "Hangs down": "About 26 cm to blades",
+       "Warm light": "Yes",
+       "Dims the light": "No",
+       "Remote": "Yes",
+       "Fan price": "S$189",
+       "With basic installation": "S$229–249",
+       "In stock": "Can order (Sembawang Lighting)",
+       "Warranty": "4 years on-site"
+      },
+      "offers": [
+       {
+        "shop": "Sembawang Lighting House",
+        "price": 189,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.sembawanglightinghouse.com/fanco-bstar-36-46-52-dc-ceiling-fan/",
+        "priceNote": "Fan only; installation S$40–60"
+       },
+       {
+        "shop": "Regal Lighting",
+        "price": 189,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.regallighting.com.sg/product/bstar/",
+        "priceNote": "Fan only"
+       }
+      ],
+      "priceNote": "With basic installation; target S$230"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.sembawanglightinghouse.com/fanco-bstar-36-46-52-dc-ceiling-fan/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.fortytwo.sg/review/product/list/MS1GYW5jby1CLVNUYXItREMtRmFuLVdoaXRl",
+       "exactModel": true
+      }
+     },
+     "priceNote": "With basic installation; target S$230"
+    },
+    {
+     "id": "755b4322-8a8d-4152-ae0e-b11190c29cfd",
+     "label": "Fanco BEE 26\"",
+     "name": "Fanco BEE 26-inch with light",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 318,
+     "images": [
+      {
+       "src": "https://fanco.com.sg/wp-content/uploads/2024/09/image4-2.jpeg",
+       "caption": "Fanco BEE ceiling fan",
+       "kind": "product",
+       "source": "https://fanco.com.sg/portfolio-item/bee/",
+       "alt": "Fanco BEE ceiling fan",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "More room around cupboards and curtains",
+     "love": "Smallest fan; more space around the blades.",
+     "watchOut": "Moves less air over the whole room.",
+     "bestFor": "A tight spot near furniture",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Sembawang Lighting House",
+       "price": 258,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.sembawanglightinghouse.com/9-9-sale-fanco-bee-26-dc-ceiling-fan/",
+       "priceNote": "Fan only; installation S$40–60"
+      },
+      {
+       "shop": "Mega Discount Store",
+       "price": 258,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/collections/climate-voucher-eligible-products/products/bee-dc-ceiling-fan",
+       "priceNote": "Fan only"
+      }
+     ],
+     "specs": {
+      "Blade size": "About 66 cm (26-inch)",
+      "Hangs down": "Not stated",
+      "Warm light": "Yes",
+      "Dims the light": "Not stated",
+      "Remote": "Yes, 5 speeds",
+      "Fan price": "S$258",
+      "With basic installation": "S$298–318",
+      "In stock": "Can order (Sembawang Lighting)",
+      "Warranty": "4 years on-site"
+     },
+     "shopper": {
+      "headline": "More room around cupboards and curtains",
+      "love": "Smallest fan; more space around the blades.",
+      "watchOut": "Moves less air over the whole room.",
+      "bestFor": "A tight spot near furniture",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "66 cm blades",
+       "4-year on-site",
+       "Warm light"
+      ],
+      "specs": {
+       "Blade size": "About 66 cm (26-inch)",
+       "Hangs down": "Not stated",
+       "Warm light": "Yes",
+       "Dims the light": "Not stated",
+       "Remote": "Yes, 5 speeds",
+       "Fan price": "S$258",
+       "With basic installation": "S$298–318",
+       "In stock": "Can order (Sembawang Lighting)",
+       "Warranty": "4 years on-site"
+      },
+      "offers": [
+       {
+        "shop": "Sembawang Lighting House",
+        "price": 258,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.sembawanglightinghouse.com/9-9-sale-fanco-bee-26-dc-ceiling-fan/",
+        "priceNote": "Fan only; installation S$40–60"
+       },
+       {
+        "shop": "Mega Discount Store",
+        "price": 258,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/collections/climate-voucher-eligible-products/products/bee-dc-ceiling-fan",
+        "priceNote": "Fan only"
+       }
+      ],
+      "priceNote": "With basic installation; target S$300"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.sembawanglightinghouse.com/9-9-sale-fanco-bee-26-dc-ceiling-fan/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of the BEE yet."
+      }
+     },
+     "priceNote": "With basic installation; target S$300"
+    }
+   ],
    "legacySlugs": [
     "ky-room-bedroom-fan-with-light"
    ],
@@ -6981,6 +9097,61 @@
     "width": 250,
     "source": "Room width from brief; depth unmeasured",
     "measured": false
+   },
+   "qty": 1,
+   "sales": [
+    "11.11",
+    "black_friday"
+   ],
+   "answer10s": "Crestar Airis+ 33-inch with a dimmable light, if KY likes how it sounds at low speed and the installed price stays under S$500. Fanco B-Star 36-inch is the value choice.",
+   "summary": "Three smaller bedroom fans with lights, about S$250–500 installed.",
+   "researchedAt": "2026-10-30",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Crestar Airis+ 33-inch with a dimmable light, if KY likes how it sounds at low speed and the installed price stays under S$500. Fanco B-Star 36-inch is the value choice.",
+    "mustKnow": [
+     "Room is about 300 × 250 cm.",
+     "Warm light is not the same as dimmable.",
+     "A DC motor is not always silent; listen first."
+    ],
+    "contractorNote": "Measure the finished ceiling height and anything in the way (partition, wardrobe, curtains, hidden lights). Follow the fan manual’s clearances. Fit after the dusty work.",
+    "alsoConsidered": [
+     {
+      "brand": "KDK F40GP",
+      "reason": "Needs 1 m from blade to wall; room too small"
+     }
+    ],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Blade size",
+       "Hangs down"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Warm light",
+       "Dims the light",
+       "Remote"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Fan price",
+       "With basic installation",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
    }
   },
   {
@@ -6990,10 +9161,10 @@
    "category": "Lighting",
    "group": "fittings",
    "priority": "nice",
-   "title": "Ambient / cove LED",
-   "question": "Ambient LED in KY's room?",
+   "title": "Soft ceiling lighting",
+   "question": "Hidden lights round every ceiling edge: COB or SMD strip?",
    "stage": "contractor",
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "Cove/ambient LED",
     "None"
@@ -7001,14 +9172,239 @@
    "roughBudget": {
     "min": 0,
     "max": 350,
-    "source": "Brief allowance, 6 Oct"
+    "source": "Old cap removed; quote first"
    },
-   "contractorNote": "Accessible drivers; useful working light.",
-   "mustKnow": [],
-   "options": [],
+   "contractorNote": "Measure the ceiling edges. Quote all profiles, corners, wiring and finishing. Name the exact strip, controller, power box and hub. Keep the power box reachable. Show low dimming and white change in Apple Home.",
+   "mustKnow": [
+    "Covers every ceiling edge; no colours needed.",
+    "Needs an Aqara hub for Apple Home.",
+    "Parts prices are not installed prices."
+   ],
+   "options": [
+    {
+     "id": "df389db8-b2a1-4205-9c68-42c64f0abedb",
+     "label": "Aqara COB strip",
+     "name": "Aqara COB LED Strip, every ceiling edge",
+     "kind": "product",
+     "tier": "Mid",
+     "price": null,
+     "images": [],
+     "headline": "Smooth glow around every edge",
+     "love": "One continuous line of light, no dots.",
+     "watchOut": "Full price only after a quote.",
+     "bestFor": "An even ceiling glow",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Aqara Singapore (PFE)",
+       "price": null,
+       "stock": "Quote needed",
+       "checked": "2026-10-30",
+       "url": "https://pfetech.com/aqara/product/aqara-smart-led-strips/",
+       "priceNote": "Parts from S$52–129; not the installed price"
+      }
+     ],
+     "specs": {
+      "Covers": "Every ceiling edge",
+      "Profile": "Slim surface profile",
+      "Light colour": "2700–6500K",
+      "Looks like": "One smooth line",
+      "Phone dimming": "Yes, with Aqara",
+      "Apple Home": "Yes, with Aqara hub",
+      "Installed price": "Quote needed",
+      "Power per metre": "About 8 W"
+     },
+     "shopper": {
+      "headline": "Smooth glow around every edge",
+      "love": "One continuous line of light, no dots.",
+      "watchOut": "Full price only after a quote.",
+      "bestFor": "An even ceiling glow",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "No visible dots",
+       "Warm to cool white",
+       "Apple Home (hub)"
+      ],
+      "specs": {
+       "Covers": "Every ceiling edge",
+       "Profile": "Slim surface profile",
+       "Light colour": "2700–6500K",
+       "Looks like": "One smooth line",
+       "Phone dimming": "Yes, with Aqara",
+       "Apple Home": "Yes, with Aqara hub",
+       "Installed price": "Quote needed",
+       "Power per metre": "About 8 W"
+      },
+      "offers": [
+       {
+        "shop": "Aqara Singapore (PFE)",
+        "price": null,
+        "stock": "Quote needed",
+        "checked": "2026-10-30",
+        "url": "https://pfetech.com/aqara/product/aqara-smart-led-strips/",
+        "priceNote": "Parts from S$52–129; not the installed price"
+       }
+      ],
+      "priceNote": "Installed, every ceiling edge",
+      "priceText": "Quote needed"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://pfetech.com/aqara/product/aqara-smart-led-strips/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "A quoted installation; few owner reviews of this set-up yet."
+      }
+     },
+     "priceNote": "Installed, every ceiling edge",
+     "priceText": "Quote needed"
+    },
+    {
+     "id": "e650eb6c-1ee7-4873-9e72-6a7616d4c1ee",
+     "label": "Aqara SMD strip",
+     "name": "Aqara SMD LED Strip T1, every ceiling edge",
+     "kind": "product",
+     "tier": "Budget",
+     "price": null,
+     "images": [],
+     "headline": "Maybe cheaper; check for dots",
+     "love": "Same light and app, maybe cheaper.",
+     "watchOut": "Ask for a sample: dots may show.",
+     "bestFor": "If the sample looks just as good",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Aqara Singapore (PFE)",
+       "price": null,
+       "stock": "Quote needed",
+       "checked": "2026-10-30",
+       "url": "https://pfetech.com/aqara/product/aqara-smart-led-strips/",
+       "priceNote": "Parts from S$52–129; not the installed price"
+      }
+     ],
+     "specs": {
+      "Covers": "Every ceiling edge",
+      "Profile": "Same profile as COB",
+      "Light colour": "2700–6500K",
+      "Looks like": "Small dots of light",
+      "Phone dimming": "Yes, with Aqara",
+      "Apple Home": "Yes, with Aqara hub",
+      "Installed price": "Quote needed",
+      "Power per metre": "About 7 W"
+     },
+     "shopper": {
+      "headline": "Maybe cheaper; check for dots",
+      "love": "Same light and app, maybe cheaper.",
+      "watchOut": "Ask for a sample: dots may show.",
+      "bestFor": "If the sample looks just as good",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Maybe cheaper",
+       "Warm to cool white",
+       "Apple Home (hub)"
+      ],
+      "specs": {
+       "Covers": "Every ceiling edge",
+       "Profile": "Same profile as COB",
+       "Light colour": "2700–6500K",
+       "Looks like": "Small dots of light",
+       "Phone dimming": "Yes, with Aqara",
+       "Apple Home": "Yes, with Aqara hub",
+       "Installed price": "Quote needed",
+       "Power per metre": "About 7 W"
+      },
+      "offers": [
+       {
+        "shop": "Aqara Singapore (PFE)",
+        "price": null,
+        "stock": "Quote needed",
+        "checked": "2026-10-30",
+        "url": "https://pfetech.com/aqara/product/aqara-smart-led-strips/",
+        "priceNote": "Parts from S$52–129; not the installed price"
+       }
+      ],
+      "priceNote": "Installed, every ceiling edge",
+      "priceText": "Quote needed"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://pfetech.com/aqara/product/aqara-smart-led-strips/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "A quoted installation; few owner reviews of this set-up yet."
+      }
+     },
+     "priceNote": "Installed, every ceiling edge",
+     "priceText": "Quote needed"
+    }
+   ],
    "legacySlugs": [
     "ky-room-ambient-cove-led"
-   ]
+   ],
+   "qty": 1,
+   "answer10s": "Get quotes for both Aqara strips round every ceiling edge. COB gives the most even glow; pick SMD if its sample looks as good and costs clearly less.",
+   "summary": "Two hidden-strip set-ups for KY’s room, quote first.",
+   "researchedAt": "2026-10-30",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Get quotes for both Aqara strips round every ceiling edge. COB gives the most even glow; pick SMD if its sample looks as good and costs clearly less.",
+    "mustKnow": [
+     "Covers every ceiling edge; no colours needed.",
+     "Needs an Aqara hub for Apple Home.",
+     "Parts prices are not installed prices."
+    ],
+    "contractorNote": "Measure the ceiling edges. Quote all profiles, corners, wiring and finishing. Name the exact strip, controller, power box and hub. Keep the power box reachable. Show low dimming and white change in Apple Home.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Covers",
+       "Profile"
+      ]
+     },
+     {
+      "group": "Performance",
+      "rows": [
+       "Light colour",
+       "Looks like"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Phone dimming",
+       "Apple Home"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Installed price"
+      ]
+     },
+     {
+      "group": "Running costs",
+      "rows": [
+       "Power per metre"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "KY06",
@@ -7077,9 +9473,9 @@
    "group": "fittings",
    "priority": "essential",
    "title": "Bedroom fan with light",
-   "question": "Which small fan for KX's room?",
+   "question": "Which fan with light for KX’s room?",
    "stage": "contractor",
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "Small locally supported fan with light"
    ],
@@ -7088,12 +9484,297 @@
     "max": 400,
     "source": "Brief allowance, 6 Oct"
    },
-   "contractorNote": "Fit and mounting check.",
-   "mustKnow": [],
-   "options": [],
+   "contractorNote": "Concrete ceiling. Measure the room and ceiling height. Check blade clearance from the partition, wardrobe and doors. Safety wire. Quote any wiring or switch work.",
+   "mustKnow": [
+    "Room size to be measured on 11 Nov.",
+    "KX should check how quiet it is at low speed.",
+    "Basic installation excludes new wiring."
+   ],
+   "options": [
+    {
+     "id": "cdcb1816-7d41-43c3-bd4b-4f19cf28eaff",
+     "label": "Mistral Solar 36",
+     "name": "Mistral Solar 36",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 229,
+     "images": [
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0680/8682/5277/files/silvery-grey-and-brown-wood_800-x-800px.png?v=1764845933",
+       "caption": "Mistral Solar 36 ceiling fan, grey and wood",
+       "kind": "product",
+       "source": "https://mayer.sg/products/3-blades-size-36-ceiling-fan",
+       "alt": "Mistral Solar 36 ceiling fan, grey and wood",
+       "width": 800,
+       "height": 800
+      }
+     ],
+     "headline": "Sits close to the ceiling",
+     "love": "Only 22 cm tall; warm light dims.",
+     "watchOut": "S$30 more than the Space 36.",
+     "bestFor": "A small room with low headroom",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Chinmega Electric",
+       "price": 229,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://chinmega.com.sg/products/free-installation-mistral-solar-36-inch-ceiling-fan-hugger-series",
+       "priceNote": "With basic installation"
+      },
+      {
+       "shop": "Harvey Norman",
+       "price": 249,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.harveynorman.com.sg/home-appliances/fans/dc-motor-fans/mistral-solar36-wd-wh-36-solar36-3-blades-ceiling-fan-wood-white.html",
+       "priceNote": "Fan only"
+      }
+     ],
+     "specs": {
+      "Blade size": "91.5 cm (36-inch)",
+      "Hangs down": "22 cm (sits flush)",
+      "Warm light": "Yes",
+      "Dims the light": "Yes",
+      "Remote": "Yes, 5 speeds",
+      "Fan price": "S$249 (Harvey Norman)",
+      "With basic installation": "S$229 (bundle, Chinmega)",
+      "In stock": "Can order (Chinmega)",
+      "Warranty": "2 years, motor 10 years"
+     },
+     "shopper": {
+      "headline": "Sits close to the ceiling",
+      "love": "Only 22 cm tall; warm light dims.",
+      "watchOut": "S$30 more than the Space 36.",
+      "bestFor": "A small room with low headroom",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "An owner says it is quiet and the dimming works after 4–5 months.",
+      "chips": [
+       "22 cm tall",
+       "Dimmable warm light",
+       "S$229 installed"
+      ],
+      "specs": {
+       "Blade size": "91.5 cm (36-inch)",
+       "Hangs down": "22 cm (sits flush)",
+       "Warm light": "Yes",
+       "Dims the light": "Yes",
+       "Remote": "Yes, 5 speeds",
+       "Fan price": "S$249 (Harvey Norman)",
+       "With basic installation": "S$229 (bundle, Chinmega)",
+       "In stock": "Can order (Chinmega)",
+       "Warranty": "2 years, motor 10 years"
+      },
+      "offers": [
+       {
+        "shop": "Chinmega Electric",
+        "price": 229,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://chinmega.com.sg/products/free-installation-mistral-solar-36-inch-ceiling-fan-hugger-series",
+        "priceNote": "With basic installation"
+       },
+       {
+        "shop": "Harvey Norman",
+        "price": 249,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.harveynorman.com.sg/home-appliances/fans/dc-motor-fans/mistral-solar36-wd-wh-36-solar36-3-blades-ceiling-fan-wood-white.html",
+        "priceNote": "Fan only"
+       }
+      ],
+      "priceNote": "With basic installation on an existing point"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://chinmega.com.sg/products/free-installation-mistral-solar-36-inch-ceiling-fan-hugger-series"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://forums.hardwarezone.com.sg/threads/ceiling-fan-recommendation.5616304/page-39",
+       "exactModel": true
+      }
+     },
+     "priceNote": "With basic installation on an existing point"
+    },
+    {
+     "id": "6008faf4-7785-48ac-96a7-711e7ef45c00",
+     "label": "Mistral Space 36",
+     "name": "Mistral Space 36",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 199,
+     "images": [
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0680/8682/5277/files/WHWD_800x800px_3.png?v=1772188293",
+       "caption": "Mistral Space 36 ceiling fan",
+       "kind": "product",
+       "source": "https://mayer.sg/products/mistral-36-inch-ceiling-fan-space-36",
+       "alt": "Mistral Space 36 ceiling fan",
+       "width": 800,
+       "height": 800
+      }
+     ],
+     "headline": "Same features, S$30 less",
+     "love": "Same warm dimmable light, for less.",
+     "watchOut": "Hangs 35–48 cm down, much lower.",
+     "bestFor": "Saving S$30 if the ceiling is high",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Chinmega Electric",
+       "price": 199,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://chinmega.com.sg/products/free-basic-installation-mistral-space-36-ceiling-fan-dc-motor-tricolor-dimmable-5-fan-speeds",
+       "priceNote": "With basic installation"
+      },
+      {
+       "shop": "Best Denki",
+       "price": 199,
+       "stock": "Low stock",
+       "checked": "2026-10-30",
+       "url": "https://www.bestdenki.com.sg/1503298-mistral-ceiling-fan-space36-wh-wh.html",
+       "priceNote": "Fan only, white"
+      }
+     ],
+     "specs": {
+      "Blade size": "91.5 cm (36-inch)",
+      "Hangs down": "35–47.7 cm",
+      "Warm light": "Yes",
+      "Dims the light": "Yes",
+      "Remote": "Yes, 5 speeds",
+      "Fan price": "S$199",
+      "With basic installation": "S$199 (bundle, Chinmega)",
+      "In stock": "Can order (Chinmega)",
+      "Warranty": "2 years, motor 10 years"
+     },
+     "shopper": {
+      "headline": "Same features, S$30 less",
+      "love": "Same warm dimmable light, for less.",
+      "watchOut": "Hangs 35–48 cm down, much lower.",
+      "bestFor": "Saving S$30 if the ceiling is high",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "An early owner praises the airflow, remote and adjustable light.",
+      "chips": [
+       "S$199 installed",
+       "Dimmable warm light",
+       "Hangs lower"
+      ],
+      "specs": {
+       "Blade size": "91.5 cm (36-inch)",
+       "Hangs down": "35–47.7 cm",
+       "Warm light": "Yes",
+       "Dims the light": "Yes",
+       "Remote": "Yes, 5 speeds",
+       "Fan price": "S$199",
+       "With basic installation": "S$199 (bundle, Chinmega)",
+       "In stock": "Can order (Chinmega)",
+       "Warranty": "2 years, motor 10 years"
+      },
+      "offers": [
+       {
+        "shop": "Chinmega Electric",
+        "price": 199,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://chinmega.com.sg/products/free-basic-installation-mistral-space-36-ceiling-fan-dc-motor-tricolor-dimmable-5-fan-speeds",
+        "priceNote": "With basic installation"
+       },
+       {
+        "shop": "Best Denki",
+        "price": 199,
+        "stock": "Low stock",
+        "checked": "2026-10-30",
+        "url": "https://www.bestdenki.com.sg/1503298-mistral-ceiling-fan-space36-wh-wh.html",
+        "priceNote": "Fan only, white"
+       }
+      ],
+      "priceNote": "With basic installation on an existing point"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://chinmega.com.sg/products/free-basic-installation-mistral-space-36-ceiling-fan-dc-motor-tricolor-dimmable-5-fan-speeds"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/asksg/comments/1wwlcee/ceiling_fan_with_light_recomendations/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "With basic installation on an existing point"
+    }
+   ],
    "legacySlugs": [
     "kx-room-bedroom-fan-with-light"
-   ]
+   ],
+   "qty": 1,
+   "sales": [
+    "11.11",
+    "black_friday",
+    "12.12"
+   ],
+   "answer10s": "Mistral Solar 36 (S$229 installed) sits close to the ceiling. Space 36 (S$199) if the room has the height. KX should hear both at low speed first.",
+   "summary": "Two compact 36-inch fans with warm dimmable lights, S$199–229 installed.",
+   "researchedAt": "2026-10-30",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Mistral Solar 36 (S$229 installed) sits close to the ceiling. Space 36 (S$199) if the room has the height. KX should hear both at low speed first.",
+    "mustKnow": [
+     "Room size to be measured on 11 Nov.",
+     "KX should check how quiet it is at low speed.",
+     "Basic installation excludes new wiring."
+    ],
+    "contractorNote": "Concrete ceiling. Measure the room and ceiling height. Check blade clearance from the partition, wardrobe and doors. Safety wire. Quote any wiring or switch work.",
+    "alsoConsidered": [
+     {
+      "brand": "KDK F40GP",
+      "reason": "Over budget at S$380 before installation"
+     }
+    ],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Blade size",
+       "Hangs down"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Warm light",
+       "Dims the light",
+       "Remote"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Fan price",
+       "With basic installation",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "KXF04",
@@ -7102,10 +9783,10 @@
    "category": "Lighting",
    "group": "fittings",
    "priority": "nice",
-   "title": "Warm LED / downlights",
-   "question": "Extra warm lighting in KX's room?",
+   "title": "Warm hidden light",
+   "question": "Add a hidden warm light strip in KX’s room?",
    "stage": "contractor",
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "Warm LED/spot/downlights",
     "None"
@@ -7113,14 +9794,223 @@
    "roughBudget": {
     "min": 0,
     "max": 350,
-    "source": "Brief allowance, 6 Oct"
+    "source": "Up to S$350 installed, or none"
    },
-   "contractorNote": "Accessible supply.",
-   "mustKnow": [],
-   "options": [],
+   "contractorNote": "Measure the hidden run and check it can’t be seen from the bed. Name the driver and dimmer. Keep the driver reachable. Quote profile, wiring and finishing. S$350 or less, or leave it out.",
+   "mustKnow": [
+    "Makeup lighting stays separate.",
+    "Dimming should be shown working before paying.",
+    "The strip price is not the installed price."
+   ],
+   "options": [
+    {
+     "id": "2a2e9315-dc81-4eec-bd13-25fee8be1cf8",
+     "label": "Philips warm strip",
+     "name": "Philips LS165S warm 3000K strip, hidden",
+     "kind": "product",
+     "tier": "Mid",
+     "price": null,
+     "images": [
+      {
+       "src": "https://www.assets.signify.com/is/image/Signify/LS165S-Flex-Cove-G6-6W-10W-RTP?wid=1200&hei=1200",
+       "caption": "Philips LS165S light strip",
+       "kind": "product",
+       "source": "https://www.signify.com/en-sg/prof/indoor-luminaires/accent-downlights/philips-flex-cove-g6/911401583647_EU/product",
+       "alt": "Philips LS165S light strip",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Soft warm glow that dims",
+     "love": "Warm 3000K glow with true colours.",
+     "watchOut": "Price and dimmer parts need a quote.",
+     "bestFor": "A shelf, headboard or curtain box",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Philips (Signify)",
+       "price": null,
+       "stock": "Quote needed",
+       "checked": "2026-10-30",
+       "url": "https://www.signify.com/en-sg/prof/indoor-luminaires/accent-downlights/philips-flex-cove-g6/911401583647_EU/product",
+       "priceNote": "Ask the contractor to source it"
+      }
+     ],
+     "specs": {
+      "Length": "Up to 5 m",
+      "Hiding place": "Existing shelf or pelmet",
+      "Light colour": "Warm white (3000K)",
+      "Colour accuracy": "High (CRI 90)",
+      "Dims": "Yes, with matching driver",
+      "Installed price": "Quote; up to S$350",
+      "Warranty": "3 years"
+     },
+     "shopper": {
+      "headline": "Soft warm glow that dims",
+      "love": "Warm 3000K glow with true colours.",
+      "watchOut": "Price and dimmer parts need a quote.",
+      "bestFor": "A shelf, headboard or curtain box",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Warm 3000K",
+       "CRI 90",
+       "Dimmable"
+      ],
+      "specs": {
+       "Length": "Up to 5 m",
+       "Hiding place": "Existing shelf or pelmet",
+       "Light colour": "Warm white (3000K)",
+       "Colour accuracy": "High (CRI 90)",
+       "Dims": "Yes, with matching driver",
+       "Installed price": "Quote; up to S$350",
+       "Warranty": "3 years"
+      },
+      "offers": [
+       {
+        "shop": "Philips (Signify)",
+        "price": null,
+        "stock": "Quote needed",
+        "checked": "2026-10-30",
+        "url": "https://www.signify.com/en-sg/prof/indoor-luminaires/accent-downlights/philips-flex-cove-g6/911401583647_EU/product",
+        "priceNote": "Ask the contractor to source it"
+       }
+      ],
+      "priceNote": "Installed; skip if over S$350",
+      "priceText": "Quote, up to S$350"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.signify.com/en-sg/prof/indoor-luminaires/accent-downlights/philips-flex-cove-g6/911401583647_EU/product"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this strip; a quoted installation."
+      }
+     },
+     "priceNote": "Installed; skip if over S$350",
+     "priceText": "Quote, up to S$350"
+    },
+    {
+     "id": "c64e1cc4-2df6-42a2-82cd-09b05a33b07e",
+     "label": "No hidden light",
+     "name": "No extra hidden lighting",
+     "kind": "none",
+     "tier": "Budget",
+     "price": 0,
+     "images": [],
+     "headline": "Keep the money",
+     "love": "Nothing extra to buy or fix.",
+     "watchOut": "No soft glow in the room.",
+     "bestFor": "If the quote is over S$350",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [],
+     "specs": {
+      "Length": "None",
+      "Hiding place": "None",
+      "Light colour": "No extra light",
+      "Colour accuracy": "Not needed",
+      "Dims": "No",
+      "Installed price": "S$0",
+      "Warranty": "Not needed"
+     },
+     "shopper": {
+      "headline": "Keep the money",
+      "love": "Nothing extra to buy or fix.",
+      "watchOut": "No soft glow in the room.",
+      "bestFor": "If the quote is over S$350",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "S$0",
+       "Nothing to maintain",
+       "No glow"
+      ],
+      "specs": {
+       "Length": "None",
+       "Hiding place": "None",
+       "Light colour": "No extra light",
+       "Colour accuracy": "Not needed",
+       "Dims": "No",
+       "Installed price": "S$0",
+       "Warranty": "Not needed"
+      },
+      "offers": []
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.signify.com/en-sg/prof/indoor-luminaires/accent-downlights/philips-flex-cove-g6/911401583647_EU/product"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Not a product."
+      }
+     }
+    }
+   ],
    "legacySlugs": [
     "kx-room-warm-led-downlights"
-   ]
+   ],
+   "qty": 1,
+   "costBasis": "budget",
+   "answer10s": "Get a quote for one hidden, dimmable warm strip using an existing hiding place. Fit it only if the whole job is S$350 or less; otherwise skip it.",
+   "summary": "One hidden warm strip, or nothing extra.",
+   "researchedAt": "2026-10-30",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Get a quote for one hidden, dimmable warm strip using an existing hiding place. Fit it only if the whole job is S$350 or less; otherwise skip it.",
+    "mustKnow": [
+     "Makeup lighting stays separate.",
+     "Dimming should be shown working before paying.",
+     "The strip price is not the installed price."
+    ],
+    "contractorNote": "Measure the hidden run and check it can’t be seen from the bed. Name the driver and dimmer. Keep the driver reachable. Quote profile, wiring and finishing. S$350 or less, or leave it out.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Length",
+       "Hiding place"
+      ]
+     },
+     {
+      "group": "Performance",
+      "rows": [
+       "Light colour",
+       "Colour accuracy"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Dims"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Installed price"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "KXF05",

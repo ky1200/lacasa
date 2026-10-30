@@ -40,8 +40,8 @@ test('estimates read "about"  without braces in lines, subtotals, totals and cop
  assert.match(listText(s),/estimate: about S\$1,500–3,500/);
  assert.doesNotMatch(visible(html),/[{}]/);
 });
-test('all nine requested budget allowances are present with their provenance',()=>{
- const expected={'Sofa':[1500,3500],'TV console':[300,800],'Dining table and chairs':[800,2000],'Robot vacuum':[600,1500],'Handheld vacuum':[150,400],'Air purifier':[200,500],'Living room ceiling fan':[300,600],'Water dispenser tap':[800,1800],'Light switches':[300,1000]};
+test('the requested budget allowances are present with their provenance',()=>{
+ const expected={'Sofa':[1500,3500],'TV console':[300,800],'Dining table and chairs':[800,2000],'Robot vacuum':[600,1500],'Handheld vacuum':[150,400],'Air purifier':[200,500],'Water dispenser':[800,1800],'Light switches':[300,1000]};
  for(const [title,[min,max]] of Object.entries(expected)){const b=content.decisions.find(d=>d.title===title).roughBudget;assert.deepEqual([b.min,b.max],[min,max],title);assert.ok(b.source,title);}
 });
 test('every legacy item and comparison address redirects with its query preserved',()=>{

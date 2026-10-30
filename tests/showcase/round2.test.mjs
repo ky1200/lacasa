@@ -27,7 +27,7 @@ test('actual option ranges override allowances and incomplete installed costs re
  assert.deepEqual([lineCost(lock,{}).min,lineCost(lock,{}).max,lineCost(lock,{}).incomplete],[499,649,true]);
  {const prices=vac.options.map(o=>o.price);assert.deepEqual([lineCost(vac,{}).min,lineCost(vac,{}).max],[Math.min(...prices),Math.max(...prices)]);}
  const text=listText(stateFor(content,samples,'KY'),'all');assert.match(text,/Handheld vacuum: S\$55–199[^\n]*Budget about S\$150–400/);assert.match(text,/Smart door lock: S\$499–649 \+ prices TBC/);
- for(const title of ['Sofa','TV console','Dining table and chairs','Robot vacuum','Air purifier','Living room ceiling fan','Water dispenser tap','Light switches'])assert.ok(text.split('\n').some(line=>line.includes(title+':')&&line.includes('about S$')),title);
+ for(const title of ['Sofa','TV console','Dining table and chairs','Robot vacuum','Air purifier','Light switches'])assert.ok(text.split('\n').some(line=>line.includes(title+':')&&line.includes('about S$')),title);
 });
 test('every published ready option passes stock, owner, video and requested-brand gates',()=>{
  assert.equal(vac.status,'voting');assert.deepEqual(readinessMissing(vac),[]);assert.equal(lock.status,'draft');assert.equal(readinessMissing(lock).length,3);
