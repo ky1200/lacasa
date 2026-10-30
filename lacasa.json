@@ -7285,14 +7285,14 @@
    "group": "loose",
    "priority": "nice",
    "title": "TV",
-   "question": "Which TV?",
+   "question": "Which TV for the living room?",
    "stage": "later",
    "sales": [
     "11.11",
     "black_friday",
     "12.12"
    ],
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "LG (TBC)"
    ],
@@ -7302,9 +7302,516 @@
     "source": "Group chat"
    },
    "mustKnow": [
-    "Size follows the TV size vote"
+    "Seats are about 2.5–3 m from the screen.",
+    "A 77-inch OLED is fine instead of 85-inch.",
+    "Listed online is not a promise of January stock."
    ],
-   "options": [],
+   "options": [
+    {
+     "id": "6daa7775-da8c-4e07-b7d2-dba19f2414dc",
+     "label": "TCL 85C8K",
+     "name": "TCL 85C8K",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 3849,
+     "images": [
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0910/3487/8136/files/C8Kkv_leftview65_75_85inch.jpg?v=1776750450",
+       "caption": "TCL C8K TV",
+       "kind": "product",
+       "source": "https://tcl-singapore.com/products/c8k",
+       "alt": "TCL C8K TV",
+       "width": 2083,
+       "height": 2083
+      }
+     ],
+     "headline": "Best picture within budget",
+     "love": "Bright, punchy picture; plays every film format.",
+     "watchOut": "Some owners report uneven panels.",
+     "bestFor": "Family movies and daytime TV",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "TCL Singapore",
+       "price": 3849,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://tcl-singapore.com/products/c8k?variant=53523645726904",
+       "priceNote": "Includes bracket and installation offer"
+      }
+     ],
+     "specs": {
+      "Screen": "85-inch",
+      "Size (W × D × H)": "188 × 5.3 × 107.3 cm",
+      "Picture type": "Mini-LED",
+      "Dolby Vision": "Yes",
+      "Gaming (refresh rate)": "144 Hz",
+      "HDMI ports": "4",
+      "Price": "S$3,849",
+      "In stock": "Available online (TCL)",
+      "Warranty": "3 years full + 2 limited"
+     },
+     "shopper": {
+      "headline": "Best picture within budget",
+      "love": "Bright, punchy picture; plays every film format.",
+      "watchOut": "Some owners report uneven panels.",
+      "bestFor": "Family movies and daytime TV",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Owners praise the picture; some see uneven panels or ghosting in games.",
+      "chips": [
+       "85-inch",
+       "Dolby Vision",
+       "144 Hz gaming"
+      ],
+      "specs": {
+       "Screen": "85-inch",
+       "Size (W × D × H)": "188 × 5.3 × 107.3 cm",
+       "Picture type": "Mini-LED",
+       "Dolby Vision": "Yes",
+       "Gaming (refresh rate)": "144 Hz",
+       "HDMI ports": "4",
+       "Price": "S$3,849",
+       "In stock": "Available online (TCL)",
+       "Warranty": "3 years full + 2 limited"
+      },
+      "offers": [
+       {
+        "shop": "TCL Singapore",
+        "price": 3849,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://tcl-singapore.com/products/c8k?variant=53523645726904",
+        "priceNote": "Includes bracket and installation offer"
+       }
+      ],
+      "priceNote": "Target S$3,500–3,700 with swivel installation"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://tcl-singapore.com/products/c8k?variant=53523645726904"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/tcltvs/comments/1os8z06/the_2025_c8k_is_outstanding/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Target S$3,500–3,700 with swivel installation"
+    },
+    {
+     "id": "90dd0247-b96e-4e8f-ab3a-8d76df02992f",
+     "label": "LG 85QNED80",
+     "name": "LG 85QNED80BSA",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 2699,
+     "images": [
+      {
+       "src": "https://www.lg.com/content/dam/channel/wcms/sg/01-assets/products/tvs/qned-evo/qned80/lg-qned-evo-qned80-2026-85-gallery-01-product-front.jpg/jcr%3Acontent/renditions/thum-1600x1062.jpeg",
+       "caption": "LG 85QNED80 TV",
+       "kind": "product",
+       "source": "https://www.lg.com/sg/tvs-soundbars/qned-evo/85qned80bsa/",
+       "alt": "LG 85QNED80 TV",
+       "width": 1600,
+       "height": 1062
+      }
+     ],
+     "headline": "Big LG screen for less",
+     "love": "85-inch for S$1,150 less than TCL C8K.",
+     "watchOut": "No Dolby Vision; 60 Hz only.",
+     "bestFor": "Everyday TV and Switch for less",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Mega Discount Store",
+       "price": 2699,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/85qned80bsa-85-qned-4k-smart-tv",
+       "priceNote": "Free wall mounting"
+      },
+      {
+       "shop": "Harvey Norman",
+       "price": 3049,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.harveynorman.com.sg/tv-and-audio/tvs-en-2/tvs-en-3/lg-85-inch-qned-evo-mini-led-ai-4k-2026-smart-tv-black-85qned80bsa.atc.html"
+      }
+     ],
+     "specs": {
+      "Screen": "85-inch",
+      "Size (W × D × H)": "188.9 × 6.7 × 108.7 cm",
+      "Picture type": "Mini-LED",
+      "Dolby Vision": "No",
+      "Gaming (refresh rate)": "60 Hz",
+      "HDMI ports": "3",
+      "Price": "S$2,699",
+      "In stock": "Available online (Mega Discount Store)",
+      "Warranty": "3 years on-site"
+     },
+     "shopper": {
+      "headline": "Big LG screen for less",
+      "love": "85-inch for S$1,150 less than TCL C8K.",
+      "watchOut": "No Dolby Vision; 60 Hz only.",
+      "bestFor": "Everyday TV and Switch for less",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "85-inch",
+       "3-year on-site",
+       "S$2,699"
+      ],
+      "specs": {
+       "Screen": "85-inch",
+       "Size (W × D × H)": "188.9 × 6.7 × 108.7 cm",
+       "Picture type": "Mini-LED",
+       "Dolby Vision": "No",
+       "Gaming (refresh rate)": "60 Hz",
+       "HDMI ports": "3",
+       "Price": "S$2,699",
+       "In stock": "Available online (Mega Discount Store)",
+       "Warranty": "3 years on-site"
+      },
+      "offers": [
+       {
+        "shop": "Mega Discount Store",
+        "price": 2699,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/85qned80bsa-85-qned-4k-smart-tv",
+        "priceNote": "Free wall mounting"
+       },
+       {
+        "shop": "Harvey Norman",
+        "price": 3049,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.harveynorman.com.sg/tv-and-audio/tvs-en-2/tvs-en-3/lg-85-inch-qned-evo-mini-led-ai-4k-2026-smart-tv-black-85qned80bsa.atc.html"
+       }
+      ],
+      "priceNote": "Target S$2,500–2,600 with mounting"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://megadiscountstore.com.sg/products/85qned80bsa-85-qned-4k-smart-tv"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of the 85-inch size yet."
+      }
+     },
+     "priceNote": "Target S$2,500–2,600 with mounting"
+    },
+    {
+     "id": "7c3ad19f-7d45-43d1-8075-8ff5dea74646",
+     "label": "Samsung 85M75H",
+     "name": "Samsung UA85M75HAKXXS",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 2699,
+     "images": [
+      {
+       "src": "https://images.samsung.com/is/image/samsung/p6pim/sg/ua85m75hakxxs/gallery/sg-mini-led-m70h-ua85m75hakxxs-551580648?$1164_776_PNG$",
+       "caption": "Samsung 85M75H TV",
+       "kind": "product",
+       "source": "https://www.samsung.com/sg/tvs/mini-led-tv/m75h-85-inch-4k-smart-tv-ua85m75hakxxs/",
+       "alt": "Samsung 85M75H TV",
+       "width": 1164,
+       "height": 776
+      }
+     ],
+     "headline": "Samsung at a lower price",
+     "love": "85-inch Samsung without using the full budget.",
+     "watchOut": "No Dolby Vision; 4K games at 60 Hz.",
+     "bestFor": "Preferring Samsung after a look",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Mega Discount Store",
+       "price": 2699,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/collections/smart-tv/products/ua85m75hakxxs-85-mini-led-m85h-4k-smart-tv",
+       "priceNote": "Free wall mounting"
+      },
+      {
+       "shop": "Best Denki",
+       "price": 2799,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.bestdenki.com.sg/0108154-samsung-mini-led-tv-ua85m75hakxxs.html"
+      }
+     ],
+     "specs": {
+      "Screen": "85-inch",
+      "Size (W × D × H)": "189 × 7.7 × 108.4 cm",
+      "Picture type": "Mini-LED",
+      "Dolby Vision": "No",
+      "Gaming (refresh rate)": "60 Hz at 4K",
+      "HDMI ports": "3",
+      "Price": "S$2,699",
+      "In stock": "Yes (Best Denki, 37 left)",
+      "Warranty": "1 year + 2 if registered"
+     },
+     "shopper": {
+      "headline": "Samsung at a lower price",
+      "love": "85-inch Samsung without using the full budget.",
+      "watchOut": "No Dolby Vision; 4K games at 60 Hz.",
+      "bestFor": "Preferring Samsung after a look",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "85-inch",
+       "In stock",
+       "S$2,699"
+      ],
+      "specs": {
+       "Screen": "85-inch",
+       "Size (W × D × H)": "189 × 7.7 × 108.4 cm",
+       "Picture type": "Mini-LED",
+       "Dolby Vision": "No",
+       "Gaming (refresh rate)": "60 Hz at 4K",
+       "HDMI ports": "3",
+       "Price": "S$2,699",
+       "In stock": "Yes (Best Denki, 37 left)",
+       "Warranty": "1 year + 2 if registered"
+      },
+      "offers": [
+       {
+        "shop": "Mega Discount Store",
+        "price": 2699,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/collections/smart-tv/products/ua85m75hakxxs-85-mini-led-m85h-4k-smart-tv",
+        "priceNote": "Free wall mounting"
+       },
+       {
+        "shop": "Best Denki",
+        "price": 2799,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.bestdenki.com.sg/0108154-samsung-mini-led-tv-ua85m75hakxxs.html"
+       }
+      ],
+      "priceNote": "Target S$2,500–2,600 with mounting"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.bestdenki.com.sg/0108154-samsung-mini-led-tv-ua85m75hakxxs.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few Singapore owner reviews of this model yet."
+      }
+     },
+     "priceNote": "Target S$2,500–2,600 with mounting"
+    },
+    {
+     "id": "0b1aedb3-f17c-4037-ab79-c17fee959db3",
+     "label": "TCL 85C6K",
+     "name": "TCL 85C6K",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 2599,
+     "images": [
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0910/3487/8136/files/C6Kkv.jpg?v=1776750856",
+       "caption": "TCL C6K TV",
+       "kind": "product",
+       "source": "https://tcl-singapore.com/products/c6k",
+       "alt": "TCL C6K TV",
+       "width": 2083,
+       "height": 2083
+      }
+     ],
+     "headline": "Most features for the money",
+     "love": "Dolby Vision and 144 Hz gaming, cheapest.",
+     "watchOut": "Some owners report dust spots on panels.",
+     "bestFor": "Value, accepting some risk",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "TCL Singapore",
+       "price": 2599,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://tcl-singapore.com/products/c6k?variant=53523647791288",
+       "priceNote": "Swivel installation S$250"
+      }
+     ],
+     "specs": {
+      "Screen": "85-inch",
+      "Size (W × D × H)": "189 × 5.8 × 108.6 cm",
+      "Picture type": "Mini-LED",
+      "Dolby Vision": "Yes",
+      "Gaming (refresh rate)": "144 Hz",
+      "HDMI ports": "4",
+      "Price": "S$2,599 (S$2,849 with swivel)",
+      "In stock": "Available online (TCL)",
+      "Warranty": "2 years full + 1 limited"
+     },
+     "shopper": {
+      "headline": "Most features for the money",
+      "love": "Dolby Vision and 144 Hz gaming, cheapest.",
+      "watchOut": "Some owners report dust spots on panels.",
+      "bestFor": "Value, accepting some risk",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Owners like the picture and gaming; some report dust spots or app restarts.",
+      "chips": [
+       "85-inch",
+       "Dolby Vision",
+       "S$250 swivel option"
+      ],
+      "specs": {
+       "Screen": "85-inch",
+       "Size (W × D × H)": "189 × 5.8 × 108.6 cm",
+       "Picture type": "Mini-LED",
+       "Dolby Vision": "Yes",
+       "Gaming (refresh rate)": "144 Hz",
+       "HDMI ports": "4",
+       "Price": "S$2,599 (S$2,849 with swivel)",
+       "In stock": "Available online (TCL)",
+       "Warranty": "2 years full + 1 limited"
+      },
+      "offers": [
+       {
+        "shop": "TCL Singapore",
+        "price": 2599,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://tcl-singapore.com/products/c6k?variant=53523647791288",
+        "priceNote": "Swivel installation S$250"
+       }
+      ],
+      "priceNote": "Target S$2,700–2,800 with swivel"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://tcl-singapore.com/products/c6k?variant=53523647791288"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/tcltvs/comments/1w988ai/quietly_impressed_with_the_c6k/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Target S$2,700–2,800 with swivel"
+    },
+    {
+     "id": "aad29608-d810-401b-b15a-18077108d8f1",
+     "label": "LG OLED 77B5",
+     "name": "LG OLED77B5PSA",
+     "kind": "product",
+     "tier": "Splurge",
+     "price": 4499,
+     "images": [
+      {
+       "src": "https://www.lg.com/content/dam/channel/wcms/sg/2025_ms_lg-com/tv/oled/b5/gp1/gallery/77-b5-a/zoom/oled-b5-2025-77-zoom-02.jpg",
+       "caption": "LG OLED B5 77-inch TV",
+       "kind": "product",
+       "source": "https://www.lg.com/sg/tvs-soundbars/oled/oled77b5psa/",
+       "alt": "LG OLED B5 77-inch TV",
+       "width": 1044,
+       "height": 1334
+      }
+     ],
+     "headline": "The OLED look, over budget",
+     "love": "True blacks, no glow around bright spots.",
+     "watchOut": "S$499 over budget; dimmer in sunny rooms.",
+     "bestFor": "Evening movies, if a deal comes",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Audio House",
+       "price": 4499,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://audiohouse.com.sg/product.php?item=LG/OLED77B5PSA"
+      }
+     ],
+     "specs": {
+      "Screen": "77-inch",
+      "Size (W × D × H)": "171.9 × 5.1 × 98.9 cm",
+      "Picture type": "OLED",
+      "Dolby Vision": "Yes",
+      "Gaming (refresh rate)": "120 Hz",
+      "HDMI ports": "4",
+      "Price": "S$4,499 (S$499 over)",
+      "In stock": "Can order (Audio House)",
+      "Warranty": "3 years on-site"
+     },
+     "shopper": {
+      "headline": "The OLED look, over budget",
+      "love": "True blacks, no glow around bright spots.",
+      "watchOut": "S$499 over budget; dimmer in sunny rooms.",
+      "bestFor": "Evening movies, if a deal comes",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Some owners find it dim in bright rooms; tests confirm it shines in the dark.",
+      "chips": [
+       "77-inch",
+       "OLED",
+       "Over budget"
+      ],
+      "specs": {
+       "Screen": "77-inch",
+       "Size (W × D × H)": "171.9 × 5.1 × 98.9 cm",
+       "Picture type": "OLED",
+       "Dolby Vision": "Yes",
+       "Gaming (refresh rate)": "120 Hz",
+       "HDMI ports": "4",
+       "Price": "S$4,499 (S$499 over)",
+       "In stock": "Can order (Audio House)",
+       "Warranty": "3 years on-site"
+      },
+      "offers": [
+       {
+        "shop": "Audio House",
+        "price": 4499,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://audiohouse.com.sg/product.php?item=LG/OLED77B5PSA"
+       }
+      ],
+      "priceNote": "Target S$3,800–4,000 with installation"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://audiohouse.com.sg/product.php?item=LG/OLED77B5PSA"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/LGOLED/comments/1nrml1v/is_b5_just_bad/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Target S$3,800–4,000 with installation"
+    }
+   ],
    "legacySlugs": [
     "living-tv"
    ],
@@ -7315,6 +7822,58 @@
     "source": "Approximate room dimensions",
     "opening": true,
     "measured": false
+   },
+   "qty": 1,
+   "answer10s": "TCL 85C8K (S$3,849) has the best picture within budget. LG 85QNED80 saves S$1,150. The 77-inch LG OLED stays here as the favourite look, but it is S$499 over budget.",
+   "summary": "Four 85-inch TVs within budget and one 77-inch OLED just over.",
+   "researchedAt": "2026-10-30",
+   "contractorNote": "Confirm the wall and bracket load. Check swivel clearance. Keep sockets and HDMI reachable. Leave room for a soundbar. Deliver after renovation and cleaning.",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "TCL 85C8K (S$3,849) has the best picture within budget. LG 85QNED80 saves S$1,150. The 77-inch LG OLED stays here as the favourite look, but it is S$499 over budget.",
+    "mustKnow": [
+     "Seats are about 2.5–3 m from the screen.",
+     "A 77-inch OLED is fine instead of 85-inch.",
+     "Listed online is not a promise of January stock."
+    ],
+    "contractorNote": "Confirm the wall and bracket load. Check swivel clearance. Keep sockets and HDMI reachable. Leave room for a soundbar. Deliver after renovation and cleaning.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Screen",
+       "Size (W × D × H)"
+      ]
+     },
+     {
+      "group": "Performance",
+      "rows": [
+       "Picture type",
+       "Dolby Vision",
+       "Gaming (refresh rate)"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "HDMI ports"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
    }
   },
   {
@@ -7325,14 +7884,14 @@
    "group": "loose",
    "priority": "nice",
    "title": "Soundbar",
-   "question": "Soundbar now, or none for now?",
+   "question": "Which soundbar for the living room?",
    "stage": "later",
    "sales": [
     "11.11",
     "black_friday",
     "12.12"
    ],
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "Soundbar under S$1,000 (TBC)",
     "None for now"
@@ -7343,9 +7902,559 @@
     "source": "Group chat"
    },
    "mustKnow": [
-    "A subwoofer is wanted (brief) — it needs a socket near its spot"
+    "Every option comes with a separate subwoofer.",
+    "None include rear speakers.",
+    "Prices exclude delivery."
    ],
-   "options": [],
+   "options": [
+    {
+     "id": "5dd3aef1-8fcc-4b24-89ec-290ff5dd0873",
+     "label": "Samsung Q800H",
+     "name": "Samsung HW-Q800H",
+     "kind": "product",
+     "tier": "Splurge",
+     "price": 899,
+     "images": [
+      {
+       "src": "https://images.samsung.com/is/image/samsung/p6pim/sg/hw-q800h-xs/gallery/sg-q-series-soundbar-hw-q800h-hw-q800h-xs-551700426?$1164_776_PNG$",
+       "caption": "Samsung HW-Q800H soundbar and subwoofer",
+       "kind": "product",
+       "source": "https://www.samsung.com/sg/audio-devices/soundbar/q800h-black-hw-q800h-xs/",
+       "alt": "Samsung HW-Q800H soundbar and subwoofer",
+       "width": 1164,
+       "height": 776
+      }
+     ],
+     "headline": "Clearest speech, best for movies",
+     "love": "Clear dialogue; sound from above and sides.",
+     "watchOut": "One owner had subwoofer start-up trouble.",
+     "bestFor": "Lots of movies; rear speakers later",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Mega Discount Store",
+       "price": 899,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/hw-q800h-xs-5-1-2ch-soundbar"
+      },
+      {
+       "shop": "COURTS",
+       "price": 1099,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.courts.com.sg/samsung-5.1.2-ch-soundbar-hw-q800h%2Fxs-IP221477.html"
+      }
+     ],
+     "specs": {
+      "Soundbar size (W × D × H)": "111 × 12 × 6 cm",
+      "Subwoofer size": "25 × 25 × 25 cm",
+      "Speakers (channels)": "5.1.2",
+      "Upward speakers": "Yes",
+      "Clear dialogue": "Yes, strongest here",
+      "Add rear speakers later": "Yes (SWA-9500S)",
+      "Room tuning with LG TV": "Yes, built in",
+      "Price": "S$899",
+      "In stock": "Available online (Mega Discount Store)",
+      "Warranty": "1 year"
+     },
+     "shopper": {
+      "headline": "Clearest speech, best for movies",
+      "love": "Clear dialogue; sound from above and sides.",
+      "watchOut": "One owner had subwoofer start-up trouble.",
+      "bestFor": "Lots of movies; rear speakers later",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Owners praise the power; one had the subwoofer fail to start with a Sony TV.",
+      "chips": [
+       "5.1.2 channels",
+       "Rear speakers later",
+       "Small subwoofer"
+      ],
+      "specs": {
+       "Soundbar size (W × D × H)": "111 × 12 × 6 cm",
+       "Subwoofer size": "25 × 25 × 25 cm",
+       "Speakers (channels)": "5.1.2",
+       "Upward speakers": "Yes",
+       "Clear dialogue": "Yes, strongest here",
+       "Add rear speakers later": "Yes (SWA-9500S)",
+       "Room tuning with LG TV": "Yes, built in",
+       "Price": "S$899",
+       "In stock": "Available online (Mega Discount Store)",
+       "Warranty": "1 year"
+      },
+      "offers": [
+       {
+        "shop": "Mega Discount Store",
+        "price": 899,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/hw-q800h-xs-5-1-2ch-soundbar"
+       },
+       {
+        "shop": "COURTS",
+        "price": 1099,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.courts.com.sg/samsung-5.1.2-ch-soundbar-hw-q800h%2Fxs-IP221477.html"
+       }
+      ],
+      "priceNote": "Target S$799–849 in a sale"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.courts.com.sg/samsung-5.1.2-ch-soundbar-hw-q800h%2Fxs-IP221477.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/Soundbars/comments/1wl9wwu/anyone_using_the_samsung_hwq800h_standalone_need/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Target S$799–849 in a sale"
+    },
+    {
+     "id": "e3d6ef81-fde8-43f1-974a-50fbfcd105a8",
+     "label": "LG S70TY",
+     "name": "LG S70TY",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 449,
+     "images": [
+      {
+       "src": "https://www.lg.com/content/dam/channel/wcms/sg/products/soundbars/s70ty/gallery/av-soundbar-s70ty-gallery-01.jpg/jcr%3Acontent/renditions/thum-1600x1062.jpeg",
+       "caption": "LG S70TY soundbar and subwoofer",
+       "kind": "product",
+       "source": "https://www.lg.com/sg/speakers/soundbars/s70ty-asgplld/",
+       "alt": "LG S70TY soundbar and subwoofer",
+       "width": 1600,
+       "height": 1062
+      }
+     ],
+     "headline": "Best value upgrade over TV speakers",
+     "love": "Centre speaker and subwoofer for S$449.",
+     "watchOut": "Less surround effect than the others.",
+     "bestFor": "Everyday TV, sensible spending",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Best Denki",
+       "price": 449,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.bestdenki.com.sg/0706072-lg-sound-bar-s70ty-asgplld.html"
+      },
+      {
+       "shop": "Harvey Norman",
+       "price": 449,
+       "stock": "Out of stock",
+       "checked": "2026-10-30",
+       "url": "https://www.harveynorman.com.sg/tv-and-audio/sound-systems/soundbars-en/lg-3.1.1ch-soundbar-black-s70ty.asgplld.html"
+      }
+     ],
+     "specs": {
+      "Soundbar size (W × D × H)": "95 × 11.5 × 6.3 cm",
+      "Subwoofer size": "20 × 28.5 × 37.7 cm",
+      "Speakers (channels)": "3.1.1",
+      "Upward speakers": "Yes, centre",
+      "Clear dialogue": "Yes",
+      "Add rear speakers later": "Possible (SPT8-S)",
+      "Room tuning with LG TV": "Not stated",
+      "Price": "S$449",
+      "In stock": "Yes (Best Denki)",
+      "Warranty": "1 year"
+     },
+     "shopper": {
+      "headline": "Best value upgrade over TV speakers",
+      "love": "Centre speaker and subwoofer for S$449.",
+      "watchOut": "Less surround effect than the others.",
+      "bestFor": "Everyday TV, sensible spending",
+      "ownerReviews": "Mostly good",
+      "ownerSummary": "Owners are happy with it; one added LG rear speakers later.",
+      "chips": [
+       "S$449",
+       "In stock",
+       "Works with LG TV remote"
+      ],
+      "specs": {
+       "Soundbar size (W × D × H)": "95 × 11.5 × 6.3 cm",
+       "Subwoofer size": "20 × 28.5 × 37.7 cm",
+       "Speakers (channels)": "3.1.1",
+       "Upward speakers": "Yes, centre",
+       "Clear dialogue": "Yes",
+       "Add rear speakers later": "Possible (SPT8-S)",
+       "Room tuning with LG TV": "Not stated",
+       "Price": "S$449",
+       "In stock": "Yes (Best Denki)",
+       "Warranty": "1 year"
+      },
+      "offers": [
+       {
+        "shop": "Best Denki",
+        "price": 449,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.bestdenki.com.sg/0706072-lg-sound-bar-s70ty-asgplld.html"
+       },
+       {
+        "shop": "Harvey Norman",
+        "price": 449,
+        "stock": "Out of stock",
+        "checked": "2026-10-30",
+        "url": "https://www.harveynorman.com.sg/tv-and-audio/sound-systems/soundbars-en/lg-3.1.1ch-soundbar-black-s70ty.asgplld.html"
+       }
+      ],
+      "priceNote": "Target S$399 in a sale"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.bestdenki.com.sg/0706072-lg-sound-bar-s70ty-asgplld.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/Soundbars/comments/1r3euhh/opinions_on_the_lg_s70ty/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Target S$399 in a sale"
+    },
+    {
+     "id": "302e9088-3cbb-44f4-995d-309fbcfeda15",
+     "label": "Samsung Q600H",
+     "name": "Samsung HW-Q600H",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 599,
+     "images": [
+      {
+       "src": "https://images.samsung.com/is/image/samsung/p6pim/sg/hw-q600h-xs/gallery/sg-q-series-soundbar-hw-q600h-hw-q600h-xs-551701112?$1164_776_PNG$",
+       "caption": "Samsung HW-Q600H soundbar and subwoofer",
+       "kind": "product",
+       "source": "https://www.samsung.com/sg/audio-devices/soundbar/q600h-black-hw-q600h-xs/",
+       "alt": "Samsung HW-Q600H soundbar and subwoofer",
+       "width": 1164,
+       "height": 776
+      }
+     ],
+     "headline": "Middle price, rear speakers later",
+     "love": "Sound from above; can add rears later.",
+     "watchOut": "Room tuning needs a Samsung TV.",
+     "bestFor": "Samsung sound for less",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Mega Discount Store",
+       "price": 599,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/hw-q600h-xs-3-1-2ch-soundbar"
+      },
+      {
+       "shop": "Audio House",
+       "price": 599,
+       "stock": "Ask the shop",
+       "checked": "2026-10-30",
+       "url": "https://audiohouse.com.sg/product.php?item=SAM/HW-Q600H"
+      }
+     ],
+     "specs": {
+      "Soundbar size (W × D × H)": "111 × 12 × 6 cm",
+      "Subwoofer size": "20.5 × 30.2 × 35.3 cm",
+      "Speakers (channels)": "3.1.2",
+      "Upward speakers": "Yes",
+      "Clear dialogue": "Yes",
+      "Add rear speakers later": "Yes (SWA-9500S or 9250S)",
+      "Room tuning with LG TV": "No (Samsung TV needed)",
+      "Price": "S$599",
+      "In stock": "Available online (Mega Discount Store)",
+      "Warranty": "1 year"
+     },
+     "shopper": {
+      "headline": "Middle price, rear speakers later",
+      "love": "Sound from above; can add rears later.",
+      "watchOut": "Room tuning needs a Samsung TV.",
+      "bestFor": "Samsung sound for less",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "3.1.2 channels",
+       "Rear speakers later",
+       "S$599"
+      ],
+      "specs": {
+       "Soundbar size (W × D × H)": "111 × 12 × 6 cm",
+       "Subwoofer size": "20.5 × 30.2 × 35.3 cm",
+       "Speakers (channels)": "3.1.2",
+       "Upward speakers": "Yes",
+       "Clear dialogue": "Yes",
+       "Add rear speakers later": "Yes (SWA-9500S or 9250S)",
+       "Room tuning with LG TV": "No (Samsung TV needed)",
+       "Price": "S$599",
+       "In stock": "Available online (Mega Discount Store)",
+       "Warranty": "1 year"
+      },
+      "offers": [
+       {
+        "shop": "Mega Discount Store",
+        "price": 599,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/hw-q600h-xs-3-1-2ch-soundbar"
+       },
+       {
+        "shop": "Audio House",
+        "price": 599,
+        "stock": "Ask the shop",
+        "checked": "2026-10-30",
+        "url": "https://audiohouse.com.sg/product.php?item=SAM/HW-Q600H"
+       }
+      ],
+      "priceNote": "Target S$499–549 in a sale"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://megadiscountstore.com.sg/products/hw-q600h-xs-3-1-2ch-soundbar"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this model yet."
+      }
+     },
+     "priceNote": "Target S$499–549 in a sale"
+    },
+    {
+     "id": "1a5390d2-81be-4288-b674-9187b9cf7c7d",
+     "label": "LG S80TY",
+     "name": "LG S80TY",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 649,
+     "images": [
+      {
+       "src": "https://www.lg.com/content/dam/channel/wcms/sg/products/soundbars/s80ty/gallery/DZ-01.jpg/jcr%3Acontent/renditions/thum-1600x1062.jpeg",
+       "caption": "LG S80TY soundbar",
+       "kind": "product",
+       "source": "https://www.lg.com/sg/speakers/soundbars/s80ty/",
+       "alt": "LG S80TY soundbar",
+       "width": 1600,
+       "height": 1062
+      }
+     ],
+     "headline": "More LG features, room tuning",
+     "love": "Tunes itself to the room; 3 upward speakers.",
+     "watchOut": "Big subwoofer; one owner heard crackling.",
+     "bestFor": "An LG TV bundle deal",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Mega Discount Store",
+       "price": 649,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/s80ty-3-1-3ch-high-res-audio-soundbar"
+      },
+      {
+       "shop": "Harvey Norman",
+       "price": 699,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.harveynorman.com.sg/tv-and-audio/sound-systems/soundbars-en/lg-3.1.3ch-high-res-soundbar-with-dolby-atmos-black-s80ty.dsgpllk.html"
+      }
+     ],
+     "specs": {
+      "Soundbar size (W × D × H)": "100 × 13.5 × 6.3 cm",
+      "Subwoofer size": "20.2 × 40.3 × 40.7 cm",
+      "Speakers (channels)": "3.1.3",
+      "Upward speakers": "Yes, three",
+      "Clear dialogue": "Yes",
+      "Add rear speakers later": "Possible (SPT8-S)",
+      "Room tuning with LG TV": "Yes, with app",
+      "Price": "S$649",
+      "In stock": "Available online (Mega Discount Store)",
+      "Warranty": "1 year"
+     },
+     "shopper": {
+      "headline": "More LG features, room tuning",
+      "love": "Tunes itself to the room; 3 upward speakers.",
+      "watchOut": "Big subwoofer; one owner heard crackling.",
+      "bestFor": "An LG TV bundle deal",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "One owner reports crackling with 5.1 sound.",
+      "chips": [
+       "3.1.3 channels",
+       "Room tuning",
+       "S$649"
+      ],
+      "specs": {
+       "Soundbar size (W × D × H)": "100 × 13.5 × 6.3 cm",
+       "Subwoofer size": "20.2 × 40.3 × 40.7 cm",
+       "Speakers (channels)": "3.1.3",
+       "Upward speakers": "Yes, three",
+       "Clear dialogue": "Yes",
+       "Add rear speakers later": "Possible (SPT8-S)",
+       "Room tuning with LG TV": "Yes, with app",
+       "Price": "S$649",
+       "In stock": "Available online (Mega Discount Store)",
+       "Warranty": "1 year"
+      },
+      "offers": [
+       {
+        "shop": "Mega Discount Store",
+        "price": 649,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/s80ty-3-1-3ch-high-res-audio-soundbar"
+       },
+       {
+        "shop": "Harvey Norman",
+        "price": 699,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.harveynorman.com.sg/tv-and-audio/sound-systems/soundbars-en/lg-3.1.3ch-high-res-soundbar-with-dolby-atmos-black-s80ty.dsgpllk.html"
+       }
+      ],
+      "priceNote": "Target S$599 in a sale"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://megadiscountstore.com.sg/products/s80ty-3-1-3ch-high-res-audio-soundbar"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/LG_UserHub/comments/1w716ou/lg_s80ty_soundbar_cracklingstatic_noise_with_51/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Target S$599 in a sale"
+    },
+    {
+     "id": "8530c7a8-a9ff-4ffc-a329-c5fe37fe2f10",
+     "label": "JBL Bar 500MK2",
+     "name": "JBL Bar 500MK2",
+     "kind": "product",
+     "tier": "Splurge",
+     "price": 718,
+     "images": [
+      {
+       "src": "https://www.jbl.com.sg/dw/image/v2/AAUJ_PRD/on/demandware.static/-/Sites-masterCatalog_Harman/default/dw89d7bd60/LS_JBL_BAR_500MK2_HERO_BLACK_0205_x4.png?sfrm=png&sw=1200",
+       "caption": "JBL Bar 500MK2 soundbar and subwoofer",
+       "kind": "product",
+       "source": "https://www.jbl.com.sg/soundbars/BAR-500MK2.html",
+       "alt": "JBL Bar 500MK2 soundbar and subwoofer",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Deepest bass, no rears later",
+     "love": "Deep bass and a slim bar.",
+     "watchOut": "Cannot add rear speakers later.",
+     "bestFor": "Movie bass in a fixed set-up",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "JBL Singapore",
+       "price": 718,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://www.jblonlinestore.com/products/jbl-bar-500mk2"
+      },
+      {
+       "shop": "Audio House",
+       "price": 799,
+       "stock": "Ask the shop",
+       "checked": "2026-10-30",
+       "url": "https://audiohouse.com.sg/product.php?item=JBL/SBR-BAR500M2-BLK"
+      }
+     ],
+     "specs": {
+      "Soundbar size (W × D × H)": "94 × 10.4 × 5.1 cm",
+      "Subwoofer size": "32.5 × 32.5 × 40 cm",
+      "Speakers (channels)": "5.1",
+      "Upward speakers": "No",
+      "Clear dialogue": "Yes (PureVoice)",
+      "Add rear speakers later": "No",
+      "Room tuning with LG TV": "Yes",
+      "Price": "S$718",
+      "In stock": "Available online (JBL Singapore)",
+      "Warranty": "1 year"
+     },
+     "shopper": {
+      "headline": "Deepest bass, no rears later",
+      "love": "Deep bass and a slim bar.",
+      "watchOut": "Cannot add rear speakers later.",
+      "bestFor": "Movie bass in a fixed set-up",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Owners love the bass; one family found speech hard to hear.",
+      "chips": [
+       "Deep bass",
+       "Slim bar",
+       "S$718"
+      ],
+      "specs": {
+       "Soundbar size (W × D × H)": "94 × 10.4 × 5.1 cm",
+       "Subwoofer size": "32.5 × 32.5 × 40 cm",
+       "Speakers (channels)": "5.1",
+       "Upward speakers": "No",
+       "Clear dialogue": "Yes (PureVoice)",
+       "Add rear speakers later": "No",
+       "Room tuning with LG TV": "Yes",
+       "Price": "S$718",
+       "In stock": "Available online (JBL Singapore)",
+       "Warranty": "1 year"
+      },
+      "offers": [
+       {
+        "shop": "JBL Singapore",
+        "price": 718,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://www.jblonlinestore.com/products/jbl-bar-500mk2"
+       },
+       {
+        "shop": "Audio House",
+        "price": 799,
+        "stock": "Ask the shop",
+        "checked": "2026-10-30",
+        "url": "https://audiohouse.com.sg/product.php?item=JBL/SBR-BAR500M2-BLK"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.jblonlinestore.com/products/jbl-bar-500mk2"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/Soundbars/comments/1wkuyet/jbl_bar_500_mk_2_or_samsung_q800h/",
+       "exactModel": true
+      }
+     }
+    }
+   ],
    "legacySlugs": [
     "living-soundbar"
    ],
@@ -7356,6 +8465,59 @@
     "source": "Approximate room dimensions",
     "opening": true,
     "measured": false
+   },
+   "qty": 1,
+   "answer10s": "Samsung Q800H (S$899) for the clearest speech and movies. LG S70TY (S$449) is the best-value upgrade. Starting with the TV speakers is fine too.",
+   "summary": "Five soundbars with subwoofers, S$449–899.",
+   "researchedAt": "2026-10-30",
+   "contractorNote": "Sockets in reach for the bar and subwoofer. An HDMI cable route that can be replaced. Optional socket behind the sofa for rear speakers later.",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Samsung Q800H (S$899) for the clearest speech and movies. LG S70TY (S$449) is the best-value upgrade. Starting with the TV speakers is fine too.",
+    "mustKnow": [
+     "Every option comes with a separate subwoofer.",
+     "None include rear speakers.",
+     "Prices exclude delivery."
+    ],
+    "contractorNote": "Sockets in reach for the bar and subwoofer. An HDMI cable route that can be replaced. Optional socket behind the sofa for rear speakers later.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Soundbar size (W × D × H)",
+       "Subwoofer size"
+      ]
+     },
+     {
+      "group": "Performance",
+      "rows": [
+       "Speakers (channels)",
+       "Upward speakers",
+       "Clear dialogue"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Add rear speakers later",
+       "Room tuning with LG TV"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
    }
   },
   {
@@ -7476,14 +8638,14 @@
    "group": "loose",
    "priority": "essential",
    "title": "Fridge",
-   "question": "Which fridge?",
+   "question": "Which fridge for the kitchen?",
    "stage": "move_in",
    "sales": [
     "11.11",
     "black_friday",
     "12.12"
    ],
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "Toshiba",
     "Hitachi"
@@ -7494,11 +8656,524 @@
     "source": "Group chat"
    },
    "mustKnow": [
-    "The owner's current fridge (70 × 75 cm, 180 cm high) fits — a slightly bigger one may fit",
-    "Check the niche on 11 Nov: hinge side, door swing, ventilation gap",
-    "Delivery must wait until after works and cleaning"
+    "Measure the fridge space on 11 Nov; leave air gaps around it.",
+    "Automatic ice is made slowly over time.",
+    "Confirm Jan–Feb delivery before paying."
    ],
-   "options": [],
+   "options": [
+    {
+     "id": "7e805e97-2b43-4eb7-b2c9-b3cae306bd2d",
+     "label": "Panasonic NR-BX471",
+     "name": "Panasonic NR-BX471HWKS",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 1199,
+     "images": [
+      {
+       "src": "https://panasonic.scene7.com/is/image/Panasonic/ast-2929059-2?fmt=png-alpha&hei=1200&wid=1200",
+       "caption": "Panasonic NR-BX471HWKS fridge",
+       "kind": "product",
+       "source": "https://www.panasonic.com/sg/consumer/kitchen-appliance/fridge/2-door-bottom-freezer/nr-bx471hwks.html",
+       "alt": "Panasonic NR-BX471HWKS fridge",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Makes ice by itself, within budget",
+     "love": "Fill a tank; it makes ice by itself.",
+     "watchOut": "Ice system needs regular cleaning.",
+     "bestFor": "Our wish for ready ice",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Mega Discount Store",
+       "price": 1199,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/nr-bx471hwk-416l-2-door-fridge"
+      },
+      {
+       "shop": "Panasonic on Shopee",
+       "price": 1158.9,
+       "stock": "Pre-order, ships in 30 days",
+       "checked": "2026-10-30",
+       "url": "https://shopee.sg/product/165734283/57100580830",
+       "priceNote": "After voucher"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "68.6 × 69.5 × 179 cm",
+      "Fridge / freezer space": "304 L / 112 L",
+      "Freezer": "Bottom",
+      "Ice maker": "Yes, automatic (fill a tank)",
+      "Wi-Fi": "Not stated",
+      "Price": "S$1,199",
+      "In stock": "Available online (Mega Discount Store)",
+      "Electricity a year": "About S$105",
+      "Warranty": "2 years"
+     },
+     "shopper": {
+      "headline": "Makes ice by itself, within budget",
+      "love": "Fill a tank; it makes ice by itself.",
+      "watchOut": "Ice system needs regular cleaning.",
+      "bestFor": "Our wish for ready ice",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Automatic ice",
+       "Freezer at bottom",
+       "304 L fridge"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "68.6 × 69.5 × 179 cm",
+       "Fridge / freezer space": "304 L / 112 L",
+       "Freezer": "Bottom",
+       "Ice maker": "Yes, automatic (fill a tank)",
+       "Wi-Fi": "Not stated",
+       "Price": "S$1,199",
+       "In stock": "Available online (Mega Discount Store)",
+       "Electricity a year": "About S$105",
+       "Warranty": "2 years"
+      },
+      "offers": [
+       {
+        "shop": "Mega Discount Store",
+        "price": 1199,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/nr-bx471hwk-416l-2-door-fridge"
+       },
+       {
+        "shop": "Panasonic on Shopee",
+        "price": 1158.9,
+        "stock": "Pre-order, ships in 30 days",
+        "checked": "2026-10-30",
+        "url": "https://shopee.sg/product/165734283/57100580830",
+        "priceNote": "After voucher"
+       }
+      ],
+      "priceNote": "Target S$1,050–1,100 delivered in a sale"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://megadiscountstore.com.sg/products/nr-bx471hwk-416l-2-door-fridge"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this model yet; Panasonic has local support."
+      }
+     },
+     "priceNote": "Target S$1,050–1,100 delivered in a sale",
+     "footprint": {
+      "width": 68.6,
+      "depth": 69.5
+     }
+    },
+    {
+     "id": "0183f450-d28c-4344-9e20-faf089a31aa5",
+     "label": "Toshiba GR-RT559",
+     "name": "Toshiba GR-RT559WE-PMX(06S)",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 899,
+     "images": [
+      {
+       "src": "https://web-res.midea.com/content/dam/toshiba-aem/sg/sg-new/pdp/refrigerators/2-doors-refrigerator/gr-rt559we-pmx%2806s%29/pdp-gr-rt559we-pmx%2806s%29-1-1200x1200.png",
+       "caption": "Toshiba GR-RT559WE fridge",
+       "kind": "product",
+       "source": "https://www.toshiba-lifestyle.com/sg/refrigerators/two-door/top-mount-freezer/toshiba-411l-purebio-top-mount-freezer-gr-rt559we-pmx-06s",
+       "alt": "Toshiba GR-RT559WE fridge",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Same fridge space for less",
+     "love": "Big 304 L fridge for S$300 less.",
+     "watchOut": "Ice trays by hand; 70 cm wide.",
+     "bestFor": "Saving money",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Mega Discount Store",
+       "price": 899,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/gr-rt559we-pmx06s-408l-2-door-fridge"
+      },
+      {
+       "shop": "Best Denki",
+       "price": 969,
+       "stock": "Out of stock",
+       "checked": "2026-10-30",
+       "url": "https://www.bestdenki.com.sg/1204063-toshiba-2-door-fridge-gr-rt559we-pmx-06s.html"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "70 × 69.1 × 172.3 cm",
+      "Fridge / freezer space": "304 L / 107 L",
+      "Freezer": "Top",
+      "Ice maker": "No, ice trays",
+      "Wi-Fi": "Not stated",
+      "Price": "S$899",
+      "In stock": "Available online (Mega Discount Store)",
+      "Electricity a year": "About S$110",
+      "Warranty": "2 years on-site"
+     },
+     "shopper": {
+      "headline": "Same fridge space for less",
+      "love": "Big 304 L fridge for S$300 less.",
+      "watchOut": "Ice trays by hand; 70 cm wide.",
+      "bestFor": "Saving money",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "S$899",
+       "304 L fridge",
+       "2-year on-site"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "70 × 69.1 × 172.3 cm",
+       "Fridge / freezer space": "304 L / 107 L",
+       "Freezer": "Top",
+       "Ice maker": "No, ice trays",
+       "Wi-Fi": "Not stated",
+       "Price": "S$899",
+       "In stock": "Available online (Mega Discount Store)",
+       "Electricity a year": "About S$110",
+       "Warranty": "2 years on-site"
+      },
+      "offers": [
+       {
+        "shop": "Mega Discount Store",
+        "price": 899,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/gr-rt559we-pmx06s-408l-2-door-fridge"
+       },
+       {
+        "shop": "Best Denki",
+        "price": 969,
+        "stock": "Out of stock",
+        "checked": "2026-10-30",
+        "url": "https://www.bestdenki.com.sg/1204063-toshiba-2-door-fridge-gr-rt559we-pmx-06s.html"
+       }
+      ],
+      "priceNote": "Target S$850–900 delivered"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://megadiscountstore.com.sg/products/gr-rt559we-pmx06s-408l-2-door-fridge"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this model; older Toshiba fridges are reported to last."
+      }
+     },
+     "priceNote": "Target S$850–900 delivered",
+     "footprint": {
+      "width": 70,
+      "depth": 69.1
+     }
+    },
+    {
+     "id": "069d9eea-cc42-4e9a-96d4-c2ed2513bffa",
+     "label": "Hitachi HRTN6443",
+     "name": "Hitachi HRTN6443SXSG",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 1109,
+     "images": [
+      {
+       "src": "https://hitachi-homeappliances.com/products/refrigerators/item/HRTN6443SX405l_09.jpg",
+       "caption": "Hitachi HRTN6443SXSG fridge",
+       "kind": "product",
+       "source": "https://hitachi-homeappliances.com/sg/eng/products/refrigerators/new-stylish-line/hrtn6443sxsg.html",
+       "alt": "Hitachi HRTN6443SXSG fridge",
+       "width": 1000,
+       "height": 1000
+      }
+     ],
+     "headline": "Narrow, with a big fridge",
+     "love": "Biggest fridge (315 L) in a 66 cm body.",
+     "watchOut": "Ice trays by hand; deepest here.",
+     "bestFor": "A narrower space",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "COURTS",
+       "price": 1109,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.courts.com.sg/hitachi-2-door-top-mount-freezer-fridge-409l---inox-hrtn6443sxsg-IP203363.html",
+       "priceNote": "Delivery extra"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "66 × 72 × 180 cm",
+      "Fridge / freezer space": "315 L / 94 L",
+      "Freezer": "Top",
+      "Ice maker": "No, ice trays",
+      "Wi-Fi": "Not stated",
+      "Price": "S$1,109",
+      "In stock": "Yes (COURTS)",
+      "Electricity a year": "About S$106",
+      "Warranty": "1 year full, year 2 parts"
+     },
+     "shopper": {
+      "headline": "Narrow, with a big fridge",
+      "love": "Biggest fridge (315 L) in a 66 cm body.",
+      "watchOut": "Ice trays by hand; deepest here.",
+      "bestFor": "A narrower space",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "66 cm wide",
+       "315 L fridge",
+       "In stock"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "66 × 72 × 180 cm",
+       "Fridge / freezer space": "315 L / 94 L",
+       "Freezer": "Top",
+       "Ice maker": "No, ice trays",
+       "Wi-Fi": "Not stated",
+       "Price": "S$1,109",
+       "In stock": "Yes (COURTS)",
+       "Electricity a year": "About S$106",
+       "Warranty": "1 year full, year 2 parts"
+      },
+      "offers": [
+       {
+        "shop": "COURTS",
+        "price": 1109,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.courts.com.sg/hitachi-2-door-top-mount-freezer-fridge-409l---inox-hrtn6443sxsg-IP203363.html",
+        "priceNote": "Delivery extra"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.courts.com.sg/hitachi-2-door-top-mount-freezer-fridge-409l---inox-hrtn6443sxsg-IP203363.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this model; Hitachi owners praise long life."
+      }
+     },
+     "footprint": {
+      "width": 66,
+      "depth": 72
+     }
+    },
+    {
+     "id": "0663d5a9-2a2b-4272-9a8b-e42d64b94b62",
+     "label": "LG GT-B3953EP",
+     "name": "LG GT-B3953EP",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 1149,
+     "images": [
+      {
+       "src": "https://www.lg.com/content/dam/channel/wcms/sg/products/refrigerators/nea/gt-b3953ep/gt-b3953ep_2010x1334.jpg/jcr%3Acontent/renditions/thum-1600x1062.jpeg",
+       "caption": "LG GT-B3953EP fridge",
+       "kind": "product",
+       "source": "https://www.lg.com/sg/refrigerators/top-mount-freezers/gt-b3953ep/",
+       "alt": "LG GT-B3953EP fridge",
+       "width": 1600,
+       "height": 1062
+      }
+     ],
+     "headline": "Shallower, with app control",
+     "love": "Shallower 68 cm body; Wi-Fi app.",
+     "watchOut": "Ice trays by hand; short power cord.",
+     "bestFor": "A shallow space or app control",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Mega Discount Store",
+       "price": 1149,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/gt-b3953ep-395l-2-door-fridge"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "70 × 68 × 176 cm",
+      "Fridge / freezer space": "305 L / 90 L",
+      "Freezer": "Top",
+      "Ice maker": "No, ice trays",
+      "Wi-Fi": "Yes",
+      "Price": "S$1,149",
+      "In stock": "Available online (Mega Discount Store)",
+      "Electricity a year": "About S$107",
+      "Warranty": "2 years"
+     },
+     "shopper": {
+      "headline": "Shallower, with app control",
+      "love": "Shallower 68 cm body; Wi-Fi app.",
+      "watchOut": "Ice trays by hand; short power cord.",
+      "bestFor": "A shallow space or app control",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Owners like the space; some found the power cord short and no freezer light.",
+      "chips": [
+       "68 cm deep",
+       "Wi-Fi",
+       "305 L fridge"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "70 × 68 × 176 cm",
+       "Fridge / freezer space": "305 L / 90 L",
+       "Freezer": "Top",
+       "Ice maker": "No, ice trays",
+       "Wi-Fi": "Yes",
+       "Price": "S$1,149",
+       "In stock": "Available online (Mega Discount Store)",
+       "Electricity a year": "About S$107",
+       "Warranty": "2 years"
+      },
+      "offers": [
+       {
+        "shop": "Mega Discount Store",
+        "price": 1149,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/gt-b3953ep-395l-2-door-fridge"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://megadiscountstore.com.sg/products/gt-b3953ep-395l-2-door-fridge"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.courts.com.sg/lg-2-door-fridge-395l-top-freezer-gt-b3953ep-IP195323.html",
+       "exactModel": true
+      }
+     },
+     "footprint": {
+      "width": 70,
+      "depth": 68
+     }
+    },
+    {
+     "id": "375857b5-7148-4ac2-99ad-e018ba7c125e",
+     "label": "Sharp SJ-RF36E",
+     "name": "Sharp SJ-RF36E-DS",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 999,
+     "images": [
+      {
+       "src": "https://sharp.com.sg/wp-content/uploads/2023/06/SJ-RF36E-DS-100.jpg",
+       "caption": "Sharp SJ-RF36E-DS fridge",
+       "kind": "product",
+       "source": "https://sharp.com.sg/product/sj-rf36e-ds/",
+       "alt": "Sharp SJ-RF36E-DS fridge",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Smallest and cheapest to run",
+     "love": "Compact; lowest electricity use here.",
+     "watchOut": "Least fridge space (253 L).",
+     "bestFor": "A tight space or smaller needs",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Mega Discount Store",
+       "price": 999,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/sjrf36e-2door-fridge"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "64.5 × 66.5 × 179.5 cm",
+      "Fridge / freezer space": "253 L / 107 L",
+      "Freezer": "Top",
+      "Ice maker": "No, ice trays",
+      "Wi-Fi": "Not stated",
+      "Price": "S$999",
+      "In stock": "Available online (Mega Discount Store)",
+      "Electricity a year": "About S$91",
+      "Warranty": "2 years"
+     },
+     "shopper": {
+      "headline": "Smallest and cheapest to run",
+      "love": "Compact; lowest electricity use here.",
+      "watchOut": "Least fridge space (253 L).",
+      "bestFor": "A tight space or smaller needs",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "64.5 cm wide",
+       "Lowest power use",
+       "253 L fridge"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "64.5 × 66.5 × 179.5 cm",
+       "Fridge / freezer space": "253 L / 107 L",
+       "Freezer": "Top",
+       "Ice maker": "No, ice trays",
+       "Wi-Fi": "Not stated",
+       "Price": "S$999",
+       "In stock": "Available online (Mega Discount Store)",
+       "Electricity a year": "About S$91",
+       "Warranty": "2 years"
+      },
+      "offers": [
+       {
+        "shop": "Mega Discount Store",
+        "price": 999,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/sjrf36e-2door-fridge"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://megadiscountstore.com.sg/products/sjrf36e-2door-fridge"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this model yet."
+      }
+     },
+     "footprint": {
+      "width": 64.5,
+      "depth": 66.5
+     }
+    }
+   ],
    "legacySlugs": [
     "kitchen-fridge"
    ],
@@ -7509,6 +9184,58 @@
     "source": "Existing fridge footprint, known to fit",
     "opening": false,
     "measured": false
+   },
+   "qty": 1,
+   "answer10s": "Panasonic NR-BX471 (S$1,199) makes ice by itself. Toshiba GR-RT559 (S$899) saves S$300 with ice trays. Measure the space first.",
+   "summary": "Five 2-door fridges, S$899–1,199.",
+   "researchedAt": "2026-10-30",
+   "contractorNote": "Measure the fridge space, door swing and delivery route. Leave the air gaps the maker asks for (Panasonic: 5 cm sides, 10 cm back, 30 cm top). Socket in reach.",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Panasonic NR-BX471 (S$1,199) makes ice by itself. Toshiba GR-RT559 (S$899) saves S$300 with ice trays. Measure the space first.",
+    "mustKnow": [
+     "Measure the fridge space on 11 Nov; leave air gaps around it.",
+     "Automatic ice is made slowly over time.",
+     "Confirm Jan–Feb delivery before paying."
+    ],
+    "contractorNote": "Measure the fridge space, door swing and delivery route. Leave the air gaps the maker asks for (Panasonic: 5 cm sides, 10 cm back, 30 cm top). Socket in reach.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Size (width × depth × height)",
+       "Fridge / freezer space"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Freezer",
+       "Ice maker",
+       "Wi-Fi"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Running costs",
+      "rows": [
+       "Electricity a year"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
    }
   },
   {
@@ -7519,14 +9246,14 @@
    "group": "loose",
    "priority": "essential",
    "title": "Washing machine",
-   "question": "Which front-load washer?",
+   "question": "Which washing machine (and dryer)?",
    "stage": "move_in",
    "sales": [
     "11.11",
     "black_friday",
     "12.12"
    ],
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "LG 14 kg front-load (seen at S$1,849; model and shop to confirm)"
    ],
@@ -7536,11 +9263,649 @@
     "source": "Group chat"
    },
    "mustKnow": [
-    "The owner's current washer (75 × 67 cm) fits — a slightly bigger one may fit",
-    "Big blankets + a full bedding set in one load: check the bedding programme, not just the kg rating",
-    "If a dryer may go on top later, check the stacking kit now"
+    "At least 9 kg.",
+    "Wash the thick duvet separately.",
+    "Prices exclude delivery, installation and stacking."
    ],
-   "options": [],
+   "options": [
+    {
+     "id": "710e371b-54ac-45a1-a606-726291bbd6b0",
+     "label": "Toshiba T21",
+     "name": "Toshiba TW-T21BU115UWS(MG)",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 759,
+     "images": [
+      {
+       "src": "https://web-res.midea.com/content/dam/toshiba-aem/sg/sg-new/pdp/ffc/tw-t21bu115uws%28mg%29/pdp-tw-t21bu115uws%28mg%29-1-1200x1200.png",
+       "caption": "Toshiba T21 10.5 kg washer",
+       "kind": "product",
+       "source": "https://www.toshiba-lifestyle.com/sg/laundry/washer/front-load/toshiba-10-5kg-aroma-front-load-washer-tw-t21bu115uws-mg",
+       "alt": "Toshiba T21 10.5 kg washer",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Cheapest, add a dryer any time",
+     "love": "10.5 kg washer for S$759; dryer optional.",
+     "watchOut": "Stacking kit and fitting price to confirm.",
+     "bestFor": "Rack drying first, spending less",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "COURTS",
+       "price": 759,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.courts.com.sg/toshiba-front-load-washer-10.5kg-tw-t21bu115uwsmg-IP191939.html",
+       "priceNote": "Washer"
+      },
+      {
+       "shop": "COURTS",
+       "price": 859,
+       "stock": "Made to order",
+       "checked": "2026-10-30",
+       "url": "https://www.courts.com.sg/toshiba-heat-pump-dryer-8kg-td-t21b90hwsmg-IP217311.html",
+       "priceNote": "Matching 8 kg heat-pump dryer"
+      }
+     ],
+     "specs": {
+      "Washer size (W × D × H)": "59.5 × 61.5 × 85 cm",
+      "Stacked height": "170 cm with dryer",
+      "Wash / dry capacity": "10.5 kg / 8 kg dryer",
+      "Dryer": "Optional heat-pump, S$859",
+      "Shared controls": "No",
+      "Adds detergent itself": "Not stated",
+      "Washer price": "S$759",
+      "Washer and dryer": "S$1,618 + stacking kit",
+      "In stock": "Yes (COURTS); dryer made to order",
+      "Warranty": "2 years"
+     },
+     "shopper": {
+      "headline": "Cheapest, add a dryer any time",
+      "love": "10.5 kg washer for S$759; dryer optional.",
+      "watchOut": "Stacking kit and fitting price to confirm.",
+      "bestFor": "Rack drying first, spending less",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "10.5 kg",
+       "S$759",
+       "Dryer optional"
+      ],
+      "specs": {
+       "Washer size (W × D × H)": "59.5 × 61.5 × 85 cm",
+       "Stacked height": "170 cm with dryer",
+       "Wash / dry capacity": "10.5 kg / 8 kg dryer",
+       "Dryer": "Optional heat-pump, S$859",
+       "Shared controls": "No",
+       "Adds detergent itself": "Not stated",
+       "Washer price": "S$759",
+       "Washer and dryer": "S$1,618 + stacking kit",
+       "In stock": "Yes (COURTS); dryer made to order",
+       "Warranty": "2 years"
+      },
+      "offers": [
+       {
+        "shop": "COURTS",
+        "price": 759,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.courts.com.sg/toshiba-front-load-washer-10.5kg-tw-t21bu115uwsmg-IP191939.html",
+        "priceNote": "Washer"
+       },
+       {
+        "shop": "COURTS",
+        "price": 859,
+        "stock": "Made to order",
+        "checked": "2026-10-30",
+        "url": "https://www.courts.com.sg/toshiba-heat-pump-dryer-8kg-td-t21b90hwsmg-IP217311.html",
+        "priceNote": "Matching 8 kg heat-pump dryer"
+       }
+      ],
+      "priceNote": "Washer only; dryer S$859 extra"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.courts.com.sg/toshiba-front-load-washer-10.5kg-tw-t21bu115uwsmg-IP191939.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this washer and dryer pair yet."
+      }
+     },
+     "priceNote": "Washer only; dryer S$859 extra",
+     "footprint": {
+      "width": 59.5,
+      "depth": 61.5
+     }
+    },
+    {
+     "id": "0656ae87-b6e7-48b1-9d39-3214fbb23174",
+     "label": "Toshiba T40 tower",
+     "name": "Toshiba TWD-T40 washer + dryer station",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 2279,
+     "images": [
+      {
+       "src": "https://www.courts.com.sg/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dwc6135e3d/images/hires/media/catalog/product/i/p/ip214944_00.jpg",
+       "caption": "Toshiba T40 washer and dryer tower",
+       "kind": "product",
+       "source": "https://www.courts.com.sg/toshiba-frontload-washer%2Fdryer-station-tw-t40bzp110mwswt%2Btd-t40bs90hwswt-10kg%2F8kg-twd-t40bzp110mwswt%2Btd-t40bs90hwswt-10kg%2F8kg-IP214944.html",
+       "alt": "Toshiba T40 washer and dryer tower",
+       "width": 1600,
+       "height": 1600
+      }
+     ],
+     "headline": "Complete tower, one control panel",
+     "love": "Washer and dryer with shared controls; adds detergent.",
+     "watchOut": "Made to order; cashback terms to confirm.",
+     "bestFor": "A dryer from day one",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "COURTS",
+       "price": 2279,
+       "stock": "Made to order",
+       "checked": "2026-10-30",
+       "url": "https://www.courts.com.sg/toshiba-frontload-washer%2Fdryer-station-tw-t40bzp110mwswt%2Btd-t40bs90hwswt-10kg%2F8kg-twd-t40bzp110mwswt%2Btd-t40bs90hwswt-10kg%2F8kg-IP214944.html",
+       "priceNote": "Advertised S$2,079 after cashback"
+      },
+      {
+       "shop": "Mega Discount Store",
+       "price": 2599,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/twd-t40bzu110mwswt-10-8kg-washer-dryer-station"
+      }
+     ],
+     "specs": {
+      "Washer size (W × D × H)": "59.5 × 59.5 cm (whole tower)",
+      "Stacked height": "168.2 cm",
+      "Wash / dry capacity": "10 kg / 8 kg",
+      "Dryer": "Included, heat-pump",
+      "Shared controls": "Yes",
+      "Adds detergent itself": "Yes",
+      "Washer price": "Whole tower only",
+      "Washer and dryer": "S$2,279",
+      "In stock": "Made to order (COURTS)",
+      "Warranty": "2 years (+2 on some parts)"
+     },
+     "shopper": {
+      "headline": "Complete tower, one control panel",
+      "love": "Washer and dryer with shared controls; adds detergent.",
+      "watchOut": "Made to order; cashback terms to confirm.",
+      "bestFor": "A dryer from day one",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "10 kg + 8 kg",
+       "Shared controls",
+       "Auto detergent"
+      ],
+      "specs": {
+       "Washer size (W × D × H)": "59.5 × 59.5 cm (whole tower)",
+       "Stacked height": "168.2 cm",
+       "Wash / dry capacity": "10 kg / 8 kg",
+       "Dryer": "Included, heat-pump",
+       "Shared controls": "Yes",
+       "Adds detergent itself": "Yes",
+       "Washer price": "Whole tower only",
+       "Washer and dryer": "S$2,279",
+       "In stock": "Made to order (COURTS)",
+       "Warranty": "2 years (+2 on some parts)"
+      },
+      "offers": [
+       {
+        "shop": "COURTS",
+        "price": 2279,
+        "stock": "Made to order",
+        "checked": "2026-10-30",
+        "url": "https://www.courts.com.sg/toshiba-frontload-washer%2Fdryer-station-tw-t40bzp110mwswt%2Btd-t40bs90hwswt-10kg%2F8kg-twd-t40bzp110mwswt%2Btd-t40bs90hwswt-10kg%2F8kg-IP214944.html",
+        "priceNote": "Advertised S$2,079 after cashback"
+       },
+       {
+        "shop": "Mega Discount Store",
+        "price": 2599,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/twd-t40bzu110mwswt-10-8kg-washer-dryer-station"
+       }
+      ],
+      "priceNote": "Washer and dryer; S$2,079 after cashback, to confirm"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://megadiscountstore.com.sg/products/twd-t40bzu110mwswt-10-8kg-washer-dryer-station"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "A new model with few owner reviews yet."
+      }
+     },
+     "priceNote": "Washer and dryer; S$2,079 after cashback, to confirm",
+     "footprint": {
+      "width": 59.5,
+      "depth": 59.5
+     }
+    },
+    {
+     "id": "8eeaeefd-1ce9-4fa3-aeda-aa75ee1d3a01",
+     "label": "LG 11 kg",
+     "name": "LG FX1411S3WA",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 1539,
+     "images": [
+      {
+       "src": "https://www.courts.com.sg/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dwbe5d489f/images/hires/media/catalog/product/i/p/ip219600_00.jpg",
+       "caption": "LG FX1411S3WA washer",
+       "kind": "product",
+       "source": "https://www.courts.com.sg/lg-front-load-washer-11kg-essence-white--glossy-fx1411s3wa-IP219600.html",
+       "alt": "LG FX1411S3WA washer",
+       "width": 1600,
+       "height": 1600
+      }
+     ],
+     "headline": "Bigger 11 kg, dryer later",
+     "love": "11 kg with steam and app control.",
+     "watchOut": "Dryer later costs a lot more.",
+     "bestFor": "Washer first, LG dryer later",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "COURTS",
+       "price": 1539,
+       "stock": "Made to order",
+       "checked": "2026-10-30",
+       "url": "https://www.courts.com.sg/lg-front-load-washer-11kg-essence-white--glossy-fx1411s3wa-IP219600.html"
+      }
+     ],
+     "specs": {
+      "Washer size (W × D × H)": "60 × 56.5 × 85 cm",
+      "Stacked height": "Not stated",
+      "Wash / dry capacity": "11 kg / dryer later",
+      "Dryer": "Later, price to check",
+      "Shared controls": "No",
+      "Adds detergent itself": "Not stated",
+      "Washer price": "S$1,539",
+      "Washer and dryer": "Price to check",
+      "In stock": "Made to order (COURTS)",
+      "Warranty": "2 years, motor 10 years"
+     },
+     "shopper": {
+      "headline": "Bigger 11 kg, dryer later",
+      "love": "11 kg with steam and app control.",
+      "watchOut": "Dryer later costs a lot more.",
+      "bestFor": "Washer first, LG dryer later",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "11 kg",
+       "Steam",
+       "App control"
+      ],
+      "specs": {
+       "Washer size (W × D × H)": "60 × 56.5 × 85 cm",
+       "Stacked height": "Not stated",
+       "Wash / dry capacity": "11 kg / dryer later",
+       "Dryer": "Later, price to check",
+       "Shared controls": "No",
+       "Adds detergent itself": "Not stated",
+       "Washer price": "S$1,539",
+       "Washer and dryer": "Price to check",
+       "In stock": "Made to order (COURTS)",
+       "Warranty": "2 years, motor 10 years"
+      },
+      "offers": [
+       {
+        "shop": "COURTS",
+        "price": 1539,
+        "stock": "Made to order",
+        "checked": "2026-10-30",
+        "url": "https://www.courts.com.sg/lg-front-load-washer-11kg-essence-white--glossy-fx1411s3wa-IP219600.html"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.courts.com.sg/lg-front-load-washer-11kg-essence-white--glossy-fx1411s3wa-IP219600.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this model yet."
+      }
+     },
+     "footprint": {
+      "width": 60,
+      "depth": 56.5
+     }
+    },
+    {
+     "id": "b5f708d2-d582-4beb-991c-c3813f01d772",
+     "label": "Bosch 9 kg",
+     "name": "Bosch WGG24401SG",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 1449,
+     "images": [
+      {
+       "src": "https://www.courts.com.sg/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dw95ae0e8a/images/hires/media/catalog/product/i/p/ip217477_00.jpg",
+       "caption": "Bosch WGG24401SG washer",
+       "kind": "product",
+       "source": "https://www.courts.com.sg/bosch-front-load-washer-9kg-cast-iron-wgg24401sg-IP217477.html",
+       "alt": "Bosch WGG24401SG washer",
+       "width": 1600,
+       "height": 1600
+      }
+     ],
+     "headline": "Solid 9 kg, washer only",
+     "love": "Fast 1,400 rpm spin; stain and allergy modes.",
+     "watchOut": "Smallest drum here (9 kg).",
+     "bestFor": "Washer only, if 9 kg is enough",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "COURTS",
+       "price": 1449,
+       "stock": "Made to order",
+       "checked": "2026-10-30",
+       "url": "https://www.courts.com.sg/bosch-front-load-washer-9kg-cast-iron-wgg24401sg-IP217477.html"
+      }
+     ],
+     "specs": {
+      "Washer size (W × D × H)": "59.8 × 59 × 84.8 cm",
+      "Stacked height": "Not stated",
+      "Wash / dry capacity": "9 kg / dryer later",
+      "Dryer": "Later, price to check",
+      "Shared controls": "No",
+      "Adds detergent itself": "Not stated",
+      "Washer price": "S$1,449",
+      "Washer and dryer": "Price to check",
+      "In stock": "Made to order (COURTS)",
+      "Warranty": "2 years, motor 10 years"
+     },
+     "shopper": {
+      "headline": "Solid 9 kg, washer only",
+      "love": "Fast 1,400 rpm spin; stain and allergy modes.",
+      "watchOut": "Smallest drum here (9 kg).",
+      "bestFor": "Washer only, if 9 kg is enough",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "9 kg",
+       "1,400 rpm",
+       "Stackable"
+      ],
+      "specs": {
+       "Washer size (W × D × H)": "59.8 × 59 × 84.8 cm",
+       "Stacked height": "Not stated",
+       "Wash / dry capacity": "9 kg / dryer later",
+       "Dryer": "Later, price to check",
+       "Shared controls": "No",
+       "Adds detergent itself": "Not stated",
+       "Washer price": "S$1,449",
+       "Washer and dryer": "Price to check",
+       "In stock": "Made to order (COURTS)",
+       "Warranty": "2 years, motor 10 years"
+      },
+      "offers": [
+       {
+        "shop": "COURTS",
+        "price": 1449,
+        "stock": "Made to order",
+        "checked": "2026-10-30",
+        "url": "https://www.courts.com.sg/bosch-front-load-washer-9kg-cast-iron-wgg24401sg-IP217477.html"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.courts.com.sg/bosch-front-load-washer-9kg-cast-iron-wgg24401sg-IP217477.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this model yet."
+      }
+     },
+     "footprint": {
+      "width": 59.8,
+      "depth": 59
+     }
+    },
+    {
+     "id": "c57893f9-dbb1-4119-95dd-984eaaa450ed",
+     "label": "Electrolux 11 kg",
+     "name": "Electrolux EWF1143R7WC",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 1599,
+     "images": [
+      {
+       "src": "https://www.courts.com.sg/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dw4c199ce3/images/hires/media/catalog/product/i/p/ip213526_00.jpg",
+       "caption": "Electrolux EWF1143R7WC washer",
+       "kind": "product",
+       "source": "https://www.courts.com.sg/electrolux-front-load-washer-11kg-ewf1143r7wc-IP213526.html",
+       "alt": "Electrolux EWF1143R7WC washer",
+       "width": 1600,
+       "height": 1600
+      }
+     ],
+     "headline": "11 kg that senses the load",
+     "love": "11 kg; adjusts water and time to the load.",
+     "watchOut": "Deepest body here (65.9 cm).",
+     "bestFor": "Comparing against the LG 11 kg",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "COURTS",
+       "price": 1599,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.courts.com.sg/electrolux-front-load-washer-11kg-ewf1143r7wc-IP213526.html"
+      }
+     ],
+     "specs": {
+      "Washer size (W × D × H)": "60 × 65.9 × 85 cm",
+      "Stacked height": "Not stated",
+      "Wash / dry capacity": "11 kg / dryer later",
+      "Dryer": "Later, price to check",
+      "Shared controls": "No",
+      "Adds detergent itself": "Not stated",
+      "Washer price": "S$1,599",
+      "Washer and dryer": "Price to check",
+      "In stock": "Yes (COURTS)",
+      "Warranty": "2 years"
+     },
+     "shopper": {
+      "headline": "11 kg that senses the load",
+      "love": "11 kg; adjusts water and time to the load.",
+      "watchOut": "Deepest body here (65.9 cm).",
+      "bestFor": "Comparing against the LG 11 kg",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "11 kg",
+       "In stock",
+       "Stackable"
+      ],
+      "specs": {
+       "Washer size (W × D × H)": "60 × 65.9 × 85 cm",
+       "Stacked height": "Not stated",
+       "Wash / dry capacity": "11 kg / dryer later",
+       "Dryer": "Later, price to check",
+       "Shared controls": "No",
+       "Adds detergent itself": "Not stated",
+       "Washer price": "S$1,599",
+       "Washer and dryer": "Price to check",
+       "In stock": "Yes (COURTS)",
+       "Warranty": "2 years"
+      },
+      "offers": [
+       {
+        "shop": "COURTS",
+        "price": 1599,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.courts.com.sg/electrolux-front-load-washer-11kg-ewf1143r7wc-IP213526.html"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.courts.com.sg/electrolux-front-load-washer-11kg-ewf1143r7wc-IP213526.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this model yet."
+      }
+     },
+     "footprint": {
+      "width": 60,
+      "depth": 65.9
+     }
+    },
+    {
+     "id": "6c7a8edf-f9ea-46dc-afb3-1e068896b920",
+     "label": "LG 14 kg",
+     "name": "LG FX1414S2K",
+     "kind": "product",
+     "tier": "Splurge",
+     "price": 2199,
+     "images": [
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0494/0761/files/VX_WM_F4X9EAPY6_MatteBlack_Front.jpg?v=1764739799&width=1200",
+       "caption": "LG FX1414S2K washer",
+       "kind": "product",
+       "source": "https://megadiscountstore.com.sg/products/fx1414s2k-14kg-front-load-washer",
+       "alt": "LG FX1414S2K washer",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Biggest washer, adds detergent itself",
+     "love": "14 kg drum; adds detergent automatically.",
+     "watchOut": "Most expensive; duvet setting only 2.5 kg.",
+     "bestFor": "Big everyday loads",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Mega Discount Store",
+       "price": 2199,
+       "stock": "Pre-order, arriving end Oct",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/fx1414s2k-14kg-front-load-washer"
+      },
+      {
+       "shop": "LG Singapore",
+       "price": 2199,
+       "stock": "Back order",
+       "checked": "2026-10-30",
+       "url": "https://www.lg.com/sg/washing-machines/front-load-washing-machines/fx1414s2k/"
+      }
+     ],
+     "specs": {
+      "Washer size (W × D × H)": "60 × 61.5 × 85 cm",
+      "Stacked height": "170 cm with dryer",
+      "Wash / dry capacity": "14 kg / 10 kg dryer",
+      "Dryer": "Optional, LG bundle",
+      "Shared controls": "No",
+      "Adds detergent itself": "Yes",
+      "Washer price": "S$2,199",
+      "Washer and dryer": "About S$4,000 with dryer",
+      "In stock": "Pre-order (Mega Discount Store)",
+      "Warranty": "Ask the shop"
+     },
+     "shopper": {
+      "headline": "Biggest washer, adds detergent itself",
+      "love": "14 kg drum; adds detergent automatically.",
+      "watchOut": "Most expensive; duvet setting only 2.5 kg.",
+      "bestFor": "Big everyday loads",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "14 kg",
+       "Auto detergent",
+       "Pre-order"
+      ],
+      "specs": {
+       "Washer size (W × D × H)": "60 × 61.5 × 85 cm",
+       "Stacked height": "170 cm with dryer",
+       "Wash / dry capacity": "14 kg / 10 kg dryer",
+       "Dryer": "Optional, LG bundle",
+       "Shared controls": "No",
+       "Adds detergent itself": "Yes",
+       "Washer price": "S$2,199",
+       "Washer and dryer": "About S$4,000 with dryer",
+       "In stock": "Pre-order (Mega Discount Store)",
+       "Warranty": "Ask the shop"
+      },
+      "offers": [
+       {
+        "shop": "Mega Discount Store",
+        "price": 2199,
+        "stock": "Pre-order, arriving end Oct",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/fx1414s2k-14kg-front-load-washer"
+       },
+       {
+        "shop": "LG Singapore",
+        "price": 2199,
+        "stock": "Back order",
+        "checked": "2026-10-30",
+        "url": "https://www.lg.com/sg/washing-machines/front-load-washing-machines/fx1414s2k/"
+       }
+      ],
+      "priceNote": "Washer only; group-chat price was S$1,849"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "preorder",
+       "availableBy": "2026-11-30",
+       "source": "https://megadiscountstore.com.sg/products/fx1414s2k-14kg-front-load-washer"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of the Singapore model yet."
+      }
+     },
+     "priceNote": "Washer only; group-chat price was S$1,849",
+     "footprint": {
+      "width": 60,
+      "depth": 66
+     }
+    }
+   ],
    "legacySlugs": [
     "yard-washing-machine"
    ],
@@ -7551,6 +9916,59 @@
     "source": "Existing washer footprint, known to fit",
     "opening": false,
     "measured": false
+   },
+   "qty": 1,
+   "answer10s": "Toshiba T21 (S$759) is the value washer; add its dryer later if needed. Toshiba T40 tower (S$2,279) gives washer and dryer now. The clothes rack stays the main way to dry.",
+   "summary": "Six front-load washers, three with a matching dryer route.",
+   "researchedAt": "2026-10-30",
+   "contractorNote": "Measure the usable space, not the old washer. Check taps, drain and door opening. Check clearance under the lowered rack. Sockets in reach. Use the maker’s stacking kit.",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Toshiba T21 (S$759) is the value washer; add its dryer later if needed. Toshiba T40 tower (S$2,279) gives washer and dryer now. The clothes rack stays the main way to dry.",
+    "mustKnow": [
+     "At least 9 kg.",
+     "Wash the thick duvet separately.",
+     "Prices exclude delivery, installation and stacking."
+    ],
+    "contractorNote": "Measure the usable space, not the old washer. Check taps, drain and door opening. Check clearance under the lowered rack. Sockets in reach. Use the maker’s stacking kit.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Washer size (W × D × H)",
+       "Stacked height"
+      ]
+     },
+     {
+      "group": "Performance",
+      "rows": [
+       "Wash / dry capacity"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Dryer",
+       "Shared controls",
+       "Adds detergent itself"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Washer price",
+       "Washer and dryer",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
    }
   },
   {
@@ -7568,15 +9986,250 @@
     "black_friday",
     "12.12"
    ],
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "Dreame (TBC)"
    ],
-   "contractorNote": "A socket for the dock in a dry, level spot (yard).",
+   "contractorNote": "Dry, sheltered dock spot in the yard with a socket, clean-water tap and a drain. Clear path for the robot. Check door sills and furniture gaps. Standard install excludes drilling and trunking.",
    "mustKnow": [
-    "Auto-empty and mop washing wanted; no pets; not for bathrooms"
+    "Choose the \"with installation\" plumbing kit.",
+    "Plumbing saves carrying water, not all cleaning.",
+    "Dock goes in the yard."
    ],
-   "options": [],
+   "options": [
+    {
+     "id": "dd629ffd-9510-4fc0-a73c-cdde953f8bc1",
+     "label": "Dreame Aqua 10 Roller",
+     "name": "Dreame Aqua 10 Roller",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 1199,
+     "images": [
+      {
+       "src": "https://dreame.sg/cdn/shop/files/Aqua10Roller2_1800x.png?v=1775244290&width=1200",
+       "caption": "Dreame Aqua 10 Roller with dock",
+       "kind": "product",
+       "source": "https://dreame.sg/products/dreame-aqua-10-roller",
+       "alt": "Dreame Aqua 10 Roller with dock",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Roller mop, plumbing included",
+     "love": "Roller mop rinsed as it cleans.",
+     "watchOut": "12 cm tall; may not fit under furniture.",
+     "bestFor": "Our roller-mop wish, if furniture is high",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Dreame Singapore",
+       "price": 1199,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://dreame.sg/products/dreame-aqua-10-roller",
+       "priceNote": "Choose \"+ Kit (With Installation)\""
+      },
+      {
+       "shop": "Mega Discount Store",
+       "price": 1373,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/aqua-10-roller-robot-vacuum-mop-cleaner",
+       "priceNote": "With water kit; installation extra"
+      }
+     ],
+     "specs": {
+      "Robot size": "35 × 35 × 12 cm",
+      "Dock size": "42 × 44 × 50.5 cm",
+      "Height (fits under furniture)": "12 cm",
+      "Mop": "Roller",
+      "Mop rinsed while cleaning": "Yes",
+      "Water in and out by pipe": "Yes, with kit",
+      "Empties itself": "Yes",
+      "Price with plumbing kit": "S$1,199",
+      "In stock": "Available online (Dreame)",
+      "Dust bags": "About S$23",
+      "Warranty": "2 years"
+     },
+     "shopper": {
+      "headline": "Roller mop, plumbing included",
+      "love": "Roller mop rinsed as it cleans.",
+      "watchOut": "12 cm tall; may not fit under furniture.",
+      "bestFor": "Our roller-mop wish, if furniture is high",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "One owner with the water kit had a blocked valve; Dreame replaced it.",
+      "chips": [
+       "Roller mop",
+       "Plumbing installed",
+       "S$1,199"
+      ],
+      "specs": {
+       "Robot size": "35 × 35 × 12 cm",
+       "Dock size": "42 × 44 × 50.5 cm",
+       "Height (fits under furniture)": "12 cm",
+       "Mop": "Roller",
+       "Mop rinsed while cleaning": "Yes",
+       "Water in and out by pipe": "Yes, with kit",
+       "Empties itself": "Yes",
+       "Price with plumbing kit": "S$1,199",
+       "In stock": "Available online (Dreame)",
+       "Dust bags": "About S$23",
+       "Warranty": "2 years"
+      },
+      "offers": [
+       {
+        "shop": "Dreame Singapore",
+        "price": 1199,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://dreame.sg/products/dreame-aqua-10-roller",
+        "priceNote": "Choose \"+ Kit (With Installation)\""
+       },
+       {
+        "shop": "Mega Discount Store",
+        "price": 1373,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/aqua-10-roller-robot-vacuum-mop-cleaner",
+        "priceNote": "With water kit; installation extra"
+       }
+      ],
+      "priceNote": "With plumbing kit and installation; target S$1,100"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://dreame.sg/products/dreame-aqua-10-roller"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/Dreame_Tech/comments/1p45h18/water_hookup_kit_aqua_10/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "With plumbing kit and installation; target S$1,100"
+    },
+    {
+     "id": "c1306275-d328-4714-9d19-c408e6eba477",
+     "label": "Dreame X50 Ultra",
+     "name": "Dreame X50 Ultra",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 1299,
+     "images": [
+      {
+       "src": "https://dreame.sg/cdn/shop/files/DreameX50Ultra_f439d4d7-8d9b-4c31-b51a-cfc5feae41a5_1800x.png?v=1738741069&width=1200",
+       "caption": "Dreame X50 Ultra with dock",
+       "kind": "product",
+       "source": "https://dreame.sg/products/dreame-x50-ultra-master",
+       "alt": "Dreame X50 Ultra with dock",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Gets under low furniture",
+     "love": "Lowers itself to 8.9 cm to reach under sofas.",
+     "watchOut": "Spinning pads; some map and dock faults.",
+     "bestFor": "Low beds or sofas",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Dreame Singapore",
+       "price": 1299,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://dreame.sg/products/dreame-x50-ultra-master",
+       "priceNote": "Choose \"X50 Ultra / +Kit (With Installation)\""
+      },
+      {
+       "shop": "Mega Discount Store",
+       "price": 1159,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/dreame-x50-ultra-robot-vacuum-mop-cleaner",
+       "priceNote": "Robot only; plumbing extra"
+      }
+     ],
+     "specs": {
+      "Robot size": "35 × 35 × 8.9–11.1 cm",
+      "Dock size": "34 × 45.7 × 59 cm",
+      "Height (fits under furniture)": "8.9 cm",
+      "Mop": "Two spinning pads",
+      "Mop rinsed while cleaning": "No, washed at dock",
+      "Water in and out by pipe": "Yes, with kit",
+      "Empties itself": "Yes",
+      "Price with plumbing kit": "S$1,299",
+      "In stock": "Available online (Dreame)",
+      "Dust bags": "About S$23",
+      "Warranty": "2 years"
+     },
+     "shopper": {
+      "headline": "Gets under low furniture",
+      "love": "Lowers itself to 8.9 cm to reach under sofas.",
+      "watchOut": "Spinning pads; some map and dock faults.",
+      "bestFor": "Low beds or sofas",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "An 8-month owner likes the pickup but had map problems and skipped rooms.",
+      "chips": [
+       "8.9 cm low",
+       "Plumbing installed",
+       "S$1,299"
+      ],
+      "specs": {
+       "Robot size": "35 × 35 × 8.9–11.1 cm",
+       "Dock size": "34 × 45.7 × 59 cm",
+       "Height (fits under furniture)": "8.9 cm",
+       "Mop": "Two spinning pads",
+       "Mop rinsed while cleaning": "No, washed at dock",
+       "Water in and out by pipe": "Yes, with kit",
+       "Empties itself": "Yes",
+       "Price with plumbing kit": "S$1,299",
+       "In stock": "Available online (Dreame)",
+       "Dust bags": "About S$23",
+       "Warranty": "2 years"
+      },
+      "offers": [
+       {
+        "shop": "Dreame Singapore",
+        "price": 1299,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://dreame.sg/products/dreame-x50-ultra-master",
+        "priceNote": "Choose \"X50 Ultra / +Kit (With Installation)\""
+       },
+       {
+        "shop": "Mega Discount Store",
+        "price": 1159,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/dreame-x50-ultra-robot-vacuum-mop-cleaner",
+        "priceNote": "Robot only; plumbing extra"
+       }
+      ],
+      "priceNote": "With plumbing kit and installation; target S$1,200"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://dreame.sg/products/dreame-x50-ultra-master"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/RobotVacuums/comments/1vtsjjf/my_experience_with_the_dreame_x50_ultra_after_8/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "With plumbing kit and installation; target S$1,200"
+    }
+   ],
    "roughBudget": {
     "min": 600,
     "max": 1500,
@@ -7584,7 +10237,65 @@
    },
    "legacySlugs": [
     "whole-home-robot-vacuum"
-   ]
+   ],
+   "qty": 1,
+   "answer10s": "Dreame Aqua 10 Roller (S$1,199 with plumbing installed) fits the roller-mop wish. Pick the X50 Ultra (S$1,299) if furniture is low.",
+   "summary": "Two Dreame robots with plumbing kits installed, S$1,199–1,299.",
+   "researchedAt": "2026-10-30",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Dreame Aqua 10 Roller (S$1,199 with plumbing installed) fits the roller-mop wish. Pick the X50 Ultra (S$1,299) if furniture is low.",
+    "mustKnow": [
+     "Choose the \"with installation\" plumbing kit.",
+     "Plumbing saves carrying water, not all cleaning.",
+     "Dock goes in the yard."
+    ],
+    "contractorNote": "Dry, sheltered dock spot in the yard with a socket, clean-water tap and a drain. Clear path for the robot. Check door sills and furniture gaps. Standard install excludes drilling and trunking.",
+    "alsoConsidered": [
+     {
+      "brand": "ECOVACS T90 Pro",
+      "reason": "Installed price not confirmed"
+     }
+    ],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Robot size",
+       "Dock size",
+       "Height (fits under furniture)"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Mop",
+       "Mop rinsed while cleaning",
+       "Water in and out by pipe",
+       "Empties itself"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price with plumbing kit",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Running costs",
+      "rows": [
+       "Dust bags"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "HH-VAC",

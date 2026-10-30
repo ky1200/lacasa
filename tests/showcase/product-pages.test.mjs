@@ -18,7 +18,7 @@ test('product pages show photos, quick answer, cards and collapsed details in or
   assert.match(html,/<details><summary>Full specs, shops &amp; video<\/summary>/);assert.doesNotMatch(html,/<details[^>]* open/);
   assert.doesNotMatch(plain(html),/\byou\b|\byour\b|we wanted|as requested|amazing|perfect|game-changer/i);
  }
- assert.match(renderPage(audit,'/audit/kitchen/fridge').html,/<span class="researching-label">Researching<\/span>/);
+ assert.match(renderPage(audit,'/audit/living/sofa').html,/<span class="researching-label">Researching<\/span>/);
 });
 test('comparison rows are short, grouped consistently and distinguish yes/no from unknown',()=>{
  const order=['Overview','Size &amp; fit','Performance','Features','Price &amp; stock','Running costs','Warranty &amp; support'];
