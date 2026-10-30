@@ -22,7 +22,7 @@ init();
 /* Instant page changes: fetch the next page as soon as a finger touches a link (or the mouse
    rests on it), then swap the page in place instead of a full reload. Falls back to a normal
    load for anything unusual. */
-if(typeof window!=='undefined'&&window.history&&window.DOMParser){const cache=new Map(),TTL=20000;
+if(typeof window!=='undefined'&&window.history&&window.DOMParser){const cache=new Map(),TTL=60000;
 globalThis.__lacasaNav={clear:()=>cache.clear()};
 const eligible=a=>{if(!a||a.target||a.hasAttribute('download')||a.dataset.reload!==undefined)return null;const u=new URL(a.href,location.href);
  if(u.origin!==location.origin||/^\/(api|img|video|owner|choose|images|fonts)(\/|$|\?)/.test(u.pathname)||/\.(txt|svg|webp|png|jpg)$/.test(u.pathname))return null;
@@ -37,7 +37,10 @@ const swap=(html,u,push)=>{const doc=new DOMParser().parseFromString(html,'text/
  globalThis.__lacasaStop?.();document.title=doc.title;document.body.replaceWith(doc.body);
  if(push)history.pushState(null,'',u.pathname+u.search+u.hash);
  if(u.hash){document.querySelector(u.hash)?.scrollIntoView();}else if(push)scrollTo(0,0);
- shown=u.pathname+u.search;init();};
+ shown=u.pathname+u.search;init();idle();};
+// Warm the few links most likely to be tapped next, once the page is idle.
+const idle=()=>(window.requestIdleCallback||setTimeout)(()=>{document.querySelectorAll('a.list-pill,.list-tabs a,a.back,.item-actions a.button,a.brand').forEach(a=>{const u=eligible(a);if(u&&u.pathname+u.search!==location.pathname+location.search)load(u).catch(()=>{});});},{timeout:1500});
+idle();
 addEventListener('click',e=>{if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;const a=e.target.closest('a[href]'),u=eligible(a);if(!u)return;
  e.preventDefault();document.documentElement.classList.add('is-loading');
  load(u).then(html=>swap(html,u,true)).catch(()=>location.assign(u.href)).finally(()=>document.documentElement.classList.remove('is-loading'));});
