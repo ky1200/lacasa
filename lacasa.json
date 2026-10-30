@@ -189,7 +189,8 @@
     "Plan: hidden light strip along the ceiling edge and four downlights.",
     "Installed budget S$900–1,100; no more than S$1,200.",
     "Don't fit a normal wall dimmer to smart lights.",
-    "Simpler fallback: more downlights plus a floor lamp."
+    "Simpler fallback: more downlights plus a floor lamp.",
+    "For lamps: IKEA KAJPLATS smart bulbs (from S$6.90) work in Apple Home; try a S$15.90 starter kit first."
    ],
    "options": [
     {
@@ -714,13 +715,18 @@
      "Plan: hidden light strip along the ceiling edge and four downlights.",
      "Installed budget S$900–1,100; no more than S$1,200.",
      "Don't fit a normal wall dimmer to smart lights.",
-     "Simpler fallback: more downlights plus a floor lamp."
+     "Simpler fallback: more downlights plus a floor lamp.",
+     "For lamps: IKEA KAJPLATS smart bulbs (from S$6.90) work in Apple Home; try a S$15.90 starter kit first."
     ],
     "contractorNote": "Check the existing ceiling. Separate power for the downlights and the strip. Keep the strip's power box reachable. No normal wall dimmer on smart lights. Check glare and how low the lights dim.",
     "alsoConsidered": [
      {
       "brand": "Spotlights on a track",
       "reason": "Less soft glow across the ceiling"
+     },
+     {
+      "brand": "IKEA KAJPLATS spotlights",
+      "reason": "GU10 smart bulb out of stock at IKEA SG; surface-mounted spots"
      }
     ],
     "groups": [
@@ -794,7 +800,8 @@
    "mustKnow": [
     "An open dining area still needs clear space around the blades.",
     "Warm light is not the same as dimmable.",
-    "Listen to it in a showroom for noise."
+    "Listen to it in a showroom for noise.",
+    "KDK F40GP is S$113 over the S$350 budget."
    ],
    "options": [
     {
@@ -1346,6 +1353,135 @@
       }
      },
      "priceNote": "With basic installation; target S$230"
+    },
+    {
+     "id": "30b87135-24d2-42d8-821b-13c0d56f519a",
+     "label": "KDK F40GP",
+     "name": "KDK F40GP 40-inch",
+     "kind": "product",
+     "tier": "Splurge",
+     "price": 463,
+     "images": [
+      {
+       "src": "https://www.kdk.sg/cdn/shop/files/F40GPWHITE2.jpg?v=1773107089&width=1200",
+       "caption": "KDK F40GP ceiling fan, white",
+       "kind": "product",
+       "source": "https://www.kdk.sg/products/ceiling-fan-f40gp",
+       "alt": "KDK F40GP ceiling fan, white",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "KDK, with finer control",
+     "love": "10 speeds; light changes colour and dims.",
+     "watchOut": "Over budget; bigger 100 cm blades.",
+     "bestFor": "If size and cost are fine",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "KDK",
+       "price": 418,
+       "stock": "Pre-order, delivery from 13 Nov",
+       "checked": "2026-10-30",
+       "url": "https://www.kdk.sg/products/ceiling-fan-f40gp",
+       "priceNote": "S$45 installation"
+      },
+      {
+       "shop": "Best Denki",
+       "price": 418,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.bestdenki.com.sg/1503280-kdk-ceiling-fan-f40gp-matt-white.html",
+       "priceNote": "S$60 installation + S$30 delivery"
+      },
+      {
+       "shop": "Everjoint",
+       "price": 380,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://everjointelectrical.com.sg/product/kdk-f40gp-40inch-3-blades-wifi-control-dc-ceiling-fan-with-led-light/",
+       "priceNote": "Fan only"
+      }
+     ],
+     "specs": {
+      "Blade size": "100 cm (40-inch)",
+      "Hangs down": "Not stated",
+      "Warm light": "Yes",
+      "Dims the light": "Yes",
+      "Remote": "Yes, 10 speeds + app",
+      "Fan price": "S$418",
+      "With basic installation": "S$463 (KDK)",
+      "In stock": "Yes (Best Denki); KDK pre-order",
+      "Warranty": "1 year"
+     },
+     "shopper": {
+      "headline": "KDK, with finer control",
+      "love": "10 speeds; light changes colour and dims.",
+      "watchOut": "Over budget; bigger 100 cm blades.",
+      "bestFor": "If size and cost are fine",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "KDK owners are mostly positive overall; few reviews of this model.",
+      "chips": [
+       "100 cm blades",
+       "10 speeds",
+       "Wi-Fi app"
+      ],
+      "specs": {
+       "Blade size": "100 cm (40-inch)",
+       "Hangs down": "Not stated",
+       "Warm light": "Yes",
+       "Dims the light": "Yes",
+       "Remote": "Yes, 10 speeds + app",
+       "Fan price": "S$418",
+       "With basic installation": "S$463 (KDK)",
+       "In stock": "Yes (Best Denki); KDK pre-order",
+       "Warranty": "1 year"
+      },
+      "offers": [
+       {
+        "shop": "KDK",
+        "price": 418,
+        "stock": "Pre-order, delivery from 13 Nov",
+        "checked": "2026-10-30",
+        "url": "https://www.kdk.sg/products/ceiling-fan-f40gp",
+        "priceNote": "S$45 installation"
+       },
+       {
+        "shop": "Best Denki",
+        "price": 418,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.bestdenki.com.sg/1503280-kdk-ceiling-fan-f40gp-matt-white.html",
+        "priceNote": "S$60 installation + S$30 delivery"
+       },
+       {
+        "shop": "Everjoint",
+        "price": 380,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://everjointelectrical.com.sg/product/kdk-f40gp-40inch-3-blades-wifi-control-dc-ceiling-fan-with-led-light/",
+        "priceNote": "Fan only"
+       }
+      ],
+      "priceNote": "With KDK basic installation; over budget"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.bestdenki.com.sg/1503280-kdk-ceiling-fan-f40gp-matt-white.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/askSingapore/comments/1vyured/are_local_ceiling_fans_really_that_bad/",
+       "exactModel": false,
+       "reason": "Owners rate KDK well overall; few reviews of this exact fan."
+      }
+     },
+     "priceNote": "With KDK basic installation; over budget"
     }
    ],
    "legacySlugs": [
@@ -1374,7 +1510,8 @@
     "mustKnow": [
      "An open dining area still needs clear space around the blades.",
      "Warm light is not the same as dimmable.",
-     "Listen to it in a showroom for noise."
+     "Listen to it in a showroom for noise.",
+     "KDK F40GP is S$113 over the S$350 budget."
     ],
     "contractorNote": "Measure the ceiling and anything nearby. Confirm a concrete mount, the existing power point and switch. Check blade height above the floor. Test fan and light after fitting.",
     "alsoConsidered": [],
@@ -3164,9 +3301,175 @@
        "reason": "Few owner reviews of this exact model yet."
       }
      }
+    },
+    {
+     "id": "057efeab-950e-4a9d-b081-d30da2a0681c",
+     "label": "RIGEL BC0201 70 cm",
+     "name": "RIGEL BC0201-WH-700MM with basin",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 450,
+     "images": [],
+     "headline": "RIGEL PVC cabinet, two drawers",
+     "love": "Water-safe PVC; two drawers; basin listed.",
+     "watchOut": "70 cm wide; measure first.",
+     "bestFor": "A bathroom with room for 70 cm",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "PH Bathroom",
+       "price": 450,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://phbathroom.com/product/rigel-bc0201-wh-700mm-integrated-basin/"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "69 × 44.5 × 58 cm",
+      "Body": "PVC (water-safe)",
+      "Basin and drain included": "Basin listed; check the package",
+      "Opening": "Two drawers",
+      "Price": "S$450",
+      "In stock": "Yes (PH Bathroom)",
+      "Warranty": "Ask the shop"
+     },
+     "shopper": {
+      "headline": "RIGEL PVC cabinet, two drawers",
+      "love": "Water-safe PVC; two drawers; basin listed.",
+      "watchOut": "70 cm wide; measure first.",
+      "bestFor": "A bathroom with room for 70 cm",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "PVC, water-safe",
+       "Two drawers",
+       "S$450"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "69 × 44.5 × 58 cm",
+       "Body": "PVC (water-safe)",
+       "Basin and drain included": "Basin listed; check the package",
+       "Opening": "Two drawers",
+       "Price": "S$450",
+       "In stock": "Yes (PH Bathroom)",
+       "Warranty": "Ask the shop"
+      },
+      "offers": [
+       {
+        "shop": "PH Bathroom",
+        "price": 450,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://phbathroom.com/product/rigel-bc0201-wh-700mm-integrated-basin/"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://phbathroom.com/product/rigel-bc0201-wh-700mm-integrated-basin/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "85d32fbb-c246-49c5-ab81-633059b1bece",
+     "label": "RIGEL BC0201 60 cm",
+     "name": "RIGEL BC0201-WH-600MM",
+     "kind": "product",
+     "tier": "Budget",
+     "price": null,
+     "images": [
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0748/3008/6453/files/RIGEL_BC0201-600_PVC_Basin_Cabinet_Double_Drawer_Type.png?v=1768359250",
+       "caption": "RIGEL BC0201 60 cm basin cabinet",
+       "kind": "product",
+       "source": "https://u-homehardware.com/products/rigel-bc0201-wh-600mm-pvc-basin-cabinet-drawer-type",
+       "alt": "RIGEL BC0201 60 cm basin cabinet",
+       "width": 1080,
+       "height": 1080
+      }
+     ],
+     "headline": "Smaller RIGEL cabinet; ask the price",
+     "love": "Same PVC cabinet in 60 cm.",
+     "watchOut": "No public price yet.",
+     "bestFor": "If 70 cm is too wide",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "U-Home Hardware",
+       "price": null,
+       "stock": "Ask for price",
+       "checked": "2026-10-30",
+       "url": "https://u-homehardware.com/products/rigel-bc0201-wh-600mm-pvc-basin-cabinet-drawer-type"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "59 × 44.5 × 58 cm",
+      "Body": "PVC (water-safe)",
+      "Basin and drain included": "Check the 60 cm basin",
+      "Opening": "Two soft-close drawers",
+      "Price": "Ask for price",
+      "In stock": "Available online (U-Home)",
+      "Warranty": "Ask the shop"
+     },
+     "shopper": {
+      "headline": "Smaller RIGEL cabinet; ask the price",
+      "love": "Same PVC cabinet in 60 cm.",
+      "watchOut": "No public price yet.",
+      "bestFor": "If 70 cm is too wide",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "PVC, water-safe",
+       "60 cm wide",
+       "Soft-close drawers"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "59 × 44.5 × 58 cm",
+       "Body": "PVC (water-safe)",
+       "Basin and drain included": "Check the 60 cm basin",
+       "Opening": "Two soft-close drawers",
+       "Price": "Ask for price",
+       "In stock": "Available online (U-Home)",
+       "Warranty": "Ask the shop"
+      },
+      "offers": [
+       {
+        "shop": "U-Home Hardware",
+        "price": null,
+        "stock": "Ask for price",
+        "checked": "2026-10-30",
+        "url": "https://u-homehardware.com/products/rigel-bc0201-wh-600mm-pvc-basin-cabinet-drawer-type"
+       }
+      ],
+      "priceText": "Ask for price"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://u-homehardware.com/products/rigel-bc0201-wh-600mm-pvc-basin-cabinet-drawer-type"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     },
+     "priceText": "Ask for price"
     }
    ],
-   "answer10s": "Rubine OPALE (S$515): a PVC cabinet that copes with bathroom water, basin included. IKEA ENHET (S$225) only if the basin area stays dry.",
+   "answer10s": "Rubine OPALE (S$515) or RIGEL BC0201 70 cm (S$450): both PVC and water-safe. IKEA ENHET (S$225) only if the basin area stays dry.",
    "summary": "Two water-safe PVC cabinets and one cheaper IKEA stand.",
    "researchedAt": "2026-10-30",
    "mustKnow": [
@@ -3176,7 +3479,7 @@
    "contractorNote": "Measure the basin wall. Check the waste and trap fit the chosen basin.",
    "publicationPolicy": "stock-owner-video-v1",
    "shopper": {
-    "answer10s": "Rubine OPALE (S$515): a PVC cabinet that copes with bathroom water, basin included. IKEA ENHET (S$225) only if the basin area stays dry.",
+    "answer10s": "Rubine OPALE (S$515) or RIGEL BC0201 70 cm (S$450): both PVC and water-safe. IKEA ENHET (S$225) only if the basin area stays dry.",
     "mustKnow": [
      "None of these should face direct shower spray.",
      "Measure the wall: Rubine needs 60 cm, IKEA 44 cm."
@@ -3390,6 +3693,95 @@
        "checked": "2026-10-30",
        "status": "order",
        "source": "https://www.lightavenuesg.com/products/grohe-23-922-003-eurosmart-basin-mixer-s-size"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "b6f8277e-e191-4f92-8acb-1b0bfa662506",
+     "label": "RIGEL MXB7640",
+     "name": "RIGEL MXB7640 basin mixer",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 329,
+     "images": [
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0912/1618/3330/files/Add_a_heading_68_8419c66c-4366-479d-b0b6-2d539c33e985.png?v=1791528582",
+       "caption": "RIGEL MXB7640 basin mixer",
+       "kind": "product",
+       "source": "https://www.lightavenuesg.com/products/rigel-mxb7640-basin-mixer-chrome",
+       "alt": "RIGEL MXB7640 basin mixer",
+       "width": 1000,
+       "height": 1000
+      }
+     ],
+     "headline": "Matches a RIGEL bathroom",
+     "love": "Matching RIGEL look; several finishes.",
+     "watchOut": "Costs S$140 more than the BauEdge.",
+     "bestFor": "A fully matching RIGEL set",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Light Avenue",
+       "price": 329,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://www.lightavenuesg.com/products/rigel-mxb7640-basin-mixer-chrome",
+       "priceNote": "Gun metal; chrome S$279 sold out"
+      }
+     ],
+     "specs": {
+      "Fits the basin": "Check reach on the basin",
+      "Hot and cold": "Yes",
+      "Drain included": "Not stated",
+      "Handle": "Single lever",
+      "Price": "S$329 gun metal (chrome S$279)",
+      "In stock": "Gun metal only (Light Avenue)",
+      "Warranty": "Ask the shop"
+     },
+     "shopper": {
+      "headline": "Matches a RIGEL bathroom",
+      "love": "Matching RIGEL look; several finishes.",
+      "watchOut": "Costs S$140 more than the BauEdge.",
+      "bestFor": "A fully matching RIGEL set",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Gun metal S$329",
+       "Chrome sold out",
+       "Matching RIGEL"
+      ],
+      "specs": {
+       "Fits the basin": "Check reach on the basin",
+       "Hot and cold": "Yes",
+       "Drain included": "Not stated",
+       "Handle": "Single lever",
+       "Price": "S$329 gun metal (chrome S$279)",
+       "In stock": "Gun metal only (Light Avenue)",
+       "Warranty": "Ask the shop"
+      },
+      "offers": [
+       {
+        "shop": "Light Avenue",
+        "price": 329,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://www.lightavenuesg.com/products/rigel-mxb7640-basin-mixer-chrome",
+        "priceNote": "Gun metal; chrome S$279 sold out"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.lightavenuesg.com/products/rigel-mxb7640-basin-mixer-chrome"
       },
       "owner": {
        "checked": "2026-10-30",
@@ -3718,9 +4110,173 @@
        "reason": "Few owner reviews of this exact model yet."
       }
      }
+    },
+    {
+     "id": "6c346471-388a-490c-951e-b83996dc4066",
+     "label": "RIGEL Maestro",
+     "name": "RIGEL Maestro MXTE1513",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 458,
+     "images": [],
+     "headline": "RIGEL shower with a bath spout",
+     "love": "Rain head, hand shower and bath spout.",
+     "watchOut": "Set the temperature by hand.",
+     "bestFor": "A mostly-RIGEL bathroom",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "PH Bathroom",
+       "price": 458,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://phbathroom.com/product/rigel-mxte1513-3-in-1-exposed-shower-mixer-2/"
+      },
+      {
+       "shop": "HardwareCity",
+       "price": 489.9,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://hardwarecity.com.sg/prod/rigel-w3rmxte1513-rainshower-3in1-shower-set-chrome"
+      }
+     ],
+     "specs": {
+      "Rain head and hand shower": "Yes",
+      "Bath spout": "Yes",
+      "Thermostat": "No",
+      "Price": "S$458",
+      "In stock": "Yes (PH Bathroom)"
+     },
+     "shopper": {
+      "headline": "RIGEL shower with a bath spout",
+      "love": "Rain head, hand shower and bath spout.",
+      "watchOut": "Set the temperature by hand.",
+      "bestFor": "A mostly-RIGEL bathroom",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Bath spout",
+       "S$458",
+       "Chrome"
+      ],
+      "specs": {
+       "Rain head and hand shower": "Yes",
+       "Bath spout": "Yes",
+       "Thermostat": "No",
+       "Price": "S$458",
+       "In stock": "Yes (PH Bathroom)"
+      },
+      "offers": [
+       {
+        "shop": "PH Bathroom",
+        "price": 458,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://phbathroom.com/product/rigel-mxte1513-3-in-1-exposed-shower-mixer-2/"
+       },
+       {
+        "shop": "HardwareCity",
+        "price": 489.9,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://hardwarecity.com.sg/prod/rigel-w3rmxte1513-rainshower-3in1-shower-set-chrome"
+       }
+      ],
+      "priceNote": "Installation extra"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://phbathroom.com/product/rigel-mxte1513-3-in-1-exposed-shower-mixer-2/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     },
+     "priceNote": "Installation extra"
+    },
+    {
+     "id": "08f9f017-e7bc-4655-90b3-8cc146e087b3",
+     "label": "RIGEL rain shower 65039",
+     "name": "RIGEL W2-R-MXTE65039T03",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 499,
+     "images": [],
+     "headline": "Another affordable RIGEL shower",
+     "love": "Rain head, hand shower and long bath mixer.",
+     "watchOut": "See the spout and controls in a shop first.",
+     "bestFor": "Comparing with the Maestro",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "HardwareCity",
+       "price": 499,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://hardwarecity.com.sg/prod/rigel-rain-shower-system-w2rmxte65039t03-chrome"
+      }
+     ],
+     "specs": {
+      "Rain head and hand shower": "Yes",
+      "Bath spout": "Long bath mixer; check it",
+      "Thermostat": "No",
+      "Price": "S$499",
+      "In stock": "Available online (HardwareCity)"
+     },
+     "shopper": {
+      "headline": "Another affordable RIGEL shower",
+      "love": "Rain head, hand shower and long bath mixer.",
+      "watchOut": "See the spout and controls in a shop first.",
+      "bestFor": "Comparing with the Maestro",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "6 L/min",
+       "S$499",
+       "Chrome"
+      ],
+      "specs": {
+       "Rain head and hand shower": "Yes",
+       "Bath spout": "Long bath mixer; check it",
+       "Thermostat": "No",
+       "Price": "S$499",
+       "In stock": "Available online (HardwareCity)"
+      },
+      "offers": [
+       {
+        "shop": "HardwareCity",
+        "price": 499,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://hardwarecity.com.sg/prod/rigel-rain-shower-system-w2rmxte65039t03-chrome"
+       }
+      ],
+      "priceNote": "Installation extra"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://hardwarecity.com.sg/prod/rigel-rain-shower-system-w2rmxte65039t03-chrome"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     },
+     "priceNote": "Installation extra"
     }
    ],
-   "answer10s": "GROHE Tempesta (S$829): rain head, hand shower and bath spout. The Euphoria (S$1,099) adds a thermostat for a steadier temperature.",
+   "answer10s": "RIGEL Maestro (S$458) is the value pick with a bath spout. GROHE Tempesta (S$829) for GROHE; Euphoria (S$1,099) adds a thermostat.",
    "summary": "Three shower sets with rain head and hand shower, from S$515 to S$1,099.",
    "researchedAt": "2026-10-30",
    "mustKnow": [
@@ -3730,7 +4286,7 @@
    "contractorNote": "Inspect the Paloma heater and water pressure. Check the shower set's inlets match the pipes.",
    "publicationPolicy": "stock-owner-video-v1",
    "shopper": {
-    "answer10s": "GROHE Tempesta (S$829): rain head, hand shower and bath spout. The Euphoria (S$1,099) adds a thermostat for a steadier temperature.",
+    "answer10s": "RIGEL Maestro (S$458) is the value pick with a bath spout. GROHE Tempesta (S$829) for GROHE; Euphoria (S$1,099) adds a thermostat.",
     "mustKnow": [
      "Keep the Paloma heater only if it passes inspection.",
      "Check the heater's flow suits the chosen shower set."
@@ -4404,7 +4960,8 @@
    "mustKnow": [
     "Full plan with the recommended parts: about S$4,202 (S$4,328 with the shorter RIGEL toilet).",
     "Covers installation, small parts and a GROHE Tempesta-F bidet spray (from S$75).",
-    "Not included: a new heater, retiling or waterproofing."
+    "Not included: a new heater, retiling or waterproofing.",
+    "A mostly-RIGEL refresh comes to about S$4,072 (research estimate)."
    ],
    "options": [],
    "legacySlugs": [
@@ -5067,7 +5624,7 @@
    "roughBudget": {
     "min": 1950,
     "max": 1950,
-    "source": "Installed budget; parts S$1,367.90"
+    "source": "Installed budget; parts S$1,053.90–1,367.90"
    },
    "contractorNote": "Measure the toilet drain and space in front. Test the heater flow and temperature. Include hand shower, rain head and foot spout. Cold-water bidet with its own valve. Itemise disposal, fitting and tile repairs.",
    "mustKnow": [
@@ -5076,6 +5633,405 @@
     "Thermostat shower is a S$220 upgrade."
    ],
    "options": [
+    {
+     "id": "92bde4e6-ec8f-4583-bb99-1ffa3f4effba",
+     "label": "RIGEL Gallant set",
+     "name": "RIGEL Gallant WO9030FA-HKM + RIGEL shower + GROHE bidet",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 1093.9,
+     "images": [
+      {
+       "src": "https://www.rigel-group.com/wp-content/uploads/2026/07/WO9030FA-HKM.jpg",
+       "caption": "RIGEL Gallant WO9030FA-HKM toilet",
+       "kind": "product",
+       "source": "https://www.rigel-group.com/",
+       "alt": "RIGEL Gallant WO9030FA-HKM toilet",
+       "width": 1500,
+       "height": 1500
+      }
+     ],
+     "headline": "Short toilet, value shower",
+     "love": "65 cm toilet; leaves S$856 for fitting.",
+     "watchOut": "Set the water temperature by hand.",
+     "bestFor": "Our starting set, if it fits",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Light Avenue",
+       "price": 525,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://www.lightavenuesg.com/products/rigel-wo9030fa-hkm-one-piece-water-closet",
+       "priceNote": "RIGEL Gallant toilet"
+      },
+      {
+       "shop": "HardwareCity",
+       "price": 489.9,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://hardwarecity.com.sg/prod/rigel-w3rmxte1513-rainshower-3in1-shower-set-chrome",
+       "priceNote": "RIGEL MXTE1513 shower (PH Bathroom S$458)"
+      },
+      {
+       "shop": "Hoe Kee",
+       "price": 79,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.hoekee.com.sg/bathroom/grohe-tempesta-f-trigger-spray-30-wall-holder-set-1-spray.html",
+       "priceNote": "GROHE Tempesta-F bidet spray"
+      }
+     ],
+     "specs": {
+      "Toilet size (W × D × H)": "37 × 65 × 75 cm",
+      "One-piece": "Yes",
+      "Rimless bowl": "Yes",
+      "Soft-close seat": "Not stated",
+      "Shower": "Rain head + hand shower",
+      "Foot-wash spout": "Yes (confirm when ordering)",
+      "Bidet spray": "Yes, GROHE",
+      "Thermostat": "No",
+      "Parts price": "S$1,093.90",
+      "Installed total": "Quote; budget S$1,950",
+      "In stock": "Available online (Light Avenue)",
+      "Toilet warranty": "Ask the shop"
+     },
+     "shopper": {
+      "headline": "Short toilet, value shower",
+      "love": "65 cm toilet; leaves S$856 for fitting.",
+      "watchOut": "Set the water temperature by hand.",
+      "bestFor": "Our starting set, if it fits",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "65 cm toilet",
+       "S$1,093.90 parts",
+       "Manual shower"
+      ],
+      "specs": {
+       "Toilet size (W × D × H)": "37 × 65 × 75 cm",
+       "One-piece": "Yes",
+       "Rimless bowl": "Yes",
+       "Soft-close seat": "Not stated",
+       "Shower": "Rain head + hand shower",
+       "Foot-wash spout": "Yes (confirm when ordering)",
+       "Bidet spray": "Yes, GROHE",
+       "Thermostat": "No",
+       "Parts price": "S$1,093.90",
+       "Installed total": "Quote; budget S$1,950",
+       "In stock": "Available online (Light Avenue)",
+       "Toilet warranty": "Ask the shop"
+      },
+      "offers": [
+       {
+        "shop": "Light Avenue",
+        "price": 525,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://www.lightavenuesg.com/products/rigel-wo9030fa-hkm-one-piece-water-closet",
+        "priceNote": "RIGEL Gallant toilet"
+       },
+       {
+        "shop": "HardwareCity",
+        "price": 489.9,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://hardwarecity.com.sg/prod/rigel-w3rmxte1513-rainshower-3in1-shower-set-chrome",
+        "priceNote": "RIGEL MXTE1513 shower (PH Bathroom S$458)"
+       },
+       {
+        "shop": "Hoe Kee",
+        "price": 79,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.hoekee.com.sg/bathroom/grohe-tempesta-f-trigger-spray-30-wall-holder-set-1-spray.html",
+        "priceNote": "GROHE Tempesta-F bidet spray"
+       }
+      ],
+      "priceNote": "Parts only; S$856 left for fitting within S$1,950"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.lightavenuesg.com/products/rigel-wo9030fa-hkm-one-piece-water-closet"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     },
+     "priceNote": "Parts only; S$856 left for fitting within S$1,950"
+    },
+    {
+     "id": "15831abd-4f7d-4892-92df-8dcc09e6e25d",
+     "label": "RIGEL WO8007FA set",
+     "name": "RIGEL WO8007FA + RIGEL shower + GROHE bidet",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 1053.9,
+     "images": [
+      {
+       "src": "https://www.rigel-group.com/wp-content/uploads/2023/05/WO8007FA-1000x1000.jpg",
+       "caption": "RIGEL WO8007FA toilet",
+       "kind": "product",
+       "source": "https://www.rigel-group.com/",
+       "alt": "RIGEL WO8007FA toilet",
+       "width": 1000,
+       "height": 1000
+      }
+     ],
+     "headline": "Cheapest set",
+     "love": "Lowest parts price; frugal 4/3 L flush.",
+     "watchOut": "70.5 cm long; check door clearance.",
+     "bestFor": "Lowest spend if it fits",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Light Avenue",
+       "price": 485,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://www.lightavenuesg.com/products/rigel-wo8007fa-one-piece-water-closet",
+       "priceNote": "RIGEL WO8007FA toilet"
+      },
+      {
+       "shop": "HardwareCity",
+       "price": 489.9,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://hardwarecity.com.sg/prod/rigel-w3rmxte1513-rainshower-3in1-shower-set-chrome",
+       "priceNote": "RIGEL MXTE1513 shower (PH Bathroom S$458)"
+      },
+      {
+       "shop": "Hoe Kee",
+       "price": 79,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.hoekee.com.sg/bathroom/grohe-tempesta-f-trigger-spray-30-wall-holder-set-1-spray.html",
+       "priceNote": "GROHE Tempesta-F bidet spray"
+      }
+     ],
+     "specs": {
+      "Toilet size (W × D × H)": "36.5 × 70.5 × 69.5 cm",
+      "One-piece": "Yes",
+      "Rimless bowl": "Yes",
+      "Soft-close seat": "Not stated",
+      "Shower": "Rain head + hand shower",
+      "Foot-wash spout": "Yes (confirm when ordering)",
+      "Bidet spray": "Yes, GROHE",
+      "Thermostat": "No",
+      "Parts price": "S$1,053.90",
+      "Installed total": "Quote; budget S$1,950",
+      "In stock": "Available online (Light Avenue)",
+      "Toilet warranty": "Ask the shop"
+     },
+     "shopper": {
+      "headline": "Cheapest set",
+      "love": "Lowest parts price; frugal 4/3 L flush.",
+      "watchOut": "70.5 cm long; check door clearance.",
+      "bestFor": "Lowest spend if it fits",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "70.5 cm toilet",
+       "S$1,053.90 parts",
+       "Manual shower"
+      ],
+      "specs": {
+       "Toilet size (W × D × H)": "36.5 × 70.5 × 69.5 cm",
+       "One-piece": "Yes",
+       "Rimless bowl": "Yes",
+       "Soft-close seat": "Not stated",
+       "Shower": "Rain head + hand shower",
+       "Foot-wash spout": "Yes (confirm when ordering)",
+       "Bidet spray": "Yes, GROHE",
+       "Thermostat": "No",
+       "Parts price": "S$1,053.90",
+       "Installed total": "Quote; budget S$1,950",
+       "In stock": "Available online (Light Avenue)",
+       "Toilet warranty": "Ask the shop"
+      },
+      "offers": [
+       {
+        "shop": "Light Avenue",
+        "price": 485,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://www.lightavenuesg.com/products/rigel-wo8007fa-one-piece-water-closet",
+        "priceNote": "RIGEL WO8007FA toilet"
+       },
+       {
+        "shop": "HardwareCity",
+        "price": 489.9,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://hardwarecity.com.sg/prod/rigel-w3rmxte1513-rainshower-3in1-shower-set-chrome",
+        "priceNote": "RIGEL MXTE1513 shower (PH Bathroom S$458)"
+       },
+       {
+        "shop": "Hoe Kee",
+        "price": 79,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.hoekee.com.sg/bathroom/grohe-tempesta-f-trigger-spray-30-wall-holder-set-1-spray.html",
+        "priceNote": "GROHE Tempesta-F bidet spray"
+       }
+      ],
+      "priceNote": "Parts only; S$896 left for fitting within S$1,950"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.lightavenuesg.com/products/rigel-wo8007fa-one-piece-water-closet"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     },
+     "priceNote": "Parts only; S$896 left for fitting within S$1,950"
+    },
+    {
+     "id": "ade04a23-41b1-4755-a2c1-7b569d37be96",
+     "label": "RIGEL Gallant thermostat set",
+     "name": "RIGEL Gallant + RIGEL thermostat shower + GROHE bidet",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 1303,
+     "images": [
+      {
+       "src": "https://www.rigel-group.com/wp-content/uploads/2026/07/WO9030FA-HKM.jpg",
+       "caption": "RIGEL Gallant WO9030FA-HKM toilet",
+       "kind": "product",
+       "source": "https://www.rigel-group.com/",
+       "alt": "RIGEL Gallant WO9030FA-HKM toilet",
+       "width": 1500,
+       "height": 1500
+      }
+     ],
+     "headline": "Steady temperature, short toilet",
+     "love": "Thermostat keeps the water temperature steady.",
+     "watchOut": "Heater must suit it; gun-metal shower.",
+     "bestFor": "Comfort, if the heater matches",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Light Avenue",
+       "price": 525,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://www.lightavenuesg.com/products/rigel-wo9030fa-hkm-one-piece-water-closet",
+       "priceNote": "RIGEL Gallant toilet"
+      },
+      {
+       "shop": "HardwareCity",
+       "price": 699,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://hardwarecity.com.sg/prod/rigel-w2rtsme14418t-thermostatic-gun-metal-rain-shower-set",
+       "priceNote": "RIGEL TSME14418T thermostat shower"
+      },
+      {
+       "shop": "Hoe Kee",
+       "price": 79,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.hoekee.com.sg/bathroom/grohe-tempesta-f-trigger-spray-30-wall-holder-set-1-spray.html",
+       "priceNote": "GROHE Tempesta-F bidet spray"
+      }
+     ],
+     "specs": {
+      "Toilet size (W × D × H)": "37 × 65 × 75 cm",
+      "One-piece": "Yes",
+      "Rimless bowl": "Yes",
+      "Soft-close seat": "Not stated",
+      "Shower": "Rain head + hand shower, gun metal",
+      "Foot-wash spout": "Long bath mixer; confirm spout",
+      "Bidet spray": "Yes, GROHE",
+      "Thermostat": "Yes",
+      "Parts price": "S$1,303",
+      "Installed total": "Quote; budget S$1,950",
+      "In stock": "Available online (Light Avenue)",
+      "Toilet warranty": "Ask the shop"
+     },
+     "shopper": {
+      "headline": "Steady temperature, short toilet",
+      "love": "Thermostat keeps the water temperature steady.",
+      "watchOut": "Heater must suit it; gun-metal shower.",
+      "bestFor": "Comfort, if the heater matches",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Thermostat",
+       "65 cm toilet",
+       "S$1,303 parts"
+      ],
+      "specs": {
+       "Toilet size (W × D × H)": "37 × 65 × 75 cm",
+       "One-piece": "Yes",
+       "Rimless bowl": "Yes",
+       "Soft-close seat": "Not stated",
+       "Shower": "Rain head + hand shower, gun metal",
+       "Foot-wash spout": "Long bath mixer; confirm spout",
+       "Bidet spray": "Yes, GROHE",
+       "Thermostat": "Yes",
+       "Parts price": "S$1,303",
+       "Installed total": "Quote; budget S$1,950",
+       "In stock": "Available online (Light Avenue)",
+       "Toilet warranty": "Ask the shop"
+      },
+      "offers": [
+       {
+        "shop": "Light Avenue",
+        "price": 525,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://www.lightavenuesg.com/products/rigel-wo9030fa-hkm-one-piece-water-closet",
+        "priceNote": "RIGEL Gallant toilet"
+       },
+       {
+        "shop": "HardwareCity",
+        "price": 699,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://hardwarecity.com.sg/prod/rigel-w2rtsme14418t-thermostatic-gun-metal-rain-shower-set",
+        "priceNote": "RIGEL TSME14418T thermostat shower"
+       },
+       {
+        "shop": "Hoe Kee",
+        "price": 79,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.hoekee.com.sg/bathroom/grohe-tempesta-f-trigger-spray-30-wall-holder-set-1-spray.html",
+        "priceNote": "GROHE Tempesta-F bidet spray"
+       }
+      ],
+      "priceNote": "Parts only; S$647 left for fitting within S$1,950"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.lightavenuesg.com/products/rigel-wo9030fa-hkm-one-piece-water-closet"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     },
+     "priceNote": "Parts only; S$647 left for fitting within S$1,950"
+    },
     {
      "id": "6c6104d9-f229-4cd4-af56-a9d41c6b1f3b",
      "label": "RIGEL WO8056F set",
@@ -5343,12 +6299,12 @@
     "11.11"
    ],
    "costBasis": "budget",
-   "answer10s": "Both sets use the same RIGEL shower and GROHE bidet spray (S$1,367.90 in parts). Pick the RIGEL toilet for a shorter 68 cm fit, or American Standard for a longer seat.",
-   "summary": "Two toilet sets with the same shower and bidet spray, S$1,950 installed budget.",
+   "answer10s": "RIGEL Gallant set (S$1,093.90 in parts) is the starting point: a short 65 cm toilet, RIGEL shower and GROHE bidet. Thermostat version S$1,303.",
+   "summary": "Five toilet sets with shower and bidet spray, S$1,950 installed budget.",
    "researchedAt": "2026-10-30",
    "publicationPolicy": "stock-owner-video-v1",
    "shopper": {
-    "answer10s": "Both sets use the same RIGEL shower and GROHE bidet spray (S$1,367.90 in parts). Pick the RIGEL toilet for a shorter 68 cm fit, or American Standard for a longer seat.",
+    "answer10s": "RIGEL Gallant set (S$1,093.90 in parts) is the starting point: a short 65 cm toilet, RIGEL shower and GROHE bidet. Thermostat version S$1,303.",
     "mustKnow": [
      "Keep the old Paloma heater only if it passes inspection.",
      "Confirm the shower comes with a foot-wash spout.",
@@ -5905,6 +6861,93 @@
       }
      },
      "priceText": "S$69 a module, plus plates"
+    },
+    {
+     "id": "f554d526-116a-4b07-85fc-d69918fd6fad",
+     "label": "Schneider Vivace",
+     "name": "Schneider Electric Vivace (white)",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 2.2,
+     "images": [],
+     "headline": "Cheapest normal switches",
+     "love": "Very cheap plates for every normal switch.",
+     "watchOut": "No phone control on their own.",
+     "bestFor": "Most switches and sockets",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Kak Guan",
+       "price": 2.2,
+       "stock": "Catalogue price",
+       "checked": "2026-10-30",
+       "url": "https://www.kakguan.com.sg/products/switch",
+       "priceNote": "Switch KB31/1; sockets S$2.80–4.50"
+      }
+     ],
+     "specs": {
+      "Size": "Standard plate",
+      "Lights controlled": "1 or more, by model",
+      "Phone and Apple Home": "No",
+      "Works without internet": "Yes",
+      "Dims lights": "No",
+      "Needs neutral wire": "Not needed",
+      "Hub needed": "None",
+      "Price": "From S$2.20 (sockets S$2.80–4.50)",
+      "In stock": "Catalogue price (Kak Guan)",
+      "Warranty": "Not stated by the shop"
+     },
+     "shopper": {
+      "headline": "Cheapest normal switches",
+      "love": "Very cheap plates for every normal switch.",
+      "watchOut": "No phone control on their own.",
+      "bestFor": "Most switches and sockets",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "From S$2.20",
+       "No hub",
+       "Matching sockets"
+      ],
+      "specs": {
+       "Size": "Standard plate",
+       "Lights controlled": "1 or more, by model",
+       "Phone and Apple Home": "No",
+       "Works without internet": "Yes",
+       "Dims lights": "No",
+       "Needs neutral wire": "Not needed",
+       "Hub needed": "None",
+       "Price": "From S$2.20 (sockets S$2.80–4.50)",
+       "In stock": "Catalogue price (Kak Guan)",
+       "Warranty": "Not stated by the shop"
+      },
+      "offers": [
+       {
+        "shop": "Kak Guan",
+        "price": 2.2,
+        "stock": "Catalogue price",
+        "checked": "2026-10-30",
+        "url": "https://www.kakguan.com.sg/products/switch",
+        "priceNote": "Switch KB31/1; sockets S$2.80–4.50"
+       }
+      ],
+      "priceText": "From S$2.20 a switch"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.kakguan.com.sg/products/switch"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of these exact plates; the contractor usually supplies them."
+      }
+     },
+     "priceText": "From S$2.20 a switch"
     }
    ],
    "roughBudget": {
@@ -5921,12 +6964,12 @@
     "black_friday"
    ],
    "qty": 1,
-   "answer10s": "Normal Schneider AvatarOn plates for most of the flat, with Aqara H1 smart switches for a few living-room lights. Dimmable hidden lights are planned with the lighting.",
+   "answer10s": "Cheapest: Schneider Vivace plates (from S$2.20) for normal switches. Add Aqara D1 or H1 smart switches only where a light needs Apple Home.",
    "summary": "Normal plates, smart switches and hidden smart modules, from S$11.50 to S$99 each.",
    "researchedAt": "2026-10-30",
    "publicationPolicy": "stock-owner-video-v1",
    "shopper": {
-    "answer10s": "Normal Schneider AvatarOn plates for most of the flat, with Aqara H1 smart switches for a few living-room lights. Dimmable hidden lights are planned with the lighting.",
+    "answer10s": "Cheapest: Schneider Vivace plates (from S$2.20) for normal switches. Add Aqara D1 or H1 smart switches only where a light needs Apple Home.",
     "mustKnow": [
      "Smart on/off switches don't dim lights.",
      "Aqara needs a hub for phone and Apple Home control.",
@@ -11840,6 +12883,288 @@
    }
   },
   {
+   "id": "CV-VAC",
+   "slug": "cordless-vacuum",
+   "area": "whole-home",
+   "category": "Cleaning",
+   "group": "loose",
+   "priority": "nice",
+   "title": "Cordless vacuum",
+   "question": "Which cordless stick vacuum?",
+   "stage": "move_in",
+   "status": "voting",
+   "candidates": [],
+   "legacySlugs": [],
+   "qty": 1,
+   "sales": [
+    "11.11"
+   ],
+   "options": [
+    {
+     "id": "6b1f43ae-1ae1-444f-b17b-3d51958ad677",
+     "label": "Shark LC200",
+     "name": "Shark EvoPower System NEO LC200SMIV",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 299,
+     "images": [
+      {
+       "src": "https://cdn.bestdenki.com.sg/media/catalog/product/1/1/1105902-1_1.jpg",
+       "caption": "Shark EvoPower System NEO LC200",
+       "kind": "product",
+       "source": "https://www.bestdenki.com.sg/1105902-shark-rechargeable-vac-lc200smiv.html",
+       "alt": "Shark EvoPower System NEO LC200",
+       "width": 800,
+       "height": 800
+      }
+     ],
+     "headline": "Light, two batteries, good value",
+     "love": "1.5 kg with two swappable batteries.",
+     "watchOut": "Empty the bin by hand; wand doesn’t fold.",
+     "bestFor": "Sofa, corners and spots the robot misses",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Best Denki",
+       "price": 299,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.bestdenki.com.sg/1105902-shark-rechargeable-vac-lc200smiv.html",
+       "priceNote": "8 left"
+      },
+      {
+       "shop": "SharkNinja Singapore",
+       "price": 599,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://sharkninja.sg/products/shark-evopower-system-neo-lc200"
+      }
+     ],
+     "specs": {
+      "Weight (complete)": "1.5 kg",
+      "Battery": "Up to 50 min (two batteries)",
+      "Turns into a handheld": "Yes",
+      "Sofa tool": "Yes, motorised",
+      "Removable battery": "Yes, two included",
+      "Adjusts suction itself": "Yes",
+      "Empties itself": "No",
+      "Price": "S$299 (official price S$599)",
+      "In stock": "Yes (Best Denki, 8 left)",
+      "Spare battery": "S$89.99",
+      "Warranty": "2 years"
+     },
+     "shopper": {
+      "headline": "Light, two batteries, good value",
+      "love": "1.5 kg with two swappable batteries.",
+      "watchOut": "Empty the bin by hand; wand doesn’t fold.",
+      "bestFor": "Sofa, corners and spots the robot misses",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "1.5 kg",
+       "Two batteries",
+       "S$299"
+      ],
+      "specs": {
+       "Weight (complete)": "1.5 kg",
+       "Battery": "Up to 50 min (two batteries)",
+       "Turns into a handheld": "Yes",
+       "Sofa tool": "Yes, motorised",
+       "Removable battery": "Yes, two included",
+       "Adjusts suction itself": "Yes",
+       "Empties itself": "No",
+       "Price": "S$299 (official price S$599)",
+       "In stock": "Yes (Best Denki, 8 left)",
+       "Spare battery": "S$89.99",
+       "Warranty": "2 years"
+      },
+      "offers": [
+       {
+        "shop": "Best Denki",
+        "price": 299,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.bestdenki.com.sg/1105902-shark-rechargeable-vac-lc200smiv.html",
+        "priceNote": "8 left"
+       },
+       {
+        "shop": "SharkNinja Singapore",
+        "price": 599,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://sharkninja.sg/products/shark-evopower-system-neo-lc200"
+       }
+      ],
+      "priceNote": "Best Denki price; not worth the official S$599"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.bestdenki.com.sg/1105902-shark-rechargeable-vac-lc200smiv.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     },
+     "priceNote": "Best Denki price; not worth the official S$599"
+    },
+    {
+     "id": "a6a03eb9-3c04-4010-a234-b44b0ed78c91",
+     "label": "Dyson V8 Cyclone",
+     "name": "Dyson V8 Cyclone",
+     "kind": "product",
+     "tier": "Splurge",
+     "price": 459,
+     "images": [],
+     "headline": "Premium, soft floor roller",
+     "love": "Soft roller for hard floors; sealed filtering.",
+     "watchOut": "S$160 more; heavier at 2.3 kg.",
+     "bestFor": "Paying more for the Dyson floor head",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Dyson Singapore",
+       "price": 459,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.dyson.com.sg/v8-cyclone-cordless-vacuum"
+      }
+     ],
+     "specs": {
+      "Weight (complete)": "2.3 kg",
+      "Battery": "Up to 60 min (Eco, handheld)",
+      "Turns into a handheld": "Yes",
+      "Sofa tool": "Yes, motorised",
+      "Removable battery": "Yes, click-in",
+      "Adjusts suction itself": "No",
+      "Empties itself": "No",
+      "Price": "S$459",
+      "In stock": "Can order (Dyson)",
+      "Spare battery": "Not stated",
+      "Warranty": "2 years parts and labour"
+     },
+     "shopper": {
+      "headline": "Premium, soft floor roller",
+      "love": "Soft roller for hard floors; sealed filtering.",
+      "watchOut": "S$160 more; heavier at 2.3 kg.",
+      "bestFor": "Paying more for the Dyson floor head",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Owners find switching modes and reading the battery level fiddly.",
+      "chips": [
+       "Soft floor roller",
+       "Sofa tool",
+       "S$459"
+      ],
+      "specs": {
+       "Weight (complete)": "2.3 kg",
+       "Battery": "Up to 60 min (Eco, handheld)",
+       "Turns into a handheld": "Yes",
+       "Sofa tool": "Yes, motorised",
+       "Removable battery": "Yes, click-in",
+       "Adjusts suction itself": "No",
+       "Empties itself": "No",
+       "Price": "S$459",
+       "In stock": "Can order (Dyson)",
+       "Spare battery": "Not stated",
+       "Warranty": "2 years parts and labour"
+      },
+      "offers": [
+       {
+        "shop": "Dyson Singapore",
+        "price": 459,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.dyson.com.sg/v8-cyclone-cordless-vacuum"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.dyson.com.sg/v8-cyclone-cordless-vacuum"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/dyson/comments/1t4n84b/dyson_v8_cyclone_design_issues/",
+       "exactModel": true
+      }
+     }
+    }
+   ],
+   "answer10s": "Shark LC200 (S$299 at Best Denki) for furniture, corners and quick cleans alongside the robot. Dyson V8 Cyclone (S$459) for its soft floor roller.",
+   "summary": "Two cordless stick vacuums that also work as handhelds.",
+   "researchedAt": "2026-10-30",
+   "mustKnow": [
+    "Dry dirt only.",
+    "Listed weights are the whole stick, not handheld.",
+    "Battery times are measured differently by each brand."
+   ],
+   "contractorNote": "A socket near where the vacuum is stored; confirm the spot if using the Dyson wall dock.",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Shark LC200 (S$299 at Best Denki) for furniture, corners and quick cleans alongside the robot. Dyson V8 Cyclone (S$459) for its soft floor roller.",
+    "mustKnow": [
+     "Dry dirt only.",
+     "Listed weights are the whole stick, not handheld.",
+     "Battery times are measured differently by each brand."
+    ],
+    "contractorNote": "A socket near where the vacuum is stored; confirm the spot if using the Dyson wall dock.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Weight (complete)"
+      ]
+     },
+     {
+      "group": "Performance",
+      "rows": [
+       "Battery"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Turns into a handheld",
+       "Sofa tool",
+       "Removable battery",
+       "Adjusts suction itself",
+       "Empties itself"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Running costs",
+      "rows": [
+       "Spare battery"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
+   }
+  },
+  {
    "id": "LV08",
    "slug": "air-purifier",
    "area": "living",
@@ -12285,7 +13610,7 @@
     "contractorNote": "Measure the finished ceiling height and anything in the way (partition, wardrobe, curtains, hidden lights). Follow the fan manual’s clearances. Fit after the dusty work.",
     "alsoConsidered": [
      {
-      "brand": "KDK F40GP",
+      "brand": "KDK F40GP (S$463)",
       "reason": "Needs 1 m from blade to wall; room too small"
      }
     ],
@@ -12538,18 +13863,131 @@
      },
      "priceNote": "Installed, every ceiling edge",
      "priceText": "Quote needed"
+    },
+    {
+     "id": "dd2a8c36-a23f-49c7-bd3e-bc4d8a874e92",
+     "label": "IKEA ORMANÄS ×4",
+     "name": "IKEA ORMANÄS strips (4) + DIRIGERA hub",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 298.6,
+     "images": [
+      {
+       "src": "https://www.ikea.com/sg/en/images/products/ormanaes-led-lighting-strip-smart-wireless-dimmable-colour-and-white-spectrum__1209372_pe909169_s5.jpg?f=xl",
+       "caption": "IKEA ORMANÄS LED strip",
+       "kind": "product",
+       "source": "https://www.ikea.com/sg/en/p/ormanaes-led-lighting-strip-smart-wireless-dimmable-colour-and-white-spectrum-00541319/",
+       "alt": "IKEA ORMANÄS LED strip",
+       "width": 900,
+       "height": 900
+      }
+     ],
+     "headline": "Budget strips, shared IKEA hub",
+     "love": "Cheap strips; one hub can serve other rooms.",
+     "watchOut": "Four separately powered sections; check the glow.",
+     "bestFor": "Keeping costs down",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "IKEA",
+       "price": 39.9,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.ikea.com/sg/en/p/ormanaes-led-lighting-strip-smart-wireless-dimmable-colour-and-white-spectrum-00541319/",
+       "priceNote": "Per 4 m strip"
+      },
+      {
+       "shop": "IKEA",
+       "price": 139,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.ikea.com/sg/en/p/dirigera-hub-for-smart-products-white-smart-50503409/",
+       "priceNote": "DIRIGERA hub"
+      }
+     ],
+     "specs": {
+      "Covers": "Every ceiling edge (4 × 4 m)",
+      "Profile": "Slim surface profile",
+      "Light colour": "Warm to cool white",
+      "Looks like": "Small dots of light",
+      "Phone dimming": "Yes, IKEA app",
+      "Apple Home": "Yes, with IKEA hub",
+      "Installed price": "Quote; S$298.60 hardware",
+      "Power per metre": "Not stated"
+     },
+     "shopper": {
+      "headline": "Budget strips, shared IKEA hub",
+      "love": "Cheap strips; one hub can serve other rooms.",
+      "watchOut": "Four separately powered sections; check the glow.",
+      "bestFor": "Keeping costs down",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Singapore buyers rate it 4.6/5; Australian buyers 3.6/5, with some faulty LEDs.",
+      "chips": [
+       "S$298.60 hardware",
+       "Hub serves other rooms",
+       "Dims, warm to cool"
+      ],
+      "specs": {
+       "Covers": "Every ceiling edge (4 × 4 m)",
+       "Profile": "Slim surface profile",
+       "Light colour": "Warm to cool white",
+       "Looks like": "Small dots of light",
+       "Phone dimming": "Yes, IKEA app",
+       "Apple Home": "Yes, with IKEA hub",
+       "Installed price": "Quote; S$298.60 hardware",
+       "Power per metre": "Not stated"
+      },
+      "offers": [
+       {
+        "shop": "IKEA",
+        "price": 39.9,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.ikea.com/sg/en/p/ormanaes-led-lighting-strip-smart-wireless-dimmable-colour-and-white-spectrum-00541319/",
+        "priceNote": "Per 4 m strip"
+       },
+       {
+        "shop": "IKEA",
+        "price": 139,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.ikea.com/sg/en/p/dirigera-hub-for-smart-products-white-smart-50503409/",
+        "priceNote": "DIRIGERA hub"
+       }
+      ],
+      "priceNote": "4 strips + hub; profiles and installation extra",
+      "priceText": "S$298.60 hardware"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.ikea.com/sg/en/p/ormanaes-led-lighting-strip-smart-wireless-dimmable-colour-and-white-spectrum-00541319/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.ikea.com/au/en/p/ormanaes-led-lighting-strip-smart-wireless-dimmable-colour-and-white-spectrum-50541331/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "4 strips + hub; profiles and installation extra",
+     "priceText": "S$298.60 hardware",
+     "costIncomplete": true
     }
    ],
    "legacySlugs": [
     "ky-room-ambient-cove-led"
    ],
    "qty": 1,
-   "answer10s": "Get quotes for both Aqara strips round every ceiling edge. COB gives the most even glow; pick SMD if its sample looks as good and costs clearly less.",
+   "answer10s": "IKEA ORMANÄS (S$298.60 in parts for 4 strips and the hub) is the budget route. Aqara COB gives the smoothest glow; get quotes for both on the same layout.",
    "summary": "Two hidden-strip set-ups for KY’s room, quote first.",
    "researchedAt": "2026-10-30",
    "publicationPolicy": "stock-owner-video-v1",
    "shopper": {
-    "answer10s": "Get quotes for both Aqara strips round every ceiling edge. COB gives the most even glow; pick SMD if its sample looks as good and costs clearly less.",
+    "answer10s": "IKEA ORMANÄS (S$298.60 in parts for 4 strips and the hub) is the budget route. Aqara COB gives the smoothest glow; get quotes for both on the same layout.",
     "mustKnow": [
      "Covers every ceiling edge; no colours needed.",
      "Needs an Aqara hub for Apple Home.",
@@ -12896,6 +14334,135 @@
       }
      },
      "priceNote": "With basic installation on an existing point"
+    },
+    {
+     "id": "eaf40985-96ec-406b-9946-c6c557c73c95",
+     "label": "KDK F40GP",
+     "name": "KDK F40GP 40-inch",
+     "kind": "product",
+     "tier": "Splurge",
+     "price": 463,
+     "images": [
+      {
+       "src": "https://www.kdk.sg/cdn/shop/files/F40GPWHITE2.jpg?v=1773107089&width=1200",
+       "caption": "KDK F40GP ceiling fan, white",
+       "kind": "product",
+       "source": "https://www.kdk.sg/products/ceiling-fan-f40gp",
+       "alt": "KDK F40GP ceiling fan, white",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "KDK, with finer control",
+     "love": "10 speeds; light changes colour and dims.",
+     "watchOut": "Over budget; bigger 100 cm blades.",
+     "bestFor": "If size and cost are fine",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "KDK",
+       "price": 418,
+       "stock": "Pre-order, delivery from 13 Nov",
+       "checked": "2026-10-30",
+       "url": "https://www.kdk.sg/products/ceiling-fan-f40gp",
+       "priceNote": "S$45 installation"
+      },
+      {
+       "shop": "Best Denki",
+       "price": 418,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.bestdenki.com.sg/1503280-kdk-ceiling-fan-f40gp-matt-white.html",
+       "priceNote": "S$60 installation + S$30 delivery"
+      },
+      {
+       "shop": "Everjoint",
+       "price": 380,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://everjointelectrical.com.sg/product/kdk-f40gp-40inch-3-blades-wifi-control-dc-ceiling-fan-with-led-light/",
+       "priceNote": "Fan only"
+      }
+     ],
+     "specs": {
+      "Blade size": "100 cm (40-inch)",
+      "Hangs down": "31.7 cm",
+      "Warm light": "Yes",
+      "Dims the light": "Yes",
+      "Remote": "Yes, 10 speeds + app",
+      "Fan price": "S$418",
+      "With basic installation": "S$463 (KDK)",
+      "In stock": "Yes (Best Denki); KDK pre-order",
+      "Warranty": "1 year"
+     },
+     "shopper": {
+      "headline": "KDK, with finer control",
+      "love": "10 speeds; light changes colour and dims.",
+      "watchOut": "Over budget; bigger 100 cm blades.",
+      "bestFor": "If size and cost are fine",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "KDK owners are mostly positive overall; few reviews of this model.",
+      "chips": [
+       "100 cm blades",
+       "10 speeds",
+       "Wi-Fi app"
+      ],
+      "specs": {
+       "Blade size": "100 cm (40-inch)",
+       "Hangs down": "31.7 cm",
+       "Warm light": "Yes",
+       "Dims the light": "Yes",
+       "Remote": "Yes, 10 speeds + app",
+       "Fan price": "S$418",
+       "With basic installation": "S$463 (KDK)",
+       "In stock": "Yes (Best Denki); KDK pre-order",
+       "Warranty": "1 year"
+      },
+      "offers": [
+       {
+        "shop": "KDK",
+        "price": 418,
+        "stock": "Pre-order, delivery from 13 Nov",
+        "checked": "2026-10-30",
+        "url": "https://www.kdk.sg/products/ceiling-fan-f40gp",
+        "priceNote": "S$45 installation"
+       },
+       {
+        "shop": "Best Denki",
+        "price": 418,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.bestdenki.com.sg/1503280-kdk-ceiling-fan-f40gp-matt-white.html",
+        "priceNote": "S$60 installation + S$30 delivery"
+       },
+       {
+        "shop": "Everjoint",
+        "price": 380,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://everjointelectrical.com.sg/product/kdk-f40gp-40inch-3-blades-wifi-control-dc-ceiling-fan-with-led-light/",
+        "priceNote": "Fan only"
+       }
+      ],
+      "priceNote": "With KDK basic installation; over budget"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.bestdenki.com.sg/1503280-kdk-ceiling-fan-f40gp-matt-white.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/askSingapore/comments/1vyured/are_local_ceiling_fans_really_that_bad/",
+       "exactModel": false,
+       "reason": "Owners rate KDK well overall; few reviews of this exact fan."
+      }
+     },
+     "priceNote": "With KDK basic installation; over budget"
     }
    ],
    "legacySlugs": [
@@ -12907,24 +14474,20 @@
     "black_friday",
     "12.12"
    ],
-   "answer10s": "Mistral Solar 36 (S$229 installed) sits close to the ceiling. Space 36 (S$199) if the room has the height. KX should hear both at low speed first.",
+   "answer10s": "Mistral Solar 36 (S$229 installed) sits close to the ceiling. Space 36 (S$199) if the room has the height. KDK F40GP (S$463) has finer control but is over budget.",
    "summary": "Two compact 36-inch fans with warm dimmable lights, S$199–229 installed.",
    "researchedAt": "2026-10-30",
    "publicationPolicy": "stock-owner-video-v1",
    "shopper": {
-    "answer10s": "Mistral Solar 36 (S$229 installed) sits close to the ceiling. Space 36 (S$199) if the room has the height. KX should hear both at low speed first.",
+    "answer10s": "Mistral Solar 36 (S$229 installed) sits close to the ceiling. Space 36 (S$199) if the room has the height. KDK F40GP (S$463) has finer control but is over budget.",
     "mustKnow": [
      "Room size to be measured on 11 Nov.",
      "KX should check how quiet it is at low speed.",
-     "Basic installation excludes new wiring."
+     "Basic installation excludes new wiring.",
+     "KDK F40GP is S$63 over the S$400 budget."
     ],
     "contractorNote": "Concrete ceiling. Measure the room and ceiling height. Check blade clearance from the partition, wardrobe and doors. Safety wire. Quote any wiring or switch work.",
-    "alsoConsidered": [
-     {
-      "brand": "KDK F40GP",
-      "reason": "Over budget at S$380 before installation"
-     }
-    ],
+    "alsoConsidered": [],
     "groups": [
      {
       "group": "Size & fit",
@@ -13138,6 +14701,226 @@
        "reason": "Not a product."
       }
      }
+    },
+    {
+     "id": "3f1b194b-fe18-4147-9555-6a8bc673ab94",
+     "label": "IKEA ORMANÄS",
+     "name": "IKEA ORMANÄS 4 m smart strip",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 39.9,
+     "images": [
+      {
+       "src": "https://www.ikea.com/sg/en/images/products/ormanaes-led-lighting-strip-smart-wireless-dimmable-colour-and-white-spectrum__1209372_pe909169_s5.jpg?f=xl",
+       "caption": "IKEA ORMANÄS LED strip",
+       "kind": "product",
+       "source": "https://www.ikea.com/sg/en/p/ormanaes-led-lighting-strip-smart-wireless-dimmable-colour-and-white-spectrum-00541319/",
+       "alt": "IKEA ORMANÄS LED strip",
+       "width": 900,
+       "height": 900
+      }
+     ],
+     "headline": "Cheapest smart glow",
+     "love": "Flexible, dims, warm to cool white.",
+     "watchOut": "Needs the IKEA hub (S$139) for Apple Home.",
+     "bestFor": "A ledge, shelf or behind the bed",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "IKEA",
+       "price": 39.9,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.ikea.com/sg/en/p/ormanaes-led-lighting-strip-smart-wireless-dimmable-colour-and-white-spectrum-00541319/",
+       "priceNote": "Strip with plug-in driver"
+      },
+      {
+       "shop": "IKEA",
+       "price": 139,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.ikea.com/sg/en/p/dirigera-hub-for-smart-products-white-smart-50503409/",
+       "priceNote": "DIRIGERA hub for Apple Home"
+      }
+     ],
+     "specs": {
+      "Length": "4 m, cuttable",
+      "Hiding place": "Ledge, shelf or headboard",
+      "Light colour": "Warm to cool white",
+      "Colour accuracy": "Not stated",
+      "Dims": "Yes, by app or remote",
+      "Installed price": "Quote; up to S$350",
+      "Warranty": "Not stated"
+     },
+     "shopper": {
+      "headline": "Cheapest smart glow",
+      "love": "Flexible, dims, warm to cool white.",
+      "watchOut": "Needs the IKEA hub (S$139) for Apple Home.",
+      "bestFor": "A ledge, shelf or behind the bed",
+      "ownerReviews": "Mostly good",
+      "ownerSummary": "IKEA Singapore buyers rate it 4.6/5 (8 reviews); praise for the mood and easy set-up.",
+      "chips": [
+       "S$39.90",
+       "Flexible, cuttable",
+       "Hub S$139"
+      ],
+      "specs": {
+       "Length": "4 m, cuttable",
+       "Hiding place": "Ledge, shelf or headboard",
+       "Light colour": "Warm to cool white",
+       "Colour accuracy": "Not stated",
+       "Dims": "Yes, by app or remote",
+       "Installed price": "Quote; up to S$350",
+       "Warranty": "Not stated"
+      },
+      "offers": [
+       {
+        "shop": "IKEA",
+        "price": 39.9,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.ikea.com/sg/en/p/ormanaes-led-lighting-strip-smart-wireless-dimmable-colour-and-white-spectrum-00541319/",
+        "priceNote": "Strip with plug-in driver"
+       },
+       {
+        "shop": "IKEA",
+        "price": 139,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.ikea.com/sg/en/p/dirigera-hub-for-smart-products-white-smart-50503409/",
+        "priceNote": "DIRIGERA hub for Apple Home"
+       }
+      ],
+      "priceNote": "Strip only; hub and installation extra",
+      "priceText": "S$39.90 (+ S$139 hub)"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.ikea.com/sg/en/p/ormanaes-led-lighting-strip-smart-wireless-dimmable-colour-and-white-spectrum-00541319/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.ikea.com/sg/en/p/ormanaes-led-lighting-strip-smart-wireless-dimmable-colour-and-white-spectrum-00541319/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Strip only; hub and installation extra",
+     "priceText": "S$39.90 (+ S$139 hub)"
+    },
+    {
+     "id": "fcadb8fa-6e3f-4979-9adb-3bc1c16829f7",
+     "label": "IKEA MITTLED",
+     "name": "IKEA MITTLED 80 cm warm bar",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 40,
+     "images": [
+      {
+       "src": "https://www.ikea.com/sg/en/images/products/mittled-led-kitchen-worktop-lighting-strip-dimmable-white__0869941_pe781536_s5.jpg?f=xl",
+       "caption": "IKEA MITTLED LED bar",
+       "kind": "product",
+       "source": "https://www.ikea.com/sg/en/p/mittled-led-kitchen-worktop-lighting-strip-dimmable-white-50359633/",
+       "alt": "IKEA MITTLED LED bar",
+       "width": 900,
+       "height": 900
+      }
+     ],
+     "headline": "Short warm bar, true colours",
+     "love": "Warm 2700K with true colours (CRI over 90).",
+     "watchOut": "Needs a driver and cords; fixed length.",
+     "bestFor": "A short straight hiding place",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "IKEA",
+       "price": 40,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.ikea.com/sg/en/p/mittled-led-kitchen-worktop-lighting-strip-dimmable-white-50359633/",
+       "priceNote": "Bar only"
+      },
+      {
+       "shop": "IKEA",
+       "price": 35,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.ikea.com/sg/en/p/tradfri-driver-for-wireless-control-smart-grey-30540356/",
+       "priceNote": "TRÅDFRI smart driver"
+      }
+     ],
+     "specs": {
+      "Length": "80 cm bar",
+      "Hiding place": "Under a shelf",
+      "Light colour": "Warm white (2700K)",
+      "Colour accuracy": "High (CRI over 90)",
+      "Dims": "Yes, with IKEA driver",
+      "Installed price": "Quote; up to S$350",
+      "Warranty": "Not stated"
+     },
+     "shopper": {
+      "headline": "Short warm bar, true colours",
+      "love": "Warm 2700K with true colours (CRI over 90).",
+      "watchOut": "Needs a driver and cords; fixed length.",
+      "bestFor": "A short straight hiding place",
+      "ownerReviews": "Mostly good",
+      "ownerSummary": "IKEA buyers rate it 4.6/5 (11 reviews), mostly used in kitchens.",
+      "chips": [
+       "80 cm bar",
+       "Warm 2700K",
+       "CRI over 90"
+      ],
+      "specs": {
+       "Length": "80 cm bar",
+       "Hiding place": "Under a shelf",
+       "Light colour": "Warm white (2700K)",
+       "Colour accuracy": "High (CRI over 90)",
+       "Dims": "Yes, with IKEA driver",
+       "Installed price": "Quote; up to S$350",
+       "Warranty": "Not stated"
+      },
+      "offers": [
+       {
+        "shop": "IKEA",
+        "price": 40,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.ikea.com/sg/en/p/mittled-led-kitchen-worktop-lighting-strip-dimmable-white-50359633/",
+        "priceNote": "Bar only"
+       },
+       {
+        "shop": "IKEA",
+        "price": 35,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.ikea.com/sg/en/p/tradfri-driver-for-wireless-control-smart-grey-30540356/",
+        "priceNote": "TRÅDFRI smart driver"
+       }
+      ],
+      "priceNote": "Cords and hub extra",
+      "priceText": "S$40 + S$35 driver"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.ikea.com/sg/en/p/mittled-led-kitchen-worktop-lighting-strip-dimmable-white-50359633/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.ikea.com/sg/en/p/mittled-led-kitchen-worktop-lighting-strip-dimmable-white-50359633/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Cords and hub extra",
+     "priceText": "S$40 + S$35 driver"
     }
    ],
    "legacySlugs": [
@@ -13145,12 +14928,12 @@
    ],
    "qty": 1,
    "costBasis": "budget",
-   "answer10s": "Get a quote for one hidden, dimmable warm strip using an existing hiding place. Fit it only if the whole job is S$350 or less; otherwise skip it.",
+   "answer10s": "Cheapest: IKEA ORMANÄS strip (S$39.90, plus the S$139 IKEA hub for Apple Home). Philips strip for a quoted install. Skip it if the job goes over S$350.",
    "summary": "One hidden warm strip, or nothing extra.",
    "researchedAt": "2026-10-30",
    "publicationPolicy": "stock-owner-video-v1",
    "shopper": {
-    "answer10s": "Get a quote for one hidden, dimmable warm strip using an existing hiding place. Fit it only if the whole job is S$350 or less; otherwise skip it.",
+    "answer10s": "Cheapest: IKEA ORMANÄS strip (S$39.90, plus the S$139 IKEA hub for Apple Home). Philips strip for a quoted install. Skip it if the job goes over S$350.",
     "mustKnow": [
      "Makeup lighting stays separate.",
      "Dimming should be shown working before paying.",
