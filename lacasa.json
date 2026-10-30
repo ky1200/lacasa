@@ -1267,17 +1267,7 @@
      "kind": "product",
      "tier": "Splurge",
      "price": 1039.5,
-     "images": [
-      {
-       "src": "https://dk7e3dsghw78b.cloudfront.net/sites/files/watelier/productimg/202211/800x800/c889.jpg",
-       "caption": "TOTO C889DESI toilet",
-       "kind": "product",
-       "source": "https://www.watelier.com/product/bathroom-sanitary-wares-toilets-one-piece/toto-one-piece-toilet-c889desi",
-       "alt": "TOTO C889DESI toilet",
-       "width": 800,
-       "height": 800
-      }
-     ],
+     "images": [],
      "headline": "Premium TOTO, over budget",
      "love": "Strong swirl flush; glaze resists stains.",
      "watchOut": "Takes the bathroom to about S$4,843.",

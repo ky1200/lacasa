@@ -5,7 +5,7 @@ export const todaySG = (now = new Date()) => new Intl.DateTimeFormat('en-CA', {t
 export const slug = value => String(value).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 const amount = v => { const cents = Math.round(v*100)%100 !== 0; return (cents ? Math.round(v*100)/100 : Math.round(v)).toLocaleString('en-SG',{minimumFractionDigits:cents?2:0,maximumFractionDigits:2}); };
 export const money = value => value == null ? 'Price TBC' : `S$${amount(value)}`;
-export const range = (min,max) => min === max ? money(min) : `${money(min)}–${amount(max)}`;
+export const range = (min,max) => min === max ? money(min) : `S$${Math.round(min).toLocaleString('en-SG')}–${Math.round(max).toLocaleString('en-SG')}`;
 export const estimated = (value,estimate=false) => estimate ? `about ${value}` : value;
 export const tbcCount = n => `${n} ${n===1?'price':'prices'} TBC`;
 export function costSummary({min,max,priced,tbc=0,rough=0}) {
