@@ -323,3 +323,16 @@ html.is-loading::before{content:'';position:fixed;top:0;left:0;height:3px;width:
 /* Items chosen in person: a short note under the label */
 .pending-visit{margin:10px 0 4px;font-size:15px;color:var(--body)}
 .research-box p{margin-top:8px;font-size:15px}
+
+/* Option photo gallery: swipe through every photo of a model */
+.option-card .option-gallery{margin:-22px -22px 18px;position:relative}
+.option-card .og-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-radius:20px 20px 0 0;background:#fff;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch}
+.option-card .og-track::-webkit-scrollbar{display:none}
+.option-card .og-track:focus-visible{outline:2px solid var(--indigo);outline-offset:-2px}
+.option-card .og-slide{flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always;aspect-ratio:4/3;display:grid;place-items:center;padding:14px;margin:0;border:0;border-radius:0;background:#fff;cursor:zoom-in;box-shadow:none}
+.option-card .og-slide img{width:100%;height:100%;object-fit:contain;border-radius:0;background:transparent;aspect-ratio:auto}
+.option-card .og-dots{display:flex;justify-content:center;gap:6px;padding:10px 0 0}
+.option-card .og-dots span{width:6px;height:6px;border-radius:50%;background:var(--line);transition:background .2s,transform .2s}
+.option-card .og-dots span.on{background:var(--body);transform:scale(1.25)}
+.photo-sources{font-size:14px;color:var(--muted);margin-top:12px}
+@media (prefers-reduced-motion:reduce){.option-card .og-dots span{transition:none}}
