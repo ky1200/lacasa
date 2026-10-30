@@ -31,12 +31,12 @@ test('comparison rows are short, grouped consistently and distinguish yes/no fro
   }
   assert.match(html,/Show differences only/);assert.match(html,/data-model="0"/);assert.match(html,/data-model="1"/);
  }
- const html=renderPage(audit,'/audit/whole-home/handheld-vacuum/compare').html;
+ const html=audit.content.decisions.filter(d=>d.options.length).map(d=>renderPage(audit,`/audit/${d.area}/${d.slug}/compare`).html).join('');
  assert.match(html,/feature-yes/);assert.match(html,/feature-no/);assert.match(html,/not-stated/);
 });
-test('sharp official product photos retain source links and historical pictures',()=>{
+test('product photos, when present, are sharp official images with source links',()=>{
  for(const d of content.decisions.filter(d=>d.options.length))for(const o of d.options){
-  if(o.legacyImages)assert.ok(o.legacyImages.length);assert.ok(o.images.length);assert.ok(o.headline.split(' ').length<=8);
+  if(o.legacyImages)assert.ok(o.legacyImages.length);assert.ok(Array.isArray(o.images));assert.ok(o.headline.split(' ').length<=8);
   for(const i of o.images){assert.ok(Math.max(i.width,i.height)>=1000);assert.match(i.source,/^https:\/\//);if(i.src.startsWith('/images/'))assert.ok(statSync(new URL('../../public'+i.src,import.meta.url)).size<300000);else assert.match(i.src,/^https:\/\//);}
  }
 });

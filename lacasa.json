@@ -1,6 +1,6 @@
 {
  "version": "3.0",
- "updated": "2026-10-29",
+ "updated": "2026-10-30",
  "admin": "KY",
  "budget": null,
  "people": [
@@ -171,24 +171,512 @@
    "group": "fittings",
    "priority": "essential",
    "title": "Living room lighting",
-   "question": "Which lighting look do we want?",
+   "question": "Which lights for the living room?",
    "stage": "contractor",
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "Cove lighting + downlights + ceiling fan",
     "Downlights + track/spotlights",
     "Ceiling fan light only (+ floor lamp)"
    ],
    "roughBudget": {
-    "min": 1200,
+    "min": 900,
     "max": 1200,
-    "source": "Brief allowance, 6 Oct"
+    "source": "Installed, target S$900–1,100, no more than S$1,200"
    },
-   "contractorNote": "Positions of cove, downlights and track; warm/adjustable white with dimming; accessible drivers; a physical wall switch even if app-controlled.",
+   "contractorNote": "Check the existing ceiling. Separate power for downlights, strip and fan. Keep the strip's power box reachable. No normal wall dimmer on smart lights. Check glare, fan shadows and how low the lights dim.",
    "mustKnow": [
-    "Living area about 295 × 388 cm"
+    "Plan: hidden light strip along the ceiling edge, four downlights and the ceiling fan.",
+    "Installed budget S$900–1,100; no more than S$1,200.",
+    "Don't fit a normal wall dimmer to smart lights.",
+    "Simpler fallback: fan light plus a floor lamp."
    ],
-   "options": [],
+   "options": [
+    {
+     "id": "a317c244-2c84-40a2-b64e-bf549c50d658",
+     "label": "WiZ warm kit",
+     "name": "WiZ Gen2 11W downlights ×4 + WiZ 4 m strip",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 262.3,
+     "images": [
+      {
+       "src": "https://www.assets.signify.com/is/image/Signify/WIZ_WIFI_LEDStrip_2M_ON-SPP?wid=1200&hei=1200",
+       "caption": "WiZ LED strip starter kit",
+       "kind": "product",
+       "source": "https://www.pantrade.com.sg/collections/wiz/products/wiz-wi-fi-led-strip-2m-1600lm-starter-kit-and-1m-800lm-extension",
+       "alt": "WiZ LED strip starter kit",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Cheapest, with the warmest evening light",
+     "love": "Goes down to a very warm 2200K.",
+     "watchOut": "Strip dots may show; needs hiding well.",
+     "bestFor": "Our default: good value",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Pantrade",
+       "price": 28.9,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.pantrade.com.sg/collections/wiz/products/wiz-smart-recessed-downlight-rgb-11w-rd5-822-65",
+       "priceNote": "Each downlight (WiZ Gen2 11W)"
+      },
+      {
+       "shop": "Pantrade",
+       "price": 98.9,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.pantrade.com.sg/collections/wiz/products/wiz-wi-fi-led-strip-2m-1600lm-starter-kit-and-1m-800lm-extension",
+       "priceNote": "2 m strip kit; 1 m extensions S$23.90"
+      }
+     ],
+     "specs": {
+      "Downlight size": "14 cm round, 3.5 cm deep",
+      "Ceiling hole": "Check the template on site",
+      "Light colour range": "2200–6500K",
+      "Brightness (each downlight)": "900 lm",
+      "Colour accuracy": "Standard (CRI 80)",
+      "Phone and Apple Home": "Yes, over Wi-Fi",
+      "Hub needed": "No",
+      "Dims": "Yes",
+      "Lights price (4 downlights + strip)": "S$262.30",
+      "In stock": "Can order (Pantrade)",
+      "Power (each downlight)": "11 W",
+      "Warranty": "2 years"
+     },
+     "shopper": {
+      "headline": "Cheapest, with the warmest evening light",
+      "love": "Goes down to a very warm 2200K.",
+      "watchOut": "Strip dots may show; needs hiding well.",
+      "bestFor": "Our default: good value",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Owners are mixed on the WiZ app; few reviews of these exact lights.",
+      "chips": [
+       "4 downlights + 4 m strip",
+       "Apple Home, no hub",
+       "2200–6500K"
+      ],
+      "specs": {
+       "Downlight size": "14 cm round, 3.5 cm deep",
+       "Ceiling hole": "Check the template on site",
+       "Light colour range": "2200–6500K",
+       "Brightness (each downlight)": "900 lm",
+       "Colour accuracy": "Standard (CRI 80)",
+       "Phone and Apple Home": "Yes, over Wi-Fi",
+       "Hub needed": "No",
+       "Dims": "Yes",
+       "Lights price (4 downlights + strip)": "S$262.30",
+       "In stock": "Can order (Pantrade)",
+       "Power (each downlight)": "11 W",
+       "Warranty": "2 years"
+      },
+      "offers": [
+       {
+        "shop": "Pantrade",
+        "price": 28.9,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.pantrade.com.sg/collections/wiz/products/wiz-smart-recessed-downlight-rgb-11w-rd5-822-65",
+        "priceNote": "Each downlight (WiZ Gen2 11W)"
+       },
+       {
+        "shop": "Pantrade",
+        "price": 98.9,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.pantrade.com.sg/collections/wiz/products/wiz-wi-fi-led-strip-2m-1600lm-starter-kit-and-1m-800lm-extension",
+        "priceNote": "2 m strip kit; 1 m extensions S$23.90"
+       }
+      ],
+      "priceNote": "Lights only; installation about S$900–1,100"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.pantrade.com.sg/collections/wiz/products/wiz-smart-recessed-downlight-rgb-11w-rd5-822-65"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/wiz/comments/1fu4pao/im_done_what_other_smart_light_brands_do_you/",
+       "exactModel": false,
+       "reason": "Few reviews of these exact lights; owners are mixed on the WiZ app overall."
+      }
+     },
+     "priceNote": "Lights only; installation about S$900–1,100"
+    },
+    {
+     "id": "7012e982-63f9-44e3-95a6-7f57e1338747",
+     "label": "WiZ bright kit",
+     "name": "WiZ 12.5W tunable downlights ×4 + WiZ 4 m strip",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 262.3,
+     "images": [
+      {
+       "src": "https://www.assets.signify.com/is/image/Signify/Wiz-WFB-WiFi-BLE-RD-5inch-6inch-1CT-On-SPP?wid=1200&hei=1200",
+       "caption": "WiZ 5-inch recessed downlight",
+       "kind": "product",
+       "source": "https://www.courts.com.sg/wiz-5-inch-12.5w-recessed-downlight-125mm-rd-white-929002647317-IP204363.html",
+       "alt": "WiZ 5-inch recessed downlight",
+       "width": 1200,
+       "height": 1200
+      },
+      {
+       "src": "https://www.assets.signify.com/is/image/Signify/WIZ_WIFI_LEDStrip_2M_ON-SPP?wid=1200&hei=1200",
+       "caption": "WiZ LED strip starter kit",
+       "kind": "product",
+       "source": "https://www.pantrade.com.sg/collections/wiz/products/wiz-wi-fi-led-strip-2m-1600lm-starter-kit-and-1m-800lm-extension",
+       "alt": "WiZ LED strip starter kit",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Brighter white, same price",
+     "love": "Brightest downlights here.",
+     "watchOut": "Thicker; not as warm at night.",
+     "bestFor": "If the room needs more light",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "COURTS",
+       "price": 28.9,
+       "stock": "Made to order",
+       "checked": "2026-10-30",
+       "url": "https://www.courts.com.sg/wiz-5-inch-12.5w-recessed-downlight-125mm-rd-white-929002647317-IP204363.html",
+       "priceNote": "Each downlight (WiZ 12.5W)"
+      },
+      {
+       "shop": "Pantrade",
+       "price": 98.9,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.pantrade.com.sg/collections/wiz/products/wiz-wi-fi-led-strip-2m-1600lm-starter-kit-and-1m-800lm-extension",
+       "priceNote": "2 m strip kit; 1 m extensions S$23.90"
+      }
+     ],
+     "specs": {
+      "Downlight size": "14 cm round, 4.7 cm deep",
+      "Ceiling hole": "About 12.5 cm",
+      "Light colour range": "2700–6500K",
+      "Brightness (each downlight)": "1100 lm",
+      "Colour accuracy": "Standard (CRI 80)",
+      "Phone and Apple Home": "Yes, over Wi-Fi",
+      "Hub needed": "No",
+      "Dims": "Yes",
+      "Lights price (4 downlights + strip)": "S$262.30",
+      "In stock": "Made to order (COURTS)",
+      "Power (each downlight)": "12.5 W",
+      "Warranty": "2 years"
+     },
+     "shopper": {
+      "headline": "Brighter white, same price",
+      "love": "Brightest downlights here.",
+      "watchOut": "Thicker; not as warm at night.",
+      "bestFor": "If the room needs more light",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "1100 lm each",
+       "Apple Home, no hub",
+       "2700–6500K"
+      ],
+      "specs": {
+       "Downlight size": "14 cm round, 4.7 cm deep",
+       "Ceiling hole": "About 12.5 cm",
+       "Light colour range": "2700–6500K",
+       "Brightness (each downlight)": "1100 lm",
+       "Colour accuracy": "Standard (CRI 80)",
+       "Phone and Apple Home": "Yes, over Wi-Fi",
+       "Hub needed": "No",
+       "Dims": "Yes",
+       "Lights price (4 downlights + strip)": "S$262.30",
+       "In stock": "Made to order (COURTS)",
+       "Power (each downlight)": "12.5 W",
+       "Warranty": "2 years"
+      },
+      "offers": [
+       {
+        "shop": "COURTS",
+        "price": 28.9,
+        "stock": "Made to order",
+        "checked": "2026-10-30",
+        "url": "https://www.courts.com.sg/wiz-5-inch-12.5w-recessed-downlight-125mm-rd-white-929002647317-IP204363.html",
+        "priceNote": "Each downlight (WiZ 12.5W)"
+       },
+       {
+        "shop": "Pantrade",
+        "price": 98.9,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.pantrade.com.sg/collections/wiz/products/wiz-wi-fi-led-strip-2m-1600lm-starter-kit-and-1m-800lm-extension",
+        "priceNote": "2 m strip kit; 1 m extensions S$23.90"
+       }
+      ],
+      "priceNote": "Lights only; installation about S$900–1,100"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.courts.com.sg/wiz-5-inch-12.5w-recessed-downlight-125mm-rd-white-929002647317-IP204363.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://forums.hardwarezone.com.sg/threads/smart-lighting.6552597/",
+       "exactModel": false,
+       "reason": "Few owner reviews of this exact downlight yet."
+      }
+     },
+     "priceNote": "Lights only; installation about S$900–1,100"
+    },
+    {
+     "id": "335b15d6-2037-4cfc-8c3c-bd2227994633",
+     "label": "Aqara kit",
+     "name": "Aqara Smart Downlight T2 ×4 + Aqara LED Strip T1 4 m",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 515,
+     "images": [
+      {
+       "src": "https://ecom.pfetech.com/static/1783251841971-Aqara-Smart-Downlight-T2.jpg",
+       "caption": "Aqara Smart Downlight T2",
+       "kind": "product",
+       "source": "https://pfetech.com/aqara/product/aqara-smart-downlights-t2/",
+       "alt": "Aqara Smart Downlight T2",
+       "width": 1200,
+       "height": 1200
+      },
+      {
+       "src": "https://ecom.pfetech.com/static/1783251852170-Aqara-LED-Strip-T1-Product-Picture.jpg",
+       "caption": "Aqara LED Strip T1",
+       "kind": "product",
+       "source": "https://pfetech.com/aqara/product/aqara-led-strip-t1/",
+       "alt": "Aqara LED Strip T1",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Truer colours, costs more",
+     "love": "Truer colours; light source sits deep, less glare.",
+     "watchOut": "S$99 each light, plus an Aqara hub.",
+     "bestFor": "If the difference shows in person",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Aqara Singapore (PFE)",
+       "price": 99,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://pfetech.com/aqara/product/aqara-smart-downlights-t2/",
+       "priceNote": "Each downlight T2"
+      },
+      {
+       "shop": "Light Avenue",
+       "price": 99,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.lightavenuesg.com/products/aqara-smart-downlights-t2",
+       "priceNote": "Each downlight T2"
+      },
+      {
+       "shop": "Aqara Singapore (PFE)",
+       "price": 69,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://pfetech.com/aqara/product/aqara-led-strip-t1/",
+       "priceNote": "2 m strip; 1 m extensions S$25"
+      }
+     ],
+     "specs": {
+      "Downlight size": "8.5 cm round, 5.5 cm deep",
+      "Ceiling hole": "7.5 cm",
+      "Light colour range": "2700–6000K",
+      "Brightness (each downlight)": "Not stated",
+      "Colour accuracy": "High (CRI 90)",
+      "Phone and Apple Home": "Yes, with Aqara hub",
+      "Hub needed": "Yes, Aqara hub",
+      "Dims": "Yes",
+      "Lights price (4 downlights + strip)": "S$515 + hub",
+      "In stock": "Can order (Aqara Singapore)",
+      "Power (each downlight)": "10 W",
+      "Warranty": "2 years lights, 1 year strip"
+     },
+     "shopper": {
+      "headline": "Truer colours, costs more",
+      "love": "Truer colours; light source sits deep, less glare.",
+      "watchOut": "S$99 each light, plus an Aqara hub.",
+      "bestFor": "If the difference shows in person",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Some owners find the Aqara strip dimmer than expected; few reviews of the downlights yet.",
+      "chips": [
+       "CRI 90 downlights",
+       "Needs Aqara hub",
+       "2700–6000K"
+      ],
+      "specs": {
+       "Downlight size": "8.5 cm round, 5.5 cm deep",
+       "Ceiling hole": "7.5 cm",
+       "Light colour range": "2700–6000K",
+       "Brightness (each downlight)": "Not stated",
+       "Colour accuracy": "High (CRI 90)",
+       "Phone and Apple Home": "Yes, with Aqara hub",
+       "Hub needed": "Yes, Aqara hub",
+       "Dims": "Yes",
+       "Lights price (4 downlights + strip)": "S$515 + hub",
+       "In stock": "Can order (Aqara Singapore)",
+       "Power (each downlight)": "10 W",
+       "Warranty": "2 years lights, 1 year strip"
+      },
+      "offers": [
+       {
+        "shop": "Aqara Singapore (PFE)",
+        "price": 99,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://pfetech.com/aqara/product/aqara-smart-downlights-t2/",
+        "priceNote": "Each downlight T2"
+       },
+       {
+        "shop": "Light Avenue",
+        "price": 99,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.lightavenuesg.com/products/aqara-smart-downlights-t2",
+        "priceNote": "Each downlight T2"
+       },
+       {
+        "shop": "Aqara Singapore (PFE)",
+        "price": 69,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://pfetech.com/aqara/product/aqara-led-strip-t1/",
+        "priceNote": "2 m strip; 1 m extensions S$25"
+       }
+      ],
+      "priceNote": "Lights only; hub and installation extra"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://pfetech.com/aqara/product/aqara-smart-downlights-t2/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/Aqara/comments/1ojn5yp/i_feel_scammed_led_strip_t1_is_nowhere_near_as/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Lights only; hub and installation extra",
+     "costIncomplete": true
+    },
+    {
+     "id": "a78c64dc-6db5-4f11-ad45-a9e1dca564c9",
+     "label": "Aqara COB strip",
+     "name": "Aqara COB LED Strip T1 5 m + Smart Dimmer Module",
+     "kind": "product",
+     "tier": "Mid",
+     "price": null,
+     "images": [],
+     "headline": "Smoothest strip; get a quote first",
+     "love": "One smooth line of light, no dots.",
+     "watchOut": "Full price known only after a quote.",
+     "bestFor": "A cleaner hidden-strip look",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Aqara Singapore (PFE)",
+       "price": null,
+       "stock": "Quote needed",
+       "checked": "2026-10-30",
+       "url": "https://pfetech.com/aqara/product/aqara-smart-led-strips/",
+       "priceNote": "Strip, dimmer module and 24 V power supply"
+      }
+     ],
+     "specs": {
+      "Downlight size": "Strip only; pair with downlights",
+      "Ceiling hole": "Not needed",
+      "Light colour range": "Adjustable white",
+      "Brightness (each downlight)": "Not stated",
+      "Colour accuracy": "High (CRI 90)",
+      "Phone and Apple Home": "Yes, with Aqara hub",
+      "Hub needed": "Yes, Aqara hub",
+      "Dims": "Yes, with dimmer module",
+      "Lights price (4 downlights + strip)": "Quote needed",
+      "In stock": "Quote needed",
+      "Power (each downlight)": "Not stated",
+      "Warranty": "Not stated"
+     },
+     "shopper": {
+      "headline": "Smoothest strip; get a quote first",
+      "love": "One smooth line of light, no dots.",
+      "watchOut": "Full price known only after a quote.",
+      "bestFor": "A cleaner hidden-strip look",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "No visible dots",
+       "CRI 90",
+       "Needs Aqara hub"
+      ],
+      "specs": {
+       "Downlight size": "Strip only; pair with downlights",
+       "Ceiling hole": "Not needed",
+       "Light colour range": "Adjustable white",
+       "Brightness (each downlight)": "Not stated",
+       "Colour accuracy": "High (CRI 90)",
+       "Phone and Apple Home": "Yes, with Aqara hub",
+       "Hub needed": "Yes, Aqara hub",
+       "Dims": "Yes, with dimmer module",
+       "Lights price (4 downlights + strip)": "Quote needed",
+       "In stock": "Quote needed",
+       "Power (each downlight)": "Not stated",
+       "Warranty": "Not stated"
+      },
+      "offers": [
+       {
+        "shop": "Aqara Singapore (PFE)",
+        "price": null,
+        "stock": "Quote needed",
+        "checked": "2026-10-30",
+        "url": "https://pfetech.com/aqara/product/aqara-smart-led-strips/",
+        "priceNote": "Strip, dimmer module and 24 V power supply"
+       }
+      ],
+      "priceNote": "Strip, dimmer and power supply",
+      "priceText": "Quote needed"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://pfetech.com/aqara/product/aqara-smart-led-strips/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Quote-only package; few owner reviews of this set-up yet."
+      }
+     },
+     "priceNote": "Strip, dimmer and power supply",
+     "priceText": "Quote needed"
+    }
+   ],
    "legacySlugs": [
     "living-living-room-lighting"
    ],
@@ -199,6 +687,76 @@
     "source": "Approximate room dimensions",
     "opening": true,
     "measured": false
+   },
+   "costBasis": "budget",
+   "sales": [
+    "11.11",
+    "black_friday"
+   ],
+   "qty": 1,
+   "answer10s": "WiZ warm kit: one hidden light strip of about 3.9 m plus four smart downlights, all in Apple Home. Ask for a quote on the Aqara COB strip too.",
+   "summary": "Four smart-light kits for the living room: hidden strip plus four downlights.",
+   "researchedAt": "2026-10-30",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "WiZ warm kit: one hidden light strip of about 3.9 m plus four smart downlights, all in Apple Home. Ask for a quote on the Aqara COB strip too.",
+    "mustKnow": [
+     "Plan: hidden light strip along the ceiling edge, four downlights and the ceiling fan.",
+     "Installed budget S$900–1,100; no more than S$1,200.",
+     "Don't fit a normal wall dimmer to smart lights.",
+     "Simpler fallback: fan light plus a floor lamp."
+    ],
+    "contractorNote": "Check the existing ceiling. Separate power for downlights, strip and fan. Keep the strip's power box reachable. No normal wall dimmer on smart lights. Check glare, fan shadows and how low the lights dim.",
+    "alsoConsidered": [
+     {
+      "brand": "Spotlights on a track",
+      "reason": "Less soft glow across the ceiling"
+     }
+    ],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Downlight size",
+       "Ceiling hole"
+      ]
+     },
+     {
+      "group": "Performance",
+      "rows": [
+       "Light colour range",
+       "Brightness (each downlight)",
+       "Colour accuracy"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Phone and Apple Home",
+       "Hub needed",
+       "Dims"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Lights price (4 downlights + strip)",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Running costs",
+      "rows": [
+       "Power (each downlight)"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
    }
   },
   {
@@ -344,30 +902,2028 @@
    }
   },
   {
+   "id": "CB-WC",
+   "slug": "toilet",
+   "area": "common-bath",
+   "category": "Bathroom",
+   "group": "fittings",
+   "priority": "essential",
+   "title": "Toilet",
+   "question": "Which toilet for the common bathroom?",
+   "stage": "contractor",
+   "status": "voting",
+   "candidates": [],
+   "legacySlugs": [],
+   "qty": 1,
+   "sales": [
+    "11.11",
+    "black_friday"
+   ],
+   "options": [
+    {
+     "id": "b9d0a23d-386d-4607-bc88-0c2d8b8077ba",
+     "label": "American Standard Loven",
+     "name": "American Standard Loven CCAS1862",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 399,
+     "images": [
+      {
+       "src": "https://www.americanstandard.com.sg/wp-content/uploads/2025/03/Loven-OP-Concealed_Perspective_FA-scaled-1.jpg",
+       "caption": "American Standard Loven CCAS1862 toilet",
+       "kind": "product",
+       "source": "https://www.americanstandard.com.sg/",
+       "alt": "American Standard Loven CCAS1862 toilet",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Best value if it fits",
+     "love": "Cheapest; one-piece, rimless and easy to clean.",
+     "watchOut": "72 cm long, the longest here.",
+     "bestFor": "Value refresh with enough room",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Hoe Kee",
+       "price": 399,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.hoekee.com.sg/bathroom/american-standard-ccas1862-1320411s0-loven-1-pc-concealed-floor-standing-water-closet-ccasc162-seat-cover-5-9.html"
+      }
+     ],
+     "specs": {
+      "Size (width × length × height)": "37 × 72 × 70.5 cm",
+      "One-piece": "Yes",
+      "Rimless bowl": "Yes",
+      "Flush (full / half)": "4 / 3 L",
+      "Price": "S$399",
+      "In stock": "Can order (Hoe Kee)"
+     },
+     "shopper": {
+      "headline": "Best value if it fits",
+      "love": "Cheapest; one-piece, rimless and easy to clean.",
+      "watchOut": "72 cm long, the longest here.",
+      "bestFor": "Value refresh with enough room",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "72 cm long",
+       "Rimless",
+       "4/3 L flush"
+      ],
+      "specs": {
+       "Size (width × length × height)": "37 × 72 × 70.5 cm",
+       "One-piece": "Yes",
+       "Rimless bowl": "Yes",
+       "Flush (full / half)": "4 / 3 L",
+       "Price": "S$399",
+       "In stock": "Can order (Hoe Kee)"
+      },
+      "offers": [
+       {
+        "shop": "Hoe Kee",
+        "price": 399,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.hoekee.com.sg/bathroom/american-standard-ccas1862-1320411s0-loven-1-pc-concealed-floor-standing-water-closet-ccasc162-seat-cover-5-9.html"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.hoekee.com.sg/bathroom/american-standard-ccas1862-1320411s0-loven-1-pc-concealed-floor-standing-water-closet-ccasc162-seat-cover-5-9.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "693565fe-da1a-4875-beaa-631d0dc06b24",
+     "label": "RIGEL Gallant",
+     "name": "RIGEL Gallant WO9030FA-HKM",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 525,
+     "images": [
+      {
+       "src": "https://www.rigel-group.com/wp-content/uploads/2026/07/WO9030FA-HKM.jpg",
+       "caption": "RIGEL Gallant WO9030FA-HKM toilet",
+       "kind": "product",
+       "source": "https://www.rigel-group.com/",
+       "alt": "RIGEL Gallant WO9030FA-HKM toilet",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Shorter, for a tight bathroom",
+     "love": "Only 65 cm long; more room in front.",
+     "watchOut": "S$126 more than the Loven.",
+     "bestFor": "Little space in front of the toilet",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Light Avenue",
+       "price": 525,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.lightavenuesg.com/products/rigel-wo9030fa-hkm-one-piece-water-closet"
+      }
+     ],
+     "specs": {
+      "Size (width × length × height)": "37 × 65 × 75 cm",
+      "One-piece": "Yes",
+      "Rimless bowl": "Yes",
+      "Flush (full / half)": "4.5–6 / 3 L",
+      "Price": "S$525",
+      "In stock": "Can order (Light Avenue)"
+     },
+     "shopper": {
+      "headline": "Shorter, for a tight bathroom",
+      "love": "Only 65 cm long; more room in front.",
+      "watchOut": "S$126 more than the Loven.",
+      "bestFor": "Little space in front of the toilet",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "65 cm long",
+       "Rimless",
+       "RIGEL service in SG"
+      ],
+      "specs": {
+       "Size (width × length × height)": "37 × 65 × 75 cm",
+       "One-piece": "Yes",
+       "Rimless bowl": "Yes",
+       "Flush (full / half)": "4.5–6 / 3 L",
+       "Price": "S$525",
+       "In stock": "Can order (Light Avenue)"
+      },
+      "offers": [
+       {
+        "shop": "Light Avenue",
+        "price": 525,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.lightavenuesg.com/products/rigel-wo9030fa-hkm-one-piece-water-closet"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.lightavenuesg.com/products/rigel-wo9030fa-hkm-one-piece-water-closet"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "f35e855f-1da6-4558-af3f-6907d8a5566a",
+     "label": "RIGEL WO8007FA",
+     "name": "RIGEL WO8007FA",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 485,
+     "images": [
+      {
+       "src": "https://www.rigel-group.com/wp-content/uploads/2023/05/WO8007FA-1000x1000.jpg",
+       "caption": "RIGEL WO8007FA toilet",
+       "kind": "product",
+       "source": "https://www.rigel-group.com/",
+       "alt": "RIGEL WO8007FA toilet",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Cheaper RIGEL, longer body",
+     "love": "RIGEL with a frugal 4/3 L flush.",
+     "watchOut": "70.5 cm long, barely shorter than Loven.",
+     "bestFor": "Preferring RIGEL, with enough room",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Light Avenue",
+       "price": 485,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.lightavenuesg.com/products/rigel-wo8007fa-one-piece-water-closet"
+      }
+     ],
+     "specs": {
+      "Size (width × length × height)": "36.5 × 70.5 × 69.5 cm",
+      "One-piece": "Yes",
+      "Rimless bowl": "Yes",
+      "Flush (full / half)": "4 / 3 L",
+      "Price": "S$485",
+      "In stock": "Can order (Light Avenue)"
+     },
+     "shopper": {
+      "headline": "Cheaper RIGEL, longer body",
+      "love": "RIGEL with a frugal 4/3 L flush.",
+      "watchOut": "70.5 cm long, barely shorter than Loven.",
+      "bestFor": "Preferring RIGEL, with enough room",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "70.5 cm long",
+       "4/3 L flush",
+       "Rimless"
+      ],
+      "specs": {
+       "Size (width × length × height)": "36.5 × 70.5 × 69.5 cm",
+       "One-piece": "Yes",
+       "Rimless bowl": "Yes",
+       "Flush (full / half)": "4 / 3 L",
+       "Price": "S$485",
+       "In stock": "Can order (Light Avenue)"
+      },
+      "offers": [
+       {
+        "shop": "Light Avenue",
+        "price": 485,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.lightavenuesg.com/products/rigel-wo8007fa-one-piece-water-closet"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.lightavenuesg.com/products/rigel-wo8007fa-one-piece-water-closet"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "00df8035-15fc-43dc-a4ca-d9cf08a88882",
+     "label": "RIGEL Impression",
+     "name": "RIGEL Impression WO5387F",
+     "kind": "product",
+     "tier": "Splurge",
+     "price": 680,
+     "images": [
+      {
+       "src": "https://www.rigel-group.com/wp-content/uploads/2023/05/WO5387F-1000x1000.jpg",
+       "caption": "RIGEL Impression WO5387F toilet",
+       "kind": "product",
+       "source": "https://www.rigel-group.com/",
+       "alt": "RIGEL Impression WO5387F toilet",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Shortest toilet here",
+     "love": "Just 62 cm long.",
+     "watchOut": "S$281 more than the Loven.",
+     "bestFor": "A really tight layout",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Light Avenue",
+       "price": 680,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.lightavenuesg.com/products/rigel-wo5387f-one-piece-water-closet"
+      }
+     ],
+     "specs": {
+      "Size (width × length × height)": "37 × 62 × 75.5 cm",
+      "One-piece": "Yes",
+      "Rimless bowl": "Yes",
+      "Flush (full / half)": "4.5–6 / 3 L",
+      "Price": "S$680",
+      "In stock": "Can order (Light Avenue)"
+     },
+     "shopper": {
+      "headline": "Shortest toilet here",
+      "love": "Just 62 cm long.",
+      "watchOut": "S$281 more than the Loven.",
+      "bestFor": "A really tight layout",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "62 cm long",
+       "Rimless",
+       "One-piece"
+      ],
+      "specs": {
+       "Size (width × length × height)": "37 × 62 × 75.5 cm",
+       "One-piece": "Yes",
+       "Rimless bowl": "Yes",
+       "Flush (full / half)": "4.5–6 / 3 L",
+       "Price": "S$680",
+       "In stock": "Can order (Light Avenue)"
+      },
+      "offers": [
+       {
+        "shop": "Light Avenue",
+        "price": 680,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.lightavenuesg.com/products/rigel-wo5387f-one-piece-water-closet"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.lightavenuesg.com/products/rigel-wo5387f-one-piece-water-closet"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "ff15da03-97bc-43dc-a0fc-6c53c0f26565",
+     "label": "TOTO C889DESI",
+     "name": "TOTO C889DESI",
+     "kind": "product",
+     "tier": "Splurge",
+     "price": 1039.5,
+     "images": [
+      {
+       "src": "https://dk7e3dsghw78b.cloudfront.net/sites/files/watelier/productimg/202211/800x800/c889.jpg",
+       "caption": "TOTO C889DESI toilet",
+       "kind": "product",
+       "source": "https://www.watelier.com/product/bathroom-sanitary-wares-toilets-one-piece/toto-one-piece-toilet-c889desi",
+       "alt": "TOTO C889DESI toilet",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Premium TOTO, over budget",
+     "love": "Strong swirl flush; glaze resists stains.",
+     "watchOut": "Takes the bathroom to about S$4,843.",
+     "bestFor": "Only with a bigger toilet budget",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "W. Atelier",
+       "price": 1039.5,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.watelier.com/product/bathroom-sanitary-wares-toilets-one-piece/toto-one-piece-toilet-c889desi"
+      }
+     ],
+     "specs": {
+      "Size (width × length × height)": "38.7 × 70 × 69.9 cm",
+      "One-piece": "Yes",
+      "Rimless bowl": "Yes",
+      "Flush (full / half)": "3.8 / 3 L",
+      "Price": "S$1,039.50",
+      "In stock": "Can order (W. Atelier)"
+     },
+     "shopper": {
+      "headline": "Premium TOTO, over budget",
+      "love": "Strong swirl flush; glaze resists stains.",
+      "watchOut": "Takes the bathroom to about S$4,843.",
+      "bestFor": "Only with a bigger toilet budget",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Tornado flush",
+       "3.8/3 L flush",
+       "70 cm long"
+      ],
+      "specs": {
+       "Size (width × length × height)": "38.7 × 70 × 69.9 cm",
+       "One-piece": "Yes",
+       "Rimless bowl": "Yes",
+       "Flush (full / half)": "3.8 / 3 L",
+       "Price": "S$1,039.50",
+       "In stock": "Can order (W. Atelier)"
+      },
+      "offers": [
+       {
+        "shop": "W. Atelier",
+        "price": 1039.5,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.watelier.com/product/bathroom-sanitary-wares-toilets-one-piece/toto-one-piece-toilet-c889desi"
+       }
+      ],
+      "priceNote": "Stop valve, hose and pan collar extra"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.watelier.com/product/bathroom-sanitary-wares-toilets-one-piece/toto-one-piece-toilet-c889desi"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     },
+     "priceNote": "Stop valve, hose and pan collar extra"
+    }
+   ],
+   "answer10s": "American Standard Loven (S$399) is the value pick if 72 cm fits. RIGEL Gallant (S$525) is 7 cm shorter for a tight space.",
+   "summary": "Five one-piece rimless toilets, from S$399 to S$1,039.50.",
+   "researchedAt": "2026-10-30",
+   "mustKnow": [
+    "Measure from the wall to the shower screen before choosing.",
+    "Keep the old toilet if it works and nothing leaks.",
+    "Add a GROHE bidet spray beside it (from S$75)."
+   ],
+   "contractorNote": "Measure the toilet space and the drain position. Confirm the seat, stop valve, hose and pan collar are included.",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "American Standard Loven (S$399) is the value pick if 72 cm fits. RIGEL Gallant (S$525) is 7 cm shorter for a tight space.",
+    "mustKnow": [
+     "Measure from the wall to the shower screen before choosing.",
+     "Keep the old toilet if it works and nothing leaks.",
+     "Add a GROHE bidet spray beside it (from S$75)."
+    ],
+    "contractorNote": "Measure the toilet space and the drain position. Confirm the seat, stop valve, hose and pan collar are included.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Size (width × length × height)"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "One-piece",
+       "Rimless bowl",
+       "Flush (full / half)"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "In stock"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "CB-VAN",
+   "slug": "basin-cabinet",
+   "area": "common-bath",
+   "category": "Bathroom",
+   "group": "fittings",
+   "priority": "essential",
+   "title": "Basin cabinet",
+   "question": "Which basin and cabinet?",
+   "stage": "contractor",
+   "status": "voting",
+   "candidates": [],
+   "legacySlugs": [],
+   "qty": 1,
+   "sales": [
+    "11.11",
+    "black_friday"
+   ],
+   "options": [
+    {
+     "id": "3f3e3ce9-23b7-4d8f-9518-e686929eb6f3",
+     "label": "Rubine OPALE",
+     "name": "Rubine OPALE 60 cm with basin",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 515,
+     "images": [],
+     "headline": "Practical, water-safe cabinet",
+     "love": "PVC body copes with water; basin included.",
+     "watchOut": "60 cm wide; check it fits.",
+     "bestFor": "Our main pick",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "CASA",
+       "price": 515,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://shop.casa.sg/products/60cm-pull-to-open-vanity-cabinet-insert-basin"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "60 × 46.5 × 50 cm",
+      "Body": "PVC (water-safe)",
+      "Basin and drain included": "Yes",
+      "Opening": "Pull to open",
+      "Price": "S$515",
+      "In stock": "Can order (CASA)",
+      "Warranty": "1 year parts and service"
+     },
+     "shopper": {
+      "headline": "Practical, water-safe cabinet",
+      "love": "PVC body copes with water; basin included.",
+      "watchOut": "60 cm wide; check it fits.",
+      "bestFor": "Our main pick",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "PVC, water-safe",
+       "60 cm wide",
+       "Pull to open"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "60 × 46.5 × 50 cm",
+       "Body": "PVC (water-safe)",
+       "Basin and drain included": "Yes",
+       "Opening": "Pull to open",
+       "Price": "S$515",
+       "In stock": "Can order (CASA)",
+       "Warranty": "1 year parts and service"
+      },
+      "offers": [
+       {
+        "shop": "CASA",
+        "price": 515,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://shop.casa.sg/products/60cm-pull-to-open-vanity-cabinet-insert-basin"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://shop.casa.sg/products/60cm-pull-to-open-vanity-cabinet-insert-basin"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "6b809324-8d3e-46b2-8543-5a96e5c8bc35",
+     "label": "Rubine ARMONIA",
+     "name": "Rubine ARMONIA 60 cm with basin",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 515,
+     "images": [],
+     "headline": "Same cabinet, push-open drawer",
+     "love": "Clean, handle-free front.",
+     "watchOut": "Try the push-open action in a shop.",
+     "bestFor": "Preferring a handle-free look",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "CASA",
+       "price": 515,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://shop.casa.sg/products/60cm-press-to-open-vanity-cabinet-insert-basin"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "60 × 46.5 × 50 cm",
+      "Body": "PVC (water-safe)",
+      "Basin and drain included": "Yes",
+      "Opening": "Push to open",
+      "Price": "S$515",
+      "In stock": "Can order (CASA)",
+      "Warranty": "1 year parts and service"
+     },
+     "shopper": {
+      "headline": "Same cabinet, push-open drawer",
+      "love": "Clean, handle-free front.",
+      "watchOut": "Try the push-open action in a shop.",
+      "bestFor": "Preferring a handle-free look",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "PVC, water-safe",
+       "60 cm wide",
+       "Push to open"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "60 × 46.5 × 50 cm",
+       "Body": "PVC (water-safe)",
+       "Basin and drain included": "Yes",
+       "Opening": "Push to open",
+       "Price": "S$515",
+       "In stock": "Can order (CASA)",
+       "Warranty": "1 year parts and service"
+      },
+      "offers": [
+       {
+        "shop": "CASA",
+        "price": 515,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://shop.casa.sg/products/60cm-press-to-open-vanity-cabinet-insert-basin"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://shop.casa.sg/products/60cm-press-to-open-vanity-cabinet-insert-basin"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "f04aaa9e-0ada-4816-a27c-e1caf8523d0f",
+     "label": "IKEA ENHET",
+     "name": "IKEA ENHET / TVÄLLEN 44 cm",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 225,
+     "images": [
+      {
+       "src": "https://www.ikea.com/sg/en/images/products/enhet-tvaellen-wash-stnd-w-drawers-wash-basin-white__1485793_pe1002168_s5.jpg?f=u",
+       "caption": "IKEA ENHET / TVÄLLEN wash stand",
+       "kind": "product",
+       "source": "https://www.ikea.com/sg/en/p/enhet-tvaellen-wash-stnd-w-drawers-wash-basin-white-s99616042/",
+       "alt": "IKEA ENHET / TVÄLLEN wash stand",
+       "width": 2000,
+       "height": 2000
+      }
+     ],
+     "headline": "Smaller and cheaper; keep it dry",
+     "love": "Only S$225; 44 cm wide; 10-year guarantee.",
+     "watchOut": "Particleboard; must stay away from shower spray.",
+     "bestFor": "A dry basin area",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "IKEA",
+       "price": 225,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.ikea.com/sg/en/p/enhet-tvaellen-wash-stnd-w-drawers-wash-basin-white-s99616042/"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "44 × 43 × 65 cm",
+      "Body": "Particleboard (keep dry)",
+      "Basin and drain included": "Basin and trap; check the waste",
+      "Opening": "Drawers (handles extra)",
+      "Price": "S$225",
+      "In stock": "Can order (IKEA)",
+      "Warranty": "10-year limited guarantee"
+     },
+     "shopper": {
+      "headline": "Smaller and cheaper; keep it dry",
+      "love": "Only S$225; 44 cm wide; 10-year guarantee.",
+      "watchOut": "Particleboard; must stay away from shower spray.",
+      "bestFor": "A dry basin area",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "44 cm wide",
+       "S$225",
+       "10-year guarantee"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "44 × 43 × 65 cm",
+       "Body": "Particleboard (keep dry)",
+       "Basin and drain included": "Basin and trap; check the waste",
+       "Opening": "Drawers (handles extra)",
+       "Price": "S$225",
+       "In stock": "Can order (IKEA)",
+       "Warranty": "10-year limited guarantee"
+      },
+      "offers": [
+       {
+        "shop": "IKEA",
+        "price": 225,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.ikea.com/sg/en/p/enhet-tvaellen-wash-stnd-w-drawers-wash-basin-white-s99616042/"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.ikea.com/sg/en/p/enhet-tvaellen-wash-stnd-w-drawers-wash-basin-white-s99616042/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    }
+   ],
+   "answer10s": "Rubine OPALE (S$515): a PVC cabinet that copes with bathroom water, basin included. IKEA ENHET (S$225) only if the basin area stays dry.",
+   "summary": "Two water-safe PVC cabinets and one cheaper IKEA stand.",
+   "researchedAt": "2026-10-30",
+   "mustKnow": [
+    "None of these should face direct shower spray.",
+    "Measure the wall: Rubine needs 60 cm, IKEA 44 cm."
+   ],
+   "contractorNote": "Measure the basin wall. Check the waste and trap fit the chosen basin.",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Rubine OPALE (S$515): a PVC cabinet that copes with bathroom water, basin included. IKEA ENHET (S$225) only if the basin area stays dry.",
+    "mustKnow": [
+     "None of these should face direct shower spray.",
+     "Measure the wall: Rubine needs 60 cm, IKEA 44 cm."
+    ],
+    "contractorNote": "Measure the basin wall. Check the waste and trap fit the chosen basin.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Size (width × depth × height)"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Body",
+       "Basin and drain included",
+       "Opening"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "CB-TAP",
+   "slug": "basin-tap",
+   "area": "common-bath",
+   "category": "Bathroom",
+   "group": "fittings",
+   "priority": "essential",
+   "title": "Basin tap",
+   "question": "Which basin tap?",
+   "stage": "contractor",
+   "status": "voting",
+   "candidates": [],
+   "legacySlugs": [],
+   "qty": 1,
+   "sales": [
+    "11.11",
+    "black_friday"
+   ],
+   "options": [
+    {
+     "id": "3329a0ee-54f4-4e13-9af5-9981997ab5f7",
+     "label": "American Standard Loven tap",
+     "name": "American Standard Loven FFAS1M01",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 149,
+     "images": [],
+     "headline": "Sensible tap, no frills",
+     "love": "Trusted brand; pop-up drain included.",
+     "watchOut": "Check the model code on the invoice.",
+     "bestFor": "Value package",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Bathroomshopsg",
+       "price": 149,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://bathroom.com.sg/products/american-standard-loven-basin-mixer-with-pop-up-drain-ffas1m01-101500bc0"
+      }
+     ],
+     "specs": {
+      "Fits the basin": "Check reach on the basin",
+      "Hot and cold": "Yes",
+      "Drain included": "Yes (pop-up)",
+      "Handle": "Single lever",
+      "Price": "S$149",
+      "In stock": "Can order (Bathroomshopsg)",
+      "Warranty": "5 years, if eligible"
+     },
+     "shopper": {
+      "headline": "Sensible tap, no frills",
+      "love": "Trusted brand; pop-up drain included.",
+      "watchOut": "Check the model code on the invoice.",
+      "bestFor": "Value package",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Pop-up drain",
+       "5-year tap guarantee",
+       "S$149"
+      ],
+      "specs": {
+       "Fits the basin": "Check reach on the basin",
+       "Hot and cold": "Yes",
+       "Drain included": "Yes (pop-up)",
+       "Handle": "Single lever",
+       "Price": "S$149",
+       "In stock": "Can order (Bathroomshopsg)",
+       "Warranty": "5 years, if eligible"
+      },
+      "offers": [
+       {
+        "shop": "Bathroomshopsg",
+        "price": 149,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://bathroom.com.sg/products/american-standard-loven-basin-mixer-with-pop-up-drain-ffas1m01-101500bc0"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://bathroom.com.sg/products/american-standard-loven-basin-mixer-with-pop-up-drain-ffas1m01-101500bc0"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "72ae6cff-adff-473b-8ad4-cab19708c3c9",
+     "label": "GROHE BauEdge",
+     "name": "GROHE BauEdge 32858000",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 169,
+     "images": [],
+     "headline": "GROHE at a sensible price",
+     "love": "Metal lever, smooth ceramic valve.",
+     "watchOut": "Short spout; drain may cost extra.",
+     "bestFor": "Wanting GROHE for less",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Hoe Kee",
+       "price": 169,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.hoekee.com.sg/bathroom/grohe-bauedge-single-lever-basin-mixer-s-size.html"
+      }
+     ],
+     "specs": {
+      "Fits the basin": "Check reach on the basin",
+      "Hot and cold": "Yes",
+      "Drain included": "Check with the shop",
+      "Handle": "Metal single lever",
+      "Price": "S$169",
+      "In stock": "Can order (Hoe Kee)",
+      "Warranty": "Ask the shop"
+     },
+     "shopper": {
+      "headline": "GROHE at a sensible price",
+      "love": "Metal lever, smooth ceramic valve.",
+      "watchOut": "Short spout; drain may cost extra.",
+      "bestFor": "Wanting GROHE for less",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Metal lever",
+       "Ceramic valve",
+       "S$169"
+      ],
+      "specs": {
+       "Fits the basin": "Check reach on the basin",
+       "Hot and cold": "Yes",
+       "Drain included": "Check with the shop",
+       "Handle": "Metal single lever",
+       "Price": "S$169",
+       "In stock": "Can order (Hoe Kee)",
+       "Warranty": "Ask the shop"
+      },
+      "offers": [
+       {
+        "shop": "Hoe Kee",
+        "price": 169,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.hoekee.com.sg/bathroom/grohe-bauedge-single-lever-basin-mixer-s-size.html"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.hoekee.com.sg/bathroom/grohe-bauedge-single-lever-basin-mixer-s-size.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "8605df8c-0bbd-4da7-8254-cea4252c0647",
+     "label": "GROHE Eurosmart",
+     "name": "GROHE Eurosmart 23922003",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 213.9,
+     "images": [],
+     "headline": "Try the handle first",
+     "love": "Adjustable flow and a nice feel.",
+     "watchOut": "Costs more than equally good taps.",
+     "bestFor": "If it feels better in hand",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Light Avenue",
+       "price": 213.9,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.lightavenuesg.com/products/grohe-23-922-003-eurosmart-basin-mixer-s-size"
+      }
+     ],
+     "specs": {
+      "Fits the basin": "Check reach on the basin",
+      "Hot and cold": "Yes",
+      "Drain included": "Not stated",
+      "Handle": "Metal single lever",
+      "Price": "S$213.90",
+      "In stock": "Can order (Light Avenue)",
+      "Warranty": "5 years, if eligible"
+     },
+     "shopper": {
+      "headline": "Try the handle first",
+      "love": "Adjustable flow and a nice feel.",
+      "watchOut": "Costs more than equally good taps.",
+      "bestFor": "If it feels better in hand",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Flow limiter",
+       "5-year guarantee",
+       "S$213.90"
+      ],
+      "specs": {
+       "Fits the basin": "Check reach on the basin",
+       "Hot and cold": "Yes",
+       "Drain included": "Not stated",
+       "Handle": "Metal single lever",
+       "Price": "S$213.90",
+       "In stock": "Can order (Light Avenue)",
+       "Warranty": "5 years, if eligible"
+      },
+      "offers": [
+       {
+        "shop": "Light Avenue",
+        "price": 213.9,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.lightavenuesg.com/products/grohe-23-922-003-eurosmart-basin-mixer-s-size"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.lightavenuesg.com/products/grohe-23-922-003-eurosmart-basin-mixer-s-size"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    }
+   ],
+   "answer10s": "American Standard Loven (S$149) is the sensible pick. Pay more for GROHE only if the handle feels better in the shop.",
+   "summary": "Three single-lever basin taps from S$149 to S$213.90.",
+   "researchedAt": "2026-10-30",
+   "mustKnow": [
+    "Match the tap's reach to the basin before buying."
+   ],
+   "contractorNote": "Check the tap suits the basin hole and reach.",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "American Standard Loven (S$149) is the sensible pick. Pay more for GROHE only if the handle feels better in the shop.",
+    "mustKnow": [
+     "Match the tap's reach to the basin before buying."
+    ],
+    "contractorNote": "Check the tap suits the basin hole and reach.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Fits the basin"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Hot and cold",
+       "Drain included",
+       "Handle"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "CB-SHW",
+   "slug": "shower-set",
+   "area": "common-bath",
+   "category": "Bathroom",
+   "group": "fittings",
+   "priority": "essential",
+   "title": "Shower set",
+   "question": "Which shower set?",
+   "stage": "contractor",
+   "status": "voting",
+   "candidates": [],
+   "legacySlugs": [],
+   "qty": 1,
+   "sales": [
+    "11.11",
+    "black_friday"
+   ],
+   "options": [
+    {
+     "id": "6289e94f-b670-4cbd-a330-a6448b6990e5",
+     "label": "GROHE Tempesta 250",
+     "name": "GROHE Tempesta Cosmopolitan 250 26674001",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 829,
+     "images": [],
+     "headline": "Rain head, hand shower and bath spout",
+     "love": "25 cm rain head, hand shower and spout.",
+     "watchOut": "No thermostat; set temperature by hand.",
+     "bestFor": "Our main pick",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Light Avenue",
+       "price": 829,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.lightavenuesg.com/products/grohe-26-674-001-tempesta-cosmopolitian-250-shower-system"
+      }
+     ],
+     "specs": {
+      "Rain head and hand shower": "Yes, 25 cm head",
+      "Bath spout": "Yes",
+      "Thermostat": "No",
+      "Price": "S$829",
+      "In stock": "Can order (Light Avenue)"
+     },
+     "shopper": {
+      "headline": "Rain head, hand shower and bath spout",
+      "love": "25 cm rain head, hand shower and spout.",
+      "watchOut": "No thermostat; set temperature by hand.",
+      "bestFor": "Our main pick",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "25 cm rain head",
+       "Bath spout",
+       "No thermostat"
+      ],
+      "specs": {
+       "Rain head and hand shower": "Yes, 25 cm head",
+       "Bath spout": "Yes",
+       "Thermostat": "No",
+       "Price": "S$829",
+       "In stock": "Can order (Light Avenue)"
+      },
+      "offers": [
+       {
+        "shop": "Light Avenue",
+        "price": 829,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.lightavenuesg.com/products/grohe-26-674-001-tempesta-cosmopolitian-250-shower-system"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.lightavenuesg.com/products/grohe-26-674-001-tempesta-cosmopolitian-250-shower-system"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "a4fb80fb-ee25-4b30-88a4-493dd3f67de9",
+     "label": "GROHE Euphoria 260",
+     "name": "GROHE Euphoria System 260 26114002",
+     "kind": "product",
+     "tier": "Splurge",
+     "price": 1099,
+     "images": [],
+     "headline": "Steady temperature, costs more",
+     "love": "Thermostat keeps the water temperature steady.",
+     "watchOut": "S$270 more; leaves little budget spare.",
+     "bestFor": "Comfort over saving",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Modeste",
+       "price": 1099,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://modeste.sg/product/grohe-26114002-euphoria-system-260-shower-system-with-bath-thermostat-for-wall-mounting/"
+      }
+     ],
+     "specs": {
+      "Rain head and hand shower": "Yes, 26 cm head",
+      "Bath spout": "Yes",
+      "Thermostat": "Yes",
+      "Price": "S$1,099",
+      "In stock": "Can order (Modeste)"
+     },
+     "shopper": {
+      "headline": "Steady temperature, costs more",
+      "love": "Thermostat keeps the water temperature steady.",
+      "watchOut": "S$270 more; leaves little budget spare.",
+      "bestFor": "Comfort over saving",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Thermostat",
+       "Bath spout",
+       "Swivel arm"
+      ],
+      "specs": {
+       "Rain head and hand shower": "Yes, 26 cm head",
+       "Bath spout": "Yes",
+       "Thermostat": "Yes",
+       "Price": "S$1,099",
+       "In stock": "Can order (Modeste)"
+      },
+      "offers": [
+       {
+        "shop": "Modeste",
+        "price": 1099,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://modeste.sg/product/grohe-26114002-euphoria-system-260-shower-system-with-bath-thermostat-for-wall-mounting/"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://modeste.sg/product/grohe-26114002-euphoria-system-260-shower-system-with-bath-thermostat-for-wall-mounting/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "cdd15d13-cb86-46c2-b3dd-b079b74412a3",
+     "label": "RIGEL thermostat set",
+     "name": "RIGEL TSME14459T",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 515,
+     "images": [],
+     "headline": "Cheaper thermostat; see it first",
+     "love": "Thermostat and adjustable height for S$515.",
+     "watchOut": "Ask for a demo of the bath spout.",
+     "bestFor": "Only after a shop demo",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Light Avenue",
+       "price": 515,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.lightavenuesg.com/products/rigel-tsme14459t-thermostatic-3-in-1-shower-set-brushed",
+       "priceNote": "Brushed finish"
+      }
+     ],
+     "specs": {
+      "Rain head and hand shower": "Yes",
+      "Bath spout": "Check in the shop",
+      "Thermostat": "Yes",
+      "Price": "S$515 (brushed finish)",
+      "In stock": "Can order (Light Avenue)"
+     },
+     "shopper": {
+      "headline": "Cheaper thermostat; see it first",
+      "love": "Thermostat and adjustable height for S$515.",
+      "watchOut": "Ask for a demo of the bath spout.",
+      "bestFor": "Only after a shop demo",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Thermostat",
+       "Adjustable height",
+       "S$515"
+      ],
+      "specs": {
+       "Rain head and hand shower": "Yes",
+       "Bath spout": "Check in the shop",
+       "Thermostat": "Yes",
+       "Price": "S$515 (brushed finish)",
+       "In stock": "Can order (Light Avenue)"
+      },
+      "offers": [
+       {
+        "shop": "Light Avenue",
+        "price": 515,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.lightavenuesg.com/products/rigel-tsme14459t-thermostatic-3-in-1-shower-set-brushed",
+        "priceNote": "Brushed finish"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.lightavenuesg.com/products/rigel-tsme14459t-thermostatic-3-in-1-shower-set-brushed"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    }
+   ],
+   "answer10s": "GROHE Tempesta (S$829): rain head, hand shower and bath spout. The Euphoria (S$1,099) adds a thermostat for a steadier temperature.",
+   "summary": "Three shower sets with rain head and hand shower, from S$515 to S$1,099.",
+   "researchedAt": "2026-10-30",
+   "mustKnow": [
+    "Keep the Paloma heater only if it passes inspection.",
+    "Check the heater's flow suits the chosen shower set."
+   ],
+   "contractorNote": "Inspect the Paloma heater and water pressure. Check the shower set's inlets match the pipes.",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "GROHE Tempesta (S$829): rain head, hand shower and bath spout. The Euphoria (S$1,099) adds a thermostat for a steadier temperature.",
+    "mustKnow": [
+     "Keep the Paloma heater only if it passes inspection.",
+     "Check the heater's flow suits the chosen shower set."
+    ],
+    "contractorNote": "Inspect the Paloma heater and water pressure. Check the shower set's inlets match the pipes.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Features",
+      "rows": [
+       "Rain head and hand shower",
+       "Bath spout",
+       "Thermostat"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "In stock"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "CB-MIR",
+   "slug": "mirror-cabinet",
+   "area": "common-bath",
+   "category": "Bathroom",
+   "group": "fittings",
+   "priority": "essential",
+   "title": "Mirror cabinet",
+   "question": "Which mirror cabinet?",
+   "stage": "contractor",
+   "status": "voting",
+   "candidates": [],
+   "legacySlugs": [],
+   "qty": 1,
+   "sales": [
+    "11.11",
+    "black_friday"
+   ],
+   "options": [
+    {
+     "id": "6a9c4fd4-c9e9-421a-b9be-b9527f19e252",
+     "label": "IKEA TREASJÖN 50 cm",
+     "name": "IKEA TREASJÖN mirror cabinet 50 cm",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 235,
+     "images": [
+      {
+       "src": "https://www.ikea.com/sg/en/images/products/treasjoen-mirror-cab-1-door-built-in-lighting__1241592_pe919884_s5.jpg?f=u",
+       "caption": "IKEA TREASJÖN mirror cabinet 50 cm",
+       "kind": "product",
+       "source": "https://www.ikea.com/sg/en/p/treasjoen-mirror-cab-1-door-built-in-lighting-50580049/",
+       "alt": "IKEA TREASJÖN mirror cabinet 50 cm",
+       "width": 2000,
+       "height": 2000
+      }
+     ],
+     "headline": "Compact mirror storage with light",
+     "love": "The LED light can be replaced.",
+     "watchOut": "Fibreboard; keep away from shower spray.",
+     "bestFor": "Our value pick",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "IKEA",
+       "price": 235,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.ikea.com/sg/en/p/treasjoen-mirror-cab-1-door-built-in-lighting-50580049/"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "50 × 17 × 75 cm",
+      "Light colour": "Cool white (4000K)",
+      "Waterproof cabinet": "No",
+      "Price": "S$235",
+      "In stock": "Can order (IKEA)",
+      "Power": "5 W",
+      "Electricity per year (2 h a day)": "About S$1"
+     },
+     "shopper": {
+      "headline": "Compact mirror storage with light",
+      "love": "The LED light can be replaced.",
+      "watchOut": "Fibreboard; keep away from shower spray.",
+      "bestFor": "Our value pick",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "50 cm wide",
+       "Cool white 4000K",
+       "Soft-close door"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "50 × 17 × 75 cm",
+       "Light colour": "Cool white (4000K)",
+       "Waterproof cabinet": "No",
+       "Price": "S$235",
+       "In stock": "Can order (IKEA)",
+       "Power": "5 W",
+       "Electricity per year (2 h a day)": "About S$1"
+      },
+      "offers": [
+       {
+        "shop": "IKEA",
+        "price": 235,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.ikea.com/sg/en/p/treasjoen-mirror-cab-1-door-built-in-lighting-50580049/"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.ikea.com/sg/en/p/treasjoen-mirror-cab-1-door-built-in-lighting-50580049/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "15c2c56b-8611-436c-ad34-4ee093d8a239",
+     "label": "IKEA TREASJÖN 80 cm",
+     "name": "IKEA TREASJÖN mirror cabinet 80 cm",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 295,
+     "images": [
+      {
+       "src": "https://www.ikea.com/sg/en/images/products/treasjoen-mirror-cab-2-door-built-in-lighting__1241593_pe919883_s5.jpg?f=u",
+       "caption": "IKEA TREASJÖN mirror cabinet 80 cm",
+       "kind": "product",
+       "source": "https://www.ikea.com/sg/en/p/treasjoen-mirror-cab-2-door-built-in-lighting-30580050/",
+       "alt": "IKEA TREASJÖN mirror cabinet 80 cm",
+       "width": 2000,
+       "height": 2000
+      }
+     ],
+     "headline": "Wider mirror for S$60 more",
+     "love": "Two doors, more mirror and shelves.",
+     "watchOut": "80 cm may be too wide here.",
+     "bestFor": "If the wall is wide enough",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "IKEA",
+       "price": 295,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.ikea.com/sg/en/p/treasjoen-mirror-cab-2-door-built-in-lighting-30580050/"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "80 × 17 × 75 cm",
+      "Light colour": "Cool white (4000K)",
+      "Waterproof cabinet": "No",
+      "Price": "S$295",
+      "In stock": "Can order (IKEA)",
+      "Power": "8 W",
+      "Electricity per year (2 h a day)": "About S$2"
+     },
+     "shopper": {
+      "headline": "Wider mirror for S$60 more",
+      "love": "Two doors, more mirror and shelves.",
+      "watchOut": "80 cm may be too wide here.",
+      "bestFor": "If the wall is wide enough",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "80 cm wide",
+       "Two doors",
+       "Cool white 4000K"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "80 × 17 × 75 cm",
+       "Light colour": "Cool white (4000K)",
+       "Waterproof cabinet": "No",
+       "Price": "S$295",
+       "In stock": "Can order (IKEA)",
+       "Power": "8 W",
+       "Electricity per year (2 h a day)": "About S$2"
+      },
+      "offers": [
+       {
+        "shop": "IKEA",
+        "price": 295,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.ikea.com/sg/en/p/treasjoen-mirror-cab-2-door-built-in-lighting-30580050/"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.ikea.com/sg/en/p/treasjoen-mirror-cab-2-door-built-in-lighting-30580050/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "d4088bc4-fa7e-470c-845d-e2ea1af041f6",
+     "label": "IKEA FAXÄLVEN 60 cm",
+     "name": "IKEA FAXÄLVEN mirror cabinet 60 cm",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 409.9,
+     "images": [
+      {
+       "src": "https://www.ikea.com/sg/en/images/products/faxaelven-mirror-cabinet-w-built-in-lighting-white__1195481_pe902461_s5.jpg?f=u",
+       "caption": "IKEA FAXÄLVEN mirror cabinet 60 cm",
+       "kind": "product",
+       "source": "https://www.ikea.com/sg/en/p/faxaelven-mirror-cabinet-w-built-in-lighting-white-s49525737/",
+       "alt": "IKEA FAXÄLVEN mirror cabinet 60 cm",
+       "width": 2000,
+       "height": 2000
+      }
+     ],
+     "headline": "Warmer light, taller cabinet",
+     "love": "Warm 2700K light; slim 15 cm depth.",
+     "watchOut": "S$175 more than the 50 cm TREASJÖN.",
+     "bestFor": "A warm, Muji-style look",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "IKEA",
+       "price": 409.9,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.ikea.com/sg/en/p/faxaelven-mirror-cabinet-w-built-in-lighting-white-s49525737/"
+      }
+     ],
+     "specs": {
+      "Size (width × depth × height)": "60 × 15 × 95 cm",
+      "Light colour": "Warm white (2700K)",
+      "Waterproof cabinet": "No",
+      "Price": "S$409.90",
+      "In stock": "Can order (IKEA)",
+      "Power": "Not stated",
+      "Electricity per year (2 h a day)": "Not stated"
+     },
+     "shopper": {
+      "headline": "Warmer light, taller cabinet",
+      "love": "Warm 2700K light; slim 15 cm depth.",
+      "watchOut": "S$175 more than the 50 cm TREASJÖN.",
+      "bestFor": "A warm, Muji-style look",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Warm white 2700K",
+       "60 cm wide",
+       "95 cm tall"
+      ],
+      "specs": {
+       "Size (width × depth × height)": "60 × 15 × 95 cm",
+       "Light colour": "Warm white (2700K)",
+       "Waterproof cabinet": "No",
+       "Price": "S$409.90",
+       "In stock": "Can order (IKEA)",
+       "Power": "Not stated",
+       "Electricity per year (2 h a day)": "Not stated"
+      },
+      "offers": [
+       {
+        "shop": "IKEA",
+        "price": 409.9,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.ikea.com/sg/en/p/faxaelven-mirror-cabinet-w-built-in-lighting-white-s49525737/"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.ikea.com/sg/en/p/faxaelven-mirror-cabinet-w-built-in-lighting-white-s49525737/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    }
+   ],
+   "answer10s": "IKEA TREASJÖN 50 cm (S$235) is the value pick. The 80 cm (S$295) only if the wall is wide enough.",
+   "summary": "Three IKEA mirror cabinets with built-in lights, S$235 to S$409.90.",
+   "researchedAt": "2026-10-30",
+   "mustKnow": [
+    "Needs wiring for the light.",
+    "Keep it out of direct shower spray."
+   ],
+   "contractorNote": "Run power to the mirror position. Measure the wall width above the basin.",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "IKEA TREASJÖN 50 cm (S$235) is the value pick. The 80 cm (S$295) only if the wall is wide enough.",
+    "mustKnow": [
+     "Needs wiring for the light.",
+     "Keep it out of direct shower spray."
+    ],
+    "contractorNote": "Run power to the mirror position. Measure the wall width above the basin.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Size (width × depth × height)"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Light colour",
+       "Waterproof cabinet"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Running costs",
+      "rows": [
+       "Power",
+       "Electricity per year (2 h a day)"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "CB-SCR",
+   "slug": "shower-screen",
+   "area": "common-bath",
+   "category": "Bathroom",
+   "group": "fittings",
+   "priority": "essential",
+   "title": "Shower screen",
+   "question": "Which kind of shower screen?",
+   "stage": "contractor",
+   "status": "voting",
+   "candidates": [],
+   "legacySlugs": [],
+   "qty": 1,
+   "sales": [
+    "11.11",
+    "black_friday"
+   ],
+   "options": [
+    {
+     "id": "4c0a2830-98eb-40fc-b46c-5ce32ac76814",
+     "label": "Fixed panel",
+     "name": "Midas fixed panel",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 250,
+     "images": [],
+     "headline": "Simplest, if the layout allows",
+     "love": "Fewest moving parts; easy to step in.",
+     "watchOut": "Open side lets some spray out.",
+     "bestFor": "Deep shower area, good drain",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Midas",
+       "price": 250,
+       "stock": "Made to measure",
+       "checked": "2026-10-30",
+       "url": "https://midasshowerscreen.com/price/",
+       "priceNote": "Supply and install, from"
+      }
+     ],
+     "specs": {
+      "Size": "Measured on site",
+      "Keeps water in": "Partly",
+      "Moving parts": "None",
+      "Price": "From S$250 (Jan 2025 guide)",
+      "Ordering": "Made to measure"
+     },
+     "shopper": {
+      "headline": "Simplest, if the layout allows",
+      "love": "Fewest moving parts; easy to step in.",
+      "watchOut": "Open side lets some spray out.",
+      "bestFor": "Deep shower area, good drain",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "From S$250",
+       "No moving parts",
+       "Custom size"
+      ],
+      "specs": {
+       "Size": "Measured on site",
+       "Keeps water in": "Partly",
+       "Moving parts": "None",
+       "Price": "From S$250 (Jan 2025 guide)",
+       "Ordering": "Made to measure"
+      },
+      "offers": [
+       {
+        "shop": "Midas",
+        "price": 250,
+        "stock": "Made to measure",
+        "checked": "2026-10-30",
+        "url": "https://midasshowerscreen.com/price/",
+        "priceNote": "Supply and install, from"
+       }
+      ],
+      "priceNote": "Supplied and installed; get a current quote",
+      "priceText": "From S$250"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://midasshowerscreen.com/price/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Custom-made screens; few owner reviews for a specific type."
+      }
+     },
+     "priceNote": "Supplied and installed; get a current quote",
+     "priceText": "From S$250"
+    },
+    {
+     "id": "d9b90000-1b08-4107-a6a1-0e20a7a93dd0",
+     "label": "Swing door",
+     "name": "Midas swing door",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 480,
+     "images": [],
+     "headline": "Fully encloses the shower",
+     "love": "Keeps water in; no track to clean.",
+     "watchOut": "Door needs clear room to swing.",
+     "bestFor": "Room for a door to swing",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Midas",
+       "price": 480,
+       "stock": "Made to measure",
+       "checked": "2026-10-30",
+       "url": "https://midasshowerscreen.com/price/",
+       "priceNote": "Supply and install, from"
+      }
+     ],
+     "specs": {
+      "Size": "Measured on site",
+      "Keeps water in": "Yes",
+      "Moving parts": "Hinges and seals",
+      "Price": "From S$480 (Jan 2025 guide)",
+      "Ordering": "Made to measure"
+     },
+     "shopper": {
+      "headline": "Fully encloses the shower",
+      "love": "Keeps water in; no track to clean.",
+      "watchOut": "Door needs clear room to swing.",
+      "bestFor": "Room for a door to swing",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "From S$480",
+       "Fully enclosed",
+       "Swing door"
+      ],
+      "specs": {
+       "Size": "Measured on site",
+       "Keeps water in": "Yes",
+       "Moving parts": "Hinges and seals",
+       "Price": "From S$480 (Jan 2025 guide)",
+       "Ordering": "Made to measure"
+      },
+      "offers": [
+       {
+        "shop": "Midas",
+        "price": 480,
+        "stock": "Made to measure",
+        "checked": "2026-10-30",
+        "url": "https://midasshowerscreen.com/price/",
+        "priceNote": "Supply and install, from"
+       }
+      ],
+      "priceNote": "Supplied and installed; get a current quote",
+      "priceText": "From S$480"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://midasshowerscreen.com/price/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Custom-made screens; few owner reviews for a specific type."
+      }
+     },
+     "priceNote": "Supplied and installed; get a current quote",
+     "priceText": "From S$480"
+    },
+    {
+     "id": "38c6fd27-d662-4133-b6cd-b41b26cd4e13",
+     "label": "Sliding door",
+     "name": "Midas sliding door",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 530,
+     "images": [],
+     "headline": "Enclosed, with no swinging door",
+     "love": "No door swinging into the toilet.",
+     "watchOut": "Track and rollers need cleaning.",
+     "bestFor": "Narrow bathroom, no swing room",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Midas",
+       "price": 530,
+       "stock": "Made to measure",
+       "checked": "2026-10-30",
+       "url": "https://midasshowerscreen.com/price/",
+       "priceNote": "Supply and install, from"
+      }
+     ],
+     "specs": {
+      "Size": "Measured on site",
+      "Keeps water in": "Yes",
+      "Moving parts": "Track and rollers",
+      "Price": "From S$530 (Jan 2025 guide)",
+      "Ordering": "Made to measure"
+     },
+     "shopper": {
+      "headline": "Enclosed, with no swinging door",
+      "love": "No door swinging into the toilet.",
+      "watchOut": "Track and rollers need cleaning.",
+      "bestFor": "Narrow bathroom, no swing room",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "From S$530",
+       "Fully enclosed",
+       "Sliding door"
+      ],
+      "specs": {
+       "Size": "Measured on site",
+       "Keeps water in": "Yes",
+       "Moving parts": "Track and rollers",
+       "Price": "From S$530 (Jan 2025 guide)",
+       "Ordering": "Made to measure"
+      },
+      "offers": [
+       {
+        "shop": "Midas",
+        "price": 530,
+        "stock": "Made to measure",
+        "checked": "2026-10-30",
+        "url": "https://midasshowerscreen.com/price/",
+        "priceNote": "Supply and install, from"
+       }
+      ],
+      "priceNote": "Supplied and installed; get a current quote",
+      "priceText": "From S$530"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://midasshowerscreen.com/price/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Custom-made screens; few owner reviews for a specific type."
+      }
+     },
+     "priceNote": "Supplied and installed; get a current quote",
+     "priceText": "From S$530"
+    }
+   ],
+   "answer10s": "Pick by space: a fixed panel if the shower area is deep, a swing door if there's room to open it, sliding if not.",
+   "summary": "Three custom glass screen types from Midas, measured on site.",
+   "researchedAt": "2026-10-30",
+   "mustKnow": [
+    "Prices are from Midas's January 2025 guide; get a current quote.",
+    "The plan allows about S$700 for the screen."
+   ],
+   "contractorNote": "Measure the shower opening and door swing. Quote supply and install.",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Pick by space: a fixed panel if the shower area is deep, a swing door if there's room to open it, sliding if not.",
+    "mustKnow": [
+     "Prices are from Midas's January 2025 guide; get a current quote.",
+     "The plan allows about S$700 for the screen."
+    ],
+    "contractorNote": "Measure the shower opening and door swing. Quote supply and install.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Size"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Keeps water in",
+       "Moving parts"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "Ordering"
+      ]
+     }
+    ]
+   }
+  },
+  {
    "id": "CB-PKG",
    "slug": "fittings",
    "area": "common-bath",
    "category": "Bathroom",
    "group": "fittings",
    "priority": "essential",
-   "title": "Common bathroom fittings",
-   "question": "How much of the common bathroom do we refresh?",
+   "title": "Bathroom installation and extras",
+   "question": "What's left in the bathroom budget?",
    "stage": "contractor",
    "status": "draft",
-   "candidates": [
-    "Keep existing if sound",
-    "RIGEL WC only",
-    "Full RIGEL refresh (WC, basin + cabinet, tap, shower set, glass, mirror)"
-   ],
+   "candidates": [],
    "roughBudget": {
-    "min": 0,
-    "max": 4480,
-    "source": "Brief allowance, 6 Oct, excluding ventilation fan"
+    "min": 1375,
+    "max": 1375,
+    "source": "Rest of the S$4,202 plan after the recommended parts"
    },
-   "contractorNote": "Inspect heater, water pressure, WC rough-in and leaks first; price each fitting separately.",
+   "contractorNote": "Inspect the heater, water pressure, toilet drain position and leaks first. Price each fitting and its installation separately.",
    "mustKnow": [
-    "Safe working fittings can stay and be upgraded later",
-    "Ventilation fan is a separate decision (CB07)"
+    "Full plan with the recommended parts: about S$4,202 (S$4,328 with the shorter RIGEL toilet).",
+    "Covers installation, small parts and a GROHE Tempesta-F bidet spray (from S$75).",
+    "Not included: a new heater, retiling or waterproofing."
    ],
    "options": [],
    "legacySlugs": [
@@ -1047,25 +3603,564 @@
    "group": "fittings",
    "priority": "essential",
    "title": "Light switches",
-   "question": "Which kind of switches?",
+   "question": "Smart switches for the living-room lights, or all normal?",
    "stage": "contractor",
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "Standard switches",
     "Smart switches",
     "Standard switches + app/remote for living lights"
    ],
-   "contractorNote": "Switch type and brand go into the electrical quote.",
-   "mustKnow": [],
-   "options": [],
+   "contractorNote": "Count all plates, gangs and sockets. Check for a neutral wire and box depth where smart switches go. Mark two-way switches. Put the hidden ceiling lights on their own circuit. Keep a normal wall switch for every light.",
+   "mustKnow": [
+    "Smart on/off switches don't dim lights.",
+    "Aqara needs a hub for phone and Apple Home control.",
+    "Control from outside the flat needs internet.",
+    "The whole flat is about S$300–1,000 in plates; the contractor counts them."
+   ],
+   "options": [
+    {
+     "id": "37e3d161-5ac8-4fbf-808c-c192bd9f9f6d",
+     "label": "Aqara H1",
+     "name": "Aqara H1 Smart Wall Switch",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 55,
+     "images": [
+      {
+       "src": "https://www.aqara.com/wp-content/uploads/2023/05/Untitled-5-1-2-1024x561.png",
+       "caption": "Aqara H1 smart wall switches",
+       "kind": "product",
+       "source": "https://www.aqara.com/en/product/smart-wall-switch-h1-eu-with-neutral/",
+       "alt": "Aqara H1 smart wall switches",
+       "width": 1024,
+       "height": 561
+      }
+     ],
+     "headline": "Smart switch with real buttons",
+     "love": "Physical buttons plus Apple Home control.",
+     "watchOut": "Needs an Aqara hub; does not dim.",
+     "bestFor": "A few living-room lights",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "HomeSmart",
+       "price": 55,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://homesmart.sg/product/aqara-h1-smart-wall-switch/",
+       "priceNote": "S$55–99 by version"
+      }
+     ],
+     "specs": {
+      "Size": "8.6 × 8.6 cm, 3.8 cm deep",
+      "Lights controlled": "1–3, by version",
+      "Phone and Apple Home": "Yes, with Aqara hub",
+      "Works without internet": "Yes, buttons still work",
+      "Dims lights": "No",
+      "Needs neutral wire": "Separate versions",
+      "Hub needed": "Aqara Zigbee hub",
+      "Price": "S$55–99 a plate",
+      "In stock": "Can order (HomeSmart)",
+      "Warranty": "2 years, carry-in"
+     },
+     "shopper": {
+      "headline": "Smart switch with real buttons",
+      "love": "Physical buttons plus Apple Home control.",
+      "watchOut": "Needs an Aqara hub; does not dim.",
+      "bestFor": "A few living-room lights",
+      "ownerReviews": "Mostly good",
+      "ownerSummary": "A Singapore reviewer liked it after a few weeks of use.",
+      "chips": [
+       "Apple Home (with hub)",
+       "Metal frame",
+       "2-year warranty"
+      ],
+      "specs": {
+       "Size": "8.6 × 8.6 cm, 3.8 cm deep",
+       "Lights controlled": "1–3, by version",
+       "Phone and Apple Home": "Yes, with Aqara hub",
+       "Works without internet": "Yes, buttons still work",
+       "Dims lights": "No",
+       "Needs neutral wire": "Separate versions",
+       "Hub needed": "Aqara Zigbee hub",
+       "Price": "S$55–99 a plate",
+       "In stock": "Can order (HomeSmart)",
+       "Warranty": "2 years, carry-in"
+      },
+      "offers": [
+       {
+        "shop": "HomeSmart",
+        "price": 55,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://homesmart.sg/product/aqara-h1-smart-wall-switch/",
+        "priceNote": "S$55–99 by version"
+       }
+      ],
+      "priceNote": "Target S$55 or less in 11.11",
+      "priceText": "S$55–99 a plate"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://homesmart.sg/product/aqara-h1-smart-wall-switch/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://lesterchan.net/blog/2023/01/25/aqara-smart-wall-switch-h1-eu-with-neutral/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Target S$55 or less in 11.11",
+     "priceText": "S$55–99 a plate"
+    },
+    {
+     "id": "5a2fc01d-1878-48e4-97b6-5e749539f97e",
+     "label": "Aqara D1",
+     "name": "Aqara D1 Smart Wall Switch",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 45,
+     "images": [
+      {
+       "src": "https://homesmart.sg/wp-content/uploads/2021/05/Aqara-Wired-Switch-D1-3-1024x1024.jpg",
+       "caption": "Aqara D1 smart wall switches",
+       "kind": "product",
+       "source": "https://homesmart.sg/product/aqara-d1-smart-wall-switch/",
+       "alt": "Aqara D1 smart wall switches",
+       "width": 1024,
+       "height": 1024
+      }
+     ],
+     "headline": "Cheaper smart switch",
+     "love": "Lower price for basic smart switching.",
+     "watchOut": "1-year warranty, deeper box, no dimming.",
+     "bestFor": "More smart lights for less",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "HomeSmart",
+       "price": 45,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://homesmart.sg/product/aqara-d1-smart-wall-switch/",
+       "priceNote": "S$45–65 by version"
+      }
+     ],
+     "specs": {
+      "Size": "8.6 × 8.6 cm, 4.3 cm deep",
+      "Lights controlled": "1–3, by version",
+      "Phone and Apple Home": "Yes, with Aqara hub",
+      "Works without internet": "Yes, buttons still work",
+      "Dims lights": "No",
+      "Needs neutral wire": "Separate versions",
+      "Hub needed": "Aqara hub",
+      "Price": "S$45–65 a plate",
+      "In stock": "Can order (HomeSmart)",
+      "Warranty": "1 year, carry-in"
+     },
+     "shopper": {
+      "headline": "Cheaper smart switch",
+      "love": "Lower price for basic smart switching.",
+      "watchOut": "1-year warranty, deeper box, no dimming.",
+      "bestFor": "More smart lights for less",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "From S$45",
+       "1–3 gangs",
+       "1-year warranty"
+      ],
+      "specs": {
+       "Size": "8.6 × 8.6 cm, 4.3 cm deep",
+       "Lights controlled": "1–3, by version",
+       "Phone and Apple Home": "Yes, with Aqara hub",
+       "Works without internet": "Yes, buttons still work",
+       "Dims lights": "No",
+       "Needs neutral wire": "Separate versions",
+       "Hub needed": "Aqara hub",
+       "Price": "S$45–65 a plate",
+       "In stock": "Can order (HomeSmart)",
+       "Warranty": "1 year, carry-in"
+      },
+      "offers": [
+       {
+        "shop": "HomeSmart",
+        "price": 45,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://homesmart.sg/product/aqara-d1-smart-wall-switch/",
+        "priceNote": "S$45–65 by version"
+       }
+      ],
+      "priceText": "S$45–65 a plate"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://homesmart.sg/product/aqara-d1-smart-wall-switch/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few long-term owner reports for the D1; HomeSmart is the local distributor."
+      }
+     },
+     "priceText": "S$45–65 a plate"
+    },
+    {
+     "id": "00e6ceb1-db9e-4b82-a244-21dc98943e6e",
+     "label": "Schneider AvatarOn",
+     "name": "Schneider Electric AvatarOn E8331L1_WE_G2",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 11.5,
+     "images": [
+      {
+       "src": "https://download.schneider-electric.com/files?default_image=DefaultProductImage.png&p_Doc_Ref=E8331L1_WE_G2&p_File_Type=rendition_1500_jpg",
+       "caption": "Schneider AvatarOn white switch",
+       "kind": "product",
+       "source": "https://www.se.com/sg/en/product/E8331L1_WE_G2/avataron-switch-16ax-250v-1-way-white/",
+       "alt": "Schneider AvatarOn white switch",
+       "width": 1500,
+       "height": 1500
+      }
+     ],
+     "headline": "Normal switches, simplest",
+     "love": "No hub, no app; matching sockets available.",
+     "watchOut": "No phone control on its own.",
+     "bestFor": "Most switches around the flat",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Light Avenue",
+       "price": 11.5,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://lightavenuesg.com/products/schneider-electric-avataron-switch-white",
+       "priceNote": "White range from S$11.50"
+      }
+     ],
+     "specs": {
+      "Size": "8.6 × 8.6 cm face",
+      "Lights controlled": "1 (this model)",
+      "Phone and Apple Home": "No, needs a separate controller",
+      "Works without internet": "Yes",
+      "Dims lights": "No",
+      "Needs neutral wire": "Not needed",
+      "Hub needed": "None",
+      "Price": "From S$11.50",
+      "In stock": "Can order (Light Avenue)",
+      "Warranty": "Not stated by the shop"
+     },
+     "shopper": {
+      "headline": "Normal switches, simplest",
+      "love": "No hub, no app; matching sockets available.",
+      "watchOut": "No phone control on its own.",
+      "bestFor": "Most switches around the flat",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "From S$11.50",
+       "No hub",
+       "Matching sockets"
+      ],
+      "specs": {
+       "Size": "8.6 × 8.6 cm face",
+       "Lights controlled": "1 (this model)",
+       "Phone and Apple Home": "No, needs a separate controller",
+       "Works without internet": "Yes",
+       "Dims lights": "No",
+       "Needs neutral wire": "Not needed",
+       "Hub needed": "None",
+       "Price": "From S$11.50",
+       "In stock": "Can order (Light Avenue)",
+       "Warranty": "Not stated by the shop"
+      },
+      "offers": [
+       {
+        "shop": "Light Avenue",
+        "price": 11.5,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://lightavenuesg.com/products/schneider-electric-avataron-switch-white",
+        "priceNote": "White range from S$11.50"
+       }
+      ],
+      "priceText": "From S$11.50 a switch"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://lightavenuesg.com/products/schneider-electric-avataron-switch-white"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://forums.hardwarezone.com.sg/threads/switches-faceplate-schnider-or-legrand.7064522/page-3",
+       "exactModel": false,
+       "reason": "Owners discuss Schneider and Legrand plates generally; few reviews of this exact switch."
+      }
+     },
+     "priceText": "From S$11.50 a switch"
+    },
+    {
+     "id": "ff01b50f-3d15-48f0-bb54-ab847d4268ce",
+     "label": "Aqara T1 module",
+     "name": "Aqara Single Switch Module T1 (with neutral)",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 35,
+     "images": [],
+     "headline": "Smart, hidden behind a normal switch",
+     "love": "Keeps a normal-looking switch, adds phone control.",
+     "watchOut": "Needs a neutral wire and space behind.",
+     "bestFor": "One light behind a normal plate",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "HomeSmart",
+       "price": 35,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://homesmart.sg/product/aqara-smart-switch-module-t1/",
+       "priceNote": "S$35–39 by version"
+      }
+     ],
+     "specs": {
+      "Size": "4.3 × 4 × 2 cm module",
+      "Lights controlled": "1",
+      "Phone and Apple Home": "Yes, with Aqara hub",
+      "Works without internet": "Yes, with a wired switch",
+      "Dims lights": "No",
+      "Needs neutral wire": "Yes",
+      "Hub needed": "Aqara Zigbee hub",
+      "Price": "S$35 + normal plate",
+      "In stock": "Can order (HomeSmart)",
+      "Warranty": "2 years, carry-in"
+     },
+     "shopper": {
+      "headline": "Smart, hidden behind a normal switch",
+      "love": "Keeps a normal-looking switch, adds phone control.",
+      "watchOut": "Needs a neutral wire and space behind.",
+      "bestFor": "One light behind a normal plate",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Some owners report lights switching on and off by themselves, often traced to wiring or a setting.",
+      "chips": [
+       "S$35 module",
+       "Hidden behind plate",
+       "Needs neutral wire"
+      ],
+      "specs": {
+       "Size": "4.3 × 4 × 2 cm module",
+       "Lights controlled": "1",
+       "Phone and Apple Home": "Yes, with Aqara hub",
+       "Works without internet": "Yes, with a wired switch",
+       "Dims lights": "No",
+       "Needs neutral wire": "Yes",
+       "Hub needed": "Aqara Zigbee hub",
+       "Price": "S$35 + normal plate",
+       "In stock": "Can order (HomeSmart)",
+       "Warranty": "2 years, carry-in"
+      },
+      "offers": [
+       {
+        "shop": "HomeSmart",
+        "price": 35,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://homesmart.sg/product/aqara-smart-switch-module-t1/",
+        "priceNote": "S$35–39 by version"
+       }
+      ],
+      "priceText": "S$35 a module, plus a plate"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://homesmart.sg/product/aqara-smart-switch-module-t1/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/Aqara/comments/11kaq8a/",
+       "exactModel": true
+      }
+     },
+     "priceText": "S$35 a module, plus a plate"
+    },
+    {
+     "id": "34a36856-fd50-4467-b2c4-261561296d9a",
+     "label": "Aqara T2 module",
+     "name": "Aqara Dual Relay Module T2",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 69,
+     "images": [
+      {
+       "src": "https://www.aqara.com/wp-content/uploads/2024/06/2560-Dual-Relay-Module-T2-03.png",
+       "caption": "Aqara Dual Relay Module T2",
+       "kind": "product",
+       "source": "https://www.aqara.com/en/product/dual-relay-module-t2/",
+       "alt": "Aqara Dual Relay Module T2",
+       "width": 2560,
+       "height": 2560
+      }
+     ],
+     "headline": "Two lights, one hidden module",
+     "love": "Controls two lights behind normal plates.",
+     "watchOut": "Bulky; electrician must check the LED drivers.",
+     "bestFor": "Two lights at one switch spot",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "HomeSmart",
+       "price": 69,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://homesmart.sg/product/aqara-dual-relay-module-t2/"
+      }
+     ],
+     "specs": {
+      "Size": "4.6 × 4.8 × 2.4 cm module",
+      "Lights controlled": "2",
+      "Phone and Apple Home": "Yes, with Aqara hub",
+      "Works without internet": "Yes, with a wired switch",
+      "Dims lights": "No",
+      "Needs neutral wire": "Yes",
+      "Hub needed": "Aqara Zigbee hub",
+      "Price": "S$69 + normal plates",
+      "In stock": "Can order (HomeSmart)",
+      "Warranty": "2 years, carry-in"
+     },
+     "shopper": {
+      "headline": "Two lights, one hidden module",
+      "love": "Controls two lights behind normal plates.",
+      "watchOut": "Bulky; electrician must check the LED drivers.",
+      "bestFor": "Two lights at one switch spot",
+      "ownerReviews": "Mostly good",
+      "ownerSummary": "Owners using it with existing switches are happy; a few see a short delay.",
+      "chips": [
+       "S$69 module",
+       "Two lights",
+       "Needs neutral wire"
+      ],
+      "specs": {
+       "Size": "4.6 × 4.8 × 2.4 cm module",
+       "Lights controlled": "2",
+       "Phone and Apple Home": "Yes, with Aqara hub",
+       "Works without internet": "Yes, with a wired switch",
+       "Dims lights": "No",
+       "Needs neutral wire": "Yes",
+       "Hub needed": "Aqara Zigbee hub",
+       "Price": "S$69 + normal plates",
+       "In stock": "Can order (HomeSmart)",
+       "Warranty": "2 years, carry-in"
+      },
+      "offers": [
+       {
+        "shop": "HomeSmart",
+        "price": 69,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://homesmart.sg/product/aqara-dual-relay-module-t2/"
+       }
+      ],
+      "priceText": "S$69 a module, plus plates"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://homesmart.sg/product/aqara-dual-relay-module-t2/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/Aqara/comments/1f7k6az/",
+       "exactModel": true
+      }
+     },
+     "priceText": "S$69 a module, plus plates"
+    }
+   ],
    "roughBudget": {
     "min": 300,
     "max": 1000,
-    "source": "Rough guess, to research"
+    "source": "Whole flat of switch plates; wiring separate"
    },
    "legacySlugs": [
     "whole-home-light-switches"
-   ]
+   ],
+   "costBasis": "budget",
+   "sales": [
+    "11.11",
+    "black_friday"
+   ],
+   "qty": 1,
+   "answer10s": "Normal Schneider AvatarOn plates for most of the flat, with Aqara H1 smart switches for a few living-room lights. Dimmable hidden lights are planned with the lighting.",
+   "summary": "Normal plates, smart switches and hidden smart modules, from S$11.50 to S$99 each.",
+   "researchedAt": "2026-10-30",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Normal Schneider AvatarOn plates for most of the flat, with Aqara H1 smart switches for a few living-room lights. Dimmable hidden lights are planned with the lighting.",
+    "mustKnow": [
+     "Smart on/off switches don't dim lights.",
+     "Aqara needs a hub for phone and Apple Home control.",
+     "Control from outside the flat needs internet.",
+     "The whole flat is about S$300–1,000 in plates; the contractor counts them."
+    ],
+    "contractorNote": "Count all plates, gangs and sockets. Check for a neutral wire and box depth where smart switches go. Mark two-way switches. Put the hidden ceiling lights on their own circuit. Keep a normal wall switch for every light.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Size",
+       "Lights controlled"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Phone and Apple Home",
+       "Works without internet",
+       "Dims lights",
+       "Needs neutral wire",
+       "Hub needed"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "KT-WATER",
@@ -2026,25 +5121,309 @@
    "group": "fittings",
    "priority": "nice",
    "title": "TV size and mounting",
-   "question": "How big, and wall-mounted or on the console?",
+   "question": "How big a TV, on the wall?",
    "stage": "contractor",
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "75\" on console",
     "85\" wall-mounted",
     "98\" wall-mounted"
    ],
    "roughBudget": {
-    "min": 0,
-    "max": 250,
-    "source": "Brief allowance for bracket, 6 Oct"
+    "min": 250,
+    "max": 380,
+    "source": "Bracket and fitting (TCL examples)"
    },
-   "contractorNote": "Wall backing, concealed trunking and sockets at the TV position. Only size and mounting are needed now; the model can wait.",
+   "contractorNote": "Check the wall can hold a swivel bracket. Put sockets and a cable pipe that can be reached later. Set the height from seated eye level. Leave room for a soundbar. Don't build a recess sized for one TV.",
    "mustKnow": [
-    "Brief range: 80–100 inch",
-    "Living room is about 388 cm deep — check the sofa-to-TV distance"
+    "Measure from seated eyes to the screen, not the room length.",
+    "TV prices are TCL examples; the actual TV is picked later.",
+    "Wait for 11.11, Black Friday or 12.12."
    ],
-   "options": [],
+   "options": [
+    {
+     "id": "b4c380a9-9950-4c14-bf8a-68c042d311e4",
+     "label": "85-inch on the wall",
+     "name": "85-inch on the wall",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 250,
+     "images": [
+      {
+       "src": "https://tcl-singapore.com/cdn/shop/files/ShopifySKUNEW_C6K_6f486af6-116c-4316-8ca2-7dd7d04368f0.jpg?v=1789457280&width=2083",
+       "caption": "TCL C6K, an example 85-inch TV",
+       "kind": "product",
+       "source": "https://tcl-singapore.com/products/c6k",
+       "alt": "TCL C6K, an example 85-inch TV",
+       "width": 2083,
+       "height": 2083
+      }
+     ],
+     "headline": "Best balance for our living room",
+     "love": "Big picture that fits the TV budget.",
+     "watchOut": "Wall must hold a swivel bracket.",
+     "bestFor": "Sofa about 2.6–3.2 m away",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "TCL Singapore",
+       "price": 2599,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://tcl-singapore.com/products/c6k?variant=53523647791288",
+       "priceNote": "Example TV 85C6K"
+      }
+     ],
+     "specs": {
+      "Screen (width × height)": "188 × 106 cm",
+      "Space each side (2.95 m wall)": "53.5 cm",
+      "Cinema-feel seat distance": "About 2.6 m",
+      "Everyday seat distance": "About 3.5 m",
+      "Picture size vs 75-inch": "128%",
+      "Example TV (TCL C6K)": "S$2,599",
+      "Bracket and fitting": "S$250 (TCL swivel)",
+      "Example warranty": "3 years (TCL)"
+     },
+     "shopper": {
+      "headline": "Best balance for our living room",
+      "love": "Big picture that fits the TV budget.",
+      "watchOut": "Wall must hold a swivel bracket.",
+      "bestFor": "Sofa about 2.6–3.2 m away",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "An owner on HardwareZone mounted an 85-inch on a solid wall without trouble.",
+      "chips": [
+       "188 cm wide",
+       "Console below",
+       "S$250 bracket"
+      ],
+      "specs": {
+       "Screen (width × height)": "188 × 106 cm",
+       "Space each side (2.95 m wall)": "53.5 cm",
+       "Cinema-feel seat distance": "About 2.6 m",
+       "Everyday seat distance": "About 3.5 m",
+       "Picture size vs 75-inch": "128%",
+       "Example TV (TCL C6K)": "S$2,599",
+       "Bracket and fitting": "S$250 (TCL swivel)",
+       "Example warranty": "3 years (TCL)"
+      },
+      "offers": [
+       {
+        "shop": "TCL Singapore",
+        "price": 2599,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://tcl-singapore.com/products/c6k?variant=53523647791288",
+        "priceNote": "Example TV 85C6K"
+       }
+      ],
+      "priceNote": "Bracket and fitting; TV in its own budget"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://tcl-singapore.com/products/c6k?variant=53523647791288"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://forums.hardwarezone.com.sg/threads/larger-tvs-discussion-thread-75-and-more.6982705/page-7",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Bracket and fitting; TV in its own budget"
+    },
+    {
+     "id": "71499eb4-672e-4c5c-bb5e-ba1432eccc3f",
+     "label": "75-inch on the wall",
+     "name": "75-inch on the wall",
+     "kind": "product",
+     "tier": "Budget",
+     "price": null,
+     "images": [
+      {
+       "src": "https://tcl-singapore.com/cdn/shop/files/ShopifySKUNEW_C6K_6f486af6-116c-4316-8ca2-7dd7d04368f0.jpg?v=1789457280&width=2083",
+       "caption": "TCL C6K, an example 75-inch TV",
+       "kind": "product",
+       "source": "https://tcl-singapore.com/products/c6k",
+       "alt": "TCL C6K, an example 75-inch TV",
+       "width": 2083,
+       "height": 2083
+      }
+     ],
+     "headline": "Cheaper, with a smaller picture",
+     "love": "Cheapest; leaves more bare wall.",
+     "watchOut": "Smaller than our 80–100 inch wish.",
+     "bestFor": "Spending less, or sofa nearer",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "TCL Singapore",
+       "price": 2099,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://tcl-singapore.com/products/c6k?variant=53523647758520",
+       "priceNote": "Example TV 75C6K"
+      }
+     ],
+     "specs": {
+      "Screen (width × height)": "166 × 93 cm",
+      "Space each side (2.95 m wall)": "64.5 cm",
+      "Cinema-feel seat distance": "About 2.3 m",
+      "Everyday seat distance": "About 3.1 m",
+      "Picture size vs 75-inch": "100%",
+      "Example TV (TCL C6K)": "S$2,099",
+      "Bracket and fitting": "Quote needed",
+      "Example warranty": "3 years (TCL)"
+     },
+     "shopper": {
+      "headline": "Cheaper, with a smaller picture",
+      "love": "Cheapest; leaves more bare wall.",
+      "watchOut": "Smaller than our 80–100 inch wish.",
+      "bestFor": "Spending less, or sofa nearer",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "166 cm wide",
+       "Console below",
+       "S$2,099 example TV"
+      ],
+      "specs": {
+       "Screen (width × height)": "166 × 93 cm",
+       "Space each side (2.95 m wall)": "64.5 cm",
+       "Cinema-feel seat distance": "About 2.3 m",
+       "Everyday seat distance": "About 3.1 m",
+       "Picture size vs 75-inch": "100%",
+       "Example TV (TCL C6K)": "S$2,099",
+       "Bracket and fitting": "Quote needed",
+       "Example warranty": "3 years (TCL)"
+      },
+      "offers": [
+       {
+        "shop": "TCL Singapore",
+        "price": 2099,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://tcl-singapore.com/products/c6k?variant=53523647758520",
+        "priceNote": "Example TV 75C6K"
+       }
+      ],
+      "priceNote": "TV in its own budget",
+      "priceText": "Bracket quote needed"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://tcl-singapore.com/products/c6k?variant=53523647758520"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "A size choice; the exact TV is picked later."
+      }
+     },
+     "priceNote": "TV in its own budget",
+     "priceText": "Bracket quote needed"
+    },
+    {
+     "id": "3be1e301-918a-40aa-8a20-5b75f70902bc",
+     "label": "98-inch on the wall",
+     "name": "98-inch on the wall",
+     "kind": "product",
+     "tier": "Splurge",
+     "price": 380,
+     "images": [
+      {
+       "src": "https://tcl-singapore.com/cdn/shop/files/ShopifySKUNEW_C6K_6f486af6-116c-4316-8ca2-7dd7d04368f0.jpg?v=1789457280&width=2083",
+       "caption": "TCL C6K, an example 98-inch TV",
+       "kind": "product",
+       "source": "https://tcl-singapore.com/products/c6k",
+       "alt": "TCL C6K, an example 98-inch TV",
+       "width": 2083,
+       "height": 2083
+      }
+     ],
+     "headline": "Cinema feel, over budget",
+     "love": "A third more picture than 85-inch.",
+     "watchOut": "Example TV is S$999 over budget.",
+     "bestFor": "Sofa about 3 m away",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "TCL Singapore",
+       "price": 4999,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://tcl-singapore.com/products/c6k?variant=53523647824056",
+       "priceNote": "Example TV 98C6K"
+      }
+     ],
+     "specs": {
+      "Screen (width × height)": "217 × 122 cm",
+      "Space each side (2.95 m wall)": "39 cm",
+      "Cinema-feel seat distance": "About 3.0 m",
+      "Everyday seat distance": "About 4.1 m",
+      "Picture size vs 75-inch": "171%",
+      "Example TV (TCL C6K)": "S$4,999, S$999 over budget",
+      "Bracket and fitting": "S$380 (TCL swivel)",
+      "Example warranty": "3 years (TCL)"
+     },
+     "shopper": {
+      "headline": "Cinema feel, over budget",
+      "love": "A third more picture than 85-inch.",
+      "watchOut": "Example TV is S$999 over budget.",
+      "bestFor": "Sofa about 3 m away",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "217 cm wide",
+       "S$380 bracket",
+       "Over budget"
+      ],
+      "specs": {
+       "Screen (width × height)": "217 × 122 cm",
+       "Space each side (2.95 m wall)": "39 cm",
+       "Cinema-feel seat distance": "About 3.0 m",
+       "Everyday seat distance": "About 4.1 m",
+       "Picture size vs 75-inch": "171%",
+       "Example TV (TCL C6K)": "S$4,999, S$999 over budget",
+       "Bracket and fitting": "S$380 (TCL swivel)",
+       "Example warranty": "3 years (TCL)"
+      },
+      "offers": [
+       {
+        "shop": "TCL Singapore",
+        "price": 4999,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://tcl-singapore.com/products/c6k?variant=53523647824056",
+        "priceNote": "Example TV 98C6K"
+       }
+      ],
+      "priceNote": "Bracket and fitting; TV in its own budget"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://tcl-singapore.com/products/c6k?variant=53523647824056"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "A size choice; the exact TV is picked later."
+      }
+     },
+     "priceNote": "Bracket and fitting; TV in its own budget"
+    }
+   ],
    "legacySlugs": [
     "living-tv-size-and-mounting"
    ],
@@ -2055,6 +5434,56 @@
     "source": "Approximate room dimensions",
     "opening": true,
     "measured": false
+   },
+   "qty": 1,
+   "sales": [
+    "11.11",
+    "black_friday",
+    "12.12"
+   ],
+   "answer10s": "Plan for an 85-inch TV on the wall with a low console below. Keep 98-inch possible until the sofa distance and delivery path are measured.",
+   "summary": "Three TV sizes for the living-room wall. The exact TV comes later; this sets the wall work.",
+   "researchedAt": "2026-10-30",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Plan for an 85-inch TV on the wall with a low console below. Keep 98-inch possible until the sofa distance and delivery path are measured.",
+    "mustKnow": [
+     "Measure from seated eyes to the screen, not the room length.",
+     "TV prices are TCL examples; the actual TV is picked later.",
+     "Wait for 11.11, Black Friday or 12.12."
+    ],
+    "contractorNote": "Check the wall can hold a swivel bracket. Put sockets and a cable pipe that can be reached later. Set the height from seated eye level. Leave room for a soundbar. Don't build a recess sized for one TV.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Screen (width × height)",
+       "Space each side (2.95 m wall)"
+      ]
+     },
+     {
+      "group": "Performance",
+      "rows": [
+       "Cinema-feel seat distance",
+       "Everyday seat distance",
+       "Picture size vs 75-inch"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Example TV (TCL C6K)",
+       "Bracket and fitting"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Example warranty"
+      ]
+     }
+    ]
    }
   },
   {
@@ -2384,13 +5813,467 @@
    "status": "voting",
    "candidates": [],
    "mustKnow": [
-    "Small clean-ups rather than whole-floor cleaning",
-    "Both use small dust containers",
-    "Confirm battery and filter support",
-    "Keep renovation dust and liquids away"
+    "For crumbs, shelves, sofa gaps and the car.",
+    "Dry dirt only; no liquids or renovation dust.",
+    "Wait for 11.11, Black Friday or 12.12."
    ],
    "options": [
     {
+     "id": "564abe50-ff23-4820-8b40-2b025bc0aa5c",
+     "label": "Kärcher CVH 3",
+     "name": "Kärcher CVH 3",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 130,
+     "images": [
+      {
+       "src": "https://d1y4tv7o00gnfq.cloudfront.net/mam/11983540/mainproduct/45de21a3-a4fd-4c61-bbe4-f16478ec772b/d0.jpg",
+       "caption": "Kärcher CVH 3 handheld vacuum",
+       "kind": "product",
+       "source": "https://www.kaercher.com/sg/home-garden/vacuum-cleaners/cvh-3-11983540.html",
+       "alt": "Kärcher CVH 3 handheld vacuum",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Light and simple for everyday crumbs",
+     "love": "Half a kilo; charges on a USB-C cable.",
+     "watchOut": "Small bin; 10 minutes on high.",
+     "bestFor": "Everyday crumbs around home and car",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "COURTS",
+       "price": 130,
+       "stock": "Made to order",
+       "checked": "2026-10-30",
+       "url": "https://www.courts.com.sg/karcher-handheld-vacuum-cleaner-cvh-3-IP225158.html"
+      }
+     ],
+     "specs": {
+      "Size (length × width × height)": "38 × 7.6 × 7.6 cm",
+      "Weight": "0.5 kg",
+      "Dust container": "150 ml",
+      "Battery": "20 min low, 10 min high",
+      "Charge time": "3–4 hours",
+      "Power settings": "Two",
+      "Charges on": "USB-C cable",
+      "Tools": "Narrow-gap nozzle",
+      "Price": "S$130",
+      "In stock": "Made to order (COURTS)",
+      "Replacement filter": "Not stated",
+      "Warranty": "2 years, Kärcher"
+     },
+     "shopper": {
+      "headline": "Light and simple for everyday crumbs",
+      "love": "Half a kilo; charges on a USB-C cable.",
+      "watchOut": "Small bin; 10 minutes on high.",
+      "bestFor": "Everyday crumbs around home and car",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "0.5 kg",
+       "150 ml bin",
+       "USB-C charging"
+      ],
+      "specs": {
+       "Size (length × width × height)": "38 × 7.6 × 7.6 cm",
+       "Weight": "0.5 kg",
+       "Dust container": "150 ml",
+       "Battery": "20 min low, 10 min high",
+       "Charge time": "3–4 hours",
+       "Power settings": "Two",
+       "Charges on": "USB-C cable",
+       "Tools": "Narrow-gap nozzle",
+       "Price": "S$130",
+       "In stock": "Made to order (COURTS)",
+       "Replacement filter": "Not stated",
+       "Warranty": "2 years, Kärcher"
+      },
+      "offers": [
+       {
+        "shop": "COURTS",
+        "price": 130,
+        "stock": "Made to order",
+        "checked": "2026-10-30",
+        "url": "https://www.courts.com.sg/karcher-handheld-vacuum-cleaner-cvh-3-IP225158.html"
+       }
+      ],
+      "priceNote": "Target S$115–120 in a sale"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.courts.com.sg/karcher-handheld-vacuum-cleaner-cvh-3-IP225158.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews yet for the current CVH 3; Kärcher gives a 2-year local warranty."
+      }
+     },
+     "priceNote": "Target S$115–120 in a sale"
+    },
+    {
+     "id": "6bc60b3c-2889-4116-b9de-2a0dc096a986",
+     "label": "Black+Decker HLVC320B",
+     "name": "Black+Decker HLVC320B",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 81.8,
+     "images": [
+      {
+       "src": "https://asia.blackanddecker.global/ASIA/PRODUCT/IMAGES/HIRES/HLVC320B_E1.jpg",
+       "caption": "Black+Decker HLVC320B handheld vacuum",
+       "kind": "product",
+       "source": "https://asia.blackanddecker.global/product/hlvc320b-b1/slim-pelican-12v-hand-vac-20ah",
+       "alt": "Black+Decker HLVC320B handheld vacuum",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Cheapest with a charging stand",
+     "love": "Charging stand included; nozzle widens for bigger bits.",
+     "watchOut": "About 6 hours to recharge; small bin.",
+     "bestFor": "Best value under S$100",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Selffix",
+       "price": 81.8,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.selffix.com/black-decker-hlvc320b-12v-slim-pelican-handheld-vacuum/"
+      },
+      {
+       "shop": "Mega Discount Store",
+       "price": 85,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://megadiscountstore.com.sg/products/hlvc320b-handheld-vacuum-cleaner-with-extra-wide-nozzle"
+      }
+     ],
+     "specs": {
+      "Size (length × width × height)": "Not stated",
+      "Weight": "0.71 kg",
+      "Dust container": "120 ml",
+      "Battery": "13 minutes",
+      "Charge time": "About 6 hours",
+      "Power settings": "One",
+      "Charges on": "Charging stand",
+      "Tools": "Narrow-gap and brush tools",
+      "Price": "S$81.80",
+      "In stock": "Can order online (Selffix)",
+      "Replacement filter": "Not stated",
+      "Warranty": "1 year"
+     },
+     "shopper": {
+      "headline": "Cheapest with a charging stand",
+      "love": "Charging stand included; nozzle widens for bigger bits.",
+      "watchOut": "About 6 hours to recharge; small bin.",
+      "bestFor": "Best value under S$100",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "An overseas owner likes how it picks up bigger bits, but finds it noisy with a short battery.",
+      "chips": [
+       "Charging stand",
+       "120 ml bin",
+       "0.71 kg"
+      ],
+      "specs": {
+       "Size (length × width × height)": "Not stated",
+       "Weight": "0.71 kg",
+       "Dust container": "120 ml",
+       "Battery": "13 minutes",
+       "Charge time": "About 6 hours",
+       "Power settings": "One",
+       "Charges on": "Charging stand",
+       "Tools": "Narrow-gap and brush tools",
+       "Price": "S$81.80",
+       "In stock": "Can order online (Selffix)",
+       "Replacement filter": "Not stated",
+       "Warranty": "1 year"
+      },
+      "offers": [
+       {
+        "shop": "Selffix",
+        "price": 81.8,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.selffix.com/black-decker-hlvc320b-12v-slim-pelican-handheld-vacuum/"
+       },
+       {
+        "shop": "Mega Discount Store",
+        "price": 85,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://megadiscountstore.com.sg/products/hlvc320b-handheld-vacuum-cleaner-with-extra-wide-nozzle"
+       }
+      ],
+      "priceNote": "Target S$75–80 in a sale"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.selffix.com/black-decker-hlvc320b-12v-slim-pelican-handheld-vacuum/"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://review.kakaku.com/review/K0001399333/",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Target S$75–80 in a sale"
+    },
+    {
+     "id": "04a1346c-1958-47ed-a4c4-703225239207",
+     "label": "Shark WV204",
+     "name": "Shark WV204",
+     "kind": "product",
+     "tier": "Splurge",
+     "price": 199,
+     "images": [
+      {
+       "src": "/images/whole-home/handheld-vacuum-shark-wv204-official.webp",
+       "caption": "Shark Wandvac WV204 Black",
+       "kind": "product",
+       "source": "https://sharkninja.sg/products/shark-cordfree-handheld-vacuum-wv203?variant=52474115228019",
+       "width": 1600,
+       "height": 1600
+      }
+     ],
+     "headline": "Easiest: grab it from the dock",
+     "love": "Lives on its dock; one button empties it.",
+     "watchOut": "10-minute battery; tiny 100 ml bin.",
+     "bestFor": "Paying more for everyday convenience",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Best Denki",
+       "price": 199,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html",
+       "priceNote": "S$209 delivered"
+      },
+      {
+       "shop": "COURTS",
+       "price": 199,
+       "stock": "Can order online",
+       "checked": "2026-10-30",
+       "url": "https://www.courts.com.sg/shark-cordless-handheld-vacuum---black-wv204-IP170645.html"
+      }
+     ],
+     "specs": {
+      "Size (length × width × height)": "38.5 × 9.5 × 22 cm",
+      "Weight": "0.64 kg",
+      "Dust container": "100 ml",
+      "Battery": "10 minutes",
+      "Charge time": "About 2.5 hours",
+      "Power settings": "One",
+      "Charges on": "Charging dock",
+      "Tools": "Narrow-gap, duster and sofa tools",
+      "Price": "S$199 (S$209 delivered)",
+      "In stock": "Yes (Best Denki)",
+      "Replacement filter": "About S$8 (check it fits)",
+      "Warranty": "2 years, SharkNinja Singapore"
+     },
+     "shopper": {
+      "headline": "Easiest: grab it from the dock",
+      "love": "Lives on its dock; one button empties it.",
+      "watchOut": "10-minute battery; tiny 100 ml bin.",
+      "bestFor": "Paying more for everyday convenience",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Singapore buyers are happy. Overseas owners of the similar WV203 report charging and filter problems.",
+      "chips": [
+       "Charging dock",
+       "Sofa tool",
+       "0.64 kg"
+      ],
+      "specs": {
+       "Size (length × width × height)": "38.5 × 9.5 × 22 cm",
+       "Weight": "0.64 kg",
+       "Dust container": "100 ml",
+       "Battery": "10 minutes",
+       "Charge time": "About 2.5 hours",
+       "Power settings": "One",
+       "Charges on": "Charging dock",
+       "Tools": "Narrow-gap, duster and sofa tools",
+       "Price": "S$199 (S$209 delivered)",
+       "In stock": "Yes (Best Denki)",
+       "Replacement filter": "About S$8 (check it fits)",
+       "Warranty": "2 years, SharkNinja Singapore"
+      },
+      "offers": [
+       {
+        "shop": "Best Denki",
+        "price": 199,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html",
+        "priceNote": "S$209 delivered"
+       },
+       {
+        "shop": "COURTS",
+        "price": 199,
+        "stock": "Can order online",
+        "checked": "2026-10-30",
+        "url": "https://www.courts.com.sg/shark-cordless-handheld-vacuum---black-wv204-IP170645.html"
+       }
+      ],
+      "priceNote": "Target S$175–180 in a sale"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.courts.com.sg/shark-cordless-handheld-vacuum---black-wv204-IP170645.html",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Target S$175–180 in a sale",
+     "video": {
+      "youtubeId": "e_IQr7F4ib4",
+      "title": "Wandvac WV203: brand demonstration",
+      "channel": "Shark Ninja Singapore",
+      "note": "WV203 near-model · official demonstration; exact WV204 independent review not found",
+      "kind": "brand demonstration",
+      "checked": "2026-10-29",
+      "thumbnail": "/images/videos/e_IQr7F4ib4.webp",
+      "thumbnailSource": "https://img.youtube.com/vi/e_IQr7F4ib4/hqdefault.jpg",
+      "scope": "near-model",
+      "displayAllowed": false
+     },
+     "legacyImages": [
+      {
+       "src": "/images/whole-home/handheld-vacuum-shark-wv204-1.webp",
+       "caption": "Shark Wandvac WV204 Black · product image 1 · Best Denki",
+       "kind": "product",
+       "source": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html"
+      },
+      {
+       "src": "/images/whole-home/handheld-vacuum-shark-wv204-2.webp",
+       "caption": "Shark Wandvac WV204 Black · product image 2 · Best Denki",
+       "kind": "product",
+       "source": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html"
+      }
+     ]
+    },
+    {
+     "id": "4d6ffd29-e197-4421-adce-fed28a27d97a",
+     "label": "Bosch BHN20L",
+     "name": "Bosch BHN20L",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 179,
+     "images": [
+      {
+       "src": "https://media3.bsh-group.com/Product_Shots/5120x/MCSA03174418_J5015_2525323_BHN20L_def.webp",
+       "caption": "Bosch BHN20L handheld vacuum",
+       "kind": "product",
+       "source": "https://www.bosch-home.com.sg/en/product/vacuum-cleaners/rechargeable-handheld-vacuum-cleaners/BHN20L",
+       "alt": "Bosch BHN20L handheld vacuum",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Longest battery, biggest bin",
+     "love": "Up to 45 minutes; 300 ml bin.",
+     "watchOut": "1.1 kg, heaviest here; 5-hour recharge.",
+     "bestFor": "Longer car or whole-room clean-ups",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "COURTS",
+       "price": 179,
+       "stock": "Made to order",
+       "checked": "2026-10-30",
+       "url": "https://www.courts.com.sg/bosch-handstick-vacuum-cleaner-18v-bhn20l-IP157587.html"
+      }
+     ],
+     "specs": {
+      "Size (length × width × height)": "38 × 11 × 13.5 cm",
+      "Weight": "1.1 kg",
+      "Dust container": "300 ml",
+      "Battery": "Up to 45 minutes",
+      "Charge time": "About 5 hours",
+      "Power settings": "Two",
+      "Charges on": "Own charger",
+      "Tools": "Narrow-gap nozzle",
+      "Price": "S$179",
+      "In stock": "Made to order (COURTS)",
+      "Replacement filter": "Not stated",
+      "Warranty": "2 years, Bosch"
+     },
+     "shopper": {
+      "headline": "Longest battery, biggest bin",
+      "love": "Up to 45 minutes; 300 ml bin.",
+      "watchOut": "1.1 kg, heaviest here; 5-hour recharge.",
+      "bestFor": "Longer car or whole-room clean-ups",
+      "ownerReviews": "Mostly good",
+      "ownerSummary": "Overseas owners are mostly happy; few Singapore reviews yet.",
+      "chips": [
+       "45 min battery",
+       "300 ml bin",
+       "1.1 kg"
+      ],
+      "specs": {
+       "Size (length × width × height)": "38 × 11 × 13.5 cm",
+       "Weight": "1.1 kg",
+       "Dust container": "300 ml",
+       "Battery": "Up to 45 minutes",
+       "Charge time": "About 5 hours",
+       "Power settings": "Two",
+       "Charges on": "Own charger",
+       "Tools": "Narrow-gap nozzle",
+       "Price": "S$179",
+       "In stock": "Made to order (COURTS)",
+       "Replacement filter": "Not stated",
+       "Warranty": "2 years, Bosch"
+      },
+      "offers": [
+       {
+        "shop": "COURTS",
+        "price": 179,
+        "stock": "Made to order",
+        "checked": "2026-10-30",
+        "url": "https://www.courts.com.sg/bosch-handstick-vacuum-cleaner-18v-bhn20l-IP157587.html"
+       }
+      ],
+      "priceNote": "Target S$155–160 in a sale"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://www.courts.com.sg/bosch-handstick-vacuum-cleaner-18v-bhn20l-IP157587.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.mediaexpert.pl/agd-male/sprzatanie/odkurzacze-reczne/odkurzacz-reczny-bosch-bhn20l-move",
+       "exactModel": true
+      }
+     },
+     "priceNote": "Target S$155–160 in a sale"
+    },
+    {
+     "id": "64021ad1-9b94-4950-a24e-972bb4b94b65",
      "label": "Kärcher Anniversary",
      "name": "Kärcher CVH Anniversary Edition",
      "kind": "product",
@@ -2406,122 +6289,88 @@
        "height": 1600
       }
      ],
-     "headline": "Save S$69 for everyday crumbs",
-     "love": "USB-C charging and two power settings in a compact cleaner.",
-     "watchOut": "Discontinued edition; replacement battery and filter costs are unverified.",
-     "bestFor": "Affordable supplementary cleaning around the home",
-     "pros": [
-      "S$69 cheaper",
-      "Up to 20 minutes on low",
-      "USB-C charging"
-     ],
-     "cons": [
-      "Discontinued",
-      "Replacement-part costs unverified",
-      "About four hours to recharge"
-     ],
-     "ownersSay": [
-      {
-       "text": "Verified purchase for exact Anniversary Edition, posted about ten months ago; likes compact size, USB-C, two settings, metal filter; criticises noise, perceived build quality and price. Review age is not ownership duration.",
-       "source": "https://www.galaxus.de/de/productrating/ueberrissener-preis-9983223",
-       "when": "checked October 2026"
-      },
-      {
-       "text": "Verified purchase, exact edition, posted about ten months ago; praises compactness and suction. No durability follow-up.",
-       "source": "https://www.galaxus.de/de/productrating/kaercher-cvh-10001921",
-       "when": "checked October 2026"
-      },
-      {
-       "text": "Exact 1.198-355.0 owner comments May–August 2025. Four visible, all less than one month use: two mention short runtime; others praise compact car cleaning. Regional supply/warranty differ; not failure-rate evidence.",
-       "source": "https://www.vseinstrumenti.ru/product/ruchnoj-pylesos-karcher-cvh-anniversary-edition-1-198-355-0-18719748/otzyvy/",
-       "when": "checked October 2026"
-      }
-     ],
+     "headline": "Same Kärcher, in stock today",
+     "love": "In stock now; USB-C and storage bag included.",
+     "watchOut": "Old edition being replaced; 9 minutes on high.",
+     "bestFor": "If CVH 3 delivery takes too long",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
      "offers": [
       {
        "shop": "Best Denki",
        "price": 130,
-       "priceNote": "collected or S$140 with published standard delivery",
-       "stock": "Low stock — 4 left when checked",
-       "checked": "2026-10-29 12:18 SGT",
-       "url": "https://www.bestdenki.com.sg/1106154-karcher-handheld-vacuum-cvh-anniversary-edition.html"
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.bestdenki.com.sg/1106154-karcher-handheld-vacuum-cvh-anniversary-edition.html",
+       "priceNote": "S$140 delivered"
       }
      ],
-     "buyTiming": "Wait for 11.11 price check; target S$120 collected. If stock disappears, consider option B.",
-     "confidence": {
-      "level": "Limited",
-      "why": "Exact owners report mixed runtime and noise experiences; no dependable long-term failure rate. Replacement-part costs unverified."
-     },
      "specs": {
-      "Collected price": "S$130",
-      "Published standard delivered total": "S$140",
-      "Verified stock listing": "Low stock",
-      "Model status": "Discontinued edition, remaining new stock",
-      "Size W × D × H (cm)": "7.6 × 38 × 7.6",
-      "Weight": "0.52 kg in manual; datasheet conflicts",
+      "Size (length × width × height)": "38 × 7.6 × 7.6 cm",
+      "Weight": "About 0.5 kg",
       "Dust container": "150 ml",
+      "Battery": "20 min low, 9 min high",
+      "Charge time": "About 4 hours",
       "Power settings": "Two",
-      "Maximum low-setting runtime": "20 minutes",
-      "Maximum high-setting runtime": "9 minutes",
-      "Full recharge": "About 4 hours",
-      "Charging connection": "USB-C",
-      "Charging dock included": "No",
-      "Cleaning attachments": "Combined crevice and brush tool",
-      "Filter specification": "HEPA 12 in manual",
-      "Washable filter": "Yes",
-      "Liquid pickup": "No",
-      "Manufacturer sound power": "78 dB(A)",
-      "Local replacement-filter price": "Not stated",
-      "Local replacement-battery price": "Not stated",
-      "Singapore warranty": "Two years, qualifying faults",
-      "Provider": "Kärcher Singapore; consumer servicing by DWS"
+      "Charges on": "USB-C cable",
+      "Tools": "Narrow-gap brush nozzle",
+      "Price": "S$130 (S$140 delivered)",
+      "In stock": "Yes (Best Denki), last stock",
+      "Replacement filter": "Not stated",
+      "Warranty": "2 years, Kärcher"
      },
-     "id": "64021ad1-9b94-4950-a24e-972bb4b94b65",
-     "display": {
-      "headline": "USB-C cleaning for S$130",
-      "love": "Compact handheld with USB-C charging and two settings.",
-      "watchOut": "Discontinued clearance. Battery and filter costs unverified.",
-      "bestFor": "Lower-cost occasional clean-ups",
-      "buyTiming": "11.11 price check; target S$120 collected. Shark is the stock fallback."
-     },
-     "table": {
-      "love": "USB-C charging; two power settings",
-      "watchOut": "Discontinued; replacement-part costs unverified",
-      "bestFor": "Lower-cost small clean-ups"
-     },
-     "highlights": [
-      {
-       "icon": "power",
-       "value": "20 min",
-       "label": "Low setting"
+     "shopper": {
+      "headline": "Same Kärcher, in stock today",
+      "love": "In stock now; USB-C and storage bag included.",
+      "watchOut": "Old edition being replaced; 9 minutes on high.",
+      "bestFor": "If CVH 3 delivery takes too long",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "In stock",
+       "USB-C charging",
+       "Storage bag"
+      ],
+      "specs": {
+       "Size (length × width × height)": "38 × 7.6 × 7.6 cm",
+       "Weight": "About 0.5 kg",
+       "Dust container": "150 ml",
+       "Battery": "20 min low, 9 min high",
+       "Charge time": "About 4 hours",
+       "Power settings": "Two",
+       "Charges on": "USB-C cable",
+       "Tools": "Narrow-gap brush nozzle",
+       "Price": "S$130 (S$140 delivered)",
+       "In stock": "Yes (Best Denki), last stock",
+       "Replacement filter": "Not stated",
+       "Warranty": "2 years, Kärcher"
       },
-      {
-       "icon": "volume",
-       "value": "150 ml",
-       "label": "Dust container"
-      },
-      {
-       "icon": "battery",
-       "value": "USB-C",
-       "label": "Charging"
-      }
-     ],
-     "tableSpecs": {
-      "Model status": "Discontinued; remaining new stock",
-      "Weight": "0.52 kg; official documents conflict",
-      "Local replacement-filter price": "Not stated",
-      "Singapore warranty": "2 years; qualifying faults",
-      "Provider": "Kärcher Singapore; servicing by DWS",
-      "Verified stock listing": "Low stock"
+      "offers": [
+       {
+        "shop": "Best Denki",
+        "price": 130,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.bestdenki.com.sg/1106154-karcher-handheld-vacuum-cvh-anniversary-edition.html",
+        "priceNote": "S$140 delivered"
+       }
+      ],
+      "priceNote": "At S$130, the newer CVH 3 is better value"
      },
-     "legacyImages": [
-      {
-       "src": "/images/whole-home/handheld-vacuum-karcher-anniversary-1.webp",
-       "caption": "Kärcher CVH Anniversary Edition · product image 1 · Kärcher Singapore",
-       "kind": "product",
-       "source": "https://www.kaercher.com/sg/discontinued-machines/cvh-anniversary-edition-11983550.html"
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.bestdenki.com.sg/1106154-karcher-handheld-vacuum-cvh-anniversary-edition.html"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews for this edition; Kärcher gives a 2-year local warranty."
       }
-     ],
+     },
+     "priceNote": "At S$130, the newer CVH 3 is better value",
      "video": {
       "youtubeId": "rzN-Ye4L3ts",
       "title": "CVH Anniversary: brand demonstration",
@@ -2534,269 +6383,111 @@
       "scope": "exact",
       "displayAllowed": false
      },
-     "publication": {
-      "stock": {
-       "verified": true,
-       "status": "low",
-       "source": "https://www.bestdenki.com.sg/1106154-karcher-handheld-vacuum-cvh-anniversary-edition.html",
-       "checked": "2026-10-30 SGT",
-       "evidence": "4 left, exact retailer page"
-      },
-      "owner": {
-       "exactModel": true,
-       "source": "https://www.galaxus.de/de/productrating/ueberrissener-preis-9983223",
-       "checked": "2026-10-29"
-      }
-     },
-     "shopper": {
-      "headline": "USB-C (phone-style cable) for S$130",
-      "love": "Longer battery life for brief clean-ups.",
-      "watchOut": "Around 4 hours to recharge.",
-      "bestFor": "Occasional clean-ups",
-      "ownerReviews": "Mixed",
-      "ownerSummary": "Owners like its size; some dislike the noise.",
-      "priceNote": "Free collection; delivery S$140 total.",
-      "chips": [
-       "Battery up to 20 min",
-       "Charge time about 4 hours",
-       "Dust container 150 ml"
-      ],
-      "specs": {
-       "Dust container": "150 ml",
-       "Charge time": "About 4 hours",
-       "Noise": "78 dB (like a hair dryer)",
-       "Works with": "USB-C (common charging cable)",
-       "Charging stand included": "No",
-       "Sofa tool included": "No",
-       "Washable filter": "Yes",
-       "Picks up liquids": "No",
-       "Price": "S$130",
-       "Price with delivery": "S$140",
-       "In stock": "Yes",
-       "Last stock: model being replaced": "Yes",
-       "Replacement filter": "Price TBC",
-       "Warranty": "2 years, service centre",
-       "Size (Length × Width × Height)": "38 × 7.6 × 7.6 cm",
-       "Battery": "Up to 20 min low; 9 min high"
-      },
-      "offers": [
-       {
-        "shop": "Best Denki",
-        "url": "https://www.bestdenki.com.sg/1106154-karcher-handheld-vacuum-cvh-anniversary-edition.html",
-        "price": 130,
-        "priceNote": "Free collection; S$10 standard delivery",
-        "stock": "In stock",
-        "checked": "2026-10-30 SGT"
-       }
-      ],
-      "videoNote": "Kärcher Anniversary demonstration · Russian"
-     }
-    },
-    {
-     "label": "Shark WV204",
-     "name": "Shark Wandvac WV204 Black",
-     "kind": "product",
-     "tier": "Splurge",
-     "price": 199,
-     "images": [
-      {
-       "src": "/images/whole-home/handheld-vacuum-shark-wv204-official.webp",
-       "caption": "Shark Wandvac WV204 Black",
-       "kind": "product",
-       "source": "https://sharkninja.sg/products/shark-cordfree-handheld-vacuum-wv203?variant=52474115228019",
-       "width": 1600,
-       "height": 1600
-      }
-     ],
-     "headline": "Charging dock keeps it easy to grab",
-     "love": "Dock storage, one-button emptying and a wider upholstery attachment.",
-     "watchOut": "Short runtime and overseas Wandvac-family reports of charging failures.",
-     "bestFor": "Frequent brief clean-ups where dock convenience matters",
-     "pros": [
-      "Charging dock included",
-      "Upholstery tool included",
-      "About 2.5-hour recharge"
-     ],
-     "cons": [
-      "Approximately 10-minute runtime",
-      "Tiny 100 ml container",
-      "Battery replacement support unverified"
-     ],
-     "ownersSay": [
-      {
-       "text": "Three visible exact WV204 owner comments: February and May 2022, March 2026. Praise quick small-area/car cleaning; May 2022 owner accepts short battery life. No documented long-term follow-up.",
-       "source": "https://www.courts.com.sg/shark-cordless-handheld-vacuum---black-wv204-IP170645.html",
-       "when": "February/May 2022 and March 2026"
-      }
-     ],
-     "offers": [
-      {
-       "shop": "Best Denki",
-       "price": 199,
-       "priceNote": "collected or S$209 with published standard delivery",
-       "stock": "Ready stock — 14 left when checked",
-       "checked": "2026-10-29 12:18 SGT",
-       "url": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html"
-      },
-      {
-       "shop": "Harvey Norman",
-       "price": 199,
-       "priceNote": "listed before delivery",
-       "stock": "Stock unverified",
-       "checked": "2026-10-23",
-       "url": "https://www.harveynorman.com.sg/home-appliances/vacuum-cleaners-en-2/stick-and-handheld-vacuum-cleaners/shark-cordfree-handheld-vacuum-black-wv204.html"
-      }
-     ],
-     "buyTiming": "Wait for 11.11 or 12.12; target S$179 collected. Target is not an advertised offer.",
-     "confidence": {
-      "level": "Limited",
-      "why": "Exact local owners praise brief clean-ups. Current local support is verified, but long-term durability and comparative failure rates are unproven."
-     },
-     "specs": {
-      "Collected price": "S$199",
-      "Published standard delivered total": "S$209",
-      "Verified stock listing": "Ready stock",
-      "Model status": "Listed in current Singapore range",
-      "Size W × D × H (cm)": "9.5 × 22 × 38.5, official listed dimensions",
-      "Weight": "0.64 kg",
-      "Dust container": "100 ml",
-      "Power settings": "One",
-      "Maximum low-setting runtime": "10 minutes, single setting",
-      "Maximum high-setting runtime": "10 minutes, single setting",
-      "Full recharge": "About 2.5 hours",
-      "Charging connection": "Dedicated dock",
-      "Charging dock included": "Yes",
-      "Cleaning attachments": "Duster crevice and upholstery tools",
-      "Filter specification": "HEPA listed by Singapore brand",
-      "Washable filter": "Yes",
-      "Liquid pickup": "No",
-      "Manufacturer sound power": "Not stated",
-      "Local replacement-filter price": "WV203-family filter listed S$7.99; confirm WV204 fit",
-      "Local replacement-battery price": "Not stated",
-      "Singapore warranty": "Two-year limited replacement warranty",
-      "Provider": "SharkNinja Singapore"
-     },
-     "id": "04a1346c-1958-47ed-a4c4-703225239207",
-     "display": {
-      "headline": "Charging dock for quick clean-ups",
-      "love": "Charging dock, one-button emptying and upholstery tool.",
-      "watchOut": "About 10 minutes per charge. Long-term durability evidence limited.",
-      "bestFor": "Frequent clean-ups with dock storage",
-      "buyTiming": "11.11 or 12.12; target S$179 collected. Target is not an advertised offer."
-     },
-     "table": {
-      "love": "Charging dock and upholstery tool",
-      "watchOut": "10-minute runtime; limited durability evidence",
-      "bestFor": "Frequent brief clean-ups"
-     },
-     "highlights": [
-      {
-       "icon": "power",
-       "value": "10 min",
-       "label": "Runtime"
-      },
-      {
-       "icon": "weight",
-       "value": "0.64 kg",
-       "label": "Weight"
-      },
-      {
-       "icon": "volume",
-       "value": "100 ml",
-       "label": "Dust container"
-      }
-     ],
-     "tableSpecs": {
-      "Model status": "Current Singapore range",
-      "Size W × D × H (cm)": "9.5 × 22 × 38.5 cm",
-      "Maximum low-setting runtime": "10 minutes; single setting",
-      "Maximum high-setting runtime": "10 minutes; single setting",
-      "Local replacement-filter price": "S$7.99 WV203 filter; WV204 fit unverified",
-      "Singapore warranty": "2-year limited replacement warranty",
-      "Verified stock listing": "Ready stock"
-     },
      "legacyImages": [
       {
-       "src": "/images/whole-home/handheld-vacuum-shark-wv204-1.webp",
-       "caption": "Shark Wandvac WV204 Black · product image 1 · Best Denki",
+       "src": "/images/whole-home/handheld-vacuum-karcher-anniversary-1.webp",
+       "caption": "Kärcher CVH Anniversary Edition · product image 1 · Kärcher Singapore",
        "kind": "product",
-       "source": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html"
-      },
+       "source": "https://www.kaercher.com/sg/discontinued-machines/cvh-anniversary-edition-11983550.html"
+      }
+     ]
+    },
+    {
+     "id": "aff8a2d1-b16d-4273-ac07-33a44feb7185",
+     "label": "Xiaomi Mi Mini",
+     "name": "Xiaomi Mi Vacuum Cleaner Mini",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 55,
+     "images": [
       {
-       "src": "/images/whole-home/handheld-vacuum-shark-wv204-2.webp",
-       "caption": "Shark Wandvac WV204 Black · product image 2 · Best Denki",
+       "src": "https://i02.appmifile.com/762_operator_sg/09/07/2021/589f22745ac4ab10f48715c3f66060cd.jpg",
+       "caption": "Xiaomi Mi Vacuum Cleaner Mini",
        "kind": "product",
-       "source": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html"
+       "source": "https://www.mi.com/sg/product/mi-vacuum-cleaner-mini/",
+       "alt": "Xiaomi Mi Vacuum Cleaner Mini",
+       "width": 1200,
+       "height": 1200
       }
      ],
-     "video": {
-      "youtubeId": "e_IQr7F4ib4",
-      "title": "Wandvac WV203: brand demonstration",
-      "channel": "Shark Ninja Singapore",
-      "note": "WV203 near-model · official demonstration; exact WV204 independent review not found",
-      "kind": "brand demonstration",
-      "checked": "2026-10-29",
-      "thumbnail": "/images/videos/e_IQr7F4ib4.webp",
-      "thumbnailSource": "https://img.youtube.com/vi/e_IQr7F4ib4/hqdefault.jpg",
-      "scope": "near-model",
-      "displayAllowed": false
+     "headline": "Cheapest, for desk-size messes",
+     "love": "Tiny, light and only S$55.",
+     "watchOut": "50 ml bin; shop warranty, not Xiaomi's.",
+     "bestFor": "Desk crumbs on a tight budget",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Dasher",
+       "price": 55,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://dasher.sg/products/xiaomi-vacuum-cleaner-mini"
+      }
+     ],
+     "specs": {
+      "Size (length × width × height)": "26.7 × 5.5 × 5.5 cm",
+      "Weight": "About 0.5 kg",
+      "Dust container": "50 ml",
+      "Battery": "30 min low, 9 min high",
+      "Charge time": "Not stated",
+      "Power settings": "Two",
+      "Charges on": "USB-C cable",
+      "Tools": "Narrow-gap and brush nozzles",
+      "Price": "S$55",
+      "In stock": "Yes (Dasher)",
+      "Replacement filter": "Not stated",
+      "Warranty": "1 year, from the shop (Dasher)"
+     },
+     "shopper": {
+      "headline": "Cheapest, for desk-size messes",
+      "love": "Tiny, light and only S$55.",
+      "watchOut": "50 ml bin; shop warranty, not Xiaomi's.",
+      "bestFor": "Desk crumbs on a tight budget",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Some owners report charging faults and blocked filters.",
+      "chips": [
+       "S$55",
+       "0.5 kg",
+       "USB-C charging"
+      ],
+      "specs": {
+       "Size (length × width × height)": "26.7 × 5.5 × 5.5 cm",
+       "Weight": "About 0.5 kg",
+       "Dust container": "50 ml",
+       "Battery": "30 min low, 9 min high",
+       "Charge time": "Not stated",
+       "Power settings": "Two",
+       "Charges on": "USB-C cable",
+       "Tools": "Narrow-gap and brush nozzles",
+       "Price": "S$55",
+       "In stock": "Yes (Dasher)",
+       "Replacement filter": "Not stated",
+       "Warranty": "1 year, from the shop (Dasher)"
+      },
+      "offers": [
+       {
+        "shop": "Dasher",
+        "price": 55,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://dasher.sg/products/xiaomi-vacuum-cleaner-mini"
+       }
+      ]
      },
      "publication": {
       "stock": {
        "verified": true,
+       "checked": "2026-10-30",
        "status": "ready",
-       "source": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html",
-       "checked": "2026-10-30 SGT",
-       "evidence": "14 left in fresh exact retailer HTML"
+       "source": "https://dasher.sg/products/xiaomi-vacuum-cleaner-mini"
       },
       "owner": {
-       "exactModel": true,
-       "source": "https://www.courts.com.sg/shark-cordless-handheld-vacuum---black-wv204-IP170645.html",
-       "checked": "2026-10-29"
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/Xiaomi/comments/oxuixd/xiaomi_mi_vacuum_cleaner_mini_problem/",
+       "exactModel": true
       }
-     },
-     "shopper": {
-      "headline": "Charging stand and sofa tool",
-      "love": "Stored charged and ready to grab.",
-      "watchOut": "Around 10 minutes of cleaning.",
-      "bestFor": "Frequent sofa and car clean-ups",
-      "ownerReviews": "Mostly good",
-      "ownerSummary": "Owners like quick car and small-area cleaning.",
-      "priceNote": "Free collection; delivery S$209 total.",
-      "chips": [
-       "Battery up to 10 min",
-       "Charge time about 2.5 hours",
-       "Dust container 100 ml"
-      ],
-      "specs": {
-       "Dust container": "100 ml",
-       "Charge time": "About 2.5 hours",
-       "Noise": "Not stated",
-       "Works with": "Included charging stand",
-       "Charging stand included": "Yes",
-       "Sofa tool included": "Yes",
-       "Washable filter": "Yes",
-       "Picks up liquids": "No",
-       "Price": "S$199",
-       "Price with delivery": "S$209",
-       "In stock": "Yes",
-       "Last stock: model being replaced": "No",
-       "Replacement filter": "Price TBC",
-       "Warranty": "2 years, replacement for covered faults",
-       "Size (Length × Width × Height)": "38.5 × 22 × 9.5 cm",
-       "Battery": "Up to 10 min (one power level)"
-      },
-      "offers": [
-       {
-        "shop": "Best Denki",
-        "url": "https://www.bestdenki.com.sg/1105154-shark-cordfree-handheld-vacuum-wv204-black.html",
-        "price": 199,
-        "priceNote": "Free collection; S$10 standard delivery",
-        "stock": "In stock",
-        "checked": "2026-10-30 SGT"
-       }
-      ],
-      "videoNote": "Shark WV203 demonstration · similar model"
      }
     }
    ],
@@ -2805,115 +6496,14 @@
    ],
    "qty": 1,
    "budget": 300,
-   "salesNote": "11.11, Black Friday, 12.12; handheld-specific deals unconfirmed",
-   "answer10s": "Choose the Kärcher Anniversary at S$130 for small clean-ups if you accept remaining stock of a discontinued edition. Choose the S$199 Shark for its charging dock and upholstery tool.",
-   "summary": "Compared compact cordless handheld vacuums for crumbs, shelves, sofa gaps and occasional car cleaning. These two have explicit Singapore stock listings; exact-model long-term reliability evidence remains limited.",
-   "tiers": [
-    {
-     "name": "Budget",
-     "min": 50,
-     "max": 99
-    },
-    {
-     "name": "Mid",
-     "min": 100,
-     "max": 179
-    },
-    {
-     "name": "Splurge",
-     "min": 180,
-     "max": 300
-    }
-   ],
+   "salesNote": "11.11, Black Friday (27 Nov), 12.12",
+   "answer10s": "Kärcher CVH 3 (S$130) for everyday crumbs. Black+Decker (S$81.80) to save money. Shark (S$199) adds a dock, not a longer life.",
+   "summary": "Six compact cordless handheld vacuums sold in Singapore, from S$55 to S$199.",
    "contractorNote": null,
-   "fullReport": null,
-   "specGroups": [
-    {
-     "group": "Price & stock",
-     "rows": [
-      "Collected price",
-      "Published standard delivered total",
-      "Verified stock listing",
-      "Model status"
-     ]
-    },
-    {
-     "group": "Size & fit",
-     "rows": [
-      "Size W × D × H (cm)",
-      "Weight",
-      "Dust container"
-     ]
-    },
-    {
-     "group": "Performance",
-     "rows": [
-      "Power settings",
-      "Maximum low-setting runtime",
-      "Maximum high-setting runtime"
-     ]
-    },
-    {
-     "group": "Charging",
-     "rows": [
-      "Full recharge",
-      "Charging connection",
-      "Charging dock included"
-     ]
-    },
-    {
-     "group": "Tools",
-     "rows": [
-      "Cleaning attachments"
-     ]
-    },
-    {
-     "group": "Filters",
-     "rows": [
-      "Filter specification",
-      "Washable filter"
-     ]
-    },
-    {
-     "group": "Cleaning",
-     "rows": [
-      "Liquid pickup"
-     ]
-    },
-    {
-     "group": "Noise",
-     "rows": [
-      "Manufacturer sound power"
-     ]
-    },
-    {
-     "group": "Running costs",
-     "rows": [
-      "Local replacement-filter price"
-     ]
-    },
-    {
-     "group": "Repairability",
-     "rows": [
-      "Local replacement-battery price"
-     ]
-    },
-    {
-     "group": "Warranty & support",
-     "rows": [
-      "Singapore warranty",
-      "Provider"
-     ]
-    }
-   ],
    "roughBudget": {
     "min": 150,
     "max": 400,
     "source": "Rough guess, to research"
-   },
-   "display": {
-    "answer10s": "Shark WV204 adds a charging dock and a two-year local replacement warranty at S$199. Kärcher Anniversary saves S$69, but is discontinued clearance. Neither has dependable comparative failure-rate data.",
-    "summary": "Two compact handhelds below S$300. Shark is preferred for current Singapore support; Kärcher is a verified-stock clearance alternative. Long-term reliability remains uncertain."
    },
    "researchHistory": [
     {
@@ -3190,14 +6780,15 @@
     }
    ],
    "publicationPolicy": "stock-owner-video-v1",
-   "researchedAt": "2026-10-29",
+   "researchedAt": "2026-10-30",
    "requiredBrands": [
     "Kärcher",
     "Shark",
     "Airbot",
-    "Xiaomi"
+    "Xiaomi",
+    "Bosch",
+    "Black+Decker"
    ],
-   "publicationHolds": [],
    "brandReview": [
     {
      "brand": "Kärcher",
@@ -3223,24 +6814,18 @@
     },
     {
      "brand": "Xiaomi",
-     "reason": "Mi Mini costs S$55; selected-seller manufacturer warranty and replacement-battery support remain unverified.",
-     "source": "https://dasher.sg/products/xiaomi-vacuum-cleaner-mini",
-     "details": "Ready stock explicitly listed by Dasher. Exact owner reports include charging failures, but evidence cannot establish a higher failure rate. Seller filter bundle exists. Do not say unavailable or no owner reports.",
-     "sources": [
-      "https://dasher.sg/products/xiaomi-vacuum-cleaner-mini",
-      "https://www.mi.com/sg/support/faq/details/KA-07624/",
-      "https://www.mi.com/sg/support/warranty/",
-      "https://indifference.jp/xiaomi-mi-vacuum-cleaner-mini/",
-      "https://www.reddit.com/r/Xiaomi/comments/oxuixd/xiaomi_mi_vacuum_cleaner_mini_problem/"
-     ]
+     "reason": "Included: Mi Vacuum Cleaner Mini at Dasher, with the shop’s 1-year warranty.",
+     "source": "https://dasher.sg/products/xiaomi-vacuum-cleaner-mini"
     },
     {
      "brand": "Bosch",
-     "reason": "Official BHN20L offer is pre-order only.",
-     "source": "https://www.bosch-home.com.sg/en/product/vacuum-cleaners/rechargeable-handheld-vacuum-cleaners/BHN20L",
-     "sources": [
-      "https://www.bosch-home.com.sg/en/product/vacuum-cleaners/rechargeable-handheld-vacuum-cleaners/BHN20L"
-     ]
+     "reason": "Included: BHN20L, made to order at COURTS.",
+     "source": "https://www.courts.com.sg/bosch-handstick-vacuum-cleaner-18v-bhn20l-IP157587.html"
+    },
+    {
+     "brand": "Black+Decker",
+     "reason": "Included: HLVC320B, the cheapest with a charging stand.",
+     "source": "https://www.selffix.com/black-decker-hlvc320b-12v-slim-pelican-handheld-vacuum/"
     }
    ],
    "researchSources": [
@@ -3260,32 +6845,26 @@
      "checked": "2026-10-29"
     }
    ],
-   "researchMissing": [],
    "shopper": {
-    "answer10s": "Shark WV204: S$199 with a charging stand and sofa tool. Kärcher: S$130, a common USB-C charging cable and longer battery life.",
+    "answer10s": "Kärcher CVH 3 (S$130) for everyday crumbs. Black+Decker (S$81.80) to save money. Shark (S$199) adds a dock, not a longer life.",
+    "mustKnow": [
+     "For crumbs, shelves, sofa gaps and the car.",
+     "Dry dirt only; no liquids or renovation dust.",
+     "Wait for 11.11, Black Friday or 12.12."
+    ],
+    "contractorNote": null,
     "alsoConsidered": [
      {
       "brand": "Airbot",
-      "reason": "Heavier to hold"
-     },
-     {
-      "brand": "Xiaomi",
-      "reason": "no charging stand"
-     },
-     {
-      "brand": "Bosch",
-      "reason": "not in stock"
+      "reason": "Heavier to hold (1.3 kg)"
      }
-    ],
-    "mustKnow": [
-     "For crumbs, shelves and sofa gaps.",
-     "Dry dirt only; no liquids or renovation dust."
     ],
     "groups": [
      {
       "group": "Size & fit",
       "rows": [
-       "Size (Length × Width × Height)",
+       "Size (length × width × height)",
+       "Weight",
        "Dust container"
       ]
      },
@@ -3294,26 +6873,21 @@
       "rows": [
        "Battery",
        "Charge time",
-       "Noise"
+       "Power settings"
       ]
      },
      {
       "group": "Features",
       "rows": [
-       "Works with",
-       "Charging stand included",
-       "Sofa tool included",
-       "Washable filter",
-       "Picks up liquids"
+       "Charges on",
+       "Tools"
       ]
      },
      {
       "group": "Price & stock",
       "rows": [
        "Price",
-       "Price with delivery",
-       "In stock",
-       "Last stock: model being replaced"
+       "In stock"
       ]
      },
      {

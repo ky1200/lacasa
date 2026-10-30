@@ -16,8 +16,8 @@ test('qualified card retains prices, installation conditions, sale uncertainty a
  assert.equal(item.tiers[0].estimated,true);assert.equal(item.tiers[0].note,'installed');
 });
 test('smart/digital door lock matches the existing item and re-import preserves all pictures and choices',()=>{
- const imported=applyCard(content,card),next=imported.decisions.find(x=>x.id===d.id);assert.equal(imported.decisions.length,34);assert.equal(next.slug,d.slug);assert.equal(next.title,'Smart door lock');assert.deepEqual(next.options.map(o=>o.id),d.options.map(o=>o.id));assert.deepEqual(next.options.map(o=>o.images),d.options.map(o=>o.images));
- const prior=structuredClone(content);prior.decisions.find(x=>x.id===d.id).title='Digital door lock';assert.equal(applyCard(prior,card).decisions.length,34);
+ const imported=applyCard(content,card),next=imported.decisions.find(x=>x.id===d.id);assert.equal(imported.decisions.length,content.decisions.length);assert.equal(next.slug,d.slug);assert.equal(next.title,'Smart door lock');assert.deepEqual(next.options.map(o=>o.id),d.options.map(o=>o.id));assert.deepEqual(next.options.map(o=>o.images),d.options.map(o=>o.images));
+ const prior=structuredClone(content);prior.decisions.find(x=>x.id===d.id).title='Digital door lock';assert.equal(applyCard(prior,card).decisions.length,content.decisions.length);
 });
 test('current lock prices expose included hubs and incomplete final costs',()=>{
  const s=stateFor(content,samples,'KX');

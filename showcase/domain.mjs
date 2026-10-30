@@ -3,8 +3,9 @@ export const CODES = ['KY', 'KX', 'KS'];
 export const isSample = d => !!d.sample || d.id.startsWith('SAMPLE-');
 export const todaySG = (now = new Date()) => new Intl.DateTimeFormat('en-CA', {timeZone:'Asia/Singapore',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
 export const slug = value => String(value).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
-export const money = value => value == null ? 'Price TBC' : `S$${Math.round(value).toLocaleString('en-SG')}`;
-export const range = (min,max) => min === max ? money(min) : `${money(min)}–${Math.round(max).toLocaleString('en-SG')}`;
+const amount = v => { const cents = Math.round(v*100)%100 !== 0; return (cents ? Math.round(v*100)/100 : Math.round(v)).toLocaleString('en-SG',{minimumFractionDigits:cents?2:0,maximumFractionDigits:2}); };
+export const money = value => value == null ? 'Price TBC' : `S$${amount(value)}`;
+export const range = (min,max) => min === max ? money(min) : `${money(min)}–${amount(max)}`;
 export const estimated = (value,estimate=false) => estimate ? `about ${value}` : value;
 export const tbcCount = n => `${n} ${n===1?'price':'prices'} TBC`;
 export function costSummary({min,max,priced,tbc=0,rough=0}) {
@@ -68,6 +69,9 @@ export function voteQueue(state) {
 }
 export function lineCost(d,r) {
  const qty=d.qty??1;
+ // Whole-job items (installed lighting, a house of switch plates): model prices are per unit or hardware only,
+ // so the budget for the whole job stays the line cost until the contractor quotes.
+ if(d.costBasis==='budget'&&d.roughBudget){const option=(r?.status==='decided'||r?.status==='locked')&&r.winner?d.options.find(o=>o.id===r.winner):undefined;return {kind:'open',min:qty*d.roughBudget.min,max:qty*d.roughBudget.max,rough:true,source:d.roughBudget.source,...(option?{option}:{})};}
  if ((r?.status==='decided'||r?.status==='locked') && r.winner) {
   const option=d.options.find(o=>o.id===r.winner);
   if(option?.paidVia==='contractor')return {kind:'contractor',min:0,max:0,amount:option.price==null?null:qty*option.price,option};

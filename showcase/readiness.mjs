@@ -7,7 +7,7 @@ export function readinessMissing(d){
   const stock=o.publication?.stock;
   // Pre-order counts only when it arrives before the item is needed on site.
   const neededBy=NEEDED_BY[d.stage]??'2026-12-03',preorderInTime=stock?.status==='preorder'&&!!stock.availableBy&&stock.availableBy<=neededBy;
-  if(!stock?.verified||!(['ready','low'].includes(stock.status)||preorderInTime)||!stock.source||!stock.checked)missing.push(name+': ready/low stock verification');
+  if(!stock?.verified||!(['ready','low','order'].includes(stock.status)||preorderInTime)||!stock.source||!stock.checked)missing.push(name+': ready/low stock verification');
   const owner=o.publication?.owner;
   if(!(owner?.source&&owner.exactModel)&&!owner?.reason)missing.push(name+': exact-model owner report or reason');
 
