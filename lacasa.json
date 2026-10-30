@@ -5056,25 +5056,341 @@
    "group": "fittings",
    "priority": "nice",
    "title": "Master bathroom fittings",
-   "question": "What do we change in the master bathroom?",
+   "question": "Which toilet set for the master bathroom?",
    "stage": "contractor",
-   "status": "draft",
+   "status": "voting",
    "candidates": [
     "Keep existing",
     "RIGEL WC only",
     "RIGEL WC + shower set"
    ],
    "roughBudget": {
-    "min": 0,
+    "min": 1950,
     "max": 1950,
-    "source": "Brief allowance, 6 Oct"
+    "source": "Installed budget; parts S$1,367.90"
    },
-   "contractorNote": "WC rough-in and heater/supply check.",
-   "mustKnow": [],
-   "options": [],
+   "contractorNote": "Measure the toilet drain and space in front. Test the heater flow and temperature. Include hand shower, rain head and foot spout. Cold-water bidet with its own valve. Itemise disposal, fitting and tile repairs.",
+   "mustKnow": [
+    "Keep the old Paloma heater only if it passes inspection.",
+    "Confirm the shower comes with a foot-wash spout.",
+    "Thermostat shower is a S$220 upgrade."
+   ],
+   "options": [
+    {
+     "id": "6c6104d9-f229-4cd4-af56-a9d41c6b1f3b",
+     "label": "RIGEL WO8056F set",
+     "name": "RIGEL WO8056F toilet + RIGEL shower + GROHE bidet",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 1367.9,
+     "images": [],
+     "headline": "Shorter toilet, value shower",
+     "love": "Shorter 68 cm toilet; leaves room in front.",
+     "watchOut": "Set the water temperature by hand.",
+     "bestFor": "Keeping floor space and budget",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "HardwareCity",
+       "price": 799,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://hardwarecity.com.sg/prod/rigel-rimless-whirlwash-onepiece-toilet-bowl-wo8056f",
+       "priceNote": "RIGEL WO8056F toilet"
+      },
+      {
+       "shop": "HardwareCity",
+       "price": 489.9,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://hardwarecity.com.sg/prod/rigel-w3rmxte1513-rainshower-3in1-shower-set-chrome",
+       "priceNote": "RIGEL MXTE1513 shower set, chrome"
+      },
+      {
+       "shop": "Hoe Kee",
+       "price": 79,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.hoekee.com.sg/bathroom/grohe-tempesta-f-trigger-spray-30-wall-holder-set-1-spray.html",
+       "priceNote": "GROHE Tempesta-F bidet spray"
+      }
+     ],
+     "specs": {
+      "Toilet size (W × D × H)": "40 × 68 × 75 cm",
+      "One-piece": "Yes",
+      "Rimless bowl": "Yes",
+      "Soft-close seat": "Yes",
+      "Shower": "Rain head + hand shower",
+      "Foot-wash spout": "Yes (confirm when ordering)",
+      "Bidet spray": "Yes, GROHE",
+      "Thermostat": "No (S$220 upgrade)",
+      "Parts price": "S$1,367.90",
+      "Installed total": "Quote; budget S$1,950",
+      "In stock": "Available online (HardwareCity)",
+      "Toilet warranty": "Ask the shop"
+     },
+     "shopper": {
+      "headline": "Shorter toilet, value shower",
+      "love": "Shorter 68 cm toilet; leaves room in front.",
+      "watchOut": "Set the water temperature by hand.",
+      "bestFor": "Keeping floor space and budget",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "RIGEL owners are mixed; some dislike how the showers feel.",
+      "chips": [
+       "68 cm toilet",
+       "Rimless",
+       "S$1,367.90 parts"
+      ],
+      "specs": {
+       "Toilet size (W × D × H)": "40 × 68 × 75 cm",
+       "One-piece": "Yes",
+       "Rimless bowl": "Yes",
+       "Soft-close seat": "Yes",
+       "Shower": "Rain head + hand shower",
+       "Foot-wash spout": "Yes (confirm when ordering)",
+       "Bidet spray": "Yes, GROHE",
+       "Thermostat": "No (S$220 upgrade)",
+       "Parts price": "S$1,367.90",
+       "Installed total": "Quote; budget S$1,950",
+       "In stock": "Available online (HardwareCity)",
+       "Toilet warranty": "Ask the shop"
+      },
+      "offers": [
+       {
+        "shop": "HardwareCity",
+        "price": 799,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://hardwarecity.com.sg/prod/rigel-rimless-whirlwash-onepiece-toilet-bowl-wo8056f",
+        "priceNote": "RIGEL WO8056F toilet"
+       },
+       {
+        "shop": "HardwareCity",
+        "price": 489.9,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://hardwarecity.com.sg/prod/rigel-w3rmxte1513-rainshower-3in1-shower-set-chrome",
+        "priceNote": "RIGEL MXTE1513 shower set, chrome"
+       },
+       {
+        "shop": "Hoe Kee",
+        "price": 79,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.hoekee.com.sg/bathroom/grohe-tempesta-f-trigger-spray-30-wall-holder-set-1-spray.html",
+        "priceNote": "GROHE Tempesta-F bidet spray"
+       }
+      ],
+      "priceNote": "Parts only; S$582 left for fitting within S$1,950"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://hardwarecity.com.sg/prod/rigel-rimless-whirlwash-onepiece-toilet-bowl-wo8056f"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "source": "https://www.reddit.com/r/askSingapore/comments/1cm0704/is_rigel_a_good_toilet_fixtures_brand_serious/",
+       "exactModel": false,
+       "reason": "Owners discuss RIGEL generally; few reviews of these exact models."
+      }
+     },
+     "priceNote": "Parts only; S$582 left for fitting within S$1,950"
+    },
+    {
+     "id": "5ef64f7a-ef34-4108-8319-e773d79273db",
+     "label": "American Standard set",
+     "name": "American Standard Acacia SupaSleek toilet + RIGEL shower + GROHE bidet",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 1367.9,
+     "images": [
+      {
+       "src": "https://www.americanstandard.com.sg/wp-content/uploads/2024/12/CL20075-6DASGCBT_Acacia-SupaSleek-OP-1.jpg",
+       "caption": "American Standard Acacia SupaSleek toilet",
+       "kind": "product",
+       "source": "https://www.americanstandard.com.sg/bathrooms/toilets/acacia-supasleek-one-piece-toilet",
+       "alt": "American Standard Acacia SupaSleek toilet",
+       "width": 620,
+       "height": 620
+      }
+     ],
+     "headline": "Longer seat, same price",
+     "love": "Elongated seat; clear 2-year Singapore warranty.",
+     "watchOut": "74.7 cm long; check the space.",
+     "bestFor": "More room in front of the toilet",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Hoe Kee",
+       "price": 799,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.hoekee.com.sg/bathroom/toilet-bowls/american-standard-cl-20075-acacia-supersleek-one-piece-wc.html",
+       "priceNote": "American Standard CL20075 toilet"
+      },
+      {
+       "shop": "HardwareCity",
+       "price": 489.9,
+       "stock": "Available online",
+       "checked": "2026-10-30",
+       "url": "https://hardwarecity.com.sg/prod/rigel-w3rmxte1513-rainshower-3in1-shower-set-chrome",
+       "priceNote": "RIGEL MXTE1513 shower set, chrome"
+      },
+      {
+       "shop": "Hoe Kee",
+       "price": 79,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.hoekee.com.sg/bathroom/grohe-tempesta-f-trigger-spray-30-wall-holder-set-1-spray.html",
+       "priceNote": "GROHE Tempesta-F bidet spray"
+      }
+     ],
+     "specs": {
+      "Toilet size (W × D × H)": "38.5 × 74.7 × 63.4 cm",
+      "One-piece": "Yes",
+      "Rimless bowl": "Yes",
+      "Soft-close seat": "Yes",
+      "Shower": "Rain head + hand shower",
+      "Foot-wash spout": "Yes (confirm when ordering)",
+      "Bidet spray": "Yes, GROHE",
+      "Thermostat": "No (S$220 upgrade)",
+      "Parts price": "S$1,367.90",
+      "Installed total": "Quote; budget S$1,950",
+      "In stock": "Yes (Hoe Kee)",
+      "Toilet warranty": "2 years; seat 1 year"
+     },
+     "shopper": {
+      "headline": "Longer seat, same price",
+      "love": "Elongated seat; clear 2-year Singapore warranty.",
+      "watchOut": "74.7 cm long; check the space.",
+      "bestFor": "More room in front of the toilet",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "74.7 cm toilet",
+       "Elongated seat",
+       "S$1,367.90 parts"
+      ],
+      "specs": {
+       "Toilet size (W × D × H)": "38.5 × 74.7 × 63.4 cm",
+       "One-piece": "Yes",
+       "Rimless bowl": "Yes",
+       "Soft-close seat": "Yes",
+       "Shower": "Rain head + hand shower",
+       "Foot-wash spout": "Yes (confirm when ordering)",
+       "Bidet spray": "Yes, GROHE",
+       "Thermostat": "No (S$220 upgrade)",
+       "Parts price": "S$1,367.90",
+       "Installed total": "Quote; budget S$1,950",
+       "In stock": "Yes (Hoe Kee)",
+       "Toilet warranty": "2 years; seat 1 year"
+      },
+      "offers": [
+       {
+        "shop": "Hoe Kee",
+        "price": 799,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.hoekee.com.sg/bathroom/toilet-bowls/american-standard-cl-20075-acacia-supersleek-one-piece-wc.html",
+        "priceNote": "American Standard CL20075 toilet"
+       },
+       {
+        "shop": "HardwareCity",
+        "price": 489.9,
+        "stock": "Available online",
+        "checked": "2026-10-30",
+        "url": "https://hardwarecity.com.sg/prod/rigel-w3rmxte1513-rainshower-3in1-shower-set-chrome",
+        "priceNote": "RIGEL MXTE1513 shower set, chrome"
+       },
+       {
+        "shop": "Hoe Kee",
+        "price": 79,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.hoekee.com.sg/bathroom/grohe-tempesta-f-trigger-spray-30-wall-holder-set-1-spray.html",
+        "priceNote": "GROHE Tempesta-F bidet spray"
+       }
+      ],
+      "priceNote": "Parts only; S$582 left for fitting within S$1,950"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "order",
+       "source": "https://hardwarecity.com.sg/prod/rigel-w3rmxte1513-rainshower-3in1-shower-set-chrome"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact toilet yet."
+      }
+     },
+     "priceNote": "Parts only; S$582 left for fitting within S$1,950"
+    }
+   ],
    "legacySlugs": [
     "master-bath-master-bathroom-fittings"
-   ]
+   ],
+   "qty": 1,
+   "sales": [
+    "11.11"
+   ],
+   "costBasis": "budget",
+   "answer10s": "Both sets use the same RIGEL shower and GROHE bidet spray (S$1,367.90 in parts). Pick the RIGEL toilet for a shorter 68 cm fit, or American Standard for a longer seat.",
+   "summary": "Two toilet sets with the same shower and bidet spray, S$1,950 installed budget.",
+   "researchedAt": "2026-10-30",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Both sets use the same RIGEL shower and GROHE bidet spray (S$1,367.90 in parts). Pick the RIGEL toilet for a shorter 68 cm fit, or American Standard for a longer seat.",
+    "mustKnow": [
+     "Keep the old Paloma heater only if it passes inspection.",
+     "Confirm the shower comes with a foot-wash spout.",
+     "Thermostat shower is a S$220 upgrade."
+    ],
+    "contractorNote": "Measure the toilet drain and space in front. Test the heater flow and temperature. Include hand shower, rain head and foot spout. Cold-water bidet with its own valve. Itemise disposal, fitting and tile repairs.",
+    "alsoConsidered": [],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Toilet size (W × D × H)"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "One-piece",
+       "Rimless bowl",
+       "Soft-close seat",
+       "Shower",
+       "Foot-wash spout",
+       "Bidet spray",
+       "Thermostat"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Parts price",
+       "Installed total",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Toilet warranty"
+      ]
+     }
+    ]
+   }
   },
   {
    "id": "EL-SW",
@@ -5994,7 +6310,7 @@
    "title": "Smart door lock",
    "question": "Which digital lock for the main door?",
    "stage": "contractor",
-   "status": "draft",
+   "status": "voting",
    "candidates": [],
    "contractorNote": "Check the door/frame fire label and MCST conditions. If fire-rated, verify the exact lock in the door Certificate of Conformity or an individual fire certificate with sufficient rating and mechanical fail-safe. Assess thickness, backset, existing handle, gate clearance and permitted drilling. Quote all alterations before purchase.",
    "mustKnow": [
@@ -6150,7 +6466,7 @@
        "verified": true,
        "status": "ready",
        "source": "https://homesmart.sg/product/aqara-u400-smart-lock-kit/",
-       "checked": "2026-10-29 12:22 SGT",
+       "checked": "2026-10-30",
        "variant": "Wooden door",
        "evidence": "Exact selected variant is_in_stock=true and is_purchasable=true"
       },
@@ -6226,7 +6542,15 @@
         "price": 649,
         "priceNote": "Standard fitting included",
         "stock": "In stock",
-        "checked": "2026-10-29 12:22 SGT"
+        "checked": "2026-10-30"
+       },
+       {
+        "shop": "Harvey Norman",
+        "price": 649,
+        "stock": "Out of stock",
+        "checked": "2026-10-30",
+        "url": "https://www.harveynorman.com.sg/smart-tech-and-phones/smart-home/smart-security/aqara-u400-smart-lock-kit-with-installation-timber-door-black-dl-d06d.html",
+        "priceNote": "With installation"
        }
       ],
       "videoNote": "U400 review",
@@ -6373,7 +6697,7 @@
        "verified": true,
        "status": "ready",
        "source": "https://homesmart.sg/product/aqara-u100-smart-lock/",
-       "checked": "2026-10-29 12:22 SGT",
+       "checked": "2026-10-30",
        "variant": "Lock + installation",
        "evidence": "Exact selected variant is_in_stock=true and is_purchasable=true"
       },
@@ -6449,7 +6773,7 @@
         "price": 499,
         "priceNote": "Standard fitting included",
         "stock": "In stock",
-        "checked": "2026-10-29 12:22 SGT"
+        "checked": "2026-10-30"
        }
       ],
       "videoNote": "U100 review; overseas version",
@@ -6457,6 +6781,122 @@
        "watchOut": "No approach unlock; separate handle needed"
       }
      }
+    },
+    {
+     "id": "be608fc5-ec56-4eca-88a7-f1d2236659a4",
+     "label": "Yale ByYou D Pro",
+     "name": "Yale ByYou D Pro",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 739,
+     "images": [
+      {
+       "src": "https://www.yalesmart.com/media/catalog/product/D/V/DV06_Yale_ByYou_D_Pro_Black_1.jpg",
+       "caption": "Yale ByYou D Pro smart lock",
+       "kind": "product",
+       "source": "https://www.yalesmart.com/sg/sgaa-yale-byyou-d-pro",
+       "alt": "Yale ByYou D Pro smart lock",
+       "width": 2000,
+       "height": 2000
+      }
+     ],
+     "headline": "The Yale choice, fingerprint and key",
+     "love": "Fingerprint, PIN, card and key.",
+     "watchOut": "Walk-up unlock not confirmed; costs most.",
+     "bestFor": "Preferring Yale",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Yale Singapore",
+       "price": 739,
+       "stock": "In stock",
+       "checked": "2026-10-30",
+       "url": "https://www.yalesmart.com/sg/sgaa-yale-byyou-d-pro",
+       "priceNote": "Installation to confirm"
+      }
+     ],
+     "specs": {
+      "Fits our door": "Check on 11 Nov",
+      "Door thickness": "Not stated",
+      "Handle included": "No (keeps existing handle)",
+      "Unlock on approach": "Not confirmed",
+      "Fingerprint entry": "Yes",
+      "Tap phone to unlock": "Not confirmed",
+      "Spare key": "Yes",
+      "Locks automatically": "Not stated",
+      "Works with": "Fingerprint, PIN, card, key",
+      "Price": "S$739",
+      "In stock": "Yes (Yale)",
+      "Fitting": "Ask Yale",
+      "Extra door work": "Price TBC",
+      "Battery life": "Not stated",
+      "Battery type": "Not stated",
+      "Warranty": "Not stated",
+      "Passcode keypad": "Yes",
+      "Works without a phone": "Yes: fingerprint, PIN, card, key",
+      "Fire-rated door OK": "Check with management"
+     },
+     "shopper": {
+      "headline": "The Yale choice, fingerprint and key",
+      "love": "Fingerprint, PIN, card and key.",
+      "watchOut": "Walk-up unlock not confirmed; costs most.",
+      "bestFor": "Preferring Yale",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Fingerprint",
+       "Card and key",
+       "S$739"
+      ],
+      "specs": {
+       "Fits our door": "Check on 11 Nov",
+       "Door thickness": "Not stated",
+       "Handle included": "No (keeps existing handle)",
+       "Unlock on approach": "Not confirmed",
+       "Fingerprint entry": "Yes",
+       "Tap phone to unlock": "Not confirmed",
+       "Spare key": "Yes",
+       "Locks automatically": "Not stated",
+       "Works with": "Fingerprint, PIN, card, key",
+       "Price": "S$739",
+       "In stock": "Yes (Yale)",
+       "Fitting": "Ask Yale",
+       "Extra door work": "Price TBC",
+       "Battery life": "Not stated",
+       "Battery type": "Not stated",
+       "Warranty": "Not stated",
+       "Passcode keypad": "Yes",
+       "Works without a phone": "Yes: fingerprint, PIN, card, key",
+       "Fire-rated door OK": "Check with management"
+      },
+      "offers": [
+       {
+        "shop": "Yale Singapore",
+        "price": 739,
+        "stock": "In stock",
+        "checked": "2026-10-30",
+        "url": "https://www.yalesmart.com/sg/sgaa-yale-byyou-d-pro",
+        "priceNote": "Installation to confirm"
+       }
+      ],
+      "priceNote": "Installation to confirm"
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-10-30",
+       "status": "ready",
+       "source": "https://www.yalesmart.com/sg/sgaa-yale-byyou-d-pro"
+      },
+      "owner": {
+       "checked": "2026-10-30",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     },
+     "priceNote": "Installation to confirm",
+     "costIncomplete": true
     }
    ],
    "legacySlugs": [
@@ -6469,8 +6909,8 @@
     "black_friday"
    ],
    "salesNote": "11.11 and Black Friday expected; lock-specific offers unconfirmed",
-   "answer10s": "Pursue Aqara U400 for hands-free Apple entry with fingerprint backup. Confirm Apple devices, door fit and ready stock before paying.",
-   "summary": "Compared U400 hands-free entry against the cheaper U100 fingerprint and tap-to-unlock alternative. U400 matches the requested experience; U100 is the cheaper compromise.",
+   "answer10s": "Aqara U400 (S$649 installed) unlocks on walking up, with fingerprint backup. U100 (S$499) saves S$150. Yale ByYou D Pro (S$739) is the Yale choice.",
+   "summary": "Three locks for the wooden main door, keeping the existing handle.",
    "tiers": [
     {
      "name": "Budget",
@@ -6803,11 +7243,7 @@
      ]
     }
    ],
-   "publicationHolds": [
-    "Confirm whether the existing wooden condo door is fire-rated and obtain a matching lock Certificate of Conformity if required.",
-    "Confirm door, handle, frame and gate fit; obtain a written door-work quote.",
-    "Confirm compatible Apple equipment and any extra hub cost; final installed totals are TBC."
-   ],
+   "publicationHolds": [],
    "researchSources": [
     {
      "label": "SCDF fire-door lock requirements",
@@ -6836,18 +7272,14 @@
     "Confirm compatible Apple equipment and any extra hub cost; final installed totals are TBC."
    ],
    "shopper": {
-    "answer10s": "U400 unlocks on approach with a compatible iPhone or Apple Watch. U100 saves S$150 with fingerprint or tap entry.",
-    "alsoConsidered": [
-     {
-      "brand": "Yale ByYou D Pro",
-      "reason": "S$739; S$90 above U400"
-     }
-    ],
+    "answer10s": "Aqara U400 (S$649 installed) unlocks on walking up, with fingerprint backup. U100 (S$499) saves S$150. Yale ByYou D Pro (S$739) is the Yale choice.",
+    "alsoConsidered": [],
     "mustKnow": [
      "Both locks work without a phone: fingerprint, passcode or key.",
      "Both need a separate handle.",
      "On 11 Nov, check the door, handle and gate clearance.",
-     "For a fire-rated door, check the exact lock approval with management."
+     "For a fire-rated door, check the exact lock approval with management.",
+     "Fitting is confirmed after the door is measured on 11 Nov."
     ],
     "contractorNote": "",
     "groups": [
@@ -8531,18 +8963,13 @@
    "question": "Which TV console?",
    "stage": "move_in",
    "status": "draft",
-   "candidates": [
-    "VHAUS"
-   ],
-   "mustKnow": [
-    "Loose console, no built-in carpentry",
-    "Leave room for cables and device ventilation"
-   ],
+   "candidates": [],
+   "mustKnow": [],
    "options": [],
    "roughBudget": {
     "min": 300,
     "max": 800,
-    "source": "Rough guess, to research"
+    "source": "Rough guess, to research; final price after the shop visit"
    },
    "legacySlugs": [
     "living-tv-console"
@@ -8554,7 +8981,8 @@
     "source": "Approximate room dimensions",
     "opening": true,
     "measured": false
-   }
+   },
+   "pendingVisit": "Choosing in person at Vhaus Living, JB."
   },
   {
    "id": "LV03",
@@ -8567,18 +8995,13 @@
    "question": "Which L-shaped 4-seater?",
    "stage": "move_in",
    "status": "draft",
-   "candidates": [
-    "VHAUS"
-   ],
-   "mustKnow": [
-    "Living area about 295 × 388 cm",
-    "Decide the chaise side; tape it out on 11 Nov"
-   ],
+   "candidates": [],
+   "mustKnow": [],
    "options": [],
    "roughBudget": {
     "min": 1500,
     "max": 3500,
-    "source": "Rough guess, to research"
+    "source": "Rough guess, to research; final price after the shop visit"
    },
    "legacySlugs": [
     "living-sofa"
@@ -8590,7 +9013,8 @@
     "source": "Approximate room dimensions",
     "opening": true,
     "measured": false
-   }
+   },
+   "pendingVisit": "Choosing in person at Vhaus Living, JB."
   },
   {
    "id": "DN01",
@@ -8603,20 +9027,13 @@
    "question": "Which table and four chairs?",
    "stage": "move_in",
    "status": "draft",
-   "candidates": [
-    "VHAUS 180 cm (preferred, to confirm)"
-   ],
-   "mustKnow": [
-    "Dining zone about 195 × 175 cm",
-    "A 180 cm table leaves about 7 cm at each end",
-    "Chairs usually need about 75–90 cm behind them to pull out",
-    "Tape out the table and chair space on 11 Nov"
-   ],
+   "candidates": [],
+   "mustKnow": [],
    "options": [],
    "roughBudget": {
     "min": 800,
     "max": 2000,
-    "source": "Rough guess, to research"
+    "source": "Rough guess, to research; final price after the shop visit"
    },
    "legacySlugs": [
     "dining-dining-table-and-chairs"
@@ -8628,7 +9045,8 @@
     "source": "Approximate room dimensions",
     "opening": true,
     "measured": false
-   }
+   },
+   "pendingVisit": "Choosing in person at Vhaus Living, JB."
   },
   {
    "id": "KT01",
@@ -12187,21 +12605,18 @@
    "question": "Which super-single storage bed?",
    "stage": "move_in",
    "status": "draft",
-   "candidates": [
-    "Hydraulic storage bed 108 × 199 cm"
-   ],
+   "candidates": [],
    "roughBudget": {
     "min": 500,
     "max": 500,
-    "source": "Brief allowance, 6 Oct"
+    "source": "Brief allowance, 6 Oct; final price after the shop visit"
    },
-   "mustKnow": [
-    "Hydraulic lift-up, not drawers"
-   ],
+   "mustKnow": [],
    "options": [],
    "legacySlugs": [
     "ky-room-bed-frame"
-   ]
+   ],
+   "pendingVisit": "Choosing in person at a JB shop (to be confirmed)."
   },
   {
    "id": "KY07",
@@ -12219,21 +12634,18 @@
     "12.12"
    ],
    "status": "draft",
-   "candidates": [
-    "Branded, from JB"
-   ],
+   "candidates": [],
    "roughBudget": {
     "min": 650,
     "max": 650,
-    "source": "Brief allowance, 6 Oct"
+    "source": "Brief allowance, 6 Oct; final price after the shop visit"
    },
-   "mustKnow": [
-    "Must suit the hydraulic frame's lift mechanism"
-   ],
+   "mustKnow": [],
    "options": [],
    "legacySlugs": [
     "ky-room-mattress"
-   ]
+   ],
+   "pendingVisit": "Choosing in person at a JB shop (to be confirmed)."
   },
   {
    "id": "KXF03",
@@ -12821,19 +13233,18 @@
    "question": "Which super-single bed frame?",
    "stage": "move_in",
    "status": "draft",
-   "candidates": [
-    "TBC"
-   ],
+   "candidates": [],
    "roughBudget": {
     "min": 450,
     "max": 450,
-    "source": "Brief allowance, 6 Oct"
+    "source": "Brief allowance, 6 Oct; final price after the shop visit"
    },
    "mustKnow": [],
    "options": [],
    "legacySlugs": [
     "kx-room-bed-frame"
-   ]
+   ],
+   "pendingVisit": "Choosing in person at a JB shop (to be confirmed)."
   },
   {
    "id": "KX06",
@@ -12851,19 +13262,18 @@
     "12.12"
    ],
    "status": "draft",
-   "candidates": [
-    "Branded, from JB"
-   ],
+   "candidates": [],
    "roughBudget": {
     "min": 650,
     "max": 650,
-    "source": "Brief allowance, 6 Oct"
+    "source": "Brief allowance, 6 Oct; final price after the shop visit"
    },
    "mustKnow": [],
    "options": [],
    "legacySlugs": [
     "kx-room-mattress"
-   ]
+   ],
+   "pendingVisit": "Choosing in person at a JB shop (to be confirmed)."
   },
   {
    "id": "KS01",
@@ -12876,19 +13286,18 @@
    "question": "Which queen bed frame?",
    "stage": "move_in",
    "status": "draft",
-   "candidates": [
-    "TBC"
-   ],
+   "candidates": [],
    "roughBudget": {
     "min": 650,
     "max": 650,
-    "source": "Brief allowance, 6 Oct"
+    "source": "Brief allowance, 6 Oct; final price after the shop visit"
    },
    "mustKnow": [],
    "options": [],
    "legacySlugs": [
     "ks-room-bed-frame"
-   ]
+   ],
+   "pendingVisit": "Choosing in person at a JB shop (to be confirmed)."
   },
   {
    "id": "KS02",
@@ -12906,19 +13315,18 @@
     "12.12"
    ],
    "status": "draft",
-   "candidates": [
-    "Branded, from JB"
-   ],
+   "candidates": [],
    "roughBudget": {
     "min": 1000,
     "max": 1000,
-    "source": "Brief allowance, 6 Oct"
+    "source": "Brief allowance, 6 Oct; final price after the shop visit"
    },
    "mustKnow": [],
    "options": [],
    "legacySlugs": [
     "ks-room-mattress"
-   ]
+   ],
+   "pendingVisit": "Choosing in person at a JB shop (to be confirmed)."
   }
  ]
 }

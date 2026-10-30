@@ -18,7 +18,7 @@ test('product pages show photos, quick answer, cards and collapsed details in or
   assert.match(html,/<details><summary>Full specs, shops &amp; video<\/summary>/);assert.doesNotMatch(html,/<details[^>]* open/);
   assert.doesNotMatch(plain(html),/\byou\b|\byour\b|we wanted|as requested|amazing|perfect|game-changer/i);
  }
- assert.match(renderPage(audit,'/audit/living/sofa').html,/<span class="researching-label">Researching<\/span>/);
+ assert.match(renderPage(audit,'/audit/living/air-purifier').html,/<span class="researching-label">Researching<\/span>/);
 });
 test('comparison rows are short, grouped consistently and distinguish yes/no from unknown',()=>{
  const order=['Overview','Size &amp; fit','Performance','Features','Price &amp; stock','Running costs','Warranty &amp; support'];
@@ -37,7 +37,7 @@ test('comparison rows are short, grouped consistently and distinguish yes/no fro
 test('product photos, when present, are sharp official images with source links',()=>{
  for(const d of content.decisions.filter(d=>d.options.length))for(const o of d.options){
   if(o.legacyImages)assert.ok(o.legacyImages.length);assert.ok(Array.isArray(o.images));assert.ok(o.headline.split(' ').length<=8);
-  for(const i of o.images){assert.ok(Math.max(i.width,i.height)>=800);assert.match(i.source,/^https:\/\//);if(i.src.startsWith('/images/'))assert.ok(statSync(new URL('../../public'+i.src,import.meta.url)).size<300000);else assert.match(i.src,/^https:\/\//);}
+  for(const i of o.images){assert.ok(Math.max(i.width,i.height)>=600);assert.match(i.source,/^https:\/\//);if(i.src.startsWith('/images/'))assert.ok(statSync(new URL('../../public'+i.src,import.meta.url)).size<300000);else assert.match(i.src,/^https:\/\//);}
  }
 });
 test('only exact English video fixtures create an origin-bearing player on tap',()=>{

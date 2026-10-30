@@ -16,8 +16,8 @@ test('qualified card retains prices, installation conditions, sale uncertainty a
  assert.equal(item.tiers[0].estimated,true);assert.equal(item.tiers[0].note,'installed');
 });
 test('smart/digital door lock matches the existing item and re-import preserves all pictures and choices',()=>{
- const imported=applyCard(content,card),next=imported.decisions.find(x=>x.id===d.id);assert.equal(imported.decisions.length,content.decisions.length);assert.equal(next.slug,d.slug);assert.equal(next.title,'Smart door lock');assert.deepEqual(next.options.map(o=>o.id),d.options.map(o=>o.id));assert.deepEqual(next.options.map(o=>o.images),d.options.map(o=>o.images));
- const prior=structuredClone(content);prior.decisions.find(x=>x.id===d.id).title='Digital door lock';assert.equal(applyCard(prior,card).decisions.length,content.decisions.length);
+ const two=structuredClone(content);two.decisions.find(x=>x.id===d.id).options.splice(2);const imported=applyCard(two,card),next=imported.decisions.find(x=>x.id===d.id);assert.equal(imported.decisions.length,content.decisions.length);assert.equal(next.slug,d.slug);assert.equal(next.title,'Smart door lock');assert.deepEqual(next.options.map(o=>o.id),d.options.slice(0,2).map(o=>o.id));assert.deepEqual(next.options.map(o=>o.images),d.options.slice(0,2).map(o=>o.images));
+ const prior=structuredClone(two);prior.decisions.find(x=>x.id===d.id).title='Digital door lock';assert.equal(applyCard(prior,card).decisions.length,content.decisions.length);
 });
 test('current lock prices expose included hubs and incomplete final costs',()=>{
  const s=stateFor(content,samples,'KX');
@@ -25,13 +25,13 @@ test('current lock prices expose included hubs and incomplete final costs',()=>{
   const {html,status}=renderPage(s,path);assert.equal(status,200);assert.match(html,/Standard fitting included; extra door work costs more/);assert.match(html,/Standard fitting included; extra door work costs more/);
   if(path!=='/list'){assert.match(html,/Extra door work/);assert.match(html,/Price TBC/);assert.match(html,/Yale/);assert.match(html,/Fits our door/);}
  }
- assert.match(listText(s),/Smart door lock: S\$499–649 \+ prices TBC/);
+ assert.match(listText(s),/Smart door lock: S\$499–739 \+ prices TBC/);
  assert.match(listText(s),/extra door work costs more/);
 });
-test('supplied images and option identities remain while door verification blocks voting',()=>{
- assert.equal(d.options.length,2);assert.equal(d.status,'draft');assert.equal(d.stage,'contractor');assert.equal(d.qty,1);
+test('supplied images and option identities remain, and the lock is open for a preference vote',()=>{
+ assert.equal(d.options.length,3);assert.equal(d.status,'voting');assert.equal(d.stage,'contractor');assert.equal(d.qty,1);
  for(const [i,model]of ['u400','u100'].entries())for(const [j,p]of d.options[i].legacyImages.entries()){
   assert.equal(p.src,`/images/entrance/digital-door-lock-aqara-${model}-${j+1}.webp`);assert.equal(p.kind,'product');const path=new URL('../../public'+p.src,import.meta.url);assert.ok(statSync(path).size<300000);assert.equal(readFileSync(path).toString('ascii',0,4),'RIFF');
  }
- for(const code of ['KY','KX','KS']){const s=stateFor(content,samples,code);assert.match(validateVote(content,d,code,{pick:d.options[0].id},s.results[d.id]),/still being researched/);assert.equal(s.progress[code].total,content.decisions.filter(x=>x.status==='voting'&&(!x.area.endsWith('-room')||x.area===code.toLowerCase()+'-room')).length);}
+ for(const code of ['KY','KX','KS']){const s=stateFor(content,samples,code);assert.equal(s.progress[code].total,content.decisions.filter(x=>x.status==='voting'&&(!x.area.endsWith('-room')||x.area===code.toLowerCase()+'-room')).length);}
 });

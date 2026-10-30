@@ -320,3 +320,6 @@ html body .person-choice{min-height:0;padding:22px 8px 20px}
 html.is-loading::before{content:'';position:fixed;top:0;left:0;height:3px;width:100%;z-index:99;background:var(--indigo);transform-origin:left;animation:lc-load 900ms var(--ease-out) 120ms both}
 @keyframes lc-load{from{transform:scaleX(0)}to{transform:scaleX(.85)}}
 @media (prefers-reduced-motion:reduce){html.is-loading::before{animation:none;transform:scaleX(.6)}}
+/* Items chosen in person: a short note under the label */
+.pending-visit{margin:10px 0 4px;font-size:15px;color:var(--body)}
+.research-box p{margin-top:8px;font-size:15px}
