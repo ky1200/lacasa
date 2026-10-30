@@ -5662,7 +5662,7 @@
    "priority": "nice",
    "title": "Water dispenser",
    "question": "Which hot and cold water dispenser for the kitchen?",
-   "stage": "contractor",
+   "stage": "later",
    "status": "voting",
    "candidates": [
     "Happie Miracle (reference)",
@@ -7286,7 +7286,7 @@
    "priority": "nice",
    "title": "TV",
    "question": "Which TV?",
-   "stage": "move_in",
+   "stage": "later",
    "sales": [
     "11.11",
     "black_friday",
@@ -7326,7 +7326,7 @@
    "priority": "nice",
    "title": "Soundbar",
    "question": "Soundbar now, or none for now?",
-   "stage": "move_in",
+   "stage": "later",
    "sales": [
     "11.11",
     "black_friday",
@@ -7562,7 +7562,7 @@
    "priority": "nice",
    "title": "Robot vacuum",
    "question": "Which robot vacuum and mop?",
-   "stage": "move_in",
+   "stage": "later",
    "sales": [
     "11.11",
     "black_friday",
@@ -7595,7 +7595,7 @@
    "priority": "nice",
    "title": "Handheld vacuum",
    "question": "Which handheld vacuum?",
-   "stage": "move_in",
+   "stage": "later",
    "sales": [
     "11.11",
     "black_friday",
