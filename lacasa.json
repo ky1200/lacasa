@@ -1414,12 +1414,12 @@
   {
    "id": "YA05",
    "slug": "fan",
-   "area": "yard",
+   "area": "kitchen",
    "category": "Fans & ventilation",
    "group": "fittings",
    "priority": "nice",
-   "title": "Yard fan",
-   "question": "Which fan for the yard?",
+   "title": "Kitchen fan",
+   "question": "Which fan for the kitchen?",
    "stage": "contractor",
    "status": "voting",
    "candidates": [
@@ -1430,11 +1430,10 @@
     "max": 350,
     "source": "Brief allowance, 6 Oct"
    },
-   "contractorNote": "Measure the clothes rack raised, lowered and moving. Check the fan’s swing and tilt. Confirm mounting and power. Aim it at people, adjustable towards laundry. Keep the whole job within S$350.",
+   "contractorNote": "Measure the spot and anything the fan could hit. Check its swing and tilt. Confirm mounting and power. Keep the whole job within S$350.",
    "mustKnow": [
-    "Leave room for the clothes rack when lowered with clothes on.",
     "Basic installation assumes an existing power point.",
-    "Fit is checked by the contractor."
+    "Fit and clearance are checked by the contractor."
    ],
    "options": [
     {
@@ -1458,7 +1457,7 @@
      "headline": "Proven wall fan, with a guard",
      "love": "Guarded, with remote and timer; long track record.",
      "watchOut": "Needs a wall spot; repairs at service centre.",
-     "bestFor": "Our default for the yard",
+     "bestFor": "Our default pick",
      "pros": [],
      "cons": [],
      "ownersSay": [],
@@ -1507,7 +1506,7 @@
       "headline": "Proven wall fan, with a guard",
       "love": "Guarded, with remote and timer; long track record.",
       "watchOut": "Needs a wall spot; repairs at service centre.",
-      "bestFor": "Our default for the yard",
+      "bestFor": "Our default pick",
       "ownerReviews": "Mostly good",
       "ownerSummary": "Owners buy it again; one heard humming after seven years.",
       "chips": [
@@ -2037,6 +2036,7 @@
     }
    ],
    "legacySlugs": [
+    "kitchen-fan",
     "yard-yard-fan"
    ],
    "qty": 1,
@@ -2044,18 +2044,17 @@
     "11.11",
     "black_friday"
    ],
-   "answer10s": "KDK M40MS: a guarded wall fan with a long track record. Fanco Dono if a corner or ceiling mount suits the clothes rack better.",
-   "summary": "Five wall and corner fans, about S$190–300 installed.",
+   "answer10s": "KDK M40MS: a guarded wall fan with a long track record. Fanco Dono if a corner or ceiling mount suits the kitchen better.",
+   "summary": "Five wall and corner fans for the kitchen, about S$190–300 installed.",
    "researchedAt": "2026-10-30",
    "publicationPolicy": "stock-owner-video-v1",
    "shopper": {
-    "answer10s": "KDK M40MS: a guarded wall fan with a long track record. Fanco Dono if a corner or ceiling mount suits the clothes rack better.",
+    "answer10s": "KDK M40MS: a guarded wall fan with a long track record. Fanco Dono if a corner or ceiling mount suits the kitchen better.",
     "mustKnow": [
-     "Leave room for the clothes rack when lowered with clothes on.",
      "Basic installation assumes an existing power point.",
-     "Fit is checked by the contractor."
+     "Fit and clearance are checked by the contractor."
     ],
-    "contractorNote": "Measure the clothes rack raised, lowered and moving. Check the fan’s swing and tilt. Confirm mounting and power. Aim it at people, adjustable towards laundry. Keep the whole job within S$350.",
+    "contractorNote": "Measure the spot and anything the fan could hit. Check its swing and tilt. Confirm mounting and power. Keep the whole job within S$350.",
     "alsoConsidered": [],
     "groups": [
      {

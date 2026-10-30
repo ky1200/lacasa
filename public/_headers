@@ -1,0 +1,9 @@
+# Stylesheets, script and fonts are linked with ?v=<hash>, so browsers can keep them.
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/images/*
+  Cache-Control: public, max-age=604800
