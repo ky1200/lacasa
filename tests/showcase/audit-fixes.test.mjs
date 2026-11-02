@@ -77,8 +77,8 @@ test('audit vote preview has the same three controls and a finite All done scree
  const s=visitorState(content,samples,{audit:true},[],[]);
  const first=renderPage(s,'/audit/vote').html;
  assert.match(first,/← Back[\s\S]*Skip for now[\s\S]*Next →/);
- const last=renderPage(s,'/audit/vote?item=handheld-vacuum').html;
- assert.match(last,/href="\/audit\/vote\?end=1&amp;trail=handheld-vacuum"[^>]*>Next/);
+ const ends=content.decisions.filter(d=>d.status==='voting').filter(d=>new RegExp(`href="/audit/vote\\?end=1&amp;trail=${d.slug}"[^>]*>Next`).test(renderPage(s,`/audit/vote?item=${d.slug}`).html));
+ assert.equal(ends.length,1);
  const end=renderPage(s,'/audit/vote?end=1').html;
  assert.match(end,/<h1>All done\.<\/h1>/);assert.match(end,/No votes were saved/);assert.doesNotMatch(end,/ data-vote=/);
 });

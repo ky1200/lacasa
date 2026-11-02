@@ -15094,6 +15094,826 @@
    }
   },
   {
+   "id": "WH-MOP",
+   "slug": "wet-mop",
+   "area": "whole-home",
+   "category": "Cleaning",
+   "group": "loose",
+   "priority": "nice",
+   "title": "Wet floor mop",
+   "question": "Which wet mop or floor washer?",
+   "stage": "later",
+   "status": "voting",
+   "candidates": [],
+   "legacySlugs": [],
+   "qty": 1,
+   "sales": [
+    "11.11",
+    "12.12"
+   ],
+   "roughBudget": {
+    "min": 100,
+    "max": 500,
+    "source": "Budget from research card"
+   },
+   "options": [
+    {
+     "id": "76630dcf-bed4-4635-9c15-8c654452c8aa",
+     "label": "Shark WD210SM",
+     "name": "Shark HydroVac WD210SM",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 329,
+     "images": [
+      {
+       "src": "https://www.courts.com.sg/dw/image/v2/blwc_prd/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dw4c974114/images/hires/media/catalog/product/i/p/ip195386_00.jpg?sw=1200&sh=1200",
+       "caption": "Shark HydroVac WD210SM",
+       "kind": "product",
+       "source": "https://www.bestdenki.com.sg/1105641-shark-floor-cleaner-wd210sm.html",
+       "alt": "Shark HydroVac WD210SM",
+       "width": 1200,
+       "height": 1200
+      },
+      {
+       "src": "https://www.courts.com.sg/dw/image/v2/blwc_prd/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dw2ec9a3c4/images/hires/media/catalog/product/i/p/ip195386_03.jpg?sw=1200&sh=1200",
+       "caption": "Shark HydroVac WD210SM",
+       "kind": "product",
+       "source": "https://www.bestdenki.com.sg/1105641-shark-floor-cleaner-wd210sm.html",
+       "alt": "Shark HydroVac WD210SM",
+       "width": 1200,
+       "height": 1200
+      },
+      {
+       "src": "https://www.courts.com.sg/dw/image/v2/blwc_prd/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dw39299f1c/images/hires/media/catalog/product/i/p/ip195386_02.jpg?sw=1200&sh=1200",
+       "caption": "Shark HydroVac WD210SM",
+       "kind": "product",
+       "source": "https://www.bestdenki.com.sg/1105641-shark-floor-cleaner-wd210sm.html",
+       "alt": "Shark HydroVac WD210SM",
+       "width": 1200,
+       "height": 1200
+      },
+      {
+       "src": "https://www.courts.com.sg/dw/image/v2/blwc_prd/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dwd1088e56/images/hires/media/catalog/product/i/p/ip195386_05.jpg?sw=1200&sh=1200",
+       "caption": "Shark HydroVac WD210SM",
+       "kind": "product",
+       "source": "https://www.bestdenki.com.sg/1105641-shark-floor-cleaner-wd210sm.html",
+       "alt": "Shark HydroVac WD210SM",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Best owner reviews, smaller tank",
+     "love": "Owners rate it well; light at 3.95 kg.",
+     "watchOut": "Small 335 ml tank; misses the very edges.",
+     "bestFor": "Kitchen spills and quick weekly mops",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Best Denki",
+       "price": 329,
+       "stock": "In stock",
+       "checked": "2026-11-02",
+       "url": "https://www.bestdenki.com.sg/1105641-shark-floor-cleaner-wd210sm.html",
+       "priceNote": "25 left"
+      },
+      {
+       "shop": "Courts",
+       "price": 329,
+       "stock": "Made to order",
+       "checked": "2026-11-02",
+       "url": "https://www.courts.com.sg/shark-hydrovac-cordless-pro-xl-vacuum-wd210sm-IP195386.html"
+      },
+      {
+       "shop": "Mega Discount Store",
+       "price": 439,
+       "stock": "Available online",
+       "checked": "2026-11-02",
+       "url": "https://megadiscountstore.com.sg/products/shark-wd210sm-hydrovac-wet-dry-cordless-vacuum"
+      },
+      {
+       "shop": "SharkNinja Singapore",
+       "price": 499,
+       "stock": "Available online",
+       "checked": "2026-11-02",
+       "url": "https://sharkninja.sg/products/hydrovac"
+      }
+     ],
+     "specs": {
+      "Type": "Cordless floor washer, 3.95 kg",
+      "Lies flat under furniture": "No",
+      "Clean / dirty water tank": "335 ml clean water",
+      "Runtime": "25–30 min",
+      "Edge cleaning": "Not to the very edge (owners)",
+      "Hot water or steam": "No",
+      "Safe on sealed vinyl": "Yes, sealed hard floors",
+      "Cleans itself": "Yes",
+      "Hot-air drying": "No",
+      "Price": "S$329",
+      "In stock": "Yes (Best Denki, 25 left)",
+      "Warranty": "2 years"
+     },
+     "shopper": {
+      "headline": "Best owner reviews, smaller tank",
+      "love": "Owners rate it well; light at 3.95 kg.",
+      "watchOut": "Small 335 ml tank; misses the very edges.",
+      "bestFor": "Kitchen spills and quick weekly mops",
+      "ownerReviews": "Good",
+      "ownerSummary": "UK owners rate the WD210 4.8/5 (28); a bit noisy, misses edges.",
+      "chips": [
+       "3.95 kg",
+       "Cleans itself",
+       "S$329"
+      ],
+      "specs": {
+       "Type": "Cordless floor washer, 3.95 kg",
+       "Lies flat under furniture": "No",
+       "Clean / dirty water tank": "335 ml clean water",
+       "Runtime": "25–30 min",
+       "Edge cleaning": "Not to the very edge (owners)",
+       "Hot water or steam": "No",
+       "Safe on sealed vinyl": "Yes, sealed hard floors",
+       "Cleans itself": "Yes",
+       "Hot-air drying": "No",
+       "Price": "S$329",
+       "In stock": "Yes (Best Denki, 25 left)",
+       "Warranty": "2 years"
+      },
+      "offers": [
+       {
+        "shop": "Best Denki",
+        "price": 329,
+        "stock": "In stock",
+        "checked": "2026-11-02",
+        "url": "https://www.bestdenki.com.sg/1105641-shark-floor-cleaner-wd210sm.html",
+        "priceNote": "25 left"
+       },
+       {
+        "shop": "Courts",
+        "price": 329,
+        "stock": "Made to order",
+        "checked": "2026-11-02",
+        "url": "https://www.courts.com.sg/shark-hydrovac-cordless-pro-xl-vacuum-wd210sm-IP195386.html"
+       },
+       {
+        "shop": "Mega Discount Store",
+        "price": 439,
+        "stock": "Available online",
+        "checked": "2026-11-02",
+        "url": "https://megadiscountstore.com.sg/products/shark-wd210sm-hydrovac-wet-dry-cordless-vacuum"
+       },
+       {
+        "shop": "SharkNinja Singapore",
+        "price": 499,
+        "stock": "Available online",
+        "checked": "2026-11-02",
+        "url": "https://sharkninja.sg/products/hydrovac"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-11-02",
+       "status": "ready",
+       "source": "https://www.bestdenki.com.sg/1105641-shark-floor-cleaner-wd210sm.html"
+      },
+      "owner": {
+       "checked": "2026-11-02",
+       "source": "https://ao.com/p/reviews/p-98733-160",
+       "exactModel": true
+      }
+     }
+    },
+    {
+     "id": "adeffbc1-0cbb-4478-a72c-09a88ee93f7a",
+     "label": "Dreame H12 GT",
+     "name": "Dreame H12 GT",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 349,
+     "images": [
+      {
+       "src": "https://www.courts.com.sg/dw/image/v2/blwc_prd/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dw1a92503b/images/hires/media/catalog/product/i/p/ip221256_00.jpg?sw=1200&sh=1200",
+       "caption": "Dreame H12 GT",
+       "kind": "product",
+       "source": "https://dreame.sg/products/dreame-h12-gt-wet-dry-cordless-vacuum-cleaner",
+       "alt": "Dreame H12 GT",
+       "width": 1200,
+       "height": 1200
+      },
+      {
+       "src": "https://www.courts.com.sg/dw/image/v2/blwc_prd/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dwaa959b80/images/hires/media/catalog/product/i/p/ip221256_04.jpg?sw=1200&sh=1200",
+       "caption": "Dreame H12 GT",
+       "kind": "product",
+       "source": "https://dreame.sg/products/dreame-h12-gt-wet-dry-cordless-vacuum-cleaner",
+       "alt": "Dreame H12 GT",
+       "width": 1200,
+       "height": 1200
+      },
+      {
+       "src": "https://www.courts.com.sg/dw/image/v2/blwc_prd/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dwb2aaeaa8/images/hires/media/catalog/product/i/p/ip221256_09.jpg?sw=1200&sh=1200",
+       "caption": "Dreame H12 GT",
+       "kind": "product",
+       "source": "https://dreame.sg/products/dreame-h12-gt-wet-dry-cordless-vacuum-cleaner",
+       "alt": "Dreame H12 GT",
+       "width": 1200,
+       "height": 1200
+      },
+      {
+       "src": "https://www.courts.com.sg/dw/image/v2/blwc_prd/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dwbf34978c/images/hires/media/catalog/product/i/p/ip221256_10.jpg?sw=1200&sh=1200",
+       "caption": "Dreame H12 GT",
+       "kind": "product",
+       "source": "https://dreame.sg/products/dreame-h12-gt-wet-dry-cordless-vacuum-cleaner",
+       "alt": "Dreame H12 GT",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Lies flat, hot-water self-clean",
+     "love": "Reaches under beds; washes and dries itself hot.",
+     "watchOut": "New model; few owner reviews yet.",
+     "bestFor": "Under beds and sofas",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Dreame Singapore",
+       "price": 349,
+       "stock": "Available online",
+       "checked": "2026-11-02",
+       "url": "https://dreame.sg/products/dreame-h12-gt-wet-dry-cordless-vacuum-cleaner"
+      },
+      {
+       "shop": "Courts",
+       "price": 399,
+       "stock": "In stock",
+       "checked": "2026-11-02",
+       "url": "https://www.courts.com.sg/dreame-h12-gts-wet-and-dry-vacuum-cleaner-dm-h12gt-gl-IP221256.html",
+       "priceNote": "Listed as H12 GTS"
+      }
+     ],
+     "specs": {
+      "Type": "Cordless floor washer",
+      "Lies flat under furniture": "Yes, 180°, 14 cm high",
+      "Clean / dirty water tank": "0.78 L / 0.7 L",
+      "Runtime": "Up to 35 min",
+      "Edge cleaning": "Both sides",
+      "Hot water or steam": "90°C water for self-cleaning",
+      "Safe on sealed vinyl": "Yes, sealed hard floors",
+      "Cleans itself": "Yes, 90°C water",
+      "Hot-air drying": "Yes, 90°C",
+      "Price": "S$349",
+      "In stock": "Yes (Courts, as H12 GTS)",
+      "Warranty": "2 years"
+     },
+     "shopper": {
+      "headline": "Lies flat, hot-water self-clean",
+      "love": "Reaches under beds; washes and dries itself hot.",
+      "watchOut": "New model; few owner reviews yet.",
+      "bestFor": "Under beds and sofas",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "Lies flat",
+       "90°C self-clean",
+       "S$349"
+      ],
+      "specs": {
+       "Type": "Cordless floor washer",
+       "Lies flat under furniture": "Yes, 180°, 14 cm high",
+       "Clean / dirty water tank": "0.78 L / 0.7 L",
+       "Runtime": "Up to 35 min",
+       "Edge cleaning": "Both sides",
+       "Hot water or steam": "90°C water for self-cleaning",
+       "Safe on sealed vinyl": "Yes, sealed hard floors",
+       "Cleans itself": "Yes, 90°C water",
+       "Hot-air drying": "Yes, 90°C",
+       "Price": "S$349",
+       "In stock": "Yes (Courts, as H12 GTS)",
+       "Warranty": "2 years"
+      },
+      "offers": [
+       {
+        "shop": "Dreame Singapore",
+        "price": 349,
+        "stock": "Available online",
+        "checked": "2026-11-02",
+        "url": "https://dreame.sg/products/dreame-h12-gt-wet-dry-cordless-vacuum-cleaner"
+       },
+       {
+        "shop": "Courts",
+        "price": 399,
+        "stock": "In stock",
+        "checked": "2026-11-02",
+        "url": "https://www.courts.com.sg/dreame-h12-gts-wet-and-dry-vacuum-cleaner-dm-h12gt-gl-IP221256.html",
+        "priceNote": "Listed as H12 GTS"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-11-02",
+       "status": "ready",
+       "source": "https://www.courts.com.sg/dreame-h12-gts-wet-and-dry-vacuum-cleaner-dm-h12gt-gl-IP221256.html"
+      },
+      "owner": {
+       "checked": "2026-11-02",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    },
+    {
+     "id": "214a1803-cb69-4250-8568-7878513ab017",
+     "label": "Tineco S7 Stretch Max",
+     "name": "Tineco Floor One S7 Stretch Max",
+     "kind": "product",
+     "tier": "Splurge",
+     "price": 549,
+     "images": [
+      {
+       "src": "https://www.courts.com.sg/dw/image/v2/blwc_prd/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dw4a42a8d7/images/hires/media/catalog/product/i/p/ip219136_03.jpg?sw=1200&sh=1200",
+       "caption": "Tineco Floor One S7 Stretch Max",
+       "kind": "product",
+       "source": "https://www.bestdenki.com.sg/1106162-tineco-rechargeable-vac-wet-dry-floor-one-s7-stretch-max.html",
+       "alt": "Tineco Floor One S7 Stretch Max",
+       "width": 1200,
+       "height": 1200
+      },
+      {
+       "src": "https://www.courts.com.sg/dw/image/v2/blwc_prd/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dw632008c4/images/hires/media/catalog/product/i/p/ip219136_00.jpg?sw=1200&sh=1200",
+       "caption": "Tineco Floor One S7 Stretch Max",
+       "kind": "product",
+       "source": "https://www.bestdenki.com.sg/1106162-tineco-rechargeable-vac-wet-dry-floor-one-s7-stretch-max.html",
+       "alt": "Tineco Floor One S7 Stretch Max",
+       "width": 1200,
+       "height": 1200
+      },
+      {
+       "src": "https://www.courts.com.sg/dw/image/v2/blwc_prd/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dwfcd8d91f/images/hires/media/catalog/product/i/p/ip219136_01.jpg?sw=1200&sh=1200",
+       "caption": "Tineco Floor One S7 Stretch Max",
+       "kind": "product",
+       "source": "https://www.bestdenki.com.sg/1106162-tineco-rechargeable-vac-wet-dry-floor-one-s7-stretch-max.html",
+       "alt": "Tineco Floor One S7 Stretch Max",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Longest runtime and steam, over budget",
+     "love": "65 min, steam boost, lies flat.",
+     "watchOut": "S$49 over budget; some range battery failures.",
+     "bestFor": "A weekly deep clean of every room",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Best Denki",
+       "price": 549,
+       "stock": "Low stock",
+       "checked": "2026-11-02",
+       "url": "https://www.bestdenki.com.sg/1106162-tineco-rechargeable-vac-wet-dry-floor-one-s7-stretch-max.html",
+       "priceNote": "5 left"
+      },
+      {
+       "shop": "Courts",
+       "price": 549,
+       "stock": "Made to order",
+       "checked": "2026-11-02",
+       "url": "https://www.courts.com.sg/tineco-floor-one-s7-stretch-max-smart-cordless-floor-washer-fw670200my-IP219136.html"
+      },
+      {
+       "shop": "Harvey Norman",
+       "stock": "Out of stock",
+       "checked": "2026-11-02",
+       "url": "https://www.harveynorman.com.sg/home-appliances/vacuum-cleaners-en-2/stick-and-handheld-vacuum-cleaners/tineco-floor-one-s7-stretch-max-smart-cordless-floor-washer-white.html"
+      }
+     ],
+     "specs": {
+      "Type": "Cordless floor washer with steam",
+      "Lies flat under furniture": "Yes, 180°",
+      "Clean / dirty water tank": "1 L / 0.69 L",
+      "Runtime": "Up to 65 min",
+      "Edge cleaning": "Three sides",
+      "Hot water or steam": "160°C steam boost",
+      "Safe on sealed vinyl": "Yes without steam; check floor",
+      "Cleans itself": "Yes, full path",
+      "Hot-air drying": "Yes, 85°C",
+      "Price": "S$549",
+      "In stock": "Yes (Best Denki, 5 left)",
+      "Warranty": "2 years"
+     },
+     "shopper": {
+      "headline": "Longest runtime and steam, over budget",
+      "love": "65 min, steam boost, lies flat.",
+      "watchOut": "S$49 over budget; some range battery failures.",
+      "bestFor": "A weekly deep clean of every room",
+      "ownerReviews": "Mostly good (S7 range)",
+      "ownerSummary": "S7 Stretch owners rate it 4.1/5 (45); some charging failures after two years.",
+      "chips": [
+       "65 min",
+       "Steam boost",
+       "Lies flat"
+      ],
+      "specs": {
+       "Type": "Cordless floor washer with steam",
+       "Lies flat under furniture": "Yes, 180°",
+       "Clean / dirty water tank": "1 L / 0.69 L",
+       "Runtime": "Up to 65 min",
+       "Edge cleaning": "Three sides",
+       "Hot water or steam": "160°C steam boost",
+       "Safe on sealed vinyl": "Yes without steam; check floor",
+       "Cleans itself": "Yes, full path",
+       "Hot-air drying": "Yes, 85°C",
+       "Price": "S$549",
+       "In stock": "Yes (Best Denki, 5 left)",
+       "Warranty": "2 years"
+      },
+      "offers": [
+       {
+        "shop": "Best Denki",
+        "price": 549,
+        "stock": "Low stock",
+        "checked": "2026-11-02",
+        "url": "https://www.bestdenki.com.sg/1106162-tineco-rechargeable-vac-wet-dry-floor-one-s7-stretch-max.html",
+        "priceNote": "5 left"
+       },
+       {
+        "shop": "Courts",
+        "price": 549,
+        "stock": "Made to order",
+        "checked": "2026-11-02",
+        "url": "https://www.courts.com.sg/tineco-floor-one-s7-stretch-max-smart-cordless-floor-washer-fw670200my-IP219136.html"
+       },
+       {
+        "shop": "Harvey Norman",
+        "stock": "Out of stock",
+        "checked": "2026-11-02",
+        "url": "https://www.harveynorman.com.sg/home-appliances/vacuum-cleaners-en-2/stick-and-handheld-vacuum-cleaners/tineco-floor-one-s7-stretch-max-smart-cordless-floor-washer-white.html"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-11-02",
+       "status": "low",
+       "source": "https://www.bestdenki.com.sg/1106162-tineco-rechargeable-vac-wet-dry-floor-one-s7-stretch-max.html"
+      },
+      "owner": {
+       "checked": "2026-11-02",
+       "reason": "Owner reviews cover the S7 Stretch range, not the Max."
+      }
+     }
+    },
+    {
+     "id": "6a21e25d-ec67-475d-90f5-53a6c0857713",
+     "label": "Tineco iFloor Y2",
+     "name": "Tineco iFloor Y2",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 149,
+     "images": [
+      {
+       "src": "https://www.courts.com.sg/dw/image/v2/blwc_prd/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dw6e00c11e/images/hires/media/catalog/product/i/p/ip208306_00.jpg?sw=1200&sh=1200",
+       "caption": "Tineco iFloor Y2",
+       "kind": "product",
+       "source": "https://www.courts.com.sg/tineco-ifloor-y2-cordless-floor-washer-ifloor-y2-IP208306.html",
+       "alt": "Tineco iFloor Y2",
+       "width": 1200,
+       "height": 1200
+      }
+     ],
+     "headline": "Cheapest powered washer",
+     "love": "1 L tank for S$149 at Courts.",
+     "watchOut": "One Courts owner says it smells; one-side edge.",
+     "bestFor": "Trying a floor washer cheaply",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Courts",
+       "price": 149,
+       "stock": "In stock",
+       "checked": "2026-11-02",
+       "url": "https://www.courts.com.sg/tineco-ifloor-y2-cordless-floor-washer-ifloor-y2-IP208306.html"
+      },
+      {
+       "shop": "HipVan",
+       "price": 269,
+       "stock": "Available online",
+       "checked": "2026-11-02",
+       "url": "https://www.hipvan.com/products/tineco-ifloor-y2-cordless-floor-washer"
+      },
+      {
+       "shop": "Best Denki",
+       "price": 299,
+       "stock": "Low stock",
+       "checked": "2026-11-02",
+       "url": "https://www.bestdenki.com.sg/1105962-tineco-rechargeable-vac-wet-dry-ifloor-y2.html",
+       "priceNote": "4 left"
+      }
+     ],
+     "specs": {
+      "Type": "Cordless floor washer",
+      "Lies flat under furniture": "No",
+      "Clean / dirty water tank": "1 L / 0.8 L",
+      "Runtime": "Up to 30 min",
+      "Edge cleaning": "One side",
+      "Hot water or steam": "No",
+      "Safe on sealed vinyl": "Yes (a Courts owner uses vinyl)",
+      "Cleans itself": "Yes, one touch",
+      "Hot-air drying": "No",
+      "Price": "S$149 (Courts)",
+      "In stock": "Yes (Courts)",
+      "Warranty": "2 years"
+     },
+     "shopper": {
+      "headline": "Cheapest powered washer",
+      "love": "1 L tank for S$149 at Courts.",
+      "watchOut": "One Courts owner says it smells; one-side edge.",
+      "bestFor": "Trying a floor washer cheaply",
+      "ownerReviews": "Mixed",
+      "ownerSummary": "Two Courts owners: one happy on vinyl, one reports bad smells.",
+      "chips": [
+       "S$149",
+       "1 L tank",
+       "One-touch self-clean"
+      ],
+      "specs": {
+       "Type": "Cordless floor washer",
+       "Lies flat under furniture": "No",
+       "Clean / dirty water tank": "1 L / 0.8 L",
+       "Runtime": "Up to 30 min",
+       "Edge cleaning": "One side",
+       "Hot water or steam": "No",
+       "Safe on sealed vinyl": "Yes (a Courts owner uses vinyl)",
+       "Cleans itself": "Yes, one touch",
+       "Hot-air drying": "No",
+       "Price": "S$149 (Courts)",
+       "In stock": "Yes (Courts)",
+       "Warranty": "2 years"
+      },
+      "offers": [
+       {
+        "shop": "Courts",
+        "price": 149,
+        "stock": "In stock",
+        "checked": "2026-11-02",
+        "url": "https://www.courts.com.sg/tineco-ifloor-y2-cordless-floor-washer-ifloor-y2-IP208306.html"
+       },
+       {
+        "shop": "HipVan",
+        "price": 269,
+        "stock": "Available online",
+        "checked": "2026-11-02",
+        "url": "https://www.hipvan.com/products/tineco-ifloor-y2-cordless-floor-washer"
+       },
+       {
+        "shop": "Best Denki",
+        "price": 299,
+        "stock": "Low stock",
+        "checked": "2026-11-02",
+        "url": "https://www.bestdenki.com.sg/1105962-tineco-rechargeable-vac-wet-dry-ifloor-y2.html",
+        "priceNote": "4 left"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-11-02",
+       "status": "ready",
+       "source": "https://www.courts.com.sg/tineco-ifloor-y2-cordless-floor-washer-ifloor-y2-IP208306.html"
+      },
+      "owner": {
+       "checked": "2026-11-02",
+       "source": "https://www.courts.com.sg/tineco-ifloor-y2-cordless-floor-washer-ifloor-y2-IP208306.html",
+       "exactModel": true
+      }
+     }
+    },
+    {
+     "id": "840da275-8aad-4b7f-80e8-a49487078e99",
+     "label": "Vileda Spin & Clean",
+     "name": "Vileda Spin & Clean mop set",
+     "kind": "product",
+     "tier": "Budget",
+     "price": 46.84,
+     "images": [
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0433/7893/3913/products/VA0062-4.jpg?v=1649840981",
+       "caption": "Vileda Spin & Clean mop set",
+       "kind": "product",
+       "source": "https://modernhome.sg/products/vileda-spin-clean-mop-set",
+       "alt": "Vileda Spin & Clean mop set",
+       "width": 1000,
+       "height": 1000
+      },
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0433/7893/3913/products/flatmop2.jpg?v=1649841011",
+       "caption": "Vileda Spin & Clean mop set",
+       "kind": "product",
+       "source": "https://modernhome.sg/products/vileda-spin-clean-mop-set",
+       "alt": "Vileda Spin & Clean mop set",
+       "width": 1000,
+       "height": 1000
+      },
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0433/7893/3913/products/VA0062-5.jpg?v=1649840982",
+       "caption": "Vileda Spin & Clean mop set",
+       "kind": "product",
+       "source": "https://modernhome.sg/products/vileda-spin-clean-mop-set",
+       "alt": "Vileda Spin & Clean mop set",
+       "width": 1000,
+       "height": 1000
+      },
+      {
+       "src": "https://cdn.shopify.com/s/files/1/0433/7893/3913/products/VA0062-3.jpg?v=1649840981",
+       "caption": "Vileda Spin & Clean mop set",
+       "kind": "product",
+       "source": "https://modernhome.sg/products/vileda-spin-clean-mop-set",
+       "alt": "Vileda Spin & Clean mop set",
+       "width": 1000,
+       "height": 1000
+      }
+     ],
+     "headline": "No battery, nothing to break",
+     "love": "Under S$50; nothing electric to fail.",
+     "watchOut": "More effort; wring well on vinyl.",
+     "bestFor": "Bathrooms, yard and backup",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "Modern Home",
+       "price": 46.84,
+       "stock": "In stock",
+       "checked": "2026-11-02",
+       "url": "https://modernhome.sg/products/vileda-spin-clean-mop-set"
+      },
+      {
+       "shop": "The Wonder Shop",
+       "price": 54.5,
+       "stock": "In stock",
+       "checked": "2026-11-02",
+       "url": "https://wondershop.sg/vileda-spin-clean-mop.html"
+      }
+     ],
+     "specs": {
+      "Type": "Manual spin mop and bucket",
+      "Lies flat under furniture": "No",
+      "Clean / dirty water tank": "Bucket keeps clean and dirty water apart",
+      "Runtime": "No battery",
+      "Edge cleaning": "Round head; corners by hand",
+      "Hot water or steam": "No",
+      "Safe on sealed vinyl": "Yes, wring well",
+      "Cleans itself": "Rinse by hand",
+      "Hot-air drying": "No",
+      "Price": "S$46.84",
+      "In stock": "Yes (Modern Home)",
+      "Warranty": "6 months (Modern Home)"
+     },
+     "shopper": {
+      "headline": "No battery, nothing to break",
+      "love": "Under S$50; nothing electric to fail.",
+      "watchOut": "More effort; wring well on vinyl.",
+      "bestFor": "Bathrooms, yard and backup",
+      "ownerReviews": "Few yet",
+      "ownerSummary": "",
+      "chips": [
+       "S$46.84",
+       "No battery",
+       "Spare heads sold"
+      ],
+      "specs": {
+       "Type": "Manual spin mop and bucket",
+       "Lies flat under furniture": "No",
+       "Clean / dirty water tank": "Bucket keeps clean and dirty water apart",
+       "Runtime": "No battery",
+       "Edge cleaning": "Round head; corners by hand",
+       "Hot water or steam": "No",
+       "Safe on sealed vinyl": "Yes, wring well",
+       "Cleans itself": "Rinse by hand",
+       "Hot-air drying": "No",
+       "Price": "S$46.84",
+       "In stock": "Yes (Modern Home)",
+       "Warranty": "6 months (Modern Home)"
+      },
+      "offers": [
+       {
+        "shop": "Modern Home",
+        "price": 46.84,
+        "stock": "In stock",
+        "checked": "2026-11-02",
+        "url": "https://modernhome.sg/products/vileda-spin-clean-mop-set"
+       },
+       {
+        "shop": "The Wonder Shop",
+        "price": 54.5,
+        "stock": "In stock",
+        "checked": "2026-11-02",
+        "url": "https://wondershop.sg/vileda-spin-clean-mop.html"
+       }
+      ]
+     },
+     "publication": {
+      "stock": {
+       "verified": true,
+       "checked": "2026-11-02",
+       "status": "ready",
+       "source": "https://modernhome.sg/products/vileda-spin-clean-mop-set"
+      },
+      "owner": {
+       "checked": "2026-11-02",
+       "reason": "Few owner reviews of this exact model yet."
+      }
+     }
+    }
+   ],
+   "answer10s": "Shark WD210SM (S$329, Best Denki) has the best owner reviews. Dreame H12 GT (S$349) lies flat and dries itself, but is new. Tineco S7 Stretch Max (S$549) only if worth going over budget.",
+   "summary": "Four cordless floor washers and one spin mop, S$47–549.",
+   "researchedAt": "2026-11-02",
+   "mustKnow": [
+    "Check the floor type: skip steam on vinyl unless the floor maker allows it.",
+    "Empty and rinse the dirty-water tank after every use.",
+    "Rollers, filters and cleaning solution are ongoing costs; prices not listed yet."
+   ],
+   "contractorNote": "None.",
+   "publicationPolicy": "stock-owner-video-v1",
+   "shopper": {
+    "answer10s": "Shark WD210SM (S$329, Best Denki) has the best owner reviews. Dreame H12 GT (S$349) lies flat and dries itself, but is new. Tineco S7 Stretch Max (S$549) only if worth going over budget.",
+    "mustKnow": [
+     "Check the floor type: skip steam on vinyl unless the floor maker allows it.",
+     "Empty and rinse the dirty-water tank after every use.",
+     "Rollers, filters and cleaning solution are ongoing costs; prices not listed yet."
+    ],
+    "contractorNote": "None.",
+    "alsoConsidered": [
+     {
+      "brand": "Roborock F25 Ace Pro",
+      "reason": "S$629.90, over budget"
+     },
+     {
+      "brand": "Tineco i7 Stretch Steam",
+      "reason": "S$659, over budget"
+     },
+     {
+      "brand": "Dreame H16 Pro Steam",
+      "reason": "S$888, over budget"
+     },
+     {
+      "brand": "Steam-only mops",
+      "reason": "Heat can damage vinyl; floor type not confirmed"
+     }
+    ],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Type",
+       "Lies flat under furniture"
+      ]
+     },
+     {
+      "group": "Performance",
+      "rows": [
+       "Clean / dirty water tank",
+       "Runtime",
+       "Edge cleaning",
+       "Hot water or steam",
+       "Safe on sealed vinyl"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Cleans itself",
+       "Hot-air drying"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ]
+   }
+  },
+  {
    "id": "LV08",
    "slug": "air-purifier",
    "area": "living",
