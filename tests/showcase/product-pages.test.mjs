@@ -53,3 +53,8 @@ test('to-scale reference sketches label rough provenance and computed model gaps
  assert.match(html,/Rough measurement, final measure 11 Nov/);assert.match(html,/7.5 cm each side/);assert.match(html,/8.5 cm front\/rear/);assert.match(html,/5 cm width excess/);assert.match(html,/3 cm depth excess/);
  d.space.measured=true;d.space.measuredAt='2026-11-11';const measured=renderPage(visitorState(c,samples,{audit:true},[],[]),'/audit/whole-home/handheld-vacuum').html;assert.match(measured,/Measured 2026-11-11/);assert.doesNotMatch(measured,/Rough measurement, final measure/);
 });
+
+test('different options never share a main photo unless the caption says so',()=>{
+ for(const d of audit.content.decisions){if(d.sameProductPhotos)continue;const seen=new Map();
+  for(const o of d.options){const i=o.images?.[0];if(!i)continue;if(seen.has(i.src)&&!/shown|same range/i.test(i.caption||''))assert.fail(`${d.id}: ${o.label} repeats ${seen.get(i.src)}'s photo`);seen.set(i.src,o.label);}}
+});
