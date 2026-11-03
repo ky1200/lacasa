@@ -83,13 +83,31 @@
    "id": "entrance",
    "name": "Entrance & outside",
    "kind": "shared",
-   "photos": []
+   "photos": [
+    {
+     "src": "/images/rooms/entrance-ai.webp",
+     "caption": "Entrance: AI idea",
+     "alt": "Entrance: AI idea",
+     "kind": "ai",
+     "width": 1035,
+     "height": 1520
+    }
+   ]
   },
   {
    "id": "living",
    "name": "Living room",
    "kind": "shared",
-   "photos": [],
+   "photos": [
+    {
+     "src": "/images/rooms/living-listing.webp",
+     "caption": "Living room: listing photo",
+     "alt": "Living room: listing photo",
+     "kind": "original",
+     "width": 1206,
+     "height": 908
+    }
+   ],
    "measurements": [
     "Living area about 295 × 388 cm"
    ]
@@ -98,7 +116,24 @@
    "id": "dining",
    "name": "Dining",
    "kind": "shared",
-   "photos": [],
+   "photos": [
+    {
+     "src": "/images/rooms/dining-ai-1.webp",
+     "caption": "Dining area: AI image",
+     "alt": "Dining area: AI image",
+     "kind": "ai",
+     "width": 1086,
+     "height": 1448
+    },
+    {
+     "src": "/images/rooms/dining-ai-2.webp",
+     "caption": "Dining area: AI image, view to kitchen",
+     "alt": "Dining area: AI image, view to kitchen",
+     "kind": "ai",
+     "width": 1333,
+     "height": 1180
+    }
+   ],
    "measurements": [
     "Dining zone about 195 × 175 cm"
    ]
@@ -107,7 +142,16 @@
    "id": "kitchen",
    "name": "Kitchen",
    "kind": "shared",
-   "photos": [],
+   "photos": [
+    {
+     "src": "/images/rooms/kitchen-yard-ai.webp",
+     "caption": "Kitchen and yard: AI idea",
+     "alt": "Kitchen and yard: AI idea",
+     "kind": "ai",
+     "width": 1086,
+     "height": 1448
+    }
+   ],
    "measurements": [
     "Current fridge 70 × 75 cm, 180 cm high (known to fit)"
    ]
@@ -116,7 +160,16 @@
    "id": "yard",
    "name": "Yard & laundry",
    "kind": "shared",
-   "photos": [],
+   "photos": [
+    {
+     "src": "/images/rooms/kitchen-yard-ai.webp",
+     "caption": "Kitchen and yard: AI idea",
+     "alt": "Kitchen and yard: AI idea",
+     "kind": "ai",
+     "width": 1086,
+     "height": 1448
+    }
+   ],
    "measurements": [
     "Current washer 75 × 67 cm (known to fit)",
     "Laundry rack ceiling length 120 cm"
@@ -126,13 +179,47 @@
    "id": "common-bath",
    "name": "Common bathroom",
    "kind": "shared",
-   "photos": []
+   "photos": [
+    {
+     "src": "/images/rooms/common-bath-listing.webp",
+     "caption": "Common bathroom: listing photo",
+     "alt": "Common bathroom: listing photo",
+     "kind": "original",
+     "width": 1206,
+     "height": 898
+    },
+    {
+     "src": "/images/rooms/common-bath-ai-1.webp",
+     "caption": "Common bathroom: AI idea with glass screen",
+     "alt": "Common bathroom: AI idea with glass screen",
+     "kind": "ai",
+     "width": 1122,
+     "height": 1402
+    },
+    {
+     "src": "/images/rooms/common-bath-ai-2.webp",
+     "caption": "Common bathroom: AI idea, open shower",
+     "alt": "Common bathroom: AI idea, open shower",
+     "kind": "ai",
+     "width": 1145,
+     "height": 1374
+    }
+   ]
   },
   {
    "id": "master-bath",
    "name": "Master bathroom",
    "kind": "shared",
-   "photos": []
+   "photos": [
+    {
+     "src": "/images/rooms/master-bath-original.webp",
+     "caption": "Master bathroom: our photo",
+     "alt": "Master bathroom: our photo",
+     "kind": "original",
+     "width": 1200,
+     "height": 1600
+    }
+   ]
   },
   {
    "id": "whole-home",
@@ -145,21 +232,48 @@
    "name": "KY's room",
    "kind": "bedroom",
    "owner": "KY",
-   "photos": []
+   "photos": [
+    {
+     "src": "/images/rooms/ky-room-empty.webp",
+     "caption": "KY’s room: emptied (AI edit)",
+     "alt": "KY’s room: emptied (AI edit)",
+     "kind": "ai",
+     "width": 1448,
+     "height": 1086
+    }
+   ]
   },
   {
    "id": "kx-room",
    "name": "KX's room",
    "kind": "bedroom",
    "owner": "KX",
-   "photos": []
+   "photos": [
+    {
+     "src": "/images/rooms/kx-room-empty.webp",
+     "caption": "KX’s room: emptied (AI edit)",
+     "alt": "KX’s room: emptied (AI edit)",
+     "kind": "ai",
+     "width": 1448,
+     "height": 1086
+    }
+   ]
   },
   {
    "id": "ks-room",
    "name": "KS's room",
    "kind": "bedroom",
    "owner": "KS",
-   "photos": []
+   "photos": [
+    {
+     "src": "/images/rooms/ks-room-listing.webp",
+     "caption": "KS’s room: listing photo",
+     "alt": "KS’s room: listing photo",
+     "kind": "original",
+     "width": 1206,
+     "height": 898
+    }
+   ]
   }
  ],
  "decisions": [
