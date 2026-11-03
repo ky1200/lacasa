@@ -987,7 +987,8 @@
     "An open dining area still needs clear space around the blades.",
     "Warm light is not the same as dimmable.",
     "Listen to it in a showroom for noise.",
-    "KDK F40GP is S$113 over the S$350 budget."
+    "KDK F40GP is S$113 over the S$350 budget.",
+    "Fan lights can strobe: ceiling lights above the blades flicker through them. Keep downlights and cove lights clear of the blade tips."
    ],
    "options": [
     {
@@ -1851,7 +1852,8 @@
      "An open dining area still needs clear space around the blades.",
      "Warm light is not the same as dimmable.",
      "Listen to it in a showroom for noise.",
-     "KDK F40GP is S$113 over the S$350 budget."
+     "KDK F40GP is S$113 over the S$350 budget.",
+     "Fan lights can strobe: ceiling lights above the blades flicker through them. Keep downlights and cove lights clear of the blade tips."
     ],
     "contractorNote": "Measure the ceiling and anything nearby. Confirm a concrete mount, the existing power point and switch. Check blade height above the floor. Test fan and light after fitting.",
     "alsoConsidered": [],
@@ -16133,7 +16135,8 @@
    "mustKnow": [
     "Room is about 300 × 250 cm.",
     "Warm light is not the same as dimmable.",
-    "A DC motor is not always silent; listen first."
+    "A DC motor is not always silent; listen first.",
+    "Fan lights can strobe: ceiling lights above the blades flicker through them. Keep downlights and cove lights clear of the blade tips."
    ],
    "options": [
     {
@@ -16568,7 +16571,8 @@
     "mustKnow": [
      "Room is about 300 × 250 cm.",
      "Warm light is not the same as dimmable.",
-     "A DC motor is not always silent; listen first."
+     "A DC motor is not always silent; listen first.",
+     "Fan lights can strobe: ceiling lights above the blades flicker through them. Keep downlights and cove lights clear of the blade tips."
     ],
     "contractorNote": "Measure the finished ceiling height and anything in the way (partition, wardrobe, curtains, hidden lights). Follow the fan manual’s clearances. Fit after the dusty work.",
     "alsoConsidered": [
@@ -17116,7 +17120,8 @@
    "mustKnow": [
     "Room size to be measured on 11 Nov.",
     "KX should check how quiet it is at low speed.",
-    "Basic installation excludes new wiring."
+    "Basic installation excludes new wiring.",
+    "Fan lights can strobe: ceiling lights above the blades flicker through them. Keep downlights and cove lights clear of the blade tips."
    ],
    "options": [
     {
@@ -17600,7 +17605,7 @@
      "Room size to be measured on 11 Nov.",
      "KX should check how quiet it is at low speed.",
      "Basic installation excludes new wiring.",
-     "KDK F40GP is S$63 over the S$400 budget."
+     "Fan lights can strobe: ceiling lights above the blades flicker through them. Keep downlights and cove lights clear of the blade tips."
     ],
     "contractorNote": "Concrete ceiling. Measure the room and ceiling height. Check blade clearance from the partition, wardrobe and doors. Safety wire. Quote any wiring or switch work.",
     "alsoConsidered": [],
