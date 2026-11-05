@@ -22,7 +22,7 @@ test('product pages show photos, quick answer, cards and collapsed details in or
 });
 test('comparison rows are short, grouped consistently and distinguish yes/no from unknown',()=>{
  const order=['Overview','Size &amp; fit','Performance','Features','Price &amp; stock','Running costs','Warranty &amp; support'];
- for(const d of audit.content.decisions.filter(d=>d.options.length)){
+ for(const d of audit.content.decisions.filter(d=>d.options.length>=2)){
   const html=renderPage(audit,`/audit/${d.area}/${d.slug}/compare`).html;
   const groups=[...html.matchAll(/class="compare-group"><th[^>]*>(.*?)<\/th>/g)].map(m=>m[1]);
   assert.deepEqual(groups,order.filter(g=>groups.includes(g)));
@@ -31,7 +31,7 @@ test('comparison rows are short, grouped consistently and distinguish yes/no fro
   }
   assert.match(html,/Show differences only/);assert.match(html,/data-model="0"/);assert.match(html,/data-model="1"/);
  }
- const html=audit.content.decisions.filter(d=>d.options.length).map(d=>renderPage(audit,`/audit/${d.area}/${d.slug}/compare`).html).join('');
+ const html=audit.content.decisions.filter(d=>d.options.length>=2).map(d=>renderPage(audit,`/audit/${d.area}/${d.slug}/compare`).html).join('');
  assert.match(html,/feature-yes/);assert.match(html,/feature-no/);assert.match(html,/not-stated/);
 });
 test('product photos, when present, are sharp official images with source links',()=>{

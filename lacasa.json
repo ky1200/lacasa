@@ -11752,12 +11752,132 @@
    "group": "loose",
    "priority": "essential",
    "title": "Dining table and chairs",
-   "question": "Which table and four chairs?",
+   "question": "Which table and chairs?",
    "stage": "move_in",
    "status": "draft",
    "candidates": [],
-   "mustKnow": [],
-   "options": [],
+   "mustKnow": [
+    "Seen at V Haus Living JB on 5 Nov: LINO set, RM2,299 nett.",
+    "With chairs pulled out, a 160 × 90 cm table needs about 240 × 230 cm; the dining zone is roughly 195 × 175 cm, not yet measured."
+   ],
+   "options": [
+    {
+     "id": "c0432f6f-42c1-4b36-84bd-77d48f323eb0",
+     "label": "V Haus LINO set",
+     "name": "V Haus Living LINO table + 6 TOMAMO chairs",
+     "kind": "product",
+     "tier": "Mid",
+     "price": 726,
+     "priceNote": "RM2,299 nett at V Haus Living JB (RM1 = S$0.3158)",
+     "images": [
+      {
+       "src": "/images/dining/lino-set.webp",
+       "caption": "LINO table with TOMAMO chairs",
+       "kind": "product",
+       "source": "https://www.vhausliving.com/",
+       "alt": "LINO table with TOMAMO chairs",
+       "width": 1636,
+       "height": 889
+      },
+      {
+       "src": "/images/dining/lino-table.webp",
+       "caption": "LINO dining table",
+       "kind": "product",
+       "source": "https://www.vhausliving.com/",
+       "alt": "LINO dining table",
+       "width": 425,
+       "height": 335
+      },
+      {
+       "src": "/images/dining/tomamo-chair.webp",
+       "caption": "TOMAMO dining chair",
+       "kind": "product",
+       "source": "https://www.vhausliving.com/",
+       "alt": "TOMAMO dining chair",
+       "width": 380,
+       "height": 370
+      },
+      {
+       "src": "/images/dining/lino-flyer.webp",
+       "caption": "V Haus Living shop flyer with prices",
+       "kind": "product",
+       "source": "https://www.vhausliving.com/",
+       "alt": "V Haus Living shop flyer with prices",
+       "width": 1200,
+       "height": 1575
+      }
+     ],
+     "headline": "Porcelain table and six chairs, set price",
+     "love": "Set saves RM1,200 against buying pieces separately.",
+     "watchOut": "160 × 90 cm may be tight; check space.",
+     "bestFor": "Six seats at a JB price",
+     "pros": [],
+     "cons": [],
+     "ownersSay": [],
+     "offers": [
+      {
+       "shop": "V Haus Living JB",
+       "price": 726,
+       "stock": "Seen in store",
+       "checked": "2026-11-05",
+       "url": "https://www.vhausliving.com/",
+       "priceNote": "RM2,299 nett set offer"
+      }
+     ],
+     "specs": {
+      "Table size": "160 × 90 cm",
+      "Seats": "6 chairs included",
+      "Chair size": "43 × 43 cm, 78 cm tall",
+      "Seat height": "47 cm",
+      "Table top": "Porcelain, matte",
+      "Legs": "Walnut-look curved legs",
+      "Chair seat": "Fabric seat and back, wood frame",
+      "Price": "RM2,299 nett (about S$726)",
+      "Bought separately": "Table RM1,599; chair RM399 each",
+      "In stock": "Ask at the shop",
+      "Warranty": "Ask at the shop"
+     },
+     "ownerReviews": "Not checked yet",
+     "ownerSummary": "",
+     "shopper": {
+      "headline": "Porcelain table and six chairs, set price",
+      "love": "Set saves RM1,200 against buying pieces separately.",
+      "watchOut": "160 × 90 cm may be tight; check space.",
+      "bestFor": "Six seats at a JB price",
+      "ownerReviews": "Not checked yet",
+      "ownerSummary": "",
+      "specs": {
+       "Table size": "160 × 90 cm",
+       "Seats": "6 chairs included",
+       "Chair size": "43 × 43 cm, 78 cm tall",
+       "Seat height": "47 cm",
+       "Table top": "Porcelain, matte",
+       "Legs": "Walnut-look curved legs",
+       "Chair seat": "Fabric seat and back, wood frame",
+       "Price": "RM2,299 nett (about S$726)",
+       "Bought separately": "Table RM1,599; chair RM399 each",
+       "In stock": "Ask at the shop",
+       "Warranty": "Ask at the shop"
+      },
+      "offers": [
+       {
+        "shop": "V Haus Living JB",
+        "price": 726,
+        "stock": "Seen in store",
+        "checked": "2026-11-05",
+        "url": "https://www.vhausliving.com/",
+        "priceNote": "RM2,299 nett set offer"
+       }
+      ],
+      "priceNote": "RM2,299 nett at V Haus Living JB (RM1 = S$0.3158)",
+      "chips": [
+       "160 × 90 cm",
+       "6 chairs",
+       "Porcelain top"
+      ]
+     }
+    }
+   ],
    "roughBudget": {
     "min": 800,
     "max": 2000,
@@ -11774,7 +11894,50 @@
     "opening": true,
     "measured": false
    },
-   "pendingVisit": "Choosing in person at Vhaus Living, JB."
+   "pendingVisit": "First option from V Haus Living JB added; more to compare.",
+   "shopper": {
+    "mustKnow": [
+     "Seen at V Haus Living JB on 5 Nov: LINO set, RM2,299 nett.",
+     "With chairs pulled out, a 160 × 90 cm table needs about 240 × 230 cm; the dining zone is roughly 195 × 175 cm, not yet measured."
+    ],
+    "groups": [
+     {
+      "group": "Size & fit",
+      "rows": [
+       "Table size",
+       "Seats",
+       "Chair size",
+       "Seat height"
+      ]
+     },
+     {
+      "group": "Features",
+      "rows": [
+       "Table top",
+       "Legs",
+       "Chair seat"
+      ]
+     },
+     {
+      "group": "Price & stock",
+      "rows": [
+       "Price",
+       "Bought separately",
+       "In stock"
+      ]
+     },
+     {
+      "group": "Warranty & support",
+      "rows": [
+       "Warranty"
+      ]
+     }
+    ],
+    "answer10s": "One set so far: V Haus Living LINO, RM2,299 (about S$726) for a table and six chairs. More to compare at the shop.",
+    "contractorNote": "",
+    "alsoConsidered": []
+   },
+   "answer10s": "One set so far: V Haus Living LINO, RM2,299 (about S$726) for a table and six chairs. More to compare at the shop."
   },
   {
    "id": "KT01",
