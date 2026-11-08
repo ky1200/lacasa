@@ -1,5 +1,7 @@
 import {shopperState} from './shopper.mjs';
+import {visitKeys,applyVisitSpaces} from './visit.mjs';
 import {stateFor,result,validVotes,validateVote,areaOf,todaySG} from './domain.mjs';
+const VISIT_KEYS=visitKeys();
 export class AppError extends Error {constructor(status,message){super(message);this.status=status;}}
 export const json=(body,status=200)=>Response.json(body,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Vary':'Cookie'}});
 export const isAuditRequest=request=>/^\/audit(?:\/|$)/.test(new URL(request.url).pathname)||new URL(request.url).searchParams.get('view')==='audit';
@@ -17,7 +19,8 @@ export function visitorState(content,samples,who,votes=[],finals=[],showSamples=
  }
  return {...stateFor(content,samples,who.code,votes,finals,showSamples),isAdmin:who.isAdmin,isOwner:who.isOwner,readOnly:false,audit:false};
 }
-export async function loadState(request,env,content,samples){const who=identity(request,env,content);if(!who.code)throw new AppError(401,'Choose your name before entering LaCasa.');if(!env.DB)throw new AppError(503,'The database is not ready yet. Try again shortly.');const {votes,finals}=await readRecords(env.DB);const showSamples=who.isAdmin&&new URL(request.url).searchParams.get('samples')==='on';return visitorState(content,samples,who,votes,finals,showSamples);}
+export async function readVisit(db){try{const rows=(await db.prepare('SELECT key, value FROM visit_notes').all()).results??[];return Object.fromEntries(rows.map(r=>[r.key,r.value]));}catch{return {};}}
+export async function loadState(request,env,content,samples){const who=identity(request,env,content);if(!who.code)throw new AppError(401,'Choose your name before entering LaCasa.');if(!env.DB)throw new AppError(503,'The database is not ready yet. Try again shortly.');const [{votes,finals},visit]=await Promise.all([readRecords(env.DB),readVisit(env.DB)]);const showSamples=who.isAdmin&&new URL(request.url).searchParams.get('samples')==='on';return {...visitorState(applyVisitSpaces(content,visit),samples,who,votes,finals,showSamples),visit};}
 async function bodyJSON(request){if(Number(request.headers.get('content-length')??0)>16384)throw new AppError(422,'This request is too large.');const text=await request.text();if(text.length>16384)throw new AppError(422,'This request is too large.');try{return JSON.parse(text);}catch{throw new AppError(422,'This request could not be read.');}}
 export async function api(request,env,content,samples){try{
  const u=new URL(request.url),path=u.pathname,method=request.method,who=identity(request,env,content);
@@ -31,6 +34,18 @@ export async function api(request,env,content,samples){try{
   return new Response(null,{status:303,headers:{'Location':'/','Cache-Control':'no-store','Set-Cookie':`lacasa_person=${person.code}; Path=/; HttpOnly; SameSite=Lax; Max-Age=2592000${secure}`}});
  }
  if(!who.code)throw new AppError(401,'Choose your name before entering LaCasa.');
+ if(method==='PUT'&&path.startsWith('/api/visit/')){
+  if(!env.DB)throw new AppError(503,'The private database is not ready yet.');
+  const key=decodeURIComponent(path.slice('/api/visit/'.length)),body=await bodyJSON(request);
+  if(!VISIT_KEYS.has(key))throw new AppError(422,'This field is not on the visit page.');
+  const value=typeof body.value==='string'?body.value.trim():'';
+  if(value.length>2000)throw new AppError(422,'Keep this under 2,000 characters.');
+  if(/^[mq]:/.test(key)&&value&&!/^\d{1,6}(?:[.,]\d{1,2})?$/.test(value))throw new AppError(422,'Type a number only, like 120 or 4.5.');
+  if(/^(?:ok|c|a):/.test(key)&&!['','1'].includes(value))throw new AppError(422,'Tick or untick only.');
+  if(value)await env.DB.prepare('INSERT INTO visit_notes (key,value,code,updated_at) VALUES (?,?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,code=excluded.code,updated_at=excluded.updated_at').bind(key,value,who.code,new Date().toISOString()).run();
+  else await env.DB.prepare('DELETE FROM visit_notes WHERE key=?').bind(key).run();
+  return json({ok:true});
+ }
  if(path.startsWith('/api/admin/')&&!who.isAdmin)throw new AppError(403,'Only KY can do that.');
  if(!env.DB)throw new AppError(503,'The private database is not ready yet.');
  const {votes,finals}=await readRecords(env.DB),showSamples=who.isAdmin&&u.searchParams.get('samples')==='on';

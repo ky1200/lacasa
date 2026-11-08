@@ -57,12 +57,13 @@ async function trusted(request, env) {
   if (await ownerCookieValid(request, env)) headers.set('oai-authenticated-user-id', INTERNAL_OWNER);
   return new Request(request, { headers });
 }
-// Create the two tables if the deploy step didn't run the migration (safe to repeat).
+// Create the tables if the deploy step didn't run the migration (safe to repeat).
 let schemaReady = null;
 function ensureSchema(env) {
   if (!env.DB) return Promise.resolve();
   schemaReady ??= env.DB.batch([
     env.DB.prepare(`CREATE TABLE IF NOT EXISTS votes (code TEXT NOT NULL CHECK (code IN ('KY','KX','KS')), decision_id TEXT NOT NULL, pick TEXT NOT NULL, lean TEXT, updated_at TEXT NOT NULL, updated_after_reveal INTEGER NOT NULL DEFAULT 0, PRIMARY KEY (code, decision_id), CHECK (lean IS NULL OR lean <> pick))`),
+    env.DB.prepare(`CREATE TABLE IF NOT EXISTS visit_notes (key TEXT PRIMARY KEY NOT NULL, value TEXT NOT NULL, code TEXT NOT NULL, updated_at TEXT NOT NULL)`),
     env.DB.prepare(`CREATE TABLE IF NOT EXISTS finals (decision_id TEXT PRIMARY KEY NOT NULL, option_id TEXT NOT NULL, reason TEXT NOT NULL CHECK (reason IN ('tie','overdue','lock')), at TEXT NOT NULL)`),
   ]).catch(e => { schemaReady = null; throw e; });
   return schemaReady;
