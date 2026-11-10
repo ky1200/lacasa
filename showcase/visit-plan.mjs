@@ -19,6 +19,15 @@ export const REFS={
  vinyl:{title:'Vinyl plank floor over parquet',note:'Wood-look planks laid over the existing floor; low step at the doorway.',img:'/images/visit/vinyl-plank-floor.webp',credit:'Qanvast · Compassvale Drive by Starry Homestead',source:'https://qanvast.com/sg/articles/where-to-buy-vinyl-flooring-plus-10-key-questions-answered-2481'},
  rack:{title:'L-shaped metal rack in the shelter',note:'Freestanding boltless rack along two walls; no drilling, door and vents kept clear.',img:'/images/visit/shelter-rack-l-shape.webp',credit:'Yee Sin'},
  downlightClose:{title:'Recessed downlight (close-up)',note:'Round light set flush into the ceiling board; warm white, about 10–15 cm across.',img:'/images/visit/downlight-recessed.webp',credit:'Philips DN029B · Delight',source:'https://delight.com.sg/products/philips-dn029b-round-recessed-led-dimmable-downlight'},
+ ideaEntrance:{title:'Entrance idea',note:'Digital lock on the main door and a slim white shoe cabinet beside it.',img:'/images/visit/idea-entrance.webp',label:'Idea picture',credit:'AI-made, from the family Drive'},
+ ideaLiving:{title:'Living room idea',note:'Hidden cove light around the ceiling edge, downlights and a ceiling fan.',img:'/images/visit/idea-living.webp',label:'Idea picture',credit:'AI-made, from the family Drive'},
+ ideaCommonBath:{title:'Common bathroom idea',note:'Wall-hung basin cabinet, lit mirror, rain shower, window fan and a fan light on the ceiling.',img:'/images/visit/idea-common-bath.webp',label:'Idea picture',credit:'AI-made, from the family Drive'},
+ ideaKY:{title:'KY’s room idea',note:'Warm hidden ceiling light, fan with light, bed by the window and a long desk with screens.',img:'/images/visit/idea-ky.webp',label:'Idea picture',credit:'AI-made, from the family Drive'},
+ ideaKX1:{title:'KX’s room idea (light)',note:'Warm wood floor, single bed, desk by the window.',img:'/images/visit/idea-kx1.webp',label:'Idea picture',credit:'AI-made, from the family Drive'},
+ ideaKX2:{title:'KX’s room idea (dark)',note:'Dark walls, full blackout curtains with a hidden light strip along the curtain line.',img:'/images/visit/idea-kx2.webp',label:'Idea picture',credit:'AI-made, from the family Drive'},
+ showerScreen:{title:'Fixed glass shower panel',note:'One fixed glass panel; no door swinging out into the bathroom.',img:'/images/visit/shower-screen-fixed-panel.webp',label:'Photo',credit:'shared by K'},
+ basin70:{title:'70 cm basin cabinet',note:'Wall-hung cabinet with two drawers and a one-piece basin top.',img:'/images/visit/basin-cabinet-70cm.webp',label:'Photo',credit:'shared by K'},
+ bathFan:{title:'Fan with light on the bathroom ceiling',note:'Slim ceiling fan with a ring light, fitted in the bathroom ceiling.',img:'/images/visit/bath-ceiling-fan-light.webp',label:'Photo',credit:'shared by K'},
  curtains:{title:'Floor-length blackout curtains',note:'Full blackout, on a ceiling track running past both sides of the window.',img:'/images/visit/blackout-curtains.webp',credit:'IKEA MAJGULL',source:'https://www.ikea.com/sg/en/p/majgull-block-out-curtains-1-pair-grey-with-heading-tape-10417814/'},
 };
 const R=(...k)=>k.map(x=>REFS[x]);
@@ -30,7 +39,7 @@ export const VISIT = {
  howTo: ['Measure in cm, wall to wall, at floor level unless the drawing says otherwise.', 'Measure twice; type the smaller number.', 'Take a photo of each spot and each thing to remove.', 'Ticks and numbers save straight away and show on everyone’s phone.'],
  rooms: [
  {id:'entrance', name:'Entrance & shelter', minutes:10,
-  show:[...R('lock','mesh','rack'),{item:'EN01'}],
+  show:[...R('ideaEntrance','lock','mesh','rack'),{item:'EN01'}],
   measure:[
    {id:'main-door', title:'Main door (for the digital lock)', shape:'door', fields:{L:'Door width',H:'Door height',T:'Door thickness'},
     need:{T:{min:3.5,max:5.5}}, needText:'Aqara U400 / U100 fit doors 3.5–5.5 cm thick (type 4.5 for 45 mm).', item:'entrance/digital-door-lock'},
@@ -43,7 +52,7 @@ export const VISIT = {
   quote:[['EN01','Digital lock fitting',800],['EN02','Retractable insect mesh',600],['R07','Remove metal gate (if allowed)',0]]},
 
  {id:'living', name:'Living room', minutes:12,
-  show:[...R('downlights','downlightClose','cove','tv'),{item:'LVF01',title:'Living lights shortlist'}],
+  show:[...R('ideaLiving','downlights','downlightClose','cove','tv'),{item:'LVF01',title:'Living lights shortlist'}],
   measure:[
    {id:'living-floor', title:'Living area', shape:'floor', fields:{L:'Length',W:'Width'}, needText:'Recorded before as about 295 × 388 cm.', space:{decisions:['LVF01','LV01','LV01-SIZE','LV04','LV02','LV03','LV08'],map:{width:'L',depth:'W'}}},
    {id:'tv-wall', title:'TV wall', shape:'wall', fields:{L:'Wall width',H:'Floor to ceiling'}, need:{L:{min:189}}, needText:'An 85-inch TV is 188–189 cm wide.', item:'living/tv-size-and-mounting'},
@@ -92,7 +101,7 @@ export const VISIT = {
   quote:[['YA06','Yard glass door',850],['R06','Remove yard cabinet part',0]]},
 
  {id:'common-bath', name:'Common bathroom', minutes:12,
-  show:[{item:'CB-WC'},{item:'CB-VAN'},{item:'CB-TAP'},{item:'CB-MIR'},{item:'CB-SHW'},{item:'CB-SCR'},{item:'CB07'}],
+  show:[...R('ideaCommonBath','showerScreen','basin70','bathFan'),{item:'CB-WC'},{item:'CB-VAN'},{item:'CB-TAP'},{item:'CB-MIR'},{item:'CB-SHW'},{item:'CB-SCR'},{item:'CB07'}],
   measure:[
    {id:'cb-toilet', title:'Toilet drain position', shape:'toilet', fields:{R:'Back wall to drain centre'}, needText:'The key number for choosing a toilet. Ask the contractor which models fit.', item:'common-bath/toilet'},
    {id:'cb-toilet-space', title:'Toilet space', shape:'floor', fields:{L:'Side to side',W:'Back wall to front'}, need:{L:{min:70},W:{min:72}}, needText:'Toilets on the list are up to 39 cm wide and 72 cm long; leave room for knees.'},
@@ -116,7 +125,7 @@ export const VISIT = {
   quote:[['MB01','Toilet',1100],['MB02','Shower set',850]]},
 
  {id:'ky-room', name:'KY’s room', minutes:15,
-  show:[...R('coveBed','door','vinyl'),{item:'KYF05'},{item:'KYF03'}],
+  show:[...R('ideaKY','coveBed','door','vinyl'),{item:'KYF05'},{item:'KYF03'}],
   measure:[
    {id:'ky-floor', title:'Room size', shape:'floor', fields:{L:'Length',W:'Width'}, need:{W:{min:259}}, needText:'Bed 108 cm + desk 80 cm + chair 71 cm across = 259 cm.', space:{decisions:['KYF03'],map:{width:'W'}}},
    {id:'ky-bed', title:'Bed spot', shape:'floor', fields:{L:'Length',W:'Width'}, need:{L:{min:199},W:{min:108}}, needText:'Storage bed 108 × 199 cm; the lid lifts up, so keep the top clear.', item:'ky-room/bed-frame'},
@@ -131,7 +140,7 @@ export const VISIT = {
   quote:[['GW03','L-shaped wall KY/KX',3200],['KYF01','Solid door',1200],['KYF02','Vinyl floor',650],['KYF03','Fan with light',500],['KYF04','Aircon service and move',900],['KYF05','Soft ceiling light',350]]},
 
  {id:'kx-room', name:'KX’s room', minutes:10,
-  show:[...R('door','vinyl','curtains'),{item:'KXF04'},{item:'KXF03'}],
+  show:[...R('ideaKX1','ideaKX2','door','vinyl','curtains'),{item:'KXF04'},{item:'KXF03'}],
   measure:[
    {id:'kx-floor', title:'Room size', shape:'floor', fields:{L:'Length',W:'Width'}, needText:'Super single bed (about 110 × 200 cm with frame) + vanity desk.'},
    {id:'kx-window', title:'Window (blackout curtains)', shape:'wall', fields:{L:'Window width',H:'Window height'}, needText:'Curtain track runs about 15 cm past each side.', item:'kx-room/blackout-curtains'},

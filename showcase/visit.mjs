@@ -33,7 +33,7 @@ function roomStats(r,v){const keys=[...r.measure.map(m=>`ok:${m.id}`),...r.check
 
 const imgSrc=src=>/^https:\/\//.test(src??'')?'/img?src='+encodeURIComponent(src):(src??'');
 const zoom=(src,alt,cls)=>`<button type="button" class="${cls}" data-enlarge><img src="${h(src)}" alt="${h(alt)}" loading="lazy" decoding="async"></button>`;
-const credit=x=>`<small class="vx-src">Example photo: ${x.source?`<a href="${h(x.source)}" target="_blank" rel="noopener">${h(x.credit)}</a>`:h(x.credit)}</small>`;
+const credit=x=>`<small class="vx-src">${h(x.label||'Example photo')}: ${x.source?`<a href="${h(x.source)}" target="_blank" rel="noopener">${h(x.credit)}</a>`:h(x.credit)}</small>`;
 const optOf=(id,label,content)=>{const d=content?.decisions?.find(d=>d.id===id);return {d,o:d?.options?.find(o=>o.label===label)};};
 // Fan size from "76 cm (30-inch)"; space = half the fan + 30 cm from the light point to the nearest wall.
 export function fanSize(o){const t=o?.specs?.['Blade size']??'',cm=parseFloat((t.match(/(\d+(?:\.\d+)?)\s*cm/)||[])[1]),inch=parseFloat((t.match(/(\d+)\s*-?\s*inch/)||[])[1]);if(!Number.isFinite(cm))return null;return {cm,inch:Number.isFinite(inch)?inch:Math.round(cm/2.54),wall:Math.ceil(cm/2+30),clear:Math.ceil(cm+60),drop:o.specs?.['Hangs down']};}
