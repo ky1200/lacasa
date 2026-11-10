@@ -4,6 +4,23 @@
 // "need" values come from the shortlisted products on the site, so a measurement can be ticked off on the spot.
 // "space" copies a measured value onto an item page (decision id + space field).
 
+// Example photos to show the contractor ("this is what we want here"). One photo per example.
+// Item entries show one photo per shortlisted model from that item page.
+const Q='https://qanvast.com/sg/articles/all-about-ceiling-lighting-7-types-you-can-install-in-your-home-2971';
+export const REFS={
+ lock:{title:'Aqara U400 smart lock',note:'Main door lock. Passion Home sells it with installation and the M100 hub, S$649.',img:'/images/entrance/digital-door-lock-u400-official.webp',credit:'Aqara',source:'https://us.aqara.com/products/smart-lock-u400',link:{label:'Passion Home listing',url:'https://passionhome.sg/product/aqara-smart-door-lock-u400/'}},
+ mesh:{title:'Retractable insect mesh',note:'Pulls across the doorway and rolls back to the side when not needed.',img:'/images/visit/mesh-retractable-door.webp',credit:'Appeal Shading',source:'https://www.appealshading.com/retractable-insect-screens/insect-screens-doors/'},
+ downlights:{title:'Downlights',note:'Small round lights set into the ceiling, spread evenly over the room.',img:'/images/visit/downlights-living.webp',credit:'Qanvast · Punggol Drive by Metier Planner',source:Q},
+ cove:{title:'LED cove lighting',note:'Hidden LED strip inside a raised ceiling edge; the light washes the ceiling, no strip visible.',img:'/images/visit/cove-living.webp',credit:'Qanvast · West Plains @ Bukit Batok by Flo Design',source:Q},
+ tv:{title:'TV on the wall, no cables showing',note:'Cables run inside the wall down to a low floating console.',img:'/images/visit/tv-wall-hidden-cables.webp',credit:'Qanvast · The Jade Pavilion by Desir Design',source:'https://qanvast.com/my/articles/make-your-living-room-pop-with-these-tv-wall-designs-3590'},
+ slideSwing:{title:'Slide-and-swing glass door',note:'Panels slide to the side and can also swing fully open for moving big items.',img:'/images/visit/slide-swing-door.webp',credit:'Chiew Yeong Aluminium',source:'https://www.chiewyeongaluminium.com/showproducts/productid/6315992/slide-swing-door/'},
+ coveBed:{title:'Soft hidden ceiling light',note:'Warm LED strip hidden in a ceiling edge, with the fan in the middle.',img:'/images/visit/cove-bedroom.webp',credit:'Qanvast · Yishun Avenue 6 by Design of SCHATZ',source:Q},
+ door:{title:'Solid-core laminate door',note:'Plain flush door with seals around the frame to cut noise.',img:'/images/visit/laminate-bedroom-door.webp',credit:'Door Lab',source:'https://www.atome.sg/blog/door-lab-bedroom-doors-atome'},
+ vinyl:{title:'Vinyl plank floor over parquet',note:'Wood-look planks laid over the existing floor; low step at the doorway.',img:'/images/visit/vinyl-plank-floor.webp',credit:'Qanvast · Compassvale Drive by Starry Homestead',source:'https://qanvast.com/sg/articles/where-to-buy-vinyl-flooring-plus-10-key-questions-answered-2481'},
+ curtains:{title:'Floor-length blackout curtains',note:'Full blackout, on a ceiling track running past both sides of the window.',img:'/images/visit/blackout-curtains.webp',credit:'IKEA MAJGULL',source:'https://www.ikea.com/sg/en/p/majgull-block-out-curtains-1-pair-grey-with-heading-tape-10417814/'},
+};
+const R=(...k)=>k.map(x=>REFS[x]);
+
 export const VISIT = {
  date: '2026-11-11',
  title: '11 Nov site visit',
@@ -11,6 +28,7 @@ export const VISIT = {
  howTo: ['Measure in cm, wall to wall, at floor level unless the drawing says otherwise.', 'Measure twice; type the smaller number.', 'Take a photo of each spot and each thing to remove.', 'Ticks and numbers save straight away and show on everyone’s phone.'],
  rooms: [
  {id:'entrance', name:'Entrance & shelter', minutes:10,
+  show:[...R('lock','mesh'),{item:'EN01'}],
   measure:[
    {id:'main-door', title:'Main door (for the digital lock)', shape:'door', fields:{L:'Door width',H:'Door height',T:'Door thickness'},
     need:{T:{min:3.5,max:5.5}}, needText:'Aqara U400 / U100 fit doors 3.5–5.5 cm thick (type 4.5 for 45 mm).', item:'entrance/digital-door-lock'},
@@ -23,6 +41,7 @@ export const VISIT = {
   quote:[['EN01','Digital lock fitting',800],['EN02','Retractable insect mesh',600],['R07','Remove metal gate (if allowed)',0]]},
 
  {id:'living', name:'Living room', minutes:12,
+  show:[...R('downlights','cove','tv'),{item:'LVF01',title:'Living lights shortlist'}],
   measure:[
    {id:'living-floor', title:'Living area', shape:'floor', fields:{L:'Length',W:'Width'}, needText:'Recorded before as about 295 × 388 cm.', space:{decisions:['LVF01','LV01','LV01-SIZE','LV04','LV02','LV03','LV08'],map:{width:'L',depth:'W'}}},
    {id:'tv-wall', title:'TV wall', shape:'wall', fields:{L:'Wall width',H:'Floor to ceiling'}, need:{L:{min:189}}, needText:'An 85-inch TV is 188–189 cm wide.', item:'living/tv-size-and-mounting'},
@@ -34,6 +53,7 @@ export const VISIT = {
   quote:[['LVF01','Living lighting',1200],['LVF02','TV bracket and mounting',250]]},
 
  {id:'dining', name:'Dining', minutes:8,
+  show:[{item:'DNF01'}],
   measure:[
    {id:'dining-floor', title:'Dining area', shape:'floor', fields:{L:'Length',W:'Width'}, need:{L:{min:240},W:{min:230}}, pick:['DN01','V Haus LINO set'], needText:'LINO table 160 × 90 cm needs about 240 × 230 cm with chairs pulled out.', item:'dining/table-and-chairs', space:{decisions:['DN01','DNF01'],map:{width:'L',depth:'W'}}},
    {id:'dining-ceiling', title:'Ceiling height at the light point', shape:'height', fields:{H:'Floor to ceiling'}, need:{H:{min:240}}, needText:'Rule of thumb: fan blades at least 2.1 m off the floor, so about 2.4 m ceiling.', item:'dining/fan-with-light'},
@@ -44,6 +64,7 @@ export const VISIT = {
   quote:[['DNF01','Dining fan fitting',350]]},
 
  {id:'kitchen', name:'Kitchen', minutes:10,
+  show:[{item:'YA05'},{item:'KT-WATER'}],
   measure:[
    {id:'fridge-space', title:'Fridge space', shape:'box', fields:{L:'Width',W:'Depth',H:'Height'}, need:{L:{min:70},W:{min:72},H:{min:180}}, needText:'Widest fridge on the list is 70 cm; tallest 179 cm. Leave a little air gap.', item:'kitchen/fridge', space:{decisions:['KT01'],map:{width:'L',depth:'W'}}},
    {id:'counter', title:'Counter for small appliances', shape:'floor', fields:{L:'Free counter length',W:'Counter depth'}, needText:'Microwave, kettle, rice cooker, air fryer, portable cooker, water dispenser.'},
@@ -55,6 +76,7 @@ export const VISIT = {
   quote:[['YA05','Kitchen fan fitting',350]]},
 
  {id:'yard', name:'Yard & laundry', minutes:12,
+  show:[...R('slideSwing'),{item:'YA04'}],
   measure:[
    {id:'rack', title:'Steigen Mini rack ceiling area', shape:'ceiling', fields:{L:'Ceiling length (along the yard)',W:'Ceiling width (clear of pipes/cabinets)',H:'Floor to ceiling'},
     pick:['YA04','Steigen Solar Mini'], need:{L:{min:110,max:144},W:{min:60},H:{max:280}}, needText:'Steigen Mini: ceiling length 110–144 cm, 60 cm clear width; free install up to 2.8 m high.', item:'yard/automated-laundry-rack', space:{decisions:['YA04'],map:{width:'L'}}},
@@ -68,6 +90,7 @@ export const VISIT = {
   quote:[['YA06','Yard glass door',850],['R06','Remove yard cabinet part',0]]},
 
  {id:'common-bath', name:'Common bathroom', minutes:12,
+  show:[{item:'CB-WC'},{item:'CB-VAN'},{item:'CB-TAP'},{item:'CB-MIR'},{item:'CB-SHW'},{item:'CB-SCR'},{item:'CB07'}],
   measure:[
    {id:'cb-toilet', title:'Toilet drain position', shape:'toilet', fields:{R:'Back wall to drain centre'}, needText:'The key number for choosing a toilet. Ask the contractor which models fit.', item:'common-bath/toilet'},
    {id:'cb-toilet-space', title:'Toilet space', shape:'floor', fields:{L:'Side to side',W:'Back wall to front'}, need:{L:{min:70},W:{min:72}}, needText:'Toilets on the list are up to 39 cm wide and 72 cm long; leave room for knees.'},
@@ -81,6 +104,7 @@ export const VISIT = {
   quote:[['CB01','Toilet',1100],['CB02','Basin cabinet',800],['CB03','Basin tap',180],['CB04','Mirror cabinet',450],['CB05','Shower set',850],['CB06','Shower screen',800],['CB07','Window exhaust fan',450],['CB08','Ceiling light',100],['CB09','Sealing and making good',200]]},
 
  {id:'master-bath', name:'Master bathroom', minutes:8,
+  show:[{item:'MB-PKG'}],
   measure:[
    {id:'mb-toilet', title:'Toilet drain position', shape:'toilet', fields:{R:'Back wall to drain centre'}, needText:'Same check as the common bathroom.', item:'master-bath/fittings'},
    {id:'mb-toilet-space', title:'Toilet space', shape:'floor', fields:{L:'Side to side',W:'Back wall to front'}, need:{L:{min:70},W:{min:75}}, needText:'Master-set toilets are up to 40 cm wide and 75 cm long.'},
@@ -90,6 +114,7 @@ export const VISIT = {
   quote:[['MB01','Toilet',1100],['MB02','Shower set',850]]},
 
  {id:'ky-room', name:'KY’s room', minutes:15,
+  show:[...R('coveBed','door','vinyl'),{item:'KYF05'},{item:'KYF03'}],
   measure:[
    {id:'ky-floor', title:'Room size', shape:'floor', fields:{L:'Length',W:'Width'}, need:{W:{min:259}}, needText:'Bed 108 cm + desk 80 cm + chair 71 cm across = 259 cm.', space:{decisions:['KYF03'],map:{width:'W'}}},
    {id:'ky-bed', title:'Bed spot', shape:'floor', fields:{L:'Length',W:'Width'}, need:{L:{min:199},W:{min:108}}, needText:'Storage bed 108 × 199 cm; the lid lifts up, so keep the top clear.', item:'ky-room/bed-frame'},
@@ -104,6 +129,7 @@ export const VISIT = {
   quote:[['GW03','L-shaped wall KY/KX',3200],['KYF01','Solid door',1200],['KYF02','Vinyl floor',650],['KYF03','Fan with light',500],['KYF04','Aircon service and move',900],['KYF05','Soft ceiling light',350]]},
 
  {id:'kx-room', name:'KX’s room', minutes:10,
+  show:[...R('door','vinyl','curtains'),{item:'KXF04'},{item:'KXF03'}],
   measure:[
    {id:'kx-floor', title:'Room size', shape:'floor', fields:{L:'Length',W:'Width'}, needText:'Super single bed (about 110 × 200 cm with frame) + vanity desk.'},
    {id:'kx-window', title:'Window (blackout curtains)', shape:'wall', fields:{L:'Window width',H:'Window height'}, needText:'Curtain track runs about 15 cm past each side.', item:'kx-room/blackout-curtains'},
@@ -116,6 +142,7 @@ export const VISIT = {
   quote:[['KXF01','Solid door',1200],['KXF02','Vinyl floor',750],['KXF03','Fan with light',400],['KXF04','Warm hidden light',350],['KXF05','Blackout curtains',450]]},
 
  {id:'ks-room', name:'KS’s room', minutes:8,
+  show:[...R('vinyl')],
   measure:[
    {id:'ks-floor', item:'ks-room/bed-frame', title:'Room size', shape:'floor', fields:{L:'Length',W:'Width'}, need:{L:{min:265},W:{min:220}}, needText:'Queen bed about 160 × 205 cm with frame + 60 cm walking space on two sides.'},
    {id:'ks-window', title:'Window (curtains)', shape:'wall', fields:{L:'Window width',H:'Window height'}},
@@ -126,6 +153,7 @@ export const VISIT = {
   quote:[['KSF01','Vinyl floor',600],['KSF02','Light (only if needed)',150]]},
 
  {id:'whole-home', name:'Whole home (with the contractor)', minutes:15,
+  show:[{item:'EL-SW'}],
   measure:[],
   check:['Electrical box (DB): photo of the labels','Smart switches: is there a neutral wire at the switch? (needed for Aqara H1)','Fibre point / ISP box location','Which rooms and ceilings need painting'],
   ask:['Vinyl (SPC) over parquet in the 3 bedrooms: written OK on the base, price per sq ft, threshold height.','Sockets and switches: count existing vs new; licensed electrician’s name.','Network: test the existing LAN points; new cable only where needed.','Painting: which rooms, colours, ceilings.','Start after keys on 3 Dec; how many weeks? Management form and S$1,000 deposit.','Quote format: by item ID, material vs labour, GST, what is not included, payment stages, warranty.'],

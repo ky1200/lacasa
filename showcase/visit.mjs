@@ -1,4 +1,4 @@
-import {VISIT,visitKeys} from './visit-plan.mjs';
+import {VISIT,visitKeys,REFS} from './visit-plan.mjs';
 const h=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=n=>'S$'+Math.round(n).toLocaleString('en-SG');
 
@@ -31,6 +31,17 @@ export function fitOf(m,values){
 const needLine=m=>m.need?Object.entries(m.need).map(([k,n])=>`${k} ${n.min!=null&&n.max!=null?`${n.min}–${n.max}`:n.min!=null?`≥ ${n.min}`:`≤ ${n.max}`} cm`).join(' · '):'';
 function roomStats(r,v){const keys=[...r.measure.map(m=>`ok:${m.id}`),...r.check.map((_,i)=>`c:${r.id}:${i}`),...r.ask.map((_,i)=>`a:${r.id}:${i}`),...(r.steigen?[`a:${r.id}:steigen`]:[])];return {done:keys.filter(k=>v[k]==='1').length,total:keys.length};}
 
+const imgSrc=src=>/^https:\/\//.test(src??'')?'/img?src='+encodeURIComponent(src):(src??'');
+// "Show the contractor": example photos and the shortlisted models, one photo each.
+function showStrip(r,content){
+ if(!r.show?.length)return '';
+ const cards=r.show.map(x=>{
+  if(x.item){const d=content?.decisions?.find(d=>d.id===x.item);if(!d)return '';const opts=(d.options??[]).filter(o=>o.images?.[0]).slice(0,6);if(!opts.length)return '';
+   return `<article class="vx vx-list"><h4>${h(x.title||d.title)} <small>shortlist</small></h4><div class="vx-opts">${opts.map(o=>`<a class="vx-opt" href="${h(imgSrc(o.images[0].src))}" target="_blank" rel="noopener"><img src="${h(imgSrc(o.images[0].src))}" alt="${h(o.name||o.label)}" loading="lazy"><span>${h(o.name||o.label)}</span></a>`).join('')}</div><a class="vx-more" href="/${h(d.area)}/${h(d.slug)}">See item</a></article>`;}
+  return `<article class="vx"><a class="vx-photo" href="${h(x.img)}" target="_blank" rel="noopener"><img src="${h(x.img)}" alt="${h(x.title)}" loading="lazy"></a><h4>${h(x.title)}</h4><p>${h(x.note)}</p>${x.link?`<a class="vx-link" href="${h(x.link.url)}" target="_blank" rel="noopener">${h(x.link.label)} ↗</a>`:''}<small class="vx-src">Example photo: <a href="${h(x.source)}" target="_blank" rel="noopener">${h(x.credit)}</a></small></article>`;
+ }).join('');
+ return cards?`<h3>Show the contractor</h3><div class="vx-row">${cards}</div>`:'';
+}
 function pickOf(m,content){if(!m.pick)return '';const d=content?.decisions?.find(d=>d.id===m.pick[0]),o=d?.options?.find(o=>o.label===m.pick[1]),img=o?.images?.[0];if(!o)return '';const src=img?(/^https:\/\//.test(img.src)?'/img?src='+encodeURIComponent(img.src):img.src):'';return `<p class="vm-pick">${src?`<img src="${h(src)}" alt="" loading="lazy">`:''}<span><small>Going here</small>${h(o.name)}</span></p>`;}
 function measureCard(m,v,ro,content){
  const fit=fitOf(m,v),need=needLine(m);
@@ -47,7 +58,7 @@ const tick=(key,text,v,ro)=>`<li><label class="vt"><input type="checkbox" data-k
 function room(r,v,ro,content){
  const st=roomStats(r,v);
  return `<section class="vr" id="v-${h(r.id)}" data-room="${h(r.id)}"><div class="vr-head"><h2>${h(r.name)}</h2><span class="vr-meta"><span data-room-count>${st.done} / ${st.total}</span> done · about ${r.minutes} min</span></div>
- ${r.measure.length?`<h3>Measure</h3><div class="vm-list">${r.measure.map(m=>measureCard(m,v,ro,content)).join('')}</div>`:''}
+ ${showStrip(r,content)}${r.measure.length?`<h3>Measure</h3><div class="vm-list">${r.measure.map(m=>measureCard(m,v,ro,content)).join('')}</div>`:''}
  ${r.check.length?`<h3>Check</h3><ul class="vt-list">${r.check.map((t,i)=>tick(`c:${r.id}:${i}`,t,v,ro)).join('')}</ul>`:''}
  <h3>Ask the contractor</h3><ul class="vt-list">${r.ask.map((t,i)=>tick(`a:${r.id}:${i}`,t,v,ro)).join('')}${r.steigen?tick(`a:${r.id}:steigen`,r.steigen,v,ro):''}</ul>
  ${r.quote.length?`<h3>Quote</h3><div class="vq-list">${r.quote.map(([id,name,allow])=>`<label class="vq"><span class="vq-name">${h(name)}<small>${h(id)}${allow?` · planned ${money(allow)}`:''}</small></span><span class="vq-input"><span>S$</span><input inputmode="decimal" autocomplete="off" data-k="q:${h(id)}" data-allow="${allow}" value="${h(v[`q:${id}`])}" ${ro?'disabled':''} aria-label="Quoted price for ${h(name)}"></span></label>`).join('')}</div>`:''}
@@ -77,7 +88,7 @@ export function visitPage(s,plan=VISIT){
  </div>`;
 }
 
-export {visitKeys,VISIT};
+export {visitKeys,VISIT,REFS};
 
 // Copy measured sizes onto the matching item pages.
 export function applyVisitSpaces(content,values,plan=VISIT){

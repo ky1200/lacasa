@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {DatabaseSync} from 'node:sqlite';
-import {readFileSync,readdirSync} from 'node:fs';
+import {readFileSync,readdirSync,existsSync} from 'node:fs';
 import content from '../../lacasa.json' with {type:'json'};
 import samples from '../../lacasa.sample.json' with {type:'json'};
 import {api,visitorState} from '../../showcase/server.mjs';
@@ -48,4 +48,12 @@ test('measured sizes are copied onto the matching item pages',()=>{
  const c=applyVisitSpaces(content,{'m:rack:L':'118','m:dining-floor:L':'200','m:dining-floor:W':'180'});
  const rack=c.decisions.find(d=>d.id==='YA04'),dn=c.decisions.find(d=>d.id==='DN01');
  assert.equal(rack.space.width,118);assert.equal(rack.space.measured,true);assert.equal(dn.space.width,200);assert.equal(dn.space.depth,180);
+});
+test('show-the-contractor strip: every example photo exists, items resolve, one photo per model',()=>{
+ for(const r of VISIT.rooms)for(const x of r.show??[]){if(x.item){const d=content.decisions.find(d=>d.id===x.item);assert.ok(d,x.item);assert.ok(d.options.some(o=>o.images?.[0]),x.item);}else{assert.ok(existsSync(new URL('../../public'+x.img,import.meta.url)),x.img);assert.match(x.source,/^https:\/\//);assert.ok(x.title&&x.note&&x.credit);}}
+ const s=visitorState(content,samples,{code:'KX',isAdmin:false}),html=renderPage(s,'/visit').html;
+ assert.match(html,/Show the contractor/);assert.match(html,/LED cove lighting/);assert.match(html,/Downlights/);
+ assert.match(html,/passionhome\.sg\/product\/aqara-smart-door-lock-u400/);
+ const toilet=content.decisions.find(d=>d.id==='CB-WC');for(const o of toilet.options)assert.ok(html.includes(o.name||o.label));
+ assert.doesNotMatch(html.replace(/<[^>]+>/g,' '),/\byou\b|\byour\b|perfect|amazing/i);
 });
