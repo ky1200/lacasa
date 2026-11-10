@@ -17,6 +17,8 @@ export const REFS={
  coveBed:{title:'Soft hidden ceiling light',note:'Warm LED strip hidden in a ceiling edge, with the fan in the middle.',img:'/images/visit/cove-bedroom.webp',credit:'Qanvast · Yishun Avenue 6 by Design of SCHATZ',source:Q},
  door:{title:'Solid-core laminate door',note:'Plain flush door with seals around the frame to cut noise.',img:'/images/visit/laminate-bedroom-door.webp',credit:'Door Lab',source:'https://www.atome.sg/blog/door-lab-bedroom-doors-atome'},
  vinyl:{title:'Vinyl plank floor over parquet',note:'Wood-look planks laid over the existing floor; low step at the doorway.',img:'/images/visit/vinyl-plank-floor.webp',credit:'Qanvast · Compassvale Drive by Starry Homestead',source:'https://qanvast.com/sg/articles/where-to-buy-vinyl-flooring-plus-10-key-questions-answered-2481'},
+ rack:{title:'L-shaped metal rack in the shelter',note:'Freestanding boltless rack along two walls; no drilling, door and vents kept clear.',img:'/images/visit/shelter-rack-l-shape.webp',credit:'Yee Sin'},
+ downlightClose:{title:'Recessed downlight (close-up)',note:'Round light set flush into the ceiling board; warm white, about 10–15 cm across.',img:'/images/visit/downlight-recessed.webp',credit:'Philips DN029B · Delight',source:'https://delight.com.sg/products/philips-dn029b-round-recessed-led-dimmable-downlight'},
  curtains:{title:'Floor-length blackout curtains',note:'Full blackout, on a ceiling track running past both sides of the window.',img:'/images/visit/blackout-curtains.webp',credit:'IKEA MAJGULL',source:'https://www.ikea.com/sg/en/p/majgull-block-out-curtains-1-pair-grey-with-heading-tape-10417814/'},
 };
 const R=(...k)=>k.map(x=>REFS[x]);
@@ -28,7 +30,7 @@ export const VISIT = {
  howTo: ['Measure in cm, wall to wall, at floor level unless the drawing says otherwise.', 'Measure twice; type the smaller number.', 'Take a photo of each spot and each thing to remove.', 'Ticks and numbers save straight away and show on everyone’s phone.'],
  rooms: [
  {id:'entrance', name:'Entrance & shelter', minutes:10,
-  show:[...R('lock','mesh'),{item:'EN01'}],
+  show:[...R('lock','mesh','rack'),{item:'EN01'}],
   measure:[
    {id:'main-door', title:'Main door (for the digital lock)', shape:'door', fields:{L:'Door width',H:'Door height',T:'Door thickness'},
     need:{T:{min:3.5,max:5.5}}, needText:'Aqara U400 / U100 fit doors 3.5–5.5 cm thick (type 4.5 for 45 mm).', item:'entrance/digital-door-lock'},
@@ -41,7 +43,7 @@ export const VISIT = {
   quote:[['EN01','Digital lock fitting',800],['EN02','Retractable insect mesh',600],['R07','Remove metal gate (if allowed)',0]]},
 
  {id:'living', name:'Living room', minutes:12,
-  show:[...R('downlights','cove','tv'),{item:'LVF01',title:'Living lights shortlist'}],
+  show:[...R('downlights','downlightClose','cove','tv'),{item:'LVF01',title:'Living lights shortlist'}],
   measure:[
    {id:'living-floor', title:'Living area', shape:'floor', fields:{L:'Length',W:'Width'}, needText:'Recorded before as about 295 × 388 cm.', space:{decisions:['LVF01','LV01','LV01-SIZE','LV04','LV02','LV03','LV08'],map:{width:'L',depth:'W'}}},
    {id:'tv-wall', title:'TV wall', shape:'wall', fields:{L:'Wall width',H:'Floor to ceiling'}, need:{L:{min:189}}, needText:'An 85-inch TV is 188–189 cm wide.', item:'living/tv-size-and-mounting'},
@@ -53,7 +55,7 @@ export const VISIT = {
   quote:[['LVF01','Living lighting',1200],['LVF02','TV bracket and mounting',250]]},
 
  {id:'dining', name:'Dining', minutes:8,
-  show:[{item:'DNF01'}],
+  show:[{pick:['DN01','V Haus LINO set'],title:'V Haus LINO table + 6 chairs',note:'Table 160 × 90 cm. Needs about 240 × 230 cm with the chairs pulled out.'},{fans:'DNF01',wallId:'dining-fan-gap'}],
   measure:[
    {id:'dining-floor', title:'Dining area', shape:'floor', fields:{L:'Length',W:'Width'}, need:{L:{min:240},W:{min:230}}, pick:['DN01','V Haus LINO set'], needText:'LINO table 160 × 90 cm needs about 240 × 230 cm with chairs pulled out.', item:'dining/table-and-chairs', space:{decisions:['DN01','DNF01'],map:{width:'L',depth:'W'}}},
    {id:'dining-ceiling', title:'Ceiling height at the light point', shape:'height', fields:{H:'Floor to ceiling'}, need:{H:{min:240}}, needText:'Rule of thumb: fan blades at least 2.1 m off the floor, so about 2.4 m ceiling.', item:'dining/fan-with-light'},
@@ -160,10 +162,15 @@ export const VISIT = {
   quote:[['GW01','Management paperwork and protection',500],['GW02','Removals, disposal, patching',2000],['GW04','Electrical: sockets, switches, testing',3000],['GW05','Network cabling',1500],['GW06','Painting',1850],['GW07','Final cleaning',500]]},
  ],
  target: 30000, reserve: 3000,
+ mustAsk: ['How many years old is the aircon?', 'Water heater (Paloma): how many years old, and any problems with it?'],
 };
+// Walking order on the day.
+const ORDER=['entrance','kitchen','yard','dining','living','common-bath','master-bath','ky-room','kx-room','ks-room','whole-home'];
+VISIT.rooms.sort((a,b)=>ORDER.indexOf(a.id)-ORDER.indexOf(b.id));
 
 export function visitKeys(plan=VISIT){
  const keys=new Set();
+ (plan.mustAsk??[]).forEach((_,i)=>keys.add(`a:must:${i}`));keys.add('n:must');
  for(const r of plan.rooms){
   for(const m of r.measure)for(const f of Object.keys(m.fields))keys.add(`m:${m.id}:${f}`);
   for(const m of r.measure)keys.add(`ok:${m.id}`);

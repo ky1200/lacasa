@@ -32,16 +32,29 @@ const needLine=m=>m.need?Object.entries(m.need).map(([k,n])=>`${k} ${n.min!=null
 function roomStats(r,v){const keys=[...r.measure.map(m=>`ok:${m.id}`),...r.check.map((_,i)=>`c:${r.id}:${i}`),...r.ask.map((_,i)=>`a:${r.id}:${i}`),...(r.steigen?[`a:${r.id}:steigen`]:[])];return {done:keys.filter(k=>v[k]==='1').length,total:keys.length};}
 
 const imgSrc=src=>/^https:\/\//.test(src??'')?'/img?src='+encodeURIComponent(src):(src??'');
-// "Show the contractor": example photos and the shortlisted models, one photo each.
-function showStrip(r,content){
+const zoom=(src,alt,cls)=>`<button type="button" class="${cls}" data-enlarge><img src="${h(src)}" alt="${h(alt)}" loading="lazy" decoding="async"></button>`;
+const credit=x=>`<small class="vx-src">Example photo: ${x.source?`<a href="${h(x.source)}" target="_blank" rel="noopener">${h(x.credit)}</a>`:h(x.credit)}</small>`;
+const optOf=(id,label,content)=>{const d=content?.decisions?.find(d=>d.id===id);return {d,o:d?.options?.find(o=>o.label===label)};};
+// Fan size from "76 cm (30-inch)"; space = half the fan + 30 cm from the light point to the nearest wall.
+export function fanSize(o){const t=o?.specs?.['Blade size']??'',cm=parseFloat((t.match(/(\d+(?:\.\d+)?)\s*cm/)||[])[1]),inch=parseFloat((t.match(/(\d+)\s*-?\s*inch/)||[])[1]);if(!Number.isFinite(cm))return null;return {cm,inch:Number.isFinite(inch)?inch:Math.round(cm/2.54),wall:Math.ceil(cm/2+30),clear:Math.ceil(cm+60),drop:o.specs?.['Hangs down']};}
+function fanCard(x,v,content){
+ const d=content?.decisions?.find(d=>d.id===x.fans);if(!d)return '';const got=num(v[`m:${x.wallId}:D`]);
+ const rows=d.options.map(o=>({o,f:fanSize(o)})).filter(r=>r.f).sort((a,b)=>a.f.cm-b.f.cm);
+ return `<article class="vx vx-wide"><h4>${h(d.title)} <small>shortlist, smallest first</small></h4><ul class="vf-list" data-fan-wall="${h(x.wallId)}">${rows.map(({o,f})=>{const st=got==null?'open':got>=f.wall?'ok':'bad';return `<li class="vf">${o.images?.[0]?zoom(imgSrc(o.images[0].src),o.name||o.label,'vf-photo'):''}<div><strong>${h(o.name||o.label)}</strong><span>${f.inch}-inch · ${f.cm} cm across</span><span>Needs ${f.wall} cm from the light point to the nearest wall (about ${f.clear} cm clear circle)${f.drop&&f.drop!=='Not stated'?` · hangs ${h(f.drop)}`:''}</span><em class="vf-fit" data-fan-need="${f.wall}" data-fit="${st}">${st==='open'?'Measure the wall gap below':st==='ok'?'Fits':'Too close to the wall'}</em></div></li>`;}).join('')}</ul><p class="vx-note">Rule of thumb; the installer confirms. Blades should also be at least 2.1 m off the floor.</p><a class="vx-more" href="/${h(d.area)}/${h(d.slug)}">See item</a></article>`;
+}
+// Example photos and the shortlisted models, one photo each. Tap a photo to enlarge; swipe inside the viewer.
+function showStrip(r,content,v){
  if(!r.show?.length)return '';
  const cards=r.show.map(x=>{
+  if(x.fans)return fanCard(x,v,content);
+  if(x.pick){const {d,o}=optOf(x.pick[0],x.pick[1],content),img=o?.images?.[0];if(!img)return '';return `<article class="vx">${zoom(imgSrc(img.src),x.title,'vx-photo')}<h4>${h(x.title)} <small>going here</small></h4><p>${h(x.note)}</p><a class="vx-more" href="/${h(d.area)}/${h(d.slug)}">See item</a></article>`;}
   if(x.item){const d=content?.decisions?.find(d=>d.id===x.item);if(!d)return '';const opts=(d.options??[]).filter(o=>o.images?.[0]).slice(0,6);if(!opts.length)return '';
-   return `<article class="vx vx-list"><h4>${h(x.title||d.title)} <small>shortlist</small></h4><div class="vx-opts">${opts.map(o=>`<a class="vx-opt" href="${h(imgSrc(o.images[0].src))}" target="_blank" rel="noopener"><img src="${h(imgSrc(o.images[0].src))}" alt="${h(o.name||o.label)}" loading="lazy"><span>${h(o.name||o.label)}</span></a>`).join('')}</div><a class="vx-more" href="/${h(d.area)}/${h(d.slug)}">See item</a></article>`;}
-  return `<article class="vx"><a class="vx-photo" href="${h(x.img)}" target="_blank" rel="noopener"><img src="${h(x.img)}" alt="${h(x.title)}" loading="lazy"></a><h4>${h(x.title)}</h4><p>${h(x.note)}</p>${x.link?`<a class="vx-link" href="${h(x.link.url)}" target="_blank" rel="noopener">${h(x.link.label)} ↗</a>`:''}<small class="vx-src">Example photo: <a href="${h(x.source)}" target="_blank" rel="noopener">${h(x.credit)}</a></small></article>`;
+   return `<article class="vx vx-list"><h4>${h(x.title||d.title)} <small>shortlist</small></h4><div class="vx-opts">${opts.map(o=>`<div class="vx-opt">${zoom(imgSrc(o.images[0].src),o.name||o.label,'vx-opt-photo')}<span>${h(o.name||o.label)}</span></div>`).join('')}</div><a class="vx-more" href="/${h(d.area)}/${h(d.slug)}">See item</a></article>`;}
+  return `<article class="vx">${zoom(x.img,x.title,'vx-photo')}<h4>${h(x.title)}</h4><p>${h(x.note)}</p>${x.link?`<a class="vx-link" href="${h(x.link.url)}" target="_blank" rel="noopener">${h(x.link.label)} ↗</a>`:''}${credit(x)}</article>`;
  }).join('');
- return cards?`<h3>Show the contractor</h3><div class="vx-row">${cards}</div>`:'';
+ return cards?`<div class="vx-row" data-lightbox-group>${cards}</div>`:'';
 }
+const measureProgress=(r,v)=>{const keys=r.measure.flatMap(m=>Object.keys(m.fields).map(k=>`m:${m.id}:${k}`));return {filled:keys.filter(k=>num(v[k])!=null).length,total:keys.length};};
 function pickOf(m,content){if(!m.pick)return '';const d=content?.decisions?.find(d=>d.id===m.pick[0]),o=d?.options?.find(o=>o.label===m.pick[1]),img=o?.images?.[0];if(!o)return '';const src=img?(/^https:\/\//.test(img.src)?'/img?src='+encodeURIComponent(img.src):img.src):'';return `<p class="vm-pick">${src?`<img src="${h(src)}" alt="" loading="lazy">`:''}<span><small>Going here</small>${h(o.name)}</span></p>`;}
 function measureCard(m,v,ro,content){
  const fit=fitOf(m,v),need=needLine(m);
@@ -58,9 +71,9 @@ const tick=(key,text,v,ro)=>`<li><label class="vt"><input type="checkbox" data-k
 function room(r,v,ro,content){
  const st=roomStats(r,v);
  return `<section class="vr" id="v-${h(r.id)}" data-room="${h(r.id)}"><div class="vr-head"><h2>${h(r.name)}</h2><span class="vr-meta"><span data-room-count>${st.done} / ${st.total}</span> done · about ${r.minutes} min</span></div>
- ${showStrip(r,content)}${r.measure.length?`<h3>Measure</h3><div class="vm-list">${r.measure.map(m=>measureCard(m,v,ro,content)).join('')}</div>`:''}
+ ${showStrip(r,content,v)}${r.measure.length?`<h3>Measure</h3><div class="vm-list">${r.measure.map(m=>measureCard(m,v,ro,content)).join('')}</div>`:''}
  ${r.check.length?`<h3>Check</h3><ul class="vt-list">${r.check.map((t,i)=>tick(`c:${r.id}:${i}`,t,v,ro)).join('')}</ul>`:''}
- <h3>Ask the contractor</h3><ul class="vt-list">${r.ask.map((t,i)=>tick(`a:${r.id}:${i}`,t,v,ro)).join('')}${r.steigen?tick(`a:${r.id}:steigen`,r.steigen,v,ro):''}</ul>
+ <h3>Questions</h3><ul class="vt-list">${r.ask.map((t,i)=>tick(`a:${r.id}:${i}`,t,v,ro)).join('')}${r.steigen?tick(`a:${r.id}:steigen`,r.steigen,v,ro):''}</ul>
  ${r.quote.length?`<h3>Quote</h3><div class="vq-list">${r.quote.map(([id,name,allow])=>`<label class="vq"><span class="vq-name">${h(name)}<small>${h(id)}${allow?` · planned ${money(allow)}`:''}</small></span><span class="vq-input"><span>S$</span><input inputmode="decimal" autocomplete="off" data-k="q:${h(id)}" data-allow="${allow}" value="${h(v[`q:${id}`])}" ${ro?'disabled':''} aria-label="Quoted price for ${h(name)}"></span></label>`).join('')}</div>`:''}
  <label class="vn"><span>Notes</span><textarea rows="3" data-k="n:${h(r.id)}" ${ro?'disabled':''} placeholder="Anything else said or seen here">${h(v[`n:${r.id}`])}</textarea></label>
  </section>`;
@@ -76,13 +89,15 @@ function quoteSummary(plan,v){
 export function visitPage(s,plan=VISIT){
  const v=s.visit??{},ro=!!s.readOnly,all=plan.rooms.map(r=>roomStats(r,v)),done=all.reduce((a,b)=>a+b.done,0),total=all.reduce((a,b)=>a+b.total,0);
  const mins=plan.rooms.reduce((a,r)=>a+r.minutes,0);
+ const must=plan.mustAsk?.length?`<section class="vr vr-must" id="v-must" data-room="must"><div class="vr-head"><h2>Must ask</h2></div><ul class="vt-list">${plan.mustAsk.map((t,i)=>tick(`a:must:${i}`,t,v,ro)).join('')}</ul><label class="vn"><span>Answers</span><textarea rows="3" data-k="n:must" ${ro?'disabled':''} placeholder="Aircon age, water heater age and condition">${h(v['n:must'])}</textarea></label></section>`:'';
  return `<div class="visit" data-visit>
  <div class="page-top"><a class="back" href="/">← Home</a><h1>${h(plan.title)}</h1><p>Wed 11 Nov · contractor walk-through · about ${Math.round(mins/15)/4} hours. Walk the rooms in this order; tick as each part is done.</p></div>
  <div class="vp"><div class="vp-bar"><progress max="${total}" value="${done}" data-visit-progress aria-label="Visit progress"></progress><span data-visit-count>${done} / ${total} done</span></div>
- <nav class="vp-rooms" aria-label="Rooms">${plan.rooms.map((r,i)=>`<a href="#v-${h(r.id)}" data-room-link="${h(r.id)}"${all[i].done===all[i].total?' class="done"':''}>${h(r.name.replace(' (with the contractor)',''))}</a>`).join('')}<a href="#v-quote">Quote total</a></nav>
+ <nav class="vp-rooms" aria-label="Rooms">${must?'<a href="#v-must" data-room-link="must" class="vp-must">Must ask</a>':''}${plan.rooms.map(r=>{const mp=measureProgress(r,v),pc=mp.total?Math.round(mp.filled/mp.total*100):0;return `<a href="#v-${h(r.id)}" data-room-link="${h(r.id)}"${mp.total?` data-measure-total="${mp.total}" style="--p:${pc}%"`:''}${mp.total&&mp.filled?` class="started${mp.filled===mp.total?' measured':''}"`:''}>${h(r.name.replace(' (with the contractor)',''))}</a>`;}).join('')}<a href="#v-quote" data-room-link="quote">Quote total</a></nav>
  <span class="vp-save" data-save-state role="status" aria-live="polite">${ro?'Read-only preview':''}</span></div>
  <section class="vb"><div><h2>Bring</h2><ul>${plan.bring.map(t=>`<li>${h(t)}</li>`).join('')}</ul></div><div><h2>How to measure</h2><ul>${plan.howTo.map(t=>`<li>${h(t)}</li>`).join('')}</ul></div>
  <div class="vb-key"><h2>The letters</h2><p><b>L</b> side to side · <b>W</b> front to back · <b>H</b> height · <b>T</b> thickness · <b>D</b> distance · <b>R</b> wall to toilet drain. All in cm.</p></div></section>
+ ${must}
  ${plan.rooms.map(r=>room(r,v,ro,s.content)).join('')}
  ${quoteSummary(plan,v)}
  </div>`;

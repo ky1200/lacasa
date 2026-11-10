@@ -49,11 +49,20 @@ test('measured sizes are copied onto the matching item pages',()=>{
  const rack=c.decisions.find(d=>d.id==='YA04'),dn=c.decisions.find(d=>d.id==='DN01');
  assert.equal(rack.space.width,118);assert.equal(rack.space.measured,true);assert.equal(dn.space.width,200);assert.equal(dn.space.depth,180);
 });
-test('show-the-contractor strip: every example photo exists, items resolve, one photo per model',()=>{
- for(const r of VISIT.rooms)for(const x of r.show??[]){if(x.item){const d=content.decisions.find(d=>d.id===x.item);assert.ok(d,x.item);assert.ok(d.options.some(o=>o.images?.[0]),x.item);}else{assert.ok(existsSync(new URL('../../public'+x.img,import.meta.url)),x.img);assert.match(x.source,/^https:\/\//);assert.ok(x.title&&x.note&&x.credit);}}
- const s=visitorState(content,samples,{code:'KX',isAdmin:false}),html=renderPage(s,'/visit').html;
- assert.match(html,/Show the contractor/);assert.match(html,/LED cove lighting/);assert.match(html,/Downlights/);
+test('example photos: every photo exists, items resolve, one photo per model; page order and labels',()=>{
+ for(const r of VISIT.rooms)for(const x of r.show??[]){
+  if(x.item||x.fans){const d=content.decisions.find(d=>d.id===(x.item||x.fans));assert.ok(d,x.item||x.fans);assert.ok(d.options.some(o=>o.images?.[0]));}
+  else if(x.pick){const o=content.decisions.find(d=>d.id===x.pick[0])?.options.find(o=>o.label===x.pick[1]);assert.ok(o?.images?.[0],x.pick.join(' '));}
+  else{assert.ok(existsSync(new URL('../../public'+x.img,import.meta.url)),x.img);if(x.source)assert.match(x.source,/^https:\/\//);assert.ok(x.title&&x.note&&x.credit);}}
+ assert.deepEqual(VISIT.rooms.slice(0,6).map(r=>r.id),['entrance','kitchen','yard','dining','living','common-bath']);
+ const s=visitorState(content,samples,{code:'KX',isAdmin:false}),html=renderPage(s,'/visit').html,text=html.replace(/<[^>]+>/g,' ');
+ assert.doesNotMatch(html,/Show the contractor|<h3>Ask the contractor/);assert.match(html,/<h3>Questions<\/h3>/);
+ assert.match(html,/LED cove lighting/);assert.match(html,/Recessed downlight/);assert.match(html,/L-shaped metal rack/);assert.match(html,/V Haus LINO table \+ 6 chairs/);
  assert.match(html,/passionhome\.sg\/product\/aqara-smart-door-lock-u400/);
+ assert.match(html,/id="v-must"/);assert.match(text,/How many years old is the aircon\?/);assert.match(text,/Paloma/);
+ assert.match(text,/30-inch · 76 cm across/);assert.match(text,/Needs 68 cm from the light point/);assert.match(text,/40-inch · 100 cm across/);
+ assert.doesNotMatch(html,/<a [^>]*target="_blank"[^>]*><img/);
  const toilet=content.decisions.find(d=>d.id==='CB-WC');for(const o of toilet.options)assert.ok(html.includes(o.name||o.label));
- assert.doesNotMatch(html.replace(/<[^>]+>/g,' '),/\byou\b|\byour\b|perfect|amazing/i);
+ assert.doesNotMatch(text,/\byou\b|\byour\b|perfect|amazing/i);
+ assert.ok(visitKeys().has('a:must:1')&&visitKeys().has('n:must'));
 });
