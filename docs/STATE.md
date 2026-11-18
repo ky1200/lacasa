@@ -178,3 +178,9 @@ Backbone, editor rules, real draft content, sample content and research standard
 - Official product photos can be linked by URL; the Worker fetches and caches them at `/img?src=…`, only for URLs listed in `lacasa.json`.
 - Readiness gate: a pre-order counts as stock when it arrives before the item is needed on site.
 - Content snapshot tests turned into rule checks so new items don't break them. 97 tests pass.
+
+## 20 Nov 2026 — /buy is interactive
+- Each item: tick to count or remove, +/− quantity, "Pick" list of options (first is recommended). Choices save for the whole family in `visit_notes` as `b:<item id>:off|pick|qty` via PUT `/api/buy/<key>`; CSV uses them.
+- Item `id`s in `showcase/buy-plan.mjs` are stable keys: do not rename.
+- Product photos: `showcase/buy-images.mjs` (og:image per link), served through `/img` (allowlisted in worker).
+- Changes: TV console and KY desk removed; 3 queen beds + soft mattresses (Sealy Treasure pick); 12.5 kg Panasonic washer; Hitachi 407 L fridge (fits 70 cm); Fanco Dono kitchen fan; IKEA ENHET mirror cabinets (no power) in both baths; KDK F40GP now S$418.
