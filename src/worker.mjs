@@ -10,7 +10,6 @@ import { renderPage, choosePage, ownerPage, auditBrief } from '../showcase/rende
 import { videoPage } from '../showcase/video.mjs';
 import { canonicalItemURL } from '../showcase/routes.mjs';
 import { buyCSV } from '../showcase/buy-plan.mjs';
-import { IMG } from '../showcase/buy-images.mjs';
 
 const OWNER_COOKIE = 'lacasa_owner';
 const OWNER_DAYS = 30;
@@ -118,7 +117,7 @@ async function page(request, env, u) {
 
 // Official product photos linked in lacasa.json are fetched and cached by the site.
 // Only URLs that appear in the content are allowed, so this can't be used as an open proxy.
-const remoteImages = new Set([...content.decisions.flatMap(d => d.options ?? []).flatMap(o => o.images ?? []).map(i => i.src), ...Object.values(IMG)].filter(s => /^https:\/\//.test(s ?? '')));
+const remoteImages = new Set(content.decisions.flatMap(d => d.options ?? []).flatMap(o => o.images ?? []).map(i => i.src).filter(s => /^https:\/\//.test(s ?? '')));
 async function remoteImage(u) {
   const src = u.searchParams.get('src');
   if (!src || !remoteImages.has(src)) return new Response('Not found', { status: 404 });

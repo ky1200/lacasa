@@ -184,3 +184,8 @@ Backbone, editor rules, real draft content, sample content and research standard
 - Item `id`s in `showcase/buy-plan.mjs` are stable keys: do not rename.
 - Product photos: `showcase/buy-images.mjs` (og:image per link), served through `/img` (allowlisted in worker).
 - Changes: TV console and KY desk removed; 3 queen beds + soft mattresses (Sealy Treasure pick); 12.5 kg Panasonic washer; Hitachi 407 L fridge (fits 70 cm); Fanco Dono kitchen fan; IKEA ENHET mirror cabinets (no power) in both baths; KDK F40GP now S$418.
+
+## 19 Nov 2026 (later) — /buy re-check, photos, calendar, colours
+- Every link and price re-checked 19 Nov. Changes: aircon pick now Mega Discount Store S$3,510 installed (code 7NV0 to 30 Nov); LG C6 65" S$3,254; HomePod S$499 each; Hitachi fridge COURTS S$989; Panasonic fridge S$989; Fanco Dono S$199; IKEA ENHET S$170; RIGEL items now from the official RIGEL e-store (toilet S$525, basin S$240, showers S$450/S$400); bidet = American Standard DuoSTiX S$49.
+- Photos: one per item/option in public/images/buy (webp), mapped in showcase/buy-images.mjs by "<item id>#<option index>"; ex:true = example photo. Tap opens the shared photo viewer; option photos swipe as a group.
+- Sale and buy dates calendar (Nov–Dec), colour per room (ROOM_COLOURS in buy.mjs), sticky bar shows "Not counted: S$x" and estimates. Word "rough" replaced with "Estimate".

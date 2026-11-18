@@ -1,40 +1,294 @@
-// Small product photos for /buy, keyed by the item or option link. Taken from each shop page's og:image on 19 Nov 2026.
+// Product photos for /buy, saved on this site (taken from each shop or brand page, 19 Nov 2026).
+// Key: "<item id>#<option index>". ex: true means a general example photo, not the exact model.
 export const IMG = {
- "https://bedandbasics.sg/traken-storage-bedframe-stain-resistant-fabric.html": "https://cdn.bedandbasics.sg/media/catalog/product/cache/image/265x265/45fdec41ec3009377ab54832ed20174c/t/r/traken-storage-bed-main-cover.jpg",
- "https://electromart.sg/products/bosch-wgg24400sg-front-load-washer-9kg": "https://electromart.sg/cdn/shop/files/WGG24400SG.png?v=1773653426",
- "https://electromart.sg/products/fanco-dc-dono-16-wall-or-ceiling-mount-corner-dc-fan": "https://electromart.sg/cdn/shop/files/DCDONO16.jpg?v=1760678853",
- "https://electromart.sg/products/lg-oled65c6psa-oled-evo-ai-c6-4k-smart-tv-65inch": "https://electromart.sg/cdn/shop/files/OLED65C6PSA.png?v=1778650554",
- "https://electromart.sg/products/toshiba-gr-rt559we-pmx21s-top-mounted-refrigerator-411l": "https://cdn.shopify.com/s/files/1/0699/9765/8430/files/GR-RT559WE-PMX_21S.png?v=1754294070",
- "https://mall.lapasar.com/products/155107": "https://lapasar.com/sellers/uploads/product/product_573702_1773847549257_66a793c8.jpg",
- "https://online.majuhome.com.my/products/natura-avo-plush-mattress": "https://cdn.shopify.com/s/files/1/1657/4279/files/naturaavoplush-01_7468c54c-7c73-483a-9007-fc36f065ff84.jpg?v=1771816116",
- "https://passionhome.sg/product/aqara-smart-door-lock-a100/": "https://passionhome.sg/wp-content/uploads/2026/05/AQARA-Door-Lock-A100-Zigbee-3.0.webp",
- "https://passionhome.sg/product/aqara-smart-door-lock-d100-official-with-installation/": "https://passionhome.sg/wp-content/uploads/2026/05/AQARA-Door-Lock-D100-Zigbee-3.0.webp",
- "https://passionhome.sg/product/aqara-smart-door-lock-u400/": "https://passionhome.sg/wp-content/uploads/2026/05/scene-picture-u400-door-lock-2.jpg",
- "https://www.apple.com/sg/shop/buy-homepod/homepod": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/homepod-og-202301?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1670391082906",
- "https://www.apple.com/sg/shop/buy-homepod/homepod-mini": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/homepod-mini-og-image-202610?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1790352758848",
- "https://www.apple.com/sg/shop/buy-tv/apple-tv-4k": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/apple-tv-4k-hero-select-202610?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1790131173589",
- "https://www.banhuat.com/20wud": "https://www.banhuat.com/image/cache/catalog/products/VENTILATING FAN/20WUD/KDK-8-GLASS-VENTILATING-FAN-20WUD-T1-500x500_0.jpg",
- "https://www.courts.com.sg/daikin-daikin-7.5kwh-condenser-ismile-eco+-series-system-3-9000btu-x-3-mkm75zvmg+-ctkm25zvmg-x3-IP210313.html": "https://www.courts.com.sg/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dw6432f457/images/hires/media/catalog/product/i/p/ip210313_00.jpg",
- "https://www.courts.com.sg/dfan-16-in-dc-wall-fan-black-516-IP171419.html": "https://www.courts.com.sg/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dw99a515b5/images/hires/media/catalog/product/i/p/ip171419_00.jpg",
- "https://www.courts.com.sg/lg-front-load-washer---essense-graphite-9kg-fx1409s5g-IP223515.html": "https://www.courts.com.sg/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dwc1dd8d8c/images/hires/media/catalog/product/i/p/ip223515_00.jpg",
- "https://www.courts.com.sg/mitselec-mitsubishi-starmex-28k-condenser-system-39000btu-x-3-mxy-3h28vg%2B-msxy-fp10vg-sg3-x-3-IP219176.html": "https://www.courts.com.sg/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dwa7840fac/images/hires/media/catalog/product/i/p/ip219176_00.jpg",
- "https://www.courts.com.sg/mitsubishi-2-door-bottom-freezer-423l-mr-hgs52exgwhp-IP204243.html": "https://www.courts.com.sg/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dw443594b4/images/hires/media/catalog/product/i/p/ip204243_00.jpg",
- "https://www.courts.com.sg/panasonic-front-load-washer-12.5kg-na-25cew1bsg-IP211791.html": "https://www.courts.com.sg/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dw1109a95e/images/hires/media/catalog/product/i/p/ip211791_00.jpg",
- "https://www.courts.com.sg/panasonic-nr-bx471cpss-2-dr-fridge-405l-ip168440": "https://www.courts.com.sg/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dwdb19c609/images/hires/media/catalog/product/i/p/ip168440_00.jpg",
- "https://www.courts.com.sg/panasonic-smart-front-load-washer-with-auto-clean---black-12kg-na-24vdw1bsg-IP222529.html": "https://www.courts.com.sg/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dw19facbab/images/hires/media/catalog/product/i/p/ip222529_00.jpg",
- "https://www.gaincity.com/product/108519/sku": "https://www.courts.com.sg/on/demandware.static/-/Sites-courts-m-catalog-sg/default/dwa7840fac/images/hires/media/catalog/product/i/p/ip219176_00.jpg",
- "https://www.harveynorman.com.sg/home-appliances/washing-machines-and-dryers-en/washing-machines-en/lg-12kg-front-load-washer-matte-black-fx1412s2ka.html": "https://hnsgsfp.imgix.net/4/images/detailed/203/LG_12kg_Front_Load_Washer_-_Matte_Black_(FX1412S2KA)_01.jpg?fit=fill&bg=0FFF&w=1536&h=901&auto=format,compress",
- "https://www.harveynorman.com.sg/promotions-en/october-2026-bedding-campaign/king-koil-posture-ellisville-pocketed-spring-mattress-queen-size.html": "https://hnsgsfp.imgix.net/4/images/detailed/168/King_Koil_Posture_Ellisville_Pocketed_Spring_Mattress_Queen_Size.jpg?fit=fill&bg=0FFF&w=1536&h=901&auto=format,compress",
- "https://www.harveynorman.com.sg/promotions-en/october-2026-bedding-campaign/sealy-posturepremier-treasure-mattress-queen-size.html": "https://hnsgsfp.imgix.net/4/images/detailed/74/Treasure_FA_817h-0o.jpg?fit=fill&bg=0FFF&w=1536&h=900&auto=format,compress",
- "https://www.harveynorman.com.sg/smart-tech-and-phones/smart-home/smart-security/aqara-u400-smart-door-lock-silver-dl-d16e.html": "https://hnsgsfp.imgix.net/4/images/detailed/189/Aqara_U400_Smart_Door_Lock_-_Silver_(DL-D16E).jpg?fit=fill&bg=0FFF&w=1536&h=901&auto=format,compress",
- "https://www.harveynorman.com.sg/tv-and-audio/tvs-en-2/tvs-en-3/65-inches-tvs/lg-65-inch-c6-oled-evo-ai-4k-2026-smart-tv-black-oled65c6psa.atc.html": "https://hnsgsfp.imgix.net/4/images/detailed/191/LG_65-inch_C6_OLED_Evo_AI_4K_2026_Smart_TV_-_Black_(OLED65C6PSA.ATC)_01.JPG?fit=fill&bg=0FFF&w=1536&h=901&auto=format,compress",
- "https://www.harveynorman.com.sg/tv-and-audio/tvs-en-2/tvs-en-3/lg-77-inch-c6-oled-evo-ai-4k-2026-smart-tv-black-oled77c6psa.atc.html": "https://hnsgsfp.imgix.net/4/images/detailed/191/LG_77-inch_C6_OLED_Evo_AI_4K_2026_Smart_TV_-_Black_(OLED77C6PSA.ATC)_01.JPG?fit=fill&bg=0FFF&w=1536&h=901&auto=format,compress",
- "https://www.harveynorman.com.sg/tv-and-audio/tvs-en-2/tvs-en-3/samsung-85-inch-qn70h-4k-neo-qled-samsung-vision-ai-2026-smart-tv-black-qa85qn70hakxxs.html": "https://hnsgsfp.imgix.net/4/images/detailed/197/1040997.jpg?fit=fill&bg=0FFF&w=1536&h=901&auto=format,compress",
- "https://www.hipvan.com/products/levitate-mattress": "https://hipvan-images-production.imgix.net/product-images/447c053b-8d78-4780-ac7a-903bb1661e40/Mattresses-by-HipVan--LEVITATE-Mattress-24.png?w=400&h=400&fit=fill&bg=ffffff&auto=compress&cs=srgb&mark-scale=100&mark-align=bottom%2Ccenter&fm=webp",
- "https://www.ikea.com/sg/en/cat/mirror-cabinets-20500/f/with-shelves-bathroom-mirror-cabinets-f-feature--53039/": "https://www.ikea.com/sg/en/images/products/lettan-mirror-cabinet-with-doors-mirror-effect-mirror-glass__1195577_pe902498_s5.jpg",
- "https://www.ikea.com/sg/en/cat/mirror-cabinets-20500/f/wood-including-board-bathroom-mirror-cabinets-f-materials--47349": "https://www.ikea.com/sg/en/images/products/lettan-mirror-cabinet-with-doors-mirror-effect-mirror-glass__1195577_pe902498_s5.jpg",
- "https://www.ikea.com/sg/en/p/enhet-mirror-cabinet-with-2-doors-grey-s89396564": "https://www.ikea.com/ext/ingkadam/m/740c3eae8e818294/original/PH210754.jpg",
- "https://www.ikea.com/sg/en/p/enhet-mirror-cabinet-with-doors-white-20623045/": "https://www.ikea.com/sg/en/images/products/enhet-mirror-cabinet-with-doors-white__1485605_pe1002057_s5.jpg",
- "https://www.kdk.sg/products/ceiling-fan-f40gp": "https://cdn.shopify.com/s/files/1/0981/8842/7540/files/F40GPBROWN2.jpg?v=1773107089",
- "https://www.watelier.com/product/recommendation/default/2238/related": "https://dk7e3dsghw78b.cloudfront.net/sites/files/watelier/productimg/202109/C889DESI-1.jpg"
+ "aircon-mitsubishi-starmex-system-3#0": {
+  "src": "/images/buy/mitsubishi-starmex-system-3-3-9-000-btu-5-ticks-installed-wi-9a5998.webp"
+ },
+ "aircon-mitsubishi-starmex-system-3#1": {
+  "src": "/images/buy/mitsubishi-starmex-system-3-3-9-000-btu-5-ticks-installed-wi-9a5998.webp"
+ },
+ "aircon-mitsubishi-starmex-system-3#2": {
+  "src": "/images/buy/same-mitsubishi-set-no-installation-shown-add545.webp"
+ },
+ "aircon-mitsubishi-starmex-system-3#3": {
+  "src": "/images/buy/daikin-ismile-eco-system-3-3-9-000-btu-5-ticks-3edca9.webp"
+ },
+ "common-bath-basin-cabinet-304-stainless#0": {
+  "ex": true,
+  "src": "/images/buy/basin-cabinet-304-stainless-baron-a106-type-05f6d5.webp"
+ },
+ "common-bath-basin-mixer-tap#0": {
+  "ex": true,
+  "src": "/images/buy/basin-mixer-tap-bf3e38.webp"
+ },
+ "common-bath-bidet-spray#0": {
+  "src": "/images/buy/american-standard-duostix-hygiene-bidet-spray-chrome-2410c4.webp"
+ },
+ "common-bath-ceiling-light-wet-area#0": {
+  "ex": true,
+  "src": "/images/buy/ceiling-light-wet-area-78ad53.webp"
+ },
+ "common-bath-kdk-8-window-exhaust#0": {
+  "src": "/images/buy/kdk-8-window-exhaust-fan-fcb0c0.webp"
+ },
+ "common-bath-rigel-3-in-1#0": {
+  "ex": true,
+  "src": "/images/buy/rigel-3-in-1-thermostatic-rain-shower-set-chrome-48c082.webp"
+ },
+ "common-bath-rigel-3-in-1#1": {
+  "ex": true,
+  "src": "/images/buy/rigel-3-in-1-thermostatic-rain-shower-set-chrome-48c082.webp"
+ },
+ "common-bath-rigel-3-in-1#2": {
+  "ex": true,
+  "src": "/images/buy/rigel-3-in-1-thermostatic-rain-shower-set-chrome-48c082.webp"
+ },
+ "common-bath-rigel-counter-top-basin#0": {
+  "ex": true,
+  "src": "/images/buy/rigel-boat-shaped-counter-top-basin-white-fab49e.webp"
+ },
+ "common-bath-rigel-gallant-one-piece#0": {
+  "src": "/images/buy/rigel-gallant-one-piece-rimless-toilet-with-whirlwash-cd2f69.webp"
+ },
+ "common-bath-rigel-gallant-one-piece#1": {
+  "src": "/images/buy/rigel-one-piece-rimless-slim-tank-3b3179.webp"
+ },
+ "common-bath-rigel-gallant-one-piece#2": {
+  "ex": true,
+  "src": "/images/buy/rigel-two-piece-rimless-double-whirlwash-759207.webp"
+ },
+ "common-bath-rigel-gallant-one-piece#3": {
+  "src": "/images/buy/rigel-gallant-one-piece-rimless-toilet-with-whirlwash-cd2f69.webp"
+ },
+ "common-mirror#0": {
+  "src": "/images/buy/ikea-enhet-mirror-cabinet-2-doors-60-17-75-cm-no-light-no-po-96a5ae.webp"
+ },
+ "common-mirror#1": {
+  "src": "/images/buy/ikea-enhet-mirror-cabinet-anthracite-60-17-75-cm-c16e16.webp"
+ },
+ "common-mirror#2": {
+  "src": "/images/buy/ikea-enhet-mirror-cabinet-1-door-40-17-75-cm-4609fd.webp"
+ },
+ "common-mirror#3": {
+  "src": "/images/buy/ikea-lettan-mirror-cabinet-all-mirror-60-15-95-cm-c08459.webp"
+ },
+ "contractor-add-missing-work-electrical#0": {
+  "src": "/images/buy/add-missing-work-electrical-lan-aircon-move-2nd-solid-door-c15c4b.webp"
+ },
+ "contractor-i-niche-renovation-quote#0": {
+  "src": "/images/buy/i-niche-renovation-quote-as-given-b563b0.webp"
+ },
+ "contractor-mcst-renovation-deposit-refundable#0": {
+  "ex": true,
+  "src": "/images/buy/mcst-renovation-deposit-refundable-b2cbfe.webp"
+ },
+ "contractor-remove-items-not-in#0": {
+  "src": "/images/buy/remove-items-not-in-our-plan-a3-d1-d2-d3-d3a-d4-f4-f5-efec95.webp"
+ },
+ "dining-kdk-f40gp-100-cm#0": {
+  "src": "/images/buy/kdk-f40gp-100-cm-wi-fi-dc-ceiling-fan-with-led-light-ee007e.webp"
+ },
+ "dining-v-haus-lino-dining#0": {
+  "src": "/images/buy/v-haus-lino-dining-table-4-chairs-no-side-chairs-12fa73.webp"
+ },
+ "entrance-aqara-u400-smart-lock#0": {
+  "src": "/images/buy/aqara-u400-smart-lock-lock-only-contractor-fits-347aea.webp"
+ },
+ "entrance-aqara-u400-smart-lock#1": {
+  "src": "/images/buy/aqara-u400-with-installation-24-month-onsite-warranty-999186.webp"
+ },
+ "entrance-aqara-u400-smart-lock#2": {
+  "src": "/images/buy/aqara-d100-push-pull-mortise-lock-fire-rated-installed-40-80-9d0c77.webp"
+ },
+ "entrance-aqara-u400-smart-lock#3": {
+  "src": "/images/buy/aqara-a100-mortise-lock-bca-fire-rated-installed-bec6fa.webp"
+ },
+ "entrance-retractable-insect-mesh-door#0": {
+  "ex": true,
+  "src": "/images/buy/retractable-insect-mesh-door-5ec5dd.webp"
+ },
+ "fridge#0": {
+  "src": "/images/buy/hitachi-407-l-2-door-fridge-inverter-6308ca.webp"
+ },
+ "fridge#1": {
+  "src": "/images/buy/panasonic-405-l-freezer-at-bottom-a21c97.webp"
+ },
+ "fridge#2": {
+  "src": "/images/buy/toshiba-411-l-white-glass-70-cm-wide-no-gap-in-our-space-850c60.webp"
+ },
+ "fridge#3": {
+  "src": "/images/buy/mitsubishi-423-l-freezer-at-bottom-69-9-cm-wide-no-gap-231015.webp"
+ },
+ "kitchen-fan#0": {
+  "src": "/images/buy/fanco-dc-dono-16-corner-fan-wall-or-ceiling-mount-remote-837335.webp"
+ },
+ "kitchen-fan#1": {
+  "ex": true,
+  "src": "/images/buy/kdk-16-wall-fan-1352a1.webp"
+ },
+ "kitchen-fan#2": {
+  "src": "/images/buy/d-fan-16-dc-wall-fan-black-ff22f8.webp"
+ },
+ "kitchen-steigen-solar-mini-drying#0": {
+  "src": "/images/buy/steigen-solar-mini-drying-rack-installed-b446db.webp"
+ },
+ "kitchen-steigen-solar-mini-drying#1": {
+  "src": "/images/buy/steigen-halo-mini-ai-drying-1716f9.webp"
+ },
+ "ks-bed#0": {
+  "src": "/images/buy/traken-storage-bed-frame-queen-gas-lifts-1f6999.webp"
+ },
+ "ks-mattress#0": {
+  "src": "/images/buy/sealy-posturepremier-treasure-mattress-queen-pillow-top-medi-ce9359.webp"
+ },
+ "ks-mattress#1": {
+  "src": "/images/buy/king-koil-posture-ellisville-queen-rated-soft-latex-15-yr-wa-fe1621.webp"
+ },
+ "ks-mattress#2": {
+  "src": "/images/buy/natura-avo-plush-queen-box-top-cool-gel-memory-foam-my-139ba9.webp"
+ },
+ "ks-mattress#3": {
+  "src": "/images/buy/hipvan-levitate-queen-latex-pocket-springs-12-yr-warranty-9d2aff.webp"
+ },
+ "kx-bed#0": {
+  "src": "/images/buy/traken-storage-bed-frame-queen-gas-lifts-1f6999.webp"
+ },
+ "kx-blackout-curtains-track#0": {
+  "ex": true,
+  "src": "/images/buy/blackout-curtains-track-1602f6.webp"
+ },
+ "kx-kdk-f40gp-100-cm#0": {
+  "src": "/images/buy/kdk-f40gp-100-cm-wi-fi-dc-ceiling-fan-with-led-light-ee007e.webp"
+ },
+ "kx-mattress#0": {
+  "src": "/images/buy/sealy-posturepremier-treasure-mattress-queen-pillow-top-medi-ce9359.webp"
+ },
+ "kx-mattress#1": {
+  "src": "/images/buy/king-koil-posture-ellisville-queen-rated-soft-latex-15-yr-wa-fe1621.webp"
+ },
+ "kx-mattress#2": {
+  "src": "/images/buy/natura-avo-plush-queen-box-top-cool-gel-memory-foam-my-139ba9.webp"
+ },
+ "kx-mattress#3": {
+  "src": "/images/buy/hipvan-levitate-queen-latex-pocket-springs-12-yr-warranty-9d2aff.webp"
+ },
+ "kx-philips-meson-5-downlight#0": {
+  "ex": true,
+  "src": "/images/buy/philips-meson-5-13w-recessed-downlight-3000k-or-4000k-e758b1.webp"
+ },
+ "ky-bed#0": {
+  "src": "/images/buy/traken-storage-bed-frame-queen-gas-lifts-1f6999.webp"
+ },
+ "ky-kdk-f40gp-100-cm#0": {
+  "src": "/images/buy/kdk-f40gp-100-cm-wi-fi-dc-ceiling-fan-with-led-light-ee007e.webp"
+ },
+ "ky-led-ambient-strip-driver#0": {
+  "ex": true,
+  "src": "/images/buy/led-ambient-strip-driver-e861a5.webp"
+ },
+ "ky-mattress#0": {
+  "src": "/images/buy/sealy-posturepremier-treasure-mattress-queen-pillow-top-medi-ce9359.webp"
+ },
+ "ky-mattress#1": {
+  "src": "/images/buy/king-koil-posture-ellisville-queen-rated-soft-latex-15-yr-wa-fe1621.webp"
+ },
+ "ky-mattress#2": {
+  "src": "/images/buy/natura-avo-plush-queen-box-top-cool-gel-memory-foam-my-139ba9.webp"
+ },
+ "ky-mattress#3": {
+  "src": "/images/buy/hipvan-levitate-queen-latex-pocket-springs-12-yr-warranty-9d2aff.webp"
+ },
+ "ky-philips-meson-5-downlight#0": {
+  "ex": true,
+  "src": "/images/buy/philips-meson-5-13w-recessed-downlight-3000k-or-4000k-e758b1.webp"
+ },
+ "living-apple-tv-4k-4th#0": {
+  "src": "/images/buy/apple-tv-4k-4th-gen-2026-8adee3.webp"
+ },
+ "living-homepod-2nd-gen-front#0": {
+  "src": "/images/buy/homepod-2nd-gen-front-left-and-right-fbf678.webp"
+ },
+ "living-homepod-mini-2-back#0": {
+  "src": "/images/buy/homepod-mini-2-back-left-and-right-2b484c.webp"
+ },
+ "living-l-shape-4-seat#0": {
+  "ex": true,
+  "src": "/images/buy/l-shape-4-seat-sofa-cad877.webp"
+ },
+ "living-led-cove-strip-driver#0": {
+  "ex": true,
+  "src": "/images/buy/led-cove-strip-driver-8717ec.webp"
+ },
+ "living-lg-oled-evo-c6#0": {
+  "src": "/images/buy/lg-oled-evo-c6-65-2026-a32203.webp"
+ },
+ "living-lg-oled-evo-c6#1": {
+  "src": "/images/buy/lg-oled-c6-65-at-a-physical-store-e309e8.webp"
+ },
+ "living-lg-oled-evo-c6#2": {
+  "src": "/images/buy/samsung-qn70h-85-neo-qled-mini-led-2026-e37448.webp"
+ },
+ "living-lg-oled-evo-c6#3": {
+  "src": "/images/buy/lg-oled-c6-77-2026-41166b.webp"
+ },
+ "living-philips-meson-5-13w#0": {
+  "ex": true,
+  "src": "/images/buy/philips-meson-5-13w-recessed-downlight-3000k-or-4000k-e758b1.webp"
+ },
+ "living-track-or-spot-lights#0": {
+  "ex": true,
+  "src": "/images/buy/track-or-spot-lights-for-tv-wall-art-15a956.webp"
+ },
+ "master-bath-accessories-for-both-bathrooms#0": {
+  "ex": true,
+  "src": "/images/buy/accessories-for-both-bathrooms-towel-bars-holders-rack-281804.webp"
+ },
+ "master-bath-bidet-spray#0": {
+  "src": "/images/buy/american-standard-duostix-hygiene-bidet-spray-chrome-2410c4.webp"
+ },
+ "master-bath-kdk-8-window-exhaust#0": {
+  "src": "/images/buy/kdk-8-window-exhaust-fan-fcb0c0.webp"
+ },
+ "master-bath-rigel-gallant-one-piece#0": {
+  "src": "/images/buy/rigel-gallant-one-piece-rimless-toilet-with-whirlwash-cd2f69.webp"
+ },
+ "master-bath-rigel-thermostatic-exposed-shower#0": {
+  "ex": true,
+  "src": "/images/buy/rigel-3-in-1-thermostatic-rain-shower-set-chrome-48c082.webp"
+ },
+ "master-bath-rigel-thermostatic-exposed-shower#1": {
+  "ex": true,
+  "src": "/images/buy/rigel-3-in-1-thermostatic-rain-shower-set-chrome-48c082.webp"
+ },
+ "master-bath-rigel-thermostatic-exposed-shower#2": {
+  "ex": true,
+  "src": "/images/buy/rigel-3-in-1-thermostatic-rain-shower-set-chrome-48c082.webp"
+ },
+ "master-mirror#0": {
+  "src": "/images/buy/ikea-enhet-mirror-cabinet-2-doors-60-17-75-cm-no-light-no-po-96a5ae.webp"
+ },
+ "master-mirror#1": {
+  "src": "/images/buy/ikea-enhet-mirror-cabinet-anthracite-60-17-75-cm-c16e16.webp"
+ },
+ "master-mirror#2": {
+  "src": "/images/buy/ikea-enhet-mirror-cabinet-1-door-40-17-75-cm-4609fd.webp"
+ },
+ "master-mirror#3": {
+  "src": "/images/buy/ikea-lettan-mirror-cabinet-all-mirror-60-15-95-cm-c08459.webp"
+ },
+ "washer#0": {
+  "src": "/images/buy/panasonic-12-5-kg-front-load-washer-db3bd3.webp"
+ },
+ "washer#1": {
+  "src": "/images/buy/panasonic-12-kg-with-autodose-and-auto-clean-3f0960.webp"
+ },
+ "washer#2": {
+  "src": "/images/buy/lg-12-kg-ai-dd-56-5-cm-deep-24c851.webp"
+ },
+ "washer#3": {
+  "src": "/images/buy/lg-9-kg-ai-dd-89040d.webp"
+ },
+ "washer#4": {
+  "src": "/images/buy/bosch-series-6-9-kg-i-dos-efbe74.webp"
+ }
 };

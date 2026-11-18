@@ -51,7 +51,8 @@ test('to-buy items have unique ids; TV console and own desk are gone; 3 queen ma
  for(const id of ['common-mirror','master-mirror'])assert.match(items.find(i=>i.id===id).name,/no light, no power point/);
  assert.match(items.find(i=>i.id==='washer').name,/12\.5 kg/);assert.match(items.find(i=>i.id==='kitchen-fan').name,/Dono/);
  assert.ok(items.find(i=>i.id==='fridge').alts.some(a=>/Panasonic/.test(a.name)));
- const hrefs=new Set(items.flatMap(i=>[i.href,...(i.alts??[]).map(a=>a.href)]));for(const [k,v] of Object.entries(IMG)){assert.ok(hrefs.has(k),k);assert.match(v,/^https:\/\//);}
+ for(const i of items)[i,...(i.alts??[])].forEach((o,k)=>{const p=IMG[`${i.id}#${k}`];assert.ok(p,`photo for ${i.id}#${k}`);assert.match(p.src,/^\/images\/buy\/[a-z0-9-]+\.webp$/);assert.ok(existsSync(new URL('../../public'+p.src,import.meta.url)),p.src);});
+ assert.equal(Object.keys(IMG).length,items.reduce((n,i)=>n+1+(i.alts?.length??0),0));
 });
 test('choices change the total: remove, pick another option, change quantity',()=>{
  const base=buyTotals().total,tv=items.find(i=>i.id==='living-lg-oled-evo-c6'),dl=items.find(i=>i.id==='living-philips-meson-5-13w');
@@ -66,10 +67,11 @@ test('to-buy page shows saved choices, quantity buttons, option picker and photo
  const s={...visitorState(content,samples,{code:'KS',name:'KS'},[],[],false),visit:{'b:fridge:pick':'1','b:washer:off':'1','b:living-philips-meson-5-13w:qty':'12'}};
  const html=renderPage(s,'https://lacasa.test/buy').html;
  assert.match(html,/data-buy="fridge"[\s\S]*?<h3 data-f="name">Panasonic 405 L/);
- assert.match(html,/class="buy-item is-off[^"]*" data-buy="washer"/);
+ assert.match(html,/class="buy-item is-off[^"]*" id="it-washer" data-buy="washer"/);
  assert.match(html,/data-buy="living-philips-meson-5-13w"[\s\S]*?<output data-f="qty"[^>]*>12</);
  assert.match(html,/name="pick-fridge" value="1" data-b="pick" checked/);
- assert.match(html,/src="\/img\?src=https%3A%2F%2F/);assert.match(html,/data-b="plus"/);
+ assert.match(html,/<button type="button" class="buy-photo main" data-enlarge[^>]*><img class="buy-img" src="\/images\/buy\//);assert.match(html,/<fieldset data-lightbox-group>/);assert.match(html,/data-b="plus"/);
+ assert.match(html,/Not counted: <b data-buy-off>S\$1,339<\/b>/);assert.match(html,/class="buy-day sale[^"]*" href="#day-2026-11-27"/);assert.match(html,/id="day-2026-12-12"/);assert.doesNotMatch(html,/[Rr]ough/);
  assert.match(html,new RegExp('data-buy-total>S\\$'+Math.round(buyTotals(BUY,s.visit).total).toLocaleString('en-SG')));
  const text=html.replace(/<[^>]+>/g,' ');assert.doesNotMatch(text,/\byou\b|\byour\b|perfect|amazing/i);
  const audit=renderPage({...visitorState(content,samples,{code:'AUDIT',audit:true,readOnly:true}),visit:{}},'https://lacasa.test/audit/buy');assert.match(audit.html,/data-b="in" checked disabled/);
