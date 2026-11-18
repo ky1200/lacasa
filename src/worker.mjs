@@ -9,6 +9,7 @@ import { identity, loadState, api } from '../showcase/server.mjs';
 import { renderPage, choosePage, ownerPage, auditBrief } from '../showcase/render.mjs';
 import { videoPage } from '../showcase/video.mjs';
 import { canonicalItemURL } from '../showcase/routes.mjs';
+import { buyCSV } from '../showcase/buy-plan.mjs';
 
 const OWNER_COOKIE = 'lacasa_owner';
 const OWNER_DAYS = 30;
@@ -103,6 +104,7 @@ async function page(request, env, u) {
   if (u.pathname === '/audit/brief.txt') return new Response(auditBrief(u.origin, content), { headers: { ...pageHeaders, 'Content-Type': 'text/plain; charset=utf-8' } });
   if (u.pathname === '/owner') return new Response(ownerPage(), { headers: pageHeaders });
   if (!who.code || u.pathname === '/choose') return new Response(choosePage(content), { headers: pageHeaders });
+  if (u.pathname === '/buy.csv') return new Response(buyCSV(), { headers: { ...pageHeaders, 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': 'attachment; filename="lacasa-to-buy.csv"' } });
   if (u.pathname === '/admin' && !who.isAdmin && !who.audit) return new Response(ownerPage(who.isOwner ? 'Choose KY first, then open Admin.' : ''), { status: 403, headers: pageHeaders });
   try {
     const state = await loadState(request, sEnv, content, samples), rendered = renderPage(state, request.url);

@@ -18,6 +18,13 @@
 | Publication | Audit round 4 functional release version 25 succeeded; documentation follow-up includes receipt |
 | Still not verified | Door fire-door certificate/fit/complete installed quotes; exact independent vacuum review videos; full video streaming on real phones; final measurements and external audit |
 
+## 19 November 2026 — To-buy list page
+
+- New page /buy (nav "To-buy", home card, header pill): every item to buy by room with qty × price, line total in S$ (RM at RM3.17 = S$1), shop, physical/online, exact link, source, buy date and timing; other options shown but not counted; room subtotals and grand total; sale dates; contractor questions; lights note.
+- /buy.csv downloads the same list as a spreadsheet. Data in showcase/buy-plan.mjs, page in showcase/buy.mjs.
+- I-Niche quotation and floor plan (13 Nov) added under public/files/ as image-only PDFs with address and ID number covered, at K's request.
+- Prices checked 17–19 Nov 2026. Rough budgets are marked. Tests: 115 pass (5 new in tests/showcase/buy.test.mjs).
+
 ## 30 October 2026 — Round 4 publication receipt
 
 - Functional release version 25 deployed successfully at https://lacasa-family-home.kayikkwong.chatgpt.site. All 97 tests, strict TypeScript, production build and compiled Worker/D1 acceptance pass. All 90 pages passed the 320 px checks; photo dialog lifecycle confirmed 0 → 1 → 0, one Close button while open. Temporary QA files removed before packaging.
