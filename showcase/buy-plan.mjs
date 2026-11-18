@@ -48,7 +48,7 @@ export const BUY = {
    {name: 'Track or spot lights for TV wall / art', qty: 2, price: 200, cur: 'MYR', est: true, shop: 'JB lighting shop', type: 'Shop', date: '2026-12-05', when: 'With downlights'},
   ]},
   {id: 'dining', name: 'Dining', items: [
-   {name: 'Dining table + 4 chairs (LINO set price as budget)', qty: 1, price: 2299, cur: 'MYR', shop: 'V Haus Living', type: 'Shop', date: '2026-12-13', when: 'Order with sofa', note: 'LINO needs about 240 × 230 cm. Our area is about 195 × 175 cm. Pick a 120 × 75–80 cm table.'},
+   {name: 'V Haus LINO dining table + 4 chairs (no side chairs)', qty: 1, price: 2299, cur: 'MYR', shop: 'V Haus Living', type: 'Shop', date: '2026-12-13', when: 'Order with sofa', note: 'Chosen. Order with 4 chairs only (drop the 2 end chairs) and ask for the lower price. Check chair pull-out space on the 175 cm side.'},
    {name: 'KDK F40GP 100 cm Wi-Fi DC ceiling fan with LED light', qty: 1, price: 558, cur: 'SGD', shop: 'KDK Singapore', type: 'Online', href: 'https://www.kdk.sg/pages/national-day-sales-2026', date: '2026-12-05', when: 'Buy before electrician. JB KDK dealers may be cheaper', note: 'Was S$418 in KDK sale. Check clearance to walls.'},
   ]},
   {id: 'kitchen', name: 'Kitchen and yard', items: [
@@ -106,7 +106,7 @@ export const BUY = {
    {name: 'HipVan LEVITATE mattress, queen (latex + pocket springs, 12-yr warranty)', qty: 1, price: 1499, cur: 'SGD', shop: 'HipVan', type: 'Online', href: 'https://www.hipvan.com/products/levitate-mattress', date: '2026-12-12', when: '12.12. Deliver after clean'},
   ]},
   {id: 'entrance', name: 'Entrance', items: [
-   {name: 'Aqara U400 smart lock, lock only (contractor fits)', qty: 1, price: 469, cur: 'SGD', shop: 'Harvey Norman', type: 'Shop + online', href: 'https://www.harveynorman.com.sg/smart-tech-and-phones/smart-home/smart-security/aqara-u400-smart-door-lock-silver-dl-d16e.html', date: '2026-12-12', when: 'Install at the end of renovation', note: 'Fits doors 35–55 mm (ours 50 mm). It is a deadbolt lock: if our door has a mortise lock, it needs conversion.', alts: [
+   {name: 'Aqara U400 smart lock, lock only (contractor fits)', qty: 1, price: 469, cur: 'SGD', shop: 'Harvey Norman', type: 'Shop + online', href: 'https://www.harveynorman.com.sg/smart-tech-and-phones/smart-home/smart-security/aqara-u400-smart-door-lock-silver-dl-d16e.html', date: '2026-12-12', when: 'Install at the end of renovation', note: 'Fits doors 35–55 mm (ours 50 mm). Our door has a round-hole knob lock, which suits the U400. Check the hole is 54 mm and the backset 60 or 70 mm. If the main door is fire-rated, ask MCST first.', alts: [
     {name: 'Aqara U400 with installation + 24-month onsite warranty', price: 649, cur: 'SGD', shop: 'Passion Home', type: 'Online', href: 'https://passionhome.sg/product/aqara-smart-door-lock-u400/'},
     {name: 'Aqara A100 mortise lock, BCA fire-rated, installed', price: 669, cur: 'SGD', shop: 'Passion Home', type: 'Online', href: 'https://passionhome.sg/product/aqara-smart-door-lock-a100/'},
    ]},
