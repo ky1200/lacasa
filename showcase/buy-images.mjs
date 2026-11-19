@@ -290,5 +290,20 @@ export const IMG = {
  },
  "washer#4": {
   "src": "/images/buy/bosch-series-6-9-kg-i-dos-efbe74.webp"
+ },
+ "kitchen-robot-vacuum-mop#0": {
+  "src": "/images/buy/dreame-x50-ultra-robot-vacuum-mop-water-kit.webp"
+ },
+ "kitchen-robot-vacuum-mop#1": {
+  "src": "/images/buy/roborock-saros-20-refill-drainage.webp"
+ },
+ "kitchen-robot-vacuum-mop#2": {
+  "src": "/images/buy/dreame-x60-ultra-robot-vacuum-mop.webp"
+ },
+ "kitchen-robot-vacuum-mop#3": {
+  "src": "/images/buy/dreame-aqua10-ultra-roller.webp"
+ },
+ "kitchen-robot-vacuum-mop#4": {
+  "src": "/images/buy/narwal-freo-x10-pro-autowater.webp"
  }
 };
