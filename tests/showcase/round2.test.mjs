@@ -17,7 +17,7 @@ test('Home, default list and API state share exact live before-move-in totals',(
  for(const votesNow of [[],votes])for(const who of [{code:'KY'},{code:'KX'},{audit:true}]){
   const s=visitorState(c,samples,who,votesNow,[]),expected=listTotals(c,s.results),prefix=who.audit?'/audit':'';
   assert.deepEqual([s.budget.min,s.budget.max],[expected.min,expected.max]);
-  for(const path of [prefix+'/',prefix+'/list']){
+  for(const path of [prefix+'/earlier',prefix+'/list']){
    const html=visible(renderPage(s,path).html);assert.match(html,new RegExp(`data-budget-min="${expected.min}" data-budget-max="${expected.max}" data-budget-scope="before"`));assert.doesNotMatch(html,/\{S\$/);
   }
   assert.equal(s.budget.rows.some(x=>x.d.id==='later'),false);

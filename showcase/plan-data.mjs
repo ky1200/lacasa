@@ -16,6 +16,7 @@ export const PLAN = {
  imgW: 2480, imgH: 2280, mmPerPx: 5.42, // => 13,442 × 12,358 mm
  source: 'I-Niche proposed layout plan, 13 Nov 2026 (scale 1:100). The scale is set from the plan’s own dimension lines, so sizes are good to about ±5 cm. The contractor’s note: actual sizes to be checked on site (3 Dec).',
  // Room boxes (x, y, width, height). A room can have more than one box (L-shaped rooms).
+ // Room owners confirmed by K on 21 Nov: KY = bedroom 3, KS = bedroom 2, KX = main bedroom.
  rooms: [
   {id: 'ky', name: 'KY room (bedroom 3)', short: 'KY', boxes: [[2300,1490,3260,2590]]},
   {id: 'ks', name: 'KS room (bedroom 2)', short: 'KS', boxes: [[5600,1520,3000,3530]]},
@@ -53,7 +54,7 @@ export const PLAN = {
   {id: 'kx-bed', name: 'KX bed', room: 'kx', kind: 'bed', x: 3760, y: 7150, r: 90, sizes: [{n: 'Queen', w: 1520, d: 1905}, {n: 'Super single', w: 1070, d: 1905}], buy: ['kx-bed', 'kx-mattress'], research: 'beds', note: 'Mattress size. A storage frame adds about 5 to 10 cm each way.'},
   {id: 'living-sofa', name: 'L-shape sofa', room: 'living', kind: 'sofa', x: 9420, y: 3400, r: 90, est: true, sizes: [{n: '4-seat L (about)', w: 2600, d: 1600}], buy: ['living-l-shape-4-seat'], note: 'Size is an estimate until the V Haus model is chosen.'},
   {id: 'living-tv', name: 'TV', room: 'living', kind: 'tv', x: 12360, y: 3400, r: 90, sizes: [{n: '65 inch', w: 1449, d: 60}, {n: '77 inch', w: 1722, d: 60}, {n: '85 inch', w: 1894, d: 60}], buy: ['living-lg-oled-evo-c6'], note: 'Screen width, about. The D1 feature wall is 210 cm long.'},
-  {id: 'dining-table', name: 'LINO dining table + 4 chairs', room: 'dining', kind: 'table', x: 10500, y: 7300, r: 90, est: true, sizes: [{n: 'Table (about)', w: 1400, d: 800}], buy: ['dining-v-haus-lino-dining'], note: 'Table size not confirmed. Chairs need about 60 cm behind them to pull out.'},
+  {id: 'dining-table', name: 'LINO dining table + 4 chairs', room: 'dining', kind: 'table', x: 10500, y: 7400, r: 90, sizes: [{n: 'Table 160 × 90 cm', w: 1600, d: 900}], buy: ['dining-v-haus-lino-dining'], note: 'LINO table 160 × 90 cm, TOMAMO chairs 43 × 43 cm (from the V Haus visit, 5 Nov). With chairs pulled out it needs about 240 × 230 cm.'},
   {id: 'robot-dock', name: 'Robot vacuum dock', room: 'yard', kind: 'dock', x: 6300, y: 9500, r: 0, sizes: [{n: 'Dock', w: 420, d: 460}], buy: ['kitchen-robot-vacuum-mop'], note: 'Docks on the list are up to 42 × 46 × 59 cm. Near the yard water points and floor drain.'},
   {id: 'wifi-main', name: 'Linksys MX4200 (main router)', room: 'ky', kind: 'wifi', x: 2550, y: 3100, r: 0, sizes: [{n: 'Router', w: 180, d: 180}], wifi: true, note: 'Owned. Best in KY room, wired to the fibre box (ONT) by a wall LAN cable.'},
   {id: 'wifi-atlas-1', name: 'Atlas 6 node (living)', room: 'living', kind: 'wifi', x: 12100, y: 4800, r: 0, sizes: [{n: 'Node', w: 130, d: 130}], wifi: true, note: 'Owned. Wire it to the main router through the living wall LAN port if that port works.'},

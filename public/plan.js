@@ -132,7 +132,7 @@ const shape = (it, g) => {
  } else if (it.kind === 'tv') {
   mk('rect', {x, y, width: w, height: Math.max(d, 60), rx: 10, class: 'tv', ...ns}, g);
  } else if (it.kind === 'table') {
-  const c = 440;
+  const c = 430; // TOMAMO chair 43 × 43 cm
   for (const cx of [x + w * .25 - c / 2, x + w * .75 - c / 2]) for (const cy of [y - c - 80, y + d + 80]) mk('rect', {x: cx, y: cy, width: c, height: c, rx: 60, class: 'chair', ...ns}, g);
   mk('rect', {x, y, width: w, height: d, rx: 30, class: 'body', ...ns}, g);
  } else if (it.kind === 'desk') {

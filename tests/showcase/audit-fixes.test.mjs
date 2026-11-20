@@ -88,13 +88,13 @@ test('calendar shows exactly four weeks and 19 available days across October–N
  const available=cal.dates.filter(d=>d.available);assert.equal(available.length,19);
  assert.equal(available[0].date,'2026-10-23');assert.equal(available.at(-1).date,'2026-11-10');
  assert.equal(cal.dates.find(d=>d.deadline).date,'2026-11-11');assert.equal(cal.dates.filter(d=>d.today).length,1);
- const html=renderPage(state([]),'/').html;assert.match(html,/class="deadline-count"><strong>19<\/strong><span>days left/);
+ const html=renderPage(state([]),'/earlier').html;assert.match(html,/class="deadline-count"><strong>19<\/strong><span>days left/);
  assert.match(html,/datetime="2026-11-11" class="calendar-day deadline"/);
 });
 test('calendar handles today, a Sunday, month/year rollover and the next milestone',()=>{
  assert.equal(deadlineCalendar('2026-11-11','2026-11-11').daysLeft,0);
  const cal=deadlineCalendar('2026-12-27','2027-01-03');assert.equal(cal.weeks,2);assert.equal(cal.dates.filter(d=>d.available).length,7);
- const s={...state([]),today:'2026-11-12'},html=renderPage(s,'/').html;
+ const s={...state([]),today:'2026-11-12'},html=renderPage(s,'/earlier').html;
  assert.match(html,/Key collection/);assert.match(html,/datetime="2026-12-03" class="calendar-day deadline"/);assert.doesNotMatch(html,/19<\/strong><span>days left/);
 });
 test('sample quick takes use the requested Beta running-cost and width wording',()=>{

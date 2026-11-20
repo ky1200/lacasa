@@ -211,7 +211,7 @@ export const BUY = {
  // To-do list at the top of /buy, in date order. Ticks are shared (saved as t:<id>). No date = do now.
  todo: [
   {id: 'fibre', t: 'Fibre broadband: sign up 3 to 5 Dec, install a week before move-in', n: 'Pick: StarHub UltraSpeed 5Gbps S$29.55 a month (most reliable). Check the fibre point and LAN ports on 3 Dec first. See Research.', href: '/research#r-fibre'},
-  {id: 'quote2', t: 'Get the I-Niche revised quote and check it', n: 'Use "Check in the 2nd quotation" below.', href: '#buy-qa'},
+  {id: 'quote2', t: 'Get the I-Niche revised quote and check it', n: 'Use the "Check in the 2nd quotation" list on the to-buy page.', href: '#buy-qa'},
   {id: 'kitchen-door', t: 'Choose the kitchen glass sliding door design', n: 'Send it to I-Niche (E2 + E2a).'},
   {id: 'natura', t: 'Natura black hotel mattress: get the model name and price', n: 'From a JB Natura dealer, then add it as a mattress option.'},
   {id: 'fair', date: '2026-11-22', t: 'Mattress fair: one written quote per booth, both sizes', n: '3 super single and 3 queen, with and without the frame. Deposit only if the size can be set by 5 Dec at the quoted price.', href: '/research#r-beds'},

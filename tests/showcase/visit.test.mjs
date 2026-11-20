@@ -29,7 +29,7 @@ test('visit page renders every room with drawings, inputs and saved values; plai
  assert.match(html,/data-k="m:rack:L" value="120"/);assert.match(html,/data-k="c:yard:0" checked/);assert.match(html,/S\$900/);
  assert.ok((html.match(/<svg viewBox/g)??[]).length>=30);
  assert.doesNotMatch(html.replace(/<[^>]+>/g,' '),/\byou\b|\byour\b/i);
- assert.match(renderPage(s,'/').html,/href="\/visit"/);
+ assert.match(renderPage(s,'/earlier').html,/href="\/visit"/);
 });
 test('visit API saves shared values, validates keys and numbers, audit is read only',async()=>{
  const DB=database();
