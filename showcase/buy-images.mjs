@@ -305,5 +305,69 @@ export const IMG = {
  },
  "kitchen-robot-vacuum-mop#4": {
   "src": "/images/buy/narwal-freo-x10-pro-autowater.webp"
+ },
+ "ky-bed#1": {
+  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
+ },
+ "ky-bed#2": {
+  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
+ },
+ "ky-bed#3": {
+  "src": "/images/buy/maju-thorney-hydraulic-storage-bed.webp"
+ },
+ "kx-bed#1": {
+  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
+ },
+ "kx-bed#2": {
+  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
+ },
+ "kx-bed#3": {
+  "src": "/images/buy/maju-thorney-hydraulic-storage-bed.webp"
+ },
+ "ks-bed#1": {
+  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
+ },
+ "ks-bed#2": {
+  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
+ },
+ "ks-bed#3": {
+  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
+ },
+ "ks-bed#4": {
+  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
+ },
+ "living-philips-meson-5-13w#1": {
+  "src": "/images/buy/philips-eridani-sceneswitch-downlight.webp"
+ },
+ "living-track-or-spot-lights#1": {
+  "src": "/images/buy/eyeball-spotlight-recessed.webp",
+  "ex": true
+ },
+ "contractor-switches-sockets#0": {
+  "src": "/images/buy/schneider-avataron-switched-socket.webp"
+ },
+ "contractor-switches-sockets#1": {
+  "src": "/images/buy/schneider-avataron-switched-socket.webp",
+  "ex": true
+ },
+ "contractor-switches-sockets#2": {
+  "src": "/images/buy/legrand-mallia-senses-socket.webp",
+  "ex": true
+ },
+ "contractor-vinyl-flooring#0": {
+  "src": "/images/buy/vinyl-wood-look-floor-example.webp",
+  "ex": true
+ },
+ "contractor-vinyl-flooring#1": {
+  "src": "/images/buy/vinyl-wood-look-floor-example.webp",
+  "ex": true
+ },
+ "contractor-vinyl-flooring#2": {
+  "src": "/images/buy/vinyl-wood-look-floor-example.webp",
+  "ex": true
+ },
+ "contractor-living-false-ceiling#0": {
+  "src": "/images/buy/led-cove-strip-driver-8717ec.webp",
+  "ex": true
  }
 };
