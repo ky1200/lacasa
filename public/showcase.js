@@ -35,6 +35,8 @@ refresh();if(Object.keys(local).length)flush();
 const retry=setInterval(()=>{if(Object.keys(pending()).length)flush();},15000);addEventListener('online',flush);
 const prevStop=globalThis.__lacasaCompareStop;globalThis.__lacasaCompareStop=()=>{prevStop?.();clearInterval(retry);removeEventListener('online',flush);};
 }}
+try{const openTo=id=>{if(!id||!document.getElementById)return;let el;try{el=document.getElementById(decodeURIComponent(id));}catch{return;}if(!el)return;for(let d=el.closest('details');d;d=d.parentElement?.closest('details'))d.open=true;const own=el.querySelector?.(':scope>details');if(own)own.open=true;};
+if(!globalThis.__lacasaOpenTo&&document.addEventListener){globalThis.__lacasaOpenTo=1;document.addEventListener('click',e=>{const a=e.target.closest?.('a[href^="#"]');if(a)openTo(a.getAttribute('href').slice(1));});addEventListener('hashchange',()=>openTo(location.hash.slice(1)));}openTo(location.hash.slice(1));}catch{}
 {const page=document.querySelector('[data-buy-page]');if(page&&!state.audit){const LS='lacasa-buy-pending',timers={},status=page.querySelector('[data-buy-status]');
 const sgd=n=>(n<0?'−':'')+'S$'+Math.abs(Math.round(n)).toLocaleString('en-SG');const say=t=>{if(status)status.textContent=t;};
 const pending=()=>{try{return JSON.parse(localStorage.getItem(LS)||'{}');}catch{return {};}},keep=p=>{try{localStorage.setItem(LS,JSON.stringify(p));}catch{}};

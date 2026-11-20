@@ -13,6 +13,7 @@ export const BUY = {
   {name: 'I-Niche floor plan, original and proposed, 13 Nov 2026', href: '/files/iniche-floor-plan-2026-11-13.pdf', note: 'Address hidden'},
  ],
  sales: [
+  {date: '2026-11-22', name: 'Johor Furniture & Electrical Fair, MVEC Mid Valley Southkey (20–22 Nov, 11am–9pm): mattress quotes'},
   {date: '2026-11-27', name: 'Black Friday (Fri). Gain City Black Fri-Yay runs 16–30 Nov'},
   {date: '2026-11-30', name: 'Cyber Monday. Last day for Mega Discount Store aircon code 7NV0'},
   {date: '2026-12-12', name: '12.12 sale (Shopee, Lazada, brand stores, Malaysia shops)'},
@@ -39,8 +40,8 @@ export const BUY = {
    ]},
   ]},
   {id: 'aircon', name: 'Aircon (3 old units)', items: [
-   {id: 'aircon-mitsubishi-starmex-system-3', name: 'Mitsubishi Starmex System 3 (3 × 9,000 BTU), 5 ticks, installed with new piping', model: 'MXY-3H28VG + 3 × MSXY-FP10VG', qty: 1, price: 3510, cur: 'SGD', shop: 'Mega Discount Store', type: 'Online', href: 'https://megadiscountstore.com.sg/products/starmex-system3-aircon-9kx3', src: 'https://www.misslobang.com/article/best-system-3-aircon-singapore-2026', date: '2026-11-28', when: 'Order by 30 Nov with code 7NV0. Install about 10 Dec, before painting', note: 'Listed S$3,580 with free installation (new copper piping, 1-year workmanship). Code 7NV0 takes S$70 off until 30 Nov. Can use the Climate Voucher (up to S$400 for 5 ticks). Ask about any condo surcharge.', alts: [
-    {name: 'Same Mitsubishi set at Gain City, installed (50 ft piping included)', price: 4019, cur: 'SGD', shop: 'Gain City', type: 'Shop + online', href: 'https://www.gaincity.com/product/108519/sku', note: 'Big store with 12 outlets. Takes the Climate Voucher.'},
+   {id: 'aircon-mitsubishi-starmex-system-3', name: 'Mitsubishi Starmex System 3 (3 × 9,000 BTU), 5 ticks, installed with new piping', model: 'MXY-3H28VG + 3 × MSXY-FP10VG', qty: 1, price: 3510, cur: 'SGD', shop: 'Mega Discount Store', type: 'Online', href: 'https://megadiscountstore.com.sg/products/starmex-system3-aircon-9kx3', src: 'https://www.misslobang.com/article/best-system-3-aircon-singapore-2026', date: '2026-11-28', when: 'Order by 30 Nov with code 7NV0. Install about 10 Dec, before painting', note: 'Listed S$3,580 with free installation (new copper piping, 1-year workmanship). Code 7NV0 takes S$70 off until 30 Nov. Ask about any condo surcharge.', alts: [
+    {name: 'Same Mitsubishi set at Gain City, installed (50 ft piping included)', price: 4019, cur: 'SGD', shop: 'Gain City', type: 'Shop + online', href: 'https://www.gaincity.com/product/108519/sku', note: 'Big store with 12 outlets.'},
     {name: 'Same Mitsubishi set, no installation shown', price: 3674, cur: 'SGD', shop: 'COURTS', type: 'Shop + online', href: 'https://www.courts.com.sg/mitselec-mitsubishi-starmex-28k-condenser-system-39000btu-x-3-mxy-3h28vg%2B-msxy-fp10vg-sg3-x-3-IP219176.html'},
     {name: 'Daikin iSmile Eco+ System 3 (3 × 9,000 BTU), 5 ticks', price: 4020, cur: 'SGD', shop: 'COURTS', type: 'Shop + online', href: 'https://www.courts.com.sg/daikin-daikin-7.5kwh-condenser-ismile-eco+-series-system-3-9000btu-x-3-mkm75zvmg+-ctkm25zvmg-x3-IP210313.html'},
    ]},
@@ -209,10 +210,11 @@ export const BUY = {
  ],
  // To-do list at the top of /buy, in date order. Ticks are shared (saved as t:<id>). No date = do now.
  todo: [
-  {id: 'fibre', t: 'Book the fibre broadband installation', n: 'So Wi-Fi works on move-in day (robot vacuum, Apple TV, HomePods).'},
+  {id: 'fibre', t: 'Fibre broadband: sign up 3 to 5 Dec, install a week before move-in', n: 'Pick: StarHub UltraSpeed 5Gbps S$29.55 a month (most reliable). Check the fibre point and LAN ports on 3 Dec first. See Research.', href: '/research#r-fibre'},
   {id: 'quote2', t: 'Get the I-Niche revised quote and check it', n: 'Use "Check in the 2nd quotation" below.', href: '#buy-qa'},
   {id: 'kitchen-door', t: 'Choose the kitchen glass sliding door design', n: 'Send it to I-Niche (E2 + E2a).'},
   {id: 'natura', t: 'Natura black hotel mattress: get the model name and price', n: 'From a JB Natura dealer, then add it as a mattress option.'},
+  {id: 'fair', date: '2026-11-22', t: 'Mattress fair: one written quote per booth, both sizes', n: '3 super single and 3 queen, with and without the frame. Deposit only if the size can be set by 5 Dec at the quoted price.', href: '/research#r-beds'},
   {id: 'black-friday', date: '2026-11-27', t: 'Black Friday: check deals on the list', href: '#buy-dates'},
   {id: 'sign', date: '2026-11-28', t: 'Sign with I-Niche and pay the 10% deposit', n: 'After the 2nd quotation is checked. Payments 10/40/40/10.'},
   {id: 'reno-form', date: '2026-11-28', t: 'Renovation form + S$1,000 deposit to La Casa management', n: 'At least 7 days before work starts. I-Niche gives the contractor details. Cash or cheque, refunded after checks.', href: '#it-contractor-mcst-renovation-deposit-refundable'},
@@ -229,7 +231,7 @@ export const BUY = {
   {t: 'Beds', n: 'Measure each bedroom for queen (152 × 190 cm) or super single (107 × 190 cm), plus about 10 to 15 cm for the frame and 60 cm to walk on one side. Then choose: storage bed with hydraulic lift, or a plain frame. Headboard: tall padded one to lean on, or basic. A storage bed sits on the floor (no robot under it). A frame on legs needs at least 10 cm clear for the robot vacuum (it is 8.9 cm).'},
   {t: 'Platform bed (D3 + D3a)', n: 'Keep it or drop it, once the KS bed size is clear. Tell I-Niche, since it is an optional line in the quote.'},
   {t: 'Switches, sockets and lights', n: 'Walk each room and mark where sockets, switches and lights go. Count them for the shopping list.'},
-  {t: 'LAN ports', n: 'Plug a laptop into each LAN port with a cable: if it gets internet from the router, the port works. A cheap LAN cable tester (about RM20) also works. Dead ports are fixed by the electrician, not the internet company.'},
+  {t: 'Fibre point and LAN ports', n: 'Find the fibre point (TP) and ask management if the old owner’s line is still active. Plug a laptop into each LAN port with a cable: if it gets internet from the router, the port works. A cheap LAN cable tester (about RM20) also works. Dead ports are fixed by the electrician, not the internet company.'},
   {t: 'Toilet bowls', n: 'I-Niche measures and tells us the size (the distance from wall to the floor pipe decides which toilet fits).'},
   {t: 'Common toilet', n: 'Confirm the basin size and the final half-wall size with the glass panel on top.'},
   {t: 'Main door edge', n: 'Photo it to choose the smart lock (mortise or not).'},
@@ -263,7 +265,7 @@ export const BUY = {
   'Switches and sockets: Singapore needs the SAFETY Mark on wall switches and sockets. Buying in Singapore (Schneider AvatarOn, Legrand, Panasonic) avoids problems. JB stock is cheaper but has SIRIM, so ask the electrician first.',
   'Normal switches are fine. Smart bulbs still work if the wall switch stays on. If someone switches it off, the bulb goes offline until switched on again.',
   'Built-in downlights cannot be made smart. "3 colour" downlights change colour with the normal switch instead.',
-  'Wi-Fi: book the fibre installation now so internet works on move-in day. The robot vacuum, Apple TV and HomePods all need Wi-Fi. A mesh Wi-Fi set can come after move-in if some rooms are weak.',
+  'Wi-Fi: the family already has a Linksys MX4200 and two Atlas 6 nodes, so no new router is needed. Main router in KY room, nodes in the living room and hall (try positions on the floor plan, Wi-Fi layer). Fibre pick: StarHub 5Gbps, sign up 3 to 5 Dec.',
   'LAN ports: test them on 3 Dec (see the checklist). The Wi-Fi company only installs the fibre box and router. The electrician fixes the wall ports and cables.',
   'Aircon: 3 new units are budgeted above (Aircon). Order by 30 Nov for the code price.',
  ],
