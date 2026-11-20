@@ -7,7 +7,7 @@ import content from '../../lacasa.json' with {type:'json'};
 import samples from '../../lacasa.sample.json' with {type:'json'};
 import {stateFor,deadlineCalendar,listTotals} from '../../showcase/domain.mjs';
 import {canonicalItemURL} from '../../showcase/routes.mjs';
-import {renderPage,listText,choosePage,itemPath} from '../../showcase/render.mjs';
+import {renderPage,listText,itemPath} from '../../showcase/render.mjs';
 import {visitorState} from '../../showcase/server.mjs';
 const seed=samples.decisions[0];
 const real=(id,extra={})=>({...structuredClone(seed),id,slug:id,title:id,sample:false,category:'Test category',...extra});
@@ -96,9 +96,6 @@ test('calendar handles today, a Sunday, month/year rollover and the next milesto
  const cal=deadlineCalendar('2026-12-27','2027-01-03');assert.equal(cal.weeks,2);assert.equal(cal.dates.filter(d=>d.available).length,7);
  const s={...state([]),today:'2026-11-12'},html=renderPage(s,'/').html;
  assert.match(html,/Key collection/);assert.match(html,/datetime="2026-12-03" class="calendar-day deadline"/);assert.doesNotMatch(html,/19<\/strong><span>days left/);
-});
-test('chooser has a direct name-selection heading',()=>{
- assert.match(choosePage(content),/<h1>Choose your name<\/h1>/);
 });
 test('sample quick takes use the requested Beta running-cost and width wording',()=>{
  assert.equal(seed.options[1].love,'Silent at night and S$25 a year cheaper to run than Alpha.');

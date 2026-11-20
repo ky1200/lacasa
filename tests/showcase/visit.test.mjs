@@ -38,9 +38,9 @@ test('visit API saves shared values, validates keys and numbers, audit is read o
  assert.equal((await call(DB,'KX','/api/visit/m%3Arack%3AL',{value:'abc'})).status,422);
  assert.equal((await call(DB,'KX','/api/visit/x%3Anope',{value:'1'})).status,422);
  assert.equal((await call(DB,'KX','/api/visit/c%3Ayard%3A0',{value:'yes'})).status,422);
- assert.equal((await call(DB,null,'/api/visit/m%3Arack%3AL',{value:'1'})).status,401);
+ assert.equal((await call(DB,null,'/api/visit/m%3Arack%3AL',{value:'abc'})).status,422,'no name needed; the value is still checked');
  assert.equal((await call(DB,'KX','/audit/x?view=audit'.replace('/audit/x','/api/visit/m%3Arack%3AL'),{value:'5'})).status,403);
- assert.deepEqual(DB.sqlite.prepare('SELECT key,value,code FROM visit_notes ORDER BY key').all().map(r=>({...r})),[{key:'c:yard:0',value:'1',code:'KS'},{key:'m:rack:L',value:'120',code:'KX'}]);
+ assert.deepEqual(DB.sqlite.prepare('SELECT key,value,code FROM visit_notes ORDER BY key').all().map(r=>({...r})),[{key:'c:yard:0',value:'1',code:'FAMILY'},{key:'m:rack:L',value:'120',code:'FAMILY'}]);
  assert.equal((await call(DB,'KX','/api/visit/m%3Arack%3AL',{value:''})).status,200);
  assert.equal(DB.sqlite.prepare('SELECT COUNT(*) n FROM visit_notes').get().n,1);
 });

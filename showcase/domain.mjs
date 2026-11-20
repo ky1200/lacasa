@@ -24,7 +24,7 @@ export function deadlineCalendar(today,deadline) {
 export const areaOf = (content,d) => content.areas.find(a=>a.id === d.area);
 export const dueDate = (content,d) => d.decideBy ?? content.stages.find(s=>s.id === d.stage)?.decideBy ?? null;
 export const isOverdue = (content,d,today=todaySG()) => !!dueDate(content,d) && today > dueDate(content,d);
-export const canAnswer = (content,d,code) => d.status === 'voting' && !readinessMissing(d).length && d.options.length >= 2 && (!isSample(d) || code==='KY') && (areaOf(content,d)?.kind !== 'bedroom' || areaOf(content,d)?.owner === code);
+export const canAnswer = (content,d,code) => CODES.includes(code) && d.status === 'voting' && !readinessMissing(d).length && d.options.length >= 2 && (!isSample(d) || code==='KY') && (areaOf(content,d)?.kind !== 'bedroom' || areaOf(content,d)?.owner === code);
 export function personForEmail(value,setting) {
  if (!value || !setting) return null;
  const entries=String(setting).split(';').map(part=>part.trim().split('=').map(s=>s.trim().toLowerCase()));
@@ -57,12 +57,12 @@ export function validateVote(content,d,code,body,r) {
  return null;
 }
 export function stateFor(content,samples,code,votes=[],finals=[],showSamples=false,today=todaySG()) {
- const decisions=[...content.decisions.map(publicationState),...(code==='KY'&&showSamples?samples.decisions:[])];
+ const decisions=[...content.decisions.map(publicationState),...((code==='KY'||code==='FAMILY')&&showSamples?samples.decisions:[])];
  const visibleContent={...content,decisions};
  const results=Object.fromEntries(decisions.map(d=>[d.id,result(visibleContent,d,votes,finals.find(f=>f.decision_id===d.id),today)]));
  const ownVotes=Object.fromEntries(decisions.map(d=>[d.id,validVotes(d,votes).find(v=>v.code===code)]).filter(([,v])=>v).map(([id,v])=>[id,{pick:v.pick,lean:areaOf(content,decisions.find(d=>d.id===id))?.kind==='bedroom'?null:v.lean,updated_at:v.updated_at}]));
  const progress=Object.fromEntries(CODES.map(c=>{const eligible=content.decisions.filter(d=>canAnswer(content,d,c));return[c,{total:eligible.length,done:eligible.filter(d=>results[d.id].status==='locked'||validVotes(d,votes).some(v=>v.code===c)).length}];}));
- return {budget:listTotals(visibleContent,results),content:visibleContent,code,name:content.people.find(p=>p.code===code)?.name??code,isAdmin:code==='KY',results,ownVotes,progress:code==='KY'?progress:{[code]:progress[code]},today};
+ return {budget:listTotals(visibleContent,results),content:visibleContent,code,name:content.people.find(p=>p.code===code)?.name??code,isAdmin:code==='KY',results,ownVotes,progress:CODES.includes(code)&&code!=='KY'?{[code]:progress[code]}:progress,today};
 }
 export function voteQueue(state) {
  return state.content.decisions.filter(d=>canAnswer(state.content,d,state.code)&&state.results[d.id]?.status!=='locked'&&!state.ownVotes[d.id]).sort((a,b)=>(dueDate(state.content,a)??'9999').localeCompare(dueDate(state.content,b)??'9999'));

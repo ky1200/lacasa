@@ -1,16 +1,18 @@
 import {shopperState} from './shopper.mjs';
 import {visitKeys,applyVisitSpaces} from './visit.mjs';
 import {buyKeys,validBuyValue} from './buy-plan.mjs';
-import {stateFor,result,validVotes,validateVote,areaOf,todaySG} from './domain.mjs';
+import {stateFor} from './domain.mjs';
 const VISIT_KEYS=visitKeys(),BUY_KEYS=buyKeys();
 export class AppError extends Error {constructor(status,message){super(message);this.status=status;}}
 export const json=(body,status=200)=>Response.json(body,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Vary':'Cookie'}});
 export const isAuditRequest=request=>/^\/audit(?:\/|$)/.test(new URL(request.url).pathname)||new URL(request.url).searchParams.get('view')==='audit';
+// The site has one shared view for the whole family (no KY/KX/KS name picker).
+// Owner controls need the owner password cookie (the Worker turns it into the internal header).
+export const FAMILY='FAMILY';
 export function identity(request,env,content){
- const audit=isAuditRequest(request),cookie=(request.headers.get('cookie')??'').split(';').map(p=>p.trim()).find(p=>p.startsWith('lacasa_person='));
- const selected=cookie?.slice('lacasa_person='.length),person=content.people.find(p=>p.code===selected);
+ const audit=isAuditRequest(request);
  const isOwner=!!env.OWNER_SITE_USER_ID&&request.headers.get('oai-authenticated-user-id')===env.OWNER_SITE_USER_ID;
- return {signedIn:!!request.headers.get('oai-authenticated-user-id'),code:audit?'AUDIT':person?.code??null,name:audit?'Claude':person?.name??null,isOwner,isAdmin:!audit&&isOwner&&person?.code===content.admin,readOnly:audit,audit};
+ return {signedIn:!!request.headers.get('oai-authenticated-user-id'),code:audit?'AUDIT':FAMILY,name:audit?'Claude':'Family',isOwner,isAdmin:!audit&&isOwner,readOnly:audit,audit};
 }
 export async function readRecords(db){const rows=await db.batch([db.prepare('SELECT code, decision_id, pick, lean, updated_at, updated_after_reveal FROM votes'),db.prepare('SELECT decision_id, option_id, reason, at FROM finals')]);return{votes:rows[0].results,finals:rows[1].results};}
 export function visitorState(content,samples,who,votes=[],finals=[],showSamples=false){
@@ -21,20 +23,13 @@ export function visitorState(content,samples,who,votes=[],finals=[],showSamples=
  return {...stateFor(content,samples,who.code,votes,finals,showSamples),isAdmin:who.isAdmin,isOwner:who.isOwner,readOnly:false,audit:false};
 }
 export async function readVisit(db){try{const rows=(await db.prepare('SELECT key, value FROM visit_notes').all()).results??[];return Object.fromEntries(rows.map(r=>[r.key,r.value]));}catch{return {};}}
-export async function loadState(request,env,content,samples){const who=identity(request,env,content);if(!who.code)throw new AppError(401,'Choose your name before entering LaCasa.');if(!env.DB)throw new AppError(503,'The database is not ready yet. Try again shortly.');const [{votes,finals},visit]=await Promise.all([readRecords(env.DB),readVisit(env.DB)]);const showSamples=who.isAdmin&&new URL(request.url).searchParams.get('samples')==='on';return {...visitorState(applyVisitSpaces(content,visit),samples,who,votes,finals,showSamples),visit};}
+export async function loadState(request,env,content,samples){const who=identity(request,env,content);if(!env.DB)throw new AppError(503,'The database is not ready yet. Try again shortly.');const [{votes,finals},visit]=await Promise.all([readRecords(env.DB),readVisit(env.DB)]);const showSamples=who.isAdmin&&new URL(request.url).searchParams.get('samples')==='on';return {...visitorState(applyVisitSpaces(content,visit),samples,who,votes,finals,showSamples),visit};}
 async function bodyJSON(request){if(Number(request.headers.get('content-length')??0)>16384)throw new AppError(422,'This request is too large.');const text=await request.text();if(text.length>16384)throw new AppError(422,'This request is too large.');try{return JSON.parse(text);}catch{throw new AppError(422,'This request could not be read.');}}
 export async function api(request,env,content,samples){try{
  const u=new URL(request.url),path=u.pathname,method=request.method,who=identity(request,env,content);
  if(method==='GET'&&path==='/api/me')return json(who);
  if(method!=='GET'&&request.headers.get('origin')!==u.origin)throw new AppError(403,'Open LaCasa and try this action again.');
  if(who.readOnly&&(method!=='GET'||path.startsWith('/api/admin/')))throw new AppError(403,'The audit view is read only. No votes or decisions can be changed.');
- if(path==='/api/session'&&method==='POST'){
-  const form=await request.formData(),person=content.people.find(p=>p.code===form.get('person'));
-  if(!person)throw new AppError(422,'Choose KY, KX or KS.');
-  const secure=u.protocol==='https:'?'; Secure':'';
-  return new Response(null,{status:303,headers:{'Location':'/','Cache-Control':'no-store','Set-Cookie':`lacasa_person=${person.code}; Path=/; HttpOnly; SameSite=Lax; Max-Age=2592000${secure}`}});
- }
- if(!who.code)throw new AppError(401,'Choose your name before entering LaCasa.');
  if(method==='PUT'&&path.startsWith('/api/visit/')){
   if(!env.DB)throw new AppError(503,'The private database is not ready yet.');
   const key=decodeURIComponent(path.slice('/api/visit/'.length)),body=await bodyJSON(request);
@@ -57,27 +52,15 @@ export async function api(request,env,content,samples){try{
   else await env.DB.prepare('DELETE FROM visit_notes WHERE key=?').bind(key).run();
   return json({ok:true});
  }
- if(path.startsWith('/api/admin/')&&!who.isAdmin)throw new AppError(403,'Only KY can do that.');
+ // Voting is off: with no name picker there is no voter. Per-person KY/KX/KS buttons can come later.
+ if(path.startsWith('/api/votes/'))throw new AppError(403,'Voting is off for now.');
+ if(path.startsWith('/api/admin/')&&!who.isAdmin)throw new AppError(403,'Only the site owner can do that.');
  if(!env.DB)throw new AppError(503,'The private database is not ready yet.');
  const {votes,finals}=await readRecords(env.DB),showSamples=who.isAdmin&&u.searchParams.get('samples')==='on';
  const state=visitorState(content,samples,who,votes,finals,showSamples),all=state.content;
  if(method==='GET'&&path==='/api/state')return json(shopperState(state));
  if(method==='GET'&&path==='/api/admin/export')return json({exportedAt:new Date().toISOString(),votes,finals});
  if(method==='DELETE'&&path==='/api/admin/sample-votes'){await env.DB.batch([env.DB.prepare("DELETE FROM votes WHERE decision_id LIKE 'SAMPLE-%'"),env.DB.prepare("DELETE FROM finals WHERE decision_id LIKE 'SAMPLE-%'")]);return json({ok:true});}
- if(method==='PUT'&&path.startsWith('/api/votes/')){
-  const d=all.decisions.find(d=>d.id===decodeURIComponent(path.slice('/api/votes/'.length))),body=await bodyJSON(request),r=d?state.results[d.id]:{status:'waiting'};
-  const problem=validateVote(all,d,who.code,body,r);if(problem)throw new AppError(422,problem);
-  if(Object.keys(body).some(k=>!['pick','lean'].includes(k)))throw new AppError(422,'Send only your pick and lean.');
-  const old=validVotes(d,votes).find(v=>v.code===who.code),lean=body.lean??null;
-  const changed=old&&(old.pick!==body.pick||old.lean!==lean),updated=changed&&['decided','tie'].includes(r.status)?1:old?.updated_after_reveal??0;
-  const guardOptions=d.options.map(()=>'?').join(',');
-  const write=await env.DB.prepare(`INSERT INTO votes (code,decision_id,pick,lean,updated_at,updated_after_reveal)
-   SELECT ?,?,?,?,?,? WHERE NOT EXISTS (SELECT 1 FROM finals WHERE decision_id=? AND reason='lock' AND option_id IN (${guardOptions}))
-   ON CONFLICT(code,decision_id) DO UPDATE SET pick=excluded.pick,lean=excluded.lean,updated_at=excluded.updated_at,updated_after_reveal=excluded.updated_after_reveal
-   WHERE NOT EXISTS (SELECT 1 FROM finals WHERE decision_id=? AND reason='lock' AND option_id IN (${guardOptions}))`).bind(who.code,d.id,body.pick,lean,new Date().toISOString(),updated,d.id,...d.options.map(o=>o.id),d.id,...d.options.map(o=>o.id)).run();
-  if(!write.meta.changes)throw new AppError(422,'This decision is locked. Ask KY to unlock it.');
-  return json({ok:true,updated:!!updated});
- }
  if(method==='POST'&&path==='/api/admin/final'){
   const body=await bodyJSON(request),d=all.decisions.find(d=>d.id===body.decisionId);
   if(!d||d.status!=='voting'||!d.options.some(o=>o.id===body.optionId))throw new AppError(422,'Choose an available option on an item ready for voting.');

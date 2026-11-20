@@ -6,7 +6,7 @@
 import content from '../lacasa.json';
 import samples from '../lacasa.sample.json';
 import { identity, loadState, api, readVisit } from '../showcase/server.mjs';
-import { renderPage, choosePage, ownerPage, auditBrief } from '../showcase/render.mjs';
+import { renderPage, ownerPage, auditBrief } from '../showcase/render.mjs';
 import { videoPage } from '../showcase/video.mjs';
 import { canonicalItemURL } from '../showcase/routes.mjs';
 import { buyCSV } from '../showcase/buy-plan.mjs';
@@ -103,9 +103,10 @@ async function page(request, env, u) {
   if (canonical) return new Response(null, { status: 308, headers: { ...pageHeaders, Location: canonical } });
   if (u.pathname === '/audit/brief.txt') return new Response(auditBrief(u.origin, content), { headers: { ...pageHeaders, 'Content-Type': 'text/plain; charset=utf-8' } });
   if (u.pathname === '/owner') return new Response(ownerPage(), { headers: pageHeaders });
-  if (!who.code || u.pathname === '/choose') return new Response(choosePage(content), { headers: pageHeaders });
+  // The old name picker is gone: everyone shares one view.
+  if (u.pathname === '/choose') return new Response(null, { status: 308, headers: { ...pageHeaders, Location: '/' } });
   if (u.pathname === '/buy.csv') return new Response(buyCSV(undefined, sEnv.DB ? await readVisit(sEnv.DB) : {}), { headers: { ...pageHeaders, 'Content-Type': 'text/csv; charset=utf-8', 'Content-Disposition': 'attachment; filename="lacasa-to-buy.csv"' } });
-  if (u.pathname === '/admin' && !who.isAdmin && !who.audit) return new Response(ownerPage(who.isOwner ? 'Choose KY first, then open Admin.' : ''), { status: 403, headers: pageHeaders });
+  if (u.pathname === '/admin' && !who.isAdmin && !who.audit) return new Response(ownerPage(), { status: 403, headers: pageHeaders });
   try {
     const state = await loadState(request, sEnv, content, samples), rendered = renderPage(state, request.url);
     return new Response(rendered.html, { status: rendered.status, headers: pageHeaders });

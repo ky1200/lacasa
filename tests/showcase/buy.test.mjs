@@ -93,7 +93,7 @@ test('to-buy API saves shared choices and rejects bad keys and values',async()=>
  assert.equal(await put(DB,'KX','b:fridge:pick','2'),200);assert.equal(await put(DB,'KS','b:washer:off','1'),200);assert.equal(await put(DB,'KY','b:living-philips-meson-5-13w:qty','10'),200);
  assert.equal(await put(DB,'KX','b:fridge:pick','9'),422);assert.equal(await put(DB,'KX','b:fridge:pick','0'),422);assert.equal(await put(DB,'KX','b:washer:off','yes'),422);
  assert.equal(await put(DB,'KX','b:washer:qty','100'),422);assert.equal(await put(DB,'KX','b:nope:off','1'),422);assert.equal(await put(DB,'KX','b:contractor-mcst-renovation-deposit-refundable:pick','1'),422);
- assert.equal(await put(DB,null,'b:fridge:off','1'),401);assert.equal(await put(DB,'KX','b:fridge:off','1','?view=audit'),403);
+ assert.equal(await put(DB,null,'b:fridge:off','yes'),422,'no name needed; the value is still checked');assert.equal(await put(DB,'KX','b:fridge:off','1','?view=audit'),403);
  assert.equal(DB.sqlite.prepare("SELECT COUNT(*) n FROM visit_notes WHERE key LIKE 'b:%'").get().n,3);
  assert.equal(await put(DB,'KX','b:fridge:pick',''),200);assert.equal(DB.sqlite.prepare("SELECT COUNT(*) n FROM visit_notes").get().n,2);
  assert.ok(buyKeys().has('b:ky-mattress:pick'));
