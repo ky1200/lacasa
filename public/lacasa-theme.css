@@ -584,3 +584,21 @@ dialog.viewer::backdrop{background:rgba(18,16,14,.6)}
 .buy-rec{display:inline-block;padding:0 7px;border-radius:999px;background:var(--moss);color:#fff;font-size:12.5px;font-weight:700;vertical-align:1px}
 .buy-qa{padding:12px;border-radius:14px;background:#fff;margin:8px 0}.buy-qa h3{font-size:16px;margin:0 0 4px}.buy-qa p{margin:0;font-size:14.5px}
 @media (min-width:900px){.buy-bar{top:76px}}
+
+/* Contractor files: clear tappable cards */
+.buy-files{display:grid;gap:8px}
+.buy-files .buy-file{display:flex;align-items:center;gap:12px;padding:12px;border-radius:12px;background:#fff;border:1px solid #d9cdb8;color:inherit;text-decoration:none;box-shadow:0 1px 2px rgba(0,0,0,.06)}
+.buy-files .buy-file:hover,.buy-files .buy-file:focus-visible{border-color:var(--indigo)}
+.buy-file-icon{flex:none;display:grid;place-items:center;width:44px;height:52px;border-radius:6px;background:#b4232a;color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em}
+.buy-file-text{flex:1;min-width:0;display:grid;gap:2px}.buy-file-text b{overflow-wrap:anywhere}.buy-file-text small{color:var(--muted)}
+.buy-file-open{flex:none;padding:6px 12px;border-radius:999px;background:var(--indigo);color:#fff;font-weight:700;font-size:14px}
+/* To-do list */
+.buy-todo{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.buy-todo li{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;padding:10px 12px;border-radius:12px;background:#fff}
+.buy-todo label{display:flex;gap:10px;align-items:flex-start;flex:1;min-width:0;cursor:pointer}
+.buy-todo input{flex:none;width:22px;height:22px;margin:1px 0 0;accent-color:var(--moss)}
+.buy-todo-text{display:grid;gap:2px}.buy-todo-text small{color:var(--muted);font-size:14px}
+.buy-todo li.is-done .buy-todo-text{opacity:.55}.buy-todo li.is-done .buy-todo-text b{text-decoration:line-through}
+.buy-todo-side{flex:none;display:grid;justify-items:end;gap:4px}.buy-todo-side a{font-weight:700;color:var(--indigo);font-size:14px}
+.buy-chip.is-now{background:#fbe7d6;color:#9a4a12}
+.buy-decided{display:inline-block;margin-bottom:2px;padding:2px 9px;border-radius:999px;background:var(--moss-soft);color:var(--moss);font-size:12px;font-weight:700}

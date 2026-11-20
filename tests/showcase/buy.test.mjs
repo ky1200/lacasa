@@ -7,7 +7,7 @@ import {DatabaseSync} from 'node:sqlite';
 import {readdirSync} from 'node:fs';
 import {visitorState,api} from '../../showcase/server.mjs';
 import {renderPage} from '../../showcase/render.mjs';
-import {BUY,buyTotals,buyCSV,lineSGD,choiceOf,buyKeys} from '../../showcase/buy-plan.mjs';
+import {BUY,buyTotals,buyCSV,lineSGD,choiceOf,buyKeys,validBuyValue} from '../../showcase/buy-plan.mjs';
 import {IMG} from '../../showcase/buy-images.mjs';
 import {dayLabel} from '../../showcase/buy.mjs';
 
@@ -98,4 +98,16 @@ test('to-buy API saves shared choices and rejects bad keys and values',async()=>
  assert.equal(await put(DB,'KX','b:fridge:pick',''),200);assert.equal(DB.sqlite.prepare("SELECT COUNT(*) n FROM visit_notes").get().n,2);
  assert.ok(buyKeys().has('b:ky-mattress:pick'));
  assert.equal(await put(DB,'KY','b:washer:tag','after'),200);assert.equal(await put(DB,'KY','b:washer:tag','later'),422);assert.equal(await put(DB,'KY','b:washer:tag','maybe'),200);assert.equal(await put(DB,'KY','b:washer:tag',''),200);
+});
+
+test('to-buy: to-do list near the top with shared ticks; clear file cards; vinyl decided; contractor fan and false ceiling gone',async()=>{
+ const s={...visitorState(content,samples,{code:'FAMILY',name:'Family'},[],[],false),visit:{'t:aircon':'1'}},html=renderPage(s,'https://lacasa.test/buy').html;
+ assert.ok(html.indexOf('id="buy-todo"')<html.indexOf('By room'),'to-do sits above the room summary');
+ for(const t of ['SP Services','Renovation form','Order the aircon','Book the fibre'])assert.match(html,new RegExp('id="buy-todo"[\\s\\S]*?'+t));
+ assert.match(html,/<li class="is-done"><label><input type="checkbox" data-todo="t:aircon" checked>/);assert.match(html,/<span data-todo-done>1<\/span> of \d+ done/);
+ assert.ok(buyKeys().has('t:sp'));assert.ok(validBuyValue(buyKeys().get('t:sp'),'1'));assert.ok(!validBuyValue(buyKeys().get('t:sp'),'yes'));
+ assert.match(html,/<a class="buy-file" href="\/files\/iniche-quotation-2026-11-13\.pdf" target="_blank"[^>]*><span class="buy-file-icon"[^>]*>PDF<\/span>[\s\S]*?Open ↗/);
+ assert.match(html,/id="it-contractor-f2-vinyl-3-bedrooms"[\s\S]*?<span class="buy-decided">Decided<\/span>/);
+ assert.ok(!items.some(i=>/exhaust|false ceiling/i.test(i.name)),'no window exhaust fan or false ceiling items');
+ for(const t of BUY.todo){if(t.date)assert.match(t.date,/^2026-1[12]-\d\d$/);if(t.href)assert.ok(html.includes(`id="${t.href.slice(1)}"`),t.href);}
 });

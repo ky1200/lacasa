@@ -28,9 +28,6 @@ export const IMG = {
   "ex": true,
   "src": "/images/buy/ceiling-light-wet-area-78ad53.webp"
  },
- "common-bath-kdk-8-window-exhaust#0": {
-  "src": "/images/buy/kdk-8-window-exhaust-fan-fcb0c0.webp"
- },
  "common-bath-rigel-3-in-1#0": {
   "ex": true,
   "src": "/images/buy/rigel-3-in-1-thermostatic-rain-shower-set-chrome-48c082.webp"
@@ -232,9 +229,6 @@ export const IMG = {
  },
  "master-bath-bidet-spray#0": {
   "src": "/images/buy/american-standard-duostix-hygiene-bidet-spray-chrome-2410c4.webp"
- },
- "master-bath-kdk-8-window-exhaust#0": {
-  "src": "/images/buy/kdk-8-window-exhaust-fan-fcb0c0.webp"
  },
  "master-bath-rigel-gallant-one-piece#0": {
   "src": "/images/buy/rigel-gallant-one-piece-rimless-toilet-with-whirlwash-cd2f69.webp"

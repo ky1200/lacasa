@@ -23,8 +23,8 @@ export const BUY = {
    {id: 'contractor-i-niche-renovation-quote', name: 'I-Niche quote, 13 Nov, as given', qty: 1, price: 24100, cur: 'SGD', shop: 'The I-Niche Design', type: 'Contractor', href: '/files/iniche-quotation-2026-11-13.pdf', date: '2026-11-21', when: 'Final changes sent 21 Nov. Waiting for the 2nd quotation, then 10% deposit on signing', note: 'The lines below change this quote to match the 21 Nov decisions. Redo them when the 2nd quotation comes. Payments 10/40/40/10, 1-year workmanship warranty. Not refundable if cancelled.'},
    {id: 'contractor-taken-out-21-nov', name: 'Taken out on 21 Nov: A3, D2, D3 + D3a, D4, one G2 fan', qty: 1, price: -6385, cur: 'SGD', shop: 'Prices from the 13 Nov quote', type: 'Contractor', date: '2026-11-21', when: 'Sent to I-Niche 21 Nov', note: 'A3 KS bedroom wardrobe removal S$180. D2 new living mirror door S$600. D3 + D3a platform bed and bedhead S$1,810 (on hold, listed below as Maybe). D4 L-shaped wardrobe S$3,200. G2 + G2a: 1 fan instead of 2, common bathroom only, S$595 off.'},
    {id: 'contractor-platform-bed-d3', tag: 'maybe', name: 'D3 + D3a platform bed and bedhead, KS bedroom (on hold)', qty: 1, price: 1810, cur: 'SGD', shop: 'I-Niche', type: 'Contractor', date: '2026-12-03', when: 'Decide on 3 Dec. Optional line in the 2nd quotation', note: 'Platform S$1,260 + bedhead S$550. If kept, the KS bed frame on this list may not be needed.'},
-   {id: 'contractor-f2-vinyl-3-bedrooms', name: 'F2 changed to vinyl (SPC), 3 bedrooms, with skirting, door trims and thresholds', qty: 1, price: 1350, cur: 'SGD', est: true, shop: 'I-Niche', type: 'Contractor', src: 'https://www.homejourney.sg/blog/flooring-services-singapore-cost-guide-2025-prices-homejourney-202512242102', date: '2026-12-05', when: 'Laid before the beds go in', note: 'Extra over the quote. Estimate: about S$2,300 for vinyl laid in 3 bedrooms (SPC is about S$6.50 to S$9.50 per sq ft), minus F2 parquet polish S$950 already in the quote. Asked I-Niche for the total, price per sq ft, brand and thickness. Doors may need trimming at the bottom.', alts: [
-    {name: 'Keep F2: polish the parquet (asked as the other price)', price: 0, cur: 'SGD', shop: 'I-Niche', type: 'Contractor', note: 'Already in the quote (S$950). Fine if the parquet is flat and not loose.'},
+   {id: 'contractor-f2-vinyl-3-bedrooms', decided: true, name: 'Vinyl (SPC) flooring, 3 bedrooms, with skirting, door trims and thresholds (replaces F2 polish)', qty: 1, price: 1350, cur: 'SGD', est: true, shop: 'I-Niche', type: 'Contractor', src: 'https://www.homejourney.sg/blog/flooring-services-singapore-cost-guide-2025-prices-homejourney-202512242102', date: '2026-12-05', when: 'Laid before the beds go in', note: 'Extra over the quote. Estimate: about S$2,300 for vinyl laid in 3 bedrooms (SPC is about S$6.50 to S$9.50 per sq ft), minus F2 parquet polish S$950 already in the quote. Asked I-Niche for the total, price per sq ft, brand and thickness. Doors may need trimming at the bottom.', alts: [
+    {name: 'Keep F2: polish the parquet (other price only, not chosen)', price: 0, cur: 'SGD', shop: 'I-Niche', type: 'Contractor', note: 'Already in the quote (S$950). Fine if the parquet is flat and not loose.'},
    ]},
    {id: 'contractor-bathroom-regrouting', name: 'Full regrouting, both bathrooms (new)', qty: 1, price: 800, cur: 'SGD', est: true, shop: 'I-Niche', type: 'Contractor', date: '2026-12-05', when: 'Price in the 2nd quotation', note: 'Estimate: about S$400 per bathroom. No Singapore price list found, so use the I-Niche price when it comes.'},
    {id: 'contractor-living-mirror-cabinet-patch', name: 'Living mirror cabinet: take off the door and patch (new, replaces D2)', qty: 1, price: 150, cur: 'SGD', est: true, shop: 'I-Niche', type: 'Contractor', date: '2026-12-05', when: 'Price in the 2nd quotation', note: 'Estimate. D2 (new mirror door, S$600) is taken out above.'},
@@ -111,7 +111,6 @@ export const BUY = {
     {name: 'IKEA ENHET mirror cabinet, 1 door, 40 × 17 × 75 cm', price: 125, cur: 'SGD', shop: 'IKEA Singapore', type: 'Shop + online', href: 'https://www.ikea.com/sg/en/p/enhet-mirror-cabinet-with-door-white-10623041/'},
     {name: 'IKEA LETTAN mirror cabinet, all-mirror, 60 × 15 × 95 cm', price: 315, cur: 'SGD', shop: 'IKEA Singapore', type: 'Shop + online', href: 'https://www.ikea.com/sg/en/p/lettan-mirror-cabinet-with-doors-mirror-effect-mirror-glass-00535498/'},
    ]},
-   {id: 'common-bath-kdk-8-window-exhaust', name: 'KDK 8" window exhaust fan', model: '20WUD', qty: 1, price: 187, cur: 'MYR', shop: 'Ban Huat (MY)', type: 'Shop + online', href: 'https://www.banhuat.com/20wud', date: '2026-12-05', when: 'JB trip. Tell I-Niche to install only (G2)'},
    {id: 'common-bath-bidet-spray', name: 'American Standard DuoSTiX hygiene (bidet) spray, chrome', qty: 1, price: 49, cur: 'SGD', shop: 'American Standard store on Lazada', type: 'Online', href: 'https://www.americanstandard.com.sg/bathrooms/accessories/duostix-hygiene-spray-chrome-glossy-white/', date: '2026-12-01', when: 'With toilet', note: 'S$49 on the Lazada toilet list (51% off). Link is the brand page.'},
    {id: 'common-bath-ceiling-light-wet-area', name: 'Ceiling light (wet-area)', qty: 1, price: 100, cur: 'SGD', est: true, shop: 'JB lighting shop', type: 'Shop', date: '2026-12-05', when: 'JB trip'},
   ]},
@@ -121,7 +120,6 @@ export const BUY = {
     {name: 'Mixer only (reuse old rail and hand shower)', model: 'W2-R-TSME3200055', price: 280, cur: 'SGD', shop: 'RIGEL e-store (official)', type: 'Online', href: 'https://rigel-estore.com.sg/product/exposed-thermostatic-2-in-1-shower-mixer-w2-r-tsme3200055/'},
     {name: '3-in-1 rain shower set, chrome (same as common bath)', model: 'W2-R-TSME14418T', price: 450, cur: 'SGD', shop: 'RIGEL e-store (official)', type: 'Online', href: 'https://rigel-estore.com.sg/product/thermostatic-3-in-1-exposed-shower-set-w2-r-tsme14418t/'},
    ]},
-   {id: 'master-bath-kdk-8-window-exhaust', name: 'KDK 8" window exhaust fan', model: '20WUD', qty: 1, price: 187, cur: 'MYR', shop: 'Ban Huat (MY)', type: 'Shop + online', href: 'https://www.banhuat.com/20wud', date: '2026-12-05', when: 'JB trip (only if we keep G2 for master)'},
    {id: 'master-mirror', name: 'IKEA ENHET mirror cabinet, 2 doors, 60 × 17 × 75 cm (no light, no power point)', qty: 1, price: 170, cur: 'SGD', shop: 'IKEA Singapore', type: 'Shop + online', href: 'https://www.ikea.com/sg/en/p/enhet-mirror-cabinet-with-doors-white-20623045/', date: '2026-12-01', when: 'Buy with basins. Contractor hangs it', note: '10-year IKEA guarantee. S$170 checked 19 Nov. Measure above the basin first.', alts: [
     {name: 'IKEA ENHET mirror cabinet, anthracite, 60 × 17 × 75 cm', price: 110, cur: 'SGD', shop: 'IKEA Singapore', type: 'Shop + online', href: 'https://www.ikea.com/sg/en/p/enhet-mirror-cabinet-anthracite-s89396578/'},
     {name: 'IKEA ENHET mirror cabinet, 1 door, 40 × 17 × 75 cm', price: 125, cur: 'SGD', shop: 'IKEA Singapore', type: 'Shop + online', href: 'https://www.ikea.com/sg/en/p/enhet-mirror-cabinet-with-door-white-10623041/'},
@@ -209,6 +207,23 @@ export const BUY = {
   {t: 'G2 + G2a: 1 ventilation fan, common bathroom only', s: 'Changed', n: 'Was 2 fans.'},
   {t: 'G3: sockets and switches', s: '3 Dec', n: 'Mark positions and count on site.'},
  ],
+ // To-do list at the top of /buy, in date order. Ticks are shared (saved as t:<id>). No date = do now.
+ todo: [
+  {id: 'fibre', t: 'Book the fibre broadband installation', n: 'So Wi-Fi works on move-in day (robot vacuum, Apple TV, HomePods).'},
+  {id: 'quote2', t: 'Get the 2nd quotation and check it', n: 'Use "Check in the 2nd quotation" below.', href: '#buy-qa'},
+  {id: 'kitchen-door', t: 'Choose the kitchen glass sliding door design', n: 'Send it to I-Niche (E2 + E2a).'},
+  {id: 'natura', t: 'Natura black hotel mattress: get the model name and price', n: 'From a JB Natura dealer, then add it as a mattress option.'},
+  {id: 'black-friday', date: '2026-11-27', t: 'Black Friday: check deals on the list', href: '#buy-dates'},
+  {id: 'sign', date: '2026-11-28', t: 'Sign with I-Niche and pay the 10% deposit', n: 'After the 2nd quotation is checked. Payments 10/40/40/10.'},
+  {id: 'reno-form', date: '2026-11-28', t: 'Renovation form + S$1,000 deposit to La Casa management', n: 'At least 7 days before work starts. I-Niche gives the contractor details. Cash or cheque, refunded after checks.', href: '#it-contractor-mcst-renovation-deposit-refundable'},
+  {id: 'aircon', date: '2026-11-30', t: 'Order the aircon with code 7NV0', n: 'Code price S$3,510 ends 30 Nov. Check the Gain City price in store first.', href: '#it-aircon-mitsubishi-starmex-system-3'},
+  {id: 'sp', date: '2026-12-02', t: 'SP Services account (electricity and water) starts', n: 'Apply before 2 Dec so power and water are on when work starts.'},
+  {id: 'keys', date: '2026-12-03', t: 'Collect the keys and do the 3 Dec checklist', href: '#buy-measure'},
+  {id: 'tell-iniche', date: '2026-12-04', t: 'Tell I-Niche the 3 Dec results', n: 'Switch and socket count (G3), toilet bowl size, common bathroom wall and glass size, keep or drop the platform bed (D3 + D3a).'},
+  {id: 'sanitary', date: '2026-12-05', t: 'Buy the sanitary fittings', n: 'Basins, taps, toilets, bidet sprays, showers, accessories. The family supplies them; I-Niche fits them (C1). Toilet size after 3 Dec.'},
+  {id: 'switches', date: '2026-12-05', t: 'Buy switches and sockets', n: 'After the count on 3 Dec, before the electrician starts.', href: '#it-contractor-switches-sockets'},
+  {id: 'beds', date: '2026-12-12', t: 'Bed sizes set, then buy beds and mattresses (12.12 sale)', n: 'Keep 12 cm clear under any bed on legs for the robot vacuum.'},
+ ],
  // To check on 3 Dec (keys) or after, then buy.
  measure: [
   {t: 'Beds', n: 'Measure each bedroom for queen (152 × 190 cm) or super single (107 × 190 cm), plus about 10 to 15 cm for the frame and 60 cm to walk on one side. Then choose: storage bed with hydraulic lift, or a plain frame. Headboard: tall padded one to lean on, or basic. A storage bed sits on the floor (no robot under it). A frame on legs needs at least 10 cm clear for the robot vacuum (it is 8.9 cm).'},
@@ -261,7 +276,7 @@ export const lineSGD=(i,rate=BUY.rate)=>toSGD(i,rate)*(i.qty??1);
 export const TAGS=['before','after','maybe'];
 export const TAG_NAMES={before:'Before move-in',after:'After move-in',maybe:'Maybe'};
 export const optionsOf=i=>[i,...(i.alts??[])];
-export function buyKeys(plan=BUY){const k=new Map();for(const r of plan.rooms)for(const i of r.items){k.set(`b:${i.id}:off`,{kind:'off'});k.set(`b:${i.id}:tag`,{kind:'tag'});k.set(`b:${i.id}:qty`,{kind:'qty'});if(i.alts?.length)k.set(`b:${i.id}:pick`,{kind:'pick',max:i.alts.length});}return k;}
+export function buyKeys(plan=BUY){const k=new Map();for(const t of plan.todo??[])k.set(`t:${t.id}`,{kind:'off'});for(const r of plan.rooms)for(const i of r.items){k.set(`b:${i.id}:off`,{kind:'off'});k.set(`b:${i.id}:tag`,{kind:'tag'});k.set(`b:${i.id}:qty`,{kind:'qty'});if(i.alts?.length)k.set(`b:${i.id}:pick`,{kind:'pick',max:i.alts.length});}return k;}
 export function validBuyValue(spec,value){if(value==='')return true;if(spec.kind==='off')return value==='1';if(spec.kind==='tag')return TAGS.includes(value);if(!/^\d{1,2}$/.test(value))return false;const n=Number(value);return spec.kind==='qty'?n>=1&&n<=99:n>=1&&n<=spec.max;}
 export function choiceOf(i,v={}){const opts=optionsOf(i),p=Number(v[`b:${i.id}:pick`]),pick=Number.isInteger(p)&&p>0&&p<opts.length?p:0,q=Number(v[`b:${i.id}:qty`]),qty=Number.isInteger(q)&&q>=1&&q<=99?q:(i.qty??1);
  const saved=v[`b:${i.id}:tag`],tag=TAGS.includes(saved)?saved:v[`b:${i.id}:off`]==='1'?'maybe':(i.tag??'before');

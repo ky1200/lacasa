@@ -62,6 +62,8 @@ cards.forEach(card=>{const id=card.dataset.buy,q0=Number(card.dataset.qty0)||1,q
  card.querySelectorAll('[data-b="tag"]').forEach(r=>r.addEventListener('change',()=>{paint(card);totals();save(`b:${id}:tag`,r.value===(card.dataset.tag0||'before')?'':r.value);if(card.dataset.off==='1'){save(`b:${id}:off`,'');delete card.dataset.off;}}));
  card.querySelectorAll('[data-b="pick"]').forEach(r=>r.addEventListener('change',()=>{paint(card);totals();save(`b:${id}:pick`,r.value==='0'?'':r.value);}));});
 const local=pending();Object.entries(local).forEach(([k,val])=>{const [,id,kind]=k.split(':'),card=page.querySelector(`[data-buy="${CSS.escape(id)}"]`);if(!card)return;if(kind==='qty')card.querySelector('[data-f="qty"]').textContent=val||card.dataset.qty0;if(kind==='tag'){const r=card.querySelector(`[data-b="tag"][value="${val||card.dataset.tag0||'before'}"]`);if(r)r.checked=true;}if(kind==='pick'){const r=card.querySelector(`[data-b="pick"][value="${val||'0'}"]`);if(r)r.checked=true;}});
+const todoCount=()=>{const n=page.querySelector('[data-todo-done]');if(n)n.textContent=page.querySelectorAll('[data-todo]:checked').length;};
+page.querySelectorAll('[data-todo]').forEach(c=>{if(c.dataset.todo in local)c.checked=local[c.dataset.todo]==='1';c.closest('li').classList.toggle('is-done',c.checked);c.addEventListener('change',()=>{c.closest('li').classList.toggle('is-done',c.checked);todoCount();save(c.dataset.todo,c.checked?'1':'');});});todoCount();
 cards.forEach(paint);totals();if(Object.keys(local).length)flush();
 page.querySelectorAll('[data-show]').forEach(r=>r.addEventListener('change',()=>{page.dataset.show=r.value;}));
 {const rail=page.querySelector('[data-rail]'),rooms=[...page.querySelectorAll('[data-room]')];if(rail&&rooms.length&&'IntersectionObserver' in window){const name=rail.querySelector('[data-rail-name]'),menu=rail.querySelector('details'),links=[...rail.querySelectorAll('[data-rail-link]')],seen=new Set();
@@ -117,7 +119,7 @@ init();
 if(typeof window!=='undefined'&&window.history&&window.DOMParser){const cache=new Map(),TTL=60000;
 globalThis.__lacasaNav={clear:()=>cache.clear(),stay:u=>load(u).then(html=>{globalThis.__lacasaCompareRestore=scrollY+(globalThis.__lacasaCompareShrink||0);globalThis.__lacasaCompareShrink=0;swap(html,u,false);history.replaceState(null,'',u.pathname+u.search);const y=globalThis.__lacasaCompareRestore;if(y!=null){globalThis.__lacasaCompareRestore=null;scrollTo({top:y,behavior:'instant'});}})};
 const eligible=a=>{if(!a||a.target||a.hasAttribute('download')||a.dataset.reload!==undefined)return null;const u=new URL(a.href,location.href);
- if(u.origin!==location.origin||/^\/(api|img|video|owner|choose|images|fonts)(\/|$|\?)/.test(u.pathname)||/\.(txt|svg|webp|png|jpg)$/.test(u.pathname))return null;
+ if(u.origin!==location.origin||/^\/(api|img|video|owner|choose|images|fonts)(\/|$|\?)/.test(u.pathname)||/\.(txt|svg|webp|png|jpg|pdf|csv)$/.test(u.pathname))return null;
  if(u.pathname===location.pathname&&u.search===location.search&&u.hash)return null;return u;};
 const load=u=>{const key=u.pathname+u.search,hit=cache.get(key);if(hit&&Date.now()-hit.at<TTL)return hit.page;
  const page=fetch(key,{credentials:'same-origin',headers:{'X-LaCasa-Nav':'1'}}).then(r=>r.ok&&(r.headers.get('content-type')||'').includes('text/html')&&!r.redirected?r.text():Promise.reject(r)).catch(e=>{cache.delete(key);throw e;});
