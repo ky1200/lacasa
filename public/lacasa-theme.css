@@ -560,6 +560,8 @@ dialog.viewer::backdrop{background:rgba(18,16,14,.6)}
 .buy-decisions,.buy-brands{list-style:none;padding:0;margin:0;display:grid;gap:8px}
 .buy-decisions li{display:flex;gap:10px;align-items:flex-start;padding:10px 12px;border-radius:12px;background:#fff}.buy-decisions small,.buy-brands small{display:block;color:var(--muted);font-size:14px}
 .buy-dec{flex:none;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:700}.buy-dec.is-done{background:var(--moss-soft);color:var(--moss)}.buy-dec.is-open{background:#fbe7d6;color:#9a4a12}
+.buy-dec.is-off{background:#ececf0;color:#5b5f6b;text-decoration:line-through}
+.buy-dec-note{margin:0 0 10px;font-weight:700}
 .buy-measure{margin:0;padding-left:22px;display:grid;gap:8px}.buy-measure li{padding:8px 10px;border-radius:12px;background:#fff}.buy-measure b{display:block}.buy-measure span{font-size:14.5px}
 .buy-lights{display:grid;gap:10px}@media (min-width:640px){.buy-lights{grid-template-columns:1fr 1fr}}
 .buy-light{display:flex;gap:12px;align-items:flex-start;padding:10px;border-radius:12px;background:#fff}.buy-light b{display:block}.buy-light span{font-size:14.5px}

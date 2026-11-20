@@ -24,7 +24,7 @@ test('to-buy totals add up and RM converts at the stated rate',()=>{
  const t=buyTotals();
  const sum=BUY.rooms.flatMap(r=>r.items).filter(i=>i.tag!=='maybe').reduce((s,i)=>s+(i.cur==='MYR'?i.price/BUY.rate:i.price)*(i.qty??1),0);
  assert.ok(Math.abs(t.total-sum)<0.01);assert.ok(Math.abs(t.before+t.after-t.total)<0.01);assert.equal(t.after,0);
- assert.ok(t.removed>=2&&t.offTotal>0,'undecided reno items start as Maybe');
+ assert.ok(t.removed>=1&&t.offTotal>0,'on-hold reno items start as Maybe');
  assert.equal(Math.round(lineSGD({price:317,cur:'MYR',qty:1},3.17)),100);
  assert.equal(dayLabel('2026-11-27'),'Fri 27 Nov');assert.equal(dayLabel('2026-12-12'),'Sat 12 Dec');
 });
@@ -52,8 +52,10 @@ test('to-buy items have unique ids; TV console and own desk are gone; 3 queen ma
  for(const id of ['common-mirror','master-mirror'])assert.match(items.find(i=>i.id===id).name,/no light, no power point/);
  assert.match(items.find(i=>i.id==='washer').name,/12\.5 kg/);assert.match(items.find(i=>i.id==='kitchen-fan').name,/Dono/);
  assert.ok(items.find(i=>i.id==='fridge').alts.some(a=>/Panasonic/.test(a.name)));
- for(const i of items)[i,...(i.alts??[])].forEach((o,k)=>{const p=IMG[`${i.id}#${k}`];assert.ok(p,`photo for ${i.id}#${k}`);assert.match(p.src,/^\/images\/buy\/[a-z0-9-]+\.webp$/);assert.ok(existsSync(new URL('../../public'+p.src,import.meta.url)),p.src);});
- assert.equal(Object.keys(IMG).length,items.reduce((n,i)=>n+1+(i.alts?.length??0),0));
+ const pictured=BUY.rooms.filter(r=>r.id!=='contractor').flatMap(r=>r.items);
+ for(const i of pictured)[i,...(i.alts??[])].forEach((o,k)=>{const p=IMG[`${i.id}#${k}`];assert.ok(p,`photo for ${i.id}#${k}`);assert.match(p.src,/^\/images\/buy\/[a-z0-9-]+\.webp$/);assert.ok(existsSync(new URL('../../public'+p.src,import.meta.url)),p.src);});
+ assert.ok(!Object.keys(IMG).some(k=>k.startsWith('contractor-')),'contractor lines have no photos');
+ assert.equal(Object.keys(IMG).length,pictured.reduce((n,i)=>n+1+(i.alts?.length??0),0));
 });
 test('choices change the total: remove, pick another option, change quantity',()=>{
  const base=buyTotals().total,tv=items.find(i=>i.id==='living-lg-oled-evo-c6'),dl=items.find(i=>i.id==='living-philips-meson-5-13w');
@@ -67,7 +69,7 @@ test('choices change the total: remove, pick another option, change quantity',()
  assert.ok(Math.abs(after.after-wash.price)<0.01);assert.ok(Math.abs(after.total-base)<0.01);assert.ok(Math.abs(after.before-(buyTotals().before-wash.price))<0.01);
  assert.ok(Math.abs(buyTotals(BUY,{'b:living-homepod-mini-2-back:tag':'maybe'}).total-(base-2*199))<0.01);
  assert.equal(choiceOf(tv,{'b:living-lg-oled-evo-c6:off':'1','b:living-lg-oled-evo-c6:tag':'after'}).tag,'after','a chosen tag wins over the old switch');
- const vinyl=items.find(i=>i.id==='contractor-vinyl-flooring');assert.equal(choiceOf(vinyl).tag,'maybe');assert.equal(choiceOf(vinyl,{'b:contractor-vinyl-flooring:tag':'before'}).tag,'before');
+ const bed=items.find(i=>i.id==='contractor-platform-bed-d3');assert.equal(choiceOf(bed).tag,'maybe');assert.equal(choiceOf(bed,{'b:contractor-platform-bed-d3:tag':'before'}).tag,'before');
  assert.equal(choiceOf(tv,{'b:living-lg-oled-evo-c6:tag':'later'}).tag,'before');
 });
 test('to-buy page shows saved choices, quantity buttons, option picker and photos',()=>{
@@ -79,7 +81,7 @@ test('to-buy page shows saved choices, quantity buttons, option picker and photo
  assert.match(html,/name="pick-fridge" value="1" data-b="pick" checked/);
  assert.match(html,/<button type="button" class="buy-photo main" data-enlarge[^>]*><img class="buy-img" src="\/images\/buy\//);assert.match(html,/<fieldset data-lightbox-group>/);assert.match(html,/data-b="plus"/);
  assert.match(html,/Maybe, not in total: <b data-buy-off>S\$[\d,]+<\/b>/);assert.match(html,/name="tag-washer" value="maybe" data-b="tag" checked/);assert.match(html,/data-buy-before>S\$[\d,]+</);assert.match(html,/data-buy-after>S\$0</);
- assert.match(html,/id="buy-decisions"[\s\S]*?Kitchen entrance door: sliding door/);assert.match(html,/id="buy-measure"[\s\S]*?LAN ports/);assert.match(html,/id="buy-lights"[\s\S]*?Eyeball light/);assert.match(html,/id="buy-mattress-brands"[\s\S]*?Getha/);assert.match(html,/name="buy-show" value="maybe" data-show/);assert.match(html,/<nav class="buy-rail" data-rail aria-label="Rooms" hidden>/);for(const r of BUY.rooms)assert.match(html,new RegExp(`href="#buy-${r.id}" data-rail-link="${r.id}"`));assert.match(html,/class="buy-day sale[^"]*" href="#day-2026-11-27"/);assert.match(html,/id="day-2026-12-12"/);assert.doesNotMatch(html,/[Rr]ough/);
+ assert.match(html,/id="buy-decisions"><h2>Final reno decisions sent to I-Niche, 21 Nov<\/h2><p class="buy-dec-note">Waiting for the 2nd quotation/);assert.match(html,/<span class="buy-dec is-off">Removed<\/span><div><b>D4: L-shaped wardrobe/);assert.match(html,/E2 \+ E2a: glass sliding door at the kitchen entrance/);assert.doesNotMatch(html.slice(html.indexOf('id="buy-contractor"'),html.indexOf('id="buy-aircon"')),/buy-photo/,'no photos in the contractor room');assert.match(html,/id="buy-measure"[\s\S]*?LAN ports/);assert.match(html,/id="buy-lights"[\s\S]*?Eyeball light/);assert.match(html,/id="buy-mattress-brands"[\s\S]*?Getha/);assert.match(html,/name="buy-show" value="maybe" data-show/);assert.match(html,/<nav class="buy-rail" data-rail aria-label="Rooms" hidden>/);for(const r of BUY.rooms)assert.match(html,new RegExp(`href="#buy-${r.id}" data-rail-link="${r.id}"`));assert.match(html,/class="buy-day sale[^"]*" href="#day-2026-11-27"/);assert.match(html,/id="day-2026-12-12"/);assert.doesNotMatch(html,/[Rr]ough/);
  assert.match(html,new RegExp('data-buy-total>S\\$'+Math.round(buyTotals(BUY,s.visit).total).toLocaleString('en-SG')));
  const text=html.replace(/<[^>]+>/g,' ');assert.doesNotMatch(text,/\byou\b|\byour\b|perfect|amazing/i);
  const audit=renderPage({...visitorState(content,samples,{code:'AUDIT',audit:true,readOnly:true}),visit:{}},'https://lacasa.test/audit/buy');assert.match(audit.html,/value="before" data-b="tag" checked disabled/);

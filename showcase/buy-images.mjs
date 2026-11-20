@@ -1,5 +1,5 @@
 // Product photos for /buy, saved on this site (taken from each shop or brand page, 19 Nov 2026).
-// Key: "<item id>#<option index>". ex: true means a general example photo, not the exact model.
+// Key: "<item id>#<option index>". The contractor room has no photos. ex: true means a general example photo, not the exact model.
 export const IMG = {
  "aircon-mitsubishi-starmex-system-3#0": {
   "src": "/images/buy/mitsubishi-starmex-system-3-3-9-000-btu-5-ticks-installed-wi-9a5998.webp"
@@ -71,19 +71,6 @@ export const IMG = {
  },
  "common-mirror#3": {
   "src": "/images/buy/ikea-lettan-mirror-cabinet-all-mirror-60-15-95-cm-c08459.webp"
- },
- "contractor-add-missing-work-electrical#0": {
-  "src": "/images/buy/add-missing-work-electrical-lan-aircon-move-2nd-solid-door-c15c4b.webp"
- },
- "contractor-i-niche-renovation-quote#0": {
-  "src": "/images/buy/i-niche-renovation-quote-as-given-b563b0.webp"
- },
- "contractor-mcst-renovation-deposit-refundable#0": {
-  "ex": true,
-  "src": "/images/buy/mcst-renovation-deposit-refundable-b2cbfe.webp"
- },
- "contractor-remove-items-not-in#0": {
-  "src": "/images/buy/remove-items-not-in-our-plan-a3-d1-d2-d3-d3a-d4-f4-f5-efec95.webp"
  },
  "dining-kdk-f40gp-100-cm#0": {
   "src": "/images/buy/kdk-f40gp-100-cm-wi-fi-dc-ceiling-fan-with-led-light-ee007e.webp"
@@ -341,33 +328,6 @@ export const IMG = {
  },
  "living-track-or-spot-lights#1": {
   "src": "/images/buy/eyeball-spotlight-recessed.webp",
-  "ex": true
- },
- "contractor-switches-sockets#0": {
-  "src": "/images/buy/schneider-avataron-switched-socket.webp"
- },
- "contractor-switches-sockets#1": {
-  "src": "/images/buy/schneider-avataron-switched-socket.webp",
-  "ex": true
- },
- "contractor-switches-sockets#2": {
-  "src": "/images/buy/legrand-mallia-senses-socket.webp",
-  "ex": true
- },
- "contractor-vinyl-flooring#0": {
-  "src": "/images/buy/vinyl-wood-look-floor-example.webp",
-  "ex": true
- },
- "contractor-vinyl-flooring#1": {
-  "src": "/images/buy/vinyl-wood-look-floor-example.webp",
-  "ex": true
- },
- "contractor-vinyl-flooring#2": {
-  "src": "/images/buy/vinyl-wood-look-floor-example.webp",
-  "ex": true
- },
- "contractor-living-false-ceiling#0": {
-  "src": "/images/buy/led-cove-strip-driver-8717ec.webp",
   "ex": true
  }
 };

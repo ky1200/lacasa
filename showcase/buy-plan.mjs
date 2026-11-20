@@ -20,19 +20,23 @@ export const BUY = {
  ],
  rooms: [
   {id: 'contractor', name: 'Contractor (I-Niche) and admin', items: [
-   {id: 'contractor-i-niche-renovation-quote', name: 'I-Niche renovation quote, as given', qty: 1, price: 24100, cur: 'SGD', shop: 'The I-Niche Design', type: 'Contractor', href: '/files/iniche-quotation-2026-11-13.pdf', date: '2026-11-19', when: 'Confirm scope at meeting. 10% deposit on signing', note: 'Payments 10/40/40/10. Not refundable if cancelled.'},
-   {id: 'contractor-remove-items-not-in', name: 'Remove items not in our plan (A3, D1, D2, D3, D3a, D4, F4, F5)', qty: 1, price: -8680, cur: 'SGD', est: true, shop: 'If I-Niche agrees', type: 'Contractor', date: '2026-11-19', when: 'Decide at meeting', note: 'Keep D4 wardrobe or D1 TV wall only if we want them.'},
-   {id: 'contractor-add-missing-work-electrical', name: 'Add missing work: electrical, LAN, aircon move, 2nd solid door', qty: 1, price: 6600, cur: 'SGD', est: true, shop: 'Ask I-Niche to price', type: 'Contractor', date: '2026-11-19', when: 'Get written price', note: 'Based on our 8 Oct brief allowances.'},
+   {id: 'contractor-i-niche-renovation-quote', name: 'I-Niche quote, 13 Nov, as given', qty: 1, price: 24100, cur: 'SGD', shop: 'The I-Niche Design', type: 'Contractor', href: '/files/iniche-quotation-2026-11-13.pdf', date: '2026-11-21', when: 'Final changes sent 21 Nov. Waiting for the 2nd quotation, then 10% deposit on signing', note: 'The lines below change this quote to match the 21 Nov decisions. Redo them when the 2nd quotation comes. Payments 10/40/40/10, 1-year workmanship warranty. Not refundable if cancelled.'},
+   {id: 'contractor-taken-out-21-nov', name: 'Taken out on 21 Nov: A3, D2, D3 + D3a, D4, one G2 fan', qty: 1, price: -6385, cur: 'SGD', shop: 'Prices from the 13 Nov quote', type: 'Contractor', date: '2026-11-21', when: 'Sent to I-Niche 21 Nov', note: 'A3 KS bedroom wardrobe removal S$180. D2 new living mirror door S$600. D3 + D3a platform bed and bedhead S$1,810 (on hold, listed below as Maybe). D4 L-shaped wardrobe S$3,200. G2 + G2a: 1 fan instead of 2, common bathroom only, S$595 off.'},
+   {id: 'contractor-platform-bed-d3', tag: 'maybe', name: 'D3 + D3a platform bed and bedhead, KS bedroom (on hold)', qty: 1, price: 1810, cur: 'SGD', shop: 'I-Niche', type: 'Contractor', date: '2026-12-03', when: 'Decide on 3 Dec. Optional line in the 2nd quotation', note: 'Platform S$1,260 + bedhead S$550. If kept, the KS bed frame on this list may not be needed.'},
+   {id: 'contractor-f2-vinyl-3-bedrooms', name: 'F2 changed to vinyl (SPC), 3 bedrooms, with skirting, door trims and thresholds', qty: 1, price: 1350, cur: 'SGD', est: true, shop: 'I-Niche', type: 'Contractor', src: 'https://www.homejourney.sg/blog/flooring-services-singapore-cost-guide-2025-prices-homejourney-202512242102', date: '2026-12-05', when: 'Laid before the beds go in', note: 'Extra over the quote. Estimate: about S$2,300 for vinyl laid in 3 bedrooms (SPC is about S$6.50 to S$9.50 per sq ft), minus F2 parquet polish S$950 already in the quote. Asked I-Niche for the total, price per sq ft, brand and thickness. Doors may need trimming at the bottom.', alts: [
+    {name: 'Keep F2: polish the parquet (asked as the other price)', price: 0, cur: 'SGD', shop: 'I-Niche', type: 'Contractor', note: 'Already in the quote (S$950). Fine if the parquet is flat and not loose.'},
+   ]},
+   {id: 'contractor-bathroom-regrouting', name: 'Full regrouting, both bathrooms (new)', qty: 1, price: 800, cur: 'SGD', est: true, shop: 'I-Niche', type: 'Contractor', date: '2026-12-05', when: 'Price in the 2nd quotation', note: 'Estimate: about S$400 per bathroom. No Singapore price list found, so use the I-Niche price when it comes.'},
+   {id: 'contractor-living-mirror-cabinet-patch', name: 'Living mirror cabinet: take off the door and patch (new, replaces D2)', qty: 1, price: 150, cur: 'SGD', est: true, shop: 'I-Niche', type: 'Contractor', date: '2026-12-05', when: 'Price in the 2nd quotation', note: 'Estimate. D2 (new mirror door, S$600) is taken out above.'},
+   {id: 'contractor-anti-mould-ceiling', name: 'Anti-Mould Ceiling White in both bathrooms and the kitchen (asked)', qty: 1, price: 150, cur: 'SGD', est: true, shop: 'I-Niche', type: 'Contractor', date: '2026-12-05', when: 'Price in the 2nd quotation', note: 'Estimate. Top-up to F1 painting: the quote uses Matex, a budget ceiling paint, everywhere.'},
+   {id: 'contractor-kitchen-sliding-door', name: 'E2 + E2a changed to a glass sliding door at the kitchen entrance', qty: 1, price: 0, cur: 'SGD', est: true, shop: 'I-Niche', type: 'Contractor', date: '2026-12-05', when: 'Family chooses the design. Price in the 2nd quotation', note: 'Quote had a glass bi-fold door (S$1,480) plus a cabinet change (S$220). Price difference not known yet, so S$0 for now.'},
+   {id: 'contractor-door-swap', name: 'Door swap: common bathroom door to bedroom 3, new water-resistant bathroom door (asked)', qty: 1, price: 0, cur: 'SGD', est: true, shop: 'I-Niche', type: 'Contractor', date: '2026-12-05', when: 'Price in the 2nd quotation', note: 'Instead of E1 (new veneer door, S$580). The B1b door frame is sized to fit the moved door. Price difference not known yet, so S$0 for now.'},
+   {id: 'contractor-g3-electrical', name: 'G3 sockets, switches and light points (labour)', qty: 1, price: 1200, cur: 'SGD', est: true, shop: 'I-Niche electrician', type: 'Contractor', date: '2026-12-05', when: 'Count on 3 Dec, then get the price', note: 'Estimate only: about 10 new or moved points at S$80 to S$150 each, plus fixing any dead LAN ports. The switch plates themselves are the next item.'},
    {id: 'contractor-mcst-renovation-deposit-refundable', name: 'MCST renovation deposit (refundable)', qty: 1, price: 1000, cur: 'SGD', shop: 'La Casa management', type: 'Shop', date: '2026-11-28', when: 'With renovation form, 7+ days before work', note: 'Cash or cheque. Refunded after checks.'},
    {id: 'contractor-switches-sockets', name: 'New switches and sockets, whole house (Schneider AvatarOn, white)', model: 'e.g. E8315 13A switched socket', qty: 30, price: 21.15, cur: 'SGD', est: true, shop: 'Schneider Electric SG eShop / SG electrical shops', type: 'Online', href: 'https://eshop.se.com/sg/e8315-wg-g2-avataron-switched-socket-3p-13a-250v-wine-gold.html', date: '2026-12-05', when: 'Count points on 3 Dec, then buy before the electrician starts', note: 'Estimate: about 30 points at S$19.40 + GST each (twin sockets about S$33). Has the Singapore SAFETY Mark, which wall switches and sockets must carry to be sold here. Ask I-Niche if their electrical price already includes switches.', alts: [
     {name: 'Schneider Vivace, white (simple, cheaper, from JB)', model: 'Vivace KB15 / KB31 series', price: 19, cur: 'MYR', est: true, shop: 'Tampoi Lighting / JB electrical shops', type: 'Shop', href: 'https://mall.lapasar.com/products/155110', note: 'About RM13 to RM25 a piece in Malaysia. The Malaysian stock has SIRIM, not the Singapore SAFETY Mark, so ask the electrician before buying: some will not fit it.'},
     {name: 'Legrand Mallia or Panasonic, white (other good brands)', price: 22, cur: 'SGD', est: true, shop: 'SG electrical shops', type: 'Shop', note: 'Same price range. Pick one brand for the whole house so plates match.'},
    ]},
-   {id: 'contractor-vinyl-flooring', tag: 'maybe', name: 'Vinyl (SPC) flooring over the parquet, 3 bedrooms', qty: 1, price: 2000, cur: 'SGD', est: true, shop: 'Flooring supplier (via I-Niche or direct)', type: 'Shop', date: '2026-12-05', when: 'Decide after 3 Dec. Laid before carpentry and beds', note: 'About S$2,000 for 3 bedrooms (vinyl is about S$4 to S$10 per sq ft laid). The quote already has parquet polishing (F2, S$950): if we choose vinyl, ask what comes off F2. Doors may need trimming at the bottom.', alts: [
-    {name: 'Vinyl for 3 bedrooms + living + dining', price: 4500, cur: 'SGD', est: true, shop: 'Flooring supplier', type: 'Shop', note: 'Estimate: about double the floor area of the bedrooms. Living and dining are tiles: vinyl can go over flat tiles. Get a measured quote.'},
-    {name: 'Keep and polish the existing parquet only (F2, already in the contractor total)', price: 0, cur: 'SGD', shop: 'I-Niche', type: 'Shop', note: 'No extra cost. Fine if the parquet is flat and not loose.'},
-   ]},
-   {id: 'contractor-living-false-ceiling', tag: 'maybe', name: 'Take down the living room false ceiling and build a new flat one', qty: 1, price: 1800, cur: 'SGD', est: true, shop: 'I-Niche', type: 'Shop', date: '2026-12-05', when: 'Decide before electrical work starts', note: 'Estimate: false ceilings cost about S$6 to S$12 per sq ft in condos. A new ceiling makes new downlight, track and cove-light positions easy and hides new wiring. The quote only patches old holes (B2, S$280). Ask I-Niche for the exact price.'},
   ]},
   {id: 'aircon', name: 'Aircon (3 old units)', items: [
    {id: 'aircon-mitsubishi-starmex-system-3', name: 'Mitsubishi Starmex System 3 (3 × 9,000 BTU), 5 ticks, installed with new piping', model: 'MXY-3H28VG + 3 × MSXY-FP10VG', qty: 1, price: 3510, cur: 'SGD', shop: 'Mega Discount Store', type: 'Online', href: 'https://megadiscountstore.com.sg/products/starmex-system3-aircon-9kx3', src: 'https://www.misslobang.com/article/best-system-3-aircon-singapore-2026', date: '2026-11-28', when: 'Order by 30 Nov with code 7NV0. Install about 10 Dec, before painting', note: 'Listed S$3,580 with free installation (new copper piping, 1-year workmanship). Code 7NV0 takes S$70 off until 30 Nov. Can use the Climate Voucher (up to S$400 for 5 ticks). Ask about any condo surcharge.', alts: [
@@ -178,17 +182,37 @@ export const BUY = {
    {id: 'entrance-retractable-insect-mesh-door', name: 'Retractable insect mesh door', qty: 1, price: 600, cur: 'SGD', est: true, shop: 'Mozziefy / Oleno', type: 'Online', href: 'https://www.mozziefy.com/products/door-screens/', date: '2026-12-20', when: 'After MCST approval'},
   ]},
  ],
- // 19 Nov meeting with I-Niche. s: 'Decided' or 'Not decided'.
+ // Final reno decisions sent to I-Niche (John) on 21 Nov. Codes are from the 13 Nov quote.
+ // s: 'Go ahead', 'Changed', 'New', 'Removed', 'On hold', 'Asked', '3 Dec' or 'Not asked'.
+ decisionsTitle: 'Final reno decisions sent to I-Niche, 21 Nov',
+ decisionsNote: 'Waiting for the 2nd quotation. Codes match the 13 Nov quote.',
  decisions: [
-  {t: 'Kitchen entrance door: sliding door', s: 'Decided', n: 'Price from I-Niche.'},
-  {t: 'Both bathrooms: full regrouting (normal grout)', s: 'Decided', n: 'Price from I-Niche.'},
-  {t: 'KS bedroom: platform bed, storage bed, or a more custom bed', s: 'Not decided', n: 'Decide after the keys on 3 Dec.'},
-  {t: 'Living room false ceiling: take down and redo, or keep', s: 'Not decided', n: 'On the list as "Maybe".'},
-  {t: 'Floors: vinyl in 3 bedrooms (about S$2,000), vinyl in living and dining too, or polish the parquet', s: 'Not decided', n: 'On the list as "Maybe".'},
+  {t: 'A: hacking A1, A2, A4 to A9', s: 'Go ahead', n: 'A3 (KS bedroom wardrobe removal) taken out.'},
+  {t: 'Living mirror cabinet: take off the door and patch', s: 'New', n: 'Replaces D2 (new mirror door).'},
+  {t: 'B: partition wall B1, B1a, B1b', s: 'Go ahead', n: 'B1a soundproofing stays at 40 kg rockwool (an upgrade was not asked).'},
+  {t: 'B2: keep the living false ceiling', s: 'Go ahead', n: 'Only the old downlight holes are patched.'},
+  {t: 'C1 (i) to (v): fit basins, toilets, bidet sprays, showers, accessories', s: 'Go ahead', n: 'The family buys the sanitary fittings.'},
+  {t: 'D1: TV feature wall', s: 'Go ahead'},
+  {t: 'D2: new living mirror door', s: 'Removed'},
+  {t: 'D4: L-shaped wardrobe', s: 'Removed'},
+  {t: 'D3 + D3a: platform bed and bedhead (KS bedroom)', s: 'On hold', n: 'Decide on 3 Dec. Optional line in the quote.'},
+  {t: 'E2 + E2a: glass sliding door at the kitchen entrance', s: 'Changed', n: 'Instead of the bi-fold door. The family chooses the design.'},
+  {t: 'E3: shower screens', s: 'Go ahead', n: 'Master bathroom as quoted. Common bathroom: half-height wall on one side with glass on top, size set on site.'},
+  {t: 'E4: frosted film, master bathroom', s: 'Go ahead'},
+  {t: 'Doors: move the common bathroom door to bedroom 3', s: 'Asked', n: 'Instead of the E1 new veneer door. Supply and fit a new water-resistant common bathroom door. Size the B1b frame to fit.'},
+  {t: 'F1: painting', s: 'Go ahead', n: 'Asked the price for Anti-Mould Ceiling White in both bathrooms and the kitchen.'},
+  {t: 'F2: vinyl (SPC) in the 3 bedrooms', s: 'Changed', n: 'With skirting, door trims and thresholds. Asked the total, price per sq ft, brand and thickness. F2 parquet polish kept as the other price.'},
+  {t: 'F2a, F4, F6: skirting varnish, master bathroom floor polish, final cleaning', s: 'Go ahead'},
+  {t: 'F5: half-height wall on one side, common bathroom', s: 'Go ahead', n: 'Asked about waterproofing.'},
+  {t: 'Full regrouting of both bathrooms', s: 'New'},
+  {t: 'G1: living room ceiling lights', s: 'Go ahead'},
+  {t: 'G2 + G2a: 1 ventilation fan, common bathroom only', s: 'Changed', n: 'Was 2 fans.'},
+  {t: 'G3: sockets and switches', s: '3 Dec', n: 'Mark positions and count on site.'},
  ],
  // To check on 3 Dec (keys) or after, then buy.
  measure: [
   {t: 'Beds', n: 'Measure each bedroom for queen (152 × 190 cm) or super single (107 × 190 cm), plus about 10 to 15 cm for the frame and 60 cm to walk on one side. Then choose: storage bed with hydraulic lift, or a plain frame. Headboard: tall padded one to lean on, or basic. A storage bed sits on the floor (no robot under it). A frame on legs needs at least 10 cm clear for the robot vacuum (it is 8.9 cm).'},
+  {t: 'Platform bed (D3 + D3a)', n: 'Keep it or drop it, once the KS bed size is clear. Tell I-Niche, since it is an optional line in the quote.'},
   {t: 'Switches, sockets and lights', n: 'Walk each room and mark where sockets, switches and lights go. Count them for the shopping list.'},
   {t: 'LAN ports', n: 'Plug a laptop into each LAN port with a cable: if it gets internet from the router, the port works. A cheap LAN cable tester (about RM20) also works. Dead ports are fixed by the electrician, not the internet company.'},
   {t: 'Toilet bowls', n: 'I-Niche measures and tells us the size (the distance from wall to the floor pipe decides which toilet fits).'},
@@ -213,11 +237,12 @@ export const BUY = {
   {name: 'Goodnite', href: 'https://goodnite.com.my', n: 'Malaysian brand, lower prices.'},
   {name: 'Origin', href: 'https://originmattress.com.my/origin-hybrid-pro-mattress', n: 'Online brand: 120-night trial, 15-year warranty.'},
  ],
+ // Things to check in the 2nd quotation.
  contractor: [
-  {q: 'Common toilet: half-height wall with a shower niche, glass on the top half?', a: 'Quote item F5 (new tiled wall, $1,250) plus E3 (shower screen) looks like this. Ask: wall height, niche size, waterproofing, and is the glass fixed or a door.'},
-  {q: 'Living false ceiling: remove and build new?', a: 'Quote only patches old downlight holes (B2, $280). Ask for 2 prices: (1) keep ceiling, patch and cut new holes; (2) take down and build new flat ceiling with cove light slots. Option 2 also lets the electrician rewire lights cleanly.'},
-  {q: 'Vinyl over the bedroom parquet instead of polishing?', a: 'Polish (F2, $950) is cheaper and fine if the parquet is flat and not loose. Vinyl/SPC adds a few mm, so doors need trimming at the bottom and a small trim strip at each door. New KY and KX doors can be cut to the new floor height. Ask the flooring supplier to check the parquet first.'},
-  {q: 'What does "polish existing master bathroom flooring" mean?', a: 'Grinding and polishing the old floor tiles or marble to remove stains and bring back shine. It is not new tiles. Ask what the floor is, if it includes re-grouting, and if anti-slip treatment can be added. Not in our plan (F4, $800).'},
+  {q: 'Vinyl (SPC) in the 3 bedrooms: what to check', a: 'Total price, price per sq ft, brand and thickness. Skirting, door trimming and thresholds must be included. Vinyl adds a few mm, so doors are cut at the bottom. The F2 parquet polish should still be there as the other price.'},
+  {q: 'Common bathroom half-height wall (F5): waterproofing', a: 'Ask which waterproofing goes on the new wall and the floor around it, how high it goes, and if they do a water test before tiling.'},
+  {q: 'Doors: moving the common bathroom door to bedroom 3', a: 'Check the price change against E1 (S$580), the brand or material of the new water-resistant bathroom door, and that the B1b frame is made to fit the moved door.'},
+  {q: 'New lines to look for', a: 'Living mirror cabinet door removal and patch, full regrouting of both bathrooms, Anti-Mould Ceiling White price, the glass sliding door price, 1 fan instead of 2, and D3 + D3a as an optional line.'},
  ],
  notes: [
   'Switches and sockets: Singapore needs the SAFETY Mark on wall switches and sockets. Buying in Singapore (Schneider AvatarOn, Legrand, Panasonic) avoids problems. JB stock is cheaper but has SIRIM, so ask the electrician first.',
