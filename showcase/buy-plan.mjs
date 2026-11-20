@@ -20,7 +20,7 @@ export const BUY = {
  ],
  rooms: [
   {id: 'contractor', name: 'Contractor (I-Niche) and admin', items: [
-   {id: 'contractor-i-niche-renovation-quote', name: 'I-Niche quote, 13 Nov, as given', qty: 1, price: 24100, cur: 'SGD', shop: 'The I-Niche Design', type: 'Contractor', href: '/files/iniche-quotation-2026-11-13.pdf', date: '2026-11-21', when: 'Final changes sent 21 Nov. Waiting for the 2nd quotation, then 10% deposit on signing', note: 'The lines below change this quote to match the 21 Nov decisions. Redo them when the 2nd quotation comes. Payments 10/40/40/10, 1-year workmanship warranty. Not refundable if cancelled.'},
+   {id: 'contractor-i-niche-renovation-quote', name: 'I-Niche quote, 13 Nov, as given', qty: 1, price: 24100, cur: 'SGD', shop: 'The I-Niche Design', type: 'Contractor', href: '/files/iniche-quotation-2026-11-13.pdf', date: '2026-11-21', when: 'Final changes sent 21 Nov. Waiting for the I-Niche revised quote, then 10% deposit on signing', note: 'The lines below change this quote to match the 21 Nov decisions. Redo them when the 2nd quotation comes. Payments 10/40/40/10, 1-year workmanship warranty. Not refundable if cancelled.'},
    {id: 'contractor-taken-out-21-nov', name: 'Taken out on 21 Nov: A3, D2, D3 + D3a, D4, one G2 fan', qty: 1, price: -6385, cur: 'SGD', shop: 'Prices from the 13 Nov quote', type: 'Contractor', date: '2026-11-21', when: 'Sent to I-Niche 21 Nov', note: 'A3 KS bedroom wardrobe removal S$180. D2 new living mirror door S$600. D3 + D3a platform bed and bedhead S$1,810 (on hold, listed below as Maybe). D4 L-shaped wardrobe S$3,200. G2 + G2a: 1 fan instead of 2, common bathroom only, S$595 off.'},
    {id: 'contractor-platform-bed-d3', tag: 'maybe', name: 'D3 + D3a platform bed and bedhead, KS bedroom (on hold)', qty: 1, price: 1810, cur: 'SGD', shop: 'I-Niche', type: 'Contractor', date: '2026-12-03', when: 'Decide on 3 Dec. Optional line in the 2nd quotation', note: 'Platform S$1,260 + bedhead S$550. If kept, the KS bed frame on this list may not be needed.'},
    {id: 'contractor-f2-vinyl-3-bedrooms', decided: true, name: 'Vinyl (SPC) flooring, 3 bedrooms, with skirting, door trims and thresholds (replaces F2 polish)', qty: 1, price: 1350, cur: 'SGD', est: true, shop: 'I-Niche', type: 'Contractor', src: 'https://www.homejourney.sg/blog/flooring-services-singapore-cost-guide-2025-prices-homejourney-202512242102', date: '2026-12-05', when: 'Laid before the beds go in', note: 'Extra over the quote. Estimate: about S$2,300 for vinyl laid in 3 bedrooms (SPC is about S$6.50 to S$9.50 per sq ft), minus F2 parquet polish S$950 already in the quote. Asked I-Niche for the total, price per sq ft, brand and thickness. Doors may need trimming at the bottom.', alts: [
@@ -183,7 +183,7 @@ export const BUY = {
  // Final reno decisions sent to I-Niche (John) on 21 Nov. Codes are from the 13 Nov quote.
  // s: 'Go ahead', 'Changed', 'New', 'Removed', 'On hold', 'Asked', '3 Dec' or 'Not asked'.
  decisionsTitle: 'Final reno decisions sent to I-Niche, 21 Nov',
- decisionsNote: 'Waiting for the 2nd quotation. Codes match the 13 Nov quote.',
+ decisionsNote: 'Waiting for the I-Niche revised quote (2nd quotation). Codes match the 13 Nov quote.',
  decisions: [
   {t: 'A: hacking A1, A2, A4 to A9', s: 'Go ahead', n: 'A3 (KS bedroom wardrobe removal) taken out.'},
   {t: 'Living mirror cabinet: take off the door and patch', s: 'New', n: 'Replaces D2 (new mirror door).'},
@@ -210,7 +210,7 @@ export const BUY = {
  // To-do list at the top of /buy, in date order. Ticks are shared (saved as t:<id>). No date = do now.
  todo: [
   {id: 'fibre', t: 'Book the fibre broadband installation', n: 'So Wi-Fi works on move-in day (robot vacuum, Apple TV, HomePods).'},
-  {id: 'quote2', t: 'Get the 2nd quotation and check it', n: 'Use "Check in the 2nd quotation" below.', href: '#buy-qa'},
+  {id: 'quote2', t: 'Get the I-Niche revised quote and check it', n: 'Use "Check in the 2nd quotation" below.', href: '#buy-qa'},
   {id: 'kitchen-door', t: 'Choose the kitchen glass sliding door design', n: 'Send it to I-Niche (E2 + E2a).'},
   {id: 'natura', t: 'Natura black hotel mattress: get the model name and price', n: 'From a JB Natura dealer, then add it as a mattress option.'},
   {id: 'black-friday', date: '2026-11-27', t: 'Black Friday: check deals on the list', href: '#buy-dates'},
