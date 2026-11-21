@@ -989,3 +989,35 @@ dialog.viewer::backdrop{background:rgba(18,16,14,.6)}
 .sheet-custom input{width:76px;font:inherit;font-size:15px;padding:7px 8px;border:1px solid var(--line);border-radius:10px;background:#fff;min-height:40px}
 .sheet-custom button{font:inherit;font-size:14px;font-weight:700;padding:8px 14px;min-height:40px;border-radius:10px;border:1px solid var(--sumi);background:#fff;cursor:pointer}
 .sheet-custom input:focus-visible,.sheet-custom button:focus-visible,.sheet-size>button:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
+
+/* Floor plan, 21 Nov night: TV viewing, fan air, light beams, coffee table; chips wrap on laptops */
+.plan-layer-tv span::before{background:#3f8f5a}.plan-layer-air span::before{background:#5fb4d9;border-radius:50%}
+.tvband{fill:#3f8f5a;fill-opacity:.12;stroke:#3f8f5a;stroke-opacity:.45;stroke-dasharray:6 4;vector-effect:non-scaling-stroke}
+.tvbandlabel{font-size:.85em;font-weight:700;fill:#2f6e44;text-anchor:middle;paint-order:stroke;stroke:#fbfaf7;stroke-width:3px}
+.tvlines{stroke:#2f6e44;stroke-width:1.6;stroke-dasharray:2 4}
+.tvhead{fill:#2f6e44;stroke:#fff;stroke-width:20}
+.tvlabel{font-size:.95em;font-weight:700;fill:#2f6e44;text-anchor:middle;paint-order:stroke;stroke:#fbfaf7;stroke-width:4px}
+.airzone{pointer-events:none}
+.airarrow{stroke:#2f86ad;stroke-width:1.4;stroke-opacity:.8}
+.airwedge{fill:#5fb4d9;fill-opacity:.14;stroke:#2f86ad;stroke-opacity:.5;stroke-width:1.2;stroke-dasharray:5 4}
+.airarc{stroke:#2f86ad;stroke-opacity:.35;stroke-width:1;stroke-dasharray:3 5}
+.beamring{stroke:#d18a00;stroke-width:1.6;stroke-dasharray:6 4}
+.plan-pt.pt-fan .fanpool{display:none}
+.plan-stage.is-night .plan-pt.pt-fan .fanpool{display:inline;opacity:.45;mix-blend-mode:screen}
+.plan-stage.is-night .tvband{fill-opacity:.18}
+.plan-stage.is-night .tvlabel,.plan-stage.is-night .tvbandlabel{fill:#bfe3c9;stroke:#161b27}
+.sheet-tv{margin-top:14px;padding-top:12px;border-top:1px solid var(--line)}
+.sheet-tv h4{font-size:16px;margin:0 0 8px;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.sheet-tv h4 small{font-weight:400;color:var(--muted);font-size:13px}
+.sheet-tv table{width:100%;border-collapse:collapse;font-size:13.5px}
+.sheet-tv th{text-align:left;font-size:12.5px;color:var(--muted);font-weight:700;padding:4px 6px;border-bottom:1px solid var(--line)}
+.sheet-tv td{padding:7px 6px;border-bottom:1px solid #efece5;vertical-align:top}
+.sheet-tv tr.is-on td{background:#eef6f0}
+.tv-ok{color:#2f6e44}.tv-low{color:#8a6d1f}
+.sheet-spec{display:grid;grid-template-columns:auto 1fr;gap:5px 12px;margin:10px 0 4px;font-size:14px;line-height:1.45}
+.sheet-spec dt{color:var(--muted)}.sheet-spec dd{margin:0}
+.sheet-fine{font-size:12.5px;color:var(--muted);margin:4px 0 8px;line-height:1.45}
+/* Laptop and wider: chip rows wrap instead of hiding off the side (no swipe with a mouse) */
+@media (min-width:600px),(pointer:fine){
+ .plan-rooms,.plan-layers,.buy-jump{flex-wrap:wrap;overflow:visible}
+}

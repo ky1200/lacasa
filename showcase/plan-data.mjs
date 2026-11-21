@@ -86,7 +86,6 @@ export const PLAN = {
   ], research: 'rooms', note: 'Check if the old built-in wardrobe in this room stays; if it does, this may not be needed.'},
   // ---------- KX room (main bedroom) ----------
   {id: 'kx-bed', name: 'KX bed', room: 'kx', kind: 'bed', x: 3760, y: 7150, r: 90, sizes: [{n: 'Queen', w: 1520, d: 1905}, {n: 'Super single', w: 1070, d: 1905}], buy: ['kx-bed', 'kx-mattress'], research: 'beds', note: 'Mattress size. A storage frame adds about 5 to 10 cm each way.'},
-  {id: 'kx-wardrobe', name: 'KX L-shaped wardrobe (V Haus)', room: 'kx', kind: 'lwardrobe', x: 1480, y: 4682, r: 0, sizes: [{n: 'L 188 + 112.5 cm, 60 deep', w: 1880, d: 1125, t: 600, price: 'About RM5,800', note: 'Custom, full height (270 cm), Mixbox melamine. Measured by V Haus after the hacking (3 to 5 Dec).'}], research: 'vhaus', note: 'Drawn where the old wardrobe is. Turn it to match the real corner after V Haus measures.'},
   {id: 'kx-vanity', name: 'KX study / vanity desk', room: 'kx', kind: 'desk', x: 3700, y: 4330, r: 0, sizes: [
    {n: 'IKEA MALM 120 × 41', w: 1200, d: 410, price: 'S$99', href: 'https://www.ikea.com/sg/en/p/malm-dressing-table-white-40355409/', img: '/images/research/ikea-malm-dressing-table.webp', note: 'Dressing table that also works as a desk; long drawer.'},
    {n: 'IKEA SYVDE 100 × 48', w: 1000, d: 480, price: 'S$249', href: 'https://www.ikea.com/sg/en/p/syvde-dressing-table-white-00439562/', img: '/images/research/ikea-syvde-dressing-table.webp'},
@@ -98,7 +97,17 @@ export const PLAN = {
    {n: 'IKEA MARIUS 40 × 40', w: 400, d: 400, price: 'S$5.90', href: 'https://www.ikea.com/sg/en/p/marius-stool-black-00162380/', img: '/images/research/ikea-marius-stool.webp', note: '45 cm high; slides under the table.'},
   ], research: 'rooms'},
   // ---------- Living, dining ----------
-  {id: 'living-sofa', name: 'L-shape sofa', room: 'living', kind: 'sofa', x: 9420, y: 3400, r: 90, est: true, sizes: [{n: '4-seat L (about)', w: 2600, d: 1600}], buy: ['living-l-shape-4-seat'], research: 'vhaus', note: 'Size is an estimate until the V Haus model is chosen.'},
+  // New id (21 Nov evening) so the new default applies: back on the bedroom 2 wall, facing the TV, chaise by the window.
+  {id: 'living-sofa-l', name: 'L-shape sofa', room: 'living', kind: 'sofa', x: 9420, y: 3320, r: 270, est: true, sizes: [{n: 'Chaise by the window (about 260 × 160)', w: 2600, d: 1600, flip: true}, {n: 'Chaise to the dining side (about 260 × 160)', w: 2600, d: 1600}], buy: ['living-l-shape-4-seat'], research: 'vhaus', note: 'Size is an estimate until the V Haus model is chosen. The viewing lines to the TV start from the middle seat, about 50 cm in from the sofa back (head position).'},
+  {id: 'living-coffee-table', name: 'Coffee table (undecided)', room: 'living', kind: 'ctable', x: 10340, y: 3700, r: 90, s: 3, sizes: [
+   {n: 'IKEA LACK 90 × 55', w: 900, d: 550, price: 'S$39.90', href: 'https://www.ikea.com/sg/en/p/lack-coffee-table-black-brown-20352987/', img: '/images/research/ikea-lack-coffee-90.webp'},
+   {n: 'IKEA HOLMERUD 90 × 55', w: 900, d: 550, price: 'S$79.90', href: 'https://www.ikea.com/sg/en/p/holmerud-coffee-table-dark-brown-80541419/', img: '/images/research/ikea-holmerud-coffee.webp', note: 'Shelf underneath.'},
+   {n: 'IKEA ÄMMARYD 98 × 59', w: 980, d: 590, price: 'S$99.90', href: 'https://www.ikea.com/sg/en/p/aemmaryd-coffee-table-white-10609120/', img: '/images/research/ikea-ammaryd-coffee.webp'},
+   {n: 'IKEA ÖRTRÄSK 110 × 68', w: 1100, d: 680, price: 'S$219', href: 'https://www.ikea.com/sg/en/p/oertraesk-coffee-table-brown-ash-veneer-90635846/', img: '/images/research/ikea-ortrask-coffee.webp', note: 'Ash veneer; a common middle size.'},
+   {n: 'IKEA LACK 118 × 78', w: 1180, d: 780, price: 'S$69.90', href: 'https://www.ikea.com/sg/en/p/lack-coffee-table-black-brown-80352951/', img: '/images/research/ikea-lack-coffee-118.webp'},
+   {n: 'IKEA UGGLERUM 130 × 65', w: 1300, d: 650, price: 'S$199', href: 'https://www.ikea.com/sg/en/p/ugglerum-coffee-table-walnut-veneer-80627979/', img: '/images/research/ikea-ugglerum-coffee.webp', note: 'Walnut veneer.'},
+   {n: 'IKEA VITTSJÖ round Ø75', w: 750, d: 750, round: true, price: 'S$69.90', href: 'https://www.ikea.com/sg/en/p/vittsjoe-coffee-table-light-beige-glass-50604347/', img: '/images/research/ikea-vittsjo-coffee.webp', note: 'Round glass top.'},
+  ], note: 'Not decided yet. Keep about 40 to 45 cm between the sofa and the table, and a clear walkway past it. A common guide is a table about two thirds as long as the sofa.'},
   {id: 'living-tv', name: 'TV', room: 'living', kind: 'tv', x: 12360, y: 3400, r: 90, sizes: [
    {n: 'LG OLED C6 65"', w: 1441, d: 45, price: 'S$3,254 (Electromart)', img: '/images/buy/lg-oled-evo-c6-65-2026-a32203.webp', note: '144.1 × 82.6 cm, 4.5 cm deep (without stand).'},
    {n: 'LG QNED86B 75" (Mini LED)', w: 1677, d: 31, price: 'S$3,499 (Harvey Norman)', href: 'https://www.harveynorman.com.sg/tv-and-audio/tvs-en-2/tvs-en-3/lg-75-inch-d86-qned-evo-mini-led-ai-4k-2026-smart-tv-black-75qned86bsa.atc.html', img: '/images/research/lg-75qned86b.webp', note: 'LG has no 75" OLED; this is the closest LG at 75". 167.7 × 96.5 cm.'},
@@ -114,7 +123,7 @@ export const PLAN = {
    {n: 'Mitsubishi HGS 69.9 × 72', w: 699, d: 720, price: 'S$1,799 (COURTS)', img: '/images/buy/mitsubishi-423-l-freezer-at-bottom-69-9-cm-wide-no-gap-231015.webp', note: 'Size of the same HGS body (421 L); check the SG 423 L model.'},
   ], buy: ['fridge'], research: 'tv-kitchen', note: 'The fridge space measured 70 × 75 × 180 cm. Placed at the marked fridge spot; move it if the spot is different.'},
   {id: 'kitchen-water', name: 'LG PuriCare WD518AN water dispenser (bought)', room: 'kitchen', kind: 'dispenser', x: 9700, y: 10560, r: 180, sizes: [{n: 'WD518AN 16.8 × 48.5', w: 168, d: 485, img: '/images/research/lg-wd518an.webp', note: 'On the countertop. 16.8 cm wide, 41.8 cm tall, 48.5 cm deep with the drip tray (COURTS); LG lists 40 cm deep without it. Needs a water inlet and a power point nearby.'}], research: 'tv-kitchen'},
-  {id: 'kitchen-fan', name: 'Fanco Dono corner fan', room: 'kitchen', kind: 'cfan', x: 7650, y: 9200, r: 0, est: true, sizes: [{n: '16" corner fan (about 45 cm)', w: 450, d: 450, img: '/images/buy/fanco-dc-dono-16-corner-fan-wall-or-ceiling-mount-remote-837335.webp', note: 'Mounted high in a corner (wall or ceiling). Size not listed by the shop; drawn as the 16" blade.'}], buy: ['kitchen-fan'], research: 'tv-kitchen'},
+  {id: 'kitchen-fan', name: 'Fanco Dono corner fan', room: 'kitchen', kind: 'cfan', x: 7650, y: 9200, r: 315, est: true, sweep: 90, reach: 4000, sizes: [{n: '16" corner fan (about 45 cm)', w: 450, d: 450, img: '/images/buy/fanco-dc-dono-16-corner-fan-wall-or-ceiling-mount-remote-837335.webp', note: 'Mounted high in a corner (wall or ceiling). Size not listed by the shop; drawn as the 16" blade.'}], buy: ['kitchen-fan'], research: 'tv-kitchen', note: 'Swings 90° side to side (Electromart listing). The shop does not give how far the air reaches; the fan-shaped area is drawn to about 4 m as an estimate. Use Aim to point it.'},
   {id: 'robot-dock', name: 'Robot vacuum dock', room: 'yard', kind: 'dock', x: 6300, y: 9500, r: 0, sizes: [{n: 'Dock', w: 420, d: 460}], buy: ['kitchen-robot-vacuum-mop'], note: 'Docks on the list are up to 42 × 46 × 59 cm. Near the yard water points and floor drain.'},
   // ---------- Wi-Fi (see research: fibre comes in at the DB box by the entrance) ----------
   {id: 'wifi-main', name: 'Main router: TP-Link HB615 (StarHub), entrance', room: 'entrance', kind: 'wifi', x: 11300, y: 9700, r: 0, sizes: [{n: 'In use', w: 200, d: 200}, {n: 'Not used', w: 200, d: 200}], wifi: true, note: 'Next to the fibre box (ONT) at the DB box by the entrance.'},
@@ -123,8 +132,8 @@ export const PLAN = {
  ],
  // Points: draft positions to show the idea. Set the real ones on 3 Dec.
  pointTypes: [
-  {id: 'light', name: 'Downlight', layer: 'lights'},
-  {id: 'fan', name: 'Ceiling fan', layer: 'lights'},
+  {id: 'light', name: 'Downlight', layer: 'lights', spec: {model: 'Philips Meson 5" 13W (on the to-buy list)', lm: '900 lm (3000K) or 960 lm (4000K)', beam: 110, src: 'Philips / Signify spec sheets'}},
+  {id: 'fan', name: 'Ceiling fan', layer: 'lights', spec: {model: 'KDK F40GP 100 cm DC fan with LED light (on the to-buy list)', sweep: 1000, air: '155 m³/min, air speed 220 m/min, 10 speeds', light: 'LED light; KDK does not publish its brightness. 31 W fan only, 50 W with the light.', beam: 120, src: 'KDK Singapore product page'}},
   {id: 'socket', name: 'Socket', layer: 'power'},
   {id: 'switch', name: 'Switch', layer: 'power'},
   {id: 'lan', name: 'LAN port', layer: 'net'},
@@ -135,6 +144,10 @@ export const PLAN = {
   fan: [[3930,2780],[3630,6700],[10650,7400]],
   socket: [], switch: [], lan: [], tp: [[11150, 9400]],
  },
+  // Ceiling height used for light pools (estimate until measured on 3 Dec; the living room has a false ceiling).
+ ceilingMm: 2600, workMm: 750,
+ // TV viewing: SMPTE recommends the screen fills about 30° of view, THX about 40° (36° to 40°).
+ tvView: {smpte: 30, thx: 40, headMm: 500, sofa: 'living-sofa-l'},
  // Wi-Fi estimate (like the predictive heatmaps in NetSpot or Hamina, much simpler):
  // signal = power − free-space loss − wall losses. dbm = about 20 dBm router power minus about 6 dB for a phone's
  // weaker antenna, body and furniture. Power and wall losses are typical values, not measured.
@@ -165,9 +178,11 @@ export function validPlanValue(spec, value) {
  if (value === '') return true;
  if (spec.kind === 'item') {
   // "x,y,rotation,size" where size is a choice number or a custom size "c<width>x<depth>" in mm (100 to 4000).
-  const m = /^(-?\d{1,5}),(-?\d{1,5}),(0|90|180|270),(\d|c(\d{3,4})x(\d{3,4}))$/.exec(value);
+  const m = /^(-?\d{1,5}),(-?\d{1,5}),(\d{1,3}),(\d|c(\d{3,4})x(\d{3,4}))$/.exec(value);
   if (!m) return false;
-  const x = Number(m[1]), y = Number(m[2]), it = PLAN.items.find(i => i.id === spec.id);
+  const x = Number(m[1]), y = Number(m[2]), r = Number(m[3]), it = PLAN.items.find(i => i.id === spec.id);
+  // Corner fans aim in 45° steps; everything else turns in 90° steps.
+  if (it.kind === 'cfan' ? r % 45 || r > 315 : r % 90 || r > 270) return false;
   if (!(x >= 0 && x <= MAX && y >= 0 && y <= MAX)) return false;
   if (m[5]) {const w = Number(m[5]), d = Number(m[6]); return !it.wifi && w >= 100 && w <= 4000 && d >= 100 && d <= 4000;}
   return Number(m[4]) < it.sizes.length;

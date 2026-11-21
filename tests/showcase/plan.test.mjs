@@ -28,7 +28,7 @@ test('floor plan: every item starts inside its room, links to real to-buy items 
  const rooms=Object.fromEntries(PLAN.rooms.map(r=>[r.id,r])),topics=new Set(RESEARCH.map(t=>t.id));
  for(const i of PLAN.items){
   assert.ok(rooms[i.room],i.id+' room');assert.ok(inRoom(i.x,i.y,rooms[i.room]),i.id+' starts in its room');
-  assert.ok([0,90,180,270].includes(i.r));assert.ok(i.sizes.length&&i.sizes.every(s=>s.w>0&&s.d>0&&s.n));
+  assert.ok(i.kind==='cfan'?i.r%45===0&&i.r<360:[0,90,180,270].includes(i.r));assert.ok(i.sizes.length&&i.sizes.every(s=>s.w>0&&s.d>0&&s.n));
   for(const b of i.buy??[])assert.ok(buyItemById(b),i.id+' -> '+b);
   if(i.research)assert.ok(topics.has(i.research),i.id+' research');
  }
@@ -91,4 +91,23 @@ test('floor plan: KY room fits the biggest MAGNUS Pro desk next to the GURSKEN w
  assert.deepEqual([it('kitchen-water').sizes[0].w,it('kitchen-water').sizes[0].d],[168,485]);
  for(const i of PLAN.items)for(const z of i.sizes){if(z.img)assert.ok(existsSync(new URL('../../public'+z.img,import.meta.url)),z.img);if(z.href)assert.match(z.href,/^https:\/\//);}
  for(const t of RESEARCH)for(const o of t.shortlist)if(o.img)assert.ok(existsSync(new URL('../../public'+o.img,import.meta.url)),o.img);
+});
+
+test('floor plan: TV viewing distances, light beams and the corner fan aim',()=>{
+ const it=id=>PLAN.items.find(i=>i.id===id),dist=(w,deg)=>w/2/Math.tan(deg/2*Math.PI/180);
+ // 65" C6 (144.1 cm wide): 40° at about 1.98 m, 30° at about 2.69 m. 77" (171.1 cm): 2.35 m to 3.19 m.
+ assert.deepEqual([dist(1441,40),dist(1441,30)].map(v=>Math.round(v/10)),[198,269]);
+ assert.deepEqual([dist(1711,40),dist(1711,30)].map(v=>Math.round(v/10)),[235,319]);
+ assert.deepEqual([PLAN.tvView.smpte,PLAN.tvView.thx],[30,40]);
+ assert.ok(it(PLAN.tvView.sofa),'the sofa used for the viewing lines exists');
+ assert.ok(it('living-sofa-l').sizes[0].flip,'chaise by the window by default');
+ assert.ok(!PLAN.items.some(i=>i.id==='kx-wardrobe'),'KX wardrobe is off the plan');
+ const light=PLAN.pointTypes.find(t=>t.id==='light').spec;assert.equal(light.beam,110);
+ assert.equal(Math.round((PLAN.ceilingMm-PLAN.workMm)*Math.tan(55*Math.PI/180)),2642,'Meson pool radius at table height');
+ const DB=database();
+ return (async()=>{
+  assert.equal(await put(DB,'p:i:kitchen-fan','7650,9200,45,0'),200,'corner fan aims in 45° steps');
+  assert.equal(await put(DB,'p:i:ky-bed','4000,2500,45,0'),422,'beds still turn in 90° steps');
+  assert.equal(await put(DB,'p:i:living-coffee-table','10340,3700,90,6'),200,'round coffee table');
+ })();
 });

@@ -17,11 +17,11 @@ export function planData(v = {}, ro = false) {
   buy[id] = {name: f.item.name, room: f.room.name, tag: c.tag, qty: c.qty, pick: c.pick, opts: optionsOf(f.item).map((o, k) => ({n: o.name, m: o.model ?? '', p: money(o.price, o.cur), s: Math.round(toSGD(o, BUY.rate) * 100) / 100, shop: o.shop ?? '', href: o.href ?? '', est: !!(o.est ?? (k === 0 && f.item.est)), img: photoOf(id, k)?.src ?? '', note: k ? o.note ?? '' : ''}))};
  }
  const research = Object.fromEntries(RESEARCH.map(t => [t.id, {title: t.title, status: t.status, answer: t.answer, updated: t.updated, list: t.shortlist.map(o => ({g: o.group, n: o.name, p: money(o.price, o.cur), shop: o.shop, href: o.href ?? '', pick: !!o.pick, why: o.why ?? '', specs: o.specs ?? []}))}]));
- return {ro, rate: BUY.rate, img: PLAN.img, W: Math.round(PLAN.imgW * PLAN.mmPerPx), H: Math.round(PLAN.imgH * PLAN.mmPerPx), rooms: PLAN.rooms, walls: PLAN.walls, items: st.items, points: st.points, pointTypes: PLAN.pointTypes, wifi: PLAN.wifi, colours: ROOM_COLOURS, buy, research};
+ return {ro, rate: BUY.rate, img: PLAN.img, W: Math.round(PLAN.imgW * PLAN.mmPerPx), H: Math.round(PLAN.imgH * PLAN.mmPerPx), rooms: PLAN.rooms, walls: PLAN.walls, items: st.items, points: st.points, pointTypes: PLAN.pointTypes, wifi: PLAN.wifi, tvView: PLAN.tvView, ceilingMm: PLAN.ceilingMm, workMm: PLAN.workMm, colours: ROOM_COLOURS, buy, research};
 }
 
 const ROOM_CHIPS = [['all', 'Whole home'], ['ky', 'KY'], ['ks', 'KS'], ['kx', 'KX'], ['living', 'Living'], ['dining', 'Dining'], ['kitchen', 'Kitchen + yard'], ['common-bath', 'Common bath'], ['master-bath', 'Master bath']];
-const LAYERS = [['furniture', 'Furniture', true], ['lights', 'Lights and fans', true], ['power', 'Sockets and switches', false], ['net', 'Network', true], ['wifi', 'Wi-Fi coverage', false]];
+const LAYERS = [['furniture', 'Furniture', true], ['lights', 'Lights and fans', true], ['power', 'Sockets and switches', false], ['tv', 'TV viewing', true], ['air', 'Fan air', true], ['net', 'Network', true], ['wifi', 'Wi-Fi coverage', false]];
 
 export function planPage(v = {}, ro = false) {
  const data = planData(v, ro);

@@ -48,7 +48,7 @@ export const RESEARCH = [
  },
  {
   id: 'vhaus', tone: 'sand', short: 'V Haus', title: 'V Haus: dining set, wardrobe, sofa', rooms: ['dining', 'kx', 'living'], status: 'Shortlist', updated: '2026-11-21',
-  chat: 'La Casa shop helper chat', plan: ['dining-table', 'living-sofa'],
+  chat: 'La Casa shop helper chat', plan: ['dining-table', 'living-sofa-l'],
   answer: 'Three things from V Haus Living (JB, contact Jason Yee): the LINO dining set (sold out, next stock mid to end January), a custom L-shaped wardrobe for KX room (about RM5,800, measured after the 3 to 5 Dec hacking, made in about a month) and the sofa (not chosen yet).',
   decide: [
    'Sofa model and fabric (visit V Haus, maybe Sun 22 Nov).',

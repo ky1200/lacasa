@@ -61,6 +61,17 @@ if (Object.keys(pending()).length) flush();
 const sizeOf = it => {const s = it.c ? {...(it.sizes[0]), n: 'Custom', w: it.c.w, d: it.c.d, custom: true} : it.sizes[it.s] ?? it.sizes[0], rot = it.r % 180 !== 0; return {w: rot ? s.d : s.w, d: rot ? s.w : s.d, s};};
 const boxOf = it => {const {w, d} = sizeOf(it); return {x1: it.x - w / 2, y1: it.y - d / 2, x2: it.x + w / 2, y2: it.y + d / 2};};
 const inBox = (x, y, b) => x >= b[0] && x <= b[0] + b[2] && y >= b[1] && y <= b[1] + b[3];
+// Footprint as one or more boxes: an L-shaped sofa is two boxes (seat run + chaise), so a table beside it is not a clash.
+const boxesOf = it => {
+ if (it.kind !== 'sofa') return [boxOf(it)];
+ const {s} = sizeOf(it), w = s.w, d = s.d, x = -w / 2, y = -d / 2, chaise = Math.min(900, w * .36), seatD = Math.min(950, d * .6), f = s.flip ? -1 : 1;
+ const local = [[x, y, x + w, y + seatD], [x, y + seatD, x + chaise, y + d]];
+ const th = it.r * Math.PI / 180, c = Math.cos(th), sn = Math.sin(th);
+ return local.map(([a1, b1, a2, b2]) => {
+  const pts = [[a1, b1], [a2, b1], [a1, b2], [a2, b2]].map(([px, py]) => {px *= f; return [it.x + px * c - py * sn, it.y + px * sn + py * c];});
+  return {x1: Math.min(...pts.map(p => p[0])), y1: Math.min(...pts.map(p => p[1])), x2: Math.max(...pts.map(p => p[0])), y2: Math.max(...pts.map(p => p[1]))};
+ });
+};
 const roomAt = (x, y) => D.rooms.find(r => r.boxes.some(b => inBox(x, y, b)));
 const toPlan = e => {const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; const m = svg.getScreenCTM(); return m ? pt.matrixTransform(m.inverse()) : {x: 0, y: 0};};
 const segCross = (ax, ay, bx, by, cx, cy, dx, dy) => {
@@ -101,6 +112,10 @@ const queueHeat = () => {if (heatQueued) return; heatQueued = true; requestAnima
 const defs = mk('defs', {}, svg);
 const rg = mk('radialGradient', {id: 'plan-glow'}, defs);
 mk('stop', {offset: '0', 'stop-color': '#ffd27a', 'stop-opacity': '.95'}, rg); mk('stop', {offset: '.45', 'stop-color': '#ffc04d', 'stop-opacity': '.35'}, rg); mk('stop', {offset: '1', 'stop-color': '#ffb02e', 'stop-opacity': '0'}, rg);
+const ag = mk('radialGradient', {id: 'plan-air'}, defs);
+mk('stop', {offset: '0', 'stop-color': '#5fb4d9', 'stop-opacity': '.34'}, ag); mk('stop', {offset: '.35', 'stop-color': '#5fb4d9', 'stop-opacity': '.2'}, ag); mk('stop', {offset: '1', 'stop-color': '#5fb4d9', 'stop-opacity': '0'}, ag);
+const mkr = mk('marker', {id: 'plan-arrow', viewBox: '0 0 10 10', refX: 8, refY: 5, markerWidth: 5, markerHeight: 5, orient: 'auto-start-reverse'}, defs);
+mk('path', {d: 'M0,0L10,5L0,10z', fill: '#2f86ad'}, mkr);
 const gGrid = mk('g', {class: 'plan-grid'});
 svg.insertBefore(gGrid, svg.querySelector('.plan-bg'));
 for (let x = 0; x <= D.W; x += 1000) mk('line', {x1: x, y1: 0, x2: x, y2: D.H, 'vector-effect': 'non-scaling-stroke'}, gGrid);
@@ -109,8 +124,10 @@ const gHeat = mk('g', {class: 'plan-heat'}, svg);
 heatImg = mk('image', {x: 0, y: 0, width: D.W, height: D.H, preserveAspectRatio: 'none', class: 'plan-heat-img'}, gHeat);
 const gRooms = mk('g', {class: 'plan-roomlabels'}, svg);
 const gLinks = mk('g', {class: 'plan-links'}, svg);
+const gAir = mk('g', {class: 'plan-air'}, svg);
 const gItems = mk('g', {class: 'plan-items'}, svg);
 const gPts = mk('g', {class: 'plan-points'}, svg);
+const gTv = mk('g', {class: 'plan-tv'}, svg);
 const gMeasure = mk('g', {class: 'plan-measure'}, svg);
 const gLabels = mk('g', {class: 'plan-labels'}, svg);
 const gTape = mk('g', {class: 'plan-tape'}, svg);
@@ -127,8 +144,12 @@ const shape = (it, g) => {
   mk('line', {x1: x, y1: y + 620, x2: x + w, y2: y + 620, class: 'fold', ...ns}, g);
  } else if (it.kind === 'sofa') {
   const back = 220, chaise = Math.min(900, w * .36), seatD = Math.min(950, d * .6);
-  mk('path', {d: `M${x},${y}H${x + w}V${y + seatD}H${x + chaise}V${y + d}H${x}Z`, class: 'body', ...ns}, g);
-  mk('path', {d: `M${x},${y}H${x + w}V${y + back}H${x + back}V${y + d}H${x}Z`, class: 'back', ...ns}, g);
+  const f = s.flip ? mk('g', {transform: 'scale(-1 1)'}, g) : g; // chaise on the other end
+  mk('path', {d: `M${x},${y}H${x + w}V${y + seatD}H${x + chaise}V${y + d}H${x}Z`, class: 'body', ...ns}, f);
+  mk('path', {d: `M${x},${y}H${x + w}V${y + back}H${x + back}V${y + d}H${x}Z`, class: 'back', ...ns}, f);
+ } else if (it.kind === 'ctable') {
+  if (s.round) mk('circle', {cx: 0, cy: 0, r: w / 2, class: 'body', ...ns}, g);
+  else {mk('rect', {x, y, width: w, height: d, rx: 30, class: 'body', ...ns}, g); mk('rect', {x: x + 60, y: y + 60, width: w - 120, height: d - 120, rx: 20, class: 'fold', fill: 'none', ...ns}, g);}
  } else if (it.kind === 'tv') {
   mk('rect', {x, y, width: w, height: Math.max(d, 60), rx: 10, class: 'tv', ...ns}, g);
  } else if (it.kind === 'table') {
@@ -181,16 +202,16 @@ const layerOfItem = it => it.wifi ? 'net' : 'furniture';
 const SOFT = new Set(['chair', 'stool', 'cfan', 'wifi']);
 const clashes = it => {
  if (SOFT.has(it.kind)) return [];
- const a = boxOf(it), pad = 15, out = [];
+ const pad = 15, out = [], hit = (a, b) => a.x1 + pad < b.x2 && a.x2 - pad > b.x1 && a.y1 + pad < b.y2 && a.y2 - pad > b.y1;
+ const mine = boxesOf(it);
  for (const o of items) {
   if (o === it || SOFT.has(o.kind) || !layers.has(layerOfItem(o))) continue;
   if (it.kind === 'dispenser' || o.kind === 'dispenser') continue;
-  const b = boxOf(o);
-  if (a.x1 + pad < b.x2 && a.x2 - pad > b.x1 && a.y1 + pad < b.y2 && a.y2 - pad > b.y1) out.push(o.name.replace(/ \(.*\)$/, ''));
+  if (mine.some(a => boxesOf(o).some(b => hit(a, b)))) out.push(o.name.replace(/ \(.*\)$/, ''));
  }
- for (const [x1, y1, x2, y2] of D.walls) {
-  if (x1 === x2 && x1 > a.x1 + pad && x1 < a.x2 - pad && Math.max(y1, y2) > a.y1 + pad && Math.min(y1, y2) < a.y2 - pad) {out.push('a wall'); break;}
-  if (y1 === y2 && y1 > a.y1 + pad && y1 < a.y2 - pad && Math.max(x1, x2) > a.x1 + pad && Math.min(x1, x2) < a.x2 - pad) {out.push('a wall'); break;}
+ wall: for (const a of mine) for (const [x1, y1, x2, y2] of D.walls) {
+  if (x1 === x2 && x1 > a.x1 + pad && x1 < a.x2 - pad && Math.max(y1, y2) > a.y1 + pad && Math.min(y1, y2) < a.y2 - pad) {out.push('a wall'); break wall;}
+  if (y1 === y2 && y1 > a.y1 + pad && y1 < a.y2 - pad && Math.max(x1, x2) > a.x1 + pad && Math.min(x1, x2) < a.x2 - pad) {out.push('a wall'); break wall;}
  }
  return out;
 };
@@ -228,17 +249,74 @@ const drawLinks = () => {
   mk('text', {x: (main.x + n.x) / 2, y: (main.y + n.y) / 2, class: 'plan-linklabel'}, gLinks).textContent = `${Math.round(s.dbm)} dBm`;
  }
 };
+// Light pool radius at table height: (ceiling − table) × tan(beam ÷ 2).
+const specOf = t => D.pointTypes.find(x => x.id === t)?.spec;
+const poolR = t => {const b = specOf(t)?.beam ?? 110; return Math.round((D.ceilingMm - D.workMm) * Math.tan(b / 2 * Math.PI / 180));};
 const drawPoints = () => {
  gPts.textContent = '';
  for (const [t, list] of Object.entries(points)) {
   if (!layers.has(typeLayer[t])) continue;
   list.forEach((p, k) => {
    const g = mk('g', {class: `plan-pt pt-${t}${selected?.pt === t && selected.k === k ? ' is-sel' : ''}`, transform: `translate(${p[0]} ${p[1]})`, 'data-pt': t, 'data-k': k, role: 'button', 'aria-label': typeName[t]}, gPts);
-   if (t === 'fan') {mk('circle', {r: 500, class: 'fanring', 'vector-effect': 'non-scaling-stroke'}, g); mk('circle', {r: 90, class: 'core'}, g);}
-   else if (t === 'light') {mk('circle', {r: 1400, class: 'pool', fill: 'url(#plan-glow)'}, g); mk('circle', {r: 260, class: 'glow', fill: 'url(#plan-glow)'}, g); mk('circle', {r: 75, class: 'core'}, g);}
+   if (t === 'fan') {mk('circle', {r: poolR(t), class: 'pool fanpool', fill: 'url(#plan-glow)'}, g); mk('circle', {r: 500, class: 'fanring', 'vector-effect': 'non-scaling-stroke'}, g); mk('circle', {r: 90, class: 'core'}, g);}
+   else if (t === 'light') {mk('circle', {r: poolR(t), class: 'pool', fill: 'url(#plan-glow)'}, g); mk('circle', {r: 260, class: 'glow', fill: 'url(#plan-glow)'}, g); mk('circle', {r: 75, class: 'core'}, g);}
    else mk('rect', {x: -90, y: -90, width: 180, height: 180, rx: t === 'socket' ? 30 : 90, class: 'core'}, g);
   });
  }
+};
+// Fan air: ceiling fans blow down under the blades and spread out; the corner fan sweeps 90°.
+const drawAir = () => {
+ gAir.textContent = '';
+ if (!layers.has('air')) return;
+ const ns = {'vector-effect': 'non-scaling-stroke'};
+ for (const [x, y] of points.fan ?? []) {
+  const sw = specOf('fan')?.sweep ?? 1000;
+  mk('circle', {cx: x, cy: y, r: sw * 1.6, fill: 'url(#plan-air)', class: 'airzone'}, gAir);
+  for (let a = 0; a < 8; a++) {const t = a * Math.PI / 4, r1 = sw * .62, r2 = sw * 1.2; mk('line', {x1: x + Math.cos(t) * r1, y1: y + Math.sin(t) * r1, x2: x + Math.cos(t) * r2, y2: y + Math.sin(t) * r2, class: 'airarrow', 'marker-end': 'url(#plan-arrow)', ...ns}, gAir);}
+ }
+ for (const it of items.filter(i => i.kind === 'cfan' && layers.has('furniture'))) {
+  const sweep = (it.sweep ?? 90) * Math.PI / 180, reach = it.reach ?? 4000, aim = Math.atan2(Math.cos(it.r * Math.PI / 180), -Math.sin(it.r * Math.PI / 180));
+  const a1 = aim - sweep / 2, a2 = aim + sweep / 2;
+  mk('path', {d: `M${it.x},${it.y}L${it.x + Math.cos(a1) * reach},${it.y + Math.sin(a1) * reach}A${reach},${reach} 0 0 1 ${it.x + Math.cos(a2) * reach},${it.y + Math.sin(a2) * reach}Z`, class: 'airwedge', ...ns}, gAir);
+  for (const f of [.45, .75]) mk('path', {d: `M${it.x + Math.cos(a1) * reach * f},${it.y + Math.sin(a1) * reach * f}A${reach * f},${reach * f} 0 0 1 ${it.x + Math.cos(a2) * reach * f},${it.y + Math.sin(a2) * reach * f}`, class: 'airarc', fill: 'none', ...ns}, gAir);
+  mk('line', {x1: it.x, y1: it.y, x2: it.x + Math.cos(aim) * reach * .9, y2: it.y + Math.sin(aim) * reach * .9, class: 'airarrow', 'marker-end': 'url(#plan-arrow)', ...ns}, gAir);
+ }
+ // The selected light point: its beam circle at table height.
+ if (selected?.pt === 'light' || selected?.pt === 'fan') {
+  const [x, y] = points[selected.pt][selected.k] ?? [], r = poolR(selected.pt);
+  if (x != null) {mk('circle', {cx: x, cy: y, r, class: 'beamring', fill: 'none', ...ns}, gAir); mk('text', {x, y: y - r - 80, class: 'gaplabel'}, gAir).textContent = `lit area about ${(r * 2 / 1000).toFixed(1)} m across`;}
+ }
+};
+// TV viewing: lines from the screen edges to the sofa seat, and the band where the screen fills 30° to 40° of view.
+const tvMath = (w, dist) => 2 * Math.atan(w / 2 / dist) * 180 / Math.PI;
+const distFor = (w, deg) => w / 2 / Math.tan(deg / 2 * Math.PI / 180);
+const viewer = () => {
+ const tv = items.find(i => i.kind === 'tv'), so = items.find(i => i.id === D.tvView.sofa);
+ if (!tv || !so) return null;
+ const th = tv.r * Math.PI / 180, nx = -Math.sin(th), ny = Math.cos(th); // the screen faces this way
+ const face = {x: tv.x + nx * sizeOf(tv).s.d / 2, y: tv.y + ny * sizeOf(tv).s.d / 2};
+ const b = boxOf(so);
+ // Head position: on the TV's centre line (kept inside the sofa), 50 cm in from the sofa's back edge.
+ let vx, vy;
+ if (Math.abs(nx) > Math.abs(ny)) {const back = nx < 0 ? b.x1 : b.x2; vx = back + (nx < 0 ? D.tvView.headMm : -D.tvView.headMm); vy = Math.min(Math.max(face.y, b.y1 + 400), b.y2 - 400);}
+ else {const back = ny < 0 ? b.y1 : b.y2; vy = back + (ny < 0 ? D.tvView.headMm : -D.tvView.headMm); vx = Math.min(Math.max(face.x, b.x1 + 400), b.x2 - 400);}
+ const dist = Math.abs(nx) > Math.abs(ny) ? Math.abs(face.x - vx) : Math.abs(face.y - vy);
+ return {tv, so, face, nx, ny, vx, vy, dist};
+};
+const drawTv = () => {
+ gTv.textContent = '';
+ if (!layers.has('tv') || !layers.has('furniture')) return;
+ const v = viewer(); if (!v) return;
+ const {tv, face, nx, ny, vx, vy, dist} = v, W = sizeOf(tv).s.w, px = -ny, py = nx; // along the screen
+ const e1 = {x: face.x + px * W / 2, y: face.y + py * W / 2}, e2 = {x: face.x - px * W / 2, y: face.y - py * W / 2};
+ const d40 = distFor(W, D.tvView.thx), d30 = distFor(W, D.tvView.smpte), half = W / 2 + 600, ns = {'vector-effect': 'non-scaling-stroke'};
+ const q = (d, s) => `${face.x + nx * d + px * half * s},${face.y + ny * d + py * half * s}`;
+ mk('path', {d: `M${q(d40, 1)}L${q(d30, 1)}L${q(d30, -1)}L${q(d40, -1)}Z`, class: 'tvband'}, gTv);
+ mk('text', {x: face.x + nx * (d40 + d30) / 2 + px * (half - 250), y: face.y + ny * (d40 + d30) / 2 + py * (half - 250), class: 'tvbandlabel'}, gTv).textContent = 'best seats';
+ mk('path', {d: `M${e1.x},${e1.y}L${vx},${vy}L${e2.x},${e2.y}`, class: 'tvlines', fill: 'none', ...ns}, gTv);
+ mk('circle', {cx: vx, cy: vy, r: 110, class: 'tvhead'}, gTv);
+ const ang = tvMath(W, dist);
+ mk('text', {x: vx, y: vy + 420, class: 'tvlabel'}, gTv).textContent = `${(dist / 1000).toFixed(1)} m · screen fills ${Math.round(ang)}°`;
 };
 // Gaps from the selected item to the nearest wall on each side (axis-aligned walls only).
 const drawMeasure = () => {
@@ -280,7 +358,7 @@ const drawMeasure = () => {
   mk('text', {x: (x1 + x2) / 2, y: (y1 + y2) / 2, class: 'gaplabel' + (len < 600 && len > 5 ? ' tight' : '')}, gMeasure).textContent = len < 5 ? 'touching' : `${cm(len)} cm`;
  }
 };
-const drawAll = () => {drawItems(); drawPoints(); drawMeasure(); queueHeat();};
+const drawAll = () => {drawItems(); drawPoints(); drawMeasure(); drawAir(); drawTv(); queueHeat();};
 
 // ---------- tape measure: tap two spots; snaps to a wall within 15 cm ----------
 const snapWall = p => {
@@ -361,8 +439,8 @@ svg.addEventListener('pointermove', e => {
  if (!drag.moved) return;
  dragging = true; const p = toPlan(e), snap = v => Math.round(v / 10) * 10;
  const x = Math.min(Math.max(snap(p.x - drag.dx), 0), D.W), y = Math.min(Math.max(snap(p.y - drag.dy), 0), D.H);
- if (drag.type === 'item') {drag.it.x = x; drag.it.y = y; selected = {id: drag.it.id}; drawItems(); drawMeasure(); if (drag.it.wifi) queueHeat();}
- else {points[drag.t][drag.k] = [x, y]; drawPoints();}
+ if (drag.type === 'item') {drag.it.x = x; drag.it.y = y; selected = {id: drag.it.id}; drawItems(); drawMeasure(); drawTv(); drawAir(); if (drag.it.wifi) queueHeat();}
+ else {points[drag.t][drag.k] = [x, y]; drawPoints(); drawAir();}
 });
 const end = e => {
  ptrs.delete(e.pointerId); if (ptrs.size < 2) pinch = null;
@@ -396,7 +474,7 @@ const emptySheet = () => {
  sheet.innerHTML = `<h3 class="sheet-empty-title">Things on the plan</h3><p class="sheet-note">Tap one to see its size, the choices and the research.</p><ul class="sheet-index">${items.map(it => `<li><button type="button" data-open="${esc(it.id)}"><i style="background:${D.colours[it.room] ?? '#56607a'}"></i><span>${esc(it.name)}</span><small>${esc(roomById[it.room]?.short ?? '')}</small></button></li>`).join('')}</ul>`;
  sheet.querySelectorAll('[data-open]').forEach(b => b.onclick = () => {const it = items.find(i => i.id === b.dataset.open); zoomRoom(it.room === 'yard' ? 'kitchen' : it.room); openItem(it, true);});
 };
-const closeSheet = () => {selected = null; emptySheet(); drawItems(); drawPoints(); drawMeasure();};
+const closeSheet = () => {selected = null; emptySheet(); drawItems(); drawPoints(); drawMeasure(); drawAir(); drawTv();};
 const buyBlock = id => {
  const b = D.buy[id]; if (!b) return '';
  return `<div class="sheet-buy"><h4>${esc(b.name.split(/,| \(/)[0])} <small>${esc(b.opts.length)} choice${b.opts.length === 1 ? '' : 's'} on the to-buy list${b.tag === 'maybe' ? ' · tagged Maybe' : ''}</small></h4><ul class="sheet-opts">${b.opts.map((o, k) => `<li><label class="sheet-opt${k === b.pick ? ' is-on' : ''}">${b.opts.length > 1 ? `<input type="radio" name="pick-${esc(id)}" value="${k}" data-pick="${esc(id)}"${k === b.pick ? ' checked' : ''}${D.ro ? ' disabled' : ''}>` : ''}${o.img ? `<img src="${esc(o.img)}" alt="" loading="lazy">` : '<span class="sheet-noimg"></span>'}<span class="sheet-opt-text"><b>${k ? '' : '<span class="buy-rec">Recommended</span> '}${esc(o.n)}</b>${o.m ? `<small>${esc(o.m)}</small>` : ''}<small>${esc(o.shop)}${o.href ? ` · <a href="${esc(o.href)}" target="_blank" rel="noopener noreferrer">See price ↗</a>` : ''}</small>${o.note ? `<small>${esc(o.note)}</small>` : ''}</span><strong>${esc(o.p)}${o.est ? '<small>Estimate</small>' : ''}</strong></label></li>`).join('')}</ul></div>`;
@@ -415,6 +493,14 @@ function sizeList(it) {
   return `<div class="sheet-size${on ? ' is-on' : ''}">${it.sizes.length > 1 ? `<button type="button" data-size="${k}" aria-pressed="${on}"${D.ro ? ' disabled' : ''}>` : '<div class="sheet-size-one">'}${z.img ? `<img src="${esc(z.img)}" alt="" loading="lazy">` : ''}<span><b>${esc(z.n)}</b>${z.price ? `<small>${esc(z.price)}</small>` : ''}${z.note ? `<small>${esc(z.note)}</small>` : ''}</span>${it.sizes.length > 1 ? '</button>' : '</div>'}${z.href ? `<a class="sheet-size-link" href="${esc(z.href)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(z.n)} product page">Product page ↗</a>` : ''}</div>`;
  }).join('')}</div>`;
 }
+// For the TV: each size, the best seating distance (40° to 30°) and how much of the view it fills from the sofa.
+function tvTable(it) {
+ const v = viewer();
+ return `<div class="sheet-tv"><h4>Viewing from the sofa${v ? ` <small>head about ${(v.dist / 1000).toFixed(1)} m from the screen</small>` : ''}</h4><table><thead><tr><th>Size</th><th>Best distance</th><th>From the sofa</th></tr></thead><tbody>${it.sizes.map((z, k) => {
+  const a = v ? tvMath(z.w, v.dist) : null, ok = a != null && a >= D.tvView.smpte - 1 && a <= D.tvView.thx + 1;
+  return `<tr${k === it.s && !it.c ? ' class="is-on"' : ''}><td>${esc(z.n)}</td><td>${(distFor(z.w, D.tvView.thx) / 1000).toFixed(1)} to ${(distFor(z.w, D.tvView.smpte) / 1000).toFixed(1)} m</td><td>${a == null ? '' : `<b class="${ok ? 'tv-ok' : 'tv-low'}">${Math.round(a)}°</b> ${ok ? 'in range' : a < D.tvView.smpte ? 'smaller than ideal' : 'very big'}`}</td></tr>`;
+ }).join('')}</tbody></table><p class="sheet-note">Best distance = where the screen fills 40° (THX) to 30° (SMPTE) of the view. Closer feels more like a cinema; further feels smaller. The green band on the plan shows this for the chosen size.</p></div>`;
+}
 function openItem(it, quiet = false) {
  selected = {id: it.id}; sheet.classList.remove('is-empty'); const {s} = sizeOf(it), room = roomById[it.room];
  sheet.innerHTML = `<div class="sheet-head"><div><span class="eyebrow">${esc(room?.name ?? '')}</span><h3>${esc(it.name)}</h3></div><button type="button" class="sheet-close" data-close aria-label="Close">×</button></div>
@@ -423,22 +509,32 @@ ${sizeList(it)}
 ${clashes(it).length ? `<p class="sheet-clash" role="status">Runs into ${esc([...new Set(clashes(it))].join(', '))}. Move, turn or pick a smaller size.</p>` : ''}
 ${it.wifi || D.ro ? '' : `<form class="sheet-custom" data-custom><span>Custom size</span><label>Width <input type="number" inputmode="numeric" min="10" max="400" step="0.5" name="w" value="${cm(s.w)}" required> cm</label><label>Depth <input type="number" inputmode="numeric" min="10" max="400" step="0.5" name="d" value="${cm(s.d)}" required> cm</label><button type="submit">Use this size</button></form>`}
 ${it.note ? `<p class="sheet-note">${esc(it.note)}</p>` : ''}
-${D.ro ? '' : `<div class="sheet-actions"><button type="button" data-rotate>Turn 90°</button>${moveOn ? '' : '<button type="button" data-movehint>Move it</button>'}</div>`}
-${(it.buy ?? []).map(buyBlock).join('')}${it.research ? researchBlock(it.research) : ''}${it.wifi && D.research.fibre ? researchBlock('fibre') : ''}`;
- sheet.hidden = false; drawItems(); drawMeasure();
+${D.ro ? '' : `<div class="sheet-actions"><button type="button" data-rotate>${it.kind === 'cfan' ? 'Aim 45°' : 'Turn 90°'}</button>${moveOn ? '' : '<button type="button" data-movehint>Move it</button>'}</div>`}
+${it.kind === 'tv' ? tvTable(it) : ''}${(it.buy ?? []).map(buyBlock).join('')}${it.research ? researchBlock(it.research) : ''}${it.wifi && D.research.fibre ? researchBlock('fibre') : ''}`;
+ sheet.hidden = false; drawItems(); drawMeasure(); drawTv(); drawAir();
  if (!quiet) sheet.scrollIntoView?.({block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
  sheet.querySelector('[data-close]').onclick = closeSheet;
  sheet.querySelectorAll('[data-size]').forEach(b => b.onclick = () => {it.s = +b.dataset.size; it.c = null; saveItem(it); openItem(it, true); queueHeat(); drawCart();});
  const cf = sheet.querySelector('[data-custom]');
  if (cf) cf.onsubmit = ev => {ev.preventDefault(); const w = Math.round(parseFloat(cf.w.value) * 10), d = Math.round(parseFloat(cf.d.value) * 10); if (!(w >= 100 && w <= 4000 && d >= 100 && d <= 4000)) {say('Size must be 10 to 400 cm'); return;} it.c = {w, d}; saveItem(it); openItem(it, true);};
- const rot = sheet.querySelector('[data-rotate]'); if (rot) rot.onclick = () => {it.r = (it.r + 90) % 360; saveItem(it); openItem(it, true);};
+ const rot = sheet.querySelector('[data-rotate]'); if (rot) rot.onclick = () => {it.r = (it.r + (it.kind === 'cfan' ? 45 : 90)) % 360; saveItem(it); openItem(it, true); drawAir(); drawTv();};
  const mh = sheet.querySelector('[data-movehint]'); if (mh) mh.onclick = () => {setMove(true); openItem(it, true);};
  sheet.querySelectorAll('[data-pick]').forEach(r => r.onchange = () => {const id = r.dataset.pick, k = +r.value; D.buy[id].pick = k; save(`b:${id}:pick`, k ? String(k) : ''); openItem(it, true); drawCart();});
 }
+function pointSpec(t) {
+ const sp = specOf(t); if (!sp) return '';
+ const r = poolR(t), rows = [['Model', sp.model]];
+ if (sp.lm) rows.push(['Brightness', sp.lm]);
+ if (sp.beam && t === 'light') rows.push(['Beam', `${sp.beam}°: lights a circle about ${(r * 2 / 1000).toFixed(1)} m across at table height (ceiling taken as ${(D.ceilingMm / 1000).toFixed(1)} m; check on 3 Dec)`]);
+ if (sp.sweep) rows.push(['Blades', `${sp.sweep / 10} cm across`]);
+ if (sp.air) rows.push(['Air', sp.air]);
+ if (sp.light) rows.push(['Light', sp.light]);
+ return `<dl class="sheet-spec">${rows.map(([a, b]) => `<dt>${esc(a)}</dt><dd>${esc(b)}</dd>`).join('')}</dl><p class="sheet-fine">From the ${esc(sp.src)}.${t === 'fan' ? ' The blue area on the plan (Fan air) is an estimate: strongest under the blades, then spreading out across the floor.' : ''}</p>`;
+}
 function openPoint(t, k) {
  selected = {pt: t, k}; sheet.classList.remove('is-empty'); const p = points[t][k], r = roomAt(p[0], p[1]);
- sheet.innerHTML = `<div class="sheet-head"><div><span class="eyebrow">${esc(r?.name ?? 'Plan')}</span><h3>${esc(typeName[t])}</h3></div><button type="button" class="sheet-close" data-close aria-label="Close">×</button></div><p class="sheet-note">Draft position. ${t === 'light' || t === 'fan' ? 'Mark the real spots on 3 Dec with the electrician.' : t === 'tp' || t === 'lan' ? 'Find and test on 3 Dec (see the 3 Dec checklist).' : 'Count sockets and switches on 3 Dec for the G3 line.'}</p>${D.ro ? '' : `<div class="sheet-actions"><button type="button" data-remove>Remove this ${esc(typeName[t].toLowerCase())}</button></div>`}`;
- sheet.hidden = false; drawPoints();
+ sheet.innerHTML = `<div class="sheet-head"><div><span class="eyebrow">${esc(r?.name ?? 'Plan')}</span><h3>${esc(typeName[t])}</h3></div><button type="button" class="sheet-close" data-close aria-label="Close">×</button></div>${pointSpec(t)}<p class="sheet-note">Draft position. ${t === 'light' || t === 'fan' ? 'Mark the real spots on 3 Dec with the electrician.' : t === 'tp' || t === 'lan' ? 'Find and test on 3 Dec (see the 3 Dec checklist).' : 'Count sockets and switches on 3 Dec for the G3 line.'}</p>${D.ro ? '' : `<div class="sheet-actions"><button type="button" data-remove>Remove this ${esc(typeName[t].toLowerCase())}</button></div>`}`;
+ sheet.hidden = false; drawPoints(); drawAir();
  sheet.querySelector('[data-close]').onclick = closeSheet;
  const rm = sheet.querySelector('[data-remove]'); if (rm) rm.onclick = () => {points[t].splice(k, 1); savePoints(t); closeSheet(); drawCounts();};
 }
