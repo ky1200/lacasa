@@ -52,13 +52,32 @@ export function planPage(v = {}, ro = false) {
 }
 
 export function researchPage() {
- const opt = o => `<li class="research-opt${o.pick ? ' is-pick' : ''}"><div class="research-opt-top"><span class="research-group">${h(o.group)}</span>${o.pick ? '<span class="research-pick">Current pick</span>' : ''}</div><b>${ext(o.href) ? `<a href="${h(o.href)}" target="_blank" rel="noopener noreferrer">${h(o.name)} ↗</a>` : h(o.name)}</b><span class="research-price">${h(money(o.price, o.cur))}${o.cur === 'MYR' && o.price ? ` ≈ S$${Math.round(o.price / BUY.rate).toLocaleString('en-SG')}` : ''} · ${h(o.shop)}</span>${o.why ? `<span>${h(o.why)}</span>` : ''}${o.specs?.length ? `<dl>${o.specs.map(([k, val]) => `<dt>${h(k)}</dt><dd>${h(val)}</dd>`).join('')}</dl>` : ''}</li>`;
- return `<article class="research-page"><header class="plan-head"><span class="eyebrow">Shortlists behind each choice</span><h1>Research</h1><p class="muted">One section per decision. The current pick is marked. Prices are as seen on the date shown; RM converted at RM${BUY.rate} = S$1.</p></header>
-<nav class="buy-jump" aria-label="Topics">${RESEARCH.map(t => `<a href="#r-${h(t.id)}">${h(t.title)}</a>`).join('')}<a href="/plan">Floor plan</a></nav>
-${RESEARCH.map(t => `<section class="research-topic" id="r-${h(t.id)}"><div class="research-head"><h2>${h(t.title)}</h2><span class="research-status s-${h(t.status.toLowerCase())}">${h(t.status)}</span></div><p class="research-meta">Updated ${h(t.updated)} · ${h(t.chat)}${t.plan?.length ? ` · <a href="/plan#${h(t.plan[0])}">See on the floor plan</a>` : ''}</p>
-<p class="research-answer">${h(t.answer)}</p>
-${t.decide?.length ? `<h3>Still to decide</h3><ul class="research-decide">${t.decide.map(d => `<li>${h(d)}</li>`).join('')}</ul>` : ''}
-<h3>Shortlist</h3><ul class="research-list">${t.shortlist.map(opt).join('')}</ul>
-${t.notes?.length ? `<details class="research-notes"><summary>Notes (${t.notes.length})</summary><ul>${t.notes.map(n => `<li>${h(n)}</li>`).join('')}</ul></details>` : ''}</section>`).join('')}
+ const sgd = o => o.cur === 'MYR' && o.price ? `≈ S$${Math.round(o.price / BUY.rate).toLocaleString('en-SG')}` : '';
+ const price = o => o.price === 0 ? 'Free with plan' : money(o.price, o.cur);
+ const feelOf = o => (o.specs ?? []).find(([k]) => k === 'Feel')?.[1] ?? '';
+ const feelClass = f => /firm/i.test(f) && !/medium/i.test(f) ? 'f-firm' : /firm/i.test(f) ? (/to firm/i.test(f) ? 'f-firm' : 'f-medium') : /soft/i.test(f) ? 'f-soft' : 'f-check';
+ const card = o => {
+  const feel = feelOf(o), specs = (o.specs ?? []).filter(([k]) => k !== 'Feel');
+  const name = ext(o.href) ? `<a href="${h(o.href)}" target="_blank" rel="noopener noreferrer">${h(o.name)} <span aria-hidden="true">↗</span></a>` : h(o.name);
+  return `<li class="rz-card${o.pick ? ' is-pick' : ''}">
+<div class="rz-photo">${o.img ? `<img src="${h(o.img)}" alt="${h(o.name)}" loading="lazy" decoding="async">${o.ex ? '<span class="rz-ex">Similar model</span>' : ''}` : `<span class="rz-nophoto">${h(o.group)}<small>No photo yet</small></span>`}${o.pick ? '<span class="rz-pick">Current pick</span>' : ''}</div>
+<div class="rz-body"><b class="rz-name">${name}</b>
+<p class="rz-price"><span>${h(price(o))}</span>${sgd(o) ? `<small>${h(sgd(o))}</small>` : ''}</p>
+<p class="rz-shop">${h(o.shop)}</p>
+${feel ? `<span class="rz-feel ${feelClass(feel)}">Feel: ${h(feel)}</span>` : ''}
+${o.why ? `<p class="rz-why">${h(o.why)}</p>` : ''}
+${specs.length ? `<dl class="rz-specs">${specs.map(([k, val]) => `<dt>${h(k)}</dt><dd>${h(val)}</dd>`).join('')}</dl>` : ''}</div></li>`;
+ };
+ const groups = t => [...new Set(t.shortlist.map(o => o.group))].map(g => ({g, list: t.shortlist.filter(o => o.group === g)}));
+ return `<article class="research-page rz-page"><header class="plan-head"><span class="eyebrow">Catalogue behind each choice</span><h1>Research</h1><p class="muted">Tap a topic. Each one starts with the short answer, then what is still open, then the options as cards. A green border marks the current pick. RM is converted at RM${BUY.rate} = S$1; prices are as seen on the date shown.</p></header>
+<nav class="rz-tiles" aria-label="Topics">${RESEARCH.map(t => `<a class="rz-tile tone-${h(t.tone ?? 'sand')}" href="#r-${h(t.id)}"><span class="rz-tile-name">${h(t.short ?? t.title)}</span><span class="rz-tile-meta">${t.shortlist.length} options · ${h(t.status)}</span></a>`).join('')}<a class="rz-tile rz-tile-plan" href="/plan"><span class="rz-tile-name">Floor plan</span><span class="rz-tile-meta">See sizes in the rooms</span></a></nav>
+${RESEARCH.map(t => `<section class="rz-topic tone-${h(t.tone ?? 'sand')}" id="r-${h(t.id)}">
+<header class="rz-band"><div><span class="rz-eyebrow">${h(t.short ?? '')}</span><h2>${h(t.title)}</h2></div><span class="research-status rz-status s-${h(t.status.toLowerCase())}">${h(t.status)}</span></header>
+<div class="rz-inner"><p class="research-meta">Updated ${h(t.updated)} · ${h(t.chat)}${t.plan?.length ? ` · <a href="/plan#${h(t.plan[0])}">See on the floor plan</a>` : ''}</p>
+<div class="rz-answer"><span class="rz-label">In short</span><p class="research-answer">${h(t.answer)}</p></div>
+${t.decide?.length ? `<div class="rz-decide"><span class="rz-label">Still to decide</span><ol class="research-decide">${t.decide.map(d => `<li>${h(d)}</li>`).join('')}</ol></div>` : ''}
+${groups(t).map(({g, list}) => `<div class="rz-group"><h3><span>${h(g)}</span><small>${list.length} ${list.length === 1 ? 'option' : 'options'}</small></h3>${list.length >= 4 ? `<div class="rz-table-wrap"><table class="rz-table"><caption>Quick compare</caption><thead><tr><th>Option</th><th>Price</th>${list.some(feelOf) ? '<th>Feel</th>' : ''}<th>Where</th></tr></thead><tbody>${list.map(o => `<tr${o.pick ? ' class="is-pick"' : ''}><td>${h(o.name)}</td><td class="rz-num">${h(price(o))}${sgd(o) ? `<br><small>${h(sgd(o))}</small>` : ''}</td>${list.some(feelOf) ? `<td>${feelOf(o) ? `<span class="rz-feel ${feelClass(feelOf(o))}">${h(feelOf(o))}</span>` : ''}</td>` : ''}<td>${h(o.shop)}</td></tr>`).join('')}</tbody></table></div>` : ''}<ul class="research-list rz-grid">${list.map(card).join('')}</ul></div>`).join('')}
+${t.notes?.length ? `<details class="research-notes rz-notes"><summary>More notes (${t.notes.length})</summary><ul>${t.notes.map(n => `<li>${h(n)}</li>`).join('')}</ul></details>` : ''}
+<p class="rz-top"><a href="#main">Back to top ↑</a></p></div></section>`).join('')}
 </article>`;
 }
