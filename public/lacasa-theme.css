@@ -1021,3 +1021,33 @@ dialog.viewer::backdrop{background:rgba(18,16,14,.6)}
 @media (min-width:600px),(pointer:fine){
  .plan-rooms,.plan-layers,.buy-jump{flex-wrap:wrap;overflow:visible}
 }
+
+/* ---------- Floor plan on phones (22 Nov): compact controls, tall plan, panel as a bottom sheet ---------- */
+.plan-layerbox>summary{display:none}
+.plan-layerbox>summary::-webkit-details-marker{display:none}
+.sheet-grab{display:none}
+@media (max-width:640px){
+ .plan-head .plan-lede{font-size:14px;line-height:1.5;margin-bottom:4px}
+ .plan-head h1{margin-bottom:4px}
+ .plan-rooms{padding:8px 0 2px;-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent)}
+ .plan-rooms button{font-size:14px;padding:7px 13px;min-height:40px}
+ .plan-layerbox{position:relative;margin:6px 0 0}
+ .plan-layerbox>summary{display:inline-flex;align-items:center;gap:6px;list-style:none;cursor:pointer;padding:8px 14px;min-height:40px;border-radius:12px;border:1px solid var(--line);background:var(--linen);font-size:14px;font-weight:700;color:var(--sumi)}
+ .plan-layerbox>summary::after{content:'';width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:-3px 0 0 4px;transition:transform .15s}
+ .plan-layerbox[open]>summary::after{transform:rotate(-135deg);margin-top:3px}
+ .plan-layerbox>summary small{font-weight:400;color:var(--muted,#6b6559)}
+ .plan-layerbox>summary:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
+ .plan-layerbox .plan-layers{flex-wrap:wrap;overflow:visible;margin:8px 0 4px;padding:10px;border-radius:14px;background:var(--linen);border:1px solid var(--line)}
+ .plan-layerbox .plan-layer span{font-size:13px;padding:6px 11px;min-height:36px}
+ .plan-page .plan-modes{margin:8px 0 8px}
+ .plan-stage{height:calc(100svh - 150px);min-height:440px;max-height:780px;scroll-margin-top:70px}
+ .plan-tools button{width:44px;height:44px}
+ .plan-page>.plan-sheet:not(.is-empty):not([hidden]){position:fixed;left:0;right:0;bottom:0;z-index:60;margin:0;max-height:50svh;overflow:auto;overscroll-behavior:contain;border-radius:20px 20px 0 0;border:0;border-top:5px solid var(--indigo);box-shadow:0 -14px 36px rgba(20,24,40,.2);padding:4px 16px calc(18px + env(safe-area-inset-bottom));transition:max-height .22s ease}
+ .plan-page>.plan-sheet.is-full:not(.is-empty){max-height:86svh}
+ .sheet-grab{display:block;width:100%;height:24px;margin:0 0 2px;padding:0;border:0;background:transparent;cursor:pointer;position:sticky;top:0;z-index:1}
+ .sheet-grab::before{content:'';display:block;width:46px;height:5px;margin:9px auto 0;border-radius:3px;background:#b9b2a3}
+ .sheet-grab:focus-visible{outline:3px solid var(--indigo);outline-offset:-3px;border-radius:10px}
+ .plan-sheet .sheet-head{padding-top:0}
+ body.plan-sheet-open main{padding-bottom:52svh}
+}
+@media (max-width:640px) and (prefers-reduced-motion:reduce){.plan-page>.plan-sheet{transition:none}}

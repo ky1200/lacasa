@@ -9,6 +9,7 @@ root.dataset.ready = '1';
 const D = JSON.parse(root.querySelector('#plan-data').textContent);
 const NS = 'http://www.w3.org/2000/svg';
 const svg = root.querySelector('[data-plan-svg]'), stage = root.querySelector('[data-plan-stage]');
+const phone = () => matchMedia('(max-width: 640px)').matches;
 const sheet = root.querySelector('[data-sheet]'), statusEl = root.querySelector('[data-plan-status]'), readout = root.querySelector('[data-readout]');
 const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 const mk = (tag, attrs = {}, parent) => {const e = document.createElementNS(NS, tag); for (const [k, v] of Object.entries(attrs)) if (v != null) e.setAttribute(k, v); if (parent) parent.append(e); return e;};
@@ -474,7 +475,7 @@ const emptySheet = () => {
  sheet.innerHTML = `<h3 class="sheet-empty-title">Things on the plan</h3><p class="sheet-note">Tap one to see its size, the choices and the research.</p><ul class="sheet-index">${items.map(it => `<li><button type="button" data-open="${esc(it.id)}"><i style="background:${D.colours[it.room] ?? '#56607a'}"></i><span>${esc(it.name)}</span><small>${esc(roomById[it.room]?.short ?? '')}</small></button></li>`).join('')}</ul>`;
  sheet.querySelectorAll('[data-open]').forEach(b => b.onclick = () => {const it = items.find(i => i.id === b.dataset.open); zoomRoom(it.room === 'yard' ? 'kitchen' : it.room); openItem(it, true);});
 };
-const closeSheet = () => {selected = null; emptySheet(); drawItems(); drawPoints(); drawMeasure(); drawAir(); drawTv();};
+const closeSheet = () => {selected = null; undock(); emptySheet(); drawItems(); drawPoints(); drawMeasure(); drawAir(); drawTv();};
 const buyBlock = id => {
  const b = D.buy[id]; if (!b) return '';
  return `<div class="sheet-buy"><h4>${esc(b.name.split(/,| \(/)[0])} <small>${esc(b.opts.length)} choice${b.opts.length === 1 ? '' : 's'} on the to-buy list${b.tag === 'maybe' ? ' · tagged Maybe' : ''}</small></h4><ul class="sheet-opts">${b.opts.map((o, k) => `<li><label class="sheet-opt${k === b.pick ? ' is-on' : ''}">${b.opts.length > 1 ? `<input type="radio" name="pick-${esc(id)}" value="${k}" data-pick="${esc(id)}"${k === b.pick ? ' checked' : ''}${D.ro ? ' disabled' : ''}>` : ''}${o.img ? `<img src="${esc(o.img)}" alt="" loading="lazy">` : '<span class="sheet-noimg"></span>'}<span class="sheet-opt-text"><b>${k ? '' : '<span class="buy-rec">Recommended</span> '}${esc(o.n)}</b>${o.m ? `<small>${esc(o.m)}</small>` : ''}<small>${esc(o.shop)}${o.href ? ` · <a href="${esc(o.href)}" target="_blank" rel="noopener noreferrer">See price ↗</a>` : ''}</small>${o.note ? `<small>${esc(o.note)}</small>` : ''}</span><strong>${esc(o.p)}${o.est ? '<small>Estimate</small>' : ''}</strong></label></li>`).join('')}</ul></div>`;
@@ -501,6 +502,23 @@ function tvTable(it) {
   return `<tr${k === it.s && !it.c ? ' class="is-on"' : ''}><td>${esc(z.n)}</td><td>${(distFor(z.w, D.tvView.thx) / 1000).toFixed(1)} to ${(distFor(z.w, D.tvView.smpte) / 1000).toFixed(1)} m</td><td>${a == null ? '' : `<b class="${ok ? 'tv-ok' : 'tv-low'}">${Math.round(a)}°</b> ${ok ? 'in range' : a < D.tvView.smpte ? 'smaller than ideal' : 'very big'}`}</td></tr>`;
  }).join('')}</tbody></table><p class="sheet-note">Best distance = where the screen fills 40° (THX) to 30° (SMPTE) of the view. Closer feels more like a cinema; further feels smaller. The green band on the plan shows this for the chosen size.</p></div>`;
 }
+// On a phone the panel is a sheet over the bottom of the screen: keep the plan in view above it, with the thing centred there.
+function dock(x, y, recenter = true) {
+ if (!phone()) return false;
+ document.body.classList.add('plan-sheet-open');
+ if (!sheet.querySelector('.sheet-grab')) sheet.insertAdjacentHTML('afterbegin', '<button type="button" class="sheet-grab" data-grab aria-label="Show more of the panel"></button>');
+ const g = sheet.querySelector('[data-grab]'); g.onclick = () => {const full = sheet.classList.toggle('is-full'); g.setAttribute('aria-label', full ? 'Show less of the panel' : 'Show more of the panel');};
+ if (!recenter) return true;
+ const head = document.querySelector('.site-header')?.offsetHeight ?? 64;
+ const top = stage.getBoundingClientRect().top + scrollY - head - 6;
+ if (Math.abs(scrollY - top) > 4) window.scrollTo({top, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+ requestAnimationFrame(() => {
+  const visH = Math.max(160, innerHeight - head - sheet.offsetHeight - 12), ch = svg.clientHeight || 400, k = view.h / ch;
+  setView({x: x - view.w / 2, y: y - Math.min(visH, ch) / 2 * k, w: view.w});
+ });
+ return true;
+}
+const undock = () => {document.body.classList.remove('plan-sheet-open'); sheet.classList.remove('is-full');};
 function openItem(it, quiet = false) {
  selected = {id: it.id}; sheet.classList.remove('is-empty'); const {s} = sizeOf(it), room = roomById[it.room];
  sheet.innerHTML = `<div class="sheet-head"><div><span class="eyebrow">${esc(room?.name ?? '')}</span><h3>${esc(it.name)}</h3></div><button type="button" class="sheet-close" data-close aria-label="Close">×</button></div>
@@ -512,7 +530,7 @@ ${it.note ? `<p class="sheet-note">${esc(it.note)}</p>` : ''}
 ${D.ro ? '' : `<div class="sheet-actions"><button type="button" data-rotate>${it.kind === 'cfan' ? 'Aim 45°' : 'Turn 90°'}</button>${moveOn ? '' : '<button type="button" data-movehint>Move it</button>'}</div>`}
 ${it.kind === 'tv' ? tvTable(it) : ''}${(it.buy ?? []).map(buyBlock).join('')}${it.research ? researchBlock(it.research) : ''}${it.wifi && D.research.fibre ? researchBlock('fibre') : ''}`;
  sheet.hidden = false; drawItems(); drawMeasure(); drawTv(); drawAir();
- if (!quiet) sheet.scrollIntoView?.({block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
+ if (!dock(it.x, it.y, !quiet) && !quiet) sheet.scrollIntoView?.({block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
  sheet.querySelector('[data-close]').onclick = closeSheet;
  sheet.querySelectorAll('[data-size]').forEach(b => b.onclick = () => {it.s = +b.dataset.size; it.c = null; saveItem(it); openItem(it, true); queueHeat(); drawCart();});
  const cf = sheet.querySelector('[data-custom]');
@@ -534,7 +552,7 @@ function pointSpec(t) {
 function openPoint(t, k) {
  selected = {pt: t, k}; sheet.classList.remove('is-empty'); const p = points[t][k], r = roomAt(p[0], p[1]);
  sheet.innerHTML = `<div class="sheet-head"><div><span class="eyebrow">${esc(r?.name ?? 'Plan')}</span><h3>${esc(typeName[t])}</h3></div><button type="button" class="sheet-close" data-close aria-label="Close">×</button></div>${pointSpec(t)}<p class="sheet-note">Draft position. ${t === 'light' || t === 'fan' ? 'Mark the real spots on 3 Dec with the electrician.' : t === 'tp' || t === 'lan' ? 'Find and test on 3 Dec (see the 3 Dec checklist).' : 'Count sockets and switches on 3 Dec for the G3 line.'}</p>${D.ro ? '' : `<div class="sheet-actions"><button type="button" data-remove>Remove this ${esc(typeName[t].toLowerCase())}</button></div>`}`;
- sheet.hidden = false; drawPoints(); drawAir();
+ sheet.hidden = false; drawPoints(); drawAir(); dock(p[0], p[1]);
  sheet.querySelector('[data-close]').onclick = closeSheet;
  const rm = sheet.querySelector('[data-remove]'); if (rm) rm.onclick = () => {points[t].splice(k, 1); savePoints(t); closeSheet(); drawCounts();};
 }
@@ -567,6 +585,9 @@ const nightBox = root.querySelector('[data-night]');
 nightBox?.addEventListener('change', () => {stage.classList.toggle('is-night', nightBox.checked); if (nightBox.checked && !layers.has('lights')) {layers.add('lights'); root.querySelector('[data-layer="lights"]').checked = true; drawAll();}});
 addBar.querySelectorAll('input[name="plan-add"]').forEach(r => r.addEventListener('change', () => {addType = r.value; if (addType && !layers.has(typeLayer[addType])) {layers.add(typeLayer[addType]); const c = root.querySelector(`[data-layer="${typeLayer[addType]}"]`); if (c) c.checked = true; drawAll();}}));
 const wifiBar = root.querySelector('[data-wifi-bar]');
+{const lb = root.querySelector('[data-layerbox]'); if (lb && phone()) lb.open = false;}
+const layerCount = () => {const c = root.querySelector('[data-layer-count]'); if (c) c.textContent = `${root.querySelectorAll('[data-layer]:checked').length} on`;};
+root.querySelectorAll('[data-layer]').forEach(c => c.addEventListener('change', layerCount));
 root.querySelectorAll('[data-layer]').forEach(c => c.addEventListener('change', () => {
  if (c.checked) layers.add(c.dataset.layer); else layers.delete(c.dataset.layer);
  wifiBar.hidden = !layers.has('wifi'); if (!layers.has('wifi')) readout.hidden = true;
