@@ -11,7 +11,7 @@
 //   notes: [], plan: plan item ids it applies to. tone: page colour (coral, sand, indigo, moss); short: tab label.
 export const RESEARCH = [
  {
-  id: 'beds', tone: 'coral', short: 'Beds', title: 'Beds and mattresses', rooms: ['ky', 'ks', 'kx'], status: 'Shortlist', updated: '2026-11-21',
+  id: 'beds', tone: 'coral', short: 'Beds', title: 'Beds and mattresses', rooms: ['ky', 'ks', 'kx'], status: 'Shortlist', updated: '2026-11-22',
   chat: 'La Casa shop helper chat', plan: ['ky-bed', 'ks-bed', 'kx-bed'],
   answer: 'Leaning to BM Mattress Premium Outlet (Sutera, JB): solid hydraulic storage frames that feel well made, branded mattresses (King Koil, Sealy), delivery to Singapore. Compare with the fair on Sun 22 Nov, confirm sizes and frames on 3 Dec, and BM aims to deliver by 21 Dec or the last week of December. Each person picks a feel: soft, medium-firm or firm.',
   decide: [
@@ -32,8 +32,8 @@ export const RESEARCH = [
    {group: 'Mattress', name: 'King Koil Luxury Gentle, queen (online)', img: '/images/research/king-koil-luxury-gentle.webp', price: 4829, cur: 'MYR', shop: 'Couch Designs (KL)', size: [1520, 1905], specs: [['Delivery', 'Free only in KL, Selangor, Putrajaya']], why: 'Cheapest price seen for this model (20 Nov). Use it to bargain.'},
    {group: 'Mattress', name: 'Sealy PosturePremier Treasure, queen', img: '/images/buy/sealy-posturepremier-treasure-mattress-queen-pillow-top-medi-ce9359.webp', price: 2099, cur: 'SGD', shop: 'Harvey Norman (SG)', href: 'https://www.harveynorman.com.sg', size: [1520, 1905], specs: [['Feel', 'Pillow top, medium soft'], ['Note', 'SG price includes GST, SG warranty and delivery']], why: 'Singapore benchmark.'},
    {group: 'Mattress', name: 'Natura black hotel-grade mattress', img: '/images/research/natura-heritage-example.webp', ex: true, price: null, cur: 'MYR', shop: 'Natura dealer, JB', size: [1520, 1905], specs: [['Status', 'Not listed online. Get the model name and price at the fair']], why: 'Hotel-grade feel to compare.'},
-   {group: 'Storage frame', name: 'BM hydraulic lift-up storage bed frame, queen', img: '/images/research/hydraulic-storage-bed-open-example.webp', ex: true, price: 1600, cur: 'MYR', shop: 'BM Mattress, Sutera (JB)', specs: [['Headboard', 'RM700 extra (optional)'], ['Height', '14 inch (about 36 cm)'], ['Price', 'Asking price, 21 Nov. Plus 9% GST'], ['Seen in store', 'Good materials, solid build (better than the fair frames)']], why: 'Solves the storage-bed problem: the fairs had cheap-feeling frames or none.', pick: true},
-   {group: 'Storage frame', name: 'BM storage bed frame, super single', img: '/images/research/storage-bed-lift-up-example.webp', ex: true, price: 1400, cur: 'MYR', shop: 'BM Mattress, Sutera (JB)', specs: [['Headboard', 'RM550 extra (optional)'], ['Price', 'Asking price, 21 Nov. Plus 9% GST']], why: 'Same build as the queen frame.'},
+   {group: 'Storage frame', name: 'BM hydraulic lift-up storage bed frame, queen', img: '/images/research/hydraulic-storage-bed-open-example.webp', ex: true, price: 1600, cur: 'MYR', shop: 'BM Mattress, Sutera (JB)', specs: [['Size', 'Fits a queen mattress, 152 × 190 cm. Frame about 5 cm wider and longer (check at BM)'], ['Headboard', 'RM700 extra (optional)'], ['Height', '14 inch (about 36 cm)'], ['Price', 'Asking price, 21 Nov. Plus 9% GST'], ['Seen in store', 'Good materials, solid build (better than the fair frames)']], why: 'Solves the storage-bed problem: the fairs had cheap-feeling frames or none.', pick: true},
+   {group: 'Storage frame', name: 'BM storage bed frame, super single', img: '/images/research/storage-bed-lift-up-example.webp', ex: true, price: 1400, cur: 'MYR', shop: 'BM Mattress, Sutera (JB)', specs: [['Size', 'Fits a super single mattress, 107 × 190 cm. Frame about 5 cm wider and longer (check at BM)'], ['Opens', 'Lifts from the foot end, so no side space needed'], ['Headboard', 'RM550 extra (optional)'], ['Price', 'Asking price, 21 Nov. Plus 9% GST']], why: 'Same build as the queen frame.'},
    {group: 'Storage frame', name: 'Megafurniture Ashleah storage bed (water-repellent fabric)', img: '/images/buy/megafurniture-ashleah-storage-bed.webp', price: 549, cur: 'SGD', shop: 'Megafurniture (SG)', href: 'https://megafurniture.sg/products/ashleah-fabric-storage-bed', specs: [['Super single', 'S$499'], ['Includes', 'Cushioned headboard, free delivery and install'], ['Showroom', 'Oxley BizHub, 61 Ubi Road 1 #01-34, daily 11am–7pm']], why: 'Singapore benchmark, GST included.'},
   ],
   notes: [
@@ -47,11 +47,12 @@ export const RESEARCH = [
   ],
  },
  {
-  id: 'vhaus', tone: 'sand', short: 'V Haus', title: 'V Haus: dining set, wardrobe, sofa', rooms: ['dining', 'kx', 'living'], status: 'Shortlist', updated: '2026-11-21',
+  id: 'vhaus', tone: 'sand', short: 'V Haus', title: 'V Haus: dining set, wardrobe, sofa', rooms: ['dining', 'kx', 'living'], status: 'Shortlist', updated: '2026-11-22',
   chat: 'La Casa shop helper chat', plan: ['dining-table', 'living-sofa-l'],
   answer: 'Three things from V Haus Living (JB, contact Jason Yee): the LINO dining set (sold out, next stock mid to end January), a custom L-shaped wardrobe for KX room (about RM5,800, measured after the 3 to 5 Dec hacking, made in about a month) and the sofa (not chosen yet).',
   decide: [
-   'Sofa model and fabric (visit V Haus, maybe Sun 22 Nov).',
+   'Sofa model, fabric and size (V Haus Mutiara Rini, Sun 22 Nov).',
+   'Coffee table: maybe, same visit.',
    'Wardrobe details: board brand and thickness, hinge and drawer runner brand, swing or sliding doors, inside layout, delivery and install in Singapore, GST, warranty.',
    'When to pay the 30% dining deposit to hold January stock.',
   ],
