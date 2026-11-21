@@ -47,7 +47,12 @@ test('floor plan API saves positions and points, rejects bad keys and values, au
  assert.equal(await put(DB,'p:pts:light','1,1;x'),422);assert.equal(await put(DB,'p:i:ky-bed','99999,1,0,0'),422);
  assert.equal(await put(DB,'p:i:ky-bed','1,1,0,0','?view=audit'),403);
  const v=Object.fromEntries(DB.sqlite.prepare('SELECT key,value FROM visit_notes').all().map(r=>[r.key,r.value]));
- const st=planState(v);assert.deepEqual(st.items.find(i=>i.id==='ky-bed'),{...PLAN.items.find(i=>i.id==='ky-bed'),x:4000,y:2500,r:90,s:1});
+ const st=planState(v);assert.deepEqual(st.items.find(i=>i.id==='ky-bed'),{...PLAN.items.find(i=>i.id==='ky-bed'),x:4000,y:2500,r:90,s:1,c:null});
+ assert.equal(await put(DB,'p:i:ks-desk','8000,3800,90,c1250x650'),200,'custom size in mm');
+ assert.equal(await put(DB,'p:i:ks-desk','8000,3800,90,c50x650'),422,'custom size too small');
+ assert.equal(await put(DB,'p:i:wifi-main','8000,3800,0,c500x500'),422,'no custom size for Wi-Fi');
+ const v2=Object.fromEntries(DB.sqlite.prepare('SELECT key,value FROM visit_notes').all().map(r=>[r.key,r.value]));
+ assert.deepEqual(planState(v2).items.find(i=>i.id==='ks-desk').c,{w:1250,d:650});
  assert.deepEqual(st.points.light,[[1000,2000],[3000,4000]]);assert.deepEqual(st.points.socket,[]);assert.deepEqual(st.points.fan,PLAN.points.fan);
  assert.equal(await put(DB,'p:i:ky-bed',''),200,'empty value resets to the default');
  assert.ok(planKey('p:i:wifi-main')&&!planKey('b:ky-bed:pick'));assert.ok(validPlanValue({kind:'points'},'none'));
@@ -71,4 +76,19 @@ test('home puts the to-buy list, floor plan and research first; older pages move
  assert.doesNotMatch(html,/area-tile|Compare options/,'old room tiles and voting are not on home');
  const earlier=renderPage(state(),'https://lacasa.test/earlier').html;assert.match(earlier,/<h1>Earlier choices<\/h1>/);assert.match(earlier,/class="area-tile"/);assert.match(earlier,/href="\/visit"/);
  const text=html.replace(/<[^>]+>/g,' ');assert.doesNotMatch(text,/\byou\b|\byour\b|perfect|amazing/i);
+});
+
+test('floor plan: KY room fits the biggest MAGNUS Pro desk next to the GURSKEN wardrobe; sizes match the sources',()=>{
+ const it=id=>PLAN.items.find(i=>i.id===id),size=(i,n)=>i.sizes.find(z=>z.n.startsWith(n));
+ const desk=it('ky-desk'),ward=it('ky-wardrobe');
+ assert.deepEqual(['XL','XXL','Regular','Compact'].map(n=>[size(desk,n).w,size(desk,n).d]),[[1770,800],[1968,800],[1500,700],[1200,700]],'Secretlab MAGNUS Pro sizes from the screenshot');
+ assert.deepEqual([size(ward,'IKEA GURSKEN').w,size(ward,'IKEA GURSKEN').d],[494,550],'GURSKEN 49.4 × 55 cm');
+ // Left wall of KY room runs from the top wall (y 1460) to the new partition (y 4100). Wardrobe turned 90° takes 494 mm of it.
+ const top=1460,bottom=4100,free=bottom-(top+494);assert.ok(free>=1968&&free-1968<250,`XXL leaves ${free-1968} mm`);
+ assert.deepEqual([size(it('ky-chair'),'SIHOO').w,size(it('ky-chair'),'SIHOO').d],[600,600]);
+ assert.deepEqual(it('living-tv').sizes.map(z=>z.w),[1441,1677,1711,1894]);
+ assert.ok(it('kitchen-fridge').sizes.every(z=>z.w<=700&&z.d<=750),'every fridge fits the 70 × 75 cm space');
+ assert.deepEqual([it('kitchen-water').sizes[0].w,it('kitchen-water').sizes[0].d],[168,485]);
+ for(const i of PLAN.items)for(const z of i.sizes){if(z.img)assert.ok(existsSync(new URL('../../public'+z.img,import.meta.url)),z.img);if(z.href)assert.match(z.href,/^https:\/\//);}
+ for(const t of RESEARCH)for(const o of t.shortlist)if(o.img)assert.ok(existsSync(new URL('../../public'+o.img,import.meta.url)),o.img);
 });

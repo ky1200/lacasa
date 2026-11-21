@@ -954,3 +954,38 @@ dialog.viewer::backdrop{background:rgba(18,16,14,.6)}
 .rz-photo:has(.rz-nophoto){aspect-ratio:auto;height:84px}
 @media (max-width:640px){.rz-table{min-width:0}.rz-table th:last-child,.rz-table td:last-child{display:none}.rz-table .rz-feel{white-space:normal}.rz-table td,.rz-table th{padding:7px 8px}.rz-photo:has(.rz-nophoto){height:104px}}
 .rz-table .rz-feel{display:inline-block;border-radius:8px;line-height:1.3}
+
+/* Floor plan, 21 Nov evening: chairs, wardrobes, appliances, clash warning, size choices */
+.plan-item .base{fill:none;stroke:var(--c);stroke-opacity:.55;stroke-width:1;stroke-dasharray:3 3}
+.plan-item .spoke{stroke:var(--c);stroke-opacity:.35;stroke-width:1}
+.plan-item .swing{fill:none;stroke:var(--c);stroke-opacity:.45;stroke-width:1;stroke-dasharray:4 4}
+.plan-item .appliance{fill:#eef1f4;stroke:#56607a;stroke-width:1.4}
+.plan-item.k-fridge .swing{stroke:#56607a}
+.plan-item .fanring{fill:rgba(179,117,9,.08);stroke:#b37509;stroke-width:1.2;stroke-dasharray:5 4}
+.plan-item .blade{fill:#b37509;fill-opacity:.55}
+.plan-item.k-dispenser .dot{fill:#1b8fb0}
+.plan-item.is-clash .body,.plan-item.is-clash .appliance,.plan-item.is-clash .tv{stroke:#c2405a;stroke-width:3;stroke-dasharray:6 3}
+.plan-item.is-clash .body{fill:color-mix(in srgb,#c2405a 14%,#fff)}
+.plan-item.is-off{opacity:.35}
+.sheet-clash{margin:8px 0;padding:9px 12px;border-radius:12px;background:#fbe9ec;color:#8c1d33;font-size:14px;font-weight:700}
+.sheet-sizes.has-rich{display:grid;gap:8px;margin:10px 0}
+.sheet-size{display:grid;grid-template-columns:1fr;border:1px solid var(--line);border-radius:14px;background:#fff;overflow:hidden}
+.sheet-size.is-on{border-color:var(--sumi);box-shadow:inset 0 0 0 1px var(--sumi)}
+.sheet-sizes.has-rich .sheet-size>button,.sheet-size-one{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;width:100%;text-align:left;font:inherit;padding:8px 10px;border:0;background:transparent;color:var(--sumi);cursor:pointer;min-height:48px;border-radius:0}
+.sheet-sizes.has-rich .sheet-size>button[aria-pressed="true"]{background:#f3f1ec;color:var(--sumi)}
+.sheet-size img{width:52px;height:52px;object-fit:contain;border-radius:8px;background:#fff}
+.sheet-size span{display:flex;flex-direction:column;gap:2px;min-width:0}
+.sheet-size b{font-size:14.5px}
+.sheet-size small{font-size:12.5px;color:var(--muted);line-height:1.4}
+.sheet-size-link{display:block;padding:6px 10px 8px;font-size:13px;color:var(--indigo);border-top:1px solid #efece5}
+.sheet-sizes:not(.has-rich) .sheet-size{display:inline-block;border:0;background:none}
+.sheet-sizes:not(.has-rich) .sheet-size>button{font:inherit;font-size:14px;padding:7px 14px;min-height:38px;border-radius:999px;border:1px solid var(--line);background:#fff;cursor:pointer}
+.sheet-sizes:not(.has-rich) .sheet-size>button[aria-pressed="true"]{background:var(--sumi);color:#fff;border-color:var(--sumi)}
+.sheet-sizes:not(.has-rich){display:flex;flex-wrap:wrap;gap:6px}
+.sheet-sizes:not(.has-rich) .sheet-size.is-on{box-shadow:none}
+.sheet-custom{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:8px 0;padding:10px 12px;border-radius:14px;background:#f6f4ef;font-size:14px}
+.sheet-custom>span{font-weight:700;width:100%}
+.sheet-custom label{display:flex;align-items:center;gap:6px}
+.sheet-custom input{width:76px;font:inherit;font-size:15px;padding:7px 8px;border:1px solid var(--line);border-radius:10px;background:#fff;min-height:40px}
+.sheet-custom button{font:inherit;font-size:14px;font-weight:700;padding:8px 14px;min-height:40px;border-radius:10px;border:1px solid var(--sumi);background:#fff;cursor:pointer}
+.sheet-custom input:focus-visible,.sheet-custom button:focus-visible,.sheet-size>button:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}

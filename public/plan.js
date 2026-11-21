@@ -45,11 +45,11 @@ const flush = async () => {
  say(failed ? (navigator.onLine === false ? 'Offline: kept on this phone' : msg) : 'Saved');
 };
 const save = (key, value) => {if (D.ro) return; const p = pending(); p[key] = value; keep(p); say('Saving…'); clearTimeout(timer); timer = setTimeout(flush, 400);};
-const saveItem = it => save(`p:i:${it.id}`, `${Math.round(it.x)},${Math.round(it.y)},${it.r},${it.s}`);
+const saveItem = it => save(`p:i:${it.id}`, `${Math.round(it.x)},${Math.round(it.y)},${it.r},${it.c ? `c${it.c.w}x${it.c.d}` : it.s}`);
 const savePoints = t => save(`p:pts:${t}`, points[t].length ? points[t].map(p => p.map(Math.round).join(',')).join(';') : 'none');
 // Apply anything not yet uploaded from this phone.
 for (const [k, v] of Object.entries(pending())) {
- if (k.startsWith('p:i:')) {const it = items.find(i => i.id === k.slice(4)), m = /^(-?\d+),(-?\d+),(\d+),(\d)$/.exec(v); if (it && m) Object.assign(it, {x: +m[1], y: +m[2], r: +m[3], s: +m[4]});}
+ if (k.startsWith('p:i:')) {const it = items.find(i => i.id === k.slice(4)), m = /^(-?\d+),(-?\d+),(\d+),(\d|c(\d+)x(\d+))$/.exec(v); if (it && m) Object.assign(it, {x: +m[1], y: +m[2], r: +m[3]}, m[5] ? {c: {w: +m[5], d: +m[6]}} : {s: +m[4], c: null});}
  else if (k.startsWith('p:pts:') && points[k.slice(6)]) points[k.slice(6)] = v === 'none' ? [] : v.split(';').map(p => p.split(',').map(Number));
  else if (k.startsWith('b:') && k.endsWith(':pick')) {const b = D.buy[k.slice(2, -5)]; if (b) b.pick = Number(v) || 0;}
 }
@@ -58,7 +58,7 @@ addEventListener('online', flush);
 if (Object.keys(pending()).length) flush();
 
 // ---------- geometry ----------
-const sizeOf = it => {const s = it.sizes[it.s] ?? it.sizes[0], rot = it.r % 180 !== 0; return {w: rot ? s.d : s.w, d: rot ? s.w : s.d, s};};
+const sizeOf = it => {const s = it.c ? {...(it.sizes[0]), n: 'Custom', w: it.c.w, d: it.c.d, custom: true} : it.sizes[it.s] ?? it.sizes[0], rot = it.r % 180 !== 0; return {w: rot ? s.d : s.w, d: rot ? s.w : s.d, s};};
 const boxOf = it => {const {w, d} = sizeOf(it); return {x1: it.x - w / 2, y1: it.y - d / 2, x2: it.x + w / 2, y2: it.y + d / 2};};
 const inBox = (x, y, b) => x >= b[0] && x <= b[0] + b[2] && y >= b[1] && y <= b[1] + b[3];
 const roomAt = (x, y) => D.rooms.find(r => r.boxes.some(b => inBox(x, y, b)));
@@ -71,7 +71,7 @@ const segCross = (ax, ay, bx, by, cx, cy, dx, dy) => {
 
 // ---------- Wi-Fi estimate ----------
 // signal (dBm) = power − free-space loss(distance, frequency) − sum of wall losses on the straight path.
-const nodes = () => items.filter(i => i.wifi);
+const nodes = () => items.filter(i => i.wifi && !i.s);
 const signal = (x, y, n, b) => {
  const d = Math.max(1, Math.hypot(x - n.x, y - n.y) / 1000); // metres, at least 1 m
  let loss = 20 * Math.log10(d) + 20 * Math.log10(b.mhz) - 27.55, walls = 0;
@@ -136,8 +136,38 @@ const shape = (it, g) => {
   for (const cx of [x + w * .25 - c / 2, x + w * .75 - c / 2]) for (const cy of [y - c - 80, y + d + 80]) mk('rect', {x: cx, y: cy, width: c, height: c, rx: 60, class: 'chair', ...ns}, g);
   mk('rect', {x, y, width: w, height: d, rx: 30, class: 'body', ...ns}, g);
  } else if (it.kind === 'desk') {
-  mk('circle', {cx: 0, cy: y - 380, r: 300, class: 'chair', ...ns}, g);
   mk('rect', {x, y, width: w, height: d, rx: 20, class: 'body', ...ns}, g);
+  mk('line', {x1: x + 40, y1: y + d - 60, x2: x + w - 40, y2: y + d - 60, class: 'fold', ...ns}, g);
+ } else if (it.kind === 'chair') {
+  // Office chair from above: wheel base, seat, backrest (back is at the top).
+  const r = Math.min(w, d) / 2;
+  mk('circle', {cx: 0, cy: 0, r, class: 'base', ...ns}, g);
+  for (let a = 0; a < 5; a++) {const t = a * 2 * Math.PI / 5 - Math.PI / 2; mk('line', {x1: 0, y1: 0, x2: Math.cos(t) * r * .92, y2: Math.sin(t) * r * .92, class: 'spoke', ...ns}, g);}
+  mk('rect', {x: -r * .78, y: -r * .62, width: r * 1.56, height: r * 1.4, rx: r * .3, class: 'body', ...ns}, g);
+  mk('rect', {x: -r * .72, y: -r * .9, width: r * 1.44, height: r * .32, rx: r * .14, class: 'back', ...ns}, g);
+ } else if (it.kind === 'stool') {
+  mk('rect', {x, y, width: w, height: d, rx: Math.min(w, d) * .3, class: 'body', ...ns}, g);
+ } else if (it.kind === 'wardrobe') {
+  // Front (doors) is the bottom edge before turning; the arc shows the door swing.
+  mk('rect', {x, y, width: w, height: d, rx: 10, class: 'body', ...ns}, g);
+  mk('line', {x1: x, y1: y + 70, x2: x + w, y2: y + 70, class: 'fold', ...ns}, g);
+  const doors = w > 900 ? 3 : w > 600 ? 2 : 1, dw = w / doors;
+  for (let k = 0; k < doors; k++) mk('path', {d: `M${x + k * dw},${y + d}L${x + k * dw},${y + d + dw}A${dw},${dw} 0 0 0 ${x + (k + 1) * dw},${y + d}`, class: 'swing', ...ns}, g);
+ } else if (it.kind === 'lwardrobe') {
+  // L shape: leg along the top (w long) and down the left side (d long), t deep.
+  const t = s.t ?? 600;
+  mk('path', {d: `M${x},${y}H${x + w}V${y + t}H${x + t}V${y + d}H${x}Z`, class: 'body', ...ns}, g);
+  mk('path', {d: `M${x + 70},${y + d}V${y + 70}H${x + w}`, class: 'fold', fill: 'none', ...ns}, g);
+ } else if (it.kind === 'fridge') {
+  mk('rect', {x, y, width: w, height: d, rx: 20, class: 'appliance', ...ns}, g);
+  mk('line', {x1: x, y1: y + d - 60, x2: x + w, y2: y + d - 60, class: 'fold', ...ns}, g);
+  mk('path', {d: `M${x},${y + d}A${w},${w} 0 0 0 ${x + w},${y + d + w}`, class: 'swing', ...ns}, g);
+ } else if (it.kind === 'dispenser') {
+  mk('rect', {x, y, width: w, height: d, rx: 20, class: 'appliance', ...ns}, g);
+  mk('circle', {cx: 0, cy: y + d - 90, r: 28, class: 'dot'}, g);
+ } else if (it.kind === 'cfan') {
+  mk('circle', {cx: 0, cy: 0, r: w / 2, class: 'fanring', ...ns}, g);
+  for (let a = 0; a < 3; a++) {const t = a * 2 * Math.PI / 3; mk('ellipse', {cx: Math.cos(t) * w * .22, cy: Math.sin(t) * w * .22, rx: w * .2, ry: w * .08, transform: `rotate(${t * 180 / Math.PI} ${Math.cos(t) * w * .22} ${Math.sin(t) * w * .22})`, class: 'blade'}, g);}
  } else if (it.kind === 'dock') {
   mk('rect', {x, y, width: w, height: d, rx: 40, class: 'dock', ...ns}, g);
  } else if (it.kind === 'wifi') {
@@ -147,11 +177,28 @@ const shape = (it, g) => {
  }
 };
 const layerOfItem = it => it.wifi ? 'net' : 'furniture';
+// Does an item run into another one or through a wall? (chairs and stools may tuck under desks; fans hang high)
+const SOFT = new Set(['chair', 'stool', 'cfan', 'wifi']);
+const clashes = it => {
+ if (SOFT.has(it.kind)) return [];
+ const a = boxOf(it), pad = 15, out = [];
+ for (const o of items) {
+  if (o === it || SOFT.has(o.kind) || !layers.has(layerOfItem(o))) continue;
+  if (it.kind === 'dispenser' || o.kind === 'dispenser') continue;
+  const b = boxOf(o);
+  if (a.x1 + pad < b.x2 && a.x2 - pad > b.x1 && a.y1 + pad < b.y2 && a.y2 - pad > b.y1) out.push(o.name.replace(/ \(.*\)$/, ''));
+ }
+ for (const [x1, y1, x2, y2] of D.walls) {
+  if (x1 === x2 && x1 > a.x1 + pad && x1 < a.x2 - pad && Math.max(y1, y2) > a.y1 + pad && Math.min(y1, y2) < a.y2 - pad) {out.push('a wall'); break;}
+  if (y1 === y2 && y1 > a.y1 + pad && y1 < a.y2 - pad && Math.max(x1, x2) > a.x1 + pad && Math.min(x1, x2) < a.x2 - pad) {out.push('a wall'); break;}
+ }
+ return out;
+};
 const drawItems = () => {
  gItems.textContent = ''; gLabels.textContent = '';
  for (const it of items) {
   if (!layers.has(layerOfItem(it))) continue;
-  const g = mk('g', {class: `plan-item k-${it.kind}${selected?.id === it.id ? ' is-sel' : ''}`, style: `--c:${D.colours[it.room] ?? '#56607a'}`, transform: `translate(${it.x} ${it.y}) rotate(${it.r})`, 'data-item': it.id, tabindex: 0, role: 'button', 'aria-label': `${it.name}, ${it.sizes[it.s].n}`}, gItems);
+  const g = mk('g', {class: `plan-item k-${it.kind}${selected?.id === it.id ? ' is-sel' : ''}${clashes(it).length ? ' is-clash' : ''}${it.wifi && it.s ? ' is-off' : ''}`, style: `--c:${D.colours[it.room] ?? '#56607a'}`, transform: `translate(${it.x} ${it.y}) rotate(${it.r})`, 'data-item': it.id, tabindex: 0, role: 'button', 'aria-label': `${it.name}, ${sizeOf(it).s.n}`}, gItems);
   shape(it, g);
  }
  drawLabels(); drawLinks();
@@ -208,6 +255,19 @@ const drawMeasure = () => {
   if (y1 === y2 && cx >= Math.min(x1, x2) && cx <= Math.max(x1, x2)) {
    if (y1 <= b.y1 + 1 && (best.t == null || y1 > best.t)) best.t = y1;
    if (y1 >= b.y2 - 1 && (best.b == null || y1 < best.b)) best.b = y1;
+  }
+ }
+ // Other furniture also counts: show the gap to whatever is nearest on each side.
+ for (const o of items) {
+  if (o === it || SOFT.has(o.kind) || !layers.has(layerOfItem(o))) continue;
+  const q = boxOf(o);
+  if (cy >= q.y1 && cy <= q.y2) {
+   if (q.x2 <= b.x1 + 1 && (best.l == null || q.x2 > best.l)) best.l = q.x2;
+   if (q.x1 >= b.x2 - 1 && (best.r == null || q.x1 < best.r)) best.r = q.x1;
+  }
+  if (cx >= q.x1 && cx <= q.x2) {
+   if (q.y2 <= b.y1 + 1 && (best.t == null || q.y2 > best.t)) best.t = q.y2;
+   if (q.y1 >= b.y2 - 1 && (best.b == null || q.y1 < best.b)) best.b = q.y1;
   }
  }
  if (best.l != null) rays.push([best.l, cy, b.x1, cy]);
@@ -346,18 +406,31 @@ const researchBlock = id => {
  const groups = [...new Set(t.list.map(o => o.g))];
  return `<div class="sheet-research"><h4>Research: ${esc(t.title)} <span class="research-status s-${esc(t.status.toLowerCase())}">${esc(t.status)}</span></h4><p>${esc(t.answer)}</p>${groups.map(g => `<p class="sheet-group">${esc(g)}</p><ul class="sheet-short">${t.list.filter(o => o.g === g).map(o => `<li${o.pick ? ' class="is-pick"' : ''}><span>${o.href ? `<a href="${esc(o.href)}" target="_blank" rel="noopener noreferrer">${esc(o.n)} ↗</a>` : esc(o.n)}${o.pick ? ' <em>pick</em>' : ''}</span><b>${esc(o.p)}</b>${o.specs.length ? `<small>${o.specs.map(([k, v]) => `${esc(k)}: ${esc(v)}`).join(' · ')}</small>` : ''}</li>`).join('')}</ul>`).join('')}<a class="text-link" href="/research#r-${esc(id)}">All notes for ${esc(t.title.toLowerCase())} →</a></div>`;
 };
+// Size choices: a button for each, with the price and a link when known.
+function sizeList(it) {
+ if (it.sizes.length < 2 && !it.sizes[0].price && !it.sizes[0].img) return '';
+ const label = it.wifi ? 'Use in the coverage' : 'Size or model';
+ return `<div class="sheet-sizes${it.sizes.some(z => z.img || z.price) ? ' has-rich' : ''}" role="group" aria-label="${label}">${it.sizes.map((z, k) => {
+  const on = !it.c && k === it.s;
+  return `<div class="sheet-size${on ? ' is-on' : ''}">${it.sizes.length > 1 ? `<button type="button" data-size="${k}" aria-pressed="${on}"${D.ro ? ' disabled' : ''}>` : '<div class="sheet-size-one">'}${z.img ? `<img src="${esc(z.img)}" alt="" loading="lazy">` : ''}<span><b>${esc(z.n)}</b>${z.price ? `<small>${esc(z.price)}</small>` : ''}${z.note ? `<small>${esc(z.note)}</small>` : ''}</span>${it.sizes.length > 1 ? '</button>' : '</div>'}${z.href ? `<a class="sheet-size-link" href="${esc(z.href)}" target="_blank" rel="noopener noreferrer" aria-label="${esc(z.n)} product page">Product page ↗</a>` : ''}</div>`;
+ }).join('')}</div>`;
+}
 function openItem(it, quiet = false) {
  selected = {id: it.id}; sheet.classList.remove('is-empty'); const {s} = sizeOf(it), room = roomById[it.room];
  sheet.innerHTML = `<div class="sheet-head"><div><span class="eyebrow">${esc(room?.name ?? '')}</span><h3>${esc(it.name)}</h3></div><button type="button" class="sheet-close" data-close aria-label="Close">×</button></div>
-${it.sizes.length > 1 ? `<div class="sheet-sizes" role="group" aria-label="Size">${it.sizes.map((z, k) => `<button type="button" data-size="${k}" aria-pressed="${k === it.s}"${D.ro ? ' disabled' : ''}>${esc(z.n)}</button>`).join('')}</div>` : ''}
-<p class="sheet-dims"><b>${it.est ? 'About ' : ''}${cm(s.w)} × ${cm(s.d)} cm</b>${it.wifi ? '' : ' · gaps to the walls are drawn on the plan (red when under 60 cm)'}</p>
+${sizeList(it)}
+<p class="sheet-dims"><b>${it.est && !it.c ? 'About ' : ''}${cm(s.w)} × ${cm(s.d)} cm</b>${s.custom ? ' (custom)' : ''}${it.wifi ? '' : ' · gaps to the nearest wall or furniture are drawn on the plan (red when under 60 cm)'}</p>
+${clashes(it).length ? `<p class="sheet-clash" role="status">Runs into ${esc([...new Set(clashes(it))].join(', '))}. Move, turn or pick a smaller size.</p>` : ''}
+${it.wifi || D.ro ? '' : `<form class="sheet-custom" data-custom><span>Custom size</span><label>Width <input type="number" inputmode="numeric" min="10" max="400" step="0.5" name="w" value="${cm(s.w)}" required> cm</label><label>Depth <input type="number" inputmode="numeric" min="10" max="400" step="0.5" name="d" value="${cm(s.d)}" required> cm</label><button type="submit">Use this size</button></form>`}
 ${it.note ? `<p class="sheet-note">${esc(it.note)}</p>` : ''}
 ${D.ro ? '' : `<div class="sheet-actions"><button type="button" data-rotate>Turn 90°</button>${moveOn ? '' : '<button type="button" data-movehint>Move it</button>'}</div>`}
 ${(it.buy ?? []).map(buyBlock).join('')}${it.research ? researchBlock(it.research) : ''}${it.wifi && D.research.fibre ? researchBlock('fibre') : ''}`;
  sheet.hidden = false; drawItems(); drawMeasure();
  if (!quiet) sheet.scrollIntoView?.({block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
  sheet.querySelector('[data-close]').onclick = closeSheet;
- sheet.querySelectorAll('[data-size]').forEach(b => b.onclick = () => {it.s = +b.dataset.size; saveItem(it); openItem(it, true); queueHeat();});
+ sheet.querySelectorAll('[data-size]').forEach(b => b.onclick = () => {it.s = +b.dataset.size; it.c = null; saveItem(it); openItem(it, true); queueHeat(); drawCart();});
+ const cf = sheet.querySelector('[data-custom]');
+ if (cf) cf.onsubmit = ev => {ev.preventDefault(); const w = Math.round(parseFloat(cf.w.value) * 10), d = Math.round(parseFloat(cf.d.value) * 10); if (!(w >= 100 && w <= 4000 && d >= 100 && d <= 4000)) {say('Size must be 10 to 400 cm'); return;} it.c = {w, d}; saveItem(it); openItem(it, true);};
  const rot = sheet.querySelector('[data-rotate]'); if (rot) rot.onclick = () => {it.r = (it.r + 90) % 360; saveItem(it); openItem(it, true);};
  const mh = sheet.querySelector('[data-movehint]'); if (mh) mh.onclick = () => {setMove(true); openItem(it, true);};
  sheet.querySelectorAll('[data-pick]').forEach(r => r.onchange = () => {const id = r.dataset.pick, k = +r.value; D.buy[id].pick = k; save(`b:${id}:pick`, k ? String(k) : ''); openItem(it, true); drawCart();});
