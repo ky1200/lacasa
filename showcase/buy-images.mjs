@@ -14,15 +14,35 @@ export const IMG = {
   "src": "/images/buy/daikin-ismile-eco-system-3-3-9-000-btu-5-ticks-3edca9.webp"
  },
  "common-bath-basin-cabinet-304-stainless#0": {
+  "src": "/images/buy/rigel-bc7437-heritage.webp"
+ },
+ "common-bath-basin-cabinet-304-stainless#1": {
   "ex": true,
-  "src": "/images/buy/basin-cabinet-304-stainless-baron-a106-type-05f6d5.webp"
+  "src": "/images/buy/rigel-bc1260.webp"
+ },
+ "common-bath-basin-cabinet-304-stainless#2": {
+  "src": "/images/buy/rigel-bc0201.webp"
  },
  "common-bath-basin-mixer-tap#0": {
-  "ex": true,
-  "src": "/images/buy/basin-mixer-tap-bf3e38.webp"
+  "src": "/images/buy/grohe-eurosmart-23922003.webp"
+ },
+ "common-bath-basin-mixer-tap#1": {
+  "src": "/images/buy/rigel-mxb2003.webp"
+ },
+ "common-bath-basin-mixer-tap#2": {
+  "src": "/images/buy/grohe-bauedge-32858000.webp"
+ },
+ "common-bath-basin-mixer-tap#3": {
+  "src": "/images/buy/hansgrohe-rebris-s-110.webp"
  },
  "common-bath-bidet-spray#0": {
-  "src": "/images/buy/american-standard-duostix-hygiene-bidet-spray-chrome-2410c4.webp"
+  "src": "/images/buy/rigel-sa8200-chrome.webp"
+ },
+ "common-bath-bidet-spray#1": {
+  "src": "/images/buy/grohe-tempesta-f-27513001.webp"
+ },
+ "common-bath-bidet-spray#2": {
+  "src": "/images/buy/rigel-sa8200-gun.webp"
  },
  "common-bath-ceiling-light-wet-area#0": {
   "ex": true,
@@ -40,9 +60,11 @@ export const IMG = {
   "ex": true,
   "src": "/images/buy/rigel-3-in-1-thermostatic-rain-shower-set-chrome-48c082.webp"
  },
- "common-bath-rigel-counter-top-basin#0": {
-  "ex": true,
-  "src": "/images/buy/rigel-boat-shaped-counter-top-basin-white-fab49e.webp"
+ "common-bath-rigel-3-in-1#3": {
+  "src": "/images/buy/rigel-quatre.webp"
+ },
+ "common-bath-rigel-3-in-1#4": {
+  "src": "/images/buy/grohe-tempesta-250-thermostat.webp"
  },
  "common-bath-rigel-gallant-one-piece#0": {
   "src": "/images/buy/rigel-gallant-one-piece-rimless-toilet-with-whirlwash-cd2f69.webp"
@@ -68,6 +90,9 @@ export const IMG = {
  },
  "common-mirror#3": {
   "src": "/images/buy/ikea-lettan-mirror-cabinet-all-mirror-60-15-95-cm-c08459.webp"
+ },
+ "common-mirror#4": {
+  "src": "/images/buy/rigel-bc5628-mirror-cabinet.webp"
  },
  "dining-kdk-f40gp-100-cm#0": {
   "src": "/images/buy/kdk-f40gp-100-cm-wi-fi-dc-ceiling-fan-with-led-light-ee007e.webp"
@@ -113,6 +138,21 @@ export const IMG = {
  "kitchen-fan#2": {
   "src": "/images/buy/d-fan-16-dc-wall-fan-black-ff22f8.webp"
  },
+ "kitchen-robot-vacuum-mop#0": {
+  "src": "/images/buy/dreame-x50-ultra-robot-vacuum-mop-water-kit.webp"
+ },
+ "kitchen-robot-vacuum-mop#1": {
+  "src": "/images/buy/roborock-saros-20-refill-drainage.webp"
+ },
+ "kitchen-robot-vacuum-mop#2": {
+  "src": "/images/buy/dreame-x60-ultra-robot-vacuum-mop.webp"
+ },
+ "kitchen-robot-vacuum-mop#3": {
+  "src": "/images/buy/dreame-aqua10-ultra-roller.webp"
+ },
+ "kitchen-robot-vacuum-mop#4": {
+  "src": "/images/buy/narwal-freo-x10-pro-autowater.webp"
+ },
  "kitchen-steigen-solar-mini-drying#0": {
   "src": "/images/buy/steigen-solar-mini-drying-rack-installed-b446db.webp"
  },
@@ -121,6 +161,36 @@ export const IMG = {
  },
  "ks-bed#0": {
   "src": "/images/buy/traken-storage-bed-frame-queen-gas-lifts-1f6999.webp"
+ },
+ "ks-bed#1": {
+  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
+ },
+ "ks-bed#2": {
+  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
+ },
+ "ks-bed#3": {
+  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
+ },
+ "ks-bed#4": {
+  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
+ },
+ "ks-chair#0": {
+  "src": "/images/buy/ikea-markus-chair.webp"
+ },
+ "ks-chair#1": {
+  "src": "/images/buy/sihoo-m57.webp"
+ },
+ "ks-chair#2": {
+  "src": "/images/buy/ikea-flintan-chair.webp"
+ },
+ "ks-desk#0": {
+  "src": "/images/buy/ikea-lagkapten-alex-120.webp"
+ },
+ "ks-desk#1": {
+  "src": "/images/buy/ikea-alex-desk-100.webp"
+ },
+ "ks-desk#2": {
+  "src": "/images/buy/ikea-lagkapten-alex-140.webp"
  },
  "ks-mattress#0": {
   "src": "/images/buy/sealy-posturepremier-treasure-mattress-queen-pillow-top-medi-ce9359.webp"
@@ -134,8 +204,26 @@ export const IMG = {
  "ks-mattress#3": {
   "src": "/images/buy/hipvan-levitate-queen-latex-pocket-springs-12-yr-warranty-9d2aff.webp"
  },
+ "ks-wardrobe#0": {
+  "src": "/images/buy/ikea-kleppstad-2-door.webp"
+ },
+ "ks-wardrobe#1": {
+  "src": "/images/buy/ikea-kleppstad-3-door.webp"
+ },
+ "ks-wardrobe#2": {
+  "src": "/images/buy/ikea-brimnes-wardrobe-2-door.webp"
+ },
  "kx-bed#0": {
   "src": "/images/buy/traken-storage-bed-frame-queen-gas-lifts-1f6999.webp"
+ },
+ "kx-bed#1": {
+  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
+ },
+ "kx-bed#2": {
+  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
+ },
+ "kx-bed#3": {
+  "src": "/images/buy/maju-thorney-hydraulic-storage-bed.webp"
  },
  "kx-blackout-curtains-track#0": {
   "ex": true,
@@ -160,8 +248,39 @@ export const IMG = {
   "ex": true,
   "src": "/images/buy/philips-meson-5-13w-recessed-downlight-3000k-or-4000k-e758b1.webp"
  },
+ "kx-stool#0": {
+  "src": "/images/buy/ikea-kyrre-stool.webp"
+ },
+ "kx-stool#1": {
+  "src": "/images/buy/ikea-marius-stool.webp"
+ },
+ "kx-v-haus-l-wardrobe#0": {
+  "ex": true,
+  "src": "/images/buy/full-height-wardrobe-example.webp"
+ },
+ "kx-vanity#0": {
+  "src": "/images/buy/ikea-malm-dressing-table.webp"
+ },
+ "kx-vanity#1": {
+  "src": "/images/buy/ikea-syvde-dressing-table.webp"
+ },
+ "kx-vanity#2": {
+  "src": "/images/buy/ikea-brimnes-dressing-table.webp"
+ },
+ "kx-vanity#3": {
+  "src": "/images/buy/ikea-hemnes-dressing-table.webp"
+ },
  "ky-bed#0": {
   "src": "/images/buy/traken-storage-bed-frame-queen-gas-lifts-1f6999.webp"
+ },
+ "ky-bed#1": {
+  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
+ },
+ "ky-bed#2": {
+  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
+ },
+ "ky-bed#3": {
+  "src": "/images/buy/maju-thorney-hydraulic-storage-bed.webp"
  },
  "ky-kdk-f40gp-100-cm#0": {
   "src": "/images/buy/kdk-f40gp-100-cm-wi-fi-dc-ceiling-fan-with-led-light-ee007e.webp"
@@ -186,8 +305,38 @@ export const IMG = {
   "ex": true,
   "src": "/images/buy/philips-meson-5-13w-recessed-downlight-3000k-or-4000k-e758b1.webp"
  },
+ "ky-wardrobe#0": {
+  "src": "/images/buy/ikea-gursken-wardrobe.webp"
+ },
+ "ky-wardrobe#1": {
+  "src": "/images/buy/ikea-kleppstad-2-door.webp"
+ },
+ "ky-wardrobe#2": {
+  "src": "/images/buy/ikea-brimnes-wardrobe-2-door.webp"
+ },
  "living-apple-tv-4k-4th#0": {
   "src": "/images/buy/apple-tv-4k-4th-gen-2026-8adee3.webp"
+ },
+ "living-coffee-table#0": {
+  "src": "/images/buy/ikea-ortrask-coffee.webp"
+ },
+ "living-coffee-table#1": {
+  "src": "/images/buy/ikea-lack-coffee-90.webp"
+ },
+ "living-coffee-table#2": {
+  "src": "/images/buy/ikea-holmerud-coffee.webp"
+ },
+ "living-coffee-table#3": {
+  "src": "/images/buy/ikea-ammaryd-coffee.webp"
+ },
+ "living-coffee-table#4": {
+  "src": "/images/buy/ikea-lack-coffee-118.webp"
+ },
+ "living-coffee-table#5": {
+  "src": "/images/buy/ikea-ugglerum-coffee.webp"
+ },
+ "living-coffee-table#6": {
+  "src": "/images/buy/ikea-vittsjo-coffee.webp"
  },
  "living-homepod-2nd-gen-front#0": {
   "src": "/images/buy/homepod-2nd-gen-front-left-and-right-fbf678.webp"
@@ -215,20 +364,44 @@ export const IMG = {
  "living-lg-oled-evo-c6#3": {
   "src": "/images/buy/lg-oled-c6-77-2026-41166b.webp"
  },
+ "living-lg-oled-evo-c6#4": {
+  "src": "/images/buy/lg-75qned86b.webp"
+ },
  "living-philips-meson-5-13w#0": {
   "ex": true,
   "src": "/images/buy/philips-meson-5-13w-recessed-downlight-3000k-or-4000k-e758b1.webp"
+ },
+ "living-philips-meson-5-13w#1": {
+  "src": "/images/buy/philips-eridani-sceneswitch-downlight.webp"
  },
  "living-track-or-spot-lights#0": {
   "ex": true,
   "src": "/images/buy/track-or-spot-lights-for-tv-wall-art-15a956.webp"
  },
+ "living-track-or-spot-lights#1": {
+  "src": "/images/buy/eyeball-spotlight-recessed.webp",
+  "ex": true
+ },
  "master-bath-accessories-for-both-bathrooms#0": {
-  "ex": true,
-  "src": "/images/buy/accessories-for-both-bathrooms-towel-bars-holders-rack-281804.webp"
+  "src": "/images/buy/grohe-essentials-3in1.webp"
+ },
+ "master-bath-accessories-for-both-bathrooms#1": {
+  "src": "/images/buy/grohe-essentials-4in1.webp"
+ },
+ "master-bath-accessories-for-both-bathrooms#2": {
+  "src": "/images/buy/hansgrohe-addstoris-s-bundle.webp"
+ },
+ "master-bath-accessories-for-both-bathrooms#3": {
+  "src": "/images/buy/rigel-tb6908.webp"
  },
  "master-bath-bidet-spray#0": {
-  "src": "/images/buy/american-standard-duostix-hygiene-bidet-spray-chrome-2410c4.webp"
+  "src": "/images/buy/rigel-sa8200-chrome.webp"
+ },
+ "master-bath-bidet-spray#1": {
+  "src": "/images/buy/grohe-tempesta-f-27513001.webp"
+ },
+ "master-bath-bidet-spray#2": {
+  "src": "/images/buy/rigel-sa8200-gun.webp"
  },
  "master-bath-rigel-gallant-one-piece#0": {
   "src": "/images/buy/rigel-gallant-one-piece-rimless-toilet-with-whirlwash-cd2f69.webp"
@@ -257,6 +430,9 @@ export const IMG = {
  "master-mirror#3": {
   "src": "/images/buy/ikea-lettan-mirror-cabinet-all-mirror-60-15-95-cm-c08459.webp"
  },
+ "master-mirror#4": {
+  "src": "/images/buy/rigel-bc5628-mirror-cabinet.webp"
+ },
  "washer#0": {
   "src": "/images/buy/panasonic-12-5-kg-front-load-washer-db3bd3.webp"
  },
@@ -271,57 +447,5 @@ export const IMG = {
  },
  "washer#4": {
   "src": "/images/buy/bosch-series-6-9-kg-i-dos-efbe74.webp"
- },
- "kitchen-robot-vacuum-mop#0": {
-  "src": "/images/buy/dreame-x50-ultra-robot-vacuum-mop-water-kit.webp"
- },
- "kitchen-robot-vacuum-mop#1": {
-  "src": "/images/buy/roborock-saros-20-refill-drainage.webp"
- },
- "kitchen-robot-vacuum-mop#2": {
-  "src": "/images/buy/dreame-x60-ultra-robot-vacuum-mop.webp"
- },
- "kitchen-robot-vacuum-mop#3": {
-  "src": "/images/buy/dreame-aqua10-ultra-roller.webp"
- },
- "kitchen-robot-vacuum-mop#4": {
-  "src": "/images/buy/narwal-freo-x10-pro-autowater.webp"
- },
- "ky-bed#1": {
-  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
- },
- "ky-bed#2": {
-  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
- },
- "ky-bed#3": {
-  "src": "/images/buy/maju-thorney-hydraulic-storage-bed.webp"
- },
- "kx-bed#1": {
-  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
- },
- "kx-bed#2": {
-  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
- },
- "kx-bed#3": {
-  "src": "/images/buy/maju-thorney-hydraulic-storage-bed.webp"
- },
- "ks-bed#1": {
-  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
- },
- "ks-bed#2": {
-  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
- },
- "ks-bed#3": {
-  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
- },
- "ks-bed#4": {
-  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
- },
- "living-philips-meson-5-13w#1": {
-  "src": "/images/buy/philips-eridani-sceneswitch-downlight.webp"
- },
- "living-track-or-spot-lights#1": {
-  "src": "/images/buy/eyeball-spotlight-recessed.webp",
-  "ex": true
  }
 };

@@ -64,7 +64,7 @@ export const PLAN = {
    {n: 'IKEA SMÅSTAD/PLATSA 60 × 42', w: 600, d: 420, price: 'S$230', href: 'https://www.ikea.com/sg/en/p/smastad-platsa-wardrobe-white-light-green-with-2-clothes-rails-s09555415/', img: '/images/research/ikea-smastad-platsa-wardrobe.webp', note: '181 cm tall, only 42 cm deep, 2 clothes rails.'},
    {n: 'IKEA BRIMNES 2-door 78 × 50', w: 780, d: 500, price: 'S$199', href: 'https://www.ikea.com/sg/en/p/brimnes-wardrobe-with-2-doors-white-20400479', img: '/images/research/ikea-brimnes-wardrobe-2-door.webp', note: '190 cm tall.'},
    {n: 'IKEA KLEPPSTAD 2-door 79 × 55', w: 790, d: 550, price: 'S$149', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-2-doors-white-10437237/', img: '/images/research/ikea-kleppstad-2-door.webp', note: '176 cm tall. Some owners say it feels cheap; fix it to the wall.'},
-  ], research: 'rooms', note: 'Small wardrobe because the room is tight. Doors need about 50 cm in front to open.'},
+  ], research: 'rooms', note: 'Small wardrobe because the room is tight. Doors need about 50 cm in front to open.', buy: ['ky-wardrobe']},
   // ---------- KS room (bedroom 2) ----------
   {id: 'ks-bed', name: 'KS bed', room: 'ks', kind: 'bed', x: 7620, y: 2500, r: 90, sizes: [{n: 'Queen', w: 1520, d: 1905}, {n: 'Super single', w: 1070, d: 1905}], buy: ['ks-bed', 'ks-mattress'], research: 'beds', note: 'Mattress size. The I-Niche platform bed (D3, on hold) would be 110 × 282.5 cm along the window wall.'},
   {id: 'ks-desk', name: 'KS study desk', room: 'ks', kind: 'desk', x: 8320, y: 3800, r: 90, s: 1, sizes: [
@@ -72,18 +72,18 @@ export const PLAN = {
    {n: 'IKEA LAGKAPTEN/ALEX 120 × 60', w: 1200, d: 600, price: 'S$178.90', href: 'https://www.ikea.com/sg/en/p/lagkapten-alex-desk-white-stained-oak-effect-white-s89416963/', img: '/images/research/ikea-lagkapten-alex-120.webp'},
    {n: 'IKEA ALEX 132 × 58', w: 1320, d: 580, price: 'S$239', href: 'https://www.ikea.com/sg/en/p/alex-desk-white-60483439/'},
    {n: 'IKEA LAGKAPTEN/ALEX 140 × 60', w: 1400, d: 600, price: 'S$278.80', href: 'https://www.ikea.com/sg/en/p/lagkapten-alex-desk-white-s79521605/', img: '/images/research/ikea-lagkapten-alex-140.webp'},
-  ], research: 'rooms', note: 'Typical study desks are 100 to 140 cm wide and 48 to 60 cm deep. Pick a size or type a custom one.'},
+  ], research: 'rooms', note: 'Typical study desks are 100 to 140 cm wide and 48 to 60 cm deep. Pick a size or type a custom one.', buy: ['ks-desk']},
   {id: 'ks-chair', name: 'KS chair', room: 'ks', kind: 'chair', x: 7620, y: 3800, r: 270, sizes: [
    {n: 'IKEA MARKUS 62 × 60', w: 620, d: 600, price: 'S$199', href: 'https://www.ikea.com/sg/en/p/markus-office-chair-vissle-dark-grey-50261151/', img: '/images/research/ikea-markus-chair.webp', note: 'Popular office chair; seat 53 × 47 cm.'},
    {n: 'SIHOO M57 60 × 60', w: 600, d: 600, price: 'From S$339 (HipVan)', href: 'https://www.hipvan.com/products/sihoo-m57-ergonomic-chair-black', img: '/images/research/sihoo-m57.webp', note: 'Same as KY’s chair.'},
    {n: 'IKEA FLINTAN 71 × 71', w: 710, d: 710, price: 'S$69.90', href: 'https://www.ikea.com/sg/en/p/flintan-office-chair-beige-50492203/', img: '/images/research/ikea-flintan-chair.webp', note: 'Budget chair with a wide base.'},
-  ], research: 'rooms'},
+  ], research: 'rooms', buy: ['ks-chair']},
   {id: 'ks-wardrobe', name: 'KS wardrobe', room: 'ks', kind: 'wardrobe', x: 8200, y: 4770, r: 180, sizes: [
    {n: 'IKEA KLEPPSTAD 2-door 79 × 55', w: 790, d: 550, price: 'S$149', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-2-doors-white-10437237/', img: '/images/research/ikea-kleppstad-2-door.webp', note: '176 cm tall.'},
    {n: 'IKEA BRIMNES 2-door 78 × 50', w: 780, d: 500, price: 'S$199', href: 'https://www.ikea.com/sg/en/p/brimnes-wardrobe-with-2-doors-white-20400479', img: '/images/research/ikea-brimnes-wardrobe-2-door.webp', note: '190 cm tall.'},
    {n: 'IKEA KLEPPSTAD 3-door 117 × 55', w: 1170, d: 550, price: 'S$199', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-3-doors-white-80441759/', img: '/images/research/ikea-kleppstad-3-door.webp', note: '176 cm tall.'},
    {n: 'IKEA GURSKEN 49 × 55', w: 494, d: 550, price: 'S$89.90', href: 'https://www.ikea.com/sg/en/p/gursken-wardrobe-light-beige-50503292/', img: '/images/research/ikea-gursken-wardrobe.webp'},
-  ], research: 'rooms', note: 'Check if the old built-in wardrobe in this room stays; if it does, this may not be needed.'},
+  ], research: 'rooms', note: 'Check if the old built-in wardrobe in this room stays; if it does, this may not be needed.', buy: ['ks-wardrobe']},
   // ---------- KX room (main bedroom) ----------
   {id: 'kx-bed', name: 'KX bed', room: 'kx', kind: 'bed', x: 3760, y: 7150, r: 90, sizes: [{n: 'Queen', w: 1520, d: 1905}, {n: 'Super single', w: 1070, d: 1905}], buy: ['kx-bed', 'kx-mattress'], research: 'beds', note: 'Mattress size. A storage frame adds about 5 to 10 cm each way.'},
   {id: 'kx-vanity', name: 'KX study / vanity desk', room: 'kx', kind: 'desk', x: 3700, y: 4330, r: 0, sizes: [
@@ -91,11 +91,11 @@ export const PLAN = {
    {n: 'IKEA SYVDE 100 × 48', w: 1000, d: 480, price: 'S$249', href: 'https://www.ikea.com/sg/en/p/syvde-dressing-table-white-00439562/', img: '/images/research/ikea-syvde-dressing-table.webp'},
    {n: 'IKEA HEMNES 100 × 50', w: 1000, d: 500, price: 'S$539', href: 'https://www.ikea.com/sg/en/p/hemnes-dressing-table-white-10355670/', img: '/images/research/ikea-hemnes-dressing-table.webp', note: 'Solid wood.'},
    {n: 'IKEA BRIMNES 70 × 42', w: 700, d: 420, price: 'S$99.90', href: 'https://www.ikea.com/sg/en/p/brimnes-dressing-table-white-90355421/', img: '/images/research/ikea-brimnes-dressing-table.webp', note: 'Smallest.'},
-  ], research: 'rooms'},
+  ], research: 'rooms', buy: ['kx-vanity']},
   {id: 'kx-stool', name: 'KX stool', room: 'kx', kind: 'stool', x: 3700, y: 4800, r: 0, sizes: [
    {n: 'IKEA KYRRE 42 × 48', w: 420, d: 480, price: 'S$25', href: 'https://www.ikea.com/sg/en/p/kyrre-stool-birch-80420040/', img: '/images/research/ikea-kyrre-stool.webp', note: 'Birch, 45 cm high.'},
    {n: 'IKEA MARIUS 40 × 40', w: 400, d: 400, price: 'S$5.90', href: 'https://www.ikea.com/sg/en/p/marius-stool-black-00162380/', img: '/images/research/ikea-marius-stool.webp', note: '45 cm high; slides under the table.'},
-  ], research: 'rooms'},
+  ], research: 'rooms', buy: ['kx-stool']},
   // ---------- Living, dining ----------
   // New id (21 Nov evening) so the new default applies: back on the bedroom 2 wall, facing the TV, chaise by the window.
   {id: 'living-sofa-l', name: 'L-shape sofa', room: 'living', kind: 'sofa', x: 9420, y: 3320, r: 270, est: true, sizes: [{n: 'Chaise by the window (about 260 × 160)', w: 2600, d: 1600, flip: true}, {n: 'Chaise to the dining side (about 260 × 160)', w: 2600, d: 1600}], buy: ['living-l-shape-4-seat'], research: 'vhaus', note: 'Size is an estimate until the V Haus model is chosen. The viewing lines to the TV start from the middle seat, about 50 cm in from the sofa back (head position).'},
@@ -107,7 +107,7 @@ export const PLAN = {
    {n: 'IKEA LACK 118 × 78', w: 1180, d: 780, price: 'S$69.90', href: 'https://www.ikea.com/sg/en/p/lack-coffee-table-black-brown-80352951/', img: '/images/research/ikea-lack-coffee-118.webp'},
    {n: 'IKEA UGGLERUM 130 × 65', w: 1300, d: 650, price: 'S$199', href: 'https://www.ikea.com/sg/en/p/ugglerum-coffee-table-walnut-veneer-80627979/', img: '/images/research/ikea-ugglerum-coffee.webp', note: 'Walnut veneer.'},
    {n: 'IKEA VITTSJÖ round Ø75', w: 750, d: 750, round: true, price: 'S$69.90', href: 'https://www.ikea.com/sg/en/p/vittsjoe-coffee-table-light-beige-glass-50604347/', img: '/images/research/ikea-vittsjo-coffee.webp', note: 'Round glass top.'},
-  ], note: 'Not decided yet. Keep about 40 to 45 cm between the sofa and the table, and a clear walkway past it. A common guide is a table about two thirds as long as the sofa.'},
+  ], note: 'Not decided yet. Keep about 40 to 45 cm between the sofa and the table, and a clear walkway past it. A common guide is a table about two thirds as long as the sofa.', buy: ['living-coffee-table']},
   {id: 'living-tv', name: 'TV', room: 'living', kind: 'tv', x: 12360, y: 3400, r: 90, sizes: [
    {n: 'LG OLED C6 65"', w: 1441, d: 45, price: 'S$3,254 (Electromart)', img: '/images/buy/lg-oled-evo-c6-65-2026-a32203.webp', note: '144.1 × 82.6 cm, 4.5 cm deep (without stand).'},
    {n: 'LG QNED86B 75" (Mini LED)', w: 1677, d: 31, price: 'S$3,499 (Harvey Norman)', href: 'https://www.harveynorman.com.sg/tv-and-audio/tvs-en-2/tvs-en-3/lg-75-inch-d86-qned-evo-mini-led-ai-4k-2026-smart-tv-black-75qned86bsa.atc.html', img: '/images/research/lg-75qned86b.webp', note: 'LG has no 75" OLED; this is the closest LG at 75". 167.7 × 96.5 cm.'},

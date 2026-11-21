@@ -16,7 +16,8 @@ export function planData(v = {}, ro = false) {
   const c = choiceOf(f.item, v);
   buy[id] = {name: f.item.name, room: f.room.name, tag: c.tag, qty: c.qty, pick: c.pick, opts: optionsOf(f.item).map((o, k) => ({n: o.name, m: o.model ?? '', p: money(o.price, o.cur), s: Math.round(toSGD(o, BUY.rate) * 100) / 100, shop: o.shop ?? '', href: o.href ?? '', est: !!(o.est ?? (k === 0 && f.item.est)), img: photoOf(id, k)?.src ?? '', note: k ? o.note ?? '' : ''}))};
  }
- const research = Object.fromEntries(RESEARCH.map(t => [t.id, {title: t.title, status: t.status, answer: t.answer, updated: t.updated, list: t.shortlist.map(o => ({g: o.group, n: o.name, p: money(o.price, o.cur), shop: o.shop, href: o.href ?? '', pick: !!o.pick, why: o.why ?? '', specs: o.specs ?? []}))}]));
+ const used = new Set(PLAN.items.map(i => i.research).filter(Boolean)); // only topics the plan links to, to keep the page light
+ const research = Object.fromEntries(RESEARCH.filter(t => used.has(t.id)).map(t => [t.id, {title: t.title, status: t.status, answer: t.answer, updated: t.updated, list: t.shortlist.map(o => ({g: o.group, n: o.name, p: money(o.price, o.cur), shop: o.shop, href: o.href ?? '', pick: !!o.pick, why: o.why ?? '', specs: o.specs ?? []}))}]));
  return {ro, rate: BUY.rate, img: PLAN.img, W: Math.round(PLAN.imgW * PLAN.mmPerPx), H: Math.round(PLAN.imgH * PLAN.mmPerPx), rooms: PLAN.rooms, walls: PLAN.walls, items: st.items, points: st.points, pointTypes: PLAN.pointTypes, wifi: PLAN.wifi, tvView: PLAN.tvView, ceilingMm: PLAN.ceilingMm, workMm: PLAN.workMm, colours: ROOM_COLOURS, buy, research};
 }
 

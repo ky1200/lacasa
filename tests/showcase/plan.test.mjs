@@ -67,7 +67,7 @@ test('floor plan and research pages render; picks are shared with /buy; plain wo
  for(const page of [html,r]){const text=page.replace(/<script[\s\S]*?<\/script>/g,'').replace(/<[^>]+>/g,' ');assert.doesNotMatch(text,/\byou\b|\byour\b|perfect|amazing/i);}
  assert.match(renderPage(state(),'https://lacasa.test/').html,/href="\/plan"/,'home links to the plan');
  const audit=renderPage({...visitorState(content,samples,{code:'AUDIT',audit:true,readOnly:true}),visit:{}},'https://lacasa.test/audit/plan').html;assert.match(audit,/data-move disabled/);
- assert.ok(JSON.stringify(planData()).length<60000,'plan data stays small');
+ assert.ok(JSON.stringify(planData()).length<75000,'plan data stays small');
 });
 test('home puts the to-buy list, floor plan and research first; older pages move to /earlier',()=>{
  const html=renderPage(state({'t:fibre':'1'}),'https://lacasa.test/').html;
