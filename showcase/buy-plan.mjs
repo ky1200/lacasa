@@ -65,7 +65,7 @@ export const BUY = {
    ]},
   ]},
   {id: 'dining', name: 'Dining', items: [
-   {id: 'dining-v-haus-lino-dining', name: 'V Haus LINO dining table + 4 chairs (no side chairs)', qty: 1, price: 2299, cur: 'MYR', shop: 'V Haus Living', type: 'Shop', date: '2026-12-13', when: 'Order with sofa', note: 'Chosen. Order with 4 chairs only (drop the 2 end chairs) and ask for the lower price. Check chair pull-out space on the 175 cm side.'},
+   {id: 'dining-v-haus-lino-dining', name: 'V Haus LINO dining table + 4 chairs (no side chairs)', qty: 1, price: 2299, cur: 'MYR', shop: 'V Haus Living', type: 'Shop', date: '2026-11-22', when: '30% deposit now for January stock (sold out until mid or end January)', note: 'Chosen. Balance 3 to 5 days before delivery. Free to change or cancel until V Haus orders from the factory (about 1 month before delivery). Order with 4 chairs only (drop the 2 end chairs) and ask for the lower price. Check chair pull-out space on the 175 cm side.'},
    {id: 'dining-kdk-f40gp-100-cm', name: 'KDK F40GP 100 cm Wi-Fi DC ceiling fan with LED light', qty: 1, price: 418, cur: 'SGD', shop: 'KDK Singapore', type: 'Online', href: 'https://www.kdk.sg/products/ceiling-fan-f40gp', date: '2026-12-05', when: 'Buy before electrician. JB KDK dealers may be cheaper', note: 'KDK Bundle D (2 × F40GP) is S$788. Check clearance to walls.'},
   ]},
   {id: 'kitchen', name: 'Kitchen and yard', items: [
@@ -214,7 +214,9 @@ export const BUY = {
   {id: 'quote2', t: 'Get the I-Niche revised quote and check it', n: 'Use the "Check in the 2nd quotation" list on the to-buy page.', href: '#buy-qa'},
   {id: 'kitchen-door', t: 'Choose the kitchen glass sliding door design', n: 'Send it to I-Niche (E2 + E2a).'},
   {id: 'natura', t: 'Natura black hotel mattress: get the model name and price', n: 'From a JB Natura dealer, then add it as a mattress option.'},
-  {id: 'fair', date: '2026-11-22', t: 'Mattress fair: one written quote per booth, both sizes', n: '3 super single and 3 queen, with and without the frame. Deposit only if the size can be set by 5 Dec at the quoted price.', href: '/research#r-beds'},
+  {id: 'bm', date: '2026-11-22', t: 'BM Mattress (Sutera) 11am: bundle price for both sizes', n: 'Leaning to BM (good hydraulic storage frames). Ask the bundle price for 3 super single and 3 queen, with frames, delivered to SG with GST, and the warranty in writing.', href: '/research#r-beds'},
+  {id: 'fair', date: '2026-11-22', t: 'Mattress fair: one written quote per booth, both sizes', n: 'Last day. Compare the big brands with BM. Deposit only if the size can be set by 5 Dec at the quoted price.', href: '/research#r-beds'},
+  {id: 'vhaus-visit', date: '2026-11-22', t: 'V Haus: choose the sofa; 30% deposit for the LINO dining set', n: 'Dining set is sold out; ordering now gets January stock. Free to change or cancel until V Haus orders from the factory.', href: '/research#r-vhaus'},
   {id: 'black-friday', date: '2026-11-27', t: 'Black Friday: check deals on the list', href: '#buy-dates'},
   {id: 'sign', date: '2026-11-28', t: 'Sign with I-Niche and pay the 10% deposit', n: 'After the 2nd quotation is checked. Payments 10/40/40/10.'},
   {id: 'reno-form', date: '2026-11-28', t: 'Renovation form + S$1,000 deposit to La Casa management', n: 'At least 7 days before work starts. I-Niche gives the contractor details. Cash or cheque, refunded after checks.', href: '#it-contractor-mcst-renovation-deposit-refundable'},
@@ -222,9 +224,10 @@ export const BUY = {
   {id: 'sp', date: '2026-12-02', t: 'SP Services account (electricity and water) starts', n: 'Apply before 2 Dec so power and water are on when work starts.'},
   {id: 'keys', date: '2026-12-03', t: 'Collect the keys and do the 3 Dec checklist', href: '#buy-measure'},
   {id: 'tell-iniche', date: '2026-12-04', t: 'Tell I-Niche the 3 Dec results', n: 'Switch and socket count (G3), toilet bowl size, common bathroom wall and glass size, keep or drop the platform bed (D3 + D3a).'},
+  {id: 'beds', date: '2026-12-04', t: 'Confirm bed sizes and frames with the mattress shop', n: 'Right after the 3 Dec measuring. BM aims to deliver by 21 Dec or the last week of December.', href: '/research#r-beds'},
   {id: 'sanitary', date: '2026-12-05', t: 'Buy the sanitary fittings', n: 'Basins, taps, toilets, bidet sprays, showers, accessories. The family supplies them; I-Niche fits them (C1). Toilet size after 3 Dec.'},
   {id: 'switches', date: '2026-12-05', t: 'Buy switches and sockets', n: 'After the count on 3 Dec, before the electrician starts.', href: '#it-contractor-switches-sockets'},
-  {id: 'beds', date: '2026-12-12', t: 'Bed sizes set, then buy beds and mattresses (12.12 sale)', n: 'Keep 12 cm clear under any bed on legs for the robot vacuum.'},
+  {id: 'vhaus-wardrobe', date: '2026-12-06', t: 'V Haus measures the KX L-shaped wardrobe', n: 'After the old wardrobe is hacked (3 to 5 Dec). About 1 month to make; about RM5,800.', href: '/research#r-vhaus'},
  ],
  // To check on 3 Dec (keys) or after, then buy.
  measure: [
