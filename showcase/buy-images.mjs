@@ -201,7 +201,7 @@ export const IMG = {
   "src": "/images/buy/ikea-lagkapten-alex-140.webp"
  },
  "ks-mattress#0": {
-  "ex": false,
+  "ex": true,
   "src": "/images/buy/dunlopillo-carlton-signature-queen.webp"
  },
  "ks-mattress#5": {
@@ -330,7 +330,7 @@ export const IMG = {
   "src": "/images/buy/led-ambient-strip-driver-e861a5.webp"
  },
  "ky-mattress#0": {
-  "ex": true,
+  "ex": false,
   "src": "/images/buy/dunlopillo-carlton-signature-queen.webp"
  },
  "ky-mattress#5": {
