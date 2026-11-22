@@ -161,6 +161,10 @@ export const IMG = {
  },
  "ks-bed#0": {
   "ex": true,
+  "src": "/images/buy/dunlopillo-storage-bed-frame-example.webp"
+ },
+ "ks-bed#6": {
+  "ex": true,
   "src": "/images/buy/bm-queen-hydraulic-storage-bed-headboard.webp"
  },
  "ks-bed#5": {
@@ -197,6 +201,10 @@ export const IMG = {
   "src": "/images/buy/ikea-lagkapten-alex-140.webp"
  },
  "ks-mattress#0": {
+  "ex": false,
+  "src": "/images/buy/dunlopillo-carlton-signature-queen.webp"
+ },
+ "ks-mattress#5": {
   "ex": true,
   "src": "/images/buy/bm-mattress-rm4100-example.webp"
  },
@@ -223,6 +231,10 @@ export const IMG = {
  },
  "kx-bed#0": {
   "ex": true,
+  "src": "/images/buy/dunlopillo-storage-bed-frame-example.webp"
+ },
+ "kx-bed#5": {
+  "ex": true,
   "src": "/images/buy/bm-queen-hydraulic-storage-bed-headboard.webp"
  },
  "kx-bed#4": {
@@ -245,6 +257,10 @@ export const IMG = {
   "src": "/images/buy/kdk-f40gp-100-cm-wi-fi-dc-ceiling-fan-with-led-light-ee007e.webp"
  },
  "kx-mattress#0": {
+  "ex": true,
+  "src": "/images/buy/dunlopillo-carlton-signature-queen.webp"
+ },
+ "kx-mattress#5": {
   "ex": true,
   "src": "/images/buy/eclipse-mattress-queen-example.webp"
  },
@@ -288,6 +304,10 @@ export const IMG = {
  },
  "ky-bed#0": {
   "ex": true,
+  "src": "/images/buy/dunlopillo-storage-bed-frame-example.webp"
+ },
+ "ky-bed#5": {
+  "ex": true,
   "src": "/images/buy/bm-queen-hydraulic-storage-bed-headboard.webp"
  },
  "ky-bed#4": {
@@ -310,6 +330,10 @@ export const IMG = {
   "src": "/images/buy/led-ambient-strip-driver-e861a5.webp"
  },
  "ky-mattress#0": {
+  "ex": true,
+  "src": "/images/buy/dunlopillo-carlton-signature-queen.webp"
+ },
+ "ky-mattress#5": {
   "src": "/images/buy/king-koil-luxury-qi-cool-firm-queen.webp"
  },
  "ky-mattress#4": {
