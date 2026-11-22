@@ -201,8 +201,7 @@ export const IMG = {
   "src": "/images/buy/ikea-lagkapten-alex-140.webp"
  },
  "ks-mattress#0": {
-  "ex": true,
-  "src": "/images/buy/dunlopillo-carlton-signature-queen.webp"
+  "src": "/images/buy/dunlopillo-richmond-signature-queen.webp"
  },
  "ks-mattress#5": {
   "ex": true,
@@ -257,8 +256,7 @@ export const IMG = {
   "src": "/images/buy/kdk-f40gp-100-cm-wi-fi-dc-ceiling-fan-with-led-light-ee007e.webp"
  },
  "kx-mattress#0": {
-  "ex": true,
-  "src": "/images/buy/dunlopillo-carlton-signature-queen.webp"
+  "src": "/images/buy/dunlopillo-richmond-signature-queen.webp"
  },
  "kx-mattress#5": {
   "ex": true,
