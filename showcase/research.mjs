@@ -40,18 +40,19 @@ export const RESEARCH = [
    'Rooms: KY Carlton 30 cm, KHJ60 headboard, colour PLE 007. KX Richmond 38 cm, no headboard, Picco PC 151-14. KS Richmond 38 cm, KHJ44 headboard, 311-15.',
    'Price check (22 Nov): Carlton and Richmond Signature are fair and dealer models, not sold online. Closest official models: Pure Cool RM4,199 to 4,799, Cool Luxe 35 cm RM6,399. Frames RM999 vs BM RM2,000 to 2,300. About RM5,500 less than the BM quote.',
    'ANZ Home Furniture: JB chain since 2004 and a Dunlopillo Suite dealer (Sutera, Bukit Indah, Molek). No customer complaints found online.',
+   'Payment: full balance RM11,999 at least 3 days before delivery, so by Sat 19 Dec. Delivery Tue 22 Dec. Tracked on the to-buy page (Payments and deliveries).',
    'BM Mattress (Sutera) was told on 23 Nov that we are not going ahead. No deposit was paid.',
    'Storage beds sit on the floor, so the robot vacuum does not go under them.',
   ],
  },
  {
-  id: 'vhaus', tone: 'sand', short: 'V Haus', title: 'V Haus: dining set, wardrobe, sofa', rooms: ['dining', 'kx', 'living'], status: 'Decided', updated: '2026-11-22',
+  id: 'vhaus', tone: 'sand', short: 'V Haus', title: 'V Haus: dining set, wardrobe, sofa', rooms: ['dining', 'kx', 'living'], status: 'Decided', updated: '2026-11-23',
   chat: 'La Casa shop helper chat', plan: ['dining-table', 'living-sofa-l'],
   answer: 'Ordered at V Haus Living, Mutiara Rini (JB) on 22 Nov, sales order 03460: RM14,516.62 with 9% GST for the LINO dining set with 6 chairs, the custom L-shape wardrobe for KX room and the sofa (about S$4,580). 30% deposit RM4,355 paid. Balance RM10,161.62 before delivery. Delivery date not fixed yet.',
   decide: [
    'Sofa size: order sheet says 270 × 130 cm, shop measure about 256 × 138 cm. Ask V Haus which is right, and the model name.',
    'Wardrobe: body colour, door colour and inside layout when V Haus measures after the 3 to 5 Dec hacking. Also the board brand and thickness, hinge and runner brands, swing or sliding doors.',
-   'Delivery to Singapore: cost, install, and the dates for each item (dining set January stock).',
+   'Delivery to Singapore: cost and install. Dates so far: measure 8 Dec, wardrobe about end of December, sofa maybe December, dining set mid to end January. Ask if the balance is paid per delivery.',
    'Coffee table: still maybe, not in this order.',
   ],
   shortlist: [
@@ -61,6 +62,7 @@ export const RESEARCH = [
   ],
   notes: [
    'Order total: subtotal RM14,318 + GST 9% RM1,288.62 - discount RM1,090 = RM14,516.62. Deposit 30% RM4,355 (paid 22 Nov). Balance RM10,161.62, due before delivery.',
+   'Schedule (K, 23 Nov): V Haus measures the KX wardrobe Tue 8 Dec; about 1 month rush, wardrobe delivered around end of December. Sofa delivery to confirm, maybe December. Dining set: January stock, mid to end January. Payments and dates are tracked on the to-buy page (Payments and deliveries).',
    'Order terms: the deposit is not refundable; custom and made-to-order items (the wardrobe) cannot be cancelled or changed; report defects within 3 days of delivery and check everything before signing the delivery note; storage charges if delivery is pushed back more than 14 days after the agreed date.',
    'Earlier on WhatsApp V Haus said the dining set is free to change or cancel until they order from the factory. The printed terms say deposits are not refundable, so ask Jason to confirm this on WhatsApp.',
    'Melamine board is fine for a bedroom wardrobe if every edge is sealed (edge banding). Ask for 18 mm board and the board brand.',
