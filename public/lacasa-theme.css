@@ -1160,3 +1160,12 @@ summary.just-closed{animation:secflash .7s var(--ease-out)}
 .rz-card.is-place{display:block;padding:0}
 .rz-card.is-place .rz-body{padding:12px 14px}
 .rz-pick-inline{position:static;display:inline-block;margin:12px 14px 0}
+/* /plan: add or remove extra furniture (mahjong table, recliner, coffee table) */
+.plan-addables{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:2px 0 8px}
+.plan-addables>span{font-size:13px;font-weight:650;color:var(--muted);margin-right:2px}
+.plan-addables button{display:inline-flex;align-items:center;gap:6px;font:inherit;font-size:14px;font-weight:600;padding:7px 13px;min-height:40px;border-radius:999px;border:1.5px dashed var(--line);background:#fff;color:var(--sumi);cursor:pointer}
+.plan-addables button i{font-style:normal;font-weight:800;color:var(--indigo)}
+.plan-addables button[aria-pressed="true"]{border-style:solid;border-color:var(--moss);background:var(--moss-soft)}
+.plan-addables button[aria-pressed="true"] i{color:var(--moss)}
+.plan-addables button:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
+.sheet-actions .sheet-remove{border-color:#b4532a;color:#b4532a}

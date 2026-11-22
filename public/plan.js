@@ -46,11 +46,11 @@ const flush = async () => {
  say(failed ? (navigator.onLine === false ? 'Offline: kept on this phone' : msg) : 'Saved');
 };
 const save = (key, value) => {if (D.ro) return; const p = pending(); p[key] = value; keep(p); say('Saving…'); clearTimeout(timer); timer = setTimeout(flush, 400);};
-const saveItem = it => save(`p:i:${it.id}`, `${Math.round(it.x)},${Math.round(it.y)},${it.r},${it.c ? `c${it.c.w}x${it.c.d}` : it.s}`);
+const saveItem = it => save(`p:i:${it.id}`, `${Math.round(it.x)},${Math.round(it.y)},${it.r},${it.c ? `c${it.c.w}x${it.c.d}` : it.s}${it.add ? `,${it.on ? 1 : 0}` : ''}`);
 const savePoints = t => save(`p:pts:${t}`, points[t].length ? points[t].map(p => p.map(Math.round).join(',')).join(';') : 'none');
 // Apply anything not yet uploaded from this phone.
 for (const [k, v] of Object.entries(pending())) {
- if (k.startsWith('p:i:')) {const it = items.find(i => i.id === k.slice(4)), m = /^(-?\d+),(-?\d+),(\d+),(\d|c(\d+)x(\d+))$/.exec(v); if (it && m) Object.assign(it, {x: +m[1], y: +m[2], r: +m[3]}, m[5] ? {c: {w: +m[5], d: +m[6]}} : {s: +m[4], c: null});}
+ if (k.startsWith('p:i:')) {const it = items.find(i => i.id === k.slice(4)), m = /^(-?\d+),(-?\d+),(\d+),(\d|c(\d+)x(\d+))(,([01]))?$/.exec(v); if (it && m) Object.assign(it, {x: +m[1], y: +m[2], r: +m[3]}, m[5] ? {c: {w: +m[5], d: +m[6]}} : {s: +m[4], c: null}, m[8] && it.add ? {on: m[8] === '1'} : {});}
  else if (k.startsWith('p:pts:') && points[k.slice(6)]) points[k.slice(6)] = v === 'none' ? [] : v.split(';').map(p => p.split(',').map(Number));
  else if (k.startsWith('b:') && k.endsWith(':pick')) {const b = D.buy[k.slice(2, -5)]; if (b) b.pick = Number(v) || 0;}
 }
@@ -62,17 +62,8 @@ if (Object.keys(pending()).length) flush();
 const sizeOf = it => {const s = it.c ? {...(it.sizes[0]), n: 'Custom', w: it.c.w, d: it.c.d, custom: true} : it.sizes[it.s] ?? it.sizes[0], rot = it.r % 180 !== 0; return {w: rot ? s.d : s.w, d: rot ? s.w : s.d, s};};
 const boxOf = it => {const {w, d} = sizeOf(it); return {x1: it.x - w / 2, y1: it.y - d / 2, x2: it.x + w / 2, y2: it.y + d / 2};};
 const inBox = (x, y, b) => x >= b[0] && x <= b[0] + b[2] && y >= b[1] && y <= b[1] + b[3];
-// Footprint as one or more boxes: an L-shaped sofa is two boxes (seat run + chaise), so a table beside it is not a clash.
-const boxesOf = it => {
- if (it.kind !== 'sofa') return [boxOf(it)];
- const {s} = sizeOf(it), w = s.w, d = s.d, x = -w / 2, y = -d / 2, chaise = Math.min(900, w * .36), seatD = Math.min(950, d * .6), f = s.flip ? -1 : 1;
- const local = [[x, y, x + w, y + seatD], [x, y + seatD, x + chaise, y + d]];
- const th = it.r * Math.PI / 180, c = Math.cos(th), sn = Math.sin(th);
- return local.map(([a1, b1, a2, b2]) => {
-  const pts = [[a1, b1], [a2, b1], [a1, b2], [a2, b2]].map(([px, py]) => {px *= f; return [it.x + px * c - py * sn, it.y + px * sn + py * c];});
-  return {x1: Math.min(...pts.map(p => p[0])), y1: Math.min(...pts.map(p => p[1])), x2: Math.max(...pts.map(p => p[0])), y2: Math.max(...pts.map(p => p[1]))};
- });
-};
+// Footprint box of an item (the V Haus sofa is straight, so every item is one box).
+const boxesOf = it => [boxOf(it)];
 const roomAt = (x, y) => D.rooms.find(r => r.boxes.some(b => inBox(x, y, b)));
 const toPlan = e => {const pt = svg.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; const m = svg.getScreenCTM(); return m ? pt.matrixTransform(m.inverse()) : {x: 0, y: 0};};
 const segCross = (ax, ay, bx, by, cx, cy, dx, dy) => {
@@ -144,10 +135,13 @@ const shape = (it, g) => {
   if (w > 1300) mk('rect', {x: x + 120 + pw, y: y + 70, width: pw, height: 380, rx: 80, class: 'pillow', ...ns}, g);
   mk('line', {x1: x, y1: y + 620, x2: x + w, y2: y + 620, class: 'fold', ...ns}, g);
  } else if (it.kind === 'sofa') {
-  const back = 220, chaise = Math.min(900, w * .36), seatD = Math.min(950, d * .6);
-  const f = s.flip ? mk('g', {transform: 'scale(-1 1)'}, g) : g; // chaise on the other end
-  mk('path', {d: `M${x},${y}H${x + w}V${y + seatD}H${x + chaise}V${y + d}H${x}Z`, class: 'body', ...ns}, f);
-  mk('path', {d: `M${x},${y}H${x + w}V${y + back}H${x + back}V${y + d}H${x}Z`, class: 'back', ...ns}, f);
+  // Straight sofa (V Haus 2233A): backrest along the top, one armrest on the right end, open cushioned end on the left.
+  const back = 220, arm = 230, seats = 5, sw = (w - arm) / seats;
+  const f = s.flip ? mk('g', {transform: 'scale(-1 1)'}, g) : g; // open end on the other side
+  mk('rect', {x, y, width: w, height: d, rx: 60, class: 'body', ...ns}, f);
+  mk('rect', {x: x + sw, y, width: w - arm - sw, height: back, rx: 40, class: 'back', ...ns}, f);
+  mk('rect', {x: x + w - arm, y, width: arm, height: d, rx: 60, class: 'back', ...ns}, f);
+  for (let k = 1; k < seats; k++) mk('line', {x1: x + k * sw, y1: y + back, x2: x + k * sw, y2: y + d - 40, class: 'fold', ...ns}, f);
  } else if (it.kind === 'ctable') {
   if (s.round) mk('circle', {cx: 0, cy: 0, r: w / 2, class: 'body', ...ns}, g);
   else {mk('rect', {x, y, width: w, height: d, rx: 30, class: 'body', ...ns}, g); mk('rect', {x: x + 60, y: y + 60, width: w - 120, height: d - 120, rx: 20, class: 'fold', fill: 'none', ...ns}, g);}
@@ -167,6 +161,19 @@ const shape = (it, g) => {
   for (let a = 0; a < 5; a++) {const t = a * 2 * Math.PI / 5 - Math.PI / 2; mk('line', {x1: 0, y1: 0, x2: Math.cos(t) * r * .92, y2: Math.sin(t) * r * .92, class: 'spoke', ...ns}, g);}
   mk('rect', {x: -r * .78, y: -r * .62, width: r * 1.56, height: r * 1.4, rx: r * .3, class: 'body', ...ns}, g);
   mk('rect', {x: -r * .72, y: -r * .9, width: r * 1.44, height: r * .32, rx: r * .14, class: 'back', ...ns}, g);
+ } else if (it.kind === 'recliner') {
+  // Armchair from above, back at the top; dashed footrest shows the reclined reach (about 60 cm).
+  mk('rect', {x: x + w * .2, y: y + d, width: w * .6, height: 600, rx: 60, class: 'swing', ...ns}, g);
+  mk('rect', {x, y, width: w, height: d, rx: 140, class: 'body', ...ns}, g);
+  mk('rect', {x: x + 60, y: y + 50, width: w - 120, height: d * .28, rx: 90, class: 'back', ...ns}, g);
+  mk('rect', {x: x + 50, y: y + d * .3, width: w * .16, height: d * .64, rx: 60, class: 'back', ...ns}, g);
+  mk('rect', {x: x + w * .84 - 50, y: y + d * .3, width: w * .16, height: d * .64, rx: 60, class: 'back', ...ns}, g);
+ } else if (it.kind === 'mjtable') {
+  // Square table with a chair on each side, all inside the w × d footprint.
+  const t = Math.min(s.t ?? 800, w, d), c = Math.min(450, (w - t) / 2 - 20);
+  if (c > 120) {for (const [cx, cy] of [[-c / 2, y + 10], [-c / 2, -y - 10 - c], [x + 10, -c / 2], [-x - 10 - c, -c / 2]]) mk('rect', {x: cx, y: cy, width: c, height: c, rx: 60, class: 'chair', ...ns}, g);}
+  mk('rect', {x: -t / 2, y: -t / 2, width: t, height: t, rx: 20, class: 'body', ...ns}, g);
+  mk('rect', {x: -t / 2 + 70, y: -t / 2 + 70, width: t - 140, height: t - 140, rx: 10, class: 'fold', fill: 'none', ...ns}, g);
  } else if (it.kind === 'stool') {
   mk('rect', {x, y, width: w, height: d, rx: Math.min(w, d) * .3, class: 'body', ...ns}, g);
  } else if (it.kind === 'wardrobe') {
@@ -198,7 +205,7 @@ const shape = (it, g) => {
   mk('circle', {cx: 0, cy: 40, r: 30, class: 'dot'}, g);
  }
 };
-const layerOfItem = it => it.wifi ? 'net' : 'furniture';
+const layerOfItem = it => it.on === false ? 'none' : it.wifi ? 'net' : 'furniture';
 // Does an item run into another one or through a wall? (chairs and stools may tuck under desks; fans hang high)
 const SOFT = new Set(['chair', 'stool', 'cfan', 'wifi']);
 const clashes = it => {
@@ -472,7 +479,7 @@ const showReadout = p => {
 // With nothing chosen, the panel lists the things on the plan (shown beside the plan on wide screens).
 const emptySheet = () => {
  sheet.classList.add('is-empty'); sheet.hidden = false;
- sheet.innerHTML = `<h3 class="sheet-empty-title">Things on the plan</h3><p class="sheet-note">Tap one to see its size, the choices and the research.</p><ul class="sheet-index">${items.map(it => `<li><button type="button" data-open="${esc(it.id)}"><i style="background:${D.colours[it.room] ?? '#56607a'}"></i><span>${esc(it.name)}</span><small>${esc(roomById[it.room]?.short ?? '')}</small></button></li>`).join('')}</ul>`;
+ sheet.innerHTML = `<h3 class="sheet-empty-title">Things on the plan</h3><p class="sheet-note">Tap one to see its size, the choices and the research.</p><ul class="sheet-index">${items.filter(it => it.on !== false).map(it => `<li><button type="button" data-open="${esc(it.id)}"><i style="background:${D.colours[it.room] ?? '#56607a'}"></i><span>${esc(it.name)}</span><small>${esc(roomById[it.room]?.short ?? '')}</small></button></li>`).join('')}</ul>`;
  sheet.querySelectorAll('[data-open]').forEach(b => b.onclick = () => {const it = items.find(i => i.id === b.dataset.open); zoomRoom(it.room === 'yard' ? 'kitchen' : it.room); openItem(it, true);});
 };
 const closeSheet = () => {selected = null; undock(); emptySheet(); drawItems(); drawPoints(); drawMeasure(); drawAir(); drawTv();};
@@ -527,7 +534,7 @@ ${sizeList(it)}
 ${clashes(it).length ? `<p class="sheet-clash" role="status">Runs into ${esc([...new Set(clashes(it))].join(', '))}. Move, turn or pick a smaller size.</p>` : ''}
 ${it.wifi || D.ro ? '' : `<form class="sheet-custom" data-custom><span>Custom size</span><label>Width <input type="number" inputmode="numeric" min="10" max="400" step="0.5" name="w" value="${cm(s.w)}" required> cm</label><label>Depth <input type="number" inputmode="numeric" min="10" max="400" step="0.5" name="d" value="${cm(s.d)}" required> cm</label><button type="submit">Use this size</button></form>`}
 ${it.note ? `<p class="sheet-note">${esc(it.note)}</p>` : ''}
-${D.ro ? '' : `<div class="sheet-actions"><button type="button" data-rotate>${it.kind === 'cfan' ? 'Aim 45°' : 'Turn 90°'}</button>${moveOn ? '' : '<button type="button" data-movehint>Move it</button>'}</div>`}
+${D.ro ? '' : `<div class="sheet-actions"><button type="button" data-rotate>${it.kind === 'cfan' ? 'Aim 45°' : 'Turn 90°'}</button>${moveOn ? '' : '<button type="button" data-movehint>Move it</button>'}${it.add ? '<button type="button" class="sheet-remove" data-unplace>Remove from plan</button>' : ''}</div>`}
 ${it.kind === 'tv' ? tvTable(it) : ''}${(it.buy ?? []).map(buyBlock).join('')}${it.research ? researchBlock(it.research) : ''}${it.wifi && D.research.fibre ? researchBlock('fibre') : ''}`;
  sheet.hidden = false; drawItems(); drawMeasure(); drawTv(); drawAir();
  if (!dock(it.x, it.y, !quiet) && !quiet) sheet.scrollIntoView?.({block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
@@ -536,6 +543,7 @@ ${it.kind === 'tv' ? tvTable(it) : ''}${(it.buy ?? []).map(buyBlock).join('')}${
  const cf = sheet.querySelector('[data-custom]');
  if (cf) cf.onsubmit = ev => {ev.preventDefault(); const w = Math.round(parseFloat(cf.w.value) * 10), d = Math.round(parseFloat(cf.d.value) * 10); if (!(w >= 100 && w <= 4000 && d >= 100 && d <= 4000)) {say('Size must be 10 to 400 cm'); return;} it.c = {w, d}; saveItem(it); openItem(it, true);};
  const rot = sheet.querySelector('[data-rotate]'); if (rot) rot.onclick = () => {it.r = (it.r + (it.kind === 'cfan' ? 45 : 90)) % 360; saveItem(it); openItem(it, true); drawAir(); drawTv();};
+ const up = sheet.querySelector('[data-unplace]'); if (up) up.onclick = () => setOn(it, false);
  const mh = sheet.querySelector('[data-movehint]'); if (mh) mh.onclick = () => {setMove(true); openItem(it, true);};
  sheet.querySelectorAll('[data-pick]').forEach(r => r.onchange = () => {const id = r.dataset.pick, k = +r.value; D.buy[id].pick = k; save(`b:${id}:pick`, k ? String(k) : ''); openItem(it, true); drawCart();});
 }
@@ -561,7 +569,7 @@ function openPoint(t, k) {
 const cartEl = root.querySelector('[data-cart-list]');
 function drawCart() {
  const rows = []; let total = 0;
- for (const it of items) for (const id of it.buy ?? []) {
+ for (const it of items) for (const id of it.on === false ? [] : it.buy ?? []) {
   const b = D.buy[id]; if (!b) continue; const o = b.opts[b.pick] ?? b.opts[0], line = o.s * b.qty, off = b.tag === 'maybe';
   if (!off) total += line;
   rows.push(`<li${off ? ' class="is-off"' : ''}><a href="#" data-goto="${esc(it.id)}">${esc(it.name.replace(/ \(.*\)$/, ''))}</a><span>${esc(o.n)}${b.qty > 1 ? ` × ${b.qty}` : ''}${off ? ' · Maybe, not counted' : ''}</span><b>${sgd(line)}${o.est ? '<small>Estimate</small>' : ''}</b></li>`);
@@ -596,6 +604,18 @@ root.querySelectorAll('[data-layer]').forEach(c => c.addEventListener('change', 
 }));
 root.querySelectorAll('input[name="plan-band"]').forEach(r => r.addEventListener('change', () => {band = r.value; drawLinks(); queueHeat(); readout.hidden = true;}));
 addEventListener('resize', () => setView({...view}));
+
+// ---------- add or remove furniture (mahjong table, recliner, coffee table) ----------
+const chips = root.querySelector('[data-addables]');
+const paintChips = () => chips?.querySelectorAll('[data-toggle]').forEach(b => {const it = items.find(i => i.id === b.dataset.toggle); if (!it) return; b.setAttribute('aria-pressed', String(it.on !== false)); b.querySelector('i').textContent = it.on !== false ? '✓' : '+';});
+function setOn(it, on) {
+ if (D.ro) return; it.on = on; saveItem(it); paintChips(); drawCart();
+ if (on) {if (!layers.has('furniture')) {layers.add('furniture'); const c = root.querySelector('[data-layer="furniture"]'); if (c) c.checked = true;} zoomRoom(it.room === 'yard' ? 'kitchen' : it.room); openItem(it, true); say('Added: drag it into place with Move');}
+ else {closeSheet(); say('Removed from the plan');}
+ drawAll();
+}
+chips?.querySelectorAll('[data-toggle]').forEach(b => b.addEventListener('click', () => {const it = items.find(i => i.id === b.dataset.toggle); if (it) setOn(it, it.on === false);}));
+paintChips();
 
 // ---------- start ----------
 wifiBar.hidden = !layers.has('wifi');

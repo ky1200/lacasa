@@ -219,7 +219,7 @@ export const IMG = {
  },
  "kx-v-haus-l-wardrobe#0": {
   "ex": true,
-  "src": "/images/buy/full-height-wardrobe-example.webp"
+  "src": "/images/buy/v-haus-alto-l-wardrobe-example.webp"
  },
  "kx-vanity#0": {
   "src": "/images/buy/ikea-malm-dressing-table.webp"
@@ -292,8 +292,7 @@ export const IMG = {
   "src": "/images/buy/homepod-mini-2-back-left-and-right-2b484c.webp"
  },
  "living-l-shape-4-seat#0": {
-  "ex": true,
-  "src": "/images/buy/l-shape-4-seat-sofa-cad877.webp"
+  "src": "/images/buy/v-haus-2233a-sofa-ordered.webp"
  },
  "living-led-cove-strip-driver#0": {
   "ex": true,

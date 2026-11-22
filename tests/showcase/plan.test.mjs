@@ -32,7 +32,7 @@ test('floor plan: every item starts inside its room, links to real to-buy items 
   for(const b of i.buy??[])assert.ok(buyItemById(b),i.id+' -> '+b);
   if(i.research)assert.ok(topics.has(i.research),i.id+' research');
  }
- const q=PLAN.items.find(i=>i.id==='ky-bed').sizes;assert.deepEqual(q.map(s=>[s.w,s.d]),[[1520,1905],[1070,1905]],'Singapore queen 152 × 190.5 and super single 107 × 190.5');
+ const q=PLAN.items.find(i=>i.id==='ky-bed').sizes;assert.deepEqual(q.map(s=>[s.w,s.d]),[[1520,1905],[1600,2000]],'queen mattress 152 × 190.5 and the queen storage frame (estimate); all 3 beds are queens');
  for(const [t,list] of Object.entries(PLAN.points))for(const [x,y] of list)assert.ok(PLAN.rooms.some(r=>inRoom(x,y,r)),t+' point inside a room');
  for(const t of RESEARCH){assert.ok(t.answer&&t.shortlist.length,t.id);for(const id of t.plan??[])assert.ok(PLAN.items.some(i=>i.id===id),id);}
 });
@@ -47,7 +47,7 @@ test('floor plan API saves positions and points, rejects bad keys and values, au
  assert.equal(await put(DB,'p:pts:light','1,1;x'),422);assert.equal(await put(DB,'p:i:ky-bed','99999,1,0,0'),422);
  assert.equal(await put(DB,'p:i:ky-bed','1,1,0,0','?view=audit'),403);
  const v=Object.fromEntries(DB.sqlite.prepare('SELECT key,value FROM visit_notes').all().map(r=>[r.key,r.value]));
- const st=planState(v);assert.deepEqual(st.items.find(i=>i.id==='ky-bed'),{...PLAN.items.find(i=>i.id==='ky-bed'),x:4000,y:2500,r:90,s:1,c:null});
+ const st=planState(v);assert.deepEqual(st.items.find(i=>i.id==='ky-bed'),{...PLAN.items.find(i=>i.id==='ky-bed'),x:4000,y:2500,r:90,s:1,c:null,on:true});
  assert.equal(await put(DB,'p:i:ks-desk','8000,3800,90,c1250x650'),200,'custom size in mm');
  assert.equal(await put(DB,'p:i:ks-desk','8000,3800,90,c50x650'),422,'custom size too small');
  assert.equal(await put(DB,'p:i:wifi-main','8000,3800,0,c500x500'),422,'no custom size for Wi-Fi');
@@ -111,4 +111,17 @@ test('floor plan: TV viewing distances, light beams and the corner fan aim',()=>
   assert.equal(await put(DB,'p:i:ky-bed','4000,2500,45,0'),422,'beds still turn in 90° steps');
   assert.equal(await put(DB,'p:i:living-coffee-table','10340,3700,90,6'),200,'round coffee table');
  })();
+});
+
+test('floor plan: extra furniture can be added and removed (mahjong table, recliner)',async()=>{
+ const DB=database();
+ for(const id of ['living-mahjong','living-recliner'])assert.equal(planState({}).items.find(i=>i.id===id).on,false,id+' starts off the plan');
+ assert.equal(await put(DB,'p:i:living-recliner','10700,5450,270,0,1'),200);
+ assert.equal(await put(DB,'p:i:ky-bed','4000,2500,90,1,0'),422,'fixed items cannot be removed');
+ assert.equal(await put(DB,'p:i:living-mahjong','10950,5050,0,9,1'),422,'size index must exist');
+ const v=Object.fromEntries(DB.sqlite.prepare("SELECT key,value FROM visit_notes").all().map(r=>[r.key,r.value]));
+ assert.equal(planState(v).items.find(i=>i.id==='living-recliner').on,true);
+ const html=renderPage(state(v),'https://lacasa.test/plan').html;
+ assert.match(html,/data-toggle="living-recliner" aria-pressed="true"/);assert.match(html,/data-toggle="living-mahjong" aria-pressed="false"/);
+ for(const i of PLAN.items.filter(i=>i.kind==='recliner'))for(const z of i.sizes)assert.ok(existsSync(new URL('../../public'+z.img,import.meta.url)),z.img);
 });

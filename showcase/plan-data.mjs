@@ -51,7 +51,7 @@ export const PLAN = {
  // Prices seen 21 Nov 2026. A family member can also type a custom size on /plan.
  items: [
   // ---------- KY room (bedroom 3) ----------
-  {id: 'ky-bed', name: 'KY bed', room: 'ky', kind: 'bed', x: 4800, y: 2420, r: 0, sizes: [{n: 'Queen', w: 1520, d: 1905}, {n: 'Super single', w: 1070, d: 1905}], buy: ['ky-bed', 'ky-mattress'], research: 'beds', note: 'Mattress size (frame size not known yet; a storage frame adds about 5 to 10 cm each way). Tip: with the head against the top wall, the desk chair gets about 95 cm of space.'},
+  {id: 'ky-bed', name: 'KY bed', room: 'ky', kind: 'bed', x: 4800, y: 2420, r: 0, sizes: [{n: 'Queen mattress 152 × 190.5', w: 1520, d: 1905}, {n: 'Queen storage frame, about 160 × 200 (estimate)', w: 1600, d: 2000}], buy: ['ky-bed', 'ky-mattress'], research: 'beds', note: 'Dunlopillo Carlton 30 cm on a Dunlopillo storage frame with KHJ60 headboard (delivery 22 Dec). Frame outside size not confirmed yet: pick the frame size to check space. Tip: with the head against the top wall, the desk chair gets about 95 cm of space.'},
   {id: 'ky-desk', name: 'KY desk (Secretlab MAGNUS Pro)', room: 'ky', kind: 'desk', x: 2690, y: 3110, r: 270, sizes: [
    {n: 'XL 177 × 80 (current desk size)', w: 1770, d: 800, price: 'From S$999 (was S$1,118)', href: 'https://secretlab.sg/products/magnus-pro', img: '/images/research/secretlab-magnus-pro.webp'},
    {n: 'XXL 196.8 × 80', w: 1968, d: 800, price: 'From S$1,249', href: 'https://secretlab.sg/products/magnus-pro', img: '/images/research/secretlab-magnus-pro.webp'},
@@ -66,7 +66,7 @@ export const PLAN = {
    {n: 'IKEA KLEPPSTAD 2-door 79 × 55', w: 790, d: 550, price: 'S$149', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-2-doors-white-10437237/', img: '/images/research/ikea-kleppstad-2-door.webp', note: '176 cm tall. Some owners say it feels cheap; fix it to the wall.'},
   ], research: 'rooms', note: 'Small wardrobe because the room is tight. Doors need about 50 cm in front to open.', buy: ['ky-wardrobe']},
   // ---------- KS room (bedroom 2) ----------
-  {id: 'ks-bed', name: 'KS bed', room: 'ks', kind: 'bed', x: 7620, y: 2500, r: 90, sizes: [{n: 'Queen', w: 1520, d: 1905}, {n: 'Super single', w: 1070, d: 1905}], buy: ['ks-bed', 'ks-mattress'], research: 'beds', note: 'Mattress size. The I-Niche platform bed (D3, on hold) would be 110 × 282.5 cm along the window wall.'},
+  {id: 'ks-bed', name: 'KS bed', room: 'ks', kind: 'bed', x: 7620, y: 2500, r: 90, sizes: [{n: 'Queen mattress 152 × 190.5', w: 1520, d: 1905}, {n: 'Queen storage frame, about 160 × 200 (estimate)', w: 1600, d: 2000}], buy: ['ks-bed', 'ks-mattress'], research: 'beds', note: 'Dunlopillo Richmond 38 cm on a Dunlopillo storage frame with KHJ44 headboard (delivery 22 Dec). Frame outside size not confirmed yet. The I-Niche platform bed (D3, on hold, likely dropped) would be 110 × 282.5 cm along the window wall.'},
   {id: 'ks-desk', name: 'KS study desk', room: 'ks', kind: 'desk', x: 8320, y: 3800, r: 90, s: 1, sizes: [
    {n: 'IKEA ALEX 100 × 48', w: 1000, d: 480, price: 'S$179', href: 'https://www.ikea.com/sg/en/p/alex-desk-white-30473559/', img: '/images/research/ikea-alex-desk-100.webp'},
    {n: 'IKEA LAGKAPTEN/ALEX 120 × 60', w: 1200, d: 600, price: 'S$178.90', href: 'https://www.ikea.com/sg/en/p/lagkapten-alex-desk-white-stained-oak-effect-white-s89416963/', img: '/images/research/ikea-lagkapten-alex-120.webp'},
@@ -85,7 +85,7 @@ export const PLAN = {
    {n: 'IKEA GURSKEN 49 × 55', w: 494, d: 550, price: 'S$89.90', href: 'https://www.ikea.com/sg/en/p/gursken-wardrobe-light-beige-50503292/', img: '/images/research/ikea-gursken-wardrobe.webp'},
   ], research: 'rooms', note: 'Check if the old built-in wardrobe in this room stays; if it does, this may not be needed.', buy: ['ks-wardrobe']},
   // ---------- KX room (main bedroom) ----------
-  {id: 'kx-bed', name: 'KX bed', room: 'kx', kind: 'bed', x: 3760, y: 7150, r: 90, sizes: [{n: 'Queen', w: 1520, d: 1905}, {n: 'Super single', w: 1070, d: 1905}], buy: ['kx-bed', 'kx-mattress'], research: 'beds', note: 'Mattress size. A storage frame adds about 5 to 10 cm each way.'},
+  {id: 'kx-bed', name: 'KX bed', room: 'kx', kind: 'bed', x: 3760, y: 7150, r: 90, sizes: [{n: 'Queen mattress 152 × 190.5', w: 1520, d: 1905}, {n: 'Queen storage frame, about 160 × 200 (estimate)', w: 1600, d: 2000}], buy: ['kx-bed', 'kx-mattress'], research: 'beds', note: 'Dunlopillo Richmond 38 cm on a Dunlopillo storage frame, no headboard (delivery 22 Dec). Frame outside size not confirmed yet: pick the frame size to check space.'},
   {id: 'kx-vanity', name: 'KX study / vanity desk', room: 'kx', kind: 'desk', x: 3700, y: 4330, r: 0, sizes: [
    {n: 'IKEA MALM 120 × 41', w: 1200, d: 410, price: 'S$99', href: 'https://www.ikea.com/sg/en/p/malm-dressing-table-white-40355409/', img: '/images/research/ikea-malm-dressing-table.webp', note: 'Dressing table that also works as a desk; long drawer.'},
    {n: 'IKEA SYVDE 100 × 48', w: 1000, d: 480, price: 'S$249', href: 'https://www.ikea.com/sg/en/p/syvde-dressing-table-white-00439562/', img: '/images/research/ikea-syvde-dressing-table.webp'},
@@ -97,9 +97,9 @@ export const PLAN = {
    {n: 'IKEA MARIUS 40 × 40', w: 400, d: 400, price: 'S$5.90', href: 'https://www.ikea.com/sg/en/p/marius-stool-black-00162380/', img: '/images/research/ikea-marius-stool.webp', note: '45 cm high; slides under the table.'},
   ], research: 'rooms', buy: ['kx-stool']},
   // ---------- Living, dining ----------
-  // New id (21 Nov evening) so the new default applies: back on the bedroom 2 wall, facing the TV, chaise by the window.
-  {id: 'living-sofa-l', name: 'V Haus sofa with lounge end', room: 'living', kind: 'sofa', x: 9420, y: 3320, r: 270, sizes: [{n: 'Lounge end by the window (270 × 130)', w: 2700, d: 1300, flip: true}, {n: 'Lounge end to the dining side (270 × 130)', w: 2700, d: 1300}], buy: ['living-l-shape-4-seat'], research: 'vhaus', note: 'V Haus 2233A, ordered 22 Nov. Size from the order sheet (270 × 130 cm); measured in the shop as about 256 × 138 cm, to confirm. The viewing lines to the TV start from the middle seat, about 50 cm in from the sofa back (head position).'},
-  {id: 'living-coffee-table', name: 'Coffee table (undecided)', room: 'living', kind: 'ctable', x: 10340, y: 3700, r: 90, s: 3, sizes: [
+  // New id (21 Nov evening) so the new default applies: back on the bedroom 2 wall, facing the TV, open end by the window.
+  {id: 'living-sofa-l', name: 'V Haus sofa (one armrest, open end)', room: 'living', kind: 'sofa', x: 9420, y: 3320, r: 270, sizes: [{n: 'Open end by the window (270 × 130)', w: 2700, d: 1300, flip: true}, {n: 'Open end to the dining side (270 × 130)', w: 2700, d: 1300}], buy: ['living-l-shape-4-seat'], research: 'vhaus', note: 'V Haus 2233A, ordered 22 Nov: a straight sofa with the armrest on one end only; the other end has no armrest and an extra seat cushion instead, so it is open to sit or lie on from the side. Size from the order sheet (270 × 130 cm); measured in the shop as about 256 × 138 cm, to confirm. The viewing lines to the TV start from the middle seat, about 50 cm in from the sofa back (head position).'},
+  {id: 'living-coffee-table', name: 'Coffee table (undecided)', room: 'living', kind: 'ctable', add: true, x: 10340, y: 3700, r: 90, s: 3, sizes: [
    {n: 'IKEA LACK 90 × 55', w: 900, d: 550, price: 'S$39.90', href: 'https://www.ikea.com/sg/en/p/lack-coffee-table-black-brown-20352987/', img: '/images/research/ikea-lack-coffee-90.webp'},
    {n: 'IKEA HOLMERUD 90 × 55', w: 900, d: 550, price: 'S$79.90', href: 'https://www.ikea.com/sg/en/p/holmerud-coffee-table-dark-brown-80541419/', img: '/images/research/ikea-holmerud-coffee.webp', note: 'Shelf underneath.'},
    {n: 'IKEA ÄMMARYD 98 × 59', w: 980, d: 590, price: 'S$99.90', href: 'https://www.ikea.com/sg/en/p/aemmaryd-coffee-table-white-10609120/', img: '/images/research/ikea-ammaryd-coffee.webp'},
@@ -108,6 +108,17 @@ export const PLAN = {
    {n: 'IKEA UGGLERUM 130 × 65', w: 1300, d: 650, price: 'S$199', href: 'https://www.ikea.com/sg/en/p/ugglerum-coffee-table-walnut-veneer-80627979/', img: '/images/research/ikea-ugglerum-coffee.webp', note: 'Walnut veneer.'},
    {n: 'IKEA VITTSJÖ round Ø75', w: 750, d: 750, round: true, price: 'S$69.90', href: 'https://www.ikea.com/sg/en/p/vittsjoe-coffee-table-light-beige-glass-50604347/', img: '/images/research/ikea-vittsjo-coffee.webp', note: 'Round glass top.'},
   ], note: 'Not decided yet. Keep about 40 to 45 cm between the sofa and the table, and a clear walkway past it. A common guide is a table about two thirds as long as the sofa.', buy: ['living-coffee-table']},
+  // Extra pieces the family can add or remove on /plan (add: true, on: false = hidden until added).
+  {id: 'living-recliner', name: 'Single recliner (La-Z-Boy type)', room: 'living', kind: 'recliner', add: true, on: false, x: 10700, y: 5450, r: 270, sizes: [
+   {n: 'La-Z-Boy Cody 10T, fabric 100 × 101', w: 1000, d: 1010, price: 'S$899 (was S$1,799), Harvey Norman', href: 'https://www.harveynorman.com.sg/furniture-en/living-room/recliner-chairs/la-z-boy-cody-10t-iclean-pet-friendly-fabric-rocker-recliner-charcoal.html', img: '/images/research/la-z-boy-cody-10t.webp', note: 'iClean pet-friendly fabric (wipes clean). Leather version S$1,399.'},
+   {n: 'La-Z-Boy Wayland 10T, fabric 102 × 101', w: 1020, d: 1010, price: 'S$1,259 (was S$1,799), Harvey Norman', href: 'https://www.harveynorman.com.sg/furniture-en/living-room/recliner-chairs/la-z-boy-wayland-10t-iclean-pet-friendly-fabric-rocker-recliner-platinum.html', img: '/images/research/la-z-boy-wayland-10t.webp', note: 'Plush pillow-top back and one-piece chaise seat.'},
+   {n: 'La-Z-Boy Rowan 10T, 86 × 97', w: 860, d: 970, price: 'S$2,169 (was S$3,099), Harvey Norman', href: 'https://www.harveynorman.com.sg/furniture-en/living-room/recliner-chairs/la-z-boy-rowan-10t-rocker-recliner-black.html', img: '/images/research/la-z-boy-rowan-10t.webp', note: 'Slimmest of the three.'},
+  ], note: 'Prices and sizes from Harvey Norman on 23 Nov (Black Friday Comes Early, to 26 Nov). Sizes are with the chair upright. The dashed part shows the footrest out (about 60 cm, estimate); rocker recliners also need about 15 cm behind to rock and recline. Turn it to face the TV.'},
+  {id: 'living-mahjong', name: 'Mahjong table + 4 chairs', room: 'living', kind: 'mjtable', add: true, on: false, x: 11300, y: 3700, r: 0, sizes: [
+   {n: 'Folding table 80 × 80, with 4 chairs (about 180 × 180)', w: 1800, d: 1800, t: 800},
+   {n: 'Automatic table 90 × 90, with 4 chairs (about 200 × 200)', w: 2000, d: 2000, t: 900},
+   {n: 'Table only 80 × 80 (folded chairs stored)', w: 800, d: 800, t: 800},
+  ], note: 'Sizes include the chairs pulled in a little; players need about 50 cm behind each chair to sit down. Square 80 to 90 cm is the usual mahjong size; automatic tables are heavier and need a power point. Use it in the living room or move it to the dining area.'},
   {id: 'living-tv', name: 'TV', room: 'living', kind: 'tv', x: 12360, y: 3400, r: 90, sizes: [
    {n: 'LG OLED C6 65"', w: 1441, d: 45, price: 'S$3,254 (Electromart)', img: '/images/buy/lg-oled-evo-c6-65-2026-a32203.webp', note: '144.1 × 82.6 cm, 4.5 cm deep (without stand).'},
    {n: 'LG QNED86B 75" (Mini LED)', w: 1677, d: 31, price: 'S$3,499 (Harvey Norman)', href: 'https://www.harveynorman.com.sg/tv-and-audio/tvs-en-2/tvs-en-3/lg-75-inch-d86-qned-evo-mini-led-ai-4k-2026-smart-tv-black-75qned86bsa.atc.html', img: '/images/research/lg-75qned86b.webp', note: 'LG has no 75" OLED; this is the closest LG at 75". 167.7 × 96.5 cm.'},
@@ -177,13 +188,14 @@ const MAX = 20000;
 export function validPlanValue(spec, value) {
  if (value === '') return true;
  if (spec.kind === 'item') {
-  // "x,y,rotation,size" where size is a choice number or a custom size "c<width>x<depth>" in mm (100 to 4000).
-  const m = /^(-?\d{1,5}),(-?\d{1,5}),(\d{1,3}),(\d|c(\d{3,4})x(\d{3,4}))$/.exec(value);
+  // "x,y,rotation,size[,on]" where on is 1 or 0 (added or removed, only for add: true items) and size is a choice number or a custom size "c<width>x<depth>" in mm (100 to 4000).
+  const m = /^(-?\d{1,5}),(-?\d{1,5}),(\d{1,3}),(\d|c(\d{3,4})x(\d{3,4}))(,([01]))?$/.exec(value);
   if (!m) return false;
   const x = Number(m[1]), y = Number(m[2]), r = Number(m[3]), it = PLAN.items.find(i => i.id === spec.id);
   // Corner fans aim in 45° steps; everything else turns in 90° steps.
   if (it.kind === 'cfan' ? r % 45 || r > 315 : r % 90 || r > 270) return false;
   if (!(x >= 0 && x <= MAX && y >= 0 && y <= MAX)) return false;
+  if (m[7] && !it.add) return false; // on/off only for items the family can add or remove
   if (m[5]) {const w = Number(m[5]), d = Number(m[6]); return !it.wifi && w >= 100 && w <= 4000 && d >= 100 && d <= 4000;}
   return Number(m[4]) < it.sizes.length;
  }
@@ -194,10 +206,10 @@ export function validPlanValue(spec, value) {
 // Saved state merged over the defaults.
 export function planState(v = {}) {
  const items = PLAN.items.map(i => {
-  const m = /^(-?\d+),(-?\d+),(\d+),(\d|c(\d{3,4})x(\d{3,4}))$/.exec(v[`p:i:${i.id}`] ?? '');
-  const base = {...i, s: i.s ?? 0, c: null};
+  const m = /^(-?\d+),(-?\d+),(\d+),(\d|c(\d{3,4})x(\d{3,4}))(,([01]))?$/.exec(v[`p:i:${i.id}`] ?? '');
+  const base = {...i, s: i.s ?? 0, c: null, on: i.on ?? true};
   if (!m) return base;
-  const pos = {x: Number(m[1]), y: Number(m[2]), r: Number(m[3])};
+  const pos = {x: Number(m[1]), y: Number(m[2]), r: Number(m[3]), ...(m[8] && i.add ? {on: m[8] === '1'} : {})};
   if (m[5]) return {...base, ...pos, c: {w: Number(m[5]), d: Number(m[6])}};
   const s = Number(m[4]);
   return {...base, ...pos, s: s < i.sizes.length ? s : base.s};
