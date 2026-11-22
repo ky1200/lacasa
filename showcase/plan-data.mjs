@@ -98,7 +98,7 @@ export const PLAN = {
   ], research: 'rooms', buy: ['kx-stool']},
   // ---------- Living, dining ----------
   // New id (21 Nov evening) so the new default applies: back on the bedroom 2 wall, facing the TV, chaise by the window.
-  {id: 'living-sofa-l', name: 'L-shape sofa', room: 'living', kind: 'sofa', x: 9420, y: 3320, r: 270, est: true, sizes: [{n: 'Chaise by the window (about 260 × 160)', w: 2600, d: 1600, flip: true}, {n: 'Chaise to the dining side (about 260 × 160)', w: 2600, d: 1600}], buy: ['living-l-shape-4-seat'], research: 'vhaus', note: 'Size is an estimate until the V Haus model is chosen. The viewing lines to the TV start from the middle seat, about 50 cm in from the sofa back (head position).'},
+  {id: 'living-sofa-l', name: 'V Haus sofa with lounge end', room: 'living', kind: 'sofa', x: 9420, y: 3320, r: 270, sizes: [{n: 'Lounge end by the window (270 × 130)', w: 2700, d: 1300, flip: true}, {n: 'Lounge end to the dining side (270 × 130)', w: 2700, d: 1300}], buy: ['living-l-shape-4-seat'], research: 'vhaus', note: 'V Haus 2233A, ordered 22 Nov. Size from the order sheet (270 × 130 cm); measured in the shop as about 256 × 138 cm, to confirm. The viewing lines to the TV start from the middle seat, about 50 cm in from the sofa back (head position).'},
   {id: 'living-coffee-table', name: 'Coffee table (undecided)', room: 'living', kind: 'ctable', x: 10340, y: 3700, r: 90, s: 3, sizes: [
    {n: 'IKEA LACK 90 × 55', w: 900, d: 550, price: 'S$39.90', href: 'https://www.ikea.com/sg/en/p/lack-coffee-table-black-brown-20352987/', img: '/images/research/ikea-lack-coffee-90.webp'},
    {n: 'IKEA HOLMERUD 90 × 55', w: 900, d: 550, price: 'S$79.90', href: 'https://www.ikea.com/sg/en/p/holmerud-coffee-table-dark-brown-80541419/', img: '/images/research/ikea-holmerud-coffee.webp', note: 'Shelf underneath.'},
@@ -114,7 +114,7 @@ export const PLAN = {
    {n: 'LG OLED C6 77"', w: 1711, d: 47, price: 'S$6,499 (Harvey Norman)', img: '/images/buy/lg-oled-c6-77-2026-41166b.webp', note: '171.1 × 98.2 cm.'},
    {n: 'Samsung QN70H 85"', w: 1894, d: 60, price: 'S$4,299 (Harvey Norman)', img: '/images/buy/samsung-qn70h-85-neo-qled-mini-led-2026-e37448.webp', note: 'About 189 cm wide.'},
   ], buy: ['living-lg-oled-evo-c6'], research: 'tv-kitchen', note: 'Screen width without stand. The D1 feature wall is 210 cm long.'},
-  {id: 'dining-table', name: 'LINO dining table + 4 chairs', room: 'dining', kind: 'table', x: 10500, y: 7400, r: 90, sizes: [{n: 'Table 160 × 90 cm', w: 1600, d: 900}], buy: ['dining-v-haus-lino-dining'], research: 'vhaus', note: 'LINO table 160 × 90 cm, TOMAMO chairs 43 × 43 cm (from the V Haus visit, 5 Nov). With chairs pulled out it needs about 240 × 230 cm.'},
+  {id: 'dining-table', name: 'LINO dining table + 6 chairs', room: 'dining', kind: 'table', x: 10500, y: 7400, r: 90, sizes: [{n: 'Table 160 × 90 cm', w: 1600, d: 900}], buy: ['dining-v-haus-lino-dining'], research: 'vhaus', note: 'LINO table 160 × 90 cm, 6 C9060 walnut chairs (ordered 22 Nov; chair size to check). With chairs pulled out it needs about 240 × 230 cm.'},
   // ---------- Kitchen and yard ----------
   {id: 'kitchen-fridge', name: 'Fridge', room: 'kitchen', kind: 'fridge', x: 10640, y: 10480, r: 180, sizes: [
    {n: 'Hitachi R-VX480PMS9 68 × 72', w: 680, d: 720, price: 'S$989 (COURTS)', img: '/images/buy/hitachi-407-l-2-door-fridge-inverter-6308ca.webp', note: '407 L, 177 cm tall. Current pick.'},
