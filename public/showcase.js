@@ -35,6 +35,39 @@ refresh();if(Object.keys(local).length)flush();
 const retry=setInterval(()=>{if(Object.keys(pending()).length)flush();},15000);addEventListener('online',flush);
 const prevStop=globalThis.__lacasaCompareStop;globalThis.__lacasaCompareStop=()=>{prevStop?.();clearInterval(retry);removeEventListener('online',flush);};
 }}
+// Sections (/buy, /research): sticky headers, tap or long-press to close, dock with jump list. Closed sections are remembered on this phone.
+{const secs=[...document.querySelectorAll('[data-sec]')].filter(s=>s.querySelector(':scope>details'));if(secs.length&&typeof window!=='undefined'){
+ const de=document.documentElement,det=s=>s.querySelector(':scope>details'),KEY='lacasa-open:'+location.pathname,bar=document.querySelector('[data-stick]'),head=document.querySelector('.site-header'),dockEl=document.querySelector('[data-dock]');
+ const saved=(()=>{try{return JSON.parse(localStorage.getItem(KEY)||'{}');}catch{return {};}})();
+ const keep=()=>{try{const m={};secs.forEach(s=>{m[s.id]=det(s).open?1:0;});localStorage.setItem(KEY,JSON.stringify(m));}catch{}};
+ secs.forEach(s=>{if(s.id in saved)det(s).open=!!saved[s.id];});
+ let top=64,stuck=false,natural=0,ready=false;setTimeout(()=>{ready=true;},80);
+ const headH=()=>head?Math.max(0,head.getBoundingClientRect().bottom):0;
+ const measure=()=>{const hh=headH();if(bar){if(!stuck){natural=bar.offsetHeight;bar.classList.add('is-stuck');}const small=bar.offsetHeight;if(!stuck)bar.classList.remove('is-stuck');top=Math.round(Math.max(hh,64)+small+8);}else top=Math.round(hh+4);de.style.setProperty('--sec-top',top+'px');};
+ const sentinel=bar?document.createElement('div'):null;if(sentinel){sentinel.className='stick-sentinel';bar.before(sentinel);}
+ const stick=()=>{if(!bar)return;const want=sentinel.getBoundingClientRect().top<Math.max(headH(),64)-2;if(want===stuck)return;if(want){natural=bar.offsetHeight;bar.classList.add('is-stuck');bar.style.marginBottom=`calc(8px + ${natural-bar.offsetHeight}px)`;}else{bar.classList.remove('is-stuck');bar.style.marginBottom='';}stuck=want;};
+ const name=dockEl?.querySelector('[data-dock-name]'),dot=dockEl?.querySelector('[data-dock-dot]'),links=dockEl?[...dockEl.querySelectorAll('[data-dock-link]')]:[];let cur;
+ const colour=s=>{const cs=getComputedStyle(s);return cs.getPropertyValue('--rc').trim()||cs.getPropertyValue('--tone').trim()||'#56607a';};
+ const current=()=>{let on=null;const y=top+90;for(const s of secs){const r=s.getBoundingClientRect();if(r.top<=y&&r.bottom>y)on=s;}if(on===cur)return;cur=on;if(!dockEl)return;name.textContent=on?on.dataset.secName:'Sections';dockEl.style.setProperty('--dock',on?colour(on):'#56607a');links.forEach(l=>l.setAttribute('aria-current',String(!!on&&l.dataset.dockLink===on.id)));};
+ let raf=0;const onScroll=()=>{cancelAnimationFrame(raf);raf=requestAnimationFrame(()=>{stick();current();});};
+ addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',()=>{measure();onScroll();});measure();stick();current();
+ // After closing, keep the closed header where the finger is, so the next section sits right below it.
+ secs.forEach(s=>det(s).addEventListener('toggle',()=>{if(!ready)return;keep();if(!det(s).open){const r=s.getBoundingClientRect();if(r.top<top)scrollBy({top:r.top-top,behavior:'instant'});}onScroll();}));
+ document.addEventListener('click',e=>{const b=e.target.closest?.('[data-sec-close]');if(!b)return;const s=b.closest('[data-sec]');if(s)det(s).open=false;});
+ const closeMenus=except=>dockEl?.querySelectorAll('details[open]').forEach(d=>{if(d!==except)d.open=false;});
+ dockEl?.querySelectorAll('details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)closeMenus(d);}));
+ dockEl?.addEventListener('click',e=>{const all=e.target.closest('[data-sec-all]');if(all){const open=all.dataset.secAll==='open';ready=false;secs.forEach(s=>{det(s).open=open;});keep();closeMenus();setTimeout(()=>{ready=true;},80);if(!open)secs[0].scrollIntoView({block:'start'});return;}if(e.target.closest('a'))closeMenus();});
+ document.addEventListener('click',e=>{if(dockEl&&!dockEl.contains(e.target))closeMenus();});
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenus();});
+ // Press and hold inside an open section (not on a button, link or field) to close it.
+ let hold=0,sx=0,sy=0,swallow=false;const cancel=()=>{clearTimeout(hold);hold=0;};
+ document.addEventListener('pointerdown',e=>{cancel();if(e.button>0)return;const t=e.target;if(t.closest?.('a,button,input,label,select,textarea,summary,output,[data-enlarge],dialog,[data-dock]'))return;const s=t.closest?.('[data-sec]');if(!s||!det(s).open)return;sx=e.clientX;sy=e.clientY;
+  hold=setTimeout(()=>{hold=0;det(s).open=false;swallow=true;setTimeout(()=>{swallow=false;},700);try{getSelection().removeAllRanges();}catch{}navigator.vibrate?.(12);const sm=det(s).querySelector('summary');sm?.classList.add('just-closed');setTimeout(()=>sm?.classList.remove('just-closed'),700);},550);},{passive:true});
+ document.addEventListener('pointermove',e=>{if(hold&&Math.hypot(e.clientX-sx,e.clientY-sy)>10)cancel();},{passive:true});
+ ['pointerup','pointercancel','scroll'].forEach(k=>addEventListener(k,cancel,{passive:true,capture:true}));
+ document.addEventListener('click',e=>{if(swallow){e.preventDefault();e.stopPropagation();swallow=false;}},true);
+ document.addEventListener('contextmenu',e=>{if(swallow)e.preventDefault();});
+}}
 try{const openTo=id=>{if(!id||!document.getElementById)return;let el;try{el=document.getElementById(decodeURIComponent(id));}catch{return;}if(!el)return;for(let d=el.closest('details');d;d=d.parentElement?.closest('details'))d.open=true;const own=el.querySelector?.(':scope>details');if(own)own.open=true;};
 if(!globalThis.__lacasaOpenTo&&document.addEventListener){globalThis.__lacasaOpenTo=1;document.addEventListener('click',e=>{const a=e.target.closest?.('a[href^="#"]');if(a)openTo(a.getAttribute('href').slice(1));});addEventListener('hashchange',()=>openTo(location.hash.slice(1)));}openTo(location.hash.slice(1));}catch{}
 {const page=document.querySelector('[data-buy-page]');if(page&&!state.audit){const LS='lacasa-buy-pending',timers={},status=page.querySelector('[data-buy-status]');

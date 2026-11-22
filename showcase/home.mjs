@@ -33,6 +33,8 @@ export function homePage(v = {}, today = sgToday(), {isOwner = false, audit = fa
  <a class="hq-tile hq-plan" href="/plan"><span class="hq-tile-name">Floor plan</span>${preview}<span class="hq-sub">Beds, sofa, lights, sockets and Wi-Fi, drawn to scale. Tap anything for its choices.</span><span class="hq-go">Open the plan</span></a>
  <a class="hq-tile hq-research" href="/research"><span class="hq-tile-name">Research</span><ul class="hq-topics">${RESEARCH.map(r => `<li><span>${h(r.title)}</span><i class="research-status s-${h(r.status.toLowerCase())}">${h(r.status)}</i></li>`).join('')}</ul><span class="hq-go">See the shortlists</span></a>
 </nav>
+<section class="hq-orders" aria-labelledby="hq-orders-title"><div class="hq-next-head"><h2 id="hq-orders-title">Ordered</h2><span>deposits paid</span></div>
+ <ul>${(BUY.orders ?? []).map(o => { const rm = n => 'RM' + Number(n).toLocaleString('en-SG', {maximumFractionDigits: 2}); return `<li><a href="${h(o.href)}"><b>${h(o.name)}</b><small>${h(o.what)}</small><span class="hq-order-money"><span>Total <b>${rm(o.total)}</b></span><span>Paid <b>${rm(o.paid)}</b></span><span class="hq-order-due">Left <b>${rm(o.total - o.paid)}</b></span></span><small>${h(o.due)}</small></a></li>`; }).join('')}</ul></section>
 <section class="hq-next" aria-labelledby="hq-next-title"><div class="hq-next-head"><h2 id="hq-next-title">Next up</h2><span>${done} of ${todo.length} done</span></div>
  <ol class="hq-todo">${next.map(x => `<li><span class="buy-chip${x.date ? '' : ' is-now'}">${x.date ? h(dayLabel(x.date)) : 'Now'}</span><span class="hq-todo-text"><b>${h(x.t)}</b>${x.n ? `<small>${h(x.n)}</small>` : ''}</span></li>`).join('')}</ol>
  <a class="text-link" href="/buy#buy-todo">All to-dos and ticks</a></section>

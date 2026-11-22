@@ -58,12 +58,13 @@ test('floor plan API saves positions and points, rejects bad keys and values, au
  assert.ok(planKey('p:i:wifi-main')&&!planKey('b:ky-bed:pick'));assert.ok(validPlanValue({kind:'points'},'none'));
 });
 test('floor plan and research pages render; picks are shared with /buy; plain wording',()=>{
- const html=renderPage(state({'b:ky-mattress:pick':'2'}),'https://lacasa.test/plan').html;
+ const html=renderPage(state({'b:ky-wardrobe:pick':'2'}),'https://lacasa.test/plan').html;
  assert.match(html,/<h1>Floor plan<\/h1>/);assert.match(html,/src="\/plan\.js\?v=/);assert.match(html,/data-plan-svg/);assert.match(html,/data-layer="wifi"/);assert.match(html,/data-night/);assert.match(html,/data-tape/);
  const data=JSON.parse(html.match(/<script id="plan-data" type="application\/json">([\s\S]*?)<\/script>/)[1]);
- assert.equal(data.buy['ky-mattress'].pick,2,'pick from the to-buy list');assert.ok(data.buy['ky-bed'].opts.length>1);assert.ok(data.research.beds.list.length);
+ assert.equal(data.buy['ky-wardrobe'].pick,2,'pick from the to-buy list');assert.ok(data.buy['ky-wardrobe'].opts.length>1);assert.ok(data.research.beds.list.length);
  const r=renderPage(state(),'https://lacasa.test/research').html;
  for(const t of RESEARCH)assert.match(r,new RegExp(`id="r-${t.id}"`));
+ assert.doesNotMatch(r,/rz-table|rz-tiles/,'no duplicate compare tables or tiles');for(const t of RESEARCH)assert.match(r,new RegExp(`id="r-${t.id}" data-sec[^>]*><details>\\s*<summary`),'topics folded by default');assert.match(r,/<nav class="dock" data-dock/);assert.match(r,/Looked at, not chosen/);
  for(const page of [html,r]){const text=page.replace(/<script[\s\S]*?<\/script>/g,'').replace(/<[^>]+>/g,' ');assert.doesNotMatch(text,/\byou\b|\byour\b|perfect|amazing/i);}
  assert.match(renderPage(state(),'https://lacasa.test/').html,/href="\/plan"/,'home links to the plan');
  const audit=renderPage({...visitorState(content,samples,{code:'AUDIT',audit:true,readOnly:true}),visit:{}},'https://lacasa.test/audit/plan').html;assert.match(audit,/data-move disabled/);

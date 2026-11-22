@@ -163,25 +163,6 @@ export const IMG = {
   "ex": true,
   "src": "/images/buy/dunlopillo-storage-bed-frame-example.webp"
  },
- "ks-bed#6": {
-  "ex": true,
-  "src": "/images/buy/bm-queen-hydraulic-storage-bed-headboard.webp"
- },
- "ks-bed#5": {
-  "src": "/images/buy/traken-storage-bed-frame-queen-gas-lifts-1f6999.webp"
- },
- "ks-bed#1": {
-  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
- },
- "ks-bed#2": {
-  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
- },
- "ks-bed#3": {
-  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
- },
- "ks-bed#4": {
-  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
- },
  "ks-chair#0": {
   "src": "/images/buy/ikea-markus-chair.webp"
  },
@@ -203,22 +184,6 @@ export const IMG = {
  "ks-mattress#0": {
   "src": "/images/buy/dunlopillo-richmond-signature-queen.webp"
  },
- "ks-mattress#5": {
-  "ex": true,
-  "src": "/images/buy/bm-mattress-rm4100-example.webp"
- },
- "ks-mattress#4": {
-  "src": "/images/buy/sealy-posturepremier-treasure-mattress-queen-pillow-top-medi-ce9359.webp"
- },
- "ks-mattress#1": {
-  "src": "/images/buy/king-koil-posture-ellisville-queen-rated-soft-latex-15-yr-wa-fe1621.webp"
- },
- "ks-mattress#2": {
-  "src": "/images/buy/natura-avo-plush-queen-box-top-cool-gel-memory-foam-my-139ba9.webp"
- },
- "ks-mattress#3": {
-  "src": "/images/buy/hipvan-levitate-queen-latex-pocket-springs-12-yr-warranty-9d2aff.webp"
- },
  "ks-wardrobe#0": {
   "src": "/images/buy/ikea-kleppstad-2-door.webp"
  },
@@ -232,22 +197,6 @@ export const IMG = {
   "ex": true,
   "src": "/images/buy/dunlopillo-storage-bed-frame-example.webp"
  },
- "kx-bed#5": {
-  "ex": true,
-  "src": "/images/buy/bm-queen-hydraulic-storage-bed-headboard.webp"
- },
- "kx-bed#4": {
-  "src": "/images/buy/traken-storage-bed-frame-queen-gas-lifts-1f6999.webp"
- },
- "kx-bed#1": {
-  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
- },
- "kx-bed#2": {
-  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
- },
- "kx-bed#3": {
-  "src": "/images/buy/maju-thorney-hydraulic-storage-bed.webp"
- },
  "kx-blackout-curtains-track#0": {
   "ex": true,
   "src": "/images/buy/blackout-curtains-track-1602f6.webp"
@@ -257,22 +206,6 @@ export const IMG = {
  },
  "kx-mattress#0": {
   "src": "/images/buy/dunlopillo-richmond-signature-queen.webp"
- },
- "kx-mattress#5": {
-  "ex": true,
-  "src": "/images/buy/eclipse-mattress-queen-example.webp"
- },
- "kx-mattress#4": {
-  "src": "/images/buy/sealy-posturepremier-treasure-mattress-queen-pillow-top-medi-ce9359.webp"
- },
- "kx-mattress#1": {
-  "src": "/images/buy/king-koil-posture-ellisville-queen-rated-soft-latex-15-yr-wa-fe1621.webp"
- },
- "kx-mattress#2": {
-  "src": "/images/buy/natura-avo-plush-queen-box-top-cool-gel-memory-foam-my-139ba9.webp"
- },
- "kx-mattress#3": {
-  "src": "/images/buy/hipvan-levitate-queen-latex-pocket-springs-12-yr-warranty-9d2aff.webp"
  },
  "kx-philips-meson-5-downlight#0": {
   "ex": true,
@@ -304,22 +237,6 @@ export const IMG = {
   "ex": true,
   "src": "/images/buy/dunlopillo-storage-bed-frame-example.webp"
  },
- "ky-bed#5": {
-  "ex": true,
-  "src": "/images/buy/bm-queen-hydraulic-storage-bed-headboard.webp"
- },
- "ky-bed#4": {
-  "src": "/images/buy/traken-storage-bed-frame-queen-gas-lifts-1f6999.webp"
- },
- "ky-bed#1": {
-  "src": "/images/buy/megafurniture-ashleah-storage-bed.webp"
- },
- "ky-bed#2": {
-  "src": "/images/buy/somnuz-haldor-storage-bed.webp"
- },
- "ky-bed#3": {
-  "src": "/images/buy/maju-thorney-hydraulic-storage-bed.webp"
- },
  "ky-kdk-f40gp-100-cm#0": {
   "src": "/images/buy/kdk-f40gp-100-cm-wi-fi-dc-ceiling-fan-with-led-light-ee007e.webp"
  },
@@ -330,21 +247,6 @@ export const IMG = {
  "ky-mattress#0": {
   "ex": false,
   "src": "/images/buy/dunlopillo-carlton-signature-queen.webp"
- },
- "ky-mattress#5": {
-  "src": "/images/buy/king-koil-luxury-qi-cool-firm-queen.webp"
- },
- "ky-mattress#4": {
-  "src": "/images/buy/sealy-posturepremier-treasure-mattress-queen-pillow-top-medi-ce9359.webp"
- },
- "ky-mattress#1": {
-  "src": "/images/buy/king-koil-posture-ellisville-queen-rated-soft-latex-15-yr-wa-fe1621.webp"
- },
- "ky-mattress#2": {
-  "src": "/images/buy/natura-avo-plush-queen-box-top-cool-gel-memory-foam-my-139ba9.webp"
- },
- "ky-mattress#3": {
-  "src": "/images/buy/hipvan-levitate-queen-latex-pocket-springs-12-yr-warranty-9d2aff.webp"
  },
  "ky-philips-meson-5-downlight#0": {
   "ex": true,
