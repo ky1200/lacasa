@@ -160,6 +160,10 @@ export const IMG = {
   "src": "/images/buy/steigen-halo-mini-ai-drying-1716f9.webp"
  },
  "ks-bed#0": {
+  "ex": true,
+  "src": "/images/buy/bm-queen-hydraulic-storage-bed-headboard.webp"
+ },
+ "ks-bed#5": {
   "src": "/images/buy/traken-storage-bed-frame-queen-gas-lifts-1f6999.webp"
  },
  "ks-bed#1": {
@@ -193,6 +197,10 @@ export const IMG = {
   "src": "/images/buy/ikea-lagkapten-alex-140.webp"
  },
  "ks-mattress#0": {
+  "ex": true,
+  "src": "/images/buy/bm-mattress-rm4100-example.webp"
+ },
+ "ks-mattress#4": {
   "src": "/images/buy/sealy-posturepremier-treasure-mattress-queen-pillow-top-medi-ce9359.webp"
  },
  "ks-mattress#1": {
@@ -214,6 +222,10 @@ export const IMG = {
   "src": "/images/buy/ikea-brimnes-wardrobe-2-door.webp"
  },
  "kx-bed#0": {
+  "ex": true,
+  "src": "/images/buy/bm-queen-hydraulic-storage-bed-headboard.webp"
+ },
+ "kx-bed#4": {
   "src": "/images/buy/traken-storage-bed-frame-queen-gas-lifts-1f6999.webp"
  },
  "kx-bed#1": {
@@ -233,6 +245,10 @@ export const IMG = {
   "src": "/images/buy/kdk-f40gp-100-cm-wi-fi-dc-ceiling-fan-with-led-light-ee007e.webp"
  },
  "kx-mattress#0": {
+  "ex": true,
+  "src": "/images/buy/eclipse-mattress-queen-example.webp"
+ },
+ "kx-mattress#4": {
   "src": "/images/buy/sealy-posturepremier-treasure-mattress-queen-pillow-top-medi-ce9359.webp"
  },
  "kx-mattress#1": {
@@ -271,6 +287,10 @@ export const IMG = {
   "src": "/images/buy/ikea-hemnes-dressing-table.webp"
  },
  "ky-bed#0": {
+  "ex": true,
+  "src": "/images/buy/bm-queen-hydraulic-storage-bed-headboard.webp"
+ },
+ "ky-bed#4": {
   "src": "/images/buy/traken-storage-bed-frame-queen-gas-lifts-1f6999.webp"
  },
  "ky-bed#1": {
@@ -290,6 +310,9 @@ export const IMG = {
   "src": "/images/buy/led-ambient-strip-driver-e861a5.webp"
  },
  "ky-mattress#0": {
+  "src": "/images/buy/king-koil-luxury-qi-cool-firm-queen.webp"
+ },
+ "ky-mattress#4": {
   "src": "/images/buy/sealy-posturepremier-treasure-mattress-queen-pillow-top-medi-ce9359.webp"
  },
  "ky-mattress#1": {
