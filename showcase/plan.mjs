@@ -63,10 +63,11 @@ export function researchPage() {
  const specList = o => { const specs = (o.specs ?? []).filter(([k]) => k !== 'Feel'); return specs.length ? `<dl class="rz-specs">${specs.map(([k, val]) => `<dt>${h(k)}</dt><dd>${h(val)}</dd>`).join('')}</dl>` : ''; };
  // Full card: the current pick, or an option still in the running.
  const card = o => { const feel = feelOf(o);
-  return `<li class="rz-card${o.pick ? ' is-pick' : ''}">
-<div class="rz-photo">${img(o)}${o.pick ? '<span class="rz-pick">Current pick</span>' : ''}</div>
+  const place = o.price === undefined && !o.img;
+  return `<li class="rz-card${o.pick ? ' is-pick' : ''}${place ? ' is-place' : ''}">
+${place ? (o.pick ? '<span class="rz-pick rz-pick-inline">Must visit</span>' : '') : `<div class="rz-photo">${img(o)}${o.pick ? '<span class="rz-pick">Current pick</span>' : ''}</div>`}
 <div class="rz-body"><b class="rz-name">${nameOf(o)}</b>
-<p class="rz-price"><span>${h(price(o))}</span>${sgd(o) ? `<small>${h(sgd(o))}</small>` : ''}</p>
+${o.price === undefined ? '' : `<p class="rz-price"><span>${h(price(o))}</span>${sgd(o) ? `<small>${h(sgd(o))}</small>` : ''}</p>`}
 <p class="rz-shop">${h(o.shop)}</p>
 ${feel ? `<span class="rz-feel ${feelClass(feel)}">Feel: ${h(feel)}</span>` : ''}
 ${o.why ? `<p class="rz-why">${h(o.why)}</p>` : ''}${specList(o)}</div></li>`; };
@@ -80,6 +81,7 @@ ${o.why ? `<p class="rz-why">${h(o.why)}</p>` : ''}${specList(o)}</div></li>`; }
    const picks = t.shortlist.filter(o => o.pick), rest = t.shortlist.filter(o => !o.pick);
    return `<ul class="rz-grid">${picks.map(card).join('')}</ul>${others(rest, 'Looked at, not chosen')}`;
   }
+  if (t.all) return groups(t).map(({g, list}) => `<div class="rz-group"><h3><span>${h(g)}</span><small>${list.length} ${list.length === 1 ? 'stop' : 'stops'}</small></h3><ul class="rz-grid">${list.map(card).join('')}</ul></div>`).join('');
   return groups(t).map(({g, list}) => { const picks = list.filter(o => o.pick), rest = list.filter(o => !o.pick), lead = picks.length ? picks : rest.slice(0, 1), more = picks.length ? rest : rest.slice(1);
    return `<div class="rz-group"><h3><span>${h(g)}</span><small>${list.length} ${list.length === 1 ? 'option' : 'options'}</small></h3><ul class="rz-grid">${lead.map(card).join('')}</ul>${others(more, picks.length ? 'Other options' : 'More options')}</div>`; }).join('');
  };

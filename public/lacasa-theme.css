@@ -1157,3 +1157,6 @@ summary.just-closed{animation:secflash .7s var(--ease-out)}
 .pay-list.is-due b{color:#9a4a1f}
 .buy-day-pay{margin:2px 0;font-size:14px;font-weight:600;color:#2f5a3c}
 .hq-orders .hq-next-head a{font-size:14px;font-weight:650;color:var(--indigo)}
+.rz-card.is-place{display:block;padding:0}
+.rz-card.is-place .rz-body{padding:12px 14px}
+.rz-pick-inline{position:static;display:inline-block;margin:12px 14px 0}
