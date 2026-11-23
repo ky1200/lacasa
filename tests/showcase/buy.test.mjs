@@ -35,7 +35,7 @@ test('to-buy CSV has one row per item plus header and before, after, total and m
 test('to-buy page renders for a family member, with no personal address and plain wording',()=>{
  const s=visitorState(content,samples,{code:'KY',name:'KY'},[],[],false);
  const {html,status}=renderPage(s,'https://lacasa.test/buy');assert.equal(status,200);
- assert.match(html,/To-buy list/);assert.match(html,/href="\/buy.csv"/);assert.match(html,/iniche-quotation-2026-11-13\.pdf/);
+ assert.match(html,/To-buy list/);assert.match(html,/href="\/buy.csv"/);assert.match(html,/iniche-quotation-2026-11-23\.pdf/);
  assert.doesNotMatch(html,/Woodlands Drive|#07-31|737894/);
  const text=html.replace(/<[^>]+>/g,' ');assert.doesNotMatch(text,/\byou\b|\byour\b|perfect|amazing/i);
  assert.match(renderPage(s,'https://lacasa.test/').html,/href="\/buy"/);
@@ -81,7 +81,7 @@ test('to-buy page shows saved choices, quantity buttons, option picker and photo
  assert.match(html,/name="pick-fridge" value="1" data-b="pick" checked/);
  assert.match(html,/<button type="button" class="buy-photo main" data-enlarge[^>]*><img class="buy-img" src="\/images\/buy\//);assert.match(html,/<fieldset data-lightbox-group>/);assert.match(html,/data-b="plus"/);
  assert.match(html,/Maybe, not in total: <b data-buy-off>S\$[\d,]+<\/b>/);assert.match(html,/name="tag-washer" value="maybe" data-b="tag" checked/);assert.match(html,/data-buy-before>S\$[\d,]+</);assert.match(html,/data-buy-after>S\$0</);
- assert.match(html,/id="buy-decisions"[^>]*><details><summary><h2>Final reno decisions sent to I-Niche, 21 Nov<\/h2>[\s\S]*?<p class="buy-dec-note">Waiting for the I-Niche revised quote/);
+ assert.match(html,/id="buy-decisions"[^>]*><details><summary><h2>Reno decisions \(21 Nov\) vs the revised quote<\/h2>[\s\S]*?<p class="buy-dec-note">Codes are the 13 Nov quote[\s\S]*?<span class="buy-dec is-open">Fix<\/span><div><b>E2 \+ E2a/);
  const firstRoom=html.indexOf('id="buy-contractor"');for(const id of ['buy-decisions','buy-measure','buy-dates','buy-qa'])assert.ok(html.indexOf(`id="${id}"`)>firstRoom,id+' sits below the rooms, folded');assert.ok(html.indexOf('id="buy-files"')<firstRoom,'contractor files near the top');assert.match(html,/class="dock-pop dock-files"[\s\S]*?href="\/files\//,'files reachable from the dock');assert.match(html,/<span class="buy-dec is-off">Removed<\/span><div><b>D4: L-shaped wardrobe/);assert.match(html,/E2 \+ E2a: glass sliding door at the kitchen entrance/);assert.doesNotMatch(html.slice(html.indexOf('id="buy-contractor"'),html.indexOf('id="buy-aircon"')),/buy-photo/,'no photos in the contractor room');assert.match(html,/id="buy-measure"[\s\S]*?LAN ports/);assert.match(html,/id="buy-lights"[\s\S]*?Eyeball light/);assert.doesNotMatch(html,/id="buy-mattress-brands"/,"beds bought, brand list gone");assert.match(html,/name="buy-show" value="maybe" data-show/);assert.match(html,/<nav class="dock" data-dock aria-label="Sections on this page">/);assert.match(html,/data-dock-link="buy-kx"[^>]*data-sum="kx"/);assert.match(html,/class="sec-close" data-sec-close>Close KX bedroom/);for(const r of BUY.rooms)assert.match(html,new RegExp(`href="#buy-${r.id}" data-dock-link="buy-${r.id}"`));assert.match(html,/class="buy-day sale[^"]*" href="#day-2026-11-27"/);assert.match(html,/id="day-2026-12-12"/);assert.doesNotMatch(html,/[Rr]ough/);
  assert.match(html,new RegExp('data-buy-total>S\\$'+Math.round(buyTotals(BUY,s.visit).total).toLocaleString('en-SG')));
  const text=html.replace(/<[^>]+>/g,' ');assert.doesNotMatch(text,/\byou\b|\byour\b|perfect|amazing/i);
@@ -107,7 +107,7 @@ test('to-buy: to-do list near the top with shared ticks; clear file cards; vinyl
  for(const t of ['SP Services','Renovation form','Order the aircon','Fibre broadband: sign up','Ask ANZ'])assert.match(html,new RegExp('id="buy-todo"[\\s\\S]*?'+t));
  assert.match(html,/<li class="is-done"><label><input type="checkbox" data-todo="t:aircon" checked>/);assert.match(html,/<span data-todo-done>1<\/span> of \d+ done/);
  assert.ok(buyKeys().has('t:sp'));assert.ok(validBuyValue(buyKeys().get('t:sp'),'1'));assert.ok(!validBuyValue(buyKeys().get('t:sp'),'yes'));
- assert.match(html,/<a class="buy-file" href="\/files\/iniche-quotation-2026-11-13\.pdf" target="_blank"[^>]*><span class="buy-file-icon"[^>]*>PDF<\/span>[\s\S]*?Open ↗/);
+ assert.match(html,/<a class="buy-file" href="\/files\/iniche-quotation-2026-11-23\.pdf" target="_blank"[^>]*><span class="buy-file-icon"[^>]*>PDF<\/span>[\s\S]*?Open ↗/);
  assert.match(html,/id="it-contractor-f2-vinyl-3-bedrooms"[\s\S]*?<span class="buy-decided">Decided<\/span>/);
  assert.ok(!items.some(i=>/exhaust|false ceiling/i.test(i.name)),'no window exhaust fan or false ceiling items');
  for(const t of BUY.todo){if(t.date)assert.match(t.date,/^2026-1[12]-\d\d$/);if(t.href?.startsWith("#"))assert.ok(html.includes(`id="${t.href.slice(1)}"`),t.href);else if(t.href)assert.match(t.href,/^\/(?:research#r-|look#look-)/);}
