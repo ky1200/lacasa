@@ -193,7 +193,7 @@ export const BUY = {
     {name: 'SIHOO M57 mesh chair (same as KY)', price: 339, cur: 'SGD', shop: 'HipVan', type: 'Online', href: 'https://www.hipvan.com/products/sihoo-m57-ergonomic-chair-black'},
     {name: 'IKEA FLINTAN office chair', price: 69.9, cur: 'SGD', shop: 'IKEA Singapore', type: 'Shop + online', href: 'https://www.ikea.com/sg/en/p/flintan-office-chair-beige-50492203/'},
    ]},
-   {id: 'ks-wardrobe', name: 'IKEA KLEPPSTAD wardrobe, 2 doors, 79 × 55 cm', qty: 1, price: 149, cur: 'SGD', tag: 'maybe', shop: 'IKEA Singapore', type: 'Shop + online', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-2-doors-white-10437237/', date: '2026-12-20', when: 'Only if the built-in wardrobe does not stay', alts: [
+   {id: 'ks-wardrobe', name: 'IKEA KLEPPSTAD wardrobe, 2 doors, 79 × 55 cm', qty: 1, price: 149, cur: 'SGD', shop: 'IKEA Singapore', type: 'Shop + online', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-2-doors-white-10437237/', date: '2026-12-20', when: 'Needed: KS is removing the old built-in wardrobe (24 Nov). Measure the wall on 3 Dec after hacking.', alts: [
     {name: 'IKEA KLEPPSTAD wardrobe, 3 doors, 117 × 55 cm', price: 199, cur: 'SGD', shop: 'IKEA Singapore', type: 'Shop + online', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-3-doors-white-80441759/'},
     {name: 'IKEA BRIMNES wardrobe, 2 doors, 78 × 50 cm', price: 199, cur: 'SGD', shop: 'IKEA Singapore', type: 'Shop + online', href: 'https://www.ikea.com/sg/en/p/brimnes-wardrobe-with-2-doors-white-20400479/'},
    ]},
@@ -212,7 +212,8 @@ export const BUY = {
  decisionsTitle: 'Reno decisions (21 Nov) vs the revised quote',
  decisionsNote: 'Codes are the 13 Nov quote. Each line says what the revised quote (S$19,035) did. "Fix" = ask John to change before signing.',
  decisions: [
-  {t: 'A: hacking A1, A2, A4 to A9', s: 'Go ahead', n: 'In the quote. A3 (KS wardrobe removal) taken out. Protection S$380 + debris S$480 did not go down although less is hacked: ask.'},
+  {t: 'A: hacking A1, A2, A4 to A9', s: 'Go ahead', n: 'In the quote. Protection S$380 did not go down although less is hacked: ask.'},
+  {t: 'KS built-in wardrobe: hack away and dispose (KS, 24 Nov)', s: 'New', n: 'Was A3 in the 13 Nov quote and taken out on 21 Nov. KS now wants it removed: hack, dispose, patch and paint the wall, vinyl under where it stood. Asked John for the price on 24 Nov. KS then needs a new wardrobe (on the to-buy list).'},
   {t: 'Living mirror cabinet: take off the door and patch', s: 'Fix', n: 'Quote A3 (new): "dismantle tall mirror door cabinet" S$180. Patching and painting the wall after is not written: ask John to add it, and confirm whole cabinet or door only.'},
   {t: 'B: partition wall B1, B1a, B1b', s: 'Go ahead', n: 'Same prices. 40 kg rockwool.'},
   {t: 'B2: keep the living false ceiling, patch old downlight holes', s: 'Go ahead'},
@@ -258,7 +259,7 @@ export const BUY = {
  // To-do list at the top of /buy, in date order. Ticks are shared (saved as t:<id>). No date = do now.
  todo: [
   {id: 'fibre', t: 'Fibre broadband: sign up 3 to 5 Dec, install a week before move-in', n: 'Pick: StarHub UltraSpeed 5Gbps Mesh S$35.55 a month (2 TP-Link HB615, one in KY room). Plain 5Gbps is S$29.55. Check the fibre point and LAN ports on 3 Dec first. See Research.', href: '/research#r-fibre'},
-  {id: 'quote2', date: '2026-11-24', t: 'Send John the revised-quote fixes (morning of Tue 24 Nov)', n: 'Add the Designer’s pick reno list (fan points in KS and living, Cat6 to KY desk and TV, bedside 2-way switches) so the price covers it. Kitchen door must be sliding, not bi-fold; take E1 out and put the door swap in; waterproofing price for the half wall; mirror cabinet patch; fan wording; why protection and debris did not go down. See "Quote checks".', href: '#buy-qa'},
+  {id: 'quote2', date: '2026-11-24', t: 'Send John the revised-quote fixes (morning of Tue 24 Nov)', n: 'Message drafted 24 Nov: 5 fixes, NEW hack away the KS built-in wardrobe (patch, paint, vinyl under it), prices for waterproofing, floor patching, thresholds, vinyl on measured area; review protection, G2 fan, E4, Anti-Mould; payment stages. Sockets, switches, Cat6 and fan points wait for 3 Dec. Kitchen door must be sliding, not bi-fold; take E1 out and put the door swap in; waterproofing price for the half wall; mirror cabinet patch; fan wording; why protection and debris did not go down. See "Quote checks".', href: '#buy-qa'},
   {id: 'kitchen-door', t: 'Choose the kitchen glass sliding door design', n: 'Send it to I-Niche (E2 + E2a).'},
   {id: 'vhaus-visit', t: 'Ask V Haus on WhatsApp: sofa model name and delivery date (size now confirmed 268 × 135); SG delivery cost; how the balance is paid', n: 'Order 03460, deposit RM4,355 paid 22 Nov. Is the RM10,161.62 balance paid per delivery or all before the first? Also ask Jason to confirm in writing if the dining set can still be changed before the factory order, and which fabric RU002 is (and whether the sofa colour can still change: see the mood board).', href: '/look#look-sofa'},
   {id: 'anz-warranty', t: 'Ask ANZ for the frame and hydraulics warranty in writing', n: 'Also check the mattress warranty is registered with Dunlopillo and valid in Singapore.', href: '/research#r-beds'},
@@ -296,7 +297,7 @@ export const BUY = {
  ],
  // Revised I-Niche quote (23 Nov): what to fix, ask, push back on before signing.
  contractor: [
-  {q: 'Fix before signing', a: '1) E2 kitchen door: we asked for a glass SLIDING door, the quote says bi-fold. 2) Take E1 (new veneer door S$580) out and move optional lines 3 + 4 (bathroom slide and swing door + moving the old door to bedroom 3, S$560) into the total. 3) A3 mirror cabinet: add patching and paint after removal. 4) G2: text says 2 bathrooms, should be common bathroom only. 5) Put the date and a work schedule (start 3 Dec, finish date) on the quote.'},
+  {q: 'Fix before signing', a: '1) E2 kitchen door: we asked for a glass SLIDING door, the quote says bi-fold. 2) Take E1 (new veneer door S$580) out and move optional lines 3 + 4 (bathroom slide and swing door + moving the old door to bedroom 3, S$560) into the total. 3) A3 mirror cabinet: add patching and paint after removal. 4) G2: text says 2 bathrooms, should be common bathroom only. 5) Put the date and a work schedule (start 3 Dec, finish date) on the quote. New (24 Nov): hack away the KS built-in wardrobe, patch and paint, vinyl under it; price asked.'},
   {q: 'Ask the price (not in the quote)', a: 'Waterproofing for the common bathroom half-height wall (F4 says not included). Floor patching under the vinyl if the parquet is uneven. Thresholds and trims at the bedroom doors. Black frame for the kitchen door (is the S$150 inside S$1,180?).'},
   {q: 'Looks high: ask for a better price', a: 'A8 protection S$380 + A9 debris S$480: same as before although A3, D2 and D4 are gone. G2 fan S$550 for one fan (ask brand/model). E4 shower screen S$890. Anti-Mould top-up S$300 for 3 small ceilings. Fair to ask John to round the total down.'},
   {q: 'Looks fine', a: 'Vinyl S$4.50 per sq ft for 5 mm with skirting is a normal price; ask that it is billed by the measured area (about 335 sq ft from the plan vs 380 in the quote). Regrouting S$280 per bathroom (we expected S$300). Half-height wall S$980 with niche. B3 Steigen ceiling support S$180.'},

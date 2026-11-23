@@ -83,7 +83,7 @@ export const PLAN = {
    {n: 'IKEA BRIMNES 2-door 78 × 50', w: 780, d: 500, price: 'S$199', href: 'https://www.ikea.com/sg/en/p/brimnes-wardrobe-with-2-doors-white-20400479', img: '/images/research/ikea-brimnes-wardrobe-2-door.webp', note: '190 cm tall.'},
    {n: 'IKEA KLEPPSTAD 3-door 117 × 55', w: 1170, d: 550, price: 'S$199', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-3-doors-white-80441759/', img: '/images/research/ikea-kleppstad-3-door.webp', note: '176 cm tall.'},
    {n: 'IKEA GURSKEN 49 × 55', w: 494, d: 550, price: 'S$89.90', href: 'https://www.ikea.com/sg/en/p/gursken-wardrobe-light-beige-50503292/', img: '/images/research/ikea-gursken-wardrobe.webp'},
-  ], research: 'rooms', note: 'Check if the old built-in wardrobe in this room stays; if it does, this may not be needed.', buy: ['ks-wardrobe']},
+  ], research: 'rooms', note: 'KS is removing the old built-in wardrobe (24 Nov), so a new one is needed. Measure the wall on 3 Dec after hacking.', buy: ['ks-wardrobe']},
   // ---------- KX room (main bedroom) ----------
   {id: 'kx-bed', name: 'KX bed', room: 'kx', kind: 'bed', x: 3760, y: 7150, r: 90, sizes: [{n: 'Queen mattress 152 × 190.5', w: 1520, d: 1905}, {n: 'Queen storage frame, about 160 × 200 (estimate)', w: 1600, d: 2000}], buy: ['kx-bed', 'kx-mattress'], research: 'beds', note: 'Dunlopillo Richmond 38 cm on a Dunlopillo storage frame, no headboard (delivery 22 Dec). Frame outside size not confirmed yet: pick the frame size to check space.'},
   {id: 'kx-vhaus-wardrobe', name: 'KX V Haus L-shape wardrobe (ordered)', room: 'kx', kind: 'lwardrobe', x: 1500, y: 5180, r: 270, sizes: [
@@ -201,7 +201,7 @@ export const prefixOf = layout => PEOPLE.includes(layout) ? `p:${layout}:` : 'p:
 export const DESIGNER = {
  items: {
   'ky-bed': '4540,2400,90,1', 'ky-desk': '2720,3175,270,0', 'ky-chair': '3420,3560,90,0', 'ky-wardrobe': '2580,1760,270,0', 'wifi-atlas-2': '2520,2460,0,0',
-  'ks-bed': '7580,2410,90,1', 'ks-desk': '5860,3400,270,0', 'ks-chair': '6420,3560,90,0', 'ks-wardrobe': '8200,4770,180,0,0',
+  'ks-bed': '7580,2410,90,1', 'ks-desk': '5860,3400,270,0', 'ks-chair': '6420,3560,90,0', 'ks-wardrobe': '8010,4755,180,2,1',
   'kx-bed': '3750,6970,90,1', 'kx-vhaus-wardrobe': '1500,5180,270,0', 'kx-vanity': '3700,4340,0,0', 'kx-stool': '3700,4800,0,0',
   'living-sofa-l': '9335,3450,270,0', 'living-coffee-table': '10810,3450,0,6,1', 'living-tv': '12360,3400,90,0',
   'living-recliner': '10700,5450,270,0,0', 'living-mahjong': '11300,3700,0,0,0', 'dining-table': '10500,7400,90,0',
@@ -226,7 +226,7 @@ export const DESIGNER = {
   ]},
   {room: 'ks', title: 'KS room', why: [
    'Bed head on the solid wall shared with the living room, long side along the window.',
-   'The old built-in wardrobe stays (A3 was taken out of the quote), so no new wardrobe. The KS wardrobe is removed from this layout.',
+   'The old built-in wardrobe is hacked away (KS, 24 Nov). A new free-standing wardrobe (shown: IKEA KLEPPSTAD 3-door 117 cm) goes on the same wall in the far corner, away from the door, with about 60 cm in front to open the doors.',
    'Study desk (IKEA ALEX 100 × 48) on the left wall, ending before the door swing. The chair rolls into the space below the bed.',
    'Fan over the middle of the bed towards the foot. KS has no fan point now, so it must be added during the reno.',
   ]},
@@ -254,17 +254,16 @@ export const DESIGNER = {
    'Two hall lights and one at the entrance, a switch by the main door, and a socket by the DB box for the router.',
   ]},
  ],
- // Tell I-Niche before the walls are painted and the ceiling is closed (G3 is confirmed on 3 Dec).
+ // To check on site on 3 Dec with I-Niche and the electrician (G3), before walls are painted and ceilings closed.
  reno: [
-  'Ceiling fan points with a strong support: KS (new) and living room (new; the false ceiling needs plywood backing, like B3 for the Steigen). Check the KY, KX and dining points on 3 Dec.',
+  'Ceiling fan points with a strong support: KS (new) and living room (new; the false ceiling needs a wood support above the board). Check the KY, KX and dining points.',
   'One Cat6 cable from the DB box to the KY desk, and one to the TV wall.',
   'At each bed: a double socket and a 2-way switch for the room light, so the light can be turned off from bed.',
   'KY desk: 2 double sockets about 15 cm above the desk top (PC, 2 screens, speakers, chargers). KS desk: 1 double socket.',
   'TV wall: 2 double sockets and the LAN port behind the screen, at TV height, so no cables show.',
   'Kitchen: power point inside a wall cabinet for an under-cabinet LED strip; water point and socket for the WD518AN.',
-  'KY and KX partition: ask the price for 60 kg rockwool and a double board on the KY side (KY’s speakers and gaming at night).',
   'Light colour: 3000K warm white in the bedrooms, living and dining; 4000K in the kitchen, bathrooms and yard. Matches the warm modern look.',
-  'Curtain tracks: ask for plywood backing in the ceiling at the living and bedroom windows.',
+  'Curtain tracks: only if the living curtains hang from the false ceiling, ask for a wood strip above the board first (screws do not hold in board alone). Concrete ceilings need nothing.',
   'Yard: socket about 30 cm off the floor for the robot vacuum dock.',
   'Common bathroom (behind the KX bed): quiet dual-flush cistern; ask if the pipes on that wall can be wrapped.',
   'Light switches on the handle side of each door, at the same height as the existing switches.',

@@ -75,7 +75,7 @@ export const RESEARCH = [
   decide: [
    'KY desk size: XL (177 × 80, current size) or XXL (196.8 × 80). XXL leaves about 18 cm spare along the wall; check aircon, window and sockets on 3 Dec.',
    'KY bed direction: with the head on the top wall, the desk chair gets about 95 cm to pull out; with the bed lying along the top wall, only about 57 cm.',
-   'KS: does the old built-in wardrobe stay? If yes, skip the new wardrobe.',
+   'KS: the old built-in wardrobe is being hacked away (24 Nov). Pick a new wardrobe after measuring the wall on 3 Dec.',
    'KX: dressing table size next to the new V Haus L-shaped wardrobe.',
   ],
   shortlist: [

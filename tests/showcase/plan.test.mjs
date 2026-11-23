@@ -139,9 +139,9 @@ test('floor plan: Designer’s pick layout, person layouts and copying',async()=
  const box=i=>{const s=i.c??i.sizes[i.s],r=i.r%180!==0,w=r?s.d:s.w,d=r?s.w:s.d;return [i.x-w/2,i.y-d/2,i.x+w/2,i.y+d/2];};
  const solid=on.filter(i=>!i.wifi);
  for(let a=0;a<solid.length;a++)for(let b=a+1;b<solid.length;b++){const A=box(solid[a]),B=box(solid[b]);assert.ok(!(A[0]<B[2]&&B[0]<A[2]&&A[1]<B[3]&&B[1]<A[3]),solid[a].id+' overlaps '+solid[b].id);}
- assert.ok(!on.some(i=>i.id==='ks-wardrobe'),'KS keeps the old built-in wardrobe');
+ assert.ok(on.some(i=>i.id==='ks-wardrobe'),'KS gets a new wardrobe (old built-in hacked away)');
  assert.ok(st.points.fan.length>=5&&st.points.socket.length&&st.points.switch.length&&st.points.lan.length);
- assert.ok(DESIGNER.rooms.length>=5&&DESIGNER.reno.length>=8);
+ assert.ok(DESIGNER.rooms.length>=5&&DESIGNER.reno.length>=8);assert.ok(!DESIGNER.reno.some(r=>/rockwool/.test(r)),'no soundproofing upgrade (K, 24 Nov)');
  // A person layout falls back to the family plan, and keeps its own changes.
  const v={'p:i:ky-bed':'4000,2500,0,0','p:ky:i:ky-bed':'4100,2500,90,1'};
  assert.equal(layoutValues(v,'ky')['p:i:ky-bed'],'4100,2500,90,1');assert.equal(layoutValues(v,'kx')['p:i:ky-bed'],'4000,2500,0,0');assert.equal(layoutValues(v,'')['p:i:ky-bed'],'4000,2500,0,0');

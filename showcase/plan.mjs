@@ -41,7 +41,7 @@ function designerNotes(layout) {
  return `<section class="buy-block buy-panel buy-fold tone-moss plan-designer" id="designer" ${secAttrs('Designer’s pick')}><details${open}><summary><h2>Designer’s pick: the reasons</h2><span class="buy-fold-caret" aria-hidden="true"></span></summary><div class="buy-fold-body">
 <p class="muted">How a room planner would lay out the home, room by room. ${layout === 'designer' ? '' : '<a href="/plan?layout=designer">See it on the plan</a>.'}</p>
 <div class="plan-designer-rooms">${DESIGNER.rooms.map(r => `<details class="plan-designer-room"><summary>${h(r.title)} <small>${r.why.length}</small></summary><ul>${r.why.map(w => `<li>${h(w)}</li>`).join('')}</ul></details>`).join('')}</div>
-<h3>Tell I-Niche during the reno</h3><p class="muted">Cheap while walls and ceilings are open, costly later. Socket and switch places get confirmed on site on 3 Dec (G3).</p>
+<h3>Check on 3 Dec with I-Niche and the electrician</h3><p class="muted">Cheap while walls and ceilings are open, costly later. Socket and switch places get confirmed on site (G3).</p>
 <ol class="plan-designer-reno">${DESIGNER.reno.map(w => `<li>${h(w)}</li>`).join('')}</ol>
 ${secClose('Designer’s pick')}</div></details></section>`;
 }
