@@ -78,7 +78,7 @@ export const PLAN = {
    {n: 'SIHOO M57 60 × 60', w: 600, d: 600, price: 'From S$339 (HipVan)', href: 'https://www.hipvan.com/products/sihoo-m57-ergonomic-chair-black', img: '/images/research/sihoo-m57.webp', note: 'Same as KY’s chair.'},
    {n: 'IKEA FLINTAN 71 × 71', w: 710, d: 710, price: 'S$69.90', href: 'https://www.ikea.com/sg/en/p/flintan-office-chair-beige-50492203/', img: '/images/research/ikea-flintan-chair.webp', note: 'Budget chair with a wide base.'},
   ], research: 'rooms', buy: ['ks-chair']},
-  {id: 'ks-wardrobe', name: 'KS wardrobe', room: 'ks', kind: 'wardrobe', x: 8200, y: 4770, r: 180, sizes: [
+  {id: 'ks-wardrobe', name: 'KS wardrobe', room: 'ks', kind: 'wardrobe', add: true, x: 8200, y: 4770, r: 180, sizes: [
    {n: 'IKEA KLEPPSTAD 2-door 79 × 55', w: 790, d: 550, price: 'S$149', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-2-doors-white-10437237/', img: '/images/research/ikea-kleppstad-2-door.webp', note: '176 cm tall.'},
    {n: 'IKEA BRIMNES 2-door 78 × 50', w: 780, d: 500, price: 'S$199', href: 'https://www.ikea.com/sg/en/p/brimnes-wardrobe-with-2-doors-white-20400479', img: '/images/research/ikea-brimnes-wardrobe-2-door.webp', note: '190 cm tall.'},
    {n: 'IKEA KLEPPSTAD 3-door 117 × 55', w: 1170, d: 550, price: 'S$199', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-3-doors-white-80441759/', img: '/images/research/ikea-kleppstad-3-door.webp', note: '176 cm tall.'},
@@ -86,6 +86,10 @@ export const PLAN = {
   ], research: 'rooms', note: 'Check if the old built-in wardrobe in this room stays; if it does, this may not be needed.', buy: ['ks-wardrobe']},
   // ---------- KX room (main bedroom) ----------
   {id: 'kx-bed', name: 'KX bed', room: 'kx', kind: 'bed', x: 3760, y: 7150, r: 90, sizes: [{n: 'Queen mattress 152 × 190.5', w: 1520, d: 1905}, {n: 'Queen storage frame, about 160 × 200 (estimate)', w: 1600, d: 2000}], buy: ['kx-bed', 'kx-mattress'], research: 'beds', note: 'Dunlopillo Richmond 38 cm on a Dunlopillo storage frame, no headboard (delivery 22 Dec). Frame outside size not confirmed yet: pick the frame size to check space.'},
+  {id: 'kx-vhaus-wardrobe', name: 'KX V Haus L-shape wardrobe (ordered)', room: 'kx', kind: 'lwardrobe', x: 1500, y: 5180, r: 270, sizes: [
+   {n: 'Earlier plan: 188 cm along the bottom wall + 112.5 cm on the left wall, 60 cm deep', w: 1125, d: 1880, t: 600},
+   {n: 'Order sheet: 6 ft + 6 ft (183 + 183 cm), 60 cm deep', w: 1830, d: 1830, t: 600},
+  ], buy: ['kx-v-haus-l-wardrobe'], research: 'vhaus', note: 'V Haus ALTO L-shape, 9 ft tall, ordered 22 Nov. Goes in the old wardrobe corner. V Haus measures on Tue 8 Dec; the left wall here is only about 163 cm, so the 6 ft + 6 ft on the order sheet needs checking. Needs a power point inside for the LED strips.'},
   {id: 'kx-vanity', name: 'KX study / vanity desk', room: 'kx', kind: 'desk', x: 3700, y: 4330, r: 0, sizes: [
    {n: 'IKEA MALM 120 × 41', w: 1200, d: 410, price: 'S$99', href: 'https://www.ikea.com/sg/en/p/malm-dressing-table-white-40355409/', img: '/images/research/ikea-malm-dressing-table.webp', note: 'Dressing table that also works as a desk; long drawer.'},
    {n: 'IKEA SYVDE 100 × 48', w: 1000, d: 480, price: 'S$249', href: 'https://www.ikea.com/sg/en/p/syvde-dressing-table-white-00439562/', img: '/images/research/ikea-syvde-dressing-table.webp'},
@@ -177,11 +181,104 @@ export const PLAN = {
  },
 };
 
+// ---------- Layouts ----------
+// '' = the family plan (shared). 'designer' = Claude's recommended layout (view only, can be copied).
+// 'ky' / 'kx' / 'ks' = each person's own saved version (keys p:ky:i:<id>, p:ky:pts:<type>); anything a
+// person has not changed falls back to the family plan.
+export const PEOPLE = ['ky', 'kx', 'ks'];
+export const LAYOUTS = [
+ {id: '', name: 'Family plan', short: 'Family'},
+ {id: 'designer', name: 'Designer’s pick', short: 'Designer’s pick'},
+ {id: 'ky', name: 'KY’s layout', short: 'KY'},
+ {id: 'kx', name: 'KX’s layout', short: 'KX'},
+ {id: 'ks', name: 'KS’s layout', short: 'KS'},
+];
+export const layoutOf = raw => LAYOUTS.some(l => l.id && l.id === raw) ? raw : '';
+export const prefixOf = layout => PEOPLE.includes(layout) ? `p:${layout}:` : 'p:';
+
+// Designer's pick (Claude, 24 Nov 2026). Values use the saved formats: item "x,y,rotation,size[,on]", points "x,y;x,y".
+// Items not listed keep their defaults. Draft until the real walls, windows and points are seen on 3 Dec.
+export const DESIGNER = {
+ items: {
+  'ky-bed': '4540,2400,90,1', 'ky-desk': '2720,3175,270,0', 'ky-chair': '3420,3560,90,0', 'ky-wardrobe': '2580,1760,270,0', 'wifi-atlas-2': '2520,2460,0,0',
+  'ks-bed': '7580,2410,90,1', 'ks-desk': '5860,3400,270,0', 'ks-chair': '6420,3560,90,0', 'ks-wardrobe': '8200,4770,180,0,0',
+  'kx-bed': '3750,6970,90,1', 'kx-vhaus-wardrobe': '1500,5180,270,0', 'kx-vanity': '3700,4340,0,0', 'kx-stool': '3700,4800,0,0',
+  'living-sofa-l': '9335,3450,270,0', 'living-coffee-table': '10810,3450,0,6,1', 'living-tv': '12360,3400,90,0',
+  'living-recliner': '10700,5450,270,0,0', 'living-mahjong': '11300,3700,0,0,0', 'dining-table': '10500,7400,90,0',
+ },
+ points: {
+  light: '10100,2800;11650,2800;10100,4150;11650,4150;10100,5450;11650,5450;9500,7400;11500,7400;5900,5650;7700,5650;11700,9600;8300,10000;9300,10000;10300,10000;6700,9700;5800,7100;1300,2200;1300,3300;2850,3150;4300,3700;3200,2000;5950,3400;7300,3750;1800,4700;3700,4850;3700,5950',
+  fan: '4150,2400;7200,2410;3300,6970;10650,3450;10500,7400',
+  socket: '2340,2600;2340,3700;5520,3270;5620,3150;8580,3270;4730,7830;4730,6100;3700,4160;12420,3000;12420,3850;8680,4900;8680,2150;12420,7400;8400,10790;9750,10790;10640,10810;6450,10800;6000,9300;11500,9250',
+  switch: '4790,3980;5540,3340;6320,5000;8580,3340;4720,5200;4730,7900;8700,5700;11050,11300;8600,9100',
+  lan: '2340,3200;12420,3450',
+  tp: '11150,9400',
+ },
+ // Why each choice. Shown on /plan under "Designer's pick: the reasons".
+ rooms: [
+  {room: 'ky', title: 'KY room', why: [
+   'Bed head on the solid wall shared with KS, not under the window: quieter, no draught or morning sun on the face, and the door opens fully without hitting the bed.',
+   'Desk (177 cm) on the left wall, pushed down towards the door. The chair rolls into the open floor below the bed, so there is about 70 cm to sit and get up.',
+   'Monitor faces the wall with the window at the side: no sun glare on the screen and no bright window behind the head on video calls.',
+   'Desk light sits over the front edge of the desk, not behind the chair, so it does not reflect in the monitor.',
+   'Fan between the bed foot and the desk: cools both, and no wind straight on the face when sleeping.',
+   'Wi-Fi node on the desk with a short cable to the PC. Best of all: one Cat6 cable from the DB box to the desk (see the reno list).',
+  ]},
+  {room: 'ks', title: 'KS room', why: [
+   'Bed head on the solid wall shared with the living room, long side along the window.',
+   'The old built-in wardrobe stays (A3 was taken out of the quote), so no new wardrobe. The KS wardrobe is removed from this layout.',
+   'Study desk (IKEA ALEX 100 × 48) on the left wall, ending before the door swing. The chair rolls into the space below the bed.',
+   'Fan over the middle of the bed towards the foot. KS has no fan point now, so it must be added during the reno.',
+  ]},
+  {room: 'kx', title: 'KX room (main bedroom)', why: [
+   'Bed head on the right wall: the only way a queen storage frame fits with walking space on both long sides and a clear door swing.',
+   'That wall backs onto the common toilet. Ask for a quiet dual-flush cistern, and keep the bed about 5 cm off the wall.',
+   'V Haus L wardrobe in the old wardrobe corner: about 188 cm along the bottom wall and 112.5 cm on the left. V Haus measures on 8 Dec.',
+   'Vanity on the KY partition wall, facing into the room. Its light is in front of the face, so no shadows for make-up.',
+   'Fan over the middle of the bed towards the foot; sockets and a 2-way switch at the bedside.',
+  ]},
+  {room: 'living', title: 'Living room', why: [
+   'Sofa back on the KS wall, centred on the TV, open end by the window. Eye to screen is about 3.2 m.',
+   'At 3.2 m a 65" TV fills about 25° of view; the 30° guide (SMPTE) needs about 75" (LG QNED86B 75", S$3,499, about 30°). The 65" OLED has the better picture; 75" has the size. Family choice.',
+   'Round coffee table 75 to 90 cm, about 43 cm from the sofa: easy to reach, no corners in the walkway.',
+   'Six downlights in two rows, not straight above heads on the sofa and not in front of the screen, plus one ceiling fan over the coffee table.',
+   'Sockets each side of the TV with a LAN port behind it, and a socket at each sofa end (lamp, phones, a recliner later).',
+  ]},
+  {room: 'dining', title: 'Dining', why: [
+   'Fan with light over the table centre; two downlights at the sides light the walkway.',
+   'One socket on the right wall near the table for steamboat or an automatic mahjong table.',
+  ]},
+  {room: 'kitchen', title: 'Kitchen, yard, hall and entrance', why: [
+   'Three downlights in a row over the front of the counter, so the body does not shade the worktop. Add an LED strip under the wall cabinets.',
+   'Sockets for the counter, the WD518AN water dispenser and the fridge. Robot dock socket low in the yard near the floor drain.',
+   'Two hall lights and one at the entrance, a switch by the main door, and a socket by the DB box for the router.',
+  ]},
+ ],
+ // Tell I-Niche before the walls are painted and the ceiling is closed (G3 is confirmed on 3 Dec).
+ reno: [
+  'Ceiling fan points with a strong support: KS (new) and living room (new; the false ceiling needs plywood backing, like B3 for the Steigen). Check the KY, KX and dining points on 3 Dec.',
+  'One Cat6 cable from the DB box to the KY desk, and one to the TV wall.',
+  'At each bed: a double socket and a 2-way switch for the room light, so the light can be turned off from bed.',
+  'KY desk: 2 double sockets about 15 cm above the desk top (PC, 2 screens, speakers, chargers). KS desk: 1 double socket.',
+  'TV wall: 2 double sockets and the LAN port behind the screen, at TV height, so no cables show.',
+  'Kitchen: power point inside a wall cabinet for an under-cabinet LED strip; water point and socket for the WD518AN.',
+  'KY and KX partition: ask the price for 60 kg rockwool and a double board on the KY side (KY’s speakers and gaming at night).',
+  'Light colour: 3000K warm white in the bedrooms, living and dining; 4000K in the kitchen, bathrooms and yard. Matches the warm modern look.',
+  'Curtain tracks: ask for plywood backing in the ceiling at the living and bedroom windows.',
+  'Yard: socket about 30 cm off the floor for the robot vacuum dock.',
+  'Common bathroom (behind the KX bed): quiet dual-flush cistern; ask if the pipes on that wall can be wrapped.',
+  'Light switches on the handle side of each door, at the same height as the existing switches.',
+ ],
+};
+
 const itemIds = new Set(PLAN.items.map(i => i.id)), typeIds = new Set(PLAN.pointTypes.map(t => t.id));
-// Keys the /api/plan endpoint accepts.
+// Keys the /api/plan endpoint accepts: p:i:<id>, p:pts:<type>, and the same with a person prefix (p:ky:i:<id>).
 export function planKey(key) {
- if (key.startsWith('p:i:') && itemIds.has(key.slice(4))) return {kind: 'item', id: key.slice(4)};
- if (key.startsWith('p:pts:') && typeIds.has(key.slice(6))) return {kind: 'points', type: key.slice(6)};
+ const m = /^p:(?:(ky|kx|ks):)?(i|pts):(.+)$/.exec(key);
+ if (!m) return null;
+ const layout = m[1] ?? '';
+ if (m[2] === 'i' && itemIds.has(m[3])) return {kind: 'item', id: m[3], layout};
+ if (m[2] === 'pts' && typeIds.has(m[3])) return {kind: 'points', type: m[3], layout};
  return null;
 }
 const MAX = 20000;
@@ -203,8 +300,18 @@ export function validPlanValue(spec, value) {
  if (value.length > 3000) return false;
  return value.split(';').every(p => {const m = /^(\d{1,5}),(\d{1,5})$/.exec(p); return !!m && Number(m[1]) <= MAX && Number(m[2]) <= MAX;});
 }
+// The saved values a layout uses, as family-style keys (p:i:<id>, p:pts:<type>).
+export function layoutValues(v = {}, layout = '') {
+ if (layout === 'designer') return {...Object.fromEntries(Object.entries(DESIGNER.items).map(([k, x]) => [`p:i:${k}`, x])), ...Object.fromEntries(Object.entries(DESIGNER.points).map(([k, x]) => [`p:pts:${k}`, x]))};
+ const fam = Object.fromEntries(Object.entries(v).filter(([k]) => /^p:(i|pts):/.test(k)));
+ if (!PEOPLE.includes(layout)) return fam;
+ const own = `p:${layout}:`;
+ for (const [k, x] of Object.entries(v)) if (k.startsWith(own)) fam[`p:${k.slice(own.length)}`] = x;
+ return fam;
+}
 // Saved state merged over the defaults.
-export function planState(v = {}) {
+export function planState(v = {}, layout = '') {
+ if (layout) v = layoutValues(v, layout);
  const items = PLAN.items.map(i => {
   const m = /^(-?\d+),(-?\d+),(\d+),(\d|c(\d{3,4})x(\d{3,4}))(,([01]))?$/.exec(v[`p:i:${i.id}`] ?? '');
   const base = {...i, s: i.s ?? 0, c: null, on: i.on ?? true};
@@ -220,5 +327,12 @@ export function planState(v = {}) {
   points[t.id] = raw === 'none' ? [] : raw ? raw.split(';').map(p => p.split(',').map(Number)) : PLAN.points[t.id] ?? [];
  }
  return {items, points};
+}
+// A whole layout as save values (suffix after the prefix: "i:<id>", "pts:<type>"), for "copy this layout".
+export function serialLayout(st) {
+ const out = {};
+ for (const i of st.items) out[`i:${i.id}`] = `${Math.round(i.x)},${Math.round(i.y)},${i.r},${i.c ? `c${i.c.w}x${i.c.d}` : i.s}${i.add ? `,${i.on ? 1 : 0}` : ''}`;
+ for (const [t, list] of Object.entries(st.points)) out[`pts:${t}`] = list.length ? list.map(p => p.map(Math.round).join(',')).join(';') : 'none';
+ return out;
 }
 export const buyItemById = id => {for (const r of BUY.rooms) for (const i of r.items) if (i.id === id) return {item: i, room: r}; return null;};

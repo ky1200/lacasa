@@ -1217,3 +1217,29 @@ summary.just-closed{animation:secflash .7s var(--ease-out)}
 .look-reset{margin-top:10px;background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font:inherit;font-size:13.5px;color:var(--indigo);cursor:pointer}
 @media (min-width:860px){.look-hero{grid-template-columns:1.4fr 1fr;align-items:start}}
 @media (prefers-reduced-motion:reduce){.look-opt,.look-palette span{transition:none}}
+
+/* ===== /plan layouts: family, Designer's pick, KY / KX / KS ===== */
+.plan-layouts{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 6px}
+.plan-layouts a{display:inline-flex;align-items:center;gap:5px;font-size:14px;font-weight:600;padding:8px 14px;min-height:40px;border-radius:10px;border:1px solid var(--line);background:var(--linen);color:var(--sumi);text-decoration:none}
+.plan-layouts a.is-designer{border-color:#3f6a4e;color:#3f6a4e;background:#ebf2ec}
+.plan-layouts a.is-designer i{font-style:normal;color:#b8860b}
+.plan-layouts a[aria-current="page"]{background:var(--sumi);color:var(--linen);border-color:var(--sumi)}
+.plan-layouts a.is-designer[aria-current="page"]{background:#3f6a4e;border-color:#3f6a4e;color:#fff}
+.plan-layouts a.is-designer[aria-current="page"] i{color:#ffd76a}
+.plan-layouts a:focus-visible,.plan-copy:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
+.plan-layout-note{border:1px solid var(--line);border-left:4px solid var(--indigo);background:#eef1f8;border-radius:10px;padding:10px 12px;margin:4px 0 8px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.plan-layout-note.is-designer{border-left-color:#3f6a4e;background:#ebf2ec}
+.plan-layout-note p{margin:0;flex:1 1 100%;font-size:14px;line-height:1.45}
+.plan-copy{font:inherit;font-size:14px;font-weight:600;padding:8px 14px;min-height:40px;border-radius:10px;border:1px solid var(--sumi);background:#fff;color:var(--sumi);cursor:pointer}
+.plan-copy.is-armed{background:#b4532a;border-color:#b4532a;color:#fff}
+.plan-copy:disabled{opacity:.6;cursor:default}
+.plan-designer .plan-designer-rooms{display:grid;gap:6px;margin:8px 0 14px}
+.plan-designer-room{border:1px solid var(--line);border-radius:10px;background:#fff}
+.plan-designer-room>summary{cursor:pointer;padding:10px 12px;font-weight:650;list-style:none;display:flex;justify-content:space-between;gap:8px}
+.plan-designer-room>summary::-webkit-details-marker{display:none}
+.plan-designer-room>summary small{color:var(--muted);font-weight:500}
+.plan-designer-room ul{margin:0;padding:0 14px 10px 30px;font-size:14px;line-height:1.5}
+.plan-designer-room li+li{margin-top:6px}
+.plan-designer h3{font-size:16px;margin:12px 0 4px}
+.plan-designer-reno{margin:6px 0 0;padding-left:22px;font-size:14px;line-height:1.5}
+.plan-designer-reno li+li{margin-top:6px}

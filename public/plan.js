@@ -46,10 +46,14 @@ const flush = async () => {
  say(failed ? (navigator.onLine === false ? 'Offline: kept on this phone' : msg) : 'Saved');
 };
 const save = (key, value) => {if (D.ro) return; const p = pending(); p[key] = value; keep(p); say('Saving…'); clearTimeout(timer); timer = setTimeout(flush, 400);};
-const saveItem = it => save(`p:i:${it.id}`, `${Math.round(it.x)},${Math.round(it.y)},${it.r},${it.c ? `c${it.c.w}x${it.c.d}` : it.s}${it.add ? `,${it.on ? 1 : 0}` : ''}`);
-const savePoints = t => save(`p:pts:${t}`, points[t].length ? points[t].map(p => p.map(Math.round).join(',')).join(';') : 'none');
+const P = D.prefix || 'p:';
+const saveItem = it => save(`${P}i:${it.id}`, `${Math.round(it.x)},${Math.round(it.y)},${it.r},${it.c ? `c${it.c.w}x${it.c.d}` : it.s}${it.add ? `,${it.on ? 1 : 0}` : ''}`);
+const savePoints = t => save(`${P}pts:${t}`, points[t].length ? points[t].map(p => p.map(Math.round).join(',')).join(';') : 'none');
 // Apply anything not yet uploaded from this phone.
-for (const [k, v] of Object.entries(pending())) {
+for (const [k0, v] of Object.entries(pending())) {
+ // Only this layout's keys change what is drawn; other layouts' keys still upload.
+ const own = k0.startsWith(P) && !(P === 'p:' && /^p:(ky|kx|ks):/.test(k0)), k = own ? 'p:' + k0.slice(P.length) : k0;
+ if (/^p:/.test(k0) && !own) continue;
  if (k.startsWith('p:i:')) {const it = items.find(i => i.id === k.slice(4)), m = /^(-?\d+),(-?\d+),(\d+),(\d|c(\d+)x(\d+))(,([01]))?$/.exec(v); if (it && m) Object.assign(it, {x: +m[1], y: +m[2], r: +m[3]}, m[5] ? {c: {w: +m[5], d: +m[6]}} : {s: +m[4], c: null}, m[8] && it.add ? {on: m[8] === '1'} : {});}
  else if (k.startsWith('p:pts:') && points[k.slice(6)]) points[k.slice(6)] = v === 'none' ? [] : v.split(';').map(p => p.split(',').map(Number));
  else if (k.startsWith('b:') && k.endsWith(':pick')) {const b = D.buy[k.slice(2, -5)]; if (b) b.pick = Number(v) || 0;}
@@ -616,6 +620,22 @@ function setOn(it, on) {
 }
 chips?.querySelectorAll('[data-toggle]').forEach(b => b.addEventListener('click', () => {const it = items.find(i => i.id === b.dataset.toggle); if (it) setOn(it, it.on === false);}));
 paintChips();
+
+// ---------- layouts: copy the Designer's pick or the family plan ----------
+// Two taps: the first asks, the second copies (no browser pop-ups).
+root.querySelectorAll('[data-copy]').forEach(b => {
+ const label = b.textContent; let armed = 0;
+ b.addEventListener('click', async () => {
+  const src = D.copy?.[b.dataset.copy]; if (!src) return;
+  const to = D.layout === 'designer' ? 'p:' : P, where = D.layout === 'designer' ? '/plan' : `/plan?layout=${D.layout}`;
+  if (Date.now() - armed > 5000) {armed = Date.now(); b.textContent = to === 'p:' ? 'Tap again: this replaces the family plan' : 'Tap again: this replaces this layout'; b.classList.add('is-armed'); setTimeout(() => {if (armed && Date.now() - armed >= 5000) {armed = 0; b.textContent = label; b.classList.remove('is-armed');}}, 5100); return;}
+  armed = 0; b.disabled = true; b.textContent = 'Copying…'; say('Copying…');
+  let failed = 0;
+  for (const [k, v] of Object.entries(src)) {try {await put('/api/plan/' + encodeURIComponent(to + k), v);} catch {failed++;}}
+  if (failed) {b.disabled = false; b.textContent = label; say(`${failed} not copied. Try again.`); return;}
+  location.href = where;
+ });
+});
 
 // ---------- start ----------
 wifiBar.hidden = !layers.has('wifi');

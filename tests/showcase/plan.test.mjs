@@ -9,7 +9,7 @@ import {renderPage} from '../../showcase/render.mjs';
 import {BUY} from '../../showcase/buy-plan.mjs';
 import {PLAN,planKey,validPlanValue,planState,buyItemById} from '../../showcase/plan-data.mjs';
 import {RESEARCH} from '../../showcase/research.mjs';
-import {planData} from '../../showcase/plan.mjs';
+import {planData,planPage} from '../../showcase/plan.mjs';
 function database(){const sqlite=new DatabaseSync(':memory:');for(const f of readdirSync(new URL('../../migrations/',import.meta.url)).filter(f=>f.endsWith('.sql')).sort())sqlite.exec(readFileSync(new URL('../../migrations/'+f,import.meta.url),'utf8'));const prepare=(sql,args=[])=>({bind(...values){return prepare(sql,values);},async all(){return{results:sqlite.prepare(sql).all(...args)};},async run(){sqlite.prepare(sql).run(...args);return{};},async first(){return sqlite.prepare(sql).get(...args)??null;}});return {sqlite,prepare:sql=>prepare(sql),batch:async ss=>Promise.all(ss.map(s=>s.run()))};}
 
 const put=async(DB,key,value,view='')=>(await api(new Request('https://lacasa.test/api/plan/'+encodeURIComponent(key)+view,{method:'PUT',headers:{'content-type':'application/json',origin:'https://lacasa.test'},body:JSON.stringify({value})}),{DB},content,samples)).status;
@@ -102,7 +102,7 @@ test('floor plan: TV viewing distances, light beams and the corner fan aim',()=>
  assert.deepEqual([PLAN.tvView.smpte,PLAN.tvView.thx],[30,40]);
  assert.ok(it(PLAN.tvView.sofa),'the sofa used for the viewing lines exists');
  assert.ok(it('living-sofa-l').sizes[0].flip,'chaise by the window by default');
- assert.ok(!PLAN.items.some(i=>i.id==='kx-wardrobe'),'KX wardrobe is off the plan');
+ assert.ok(!PLAN.items.some(i=>i.id==='kx-wardrobe'),'the old contractor KX wardrobe stays off the plan');assert.equal(it('kx-vhaus-wardrobe').kind,'lwardrobe','the ordered V Haus L wardrobe is on the plan');
  const light=PLAN.pointTypes.find(t=>t.id==='light').spec;assert.equal(light.beam,110);
  assert.equal(Math.round((PLAN.ceilingMm-PLAN.workMm)*Math.tan(55*Math.PI/180)),2642,'Meson pool radius at table height');
  const DB=database();
@@ -124,4 +124,39 @@ test('floor plan: extra furniture can be added and removed (mahjong table, recli
  const html=renderPage(state(v),'https://lacasa.test/plan').html;
  assert.match(html,/data-toggle="living-recliner" aria-pressed="true"/);assert.match(html,/data-toggle="living-mahjong" aria-pressed="false"/);
  for(const i of PLAN.items.filter(i=>i.kind==='recliner'))for(const z of i.sizes)assert.ok(existsSync(new URL('../../public'+z.img,import.meta.url)),z.img);
+});
+
+test('floor plan: Designer’s pick layout, person layouts and copying',async()=>{
+ const {DESIGNER,planState,serialLayout,layoutValues}=await import('../../showcase/plan-data.mjs');
+ const rooms=Object.fromEntries(PLAN.rooms.map(r=>[r.id,r]));
+ for(const id of Object.keys(DESIGNER.items))assert.ok(PLAN.items.some(i=>i.id===id),id);
+ for(const [t,v] of Object.entries(DESIGNER.points)){assert.ok(PLAN.pointTypes.some(p=>p.id===t),t);assert.ok(validPlanValue({kind:'points',type:t},v),t);}
+ for(const [id,v] of Object.entries(DESIGNER.items))assert.ok(validPlanValue({kind:'item',id},v),id+' '+v);
+ const st=planState({},'designer'),on=st.items.filter(i=>i.on);
+ for(const i of on)assert.ok(inRoom(i.x,i.y,rooms[i.room]),i.id+' inside its room');
+ for(const pts of Object.values(st.points))for(const [x,y] of pts)assert.ok(PLAN.rooms.some(r=>inRoom(x,y,r)),'point '+x+','+y);
+ // No furniture overlaps (the Wi-Fi node sits on the desk on purpose).
+ const box=i=>{const s=i.c??i.sizes[i.s],r=i.r%180!==0,w=r?s.d:s.w,d=r?s.w:s.d;return [i.x-w/2,i.y-d/2,i.x+w/2,i.y+d/2];};
+ const solid=on.filter(i=>!i.wifi);
+ for(let a=0;a<solid.length;a++)for(let b=a+1;b<solid.length;b++){const A=box(solid[a]),B=box(solid[b]);assert.ok(!(A[0]<B[2]&&B[0]<A[2]&&A[1]<B[3]&&B[1]<A[3]),solid[a].id+' overlaps '+solid[b].id);}
+ assert.ok(!on.some(i=>i.id==='ks-wardrobe'),'KS keeps the old built-in wardrobe');
+ assert.ok(st.points.fan.length>=5&&st.points.socket.length&&st.points.switch.length&&st.points.lan.length);
+ assert.ok(DESIGNER.rooms.length>=5&&DESIGNER.reno.length>=8);
+ // A person layout falls back to the family plan, and keeps its own changes.
+ const v={'p:i:ky-bed':'4000,2500,0,0','p:ky:i:ky-bed':'4100,2500,90,1'};
+ assert.equal(layoutValues(v,'ky')['p:i:ky-bed'],'4100,2500,90,1');assert.equal(layoutValues(v,'kx')['p:i:ky-bed'],'4000,2500,0,0');assert.equal(layoutValues(v,'')['p:i:ky-bed'],'4000,2500,0,0');
+ assert.equal(serialLayout(planState({},'designer'))['i:ky-bed'],DESIGNER.items['ky-bed']);
+ // API: person keys save; unknown people and designer keys are refused.
+ const DB=database();
+ assert.equal(await put(DB,'p:ky:i:ky-bed','4100,2500,90,1'),200);
+ assert.equal(await put(DB,'p:ks:pts:light','5000,2000'),200);
+ assert.equal(await put(DB,'p:zz:i:ky-bed','4100,2500,90,1'),422);
+ assert.equal(await put(DB,'p:designer:i:ky-bed','4100,2500,90,1'),422);
+ // Pages: layout buttons, the designer note and reasons, copy buttons only where they belong.
+ const fam=planPage({}),des=planPage({},false,'designer'),ky=planPage({},false,'ky'),aud=planPage({},true,'designer');
+ assert.match(fam,/href="\/plan\?layout=designer"/);assert.match(fam,/Designer’s pick: the reasons/);assert.doesNotMatch(fam,/data-copy=/);
+ assert.match(des,/aria-current="page"[^>]*>(<i[^>]*>★<\/i>)?Designer/);assert.match(des,/data-copy="designer"/);assert.match(des,/"ro":true/);
+ assert.match(ky,/data-copy="designer"/);assert.match(ky,/data-copy="family"/);assert.match(ky,/"prefix":"p:ky:"/);
+ assert.doesNotMatch(aud,/data-copy=/,'audit view has no copy buttons');
+ assert.doesNotMatch(planPage({},false,'nobody'),/data-copy=/,'unknown layout shows the family plan');
 });

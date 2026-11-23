@@ -1,5 +1,5 @@
 // /plan (interactive floor plan) and /research pages. Drawing and dragging happen in public/plan.js.
-import {PLAN, planState, buyItemById} from './plan-data.mjs';
+import {PLAN, planState, buyItemById, LAYOUTS, DESIGNER, PEOPLE, layoutOf, prefixOf, serialLayout} from './plan-data.mjs';
 import {RESEARCH} from './research.mjs';
 import {BUY, choiceOf, optionsOf, toSGD} from './buy-plan.mjs';
 import {photoOf, ROOM_COLOURS} from './buy.mjs';
@@ -9,8 +9,9 @@ const money = (n, cur) => n == null ? 'Price to get' : (cur === 'MYR' ? 'RM' : '
 const ext = href => /^https?:\/\//.test(href ?? '');
 
 // Everything the browser needs, kept small: geometry, saved positions, linked to-buy options and research.
-export function planData(v = {}, ro = false) {
- const st = planState(v), buyIds = [...new Set(PLAN.items.flatMap(i => i.buy ?? []))];
+export function planData(v = {}, ro = false, layout = '') {
+ layout = layoutOf(layout);
+ const st = planState(v, layout), buyIds = [...new Set(PLAN.items.flatMap(i => i.buy ?? []))];
  const buy = {};
  for (const id of buyIds) {
   const f = buyItemById(id); if (!f) continue;
@@ -19,26 +20,48 @@ export function planData(v = {}, ro = false) {
  }
  const used = new Set(PLAN.items.map(i => i.research).filter(Boolean)); // only topics the plan links to, to keep the page light
  const research = Object.fromEntries(RESEARCH.filter(t => used.has(t.id)).map(t => [t.id, {title: t.title, status: t.status, answer: t.answer, updated: t.updated, list: t.shortlist.map(o => ({g: o.group, n: o.name, p: money(o.price, o.cur), shop: o.shop, href: o.href ?? '', pick: !!o.pick, why: o.why ?? '', specs: o.specs ?? []}))}]));
- return {ro, rate: BUY.rate, img: PLAN.img, W: Math.round(PLAN.imgW * PLAN.mmPerPx), H: Math.round(PLAN.imgH * PLAN.mmPerPx), rooms: PLAN.rooms, walls: PLAN.walls, items: st.items, points: st.points, pointTypes: PLAN.pointTypes, wifi: PLAN.wifi, tvView: PLAN.tvView, ceilingMm: PLAN.ceilingMm, workMm: PLAN.workMm, colours: ROOM_COLOURS, buy, research};
+ // Layout copies: the designer view can be copied to the family plan; a person's layout can start from either.
+ const copy = layout === 'designer' ? {designer: serialLayout(st)} : PEOPLE.includes(layout) ? {designer: serialLayout(planState({}, 'designer')), family: serialLayout(planState(v))} : null;
+ return {ro: ro || layout === 'designer', viewOnly: ro, layout, prefix: prefixOf(layout), copy, rate: BUY.rate, img: PLAN.img, W: Math.round(PLAN.imgW * PLAN.mmPerPx), H: Math.round(PLAN.imgH * PLAN.mmPerPx), rooms: PLAN.rooms, walls: PLAN.walls, items: st.items, points: st.points, pointTypes: PLAN.pointTypes, wifi: PLAN.wifi, tvView: PLAN.tvView, ceilingMm: PLAN.ceilingMm, workMm: PLAN.workMm, colours: ROOM_COLOURS, buy, research};
 }
 
 const ROOM_CHIPS = [['all', 'Whole home'], ['ky', 'KY'], ['ks', 'KS'], ['kx', 'KX'], ['living', 'Living'], ['dining', 'Dining'], ['kitchen', 'Kitchen + yard'], ['common-bath', 'Common bath'], ['master-bath', 'Master bath']];
 const LAYERS = [['furniture', 'Furniture', true], ['lights', 'Lights and fans', true], ['power', 'Sockets and switches', false], ['tv', 'TV viewing', true], ['air', 'Fan air', true], ['net', 'Network', true], ['wifi', 'Wi-Fi coverage', false]];
 
-export function planPage(v = {}, ro = false) {
- const data = planData(v, ro);
+// The bar under the layout buttons: what this layout is, and the copy buttons.
+function layoutNote(layout, lay, ro) {
+ const btn = (src, label) => ro ? '' : `<button type="button" class="plan-copy" data-copy="${src}">${h(label)}</button>`;
+ if (layout === 'designer') return `<div class="plan-layout-note is-designer"><p><b>Designer’s pick</b> (view only): where each piece of furniture, light, fan, socket and switch would go, with the reasons below. Sockets and switches are switched on. Draft until the real points are seen on 3 Dec.</p>${btn('designer', 'Use this for the family plan')}</div>`;
+ if (PEOPLE.includes(layout)) return `<div class="plan-layout-note"><p><b>${h(lay.name)}</b>: changes here only change ${h(lay.short)}’s own version. Anything not moved yet shows the family plan. Picks on the to-buy list are still shared.</p>${btn('designer', 'Start from the Designer’s pick')}${btn('family', 'Start from the family plan')}</div>`;
+ return '';
+}
+// "Designer's pick: the reasons" panel (folded unless the designer layout is open).
+function designerNotes(layout) {
+ const open = layout === 'designer' ? ' open' : '';
+ return `<section class="buy-block buy-panel buy-fold tone-moss plan-designer" id="designer" ${secAttrs('Designer’s pick')}><details${open}><summary><h2>Designer’s pick: the reasons</h2><span class="buy-fold-caret" aria-hidden="true"></span></summary><div class="buy-fold-body">
+<p class="muted">How a room planner would lay out the home, room by room. ${layout === 'designer' ? '' : '<a href="/plan?layout=designer">See it on the plan</a>.'}</p>
+<div class="plan-designer-rooms">${DESIGNER.rooms.map(r => `<details class="plan-designer-room"><summary>${h(r.title)} <small>${r.why.length}</small></summary><ul>${r.why.map(w => `<li>${h(w)}</li>`).join('')}</ul></details>`).join('')}</div>
+<h3>Tell I-Niche during the reno</h3><p class="muted">Cheap while walls and ceilings are open, costly later. Socket and switch places get confirmed on site on 3 Dec (G3).</p>
+<ol class="plan-designer-reno">${DESIGNER.reno.map(w => `<li>${h(w)}</li>`).join('')}</ol>
+${secClose('Designer’s pick')}</div></details></section>`;
+}
+
+export function planPage(v = {}, ro = false, rawLayout = '') {
+ const layout = layoutOf(rawLayout), data = planData(v, ro, layout), lay = LAYOUTS.find(l => l.id === layout);
  return `<article class="plan-page" data-plan-page>
 <header class="plan-head"><span class="eyebrow">I-Niche proposed plan, 13 Nov · drawn to scale</span><h1>Floor plan</h1>
 <p class="plan-lede">Tap a room to zoom in, tap a bed, sofa, TV or router for its size and choices. <b>Move</b> drags things, <b>Measure</b> takes any distance, <b>Night</b> shows where the light falls. Changes are shared with the family.</p></header>
+<nav class="plan-layouts" aria-label="Layouts">${LAYOUTS.map(l => `<a href="/plan${l.id ? `?layout=${l.id}` : ''}"${l.id === layout ? ' aria-current="page"' : ''}${l.id === 'designer' ? ' class="is-designer"' : ''}>${l.id === 'designer' ? '<i aria-hidden="true">★</i>' : ''}${h(l.short)}</a>`).join('')}</nav>
+${layoutNote(layout, lay, ro)}
 <nav class="plan-rooms" aria-label="Zoom to a room">${ROOM_CHIPS.map(([id, n], k) => `<button type="button" data-zoom="${id}"${k ? '' : ' aria-pressed="true"'}>${h(n)}</button>`).join('')}</nav>
-<details class="plan-layerbox" data-layerbox open><summary><span>Layers</span> <small data-layer-count>${LAYERS.filter(l => l[2]).length} on</small></summary><fieldset class="plan-layers"><legend class="sr-only">Show on the plan</legend>${LAYERS.map(([id, n, on]) => `<label class="plan-layer plan-layer-${id}"><input type="checkbox" data-layer="${id}"${on ? ' checked' : ''}><span>${h(n)}</span></label>`).join('')}</fieldset></details>
-<div class="plan-modes" aria-label="Tools" role="group"><label class="plan-move${ro ? ' is-ro' : ''}"><input type="checkbox" data-move${ro ? ' disabled' : ''}><span>Move</span></label><label class="plan-measure-tool"><input type="checkbox" data-tape><span>Measure</span></label><label class="plan-night-tool"><input type="checkbox" data-night><span>Night</span></label></div>
-${data.items.some(i => i.add) ? `<div class="plan-addables" data-addables role="group" aria-label="Add or remove furniture"><span>Add or remove:</span>${data.items.filter(i => i.add).map(i => `<button type="button" data-toggle="${h(i.id)}" aria-pressed="${i.on ? 'true' : 'false'}"${ro ? ' disabled' : ''}><i aria-hidden="true">${i.on ? '✓' : '+'}</i>${h(i.name.replace(/ \(.*\)$/, ''))}</button>`).join('')}</div>` : ''}
+<details class="plan-layerbox" data-layerbox open><summary><span>Layers</span> <small data-layer-count>${LAYERS.filter(l => l[2] || (layout === 'designer' && l[0] === 'power')).length} on</small></summary><fieldset class="plan-layers"><legend class="sr-only">Show on the plan</legend>${LAYERS.map(([id, n, dflt]) => {const on = dflt || (layout === 'designer' && id === 'power'); return `<label class="plan-layer plan-layer-${id}"><input type="checkbox" data-layer="${id}"${on ? ' checked' : ''}><span>${h(n)}</span></label>`;}).join('')}</fieldset></details>
+<div class="plan-modes" aria-label="Tools" role="group"><label class="plan-move${data.ro ? ' is-ro' : ''}"><input type="checkbox" data-move${data.ro ? ' disabled' : ''}><span>Move</span></label><label class="plan-measure-tool"><input type="checkbox" data-tape><span>Measure</span></label><label class="plan-night-tool"><input type="checkbox" data-night><span>Night</span></label></div>
+${data.items.some(i => i.add) ? `<div class="plan-addables" data-addables role="group" aria-label="Add or remove furniture"><span>Add or remove:</span>${data.items.filter(i => i.add).map(i => `<button type="button" data-toggle="${h(i.id)}" aria-pressed="${i.on ? 'true' : 'false'}"${data.ro ? ' disabled' : ''}><i aria-hidden="true">${i.on ? '✓' : '+'}</i>${h(i.name.replace(/ \(.*\)$/, ''))}</button>`).join('')}</div>` : ''}
 <div class="plan-stage" data-plan-stage>
  <svg class="plan-svg" data-plan-svg role="group" aria-label="Floor plan of LaCasa with furniture" viewBox="0 0 ${data.W} ${data.H}" preserveAspectRatio="xMidYMid meet"><image href="${h(PLAN.img)}" x="0" y="0" width="${data.W}" height="${data.H}" class="plan-bg"/></svg>
  <div class="plan-tools"><button type="button" data-z="in" aria-label="Zoom in">+</button><button type="button" data-z="out" aria-label="Zoom out">−</button><button type="button" data-z="fit" aria-label="Show the whole plan">Fit</button></div>
  <div class="plan-scalebar" aria-hidden="true"><svg viewBox="0 0 100 14" data-scalebar><rect x="0" y="4" width="50" height="5"/><rect x="50" y="4" width="50" height="5" class="w"/></svg><span data-scale-label>1 m</span></div>
- <span class="plan-status" data-plan-status>${ro ? 'View only' : 'Saved'}</span>
+ <span class="plan-status" data-plan-status>${data.ro ? 'View only' : 'Saved'}</span>
  <p class="plan-readout" data-readout hidden></p>
 </div>
 <div class="plan-wifi-bar" data-wifi-bar hidden><fieldset class="plan-band"><legend>Band</legend>${Object.entries(PLAN.wifi.bands).map(([k, b], i) => `<label><input type="radio" name="plan-band" value="${k}"${i ? '' : ' checked'}><span>${h(b.name)}</span></label>`).join('')}</fieldset>
@@ -47,6 +70,7 @@ ${data.items.some(i => i.add) ? `<div class="plan-addables" data-addables role="
 <div class="plan-add" data-add-bar hidden><span>Tap the plan to add:</span>${PLAN.pointTypes.map(t => `<label><input type="radio" name="plan-add" value="${t.id}"><span><i class="pt pt-${t.id}"></i>${h(t.name)}</span></label>`).join('')}<label><input type="radio" name="plan-add" value="" checked><span>Nothing</span></label></div>
 <p class="plan-scale muted">${h(PLAN.source)} Faint beds and chairs underneath are the contractor’s drawing.</p>
 <aside class="plan-sheet" data-sheet hidden aria-live="polite"></aside>
+${designerNotes(layout)}
 <section class="buy-block buy-panel tone-indigo plan-cart" data-cart><h2>On the plan: chosen items</h2><div data-cart-list></div><p class="muted">Picks here and on the <a href="/buy">to-buy list</a> are the same; changing one changes the other.</p></section>
 <section class="buy-block buy-panel tone-sand"><h2>Research</h2><p class="muted">Shortlists and notes behind each choice.</p><ul class="plan-research-links">${RESEARCH.map(t => `<li><a href="/research#r-${h(t.id)}"><b>${h(t.title)}</b><span class="research-status s-${h(t.status.toLowerCase())}">${h(t.status)}</span></a></li>`).join('')}</ul></section>
 <p class="plan-fine">Works like room planners (Floorplanner, Planner 5D: a plan image with a set scale and true-size furniture) and Wi-Fi planners (NetSpot, Hamina: routers on a floor plan with wall losses), kept simple for phones.</p>
