@@ -2,8 +2,9 @@ import {shopperState} from './shopper.mjs';
 import {visitKeys,applyVisitSpaces} from './visit.mjs';
 import {buyKeys,validBuyValue} from './buy-plan.mjs';
 import {planKey,validPlanValue} from './plan-data.mjs';
+import {lookKeys,validLookValue} from './look-data.mjs';
 import {stateFor} from './domain.mjs';
-const VISIT_KEYS=visitKeys(),BUY_KEYS=buyKeys();
+const VISIT_KEYS=visitKeys(),BUY_KEYS=buyKeys(),LOOK_KEYS=lookKeys();
 export class AppError extends Error {constructor(status,message){super(message);this.status=status;}}
 export const json=(body,status=200)=>Response.json(body,{status,headers:{'Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Vary':'Cookie'}});
 export const isAuditRequest=request=>/^\/audit(?:\/|$)/.test(new URL(request.url).pathname)||new URL(request.url).searchParams.get('view')==='audit';
@@ -49,6 +50,16 @@ export async function api(request,env,content,samples){try{
   if(!spec)throw new AppError(422,'This item is not on the to-buy list.');
   const value=typeof body.value==='string'?body.value.trim():'';
   if(!validBuyValue(spec,value))throw new AppError(422,spec.kind==='qty'?'Use a number from 1 to 99.':spec.kind==='pick'?'Choose one of the listed options.':spec.kind==='tag'?'Choose Before, After or Maybe.':'Tick or untick only.');
+  if(value)await env.DB.prepare('INSERT INTO visit_notes (key,value,code,updated_at) VALUES (?,?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,code=excluded.code,updated_at=excluded.updated_at').bind(key,value,who.code,new Date().toISOString()).run();
+  else await env.DB.prepare('DELETE FROM visit_notes WHERE key=?').bind(key).run();
+  return json({ok:true});
+ }
+ if(method==='PUT'&&path.startsWith('/api/look/')){
+  if(!env.DB)throw new AppError(503,'The private database is not ready yet.');
+  const key=decodeURIComponent(path.slice('/api/look/'.length)),body=await bodyJSON(request),spec=LOOK_KEYS.get(key);
+  if(!spec)throw new AppError(422,'This is not on the mood board.');
+  const value=typeof body.value==='string'?body.value.trim():'';
+  if(!validLookValue(spec,value))throw new AppError(422,'Choose one of the listed options.');
   if(value)await env.DB.prepare('INSERT INTO visit_notes (key,value,code,updated_at) VALUES (?,?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,code=excluded.code,updated_at=excluded.updated_at').bind(key,value,who.code,new Date().toISOString()).run();
   else await env.DB.prepare('DELETE FROM visit_notes WHERE key=?').bind(key).run();
   return json({ok:true});

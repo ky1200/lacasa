@@ -110,7 +110,7 @@ test('to-buy: to-do list near the top with shared ticks; clear file cards; vinyl
  assert.match(html,/<a class="buy-file" href="\/files\/iniche-quotation-2026-11-13\.pdf" target="_blank"[^>]*><span class="buy-file-icon"[^>]*>PDF<\/span>[\s\S]*?Open ↗/);
  assert.match(html,/id="it-contractor-f2-vinyl-3-bedrooms"[\s\S]*?<span class="buy-decided">Decided<\/span>/);
  assert.ok(!items.some(i=>/exhaust|false ceiling/i.test(i.name)),'no window exhaust fan or false ceiling items');
- for(const t of BUY.todo){if(t.date)assert.match(t.date,/^2026-1[12]-\d\d$/);if(t.href?.startsWith("#"))assert.ok(html.includes(`id="${t.href.slice(1)}"`),t.href);else if(t.href)assert.match(t.href,/^\/research#r-/);}
+ for(const t of BUY.todo){if(t.date)assert.match(t.date,/^2026-1[12]-\d\d$/);if(t.href?.startsWith("#"))assert.ok(html.includes(`id="${t.href.slice(1)}"`),t.href);else if(t.href)assert.match(t.href,/^\/(?:research#r-|look#look-)/);}
 });
 
 test('payments: exact paid and left per order, due dates, delivery steps on /buy and home',async()=>{

@@ -1169,3 +1169,51 @@ summary.just-closed{animation:secflash .7s var(--ease-out)}
 .plan-addables button[aria-pressed="true"] i{color:var(--moss)}
 .plan-addables button:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
 .sheet-actions .sheet-remove{border-color:#b4532a;color:#b4532a}
+
+/* ===== /look mood board ===== */
+.hq-look{background:#f3eee6;border-color:#e3dacb}
+.hq-look .look-palette{margin:10px 0 6px;height:56px}
+.hq-look .look-legend{display:none}
+@media (min-width:860px){.hq-main .hq-look{grid-column:1/-1;min-height:0}}
+.look-top p{max-width:62ch}
+.look-hero{display:grid;gap:14px;margin:8px 0 18px}
+.look-insp{margin:0;border-radius:18px;overflow:hidden;background:var(--linen);border:1px solid var(--line)}
+.look-insp img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover}
+.look-insp figcaption{padding:10px 14px;font-size:13.5px;color:var(--muted)}
+.look-side{background:var(--linen);border:1px solid var(--line);border-radius:18px;padding:14px 16px}
+.look-side h2{font-size:18px;margin:0 0 10px}
+.look-palette{display:flex;height:92px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.look-palette span{min-width:0;transition:background-color .3s var(--ease-out)}
+.look-legend{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;font-size:13px}
+.look-legend li{display:flex;align-items:center;gap:6px;min-width:0}
+.look-legend i{width:14px;height:14px;border-radius:50%;flex:none;border:1px solid rgba(0,0,0,.12)}
+.look-legend b{color:var(--sumi);font-weight:700}
+.look-legend span{color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.look-hero>*{min-width:0}
+.look-fixed{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:10px}
+.look-fixed li{display:flex;gap:10px;align-items:center}
+.look-fixed img,.look-dot{width:56px;height:42px;border-radius:8px;object-fit:cover;flex:none;border:1px solid var(--line)}
+.look-fixed b{display:block;font-size:14px;color:var(--sumi)}
+.look-fixed small{font-size:12.5px;color:var(--muted)}
+.look-why{margin:0 0 6px}
+.look-note{font-size:13.5px;margin:0 0 10px}
+.look-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.look-opt{position:relative;display:flex;flex-direction:column;border:1.5px solid var(--line);border-radius:14px;background:#fff;overflow:hidden;cursor:pointer;transition:border-color .2s var(--ease-out),box-shadow .2s var(--ease-out)}
+.look-opt input{position:absolute;opacity:0;pointer-events:none}
+.look-opt:has(input:focus-visible){outline:2px solid var(--indigo);outline-offset:2px}
+.look-opt.is-on{border-color:var(--moss);box-shadow:0 0 0 2px var(--moss-soft)}
+.look-opt.is-on::after{content:"✓";position:absolute;top:6px;right:6px;width:24px;height:24px;border-radius:50%;background:var(--moss);color:#fff;font-size:14px;display:grid;place-items:center}
+.look-img{position:relative;display:block;aspect-ratio:4/3;background:#eee}
+.look-img img{display:block;width:100%;height:100%;object-fit:cover}
+.look-img em{position:absolute;left:6px;bottom:6px;font-style:normal;font-size:11px;background:rgba(36,34,30,.75);color:#fff;border-radius:4px;padding:1px 6px}
+.look-swatch{display:flex;aspect-ratio:4/3}
+.look-swatch i{flex:1}
+.look-txt{padding:8px 10px 10px;display:flex;flex-direction:column;gap:3px}
+.look-txt b{font-size:14px;color:var(--sumi);line-height:1.25}
+.look-txt small{font-size:12.5px;color:var(--muted);line-height:1.35}
+.look-rec{align-self:flex-start;font-size:11px;font-weight:700;color:var(--moss);background:var(--moss-soft);border-radius:999px;padding:1px 8px}
+.look-chips{display:flex;gap:4px;margin-top:2px}
+.look-chip{width:18px;height:18px;border-radius:50%;border:1px solid rgba(0,0,0,.12)}
+.look-reset{margin-top:10px;background:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font:inherit;font-size:13.5px;color:var(--indigo);cursor:pointer}
+@media (min-width:860px){.look-hero{grid-template-columns:1.4fr 1fr;align-items:start}}
+@media (prefers-reduced-motion:reduce){.look-opt,.look-palette span{transition:none}}

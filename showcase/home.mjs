@@ -4,6 +4,7 @@ import {BUY, buyTotals} from './buy-plan.mjs';
 import {dayLabel, sgToday, orderSums} from './buy.mjs';
 import {RESEARCH} from './research.mjs';
 import {PLAN} from './plan-data.mjs';
+import {palette} from './look.mjs';
 const h = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 const sgd = n => 'S$' + Math.round(n).toLocaleString('en-SG');
 const KEYS = '2026-12-03', MOVE_IN = 'January 2027';
@@ -32,6 +33,7 @@ export function homePage(v = {}, today = sgToday(), {isOwner = false, audit = fa
  <a class="hq-tile hq-buy" href="/buy"><span class="hq-tile-name">To-buy list</span><strong class="hq-big">${sgd(t.before)}</strong><span class="hq-sub">before move-in · ${items} items${nextBuy ? ` · next buy ${h(dayLabel(nextBuy))}` : ''}</span><span class="hq-split"><span>After move-in <b>${sgd(t.after)}</b></span>${t.removed ? `<span>Maybe, not counted <b>${sgd(t.offTotal)}</b></span>` : ''}<span>Estimates inside <b>${sgd(t.est)}</b></span></span><span class="hq-go">Open the list</span></a>
  <a class="hq-tile hq-plan" href="/plan"><span class="hq-tile-name">Floor plan</span>${preview}<span class="hq-sub">Beds, sofa, lights, sockets and Wi-Fi, drawn to scale. Tap anything for its choices.</span><span class="hq-go">Open the plan</span></a>
  <a class="hq-tile hq-research" href="/research"><span class="hq-tile-name">Research</span><ul class="hq-topics">${RESEARCH.map(r => `<li><span>${h(r.title)}</span><i class="research-status s-${h(r.status.toLowerCase())}">${h(r.status)}</i></li>`).join('')}</ul><span class="hq-go">See the shortlists</span></a>
+ <a class="hq-tile hq-look" href="/look"><span class="hq-tile-name">Colours and look</span>${palette(v)}<span class="hq-sub">Mood board: sofa fabric, walls, curtains, floors and wardrobe. Our pick is marked; tap to choose.</span><span class="hq-go">Open the mood board</span></a>
 </nav>
 <section class="hq-orders" aria-labelledby="hq-orders-title"><div class="hq-next-head"><h2 id="hq-orders-title">Ordered</h2><a href="/buy#buy-pay">Payments</a></div>
  <ul>${(BUY.orders ?? []).map(o => { const rm = n => 'RM' + Number(n).toLocaleString('en-SG', {maximumFractionDigits: 2}), {paid, left} = orderSums(o), due = (o.due ?? [])[0], step = (o.steps ?? []).find(x => !x.date || x.date >= today); return `<li><a href="/buy#buy-pay"><b>${h(o.name)}</b><span class="hq-order-money"><span>Total <b>${rm(o.total)}</b></span><span>Paid <b>${rm(paid)}</b></span><span class="hq-order-due">Left <b>${rm(left)}</b></span></span>${due ? `<small>Pay ${rm(due.amount)} ${due.date ? `by ${h(dayLabel(due.date))}` : '(date to confirm)'}</small>` : ''}${step ? `<small>Next: ${h(step.s ?? step.t)}, ${step.label ? h(step.label) : step.date ? h(dayLabel(step.date)) : 'date to confirm'}</small>` : ''}</a></li>`; }).join('')}</ul></section>
