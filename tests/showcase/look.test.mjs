@@ -30,6 +30,7 @@ test('choices: empty means our pick, a saved index overrides it, bad values reje
  assert.equal(lookChoice(b, {'l:sofa': '1'}), 1);
  assert.equal(lookChoice(b, {'l:sofa': '99'}), b.rec);
  assert.ok(validLookValue(b, '') && validLookValue(b, '7'));
+ assert.ok(LOOK.boards.some(x => x.id === 'doors'));
  assert.ok(!validLookValue(b, '8') && !validLookValue(b, 'x'));
  assert.equal(lookKeys().size, LOOK.boards.length);
 });
@@ -38,6 +39,8 @@ test('page shows the palette, the walnut dining set, our pick and the family cho
  const html = lookPage({'l:sofa': '1'});
  assert.match(html, /data-look-palette/);
  assert.match(html, /LINO dining set/);
+ assert.match(html, /268 × 135/);
+ assert.match(html, /home-now-floor-doors/);
  assert.match(html, /Our pick/);
  assert.match(html, /02 Soft Clay<\/span> · <span data-look-who="l:sofa">family choice/);
  assert.match(html, /data-dock/);

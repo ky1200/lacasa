@@ -4,17 +4,18 @@
 // img = real photo; ex: true = example, not the exact product.
 
 export const FIXED = [
+ {name: 'Floor tiles (living, dining, kitchen): staying', note: 'Glossy light cream-beige tiles, seen in the house video (23 Nov). Not changing.', sw: ['#e2d6c6'], img: '/images/look/home-now-floor-doors.webp'},
+ {name: 'Doors and frames: staying', note: 'Deep red-brown (mahogany look) with dark skirting. The strongest colour in the home.', sw: ['#6a2a20']},
  {name: 'LINO dining set (ordered)', note: 'V Haus LINO T160 table + 6 C9060 chairs, walnut', sw: ['#5b3a29'], img: '/images/buy/v-haus-lino-dining-table-4-chairs-no-side-chairs-12fa73.webp'},
- {name: 'Floor tiles (living, dining)', note: 'Existing light cream tiles: assumed, check on 3 Dec', sw: ['#ece4d6']},
- {name: 'Sofa shape (ordered)', note: 'V Haus 2233A, one armrest and an open end', sw: [], img: '/images/buy/v-haus-2233a-sofa-ordered.webp'},
+ {name: 'Sofa (ordered)', note: 'V Haus 2233A, 268 × 135 cm, one armrest and an open end. Colour can still change.', sw: [], img: '/images/buy/v-haus-2233a-sofa-ordered.webp'},
 ];
 
 export const LOOK = {
  updated: '2026-11-23',
- inspiration: {img: '/images/look/living-inspiration.webp', note: 'The look the family likes: warm white walls, cream floor, soft cove lighting, beige curtains over white sheers, a light wood TV console.'},
+ inspiration: {img: '/images/look/living-inspiration.webp', note: 'The look the family likes: warm white walls, cream floor, soft cove lighting, beige curtains over white sheers, a light wood TV console. Our real floor is the same light cream tile, so this picture is close.'},
  boards: [
-  {id: 'sofa', title: 'Sofa fabric', room: 'Living room', rec: 3, why: 'Warm Driftwood is a warm taupe-grey. On a cream floor and warm white walls it stands out instead of disappearing, it sits well next to the walnut LINO dining set, and a mid tone hides daily marks far better than the lighter fabrics. Soft Clay is the choice if the family wants the light, airy showroom look instead.',
-   note: 'From the V Haus fabric book (photo 23 Nov; colours in the photo look greyer than in person, and 05 was not in the photo). The order sheet says sofa colour RU002 and pillows RU003: these may be 02 Soft Clay and 03 Wheat in this book. Confirm with Jason before changing.',
+  {id: 'sofa', title: 'Sofa fabric', room: 'Living room', rec: 3, why: 'Warm Driftwood is a warm taupe-grey. Our floor is light cream tile, so a light sofa would blend into it; Driftwood stands out, sits calmly between the walnut dining set and the red-brown doors, and a mid tone hides daily marks far better than the lighter fabrics. Soft Clay is the choice if the family wants the light, airy showroom look instead. Avoid red or orange-brown fabrics: they would fight with the doors.',
+   note: 'From the V Haus fabric book (photo 23 Nov; colours in the photo look greyer than in person, and 05 was not in the photo). The order sheet says RU002 (pillows RU003). V Haus says the colour can still change for now (23 Nov): tell Jason the final fabric code before the factory order, and ask for the 2 free pillows in a matching or accent colour.',
    options: [
     {name: '01 Alaska', note: 'Creamy white. Brightest, shows marks most.', img: '/images/look/sofa-fabric-01-alaska.webp', sw: ['#e9e5da']},
     {name: '02 Soft Clay', note: 'Light warm greige, close to the showroom sofa. Light and calm with the cream floor.', img: '/images/look/sofa-fabric-02-soft-clay.webp', sw: ['#d9d0c1']},
@@ -27,9 +28,16 @@ export const LOOK = {
    ]},
   {id: 'direction', title: 'Overall look', room: 'Whole home', rec: 0, why: 'It follows the inspiration picture and the walnut dining set, and every other choice on this page works with it.',
    options: [
-    {name: 'Warm modern', note: 'Warm white, cream, walnut and soft taupe. Cosy, easy to keep looking tidy.', sw: ['#f1ead9', '#ece4d6', '#b3aa9c', '#5b3a29', '#b5603b']},
+    {name: 'Warm modern', note: 'Warm white, cream, walnut and soft taupe. Cosy, easy to keep looking tidy.', sw: ['#f1ead9', '#e2d6c6', '#b3aa9c', '#5b3a29', '#b5603b']},
     {name: 'Light Japandi', note: 'White, light oak, linen and black details. Brighter and more minimal.', sw: ['#f4f2ec', '#d8bf98', '#d9d0c1', '#1d1d1d']},
     {name: 'Soft contrast', note: 'Warm white, walnut and charcoal grey. More dramatic; darker sofa.', sw: ['#f2efe6', '#5b3a29', '#77787a', '#c9a96e']},
+   ]},
+  {id: 'doors', title: 'Doors and door frames', room: 'Whole home', rec: 0, why: 'The red-brown doors are solid and in good condition. Keeping them costs nothing; warm white walls, a cream floor and a taupe sofa all sit fine with them, and the walnut dining set is in the same wood family. Change them later only if they really bother the family.',
+   note: 'Not in the I-Niche quote. A door wrap (laminate over the existing door and frame) is the usual cheaper fix: ask I-Niche for a price per door and frame if the family wants it. Painting over varnished wood tends to chip.',
+   options: [
+    {name: 'Keep as they are', short: 'Red-brown', note: 'No cost, no work. Choose other colours to sit well with them.', sw: ['#6a2a20', '#e2d6c6']},
+    {name: 'Wrap in warm white', short: 'White wrap', note: 'Brightest and most modern; extra cost per door and frame.', sw: ['#efe9de', '#e2d6c6']},
+    {name: 'Wrap in light oak', short: 'Oak wrap', note: 'Softer wood look; matches light oak vinyl; extra cost.', sw: ['#d4b48a', '#e2d6c6']},
    ]},
   {id: 'walls', title: 'Wall paint (living and dining)', room: 'Living room', rec: 0, why: 'Apple White is a warm off-white that Nippon itself suggests for rooms with wood furniture: it picks up the walnut without looking yellow.',
    note: 'Nippon Paint names. I-Niche paints (F1). Ask for a sample pot or look at the fan deck on the wall in daylight and at night: the cove lights make whites look warmer.',
@@ -55,10 +63,10 @@ export const LOOK = {
    options: [
     {name: 'Round walnut, about 80 to 90 cm', note: 'Matches the dining set.', sw: ['#5b3a29']},
     {name: 'Round light stone (travertine look)', note: 'Lighter; contrasts with the sofa.', sw: ['#d9cbb5']},
-    {name: 'No coffee table, one side table', note: 'Most floor space; easiest for the robot vacuum and mahjong nights.', sw: ['#ece4d6']},
+    {name: 'No coffee table, one side table', note: 'Most floor space; easiest for the robot vacuum and mahjong nights.', sw: ['#e2d6c6']},
    ]},
   {id: 'vinyl', title: 'Bedroom floor (SPC vinyl)', room: 'Bedrooms', rec: 0, why: 'Light natural oak makes the small bedrooms feel bigger and goes with every bed headboard colour.',
-   note: 'I-Niche F2, all 3 bedrooms. Ask I-Niche for the vinyl brand and its sample board; choose the plank in daylight next to the wall paint.',
+   note: 'I-Niche F2, all 3 bedrooms. Ask I-Niche for the vinyl brand and its sample board; choose the plank in daylight next to the wall paint and a door frame. The doors and frames are red-brown: a clean light oak gives contrast; an orange-toned oak would clash.',
    options: [
     {name: 'Light natural oak', note: 'Brightest; makes rooms feel bigger.', sw: ['#d8bf98']},
     {name: 'Warm mid oak', note: 'Cosier; closer to the walnut tone.', sw: ['#b08458']},
