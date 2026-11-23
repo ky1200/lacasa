@@ -1262,3 +1262,23 @@ summary.just-closed{animation:secflash .7s var(--ease-out)}
 .sheet-angle .dial-btns button{font:inherit;font-size:14px;font-weight:700;min-width:56px;min-height:42px;padding:8px 12px;border-radius:12px;border:1px solid var(--sumi);background:#fff;color:var(--sumi);cursor:pointer}
 .sheet-angle .dial-btns button:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
 .plan-item.k-toilet .swing,.plan-item.k-basin .swing{stroke:var(--c)}
+
+/* ===== Audit 24 Nov: tap targets 44 px, text 12 px minimum, weights up to 700 ===== */
+/* Bold inside already-bold text stays at 700 (it computed to 900). */
+b,strong{font-weight:700}
+.plan-addables button i{font-weight:700}
+/* Buttons and chips: at least 44 px tall. */
+.nav-person .list-pill,.hq-quick a,.plan-layouts a,.plan-copy,.plan-rooms button,.plan-layerbox>summary,.plan-addables button,.plan-designer-room>summary,.buy-jump a,.buy-qty button,.look-reset,.sheet-actions button,.sheet-angle .dial-btns button{min-height:44px}
+.look-reset{display:inline-flex;align-items:center}
+.buy-day{min-height:44px}
+/* Small text links: a bigger invisible tap area, same layout. */
+.buy-shop a,.buy-todo-side a,.buy-opt-shop a,.buy-day-items a,.plan-cart-list a,.pay-order h3 a,.buy-chip{position:relative}
+.buy-shop a::after,.buy-todo-side a::after,.buy-opt-shop a::after,.buy-day-items a::after,.plan-cart-list a::after,.pay-order h3 a::after,.buy-chip::after{content:"";position:absolute;inset:-10px -4px}
+/* Nothing below 12 px. */
+.rz-ex,.rz-pick,.rz-nophoto,.look-img em,.look-rec,.dock-group,.sheet-opt strong small,.plan-cart-list b small,.mini-calendar th,.vx-src,.vx-opt,.buy-rail-caret,.photo-caption{font-size:12px}
+.hq-quick a.hq-designer{border-color:#3f6a4e;color:#3f6a4e;background:#ebf2ec;gap:4px}
+.hq-quick a.hq-designer i{font-style:normal;color:#b8860b}
+@media (min-width:700px){.plan-tools button{min-width:44px;min-height:44px}}
+.rz-row-photo .rz-nophoto{font-size:12px}
+.plan-rowlabel{font-size:13px;font-weight:650;color:var(--muted);margin-right:2px;align-self:center}
+.plan-zoomlabel{margin:10px 0 -2px}

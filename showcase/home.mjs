@@ -31,7 +31,7 @@ export function homePage(v = {}, today = sgToday(), {isOwner = false, audit = fa
 </header>
 <nav class="hq-main" aria-label="Main pages">
  <a class="hq-tile hq-buy" href="/buy"><span class="hq-tile-name">To-buy list</span><strong class="hq-big">${sgd(t.before)}</strong><span class="hq-sub">before move-in · ${items} items${nextBuy ? ` · next buy ${h(dayLabel(nextBuy))}` : ''}</span><span class="hq-split"><span>After move-in <b>${sgd(t.after)}</b></span>${t.removed ? `<span>Maybe, not counted <b>${sgd(t.offTotal)}</b></span>` : ''}<span>Estimates inside <b>${sgd(t.est)}</b></span></span><span class="hq-go">Open the list</span></a>
- <a class="hq-tile hq-plan" href="/plan"><span class="hq-tile-name">Floor plan</span>${preview}<span class="hq-sub">Beds, sofa, lights, sockets and Wi-Fi, drawn to scale. Tap anything for its choices.</span><span class="hq-go">Open the plan</span></a>
+ <a class="hq-tile hq-plan" href="/plan"><span class="hq-tile-name">Floor plan</span>${preview}<span class="hq-sub">Beds, sofa, toilets, lights, sockets and Wi-Fi, drawn to scale. Tap anything for its choices; each person can keep their own layout.</span><span class="hq-go">Open the plan</span></a>
  <a class="hq-tile hq-research" href="/research"><span class="hq-tile-name">Research</span><ul class="hq-topics">${RESEARCH.map(r => `<li><span>${h(r.title)}</span><i class="research-status s-${h(r.status.toLowerCase())}">${h(r.status)}</i></li>`).join('')}</ul><span class="hq-go">See the shortlists</span></a>
  <a class="hq-tile hq-look" href="/look"><span class="hq-tile-name">Colours and look</span>${palette(v)}<span class="hq-sub">Mood board: sofa fabric, walls, curtains, floors and wardrobe. Our pick is marked; tap to choose.</span><span class="hq-go">Open the mood board</span></a>
 </nav>
@@ -40,7 +40,7 @@ export function homePage(v = {}, today = sgToday(), {isOwner = false, audit = fa
 <section class="hq-next" aria-labelledby="hq-next-title"><div class="hq-next-head"><h2 id="hq-next-title">Next up</h2><span>${done} of ${todo.length} done</span></div>
  <ol class="hq-todo">${next.map(x => `<li><span class="buy-chip${x.date ? '' : ' is-now'}">${x.date ? h(dayLabel(x.date)) : 'Now'}</span><span class="hq-todo-text"><b>${h(x.t)}</b>${x.n ? `<small>${h(x.n)}</small>` : ''}</span></li>`).join('')}</ol>
  <a class="text-link" href="/buy#buy-todo">All to-dos and ticks</a></section>
-<nav class="hq-quick" aria-label="Checklists and files"><a href="/buy#buy-measure">3 Dec checklist</a><a href="/buy#buy-decisions">Reno decisions</a><a href="/buy#buy-qa">Quote checks</a><a href="/buy#buy-files">Contractor files</a><a href="/buy#buy-dates">Sale dates</a></nav>
+<nav class="hq-quick" aria-label="Checklists and files"><a href="/plan?layout=designer#designer" class="hq-designer"><i aria-hidden="true">★</i> Designer’s pick</a><a href="/buy#buy-measure">3 Dec checklist</a><a href="/buy#buy-decisions">Reno decisions</a><a href="/buy#buy-qa">Quote checks</a><a href="/buy#buy-files">Contractor files</a><a href="/buy#buy-dates">Sale dates</a></nav>
 <a class="hq-earlier" href="/earlier"><span><b>Earlier pages</b><small>Room-by-room choices, voting, the old shopping list and the 11 Nov site visit.</small></span><span aria-hidden="true">›</span></a>
 ${isOwner || audit ? '' : '<p class="owner-link"><a class="text-link" href="/owner">Owner sign-in</a></p>'}
 </article>`;
