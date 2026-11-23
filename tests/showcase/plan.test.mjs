@@ -28,7 +28,7 @@ test('floor plan: every item starts inside its room, links to real to-buy items 
  const rooms=Object.fromEntries(PLAN.rooms.map(r=>[r.id,r])),topics=new Set(RESEARCH.map(t=>t.id));
  for(const i of PLAN.items){
   assert.ok(rooms[i.room],i.id+' room');assert.ok(inRoom(i.x,i.y,rooms[i.room]),i.id+' starts in its room');
-  assert.ok(i.kind==='cfan'?i.r%45===0&&i.r<360:[0,90,180,270].includes(i.r));assert.ok(i.sizes.length&&i.sizes.every(s=>s.w>0&&s.d>0&&s.n));
+  assert.ok(i.free?Number.isInteger(i.r)&&i.r>=0&&i.r<360:[0,90,180,270].includes(i.r));assert.ok(i.sizes.length&&i.sizes.every(s=>s.w>0&&s.d>0&&s.n));
   for(const b of i.buy??[])assert.ok(buyItemById(b),i.id+' -> '+b);
   if(i.research)assert.ok(topics.has(i.research),i.id+' research');
  }
@@ -68,7 +68,7 @@ test('floor plan and research pages render; picks are shared with /buy; plain wo
  for(const page of [html,r]){const text=page.replace(/<script[\s\S]*?<\/script>/g,'').replace(/<[^>]+>/g,' ');assert.doesNotMatch(text,/\byou\b|\byour\b|perfect|amazing/i);}
  assert.match(renderPage(state(),'https://lacasa.test/').html,/href="\/plan"/,'home links to the plan');
  const audit=renderPage({...visitorState(content,samples,{code:'AUDIT',audit:true,readOnly:true}),visit:{}},'https://lacasa.test/audit/plan').html;assert.match(audit,/data-move disabled/);
- assert.ok(JSON.stringify(planData()).length<75000,'plan data stays small');
+ for(const l of ['','designer','ky'])assert.ok(JSON.stringify(planData({},false,l)).length<100000,'plan data stays small');
 });
 test('home puts the to-buy list, floor plan and research first; older pages move to /earlier',()=>{
  const html=renderPage(state({'t:fibre':'1'}),'https://lacasa.test/').html;
@@ -159,4 +159,18 @@ test('floor plan: Designer’s pick layout, person layouts and copying',async()=
  assert.match(ky,/data-copy="designer"/);assert.match(ky,/data-copy="family"/);assert.match(ky,/"prefix":"p:ky:"/);
  assert.doesNotMatch(aud,/data-copy=/,'audit view has no copy buttons');
  assert.doesNotMatch(planPage({},false,'nobody'),/data-copy=/,'unknown layout shows the family plan');
+});
+
+test('floor plan: free angles for the recliner and corner fan; toilets and basins with model sizes',async()=>{
+ const it=id=>PLAN.items.find(i=>i.id===id);
+ assert.ok(it('living-recliner').free&&it('kitchen-fan').free);
+ assert.ok(validPlanValue({kind:'item',id:'living-recliner'},'10700,5450,37,0,1'));
+ assert.ok(validPlanValue({kind:'item',id:'kitchen-fan'},'7650,9200,359,0'));
+ assert.ok(!validPlanValue({kind:'item',id:'kitchen-fan'},'7650,9200,360,0'));
+ assert.ok(!validPlanValue({kind:'item',id:'ky-bed'},'4000,2500,37,0'),'beds still turn in 90° steps');
+ assert.equal(planState({'p:i:living-recliner':'10700,5450,37,0,1'}).items.find(i=>i.id==='living-recliner').r,37);
+ for(const id of ['common-toilet','common-vanity','master-toilet','master-basin']){const i=it(id);assert.ok(i&&/bath/.test(i.room)&&i.sizes.length>=4,id);}
+ assert.ok(it('common-toilet').buy.includes('common-bath-rigel-gallant-one-piece')&&it('common-vanity').buy.includes('common-bath-basin-cabinet-304-stainless'));
+ assert.equal(it('common-vanity').sizes[0].w,700);assert.equal(it('common-vanity').sizes[0].d,500);
+ assert.match(it('common-toilet').note,/estimate/);
 });

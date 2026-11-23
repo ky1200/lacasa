@@ -1243,3 +1243,22 @@ summary.just-closed{animation:secflash .7s var(--ease-out)}
 .plan-designer h3{font-size:16px;margin:12px 0 4px}
 .plan-designer-reno{margin:6px 0 0;padding-left:22px;font-size:14px;line-height:1.5}
 .plan-designer-reno li+li{margin-top:6px}
+
+/* ===== /plan any-angle dial (recliner, corner fan) ===== */
+.sheet-angle{display:flex;align-items:center;gap:16px;margin:12px 0;padding:12px;border:1px solid var(--line);border-radius:14px;background:#fff}
+.sheet-angle svg{width:132px;height:132px;flex:none;touch-action:none;cursor:grab;border-radius:50%}
+.sheet-angle svg:active{cursor:grabbing}
+.sheet-angle svg:focus-visible{outline:3px solid var(--indigo);outline-offset:3px}
+.sheet-angle .dial-ring{fill:#f4f1ea;stroke:var(--line);stroke-width:2}
+.sheet-angle .dial-tick{stroke:#9a958a;stroke-width:2;stroke-linecap:round}
+.sheet-angle .dial-hand{stroke:var(--sumi);stroke-width:3;stroke-linecap:round}
+.sheet-angle .dial-hub{fill:var(--sumi)}
+.sheet-angle .dial-knob{fill:var(--indigo);stroke:#fff;stroke-width:3}
+.sheet-angle .dial-side{display:flex;flex-direction:column;gap:4px;min-width:0}
+.sheet-angle .dial-label{font-size:13px;color:var(--muted)}
+.sheet-angle output{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.sheet-angle .dial-dir{font-size:13px;color:var(--muted)}
+.sheet-angle .dial-btns{display:flex;gap:8px;margin-top:6px}
+.sheet-angle .dial-btns button{font:inherit;font-size:14px;font-weight:700;min-width:56px;min-height:42px;padding:8px 12px;border-radius:12px;border:1px solid var(--sumi);background:#fff;color:var(--sumi);cursor:pointer}
+.sheet-angle .dial-btns button:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
+.plan-item.k-toilet .swing,.plan-item.k-basin .swing{stroke:var(--c)}

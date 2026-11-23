@@ -86,6 +86,33 @@ export const PLAN = {
   ], research: 'rooms', note: 'KS is removing the old built-in wardrobe (24 Nov), so a new one is needed. Measure the wall on 3 Dec after hacking.', buy: ['ks-wardrobe']},
   // ---------- KX room (main bedroom) ----------
   {id: 'kx-bed', name: 'KX bed', room: 'kx', kind: 'bed', x: 3760, y: 7150, r: 90, sizes: [{n: 'Queen mattress 152 × 190.5', w: 1520, d: 1905}, {n: 'Queen storage frame, about 160 × 200 (estimate)', w: 1600, d: 2000}], buy: ['kx-bed', 'kx-mattress'], research: 'beds', note: 'Dunlopillo Richmond 38 cm on a Dunlopillo storage frame, no headboard (delivery 22 Dec). Frame outside size not confirmed yet: pick the frame size to check space.'},
+  {id: 'common-toilet', name: 'Common bathroom toilet', room: 'common-bath', kind: 'toilet', x: 5560, y: 6800, r: 270, est: true, sizes: [
+   {n: 'RIGEL Gallant one-piece R-WO9030FA-HKM (pick, S$525): about 70 × 38 cm', w: 380, d: 700},
+   {n: 'RIGEL slim-tank one-piece R-WO8056F (S$525): about 66 × 37 cm', w: 370, d: 660},
+   {n: 'RIGEL two-piece rimless R-WC9030F (S$380): about 70 × 38 cm', w: 380, d: 700},
+   {n: 'Short one-piece (compact models): about 62 × 36 cm', w: 360, d: 620},
+   {n: 'Wall-hung bowl + concealed cistern R-WH9030BP (S$885): bowl about 52 × 36 cm, frame needs a boxed-out wall', w: 360, d: 520},
+  ], buy: ['common-bath-rigel-gallant-one-piece'], research: 'bathroom', note: 'Same spot as now (floor outlet stays). Keep at least 60 cm clear in front (dashed) and about 20 cm from the bowl to each side wall. The setting-out (wall to outlet centre) is measured on 3 Dec; the model must fit that number. Size is an estimate (RIGEL does not publish drawings online): check the spec sheet at the showroom on Wed 25 Nov.'},
+  {id: 'common-vanity', name: 'Common bathroom vanity', room: 'common-bath', kind: 'basin', x: 6450, y: 7745, r: 180, sizes: [
+   {n: 'RIGEL R-BC7437, 70 cm, 2 drawers (pick, S$760): 70 × 50 cm', w: 700, d: 500},
+   {n: 'RIGEL R-BC0201, 70 cm, 2 drawers (S$620): 70 × 45 cm', w: 700, d: 450},
+   {n: 'RIGEL R-BC1260, 60 cm, 1 drawer (S$500): 60 × 45 cm', w: 600, d: 450},
+   {n: 'RIGEL R-BC1407, 60 cm (S$560): 60 × 45 cm', w: 600, d: 450},
+   {n: 'Heritage 60 cm PVC cabinet + mirror bundle (S$599): about 60 × 46 cm', w: 600, d: 460},
+  ], buy: ['common-bath-basin-cabinet-304-stainless'], research: 'bathroom', note: 'Against the bottom wall in the old basin spot, between the half-height shower wall and the side wall. Sizes from RIGEL’s product data (width × depth). 70 cm fits if that wall is 70 cm or more: measure on 3 Dec. Wall-hung: leave the floor clear for mopping.'},
+  {id: 'master-toilet', name: 'Master bathroom toilet', room: 'master-bath', kind: 'toilet', x: 940, y: 2780, r: 270, est: true, sizes: [
+   {n: 'RIGEL Gallant one-piece R-WO9030FA-HKM (pick, S$525): about 70 × 38 cm', w: 380, d: 700},
+   {n: 'RIGEL slim-tank one-piece R-WO8056F (S$525): about 66 × 37 cm', w: 370, d: 660},
+   {n: 'RIGEL two-piece rimless R-WC9030F (S$380): about 70 × 38 cm', w: 380, d: 700},
+   {n: 'Short one-piece (compact models): about 62 × 36 cm', w: 360, d: 620},
+   {n: 'Wall-hung bowl + concealed cistern R-WH9030BP (S$885): bowl about 52 × 36 cm, frame needs a boxed-out wall', w: 360, d: 520},
+  ], buy: ['master-bath-rigel-gallant-one-piece'], research: 'bathroom', note: 'Same spot as now. The door swings in near the basin, so a shorter toilet leaves more room. Keep 60 cm clear in front (dashed). Setting-out measured on 3 Dec. Size is an estimate (RIGEL does not publish drawings online): check the spec sheet at the showroom on Wed 25 Nov.'},
+  {id: 'master-basin', name: 'Master bathroom basin', room: 'master-bath', kind: 'basin', x: 806, y: 3574, r: 270, sizes: [
+   {n: 'Keep the existing basin: about 50 × 45 cm (measure on 3 Dec)', w: 500, d: 450},
+   {n: 'RIGEL R-BC1260, 60 cm, 1 drawer (S$500): 60 × 45 cm', w: 600, d: 450},
+   {n: 'RIGEL R-BC1407, 60 cm (S$560): 60 × 45 cm', w: 600, d: 450},
+   {n: 'RIGEL R-BC7437, 70 cm (S$760): 70 × 50 cm, check the door swing', w: 700, d: 500},
+  ], research: 'bathroom', note: 'Family still to decide: keep the old basin or fit a vanity. Against the left wall below the toilet. The door swings close by: a 50 cm deep vanity is the most this spot takes.'},
   {id: 'kx-vhaus-wardrobe', name: 'KX V Haus L-shape wardrobe (ordered)', room: 'kx', kind: 'lwardrobe', x: 1500, y: 5180, r: 270, sizes: [
    {n: 'Earlier plan: 188 cm along the bottom wall + 112.5 cm on the left wall, 60 cm deep', w: 1125, d: 1880, t: 600},
    {n: 'Order sheet: 6 ft + 6 ft (183 + 183 cm), 60 cm deep', w: 1830, d: 1830, t: 600},
@@ -113,7 +140,7 @@ export const PLAN = {
    {n: 'IKEA VITTSJÖ round Ø75', w: 750, d: 750, round: true, price: 'S$69.90', href: 'https://www.ikea.com/sg/en/p/vittsjoe-coffee-table-light-beige-glass-50604347/', img: '/images/research/ikea-vittsjo-coffee.webp', note: 'Round glass top.'},
   ], note: 'Not decided yet. Keep about 40 to 45 cm between the sofa and the table, and a clear walkway past it. A common guide is a table about two thirds as long as the sofa.', buy: ['living-coffee-table']},
   // Extra pieces the family can add or remove on /plan (add: true, on: false = hidden until added).
-  {id: 'living-recliner', name: 'Single recliner (La-Z-Boy type)', room: 'living', kind: 'recliner', add: true, on: false, x: 10700, y: 5450, r: 270, sizes: [
+  {id: 'living-recliner', name: 'Single recliner (La-Z-Boy type)', room: 'living', kind: 'recliner', free: true, add: true, on: false, x: 10700, y: 5450, r: 270, sizes: [
    {n: 'La-Z-Boy Cody 10T, fabric 100 × 101', w: 1000, d: 1010, price: 'S$899 (was S$1,799), Harvey Norman', href: 'https://www.harveynorman.com.sg/furniture-en/living-room/recliner-chairs/la-z-boy-cody-10t-iclean-pet-friendly-fabric-rocker-recliner-charcoal.html', img: '/images/research/la-z-boy-cody-10t.webp', note: 'iClean pet-friendly fabric (wipes clean). Leather version S$1,399.'},
    {n: 'La-Z-Boy Wayland 10T, fabric 102 × 101', w: 1020, d: 1010, price: 'S$1,259 (was S$1,799), Harvey Norman', href: 'https://www.harveynorman.com.sg/furniture-en/living-room/recliner-chairs/la-z-boy-wayland-10t-iclean-pet-friendly-fabric-rocker-recliner-platinum.html', img: '/images/research/la-z-boy-wayland-10t.webp', note: 'Plush pillow-top back and one-piece chaise seat.'},
    {n: 'La-Z-Boy Rowan 10T, 86 × 97', w: 860, d: 970, price: 'S$2,169 (was S$3,099), Harvey Norman', href: 'https://www.harveynorman.com.sg/furniture-en/living-room/recliner-chairs/la-z-boy-rowan-10t-rocker-recliner-black.html', img: '/images/research/la-z-boy-rowan-10t.webp', note: 'Slimmest of the three.'},
@@ -138,7 +165,7 @@ export const PLAN = {
    {n: 'Mitsubishi HGS 69.9 × 72', w: 699, d: 720, price: 'S$1,799 (COURTS)', img: '/images/buy/mitsubishi-423-l-freezer-at-bottom-69-9-cm-wide-no-gap-231015.webp', note: 'Size of the same HGS body (421 L); check the SG 423 L model.'},
   ], buy: ['fridge'], research: 'tv-kitchen', note: 'The fridge space measured 70 × 75 × 180 cm. Placed at the marked fridge spot; move it if the spot is different.'},
   {id: 'kitchen-water', name: 'LG PuriCare WD518AN water dispenser (bought)', room: 'kitchen', kind: 'dispenser', x: 9700, y: 10560, r: 180, sizes: [{n: 'WD518AN 16.8 × 48.5', w: 168, d: 485, img: '/images/research/lg-wd518an.webp', note: 'On the countertop. 16.8 cm wide, 41.8 cm tall, 48.5 cm deep with the drip tray (COURTS); LG lists 40 cm deep without it. Needs a water inlet and a power point nearby.'}], research: 'tv-kitchen'},
-  {id: 'kitchen-fan', name: 'Fanco Dono corner fan', room: 'kitchen', kind: 'cfan', x: 7650, y: 9200, r: 315, est: true, sweep: 90, reach: 4000, sizes: [{n: '16" corner fan (about 45 cm)', w: 450, d: 450, img: '/images/buy/fanco-dc-dono-16-corner-fan-wall-or-ceiling-mount-remote-837335.webp', note: 'Mounted high in a corner (wall or ceiling). Size not listed by the shop; drawn as the 16" blade.'}], buy: ['kitchen-fan'], research: 'tv-kitchen', note: 'Swings 90° side to side (Electromart listing). The shop does not give how far the air reaches; the fan-shaped area is drawn to about 4 m as an estimate. Use Aim to point it.'},
+  {id: 'kitchen-fan', name: 'Fanco Dono corner fan', room: 'kitchen', kind: 'cfan', free: true, x: 7650, y: 9200, r: 315, est: true, sweep: 90, reach: 4000, sizes: [{n: '16" corner fan (about 45 cm)', w: 450, d: 450, img: '/images/buy/fanco-dc-dono-16-corner-fan-wall-or-ceiling-mount-remote-837335.webp', note: 'Mounted high in a corner (wall or ceiling). Size not listed by the shop; drawn as the 16" blade.'}], buy: ['kitchen-fan'], research: 'tv-kitchen', note: 'Swings 90° side to side (Electromart listing). The shop does not give how far the air reaches; the fan-shaped area is drawn to about 4 m as an estimate. Use Aim to point it.'},
   {id: 'robot-dock', name: 'Robot vacuum dock', room: 'yard', kind: 'dock', x: 6300, y: 9500, r: 0, sizes: [{n: 'Dock', w: 420, d: 460}], buy: ['kitchen-robot-vacuum-mop'], note: 'Docks on the list are up to 42 × 46 × 59 cm. Near the yard water points and floor drain.'},
   // ---------- Wi-Fi (see research: fibre comes in at the DB box by the entrance) ----------
   {id: 'wifi-main', name: 'Main router: TP-Link HB615 (StarHub), entrance', room: 'entrance', kind: 'wifi', x: 11300, y: 9700, r: 0, sizes: [{n: 'In use', w: 200, d: 200}, {n: 'Not used', w: 200, d: 200}], wifi: true, note: 'Next to the fibre box (ONT) at the DB box by the entrance.'},
@@ -289,7 +316,8 @@ export function validPlanValue(spec, value) {
   if (!m) return false;
   const x = Number(m[1]), y = Number(m[2]), r = Number(m[3]), it = PLAN.items.find(i => i.id === spec.id);
   // Corner fans aim in 45° steps; everything else turns in 90° steps.
-  if (it.kind === 'cfan' ? r % 45 || r > 315 : r % 90 || r > 270) return false;
+  // Free items (recliner, corner fan) turn to any whole degree; everything else turns in 90° steps.
+  if (it.free ? r > 359 : r % 90 || r > 270) return false;
   if (!(x >= 0 && x <= MAX && y >= 0 && y <= MAX)) return false;
   if (m[7] && !it.add) return false; // on/off only for items the family can add or remove
   if (m[5]) {const w = Number(m[5]), d = Number(m[6]); return !it.wifi && w >= 100 && w <= 4000 && d >= 100 && d <= 4000;}

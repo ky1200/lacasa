@@ -63,7 +63,8 @@ addEventListener('online', flush);
 if (Object.keys(pending()).length) flush();
 
 // ---------- geometry ----------
-const sizeOf = it => {const s = it.c ? {...(it.sizes[0]), n: 'Custom', w: it.c.w, d: it.c.d, custom: true} : it.sizes[it.s] ?? it.sizes[0], rot = it.r % 180 !== 0; return {w: rot ? s.d : s.w, d: rot ? s.w : s.d, s};};
+// w, d = the footprint on the plan (any angle: the box around the turned item); s = the item's own size.
+const sizeOf = it => {const s = it.c ? {...(it.sizes[0]), n: 'Custom', w: it.c.w, d: it.c.d, custom: true} : it.sizes[it.s] ?? it.sizes[0], t = it.r * Math.PI / 180, c = Math.abs(Math.cos(t)), n = Math.abs(Math.sin(t)); return {w: Math.round(s.w * c + s.d * n), d: Math.round(s.w * n + s.d * c), s};};
 const boxOf = it => {const {w, d} = sizeOf(it); return {x1: it.x - w / 2, y1: it.y - d / 2, x2: it.x + w / 2, y2: it.y + d / 2};};
 const inBox = (x, y, b) => x >= b[0] && x <= b[0] + b[2] && y >= b[1] && y <= b[1] + b[3];
 // Footprint box of an item (the V Haus sofa is straight, so every item is one box).
@@ -172,6 +173,17 @@ const shape = (it, g) => {
   mk('rect', {x: x + 60, y: y + 50, width: w - 120, height: d * .28, rx: 90, class: 'back', ...ns}, g);
   mk('rect', {x: x + 50, y: y + d * .3, width: w * .16, height: d * .64, rx: 60, class: 'back', ...ns}, g);
   mk('rect', {x: x + w * .84 - 50, y: y + d * .3, width: w * .16, height: d * .64, rx: 60, class: 'back', ...ns}, g);
+ } else if (it.kind === 'toilet') {
+  // Toilet from above: cistern at the back (top), oval bowl to the front; dashed 60 cm clear space in front.
+  mk('rect', {x: -Math.max(w, 700) / 2, y: y + d, width: Math.max(w, 700), height: 600, rx: 40, class: 'swing', ...ns}, g);
+  mk('rect', {x, y, width: w, height: d * .3, rx: 50, class: 'body', ...ns}, g);
+  mk('ellipse', {cx: 0, cy: y + d * .62, rx: w / 2 - 10, ry: d * .37, class: 'body', ...ns}, g);
+  mk('ellipse', {cx: 0, cy: y + d * .64, rx: w * .3, ry: d * .24, class: 'back', ...ns}, g);
+ } else if (it.kind === 'basin') {
+  // Vanity / basin from above: back on the wall (top), basin bowl and tap hole.
+  mk('rect', {x, y, width: w, height: d, rx: 40, class: 'body', ...ns}, g);
+  mk('rect', {x: x + w * .16, y: y + d * .22, width: w * .68, height: d * .62, rx: Math.min(w, d) * .25, class: 'back', ...ns}, g);
+  mk('circle', {cx: 0, cy: y + d * .12, r: 22, class: 'dot'}, g);
  } else if (it.kind === 'mjtable') {
   // Square table with a chair on each side, all inside the w × d footprint.
   const t = Math.min(s.t ?? 800, w, d), c = Math.min(450, (w - t) / 2 - 20);
@@ -538,7 +550,8 @@ ${sizeList(it)}
 ${clashes(it).length ? `<p class="sheet-clash" role="status">Runs into ${esc([...new Set(clashes(it))].join(', '))}. Move, turn or pick a smaller size.</p>` : ''}
 ${it.wifi || D.ro ? '' : `<form class="sheet-custom" data-custom><span>Custom size</span><label>Width <input type="number" inputmode="numeric" min="10" max="400" step="0.5" name="w" value="${cm(s.w)}" required> cm</label><label>Depth <input type="number" inputmode="numeric" min="10" max="400" step="0.5" name="d" value="${cm(s.d)}" required> cm</label><button type="submit">Use this size</button></form>`}
 ${it.note ? `<p class="sheet-note">${esc(it.note)}</p>` : ''}
-${D.ro ? '' : `<div class="sheet-actions"><button type="button" data-rotate>${it.kind === 'cfan' ? 'Aim 45°' : 'Turn 90°'}</button>${moveOn ? '' : '<button type="button" data-movehint>Move it</button>'}${it.add ? '<button type="button" class="sheet-remove" data-unplace>Remove from plan</button>' : ''}</div>`}
+${it.free && !D.ro ? angleDial(it) : ''}
+${D.ro ? '' : `<div class="sheet-actions">${it.free ? '' : '<button type="button" data-rotate>Turn 90°</button>'}${moveOn ? '' : '<button type="button" data-movehint>Move it</button>'}${it.add ? '<button type="button" class="sheet-remove" data-unplace>Remove from plan</button>' : ''}</div>`}
 ${it.kind === 'tv' ? tvTable(it) : ''}${(it.buy ?? []).map(buyBlock).join('')}${it.research ? researchBlock(it.research) : ''}${it.wifi && D.research.fibre ? researchBlock('fibre') : ''}`;
  sheet.hidden = false; drawItems(); drawMeasure(); drawTv(); drawAir();
  if (!dock(it.x, it.y, !quiet) && !quiet) sheet.scrollIntoView?.({block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
@@ -546,10 +559,40 @@ ${it.kind === 'tv' ? tvTable(it) : ''}${(it.buy ?? []).map(buyBlock).join('')}${
  sheet.querySelectorAll('[data-size]').forEach(b => b.onclick = () => {it.s = +b.dataset.size; it.c = null; saveItem(it); openItem(it, true); queueHeat(); drawCart();});
  const cf = sheet.querySelector('[data-custom]');
  if (cf) cf.onsubmit = ev => {ev.preventDefault(); const w = Math.round(parseFloat(cf.w.value) * 10), d = Math.round(parseFloat(cf.d.value) * 10); if (!(w >= 100 && w <= 4000 && d >= 100 && d <= 4000)) {say('Size must be 10 to 400 cm'); return;} it.c = {w, d}; saveItem(it); openItem(it, true);};
- const rot = sheet.querySelector('[data-rotate]'); if (rot) rot.onclick = () => {it.r = (it.r + (it.kind === 'cfan' ? 45 : 90)) % 360; saveItem(it); openItem(it, true); drawAir(); drawTv();};
+ const rot = sheet.querySelector('[data-rotate]'); if (rot) rot.onclick = () => {it.r = (it.r + 90) % 360; saveItem(it); openItem(it, true); drawAir(); drawTv();};
+ const dial = sheet.querySelector('[data-dial]'); if (dial) wireDial(it, dial);
  const up = sheet.querySelector('[data-unplace]'); if (up) up.onclick = () => setOn(it, false);
  const mh = sheet.querySelector('[data-movehint]'); if (mh) mh.onclick = () => {setMove(true); openItem(it, true);};
  sheet.querySelectorAll('[data-pick]').forEach(r => r.onchange = () => {const id = r.dataset.pick, k = +r.value; D.buy[id].pick = k; save(`b:${id}:pick`, k ? String(k) : ''); openItem(it, true); drawCart();});
+}
+// ---------- any-angle turning (recliner, corner fan): drag round the dial, or nudge 5° ----------
+// The knob shows where the item faces (the front of the recliner, the air of the fan): facing = turn + 180°.
+const facing = r => (r + 180) % 360;
+const dirName = a => ['up', 'up-right', 'right', 'down-right', 'down', 'down-left', 'left', 'up-left'][Math.round(a / 45) % 8];
+function angleDial(it) {
+ const a = facing(it.r), t = a * Math.PI / 180;
+ return `<div class="sheet-angle" data-dial><svg viewBox="-60 -60 120 120" role="slider" tabindex="0" aria-label="Facing direction" aria-valuemin="0" aria-valuemax="359" aria-valuenow="${a}" aria-valuetext="${a}° (${dirName(a)})">
+<circle r="46" class="dial-ring"/>${[0, 90, 180, 270].map(d => `<line class="dial-tick" x1="0" y1="-46" x2="0" y2="-38" transform="rotate(${d})"/>`).join('')}
+<line class="dial-hand" x1="0" y1="0" x2="${(Math.sin(t) * 40).toFixed(1)}" y2="${(-Math.cos(t) * 40).toFixed(1)}"/><circle r="5" class="dial-hub"/><circle class="dial-knob" r="9" cx="${(Math.sin(t) * 40).toFixed(1)}" cy="${(-Math.cos(t) * 40).toFixed(1)}"/></svg>
+<div class="dial-side"><span class="dial-label">Faces</span><output data-dial-out>${a}°</output><span class="dial-dir" data-dial-dir>${dirName(a)} on the plan</span>
+<div class="dial-btns"><button type="button" data-nudge="-5" aria-label="Turn 5 degrees left">−5°</button><button type="button" data-nudge="5" aria-label="Turn 5 degrees right">+5°</button></div></div></div>`;
+}
+function wireDial(it, box) {
+ const svgD = box.querySelector('svg'), hand = box.querySelector('.dial-hand'), knob = box.querySelector('.dial-knob'), out = box.querySelector('[data-dial-out]'), dir = box.querySelector('[data-dial-dir]');
+ let queued = false;
+ const show = () => {const a = facing(it.r), t = a * Math.PI / 180, x = (Math.sin(t) * 40).toFixed(1), y = (-Math.cos(t) * 40).toFixed(1);
+  hand.setAttribute('x2', x); hand.setAttribute('y2', y); knob.setAttribute('cx', x); knob.setAttribute('cy', y);
+  out.textContent = `${a}°`; dir.textContent = `${dirName(a)} on the plan`; svgD.setAttribute('aria-valuenow', a); svgD.setAttribute('aria-valuetext', `${a}° (${dirName(a)})`);
+  if (!queued) {queued = true; requestAnimationFrame(() => {queued = false; drawItems(); drawAir(); drawTv();});}};
+ const setFacing = a => {it.r = ((Math.round(a) + 180) % 360 + 360) % 360; show();};
+ const fromEvent = e => {const b = svgD.getBoundingClientRect(), dx = e.clientX - (b.left + b.width / 2), dy = e.clientY - (b.top + b.height / 2); return (Math.atan2(dx, -dy) * 180 / Math.PI + 360) % 360;};
+ let down = false;
+ svgD.addEventListener('pointerdown', e => {down = true; svgD.setPointerCapture(e.pointerId); setFacing(fromEvent(e)); e.preventDefault();});
+ svgD.addEventListener('pointermove', e => {if (down) setFacing(fromEvent(e));});
+ const end = () => {if (!down) return; down = false; saveItem(it);};
+ svgD.addEventListener('pointerup', end); svgD.addEventListener('pointercancel', end);
+ svgD.addEventListener('keydown', e => {const step = e.shiftKey ? 15 : 1, k = {ArrowRight: step, ArrowUp: step, ArrowLeft: -step, ArrowDown: -step}[e.key]; if (k == null) return; e.preventDefault(); setFacing(facing(it.r) + k); saveItem(it);});
+ box.querySelectorAll('[data-nudge]').forEach(b => b.onclick = () => {setFacing(facing(it.r) + Number(b.dataset.nudge)); saveItem(it);});
 }
 function pointSpec(t) {
  const sp = specOf(t); if (!sp) return '';
