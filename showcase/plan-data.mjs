@@ -79,11 +79,11 @@ export const PLAN = {
    {n: 'IKEA FLINTAN 71 × 71', w: 710, d: 710, price: 'S$69.90', href: 'https://www.ikea.com/sg/en/p/flintan-office-chair-beige-50492203/', img: '/images/research/ikea-flintan-chair.webp', note: 'Budget chair with a wide base.'},
   ], research: 'rooms', buy: ['ks-chair']},
   {id: 'ks-wardrobe', name: 'KS wardrobe', room: 'ks', kind: 'wardrobe', add: true, x: 8200, y: 4770, r: 180, sizes: [
-   {n: 'IKEA KLEPPSTAD 2-door 79 × 55', w: 790, d: 550, price: 'S$149', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-2-doors-white-10437237/', img: '/images/research/ikea-kleppstad-2-door.webp', note: '176 cm tall.'},
-   {n: 'IKEA BRIMNES 2-door 78 × 50', w: 780, d: 500, price: 'S$199', href: 'https://www.ikea.com/sg/en/p/brimnes-wardrobe-with-2-doors-white-20400479', img: '/images/research/ikea-brimnes-wardrobe-2-door.webp', note: '190 cm tall.'},
+   {n: 'IKEA PAX / FORSAND 150 × 60 × 201 cm (pick)', w: 1500, d: 600, price: 'S$610', href: 'https://www.ikea.com/sg/en/p/pax-forsand-wardrobe-white-white-s19500696/', img: '/images/buy/ikea-pax-forsand-150-white.webp', note: '10-year guarantee; also 236 cm tall.'},
+   {n: 'IKEA BRIMNES 3-door 117 × 50', w: 1170, d: 500, price: 'S$299', href: 'https://www.ikea.com/sg/en/p/brimnes-wardrobe-with-3-doors-white-10407928/', img: '/images/buy/ikea-brimnes-3-door.webp', note: '190 cm tall, one mirror door.'},
    {n: 'IKEA KLEPPSTAD 3-door 117 × 55', w: 1170, d: 550, price: 'S$199', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-3-doors-white-80441759/', img: '/images/research/ikea-kleppstad-3-door.webp', note: '176 cm tall.'},
-   {n: 'IKEA GURSKEN 49 × 55', w: 494, d: 550, price: 'S$89.90', href: 'https://www.ikea.com/sg/en/p/gursken-wardrobe-light-beige-50503292/', img: '/images/research/ikea-gursken-wardrobe.webp'},
-  ], research: 'rooms', note: 'KS is removing the old built-in wardrobe (24 Nov), so a new one is needed. Measure the wall on 3 Dec after hacking.', buy: ['ks-wardrobe']},
+   {n: 'IKEA KLEPPSTAD 2-door 79 × 55', w: 790, d: 550, price: 'S$149', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-2-doors-white-10437237/', img: '/images/research/ikea-kleppstad-2-door.webp', note: '176 cm tall.'},
+  ], research: 'rooms', note: 'KS is removing the old built-in wardrobe and wants IKEA (24 Nov). Measure the wall on 3 Dec after hacking.', buy: ['ks-wardrobe']},
   // ---------- KX room (main bedroom) ----------
   {id: 'kx-bed', name: 'KX bed', room: 'kx', kind: 'bed', x: 3760, y: 7150, r: 90, sizes: [{n: 'Queen mattress 152 × 190.5', w: 1520, d: 1905}, {n: 'Queen storage frame, about 160 × 200 (estimate)', w: 1600, d: 2000}], buy: ['kx-bed', 'kx-mattress'], research: 'beds', note: 'Dunlopillo Richmond 38 cm on a Dunlopillo storage frame, no headboard (delivery 22 Dec). Frame outside size not confirmed yet: pick the frame size to check space.'},
   {id: 'common-toilet', name: 'Common bathroom toilet', room: 'common-bath', kind: 'toilet', x: 5560, y: 6800, r: 270, est: true, sizes: [
@@ -107,12 +107,13 @@ export const PLAN = {
    {n: 'Short one-piece (compact models): about 62 × 36 cm', w: 360, d: 620},
    {n: 'Wall-hung bowl + concealed cistern R-WH9030BP (S$885): bowl about 52 × 36 cm, frame needs a boxed-out wall', w: 360, d: 520},
   ], buy: ['master-bath-rigel-gallant-one-piece'], research: 'bathroom', note: 'Same spot as now. The door swings in near the basin, so a shorter toilet leaves more room. Keep 60 cm clear in front (dashed). Setting-out measured on 3 Dec. Size is an estimate (RIGEL does not publish drawings online): check the spec sheet at the showroom on Wed 25 Nov.'},
-  {id: 'master-basin', name: 'Master bathroom basin', room: 'master-bath', kind: 'basin', x: 806, y: 3574, r: 270, sizes: [
-   {n: 'Keep the existing basin: about 50 × 45 cm (measure on 3 Dec)', w: 500, d: 450},
-   {n: 'RIGEL R-BC1260, 60 cm, 1 drawer (S$500): 60 × 45 cm', w: 600, d: 450},
-   {n: 'RIGEL R-BC1407, 60 cm (S$560): 60 × 45 cm', w: 600, d: 450},
+  {id: 'master-basin', name: 'Master bathroom vanity', room: 'master-bath', kind: 'basin', x: 806, y: 3574, r: 270, sizes: [
+   {n: 'RIGEL R-BC1260, 60 cm, dark brown (pick, S$500): 60 × 45 cm', w: 600, d: 450},
+   {n: 'RIGEL R-BC1407, 60 cm (S$560): 59 × 44.5 cm', w: 590, d: 445},
+   {n: 'RIGEL R-BC0201, 60 cm, 2 drawers (S$620): 59 × 44.5 cm', w: 590, d: 445},
    {n: 'RIGEL R-BC7437, 70 cm (S$760): 70 × 50 cm, check the door swing', w: 700, d: 500},
-  ], research: 'bathroom', note: 'Family still to decide: keep the old basin or fit a vanity. Against the left wall below the toilet. The door swings close by: a 50 cm deep vanity is the most this spot takes.'},
+  ], buy: ['master-bath-vanity'], research: 'bathroom', note: 'New vanity (K, 24 Nov), against the left wall below the toilet. The door swings close by: 45 to 50 cm deep is the most this spot takes. Sizes from RIGEL product data.'},
+
   {id: 'kx-vhaus-wardrobe', name: 'KX V Haus L-shape wardrobe (ordered)', room: 'kx', kind: 'lwardrobe', x: 1500, y: 5180, r: 270, sizes: [
    {n: 'Earlier plan: 188 cm along the bottom wall + 112.5 cm on the left wall, 60 cm deep', w: 1125, d: 1880, t: 600},
    {n: 'Order sheet: 6 ft + 6 ft (183 + 183 cm), 60 cm deep', w: 1830, d: 1830, t: 600},
@@ -228,7 +229,7 @@ export const prefixOf = layout => PEOPLE.includes(layout) ? `p:${layout}:` : 'p:
 export const DESIGNER = {
  items: {
   'ky-bed': '4540,2400,90,1', 'ky-desk': '2720,3175,270,0', 'ky-chair': '3420,3560,90,0', 'ky-wardrobe': '2580,1760,270,0', 'wifi-atlas-2': '2520,2460,0,0',
-  'ks-bed': '7580,2410,90,1', 'ks-desk': '5860,3400,270,0', 'ks-chair': '6420,3560,90,0', 'ks-wardrobe': '8010,4755,180,2,1',
+  'ks-bed': '7580,2410,90,1', 'ks-desk': '5860,3400,270,0', 'ks-chair': '6420,3560,90,0', 'ks-wardrobe': '7830,4755,180,0,1',
   'kx-bed': '3750,6970,90,1', 'kx-vhaus-wardrobe': '1500,5180,270,0', 'kx-vanity': '3700,4340,0,0', 'kx-stool': '3700,4800,0,0',
   'living-sofa-l': '9335,3450,270,0', 'living-coffee-table': '10810,3450,0,6,1', 'living-tv': '12360,3400,90,0',
   'living-recliner': '10700,5450,270,0,0', 'living-mahjong': '11300,3700,0,0,0', 'dining-table': '10500,7400,90,0',
@@ -253,7 +254,7 @@ export const DESIGNER = {
   ]},
   {room: 'ks', title: 'KS room', why: [
    'Bed head on the solid wall shared with the living room, long side along the window.',
-   'The old built-in wardrobe is hacked away (KS, 24 Nov). A new free-standing wardrobe (shown: IKEA KLEPPSTAD 3-door 117 cm) goes on the same wall in the far corner, away from the door, with about 60 cm in front to open the doors.',
+   'The old built-in wardrobe is hacked away (KS, 24 Nov). A new IKEA wardrobe (shown: PAX 150 cm, KS\'s pick) goes on the same wall in the far corner, away from the door, with about 60 cm in front to open the doors.',
    'Study desk (IKEA ALEX 100 × 48) on the left wall, ending before the door swing. The chair rolls into the space below the bed.',
    'Fan over the middle of the bed towards the foot. KS has no fan point now, so it must be added during the reno.',
   ]},

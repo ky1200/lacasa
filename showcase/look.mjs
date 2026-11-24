@@ -40,7 +40,7 @@ ${o.img ? `<span class="look-img"><img src="${h(o.img)}" alt="${h(o.name)}" load
 export function lookPage(v = {}, ro = false) {
  const groups = [...new Set(LOOK.boards.map(b => b.room))].map(room => ({title: room, links: LOOK.boards.filter(b => b.room === room).map(b => ({href: `#look-${b.id}`, name: b.title.replace(/ \(.*\)$/, ''), meta: b.options[lookChoice(b, v)].name.replace(/^Nippon /, '').replace(/ \(.*\)$/, '').split(' + ')[0]}))}));
  return `<div class="look-page" data-look-page${ro ? ' data-ro' : ''}>
-<header class="page-top look-top"><span class="eyebrow">Colours and look · updated ${h(LOOK.updated)}</span><h1>Mood board</h1>
+<header class="page-top look-top"><span class="eyebrow">Sofa, walls, curtains, floors · updated ${h(LOOK.updated)}</span><h1>Mood board</h1>
 <p>Our pick is marked on each board. Tap another option to choose it for the family: choices are saved and shared. Screen colours are approximate, so always check the real sample in daylight.</p></header>
 <section class="look-hero">
 <figure class="look-insp"><img src="${h(LOOK.inspiration.img)}" alt="Inspiration living room" loading="eager"><figcaption>${h(LOOK.inspiration.note)}</figcaption></figure>

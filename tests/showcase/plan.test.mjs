@@ -75,7 +75,7 @@ test('home puts the to-buy list, floor plan and research first; older pages move
  for(const href of ['/buy','/plan','/research','/earlier','/buy#buy-todo','/buy#buy-measure'])assert.ok(html.includes(`href="${href}"`),href);
  assert.match(html,/class="hq-big">S\$[\d,]+</);assert.match(html,/<h2 id="hq-next-title">Next up<\/h2><span>1 of \d+ done/);assert.doesNotMatch(html,/Book the fibre|Fibre broadband: sign up/,'ticked to-dos are not in Next up');
  assert.doesNotMatch(html,/area-tile|Compare options/,'old room tiles and voting are not on home');
- const earlier=renderPage(state(),'https://lacasa.test/earlier').html;assert.match(earlier,/<h1>Earlier choices<\/h1>/);assert.match(earlier,/class="area-tile"/);assert.match(earlier,/href="\/visit"/);
+ const earlier=renderPage(state(),'https://lacasa.test/earlier').html;assert.match(earlier,/<h1>Archive<\/h1>/);assert.match(earlier,/class="area-tile"/);assert.match(earlier,/href="\/visit"/);
  const text=html.replace(/<[^>]+>/g,' ');assert.doesNotMatch(text,/\byou\b|\byour\b|perfect|amazing/i);
 });
 

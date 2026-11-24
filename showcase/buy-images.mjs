@@ -159,6 +159,30 @@ export const IMG = {
  "kitchen-steigen-solar-mini-drying#1": {
   "src": "/images/buy/steigen-halo-mini-ai-drying-1716f9.webp"
  },
+ "kitchen-stick-vacuum#0": {
+  "src": "/images/buy/shark-evopower-system-fit-lc100smgy.webp"
+ },
+ "kitchen-stick-vacuum#1": {
+  "src": "/images/buy/dyson-v8-slim-fluffy.webp"
+ },
+ "kitchen-stick-vacuum#2": {
+  "src": "/images/buy/dreame-r10-2025.webp"
+ },
+ "kitchen-stick-vacuum#3": {
+  "src": "/images/buy/dyson-v12-detect-slim-absolute.webp"
+ },
+ "kitchen-wet-dry-vacuum#0": {
+  "src": "/images/buy/tineco-floor-one-s7-stretch-max.webp"
+ },
+ "kitchen-wet-dry-vacuum#1": {
+  "src": "/images/buy/tineco-ifloor-y3-stretch.webp"
+ },
+ "kitchen-wet-dry-vacuum#2": {
+  "src": "/images/buy/dreame-h13-flexreach.webp"
+ },
+ "kitchen-wet-dry-vacuum#3": {
+  "src": "/images/buy/shark-hydrovac-wd210sm.webp"
+ },
  "ks-bed#0": {
   "ex": true,
   "src": "/images/buy/dunlopillo-storage-bed-frame-example.webp"
@@ -185,13 +209,16 @@ export const IMG = {
   "src": "/images/buy/dunlopillo-richmond-signature-queen.webp"
  },
  "ks-wardrobe#0": {
-  "src": "/images/buy/ikea-kleppstad-2-door.webp"
+  "src": "/images/buy/ikea-pax-forsand-150-white.webp"
  },
  "ks-wardrobe#1": {
-  "src": "/images/buy/ikea-kleppstad-3-door.webp"
+  "src": "/images/buy/ikea-brimnes-3-door.webp"
  },
  "ks-wardrobe#2": {
-  "src": "/images/buy/ikea-brimnes-wardrobe-2-door.webp"
+  "src": "/images/buy/ikea-kleppstad-3-door.webp"
+ },
+ "ks-wardrobe#3": {
+  "src": "/images/buy/ikea-kleppstad-2-door.webp"
  },
  "kx-bed#0": {
   "ex": true,
@@ -302,10 +329,10 @@ export const IMG = {
   "src": "/images/buy/lg-oled-evo-c6-65-2026-a32203.webp"
  },
  "living-lg-oled-evo-c6#1": {
-  "src": "/images/buy/lg-oled-c6-65-at-a-physical-store-e309e8.webp"
+  "src": "/images/buy/lg-oled-evo-c6-65-2026-a32203.webp"
  },
  "living-lg-oled-evo-c6#2": {
-  "src": "/images/buy/samsung-qn70h-85-neo-qled-mini-led-2026-e37448.webp"
+  "src": "/images/buy/lg-oled-c5-65.webp"
  },
  "living-lg-oled-evo-c6#3": {
   "src": "/images/buy/lg-oled-c6-77-2026-41166b.webp"
@@ -319,6 +346,12 @@ export const IMG = {
  },
  "living-philips-meson-5-13w#1": {
   "src": "/images/buy/philips-eridani-sceneswitch-downlight.webp"
+ },
+ "living-sofa-spot-cleaner#0": {
+  "src": "/images/buy/tineco-icarpet-spot.webp"
+ },
+ "living-sofa-spot-cleaner#1": {
+  "src": "/images/buy/shark-stainforce-hx100sm.webp"
  },
  "living-track-or-spot-lights#0": {
   "ex": true,
@@ -339,6 +372,12 @@ export const IMG = {
  },
  "master-bath-accessories-for-both-bathrooms#3": {
   "src": "/images/buy/rigel-tb6908.webp"
+ },
+ "master-bath-basin-mixer-tap#0": {
+  "src": "/images/buy/grohe-eurosmart-23922003.webp"
+ },
+ "master-bath-basin-mixer-tap#1": {
+  "src": "/images/buy/rigel-mxb2003.webp"
  },
  "master-bath-bidet-spray#0": {
   "src": "/images/buy/rigel-sa8200-chrome.webp"
@@ -363,6 +402,17 @@ export const IMG = {
  "master-bath-rigel-thermostatic-exposed-shower#2": {
   "ex": true,
   "src": "/images/buy/rigel-3-in-1-thermostatic-rain-shower-set-chrome-48c082.webp"
+ },
+ "master-bath-vanity#0": {
+  "ex": true,
+  "src": "/images/buy/rigel-bc1260.webp"
+ },
+ "master-bath-vanity#1": {
+  "ex": true,
+  "src": "/images/buy/rigel-bc0201.webp"
+ },
+ "master-bath-vanity#2": {
+  "src": "/images/buy/rigel-bc0201.webp"
  },
  "master-mirror#0": {
   "src": "/images/buy/ikea-enhet-mirror-cabinet-2-doors-60-17-75-cm-no-light-no-po-96a5ae.webp"

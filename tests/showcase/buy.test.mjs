@@ -64,7 +64,7 @@ test('choices change the total: remove, pick another option, change quantity',()
  assert.ok(Math.abs(buyTotals(BUY,{'b:living-philips-meson-5-13w:qty':'10'}).total-(base+2*dl.price/BUY.rate))<0.01);
  assert.equal(choiceOf(tv,{'b:living-lg-oled-evo-c6:pick':'99'}).pick,0);assert.equal(choiceOf(dl,{'b:living-philips-meson-5-13w:qty':'abc'}).qty,8);
  assert.equal(buyTotals(BUY,{'b:fridge:off':'1','b:washer:off':'1'}).removed,buyTotals().removed+2);
- const csv=buyCSV(BUY,{'b:living-lg-oled-evo-c6:off':'1','b:fridge:pick':'1','b:washer:tag':'after'});assert.match(csv,/LG OLED evo C6[^\n]*,3254\.00,Maybe,/);assert.match(csv,/Panasonic 405 L[^\n]*,Before move-in,Option 1,/);assert.match(csv,/Panasonic 12\.5 kg[^\n]*,After move-in,/);
+ const csv=buyCSV(BUY,{'b:living-lg-oled-evo-c6:off':'1','b:fridge:pick':'1','b:washer:tag':'after'});assert.match(csv,/LG OLED evo C6[^\n]*,3394\.00,Maybe,/);assert.match(csv,/Panasonic 405 L[^\n]*,Before move-in,Option 1,/);assert.match(csv,/Panasonic 12\.5 kg[^\n]*,After move-in,/);
  const wash=items.find(i=>i.id==='washer'),after=buyTotals(BUY,{'b:washer:tag':'after'});
  assert.ok(Math.abs(after.after-wash.price)<0.01);assert.ok(Math.abs(after.total-base)<0.01);assert.ok(Math.abs(after.before-(buyTotals().before-wash.price))<0.01);
  assert.ok(Math.abs(buyTotals(BUY,{'b:living-homepod-mini-2-back:tag':'maybe'}).total-(base-2*199))<0.01);
