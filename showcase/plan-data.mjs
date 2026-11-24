@@ -79,7 +79,7 @@ export const PLAN = {
    {n: 'IKEA FLINTAN 71 × 71', w: 710, d: 710, price: 'S$69.90', href: 'https://www.ikea.com/sg/en/p/flintan-office-chair-beige-50492203/', img: '/images/research/ikea-flintan-chair.webp', note: 'Budget chair with a wide base.'},
   ], research: 'rooms', buy: ['ks-chair']},
   {id: 'ks-wardrobe', name: 'KS wardrobe', room: 'ks', kind: 'wardrobe', add: true, x: 8200, y: 4770, r: 180, sizes: [
-   {n: 'IKEA PAX / FORSAND 150 × 60 × 201 cm (pick)', w: 1500, d: 600, price: 'S$610', href: 'https://www.ikea.com/sg/en/p/pax-forsand-wardrobe-white-white-s19500696/', img: '/images/buy/ikea-pax-forsand-150-white.webp', note: '10-year guarantee; also 236 cm tall.'},
+   {n: 'IKEA PAX / FORSAND 150 × 60 × 201 cm', w: 1500, d: 600, price: 'S$610', href: 'https://www.ikea.com/sg/en/p/pax-forsand-wardrobe-white-white-s19500696/', img: '/images/buy/ikea-pax-forsand-150-white.webp', note: '10-year guarantee; also 236 cm tall.'},
    {n: 'IKEA BRIMNES 3-door 117 × 50', w: 1170, d: 500, price: 'S$299', href: 'https://www.ikea.com/sg/en/p/brimnes-wardrobe-with-3-doors-white-10407928/', img: '/images/buy/ikea-brimnes-3-door.webp', note: '190 cm tall, one mirror door.'},
    {n: 'IKEA KLEPPSTAD 3-door 117 × 55', w: 1170, d: 550, price: 'S$199', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-3-doors-white-80441759/', img: '/images/research/ikea-kleppstad-3-door.webp', note: '176 cm tall.'},
    {n: 'IKEA KLEPPSTAD 2-door 79 × 55', w: 790, d: 550, price: 'S$149', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-2-doors-white-10437237/', img: '/images/research/ikea-kleppstad-2-door.webp', note: '176 cm tall.'},
@@ -153,9 +153,11 @@ export const PLAN = {
   ], note: 'Sizes include the chairs pulled in a little; players need about 50 cm behind each chair to sit down. Square 80 to 90 cm is the usual mahjong size; automatic tables are heavier and need a power point. Use it in the living room or move it to the dining area.'},
   {id: 'living-tv', name: 'TV', room: 'living', kind: 'tv', x: 12360, y: 3400, r: 90, sizes: [
    {n: 'LG OLED C6 65"', w: 1441, d: 45, price: 'S$3,254 (Electromart)', img: '/images/buy/lg-oled-evo-c6-65-2026-a32203.webp', note: '144.1 × 82.6 cm, 4.5 cm deep (without stand).'},
-   {n: 'LG QNED86B 75" (Mini LED)', w: 1677, d: 31, price: 'S$3,499 (Harvey Norman)', href: 'https://www.harveynorman.com.sg/tv-and-audio/tvs-en-2/tvs-en-3/lg-75-inch-d86-qned-evo-mini-led-ai-4k-2026-smart-tv-black-75qned86bsa.atc.html', img: '/images/research/lg-75qned86b.webp', note: 'LG has no 75" OLED; this is the closest LG at 75". 167.7 × 96.5 cm.'},
-   {n: 'LG OLED C6 77"', w: 1711, d: 47, price: 'S$6,499 (Harvey Norman)', img: '/images/buy/lg-oled-c6-77-2026-41166b.webp', note: '171.1 × 98.2 cm.'},
+   {n: 'LG QNED86B 75" (Mini LED)', w: 1677, d: 31, price: 'S$2,783 (Electromart)', href: 'https://electromart.sg/products/lg-75qned86bsa-qned-evo-ai-qned86-mini-led-4k-smart-tv-75inch', img: '/images/research/lg-75qned86b.webp', note: 'LG has no 75" OLED; this is the closest LG at 75". 167.7 × 96.5 cm.'},
+   {n: 'LG OLED C6 77"', w: 1711, d: 47, price: 'S$5,985 (Electromart)', img: '/images/buy/lg-oled-c6-77-2026-41166b.webp', note: '171.1 × 98.2 cm.'},
    {n: 'Samsung QN70H 85"', w: 1894, d: 60, price: 'S$4,299 (Harvey Norman)', img: '/images/buy/samsung-qn70h-85-neo-qled-mini-led-2026-e37448.webp', note: 'About 189 cm wide.'},
+   {n: 'LG OLED B5 77" (recommended)', w: 1729, d: 46, price: 'S$3,254 (Electromart)', href: 'https://electromart.sg/products/lg-oled77b5psa-oled-ai-tv-b5-120hz-dolby-vision-hdr10-4k-uhd', img: '/images/buy/lg-oled-b5-77.webp', note: '172.9 × 99.5 × 4.6 cm without stand.'},
+   {n: 'LG OLED B6 77"', w: 1723, d: 46, price: 'S$4,515 (Electromart)', href: 'https://electromart.sg/products/lg-oled77b6psa-oled-ai-b6-4k-smart-tv-77inch', img: '/images/buy/lg-oled-b6-77.webp', note: '172.3 × 99.2 × 4.6 cm without stand.'},
   ], buy: ['living-lg-oled-evo-c6'], research: 'tv-kitchen', note: 'Screen width without stand. The D1 feature wall is 210 cm long.'},
   {id: 'dining-table', name: 'LINO dining table + 6 chairs', room: 'dining', kind: 'table', x: 10500, y: 7400, r: 90, sizes: [{n: 'Table 160 × 90 cm', w: 1600, d: 900}], buy: ['dining-v-haus-lino-dining'], research: 'vhaus', note: 'LINO table 160 × 90 cm, 6 C9060 walnut chairs (ordered 22 Nov; chair size to check). With chairs pulled out it needs about 240 × 230 cm.'},
   // ---------- Kitchen and yard ----------
@@ -231,7 +233,7 @@ export const DESIGNER = {
   'ky-bed': '4540,2400,90,1', 'ky-desk': '2720,3175,270,0', 'ky-chair': '3420,3560,90,0', 'ky-wardrobe': '2580,1760,270,0', 'wifi-atlas-2': '2520,2460,0,0',
   'ks-bed': '7580,2410,90,1', 'ks-desk': '5860,3400,270,0', 'ks-chair': '6420,3560,90,0', 'ks-wardrobe': '7830,4755,180,0,1',
   'kx-bed': '3750,6970,90,1', 'kx-vhaus-wardrobe': '1500,5180,270,0', 'kx-vanity': '3700,4340,0,0', 'kx-stool': '3700,4800,0,0',
-  'living-sofa-l': '9335,3450,270,0', 'living-coffee-table': '10810,3450,0,6,1', 'living-tv': '12360,3400,90,0',
+  'living-sofa-l': '9335,3450,270,0', 'living-coffee-table': '10810,3450,0,6,1', 'living-tv': '12360,3400,90,4',
   'living-recliner': '10700,5450,270,0,0', 'living-mahjong': '11300,3700,0,0,0', 'dining-table': '10500,7400,90,0',
  },
  points: {
@@ -254,7 +256,7 @@ export const DESIGNER = {
   ]},
   {room: 'ks', title: 'KS room', why: [
    'Bed head on the solid wall shared with the living room, long side along the window.',
-   'The old built-in wardrobe is hacked away (KS, 24 Nov). A new IKEA wardrobe (shown: PAX 150 cm, KS\'s pick) goes on the same wall in the far corner, away from the door, with about 60 cm in front to open the doors.',
+   'The old built-in wardrobe is hacked away (KS, 24 Nov). A new IKEA wardrobe (KS chooses the model; shown: PAX 150 cm) goes on the same wall in the far corner, away from the door, with about 60 cm in front to open the doors.',
    'Study desk (IKEA ALEX 100 × 48) on the left wall, ending before the door swing. The chair rolls into the space below the bed.',
    'Fan over the middle of the bed towards the foot. KS has no fan point now, so it must be added during the reno.',
   ]},
@@ -267,7 +269,7 @@ export const DESIGNER = {
   ]},
   {room: 'living', title: 'Living room', why: [
    'Sofa back on the KS wall, centred on the TV, open end by the window. Eye to screen is about 3.2 m.',
-   'At 3.2 m a 65" TV fills about 25° of view; the 30° guide (SMPTE) needs about 75" (LG QNED86B 75", S$3,499, about 30°). The 65" OLED has the better picture; 75" has the size. Family choice.',
+   'At 3.2 m a 65" TV fills about 25° of view; the 30° guide (SMPTE) needs 75" to 77". Shown: LG OLED B5 77" (S$3,254 at Electromart, the same price as the 65" C6), 172.9 cm wide with about 18 cm spare each side on the 210 cm wall.',
    'Round coffee table 75 to 90 cm, about 43 cm from the sofa: easy to reach, no corners in the walkway.',
    'Six downlights in two rows, not straight above heads on the sofa and not in front of the screen, plus one ceiling fan over the coffee table.',
    'Sockets each side of the TV with a LAN port behind it, and a socket at each sofa end (lamp, phones, a recliner later).',
@@ -289,6 +291,7 @@ export const DESIGNER = {
   'At each bed: a double socket and a 2-way switch for the room light, so the light can be turned off from bed.',
   'KY desk: 2 double sockets about 15 cm above the desk top (PC, 2 screens, speakers, chargers). KS desk: 1 double socket.',
   'TV wall: 2 double sockets and the LAN port behind the screen, at TV height, so no cables show.',
+  'TV wall (D1): plywood backing for a 77" TV bracket, with the screen middle at about seated eye level.',
   'Kitchen: power point inside a wall cabinet for an under-cabinet LED strip; water point and socket for the WD518AN.',
   'Light colour: 3000K warm white in the bedrooms, living and dining; 4000K in the kitchen, bathrooms and yard. Matches the warm modern look.',
   'Curtain tracks: only if the living curtains hang from the false ceiling, ask for a wood strip above the board first (screws do not hold in board alone). Concrete ceilings need nothing.',

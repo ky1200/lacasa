@@ -172,15 +172,18 @@ export const IMG = {
   "src": "/images/buy/dyson-v12-detect-slim-absolute.webp"
  },
  "kitchen-wet-dry-vacuum#0": {
-  "src": "/images/buy/tineco-floor-one-s7-stretch-max.webp"
+  "src": "/images/buy/tineco-ifloor-y2.webp"
  },
  "kitchen-wet-dry-vacuum#1": {
   "src": "/images/buy/tineco-ifloor-y3-stretch.webp"
  },
  "kitchen-wet-dry-vacuum#2": {
-  "src": "/images/buy/dreame-h13-flexreach.webp"
+  "src": "/images/buy/tineco-floor-one-s7-stretch-max.webp"
  },
  "kitchen-wet-dry-vacuum#3": {
+  "src": "/images/buy/dreame-h13-flexreach.webp"
+ },
+ "kitchen-wet-dry-vacuum#4": {
   "src": "/images/buy/shark-hydrovac-wd210sm.webp"
  },
  "ks-bed#0": {
@@ -326,19 +329,20 @@ export const IMG = {
   "src": "/images/buy/led-cove-strip-driver-8717ec.webp"
  },
  "living-lg-oled-evo-c6#0": {
-  "src": "/images/buy/lg-oled-evo-c6-65-2026-a32203.webp"
+  "src": "/images/buy/lg-oled-b5-77.webp",
+  "ex": true
  },
  "living-lg-oled-evo-c6#1": {
-  "src": "/images/buy/lg-oled-evo-c6-65-2026-a32203.webp"
- },
- "living-lg-oled-evo-c6#2": {
-  "src": "/images/buy/lg-oled-c5-65.webp"
- },
- "living-lg-oled-evo-c6#3": {
   "src": "/images/buy/lg-oled-c6-77-2026-41166b.webp"
  },
- "living-lg-oled-evo-c6#4": {
+ "living-lg-oled-evo-c6#2": {
+  "src": "/images/buy/lg-oled-b6-77.webp"
+ },
+ "living-lg-oled-evo-c6#3": {
   "src": "/images/buy/lg-75qned86b.webp"
+ },
+ "living-lg-oled-evo-c6#4": {
+  "src": "/images/buy/lg-oled-evo-c6-65-2026-a32203.webp"
  },
  "living-philips-meson-5-13w#0": {
   "ex": true,
@@ -346,12 +350,6 @@ export const IMG = {
  },
  "living-philips-meson-5-13w#1": {
   "src": "/images/buy/philips-eridani-sceneswitch-downlight.webp"
- },
- "living-sofa-spot-cleaner#0": {
-  "src": "/images/buy/tineco-icarpet-spot.webp"
- },
- "living-sofa-spot-cleaner#1": {
-  "src": "/images/buy/shark-stainforce-hx100sm.webp"
  },
  "living-track-or-spot-lights#0": {
   "ex": true,

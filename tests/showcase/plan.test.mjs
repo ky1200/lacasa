@@ -87,7 +87,7 @@ test('floor plan: KY room fits the biggest MAGNUS Pro desk next to the GURSKEN w
  // Left wall of KY room runs from the top wall (y 1460) to the new partition (y 4100). Wardrobe turned 90° takes 494 mm of it.
  const top=1460,bottom=4100,free=bottom-(top+494);assert.ok(free>=1968&&free-1968<250,`XXL leaves ${free-1968} mm`);
  assert.deepEqual([size(it('ky-chair'),'SIHOO').w,size(it('ky-chair'),'SIHOO').d],[600,600]);
- assert.deepEqual(it('living-tv').sizes.map(z=>z.w),[1441,1677,1711,1894]);
+ assert.deepEqual(it('living-tv').sizes.map(z=>z.w),[1441,1677,1711,1894,1729,1723]);
  assert.ok(it('kitchen-fridge').sizes.every(z=>z.w<=700&&z.d<=750),'every fridge fits the 70 × 75 cm space');
  assert.deepEqual([it('kitchen-water').sizes[0].w,it('kitchen-water').sizes[0].d],[168,485]);
  for(const i of PLAN.items)for(const z of i.sizes){if(z.img)assert.ok(existsSync(new URL('../../public'+z.img,import.meta.url)),z.img);if(z.href)assert.match(z.href,/^https:\/\//);}
