@@ -1355,3 +1355,47 @@ b,strong{font-weight:700}
 .pay-table td+td,.pay-table th+th{text-align:right;white-space:nowrap}
 @media (max-width:420px){.pay-sum b{font-size:16px}.pay-row{flex-direction:column}.pay-amt{align-items:flex-start;text-align:left}}
 .pay-acts button{white-space:nowrap}
+/* /day: 25 Nov day plan */
+.day-page{max-width:760px;margin:0 auto;padding:8px 14px 40px}
+.day-head h1{font-size:clamp(26px,6vw,34px);margin:4px 0 8px}
+.day-head .eyebrow{margin:0;font-size:13px;color:var(--moss);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.day-sum{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
+.day-sum>div{display:grid;gap:2px;padding:10px 12px;border-radius:14px;background:var(--linen);border:1px solid var(--line);min-width:0}
+.day-sum small{font-size:12px;color:var(--muted)}.day-sum b{font-size:15px;color:var(--sumi);line-height:1.25;overflow-wrap:anywhere}
+.day-map{height:340px;border-radius:16px;border:1px solid var(--line);overflow:hidden;background:#e8eef0;z-index:0}
+.day-mapnote{font-size:12px;margin:6px 2px 10px}
+.day-pin span{display:grid;place-items:center;min-width:24px;height:24px;padding:0 5px;border-radius:12px;background:var(--indigo);color:#fff;font:700 12px/1 var(--font);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.3);transform:translate(-50%,-50%);white-space:nowrap}
+.day-pin.is-done span{background:#9a968c}
+.day-tools{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:4px 0 10px}
+.day-status{font-size:13px;color:var(--muted)}
+.day-reset{min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:var(--linen);color:#9a4a1f;font:inherit;font-size:14px}
+.day-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.day-stop{display:block;padding:12px 14px;border-radius:16px;background:var(--linen);border:1px solid var(--line)}
+.day-stop.is-here{border-color:var(--moss);box-shadow:0 0 0 2px var(--moss-soft)}
+.day-stop.is-done{opacity:.72}.day-stop.is-skip{opacity:.55}.day-stop.is-skip h3{text-decoration:line-through}
+.day-time{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:2px}.day-time b{font-size:18px;color:var(--sumi);font-variant-numeric:tabular-nums}.day-time small{font-size:12.5px;color:var(--muted)}
+.day-body{min-width:0;position:relative}
+.day-num{align-self:center;display:grid;place-items:center;width:24px;height:24px;border-radius:12px;background:var(--indigo-soft);color:var(--indigo);font-size:12px;font-weight:700}
+.day-body h3{margin:0 0 2px;font-size:17px}
+.day-sub{margin:0;font-size:14px}.day-meta{margin:4px 0 0;font-size:13px;color:var(--muted)}
+.day-warn{margin:6px 0 0;padding:6px 10px;border-radius:10px;background:#fbeae4;color:#8a2c14;font-size:13.5px}
+.day-wait{margin:6px 0 0;padding:6px 10px;border-radius:10px;background:var(--moss-soft);color:var(--moss);font-size:13.5px}
+.day-acts,.day-links{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.day-acts button{min-height:44px;padding:0 14px;border-radius:999px;border:1px solid var(--indigo);background:#fff;color:var(--indigo);font:inherit;font-size:14px}
+.day-acts button[data-act=a],.day-acts button[data-act=l]{background:var(--indigo);color:#fff}
+.day-edit{min-height:44px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--indigo);font:inherit;font-size:13.5px}
+.day-nav{display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border-radius:999px;background:var(--plaster);border:1px solid var(--line);color:var(--sumi);font-size:13.5px;text-decoration:none}
+.day-more{margin-top:8px;border-top:1px solid var(--line);padding-top:4px}
+.day-more summary,.day-guide summary{min-height:44px;display:flex;align-items:center;cursor:pointer;font-weight:700;color:var(--indigo);font-size:15px}
+.day-more ul,.day-guide ul{margin:4px 0 8px;padding-left:20px;font-size:14.5px;line-height:1.5}.day-more li,.day-guide li{margin:3px 0}
+.day-more h4{margin:8px 0 0;font-size:14px}.day-more p,.day-guide p{font-size:14.5px;line-height:1.5}
+.day-form{padding:12px;border-radius:16px;background:#fff;border:1px solid var(--indigo);display:grid;gap:8px}
+.day-form h2{margin:0;font-size:17px}.day-form label{display:grid;gap:4px;font-size:14px}
+.day-form input{min-height:44px;font:inherit;font-size:16px;padding:0 10px;border:1px solid var(--line);border-radius:10px;width:100%;box-sizing:border-box}
+.day-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.day-form-acts{display:flex;gap:8px;flex-wrap:wrap}.day-form-acts .button{min-height:44px}
+.day-err{margin:0;color:#8a2c14;font-size:14px}
+.day-guide{margin-top:24px}.day-guide h2{font-size:22px;margin:0 0 4px}
+.day-guide details{border-bottom:1px solid var(--line);padding:2px 0}
+.day-svg{display:block;width:100%;max-width:420px;height:auto;margin:6px 0;background:#fff;border-radius:12px;border:1px solid var(--line)}
+.day-sources{font-size:12.5px;margin-top:12px}
+@media (max-width:420px){.day-stop{padding:10px 12px}.day-sum b{font-size:13.5px}}

@@ -4,6 +4,7 @@ import {buyKeys,validBuyValue} from './buy-plan.mjs';
 import {planKey,validPlanValue} from './plan-data.mjs';
 import {lookKeys,validLookValue} from './look-data.mjs';
 import {PAY_KEY,validPayLog} from './pay.mjs';
+import {DAY_KEY,validDayLog} from './day.mjs';
 import {stateFor} from './domain.mjs';
 const VISIT_KEYS=visitKeys(),BUY_KEYS=buyKeys(),LOOK_KEYS=lookKeys();
 export class AppError extends Error {constructor(status,message){super(message);this.status=status;}}
@@ -53,6 +54,19 @@ export async function api(request,env,content,samples){try{
   if(!validBuyValue(spec,value))throw new AppError(422,spec.kind==='qty'?'Use a number from 1 to 99.':spec.kind==='pick'?'Choose one of the listed options.':spec.kind==='tag'?'Choose Before, After or Maybe.':'Tick or untick only.');
   if(value)await env.DB.prepare('INSERT INTO visit_notes (key,value,code,updated_at) VALUES (?,?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,code=excluded.code,updated_at=excluded.updated_at').bind(key,value,who.code,new Date().toISOString()).run();
   else await env.DB.prepare('DELETE FROM visit_notes WHERE key=?').bind(key).run();
+  return json({ok:true});
+ }
+ if(path==='/api/day/log'&&method==='GET'){
+  if(!env.DB)throw new AppError(503,'The private database is not ready yet.');
+  const row=await env.DB.prepare('SELECT value FROM visit_notes WHERE key=?').bind(DAY_KEY).first();
+  return json({value:row?.value??''});
+ }
+ if(method==='PUT'&&path==='/api/day/log'){
+  if(!env.DB)throw new AppError(503,'The private database is not ready yet.');
+  const body=await bodyJSON(request,8000),value=typeof body.value==='string'?body.value:'';
+  if(!validDayLog(value))throw new AppError(422,'Check the times look like 09:30.');
+  if(value)await env.DB.prepare('INSERT INTO visit_notes (key,value,code,updated_at) VALUES (?,?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,code=excluded.code,updated_at=excluded.updated_at').bind(DAY_KEY,value,who.code,new Date().toISOString()).run();
+  else await env.DB.prepare('DELETE FROM visit_notes WHERE key=?').bind(DAY_KEY).run();
   return json({ok:true});
  }
  if(method==='PUT'&&path==='/api/pay/log'){
