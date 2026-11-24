@@ -40,7 +40,7 @@ export function homePage(v = {}, today = sgToday(), {isOwner = false, audit = fa
 <section class="hq-next" aria-labelledby="hq-next-title"><div class="hq-next-head"><h2 id="hq-next-title">Next up</h2><span>${done} of ${todo.length} done</span></div>
  <ol class="hq-todo">${next.map(x => `<li><span class="buy-chip${x.date ? '' : ' is-now'}">${x.date ? h(dayLabel(x.date)) : 'Now'}</span><span class="hq-todo-text"><b>${h(x.t)}</b>${x.n ? `<small>${h(x.n)}</small>` : ''}</span></li>`).join('')}</ol>
  <a class="text-link" href="/buy#buy-todo">All to-dos and ticks</a></section>
-<nav class="hq-quick" aria-label="Checklists and files"><a href="/plan?layout=designer#designer" class="hq-designer"><i aria-hidden="true">★</i> Designer’s pick</a><a href="/buy#buy-measure">3 Dec checklist</a><a href="/buy#buy-decisions">Reno decisions</a><a href="/buy#buy-qa">Quote checks</a><a href="/buy#buy-files">Contractor files</a><a href="/buy#buy-dates">Sale dates</a></nav>
+<nav class="hq-quick" aria-label="Checklists and files"><a href="/pay" class="hq-designer"><i aria-hidden="true">$</i> Payments</a><a href="/plan?layout=designer#designer" class="hq-designer"><i aria-hidden="true">★</i> Designer’s pick</a><a href="/buy#buy-measure">3 Dec checklist</a><a href="/buy#buy-decisions">Reno decisions</a><a href="/buy#buy-qa">Quote checks</a><a href="/buy#buy-files">Contractor files</a><a href="/buy#buy-dates">Sale dates</a></nav>
 <a class="hq-earlier" href="/earlier"><span><b>Archive</b><small>Room-by-room choices, voting, the old shopping list and the 11 Nov site visit.</small></span><span aria-hidden="true">›</span></a>
 ${isOwner || audit ? '' : '<p class="owner-link"><a class="text-link" href="/owner">Owner sign-in</a></p>'}
 </article>`;

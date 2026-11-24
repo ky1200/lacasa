@@ -3,6 +3,7 @@ import {visitKeys,applyVisitSpaces} from './visit.mjs';
 import {buyKeys,validBuyValue} from './buy-plan.mjs';
 import {planKey,validPlanValue} from './plan-data.mjs';
 import {lookKeys,validLookValue} from './look-data.mjs';
+import {PAY_KEY,validPayLog} from './pay.mjs';
 import {stateFor} from './domain.mjs';
 const VISIT_KEYS=visitKeys(),BUY_KEYS=buyKeys(),LOOK_KEYS=lookKeys();
 export class AppError extends Error {constructor(status,message){super(message);this.status=status;}}
@@ -26,7 +27,7 @@ export function visitorState(content,samples,who,votes=[],finals=[],showSamples=
 }
 export async function readVisit(db){try{const rows=(await db.prepare('SELECT key, value FROM visit_notes').all()).results??[];return Object.fromEntries(rows.map(r=>[r.key,r.value]));}catch{return {};}}
 export async function loadState(request,env,content,samples){const who=identity(request,env,content);if(!env.DB)throw new AppError(503,'The database is not ready yet. Try again shortly.');const [{votes,finals},visit]=await Promise.all([readRecords(env.DB),readVisit(env.DB)]);const showSamples=who.isAdmin&&new URL(request.url).searchParams.get('samples')==='on';return {...visitorState(applyVisitSpaces(content,visit),samples,who,votes,finals,showSamples),visit};}
-async function bodyJSON(request){if(Number(request.headers.get('content-length')??0)>16384)throw new AppError(422,'This request is too large.');const text=await request.text();if(text.length>16384)throw new AppError(422,'This request is too large.');try{return JSON.parse(text);}catch{throw new AppError(422,'This request could not be read.');}}
+async function bodyJSON(request,max=16384){if(Number(request.headers.get('content-length')??0)>max)throw new AppError(422,'This request is too large.');const text=await request.text();if(text.length>max)throw new AppError(422,'This request is too large.');try{return JSON.parse(text);}catch{throw new AppError(422,'This request could not be read.');}}
 export async function api(request,env,content,samples){try{
  const u=new URL(request.url),path=u.pathname,method=request.method,who=identity(request,env,content);
  if(method==='GET'&&path==='/api/me')return json(who);
@@ -52,6 +53,14 @@ export async function api(request,env,content,samples){try{
   if(!validBuyValue(spec,value))throw new AppError(422,spec.kind==='qty'?'Use a number from 1 to 99.':spec.kind==='pick'?'Choose one of the listed options.':spec.kind==='tag'?'Choose Before, After or Maybe.':'Tick or untick only.');
   if(value)await env.DB.prepare('INSERT INTO visit_notes (key,value,code,updated_at) VALUES (?,?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,code=excluded.code,updated_at=excluded.updated_at').bind(key,value,who.code,new Date().toISOString()).run();
   else await env.DB.prepare('DELETE FROM visit_notes WHERE key=?').bind(key).run();
+  return json({ok:true});
+ }
+ if(method==='PUT'&&path==='/api/pay/log'){
+  if(!env.DB)throw new AppError(503,'The private database is not ready yet.');
+  const body=await bodyJSON(request,80000),value=typeof body.value==='string'?body.value:'';
+  if(!validPayLog(value))throw new AppError(422,'Check each payment has who it is to and an amount.');
+  if(value)await env.DB.prepare('INSERT INTO visit_notes (key,value,code,updated_at) VALUES (?,?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,code=excluded.code,updated_at=excluded.updated_at').bind(PAY_KEY,value,who.code,new Date().toISOString()).run();
+  else await env.DB.prepare('DELETE FROM visit_notes WHERE key=?').bind(PAY_KEY).run();
   return json({ok:true});
  }
  if(method==='PUT'&&path.startsWith('/api/look/')){
