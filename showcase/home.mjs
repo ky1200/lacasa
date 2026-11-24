@@ -1,10 +1,10 @@
-// Home page (21 Nov): the three working pages first (To-buy, Floor plan, Research),
-// then what is next on the to-do list. The older room-by-room voting pages live at /earlier.
+// Home page (24 Nov): days to keys, today's plan, four page cards, next to-dos, shortcuts. The older room-by-room voting pages live at /earlier.
 import {BUY, buyTotals} from './buy-plan.mjs';
-import {dayLabel, sgToday, orderSums} from './buy.mjs';
-import {RESEARCH} from './research.mjs';
+import {dayLabel, sgToday} from './buy.mjs';
 import {PLAN} from './plan-data.mjs';
 import {palette} from './look.mjs';
+import {payList, payTotals} from './pay.mjs';
+import {DAY_DATE} from './day.mjs';
 const h = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 const sgd = n => 'S$' + Math.round(n).toLocaleString('en-SG');
 const KEYS = '2026-12-03', MOVE_IN = 'January 2027';
@@ -23,25 +23,23 @@ export function homePage(v = {}, today = sgToday(), {isOwner = false, audit = fa
  // Small to-scale preview: room boxes tinted by whose room it is, over the contractor's plan.
  const tint = {ky: '#b37509', ks: '#c2405a', kx: '#9b3c7d', living: '#b4532a', dining: '#6f7d1e', kitchen: '#13817a', yard: '#13817a', 'common-bath': '#1b8fb0', 'master-bath': '#6a4fb3'};
  const preview = `<svg class="hq-plan-svg" viewBox="300 700 ${W - 600} ${H - 1100}" aria-hidden="true" focusable="false"><image href="${h(PLAN.img)}" width="${W}" height="${H}" class="hq-plan-img"/>${PLAN.rooms.flatMap(r => tint[r.id] ? r.boxes.map(b => `<rect x="${b[0]}" y="${b[1]}" width="${b[2]}" height="${b[3]}" fill="${tint[r.id]}" fill-opacity=".16"/>`) : []).join('')}${PLAN.items.filter(i => i.kind === 'bed').map(i => {const s = i.sizes[0], w = i.r % 180 ? s.d : s.w, d = i.r % 180 ? s.w : s.d; return `<rect x="${i.x - w / 2}" y="${i.y - d / 2}" width="${w}" height="${d}" rx="60" fill="#fff" stroke="${tint[i.room]}" stroke-width="60"/>`;}).join('')}</svg>`;
+ const pt = payTotals(payList(v)), dayOn = today <= DAY_DATE;
  return `<article class="hq">
 <header class="hq-hero">
  <p class="hq-kicker">Move-in by ${MOVE_IN}</p>
- <h1>LaCasa</h1>
- <p class="hq-keys">${days > 0 ? `<b>${days}</b> ${days === 1 ? 'day' : 'days'} to the keys` : days === 0 ? '<b>Keys today</b>' : '<b>Keys collected</b>'}<span>${h(dayLabel(KEYS))}</span></p>
+ <h1 class="hq-keys">${days > 0 ? `<b>${days}</b> ${days === 1 ? 'day' : 'days'} to the keys` : days === 0 ? '<b>Keys today</b>' : '<b>Keys collected</b>'}</h1><p class="hq-keydate">${h(dayLabel(KEYS))}</p>
 </header>
-<nav class="hq-main" aria-label="Main pages">
- <a class="hq-tile hq-buy" href="/buy"><span class="hq-tile-name">To-buy list</span><strong class="hq-big">${sgd(t.before)}</strong><span class="hq-sub">before move-in · ${items} items${nextBuy ? ` · next buy ${h(dayLabel(nextBuy))}` : ''}</span><span class="hq-split"><span>After move-in <b>${sgd(t.after)}</b></span>${t.removed ? `<span>Maybe, not counted <b>${sgd(t.offTotal)}</b></span>` : ''}<span>Estimates inside <b>${sgd(t.est)}</b></span></span><span class="hq-go">Open the list</span></a>
- <a class="hq-tile hq-plan" href="/plan"><span class="hq-tile-name">Floor plan</span>${preview}<span class="hq-sub">Beds, sofa, toilets, lights, sockets and Wi-Fi, drawn to scale. Tap anything for its choices; each person can keep their own layout.</span><span class="hq-go">Open the plan</span></a>
- <a class="hq-tile hq-research" href="/research"><span class="hq-tile-name">Research</span><ul class="hq-topics">${RESEARCH.map(r => `<li><span>${h(r.title)}</span><i class="research-status s-${h(r.status.toLowerCase())}">${h(r.status)}</i></li>`).join('')}</ul><span class="hq-go">See the shortlists</span></a>
- <a class="hq-tile hq-look" href="/look"><span class="hq-tile-name">Mood board</span>${palette(v)}<span class="hq-sub">Mood board: sofa fabric, walls, curtains, floors and wardrobe. Our pick is marked; tap to choose.</span><span class="hq-go">Open the mood board</span></a>
+${dayOn ? `<a class="hq-today" href="/day"><span><small>${today === DAY_DATE ? 'Today' : h(dayLabel(DAY_DATE))}</small><b>Singapore day: deposit, bank, bathroom shops</b></span><span aria-hidden="true">›</span></a>` : ''}
+<nav class="hq-grid" aria-label="Main pages">
+ <a class="hq-card hq-buy" href="/buy"><small>To-buy list</small><strong class="hq-big">${sgd(t.before)}</strong><span>before move-in · ${items} items</span></a>
+ <a class="hq-card hq-pay" href="/pay"><small>Payments</small><strong>${sgd(pt.paid)}</strong><span>paid · <b>${sgd(pt.due)}</b> to pay</span></a>
+ <a class="hq-card hq-plan" href="/plan"><small>Floor plan</small>${preview}</a>
+ <a class="hq-card hq-look" href="/look"><small>Mood board</small>${palette(v)}</a>
 </nav>
-<section class="hq-orders" aria-labelledby="hq-orders-title"><div class="hq-next-head"><h2 id="hq-orders-title">Ordered</h2><a href="/buy#buy-pay">Payments</a></div>
- <ul>${(BUY.orders ?? []).map(o => { const rm = n => 'RM' + Number(n).toLocaleString('en-SG', {maximumFractionDigits: 2}), {paid, left} = orderSums(o), due = (o.due ?? [])[0], step = (o.steps ?? []).find(x => !x.date || x.date >= today); return `<li><a href="/buy#buy-pay"><b>${h(o.name)}</b><span class="hq-order-money"><span>Total <b>${rm(o.total)}</b></span><span>Paid <b>${rm(paid)}</b></span><span class="hq-order-due">Left <b>${rm(left)}</b></span></span>${due ? `<small>Pay ${rm(due.amount)} ${due.date ? `by ${h(dayLabel(due.date))}` : '(date to confirm)'}</small>` : ''}${step ? `<small>Next: ${h(step.s ?? step.t)}, ${step.label ? h(step.label) : step.date ? h(dayLabel(step.date)) : 'date to confirm'}</small>` : ''}</a></li>`; }).join('')}</ul></section>
 <section class="hq-next" aria-labelledby="hq-next-title"><div class="hq-next-head"><h2 id="hq-next-title">Next up</h2><span>${done} of ${todo.length} done</span></div>
- <ol class="hq-todo">${next.map(x => `<li><span class="buy-chip${x.date ? '' : ' is-now'}">${x.date ? h(dayLabel(x.date)) : 'Now'}</span><span class="hq-todo-text"><b>${h(x.t)}</b>${x.n ? `<small>${h(x.n)}</small>` : ''}</span></li>`).join('')}</ol>
+ <ol class="hq-todo">${next.slice(0, 4).map(x => `<li><span class="buy-chip${x.date ? (x.date < today ? ' is-late' : '') : ' is-now'}">${x.date ? h(dayLabel(x.date)) : 'Now'}</span><span class="hq-todo-text"><b>${h(x.t)}</b></span></li>`).join('')}</ol>
  <a class="text-link" href="/buy#buy-todo">All to-dos and ticks</a></section>
-<nav class="hq-quick" aria-label="Checklists and files"><a href="/day" class="hq-designer"><i aria-hidden="true">➜</i> 25 Nov day plan</a><a href="/pay" class="hq-designer"><i aria-hidden="true">$</i> Payments</a><a href="/plan?layout=designer#designer" class="hq-designer"><i aria-hidden="true">★</i> Designer’s pick</a><a href="/buy#buy-measure">3 Dec checklist</a><a href="/buy#buy-decisions">Reno decisions</a><a href="/buy#buy-qa">Quote checks</a><a href="/buy#buy-files">Contractor files</a><a href="/buy#buy-dates">Sale dates</a></nav>
-<a class="hq-earlier" href="/earlier"><span><b>Archive</b><small>Room-by-room choices, voting, the old shopping list and the 11 Nov site visit.</small></span><span aria-hidden="true">›</span></a>
-${isOwner || audit ? '' : '<p class="owner-link"><a class="text-link" href="/owner">Owner sign-in</a></p>'}
+<nav class="hq-quick" aria-label="Checklists and files"><a href="/buy#buy-measure">3 Dec checklist</a><a href="/buy#buy-qa">Quote checks</a><a href="/buy#buy-decisions">Reno decisions</a><a href="/buy#buy-files">Contractor files</a><a href="/plan?layout=designer#designer">Designer’s pick</a><a href="/research">Research</a></nav>
+<p class="hq-foot"><a class="text-link" href="/earlier">Archive</a>${isOwner || audit ? '' : ' · <a class="text-link" href="/owner">Owner sign-in</a>'}</p>
 </article>`;
 }

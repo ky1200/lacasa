@@ -35,7 +35,7 @@ function item(i,rate,v,ro,pics=true){
 <div class="buy-qty" role="group" aria-label="Quantity"><button type="button" data-b="minus" aria-label="One less"${dis}>−</button><output data-f="qty" aria-live="polite">${c.qty}</output><button type="button" data-b="plus" aria-label="One more"${dis}>+</button></div></div>
 <p class="buy-shop" data-f="shop">${shopLine(o)}</p>
 ${i.date?`<p class="buy-date"><a class="buy-chip" href="#day-${h(i.date)}">${h(dayLabel(i.date))}</a>${h(i.when??'')}</p>`:''}
-${i.note?`<p class="buy-note" data-f="note"${c.pick?' hidden':''}>${h(i.note)}</p>`:''}${list}</article>`;
+${i.note?`<details class="buy-note" data-f="note"${c.pick?' hidden':''}><summary><span>${h(i.note)}</span></summary></details>`:''}${list}</article>`;
 }
 
 // Month grids from the first to the last date that matters, Monday first.
@@ -76,21 +76,20 @@ function fold(id,tone,title,body,open=false,rawTitle=false,name=null){const n=na
 const decClass=s=>['Go ahead','Changed','New','Decided'].includes(s)?'is-done':s==='Removed'?'is-off':'is-open';
 export function buyPage(v={},ro=false,plan=BUY,today=sgToday()){
  const t=buyTotals(plan,v);
- const rooms=plan.rooms.map(r=>{const rt=t.rooms.find(x=>x.id===r.id);return `<section class="buy-room" id="buy-${h(r.id)}" data-room="${h(r.id)}" ${secAttrs(r.name,roomColour(r.id))}><details open><summary><span class="buy-room-name"><h2>${h(r.name)}</h2><small>${r.items.length} ${r.items.length===1?'item':'items'}</small></span><strong data-room-total>${sgd(rt.total)}</strong><span class="sec-caret" aria-hidden="true"></span></summary>${r.items.map(i=>item(i,plan.rate,v,ro,!NO_PHOTO_ROOMS.has(r.id))).join('')}${secClose(r.name)}</details></section>`;}).join('');
+ const rooms=plan.rooms.map(r=>{const rt=t.rooms.find(x=>x.id===r.id);return `<section class="buy-room" id="buy-${h(r.id)}" data-room="${h(r.id)}" ${secAttrs(r.name,roomColour(r.id))}><details><summary><span class="buy-room-name"><h2>${h(r.name)}</h2><small>${r.items.length} ${r.items.length===1?'item':'items'}</small></span><strong data-room-total>${sgd(rt.total)}</strong><span class="sec-caret" aria-hidden="true"></span></summary>${r.items.map(i=>item(i,plan.rate,v,ro,!NO_PHOTO_ROOMS.has(r.id))).join('')}${secClose(r.name)}</details></section>`;}).join('');
  const fileList=`<div class="buy-files">${plan.files.map(f=>`<a class="buy-file" href="${h(f.href)}" target="_blank" rel="noopener"><span class="buy-file-icon" aria-hidden="true">PDF</span><span class="buy-file-text"><b>${h(f.name)}</b><small>${h(f.note)}</small></span><span class="buy-file-open">Open ↗</span></a>`).join('')}</div>`;
- const lists=[['buy-todo','To do'],['buy-pay','Payments and deliveries'],['buy-files','Contractor files'],['buy-measure','3 Dec checklist'],['buy-dates','Sale and buy dates'],['buy-decisions','Reno decisions'],['buy-qa','Quote checks'],['buy-lights','Light types'],['buy-notes','Switches, Wi-Fi, aircon']];
+ const lists=[['buy-todo','To do'],['buy-files','Contractor files'],['buy-measure','3 Dec checklist'],['buy-dates','Sale and buy dates'],['buy-decisions','Reno decisions'],['buy-qa','Quote checks'],['buy-lights','Light types'],['buy-notes','Switches, Wi-Fi, aircon']];
  const nav=dock([{title:'Rooms',links:plan.rooms.map(r=>({href:`#buy-${r.id}`,name:r.name,meta:sgd(t.rooms.find(x=>x.id===r.id).total),colour:roomColour(r.id),sum:r.id}))},{title:'Lists and files',links:lists.map(([id,name])=>({href:`#${id}`,name}))}],
   `<details class="dock-pop dock-files"><summary class="dock-btn">Files</summary><div class="dock-sheet"><p class="dock-group">Contractor files</p>${plan.files.map(f=>`<a class="dock-file" href="${h(f.href)}" target="_blank" rel="noopener"><b>${h(f.name)}</b><small>${h(f.note)}</small></a>`).join('')}</div></details>`);
  return `<article class="buy-page" data-buy-page data-rate="${plan.rate}">
 <header class="buy-head"><span class="eyebrow">Prices checked ${h(dayLabel(plan.checked))} 2026</span><h1>To-buy list</h1>
-<p class="muted">Tag items Before, After or Maybe (not counted). Shared with the family. Tap a room's header, or press and hold inside it, to close it.</p></header>
+<p class="muted">Tap a room to open it. Tag each item Before, After or Maybe; changes save for the family.</p></header>
 <div class="buy-bar" data-stick><div class="buy-bar-top"><span class="buy-bar-label">Before move-in</span><strong class="buy-total" data-buy-before>${sgd(t.before)}</strong></div>
 <div class="buy-bar-meta"><span class="buy-after">After move-in: <b data-buy-after>${sgd(t.after)}</b></span><span>Both: <b data-buy-total>${sgd(t.total)}</b></span><span class="buy-off" data-buy-offwrap${t.removed?'':' hidden'}>Maybe, not in total: <b data-buy-off>${sgd(t.offTotal)}</b> (<span data-buy-removed>${t.removed===1?'1 item':t.removed+' items'}</span>)</span><span>Estimates in total: <b data-buy-est>${sgd(t.est)}</b></span><span class="buy-status" data-buy-status>${ro?'View only':'Saved'}</span></div></div>
 <fieldset class="buy-show"><legend>Show</legend>${['all',...TAGS].map(x=>`<label><input type="radio" name="buy-show" value="${x}" data-show${x==='all'?' checked':''}><span>${x==='all'?'All':x==='before'?'Before':x==='after'?'After':'Maybe'}</span></label>`).join('')}</fieldset>
 <p class="muted buy-rate">S$. RM at RM${plan.rate} = S$1 (${out(plan.rateSource,'rate')}). "Estimate" = no exact price yet. <a href="/buy.csv" download>Download CSV</a></p>
-<nav class="buy-jump" aria-label="On this page"><a href="#buy-todo">To do</a><a href="#buy-pay">Payments</a><a href="#buy-files">Contractor files</a><a href="#buy-measure">3 Dec checklist</a><a href="#buy-dates">Dates</a><a href="#buy-decisions">Reno decisions</a><a href="#buy-qa">Quote checks</a><a href="/plan">Floor plan</a><a href="/research">Research</a></nav>
+<nav class="buy-jump" aria-label="On this page"><a href="#buy-todo">To do</a><a href="#buy-measure">3 Dec checklist</a><a href="#buy-dates">Dates</a><a href="#buy-qa">Quote checks</a><a href="#buy-files">Files</a><a href="/pay">Payments ›</a></nav>
 ${todoList(plan,v,ro)}
-${paymentsPanel(plan)}
 ${fold('buy-files','tone-sand',`Contractor files <small class="buy-fold-meta">${plan.files.length} PDFs</small>`,`<p class="muted">Tap a file to open it.</p>${fileList}`,false,true,'Contractor files')}
 ${rooms}
 <h2 class="buy-more-title">Plans, checklists and notes</h2>

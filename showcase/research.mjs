@@ -283,9 +283,9 @@ export const RESEARCH = [
   ],
  },
  {
-  id: 'bath-shops', all: true, tone: 'indigo', short: 'Bathroom shop day', title: 'Bathroom shops: Wednesday 25 Nov route', rooms: ['common-bath', 'master-bath'], status: 'Shortlist', updated: '2026-11-24',
+  id: 'bath-shops', all: true, tone: 'indigo', short: 'Bathroom shop day', title: 'Bathroom shops list and toilet terms', rooms: ['common-bath', 'master-bath'], status: 'Shortlist', updated: '2026-11-24',
   chat: 'La Casa main chat',
-  answer: 'Wednesday 25 Nov: RIGEL Experience Centre in Changi Business Park at 10am (weekdays it closes at 5:30pm, so go first), Bathroom Gallery in Changi South for Hansgrohe and Kohler, the LIXIL (GROHE) centre in Joo Chiat after lunch, then Geylang Road from about 3pm: Haus Square first (closes 6:30pm), then King Eco, Bathzone, Bacera, and Heritage last (open till 8:30pm). The keys come on 3 Dec, so pick models on Wednesday but only confirm sizes after measuring: ask each shop if a deposit can hold the order and the toilet or vanity size can still be changed after 3 Dec.',
+  answer: 'The 25 Nov route with live times and what to ask at each shop is on the day plan (/day). This topic keeps the full shop list with hours, toilet terms (S-trap, setting out) and parking.',
   decide: [
    'Buy list for the day (RIGEL e-store prices 24 Nov, the price to beat): 2 × Gallant toilet S$525, common vanity R-BC7437 70 cm S$760, master vanity R-BC1260 60 cm dark brown S$500, 3-in-1 shower set S$450, 2-in-1 shower set S$400, 2 × bidet spray S$125. About S$3,410 for the RIGEL items; ask the Experience Centre for a package price for the lot.',
    'Ask every shop: can we pay a deposit now and change the toilet model or vanity width after we measure on 3 Dec? Get it on the receipt or WhatsApp.',

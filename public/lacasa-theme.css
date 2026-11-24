@@ -1399,3 +1399,47 @@ b,strong{font-weight:700}
 .day-svg{display:block;width:100%;max-width:420px;height:auto;margin:6px 0;background:#fff;border-radius:12px;border:1px solid var(--line)}
 .day-sources{font-size:12.5px;margin-top:12px}
 @media (max-width:420px){.day-stop{padding:10px 12px}.day-sum b{font-size:13.5px}}
+/* Phone tab bar (24 Nov): Home, To-buy, Plan, Payments, More */
+.tabbar{display:none}
+@media (max-width:650px){
+ .tabbar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:grid;grid-template-columns:repeat(5,1fr);background:rgba(251,250,247,.97);border-top:1px solid var(--line);padding:4px 4px max(6px,env(safe-area-inset-bottom));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+ .tabbar .tab{display:grid;justify-items:center;align-content:center;gap:2px;min-height:52px;color:var(--muted);text-decoration:none;font-size:12px;font-weight:500;list-style:none;cursor:pointer;border-radius:12px}
+ .tabbar .tab::-webkit-details-marker{display:none}
+ .tabbar svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+ .tabbar .tab-more summary svg{stroke-width:3.2}
+ .tabbar .tab.is-on{color:var(--indigo);font-weight:700}
+ .tab-more{position:relative}
+ .tab-sheet{position:absolute;right:4px;bottom:calc(100% + 10px);width:220px;display:grid;padding:6px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 10px 30px rgba(36,34,30,.18)}
+ .tab-sheet a{display:flex;align-items:center;min-height:48px;padding:0 12px;border-radius:10px;color:var(--sumi);text-decoration:none;font-size:15.5px}
+ .tab-sheet a[aria-current]{background:var(--indigo-soft);color:var(--indigo);font-weight:700}
+ body{padding-bottom:calc(70px + env(safe-area-inset-bottom))}
+ .dock{bottom:calc(74px + env(safe-area-inset-bottom))}
+ .nav-inner{height:52px!important}
+ .site-header{position:static}
+}
+.nav-person{display:none}
+/* Home (24 Nov) */
+.hq-hero{padding:14px 0 6px}.hq-hero .hq-kicker{margin:0;font-size:13px;color:var(--muted)}
+.hq-hero h1.hq-keys{font-size:clamp(28px,7vw,38px);margin:4px 0 0;font-weight:700}.hq-hero h1.hq-keys b{color:var(--indigo)}
+.hq-keydate{margin:2px 0 0;color:var(--muted);font-size:14px}
+.hq-today{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px 0;padding:14px 16px;border-radius:16px;background:var(--moss);color:#fff;text-decoration:none}
+.hq-today span:first-child{display:grid;gap:2px}.hq-today small{font-size:12.5px;color:#e3efe6;text-transform:uppercase;letter-spacing:.04em}.hq-today b{font-size:16.5px;line-height:1.3}.hq-today>span:last-child{font-size:26px}
+.hq-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.hq-card{display:grid;align-content:start;gap:4px;min-height:118px;padding:14px;border-radius:16px;background:var(--linen);border:1px solid var(--line);color:var(--body);text-decoration:none;overflow:hidden}
+.hq-card small{font-size:13px;font-weight:700;color:var(--sumi)}.hq-card strong{font-size:22px;color:var(--sumi);font-variant-numeric:tabular-nums;line-height:1.15}.hq-card span{font-size:13px;color:var(--muted);line-height:1.35}
+.hq-card.hq-buy{background:var(--indigo);border-color:var(--indigo)}.hq-card.hq-buy small,.hq-card.hq-buy strong{color:#fff}.hq-card.hq-buy span{color:#dfe4ee}
+.hq-card .hq-plan-svg{width:100%;height:auto;max-height:96px;border-radius:8px}
+.hq-card .look-palette,.hq-card [class*=palette]{margin-top:4px}
+.hq-todo .buy-chip.is-late{background:#9a4a1f;color:#fff}
+.hq-foot{margin:18px 0 8px;font-size:14px;color:var(--muted)}
+/* Long item notes: two lines, tap to read all */
+details.buy-note>summary{list-style:none;cursor:pointer;padding:4px 0;line-height:1.45}
+details.buy-note>summary>span{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+details.buy-note>summary::-webkit-details-marker{display:none}
+details.buy-note[open]>summary>span{display:block;-webkit-line-clamp:unset}
+details.buy-note:not([open])>summary{color:var(--muted)}
+.plan-fold>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;min-height:44px}
+.plan-fold>summary::-webkit-details-marker{display:none}.plan-fold>summary h2{margin:0}
+.plan-fold>summary::after{content:'▾';color:var(--muted)}.plan-fold[open]>summary::after{content:'▴'}
+.hq-hero h1.hq-keys b{font-size:inherit;font-weight:700}
+@media (min-width:900px){.hq-grid{grid-template-columns:repeat(4,1fr)}}

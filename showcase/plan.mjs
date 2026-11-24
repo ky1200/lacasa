@@ -71,9 +71,9 @@ ${data.items.some(i => i.add) ? `<div class="plan-addables" data-addables role="
 <p class="plan-scale muted">${h(PLAN.source)} Faint beds and chairs underneath are the contractor’s drawing.</p>
 <aside class="plan-sheet" data-sheet hidden aria-live="polite"></aside>
 ${designerNotes(layout)}
-<section class="buy-block buy-panel tone-indigo plan-cart" data-cart><h2>On the plan: chosen items</h2><div data-cart-list></div><p class="muted">Picks here and on the <a href="/buy">to-buy list</a> are the same; changing one changes the other.</p></section>
-<section class="buy-block buy-panel tone-sand"><h2>Research</h2><p class="muted">Shortlists and notes behind each choice.</p><ul class="plan-research-links">${RESEARCH.map(t => `<li><a href="/research#r-${h(t.id)}"><b>${h(t.title)}</b><span class="research-status s-${h(t.status.toLowerCase())}">${h(t.status)}</span></a></li>`).join('')}</ul></section>
-<p class="plan-fine">Works like room planners (Floorplanner, Planner 5D: a plan image with a set scale and true-size furniture) and Wi-Fi planners (NetSpot, Hamina: routers on a floor plan with wall losses), kept simple for phones.</p>
+<details class="buy-block buy-panel tone-indigo plan-cart plan-fold" data-cart><summary><h2>On the plan: chosen items</h2></summary><div data-cart-list></div><p class="muted">Picks here and on the <a href="/buy">to-buy list</a> are the same; changing one changes the other.</p></details>
+
+
 <script id="plan-data" type="application/json">${JSON.stringify(data).replace(/</g, '\\u003c')}</script>
 </article>`;
 }

@@ -110,16 +110,16 @@ test('to-buy: to-do list near the top with shared ticks; clear file cards; vinyl
  assert.match(html,/<a class="buy-file" href="\/files\/iniche-quotation-2026-11-23\.pdf" target="_blank"[^>]*><span class="buy-file-icon"[^>]*>PDF<\/span>[\s\S]*?Open ↗/);
  assert.match(html,/id="it-contractor-f2-vinyl-3-bedrooms"[\s\S]*?<span class="buy-decided">Decided<\/span>/);
  assert.ok(!items.some(i=>/exhaust|false ceiling/i.test(i.name)),'no window exhaust fan or false ceiling items');
- for(const t of BUY.todo){if(t.date)assert.match(t.date,/^2026-1[12]-\d\d$/);if(t.href?.startsWith("#"))assert.ok(html.includes(`id="${t.href.slice(1)}"`),t.href);else if(t.href)assert.match(t.href,/^\/(?:research#r-|look#look-)/);}
+ for(const t of BUY.todo){if(t.date)assert.match(t.date,/^2026-1[12]-\d\d$/);if(t.href?.startsWith("#"))assert.ok(html.includes(`id="${t.href.slice(1)}"`),t.href);else if(t.href)assert.match(t.href,/^\/(?:research#r-|look#look-|pay$|day$)/);}
 });
 
-test('payments: exact paid and left per order, due dates, delivery steps on /buy and home',async()=>{
+test('payments: exact paid and left per order and due dates; /buy links to /pay instead of repeating it',async()=>{
  const {orderSums}=await import('../../showcase/buy.mjs');
  const d=BUY.orders.find(o=>o.id==='dunlopillo'),v=BUY.orders.find(o=>o.id==='vhaus');
  assert.deepEqual(orderSums(d),{paid:8000,left:11999});assert.deepEqual(orderSums(v),{paid:4355,left:10161.62});
  assert.equal(d.due[0].date,'2026-12-19');assert.ok(v.steps.some(x=>x.date==='2026-12-08'));
  const s={...visitorState(content,samples,{code:'FAMILY',name:'Family'},[],[],false),visit:{}},html=renderPage(s,'https://lacasa.test/buy').html;
- assert.match(html,/id="buy-pay"[\s\S]*?Still to pay<b>RM22,160\.62/);assert.match(html,/Next payment: <b>RM11,999<\/b>/);
- assert.ok(html.indexOf('id="buy-pay"')<html.indexOf('id="buy-contractor"'));assert.match(html,/id="day-2026-12-08"[\s\S]*?V Haus measures/);
- assert.match(renderPage(s,'https://lacasa.test/').html,/Pay RM11,999 by Sat 19 Dec/);
+ assert.doesNotMatch(html,/id="buy-pay"/);assert.match(html,/href="\/pay"/);
+assert.match(html,/id="day-2026-12-08"[\s\S]*?V Haus measures/);
+ assert.match(renderPage(s,'https://lacasa.test/').html,/class="hq-card hq-pay" href="\/pay"/);
 });
