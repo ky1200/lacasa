@@ -681,6 +681,7 @@ root.querySelectorAll('[data-copy]').forEach(b => {
 });
 
 // ---------- start ----------
+root.querySelector('[data-3d]')?.addEventListener('click', e => {const b = e.currentTarget, v = (document.querySelector('script[src*="plan.js"]')?.src.split('?')[1] ?? ''); b.disabled = true; b.textContent = 'Loading 3D…'; import('/plan3d.js' + (v ? '?' + v : '')).then(m => m.open(D, items)).catch(() => alert('3D view could not load. Check the connection and try again.')).finally(() => {b.disabled = false; b.textContent = '3D view';});});
 wifiBar.hidden = !layers.has('wifi');
 drawAll(); drawCart(); drawCounts(); emptySheet();
 const start = decodeURIComponent(location.hash.slice(1)), first = items.find(i => i.id === start);
