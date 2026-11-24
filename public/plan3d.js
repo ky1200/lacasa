@@ -20,7 +20,7 @@ const COUNTERS = [[7620, 10230, 10350, 10840, 900], [8870, 8400, 10950, 9000, 90
 const SPAWN = {all: [11700, 10300, 10500, 4000], living: [10500, 5900, 10600, 2000], dining: [11900, 8700, 10300, 7200], kitchen: [10700, 9500, 8300, 10300], ky: [5000, 3950, 3000, 1600], ks: [7000, 4700, 7000, 1500], kx: [4300, 4400, 1200, 6800]};
 const FLOOR = {ky: 'oak', ks: 'oak', kx: 'oak', 'master-bath': 'bath', 'common-bath': 'bath', yard: 'bath', hs: 'plain'};
 const ROOMS = [['all', 'Whole home'], ['living', 'Living'], ['dining', 'Dining'], ['kitchen', 'Kitchen'], ['ky', 'KY'], ['ks', 'KS'], ['kx', 'KX']];
-const C = {wall: '#f3eee4', door: '#7b3f24', main: '#4a2a1c', steel: '#9aa0a3', fabric: '#b3aa9c', bed: '#bdb4a8', linen: '#f4f1ea', oak: '#d6b98f', walnut: '#5f3f2a', black: '#1e1e1e', white: '#f6f6f3', stone: '#d8d2c6', steelApp: '#c9ccce', vanity: '#4b3426', glass: '#bcd6df', curtain: '#d9ccb6', sheer: '#f7f5f0', counter: '#3b3b3b', cabinet: '#ece7dd'};
+const C = {wall: '#f3eee4', door: '#7b3f24', main: '#4a2a1c', steel: '#9aa0a3', fabric: '#cdbca5', bed: '#bdb4a8', linen: '#f4f1ea', oak: '#d6b98f', walnut: '#5f3f2a', black: '#1e1e1e', white: '#f6f6f3', stone: '#d8d2c6', steelApp: '#c9ccce', vanity: '#4b3426', glass: '#bcd6df', curtain: '#d9ccb6', sheer: '#f7f5f0', counter: '#3b3b3b', cabinet: '#ece7dd'};
 
 // ---- Textures drawn on a canvas (no downloads) ----
 function tex(draw, size, repeatX, repeatY) {

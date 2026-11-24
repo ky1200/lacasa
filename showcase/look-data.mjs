@@ -14,8 +14,8 @@ export const LOOK = {
  updated: '2026-11-23',
  inspiration: {img: '/images/look/living-inspiration.webp', note: 'The look the family likes: warm white walls, cream floor, soft cove lighting, beige curtains over white sheers, a light wood TV console. Our real floor is the same light cream tile, so this picture is close.'},
  boards: [
-  {id: 'sofa', title: 'Sofa fabric', room: 'Living room', rec: 3, why: 'Warm Driftwood is a warm taupe-grey. Our floor is light cream tile, so a light sofa would blend into it; Driftwood stands out, sits calmly between the walnut dining set and the red-brown doors, and a mid tone hides daily marks far better than the lighter fabrics. Soft Clay is the choice if the family wants the light, airy showroom look instead. Avoid red or orange-brown fabrics: they would fight with the doors.',
-   note: 'From the V Haus fabric book (photo 23 Nov; colours in the photo look greyer than in person, and 05 was not in the photo). The order sheet says RU002 (pillows RU003). V Haus says the colour can still change for now (23 Nov): tell Jason the final fabric code before the factory order, and ask for the 2 free pillows in a matching or accent colour.',
+  {id: 'sofa', title: 'Sofa fabric', room: 'Living room', rec: 8, why: 'Chosen 24 Nov and confirmed with V Haus: RU002 Almond, the easy-clean fabric. A warm beige that wipes clean, goes with the oatmeal curtains and the walnut dining set, and is the colour already on the order. The textured range below was the other option (harder to clean).',
+   note: 'From the V Haus fabric book (photo 23 Nov; colours in the photo look greyer than in person, and 05 was not in the photo). The order sheet says RU002 (pillows RU003). Final: RU002 Almond, easy-clean range, confirmed with V Haus on 24 Nov. Pillows RU003.',
    options: [
     {name: '01 Alaska', note: 'Creamy white. Brightest, shows marks most.', img: '/images/look/sofa-fabric-01-alaska.webp', sw: ['#e9e5da']},
     {name: '02 Soft Clay', note: 'Light warm greige, close to the showroom sofa. Light and calm with the cream floor.', img: '/images/look/sofa-fabric-02-soft-clay.webp', sw: ['#d9d0c1']},
@@ -25,6 +25,7 @@ export const LOOK = {
     {name: '07 Silk Grey', note: 'Light cool grey. A cooler look against the warm walnut.', img: '/images/look/sofa-fabric-07-silk-grey.webp', sw: ['#d3d4d0']},
     {name: '08 Pablo', note: 'Mid grey. Practical, but cooler than the rest of the room.', img: '/images/look/sofa-fabric-08-pablo.webp', sw: ['#a9aaa6']},
     {name: '09 Inkwell', note: 'Charcoal. Hides everything; heavy in a light room.', img: '/images/look/sofa-fabric-09-inkwell.webp', sw: ['#77787a']},
+    {name: 'RU002 Almond (easy clean): chosen', note: 'Easy-clean fabric, warm beige. Chosen and confirmed with V Haus on 24 Nov.', img: '/images/look/sofa-fabric-ru002-almond.webp', sw: ['#cdbca5']},
    ]},
   {id: 'direction', title: 'Overall look', room: 'Whole home', rec: 0, why: 'It follows the inspiration picture and the walnut dining set, and every other choice on this page works with it.',
    options: [

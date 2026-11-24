@@ -12,15 +12,15 @@ import {lookPage} from '../../showcase/look.mjs';
 function database(){const sqlite=new DatabaseSync(':memory:');for(const f of readdirSync(new URL('../../migrations/',import.meta.url)).filter(f=>f.endsWith('.sql')).sort())sqlite.exec(readFileSync(new URL('../../migrations/'+f,import.meta.url),'utf8'));const prepare=(sql,args=[])=>({bind(...values){return prepare(sql,values);},async all(){return{results:sqlite.prepare(sql).all(...args)};},async run(){sqlite.prepare(sql).run(...args);return{};},async first(){return sqlite.prepare(sql).get(...args)??null;}});return {sqlite,prepare:sql=>prepare(sql)};}
 const put=async(DB,key,value,view='')=>(await api(new Request('https://lacasa.test/api/look/'+encodeURIComponent(key)+view,{method:'PUT',headers:{'content-type':'application/json',origin:'https://lacasa.test'},body:JSON.stringify({value})}),{DB},content,samples)).status;
 
-test('mood board data: every board has a valid pick, images exist, Warm Driftwood is the sofa pick', () => {
+test('mood board data: every board has a valid pick, images exist, RU002 Almond is the sofa pick', () => {
  for (const b of LOOK.boards) {
   assert.ok(b.rec >= 0 && b.rec < b.options.length, b.id);
   assert.ok(b.why, b.id);
   for (const o of b.options) if (o.img) assert.ok(existsSync(new URL('../../public' + o.img, import.meta.url)), o.img);
  }
  const sofa = LOOK.boards.find(b => b.id === 'sofa');
- assert.equal(sofa.options[sofa.rec].name, '04 Warm Driftwood');
- assert.equal(sofa.options.length, 8);
+ assert.equal(sofa.options[sofa.rec].name, 'RU002 Almond (easy clean): chosen');
+ assert.equal(sofa.options.length, 9);
  assert.ok(existsSync(new URL('../../public' + LOOK.inspiration.img, import.meta.url)));
 });
 
@@ -29,9 +29,9 @@ test('choices: empty means our pick, a saved index overrides it, bad values reje
  assert.equal(lookChoice(b, {}), b.rec);
  assert.equal(lookChoice(b, {'l:sofa': '1'}), 1);
  assert.equal(lookChoice(b, {'l:sofa': '99'}), b.rec);
- assert.ok(validLookValue(b, '') && validLookValue(b, '7'));
+ assert.ok(validLookValue(b, '') && validLookValue(b, '8'));
  assert.ok(LOOK.boards.some(x => x.id === 'doors'));
- assert.ok(!validLookValue(b, '8') && !validLookValue(b, 'x'));
+ assert.ok(!validLookValue(b, '9') && !validLookValue(b, 'x'));
  assert.equal(lookKeys().size, LOOK.boards.length);
 });
 
