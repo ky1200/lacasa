@@ -1487,3 +1487,4 @@ button.pg-tick{cursor:pointer}button.pg-tick:active{background:var(--plaster)}
 .hq-progress-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}.hq-progress-top b{font-size:18px;color:var(--sumi)}.hq-progress-top span{font-size:14px;color:var(--muted)}
 .hq-progress-next{font-size:14.5px;color:var(--sumi);line-height:1.4}.hq-progress-last{font-size:13.5px;color:var(--muted);line-height:1.4}
 .hq-progress-go{font-size:14.5px;font-weight:700;color:var(--moss)}
+.day-km{margin:8px 0 0;font-size:14px}.day-km b{color:var(--sumi)}

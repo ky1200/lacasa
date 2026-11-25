@@ -138,7 +138,7 @@ export function dayPage(v = {}, ro = false) {
   const t = times[i], g = s.shop ? SHOPS[s.shop] : null;
   return `<li class="day-stop${t.skip ? ' is-skip' : ''}${t.here ? ' is-here' : ''}${t.done ? ' is-done' : ''}" data-stop="${s.id}">
 <div class="day-body"><div class="day-time"><span class="day-num" aria-hidden="true">${i + 1}</span><b data-start>${h(label12(t.start))}</b><small data-plan>${t.late ? `plan ${h(label12(t.plan))}` : 'on plan'}</small></div><h3>${h(s.n)}</h3><p class="day-sub">${h(s.sub)}</p>
-<p class="day-meta">${h([i && s.drive ? `Drive ≈${s.drive} min` : '', s.stay ? `Stay ${g ? g.time : s.stay + ' min'}` : '', s.notBefore ? `not before ${label12(s.notBefore)}` : '', s.by ? `by ${label12(s.by)}` : '', s.hoursNote ? s.hoursNote : s.close ? `closes ${label12(s.close)}` : ''].filter(Boolean).join(' · '))}</p>
+<p class="day-meta">${h([i && s.drive ? `Drive ≈${s.drive} min${s.route && DAY_ROUTES[s.route] ? ` · ${DAY_ROUTES[s.route].km} km` : ''}` : '', s.stay ? `Stay ${g ? g.time : s.stay + ' min'}` : '', s.notBefore ? `not before ${label12(s.notBefore)}` : '', s.by ? `by ${label12(s.by)}` : '', s.hoursNote ? s.hoursNote : s.close ? `closes ${label12(s.close)}` : ''].filter(Boolean).join(' · '))}</p>
 <p class="day-warn" data-warn${t.warn.length ? '' : ' hidden'}>${h(t.warn.join(' · '))}</p>
 <p class="day-wait" data-wait${t.wait > 0 ? '' : ' hidden'}>${t.wait > 0 ? `${t.wait} min spare before this` : ''}</p>
 ${ro ? '' : `<div class="day-acts"><button type="button" data-act="a">${log.a[s.id] ? (s.btn ?? 'Arrived') + ' ' + h(label12(log.a[s.id])) : (s.btn ?? 'Arrived') + ' now'}</button>${s.stay ? `<button type="button" data-act="l">${log.l[s.id] ? 'Left ' + h(label12(log.l[s.id])) : 'Left now'}</button>` : ''}${s.opt ? `<button type="button" data-act="skip">${t.skip ? 'Add back' : 'Skip'}</button>` : ''}</div>`}
@@ -150,6 +150,7 @@ ${s.todo || g ? `<details class="day-more"><summary>${g ? 'What to look at and a
  return `<section class="day-page" data-day-page${ro ? ' data-ro' : ''}>
 <header class="day-head"><p class="eyebrow">Wed 25 Nov · Singapore</p><h1>Deposit, bank + lawyer, bathroom shops</h1>
 <p class="muted">Times move for everyone. Tap <b>Arrived now</b> and <b>Left now</b> at each stop (or Edit times to type one); every later stop re-plans. Drive times are estimates with weekday traffic; check Waze for the live one.</p></header>
+<p class="day-km muted">Driving in Singapore today: about <b>${Object.values(DAY_ROUTES).reduce((a, r) => a + r.km, 0).toFixed(0)} km</b> (checkpoint to checkpoint), about ${Math.round(Object.values(DAY_ROUTES).reduce((a, r) => a + r.min, 0) / 60 * 10) / 10} hours without traffic.</p>
 <div class="day-sum" data-sum><div><small>Now</small><b data-now>–</b></div><div><small>Next</small><b data-next>–</b></div><div><small>Against plan</small><b data-late>–</b></div></div>
 <div class="day-map" id="day-map" role="img" aria-label="Map of the day's stops and drives"></div>
 <p class="day-mapnote muted">Map: OneMap © Singapore Land Authority. Lines follow the roads (OSRM).</p>
