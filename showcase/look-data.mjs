@@ -87,6 +87,36 @@ export const LOOK = {
     {name: 'Black slim frame + clear glass', note: 'Most open; kitchen fully visible.', sw: ['#1d1d1d', 'clear']},
     {name: 'Champagne frame + frosted glass', note: 'Softer, warmer; full privacy.', sw: ['#c9a96e', 'frosted']},
    ]},
+  {id: 'bath-tiles', title: 'Common bathroom half-wall tiles (and niche)', room: 'Bathrooms', rec: 0, why: 'A matt light grey sits well with gunmetal fittings, hides water marks and soap film better than gloss, and is easy to wipe. Large tiles mean fewer grout lines to scrub.',
+   note: 'I-Niche F4 (quote allows tiles up to S$3.50/sq ft). Match or tone with the existing bathroom wall tiles: photo them on 3 Dec. Ask for waterproofing + a 24-hour ponding test before tiling. Pick by 4 Dec.',
+   options: [
+    {name: 'Matt light grey, large (30 × 60 cm)', short: 'Light grey', note: 'Calm, hides marks, few grout lines; goes with gunmetal.', sw: ['#c9c8c3', '#4a4846']},
+    {name: 'Matt warm beige, large (30 × 60 cm)', short: 'Warm beige', note: 'Ties in with the cream floor tiles; warmer feel.', sw: ['#d8cbb6', '#4a4846']},
+    {name: 'White gloss subway (7.5 × 30 cm)', short: 'White subway', note: 'Classic look, but many grout lines and shows water spots.', sw: ['#f4f3ef', '#d9d7d1']},
+    {name: 'Terrazzo-look, matt', short: 'Terrazzo', note: 'Speckles hide splashes well; busier pattern.', sw: ['#dcd6cc', '#8f8a82']},
+   ]},
+  {id: 'grout', title: 'Grout colour (regrouting both bathrooms)', room: 'Bathrooms', rec: 0, why: 'Light grey hides the grey-brown staining that white grout shows within months, and still looks clean next to light tiles.',
+   note: 'I-Niche F5. Ask whether the grout is epoxy or cement (epoxy resists stains and mould best; costs more).',
+   options: [
+    {name: 'Light grey', note: 'Best balance: looks clean, hides stains.', sw: ['#b9b7b1']},
+    {name: 'White', note: 'Brightest at first; shows dirt and mould quickly.', sw: ['#f2f1ec']},
+    {name: 'Dark grey', note: 'Hides everything; strong grid look on light tiles.', sw: ['#5b5a57']},
+   ]},
+  {id: 'bath-door', title: 'Common bathroom door', room: 'Bathrooms', rec: 0, why: 'A slide-and-swing aluminium door does not rot or swell in a wet room and saves floor space. A dark woodgrain frame sits with the red-brown doors that are staying.',
+   note: 'New water-resistant door for the common bathroom (aluminium slide-and-swing is an option in the quote at S$480). The old bathroom door moves to KY room. Ask John for photos and the lock type. Pick by 4 Dec.',
+   options: [
+    {name: 'Slide-and-swing, dark woodgrain frame + frosted panel', short: 'Woodgrain', note: 'Matches the existing doors; privacy glass lets light in.', sw: ['#5a3426', 'frosted']},
+    {name: 'Slide-and-swing, black frame + frosted panel', short: 'Black', note: 'Matches the black kitchen glass door; more modern.', sw: ['#1d1d1d', 'frosted']},
+    {name: 'Slide-and-swing, black frame + fluted panel', short: 'Fluted', note: 'More texture, same privacy.', sw: ['#1d1d1d', 'fluted']},
+    {name: 'Solid swing door, waterproof (PVC/ABS) woodgrain', short: 'Solid', note: 'No glass; needs swing space; usually cheaper.', sw: ['#6a2a20']},
+   ]},
+  {id: 'shower-glass', title: 'Shower glass (master screen + common panel)', room: 'Bathrooms', rec: 0, why: 'Clear frameless glass keeps the small bathrooms open and has no frame corners for grime. A nano coating makes water bead off, so a quick squeegee keeps it clear.',
+   note: 'I-Niche E4 (master screen) and E3 (common fixed panel on the half wall). Ask for 10 mm tempered glass, the hinge/clamp finish (gunmetal or black to match), and a nano coating price. Pick by 4 Dec.',
+   options: [
+    {name: 'Frameless clear + nano coating', short: 'Frameless clear', note: 'Most open; easiest to clean.', sw: ['clear', '#4a4846']},
+    {name: 'Black slim frame + clear', short: 'Black frame', note: 'Graphic look; frame corners need wiping.', sw: ['#1d1d1d', 'clear']},
+    {name: 'Frosted / fluted panel', short: 'Frosted', note: 'Privacy, hides water spots; darker shower.', sw: ['fluted', '#4a4846']},
+   ]},
  ],
 };
 
