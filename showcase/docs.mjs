@@ -5,6 +5,8 @@ import {dayLabel} from './buy.mjs';
 
 const h = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 export const DOCS_FOLDER = 'https://drive.google.com/drive/folders/1Z1XUukT2HPH9mqsTGoTI08HW0BpaPQOG';
+// Drive layout (26 Nov): 00 START HERE index doc + 1 Management (MCST), 2 Contractor (I-Niche), 3 Furniture orders, 4 The flat (photos).
+export const DOCS_INDEX = 'https://docs.google.com/document/d/1ZSXglr_SOP7K8WQiiwlCDDhOpWJCIQjaBwlpMpIi9Yo/edit';
 const D = id => `https://drive.google.com/file/d/${id}/view`;
 
 export const DOCS = [
@@ -48,8 +50,8 @@ export function docsPage() {
  return `<section class="doc-page">
 <header class="doc-head"><p class="eyebrow">${n} documents</p><h1>Documents and rules</h1>
 <p class="muted">Receipts, orders, quotes and photos in one place. Photos and receipts open from the family Google Drive folder (only for people it is shared with); quotes and plans open here.</p>
-<a class="button primary doc-folder" href="${DOCS_FOLDER}" target="_blank" rel="noopener">Open the Drive folder ↗</a>
-<p class="doc-add muted">To add one: put the photo or PDF in the Drive folder (name it "date + what"), then post it on Progress so everyone knows.</p></header>
+<div class="doc-btns"><a class="button primary doc-folder" href="${DOCS_FOLDER}" target="_blank" rel="noopener">Open the Drive folder ↗</a><a class="button secondary doc-folder" href="${DOCS_INDEX}" target="_blank" rel="noopener">Start-here index ↗</a></div>
+<p class="doc-add muted">The Drive folder has 4 numbered folders: 1 Management, 2 Contractor, 3 Furniture orders, 4 The flat. To add a document: name it "date + who + what + amount", put it in the matching folder, then post it on Progress so everyone knows.</p></header>
 <section class="doc-rules" id="rules" aria-labelledby="rules-h"><h2 id="rules-h">Renovation rules</h2><dl>${RULES.map(([k, v]) => `<div><dt>${h(k)}</dt><dd>${h(v)}</dd></div>`).join('')}</dl></section>
 ${DOCS.map(g => `<section class="doc-group"><h2>${h(g.g)}</h2><ol class="doc-list">${g.items.map(row).join('')}</ol></section>`).join('')}
 </section>`;
