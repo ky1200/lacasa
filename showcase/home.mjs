@@ -1,4 +1,6 @@
 // Home page (24 Nov): days to keys, today's plan, four page cards, next to-dos, shortcuts. The older room-by-room voting pages live at /earlier.
+import {cmpTarget} from './compare.mjs';
+import {DOCS} from './docs.mjs';
 import {BUY, buyTotals} from './buy-plan.mjs';
 import {dayLabel, sgToday} from './buy.mjs';
 import {PLAN} from './plan-data.mjs';
@@ -37,11 +39,13 @@ ${dayOn ? `<a class="hq-today" href="/day"><span><small>${today === DAY_DATE ? '
  <a class="hq-card hq-pay" href="/pay"><small>Payments</small><strong>${sgd(pt.paid)}</strong><span>paid · <b>${sgd(pt.due)}</b> to pay</span></a>
  <a class="hq-card hq-plan" href="/plan"><small>Floor plan</small>${preview}</a>
  <a class="hq-card hq-look" href="/look"><small>Mood board</small>${palette(v)}</a>
+ <a class="hq-card hq-bath" href="/bathrooms"><small>Bathrooms</small><strong>${sgd(cmpTarget())}</strong><span>gunmetal, all in SG · shop quotes</span></a>
+ <a class="hq-card hq-docs" href="/docs"><small>Documents</small><strong>${DOCS.length}</strong><span>receipts, orders, forms</span></a>
 </nav>
 <section class="hq-next" aria-labelledby="hq-next-title"><div class="hq-next-head"><h2 id="hq-next-title">Next up</h2><span>${done} of ${todo.length} done</span></div>
  <ol class="hq-todo">${next.slice(0, 4).map(x => `<li><span class="buy-chip${x.date ? (x.date < today ? ' is-late' : '') : ' is-now'}">${x.date ? h(dayLabel(x.date)) : 'Now'}</span><span class="hq-todo-text"><b>${h(x.t)}</b></span></li>`).join('')}</ol>
  <a class="text-link" href="/buy#buy-todo">All to-dos and ticks</a></section>
-<nav class="hq-quick" aria-label="Checklists and files"><a href="/docs#rules">Reno rules</a><a href="/docs">Documents</a><a href="/buy#buy-measure">3 Dec checklist</a><a href="/buy#buy-qa">Quote checks</a><a href="/buy#buy-decisions">Reno decisions</a><a href="/buy#buy-files">Contractor files</a><a href="/plan?layout=designer#designer">Designer’s pick</a><a href="/research">Research</a></nav>
+<nav class="hq-quick" aria-label="Checklists and files"><a href="/docs#rules">Reno rules</a><a href="/buy#buy-measure">3 Dec checklist</a><a href="/buy#buy-qa">Quote checks</a><a href="/buy#buy-decisions">Reno decisions</a><a href="/buy#buy-files">Contractor files</a><a href="/plan?layout=designer#designer">Designer’s pick</a><a href="/research">Research</a></nav>
 <p class="hq-foot"><a class="text-link" href="/earlier">Archive</a>${isOwner || audit ? '' : ' · <a class="text-link" href="/owner">Owner sign-in</a>'}</p>
 </article>`;
 }

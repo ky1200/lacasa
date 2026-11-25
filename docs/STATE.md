@@ -1,22 +1,13 @@
-# LaCasa Showcase — progress log
+# LaCasa — progress log
 
-## Current state
+Current state (26 Nov 2026): site on Cloudflare Workers + D1 at https://lacasa.kayikkwong.workers.dev (moved from ChatGPT Sites on 30 Oct). The full working notes are the project handover doc `claude/lacasa-handover.md` in the claude.ai project; this file is a short change log only. The table and notes from October below are history.
 
-| Item | Value |
-|---|---|
-| Spec | Backbone v3 plus public-link and product-page overrides, 29 October 2026 |
-| Site | https://lacasa-family-home.kayikkwong.chatgpt.site |
-| Audience | Anyone with the link; no invitations or extra editors |
-| Entry | Choose KY, KX or KS; remembered in a validated HttpOnly cookie; honor system |
-| Owner controls | Trusted ChatGPT owner sign-in plus KY; selecting KY alone grants no admin access |
-| LACASA_PEOPLE setting | Not needed; replaced by K's requested name selector |
-| Claude review | /audit and /audit/brief.txt; read only, no fourth voter; external review not yet run |
-| Real content | 11 areas; 33 Researching items; one Ready to vote item; two browsable comparisons; four real options; four displayed official photos, seven historical photos retained |
-| Sample mode | Two made-up comparisons; owner sample mode plus read-only audit; excluded from shopping totals |
-| Checks | 97 automated tests, strict TypeScript, production build and compiled Worker/D1 acceptance pass |
-| Browser checks | Round 2: 90 routes checked at 320 px; zero overflow/empty images; two phone columns, differences, tap-loaded modal and media cleanup checked |
-| Publication | Audit round 4 functional release version 25 succeeded; documentation follow-up includes receipt |
-| Still not verified | Door fire-door certificate/fit/complete installed quotes; exact independent vacuum review videos; full video streaming on real phones; final measurements and external audit |
+## 26 November 2026 — tidy-up
+- New page /bathrooms: split plan (Singapore water items vs Malaysia), the shop price check (moved from /day) and the bathroom guide updated for gunmetal. Nav: Day plan removed; /day kept in the Archive, marked done.
+- Home: 6 cards (adds Bathrooms and Documents). Desktop /plan: no more big gaps between the control rows.
+- 3D view: kitchen redrawn as the galley on the plan (sink run backs onto the dining wall, glass sliding door in the 90 cm kitchen entrance), fridge in its own space, tall store cabinet, main door at its real line; beds use the ordered frame + mattress heights (KX no headboard), basins at 89 / 80 cm, sofa 107 cm high; whole-home view starts square to the 2D plan.
+- Facts fixed: Dunlopillo deposit RM7,999 / balance RM12,000 everywhere; V Haus wardrobe measured 8 Dec; bathroom research in gunmetal prices; Toshiba fridge S$929; washer S$1,489 in store; done steps (25 Nov) marked; to-do `bath-shops` replaced by `bath-quote`.
+- Darker secondary text for readability. Tests: 151 pass.
 
 ## 19 November 2026 — To-buy list page
 

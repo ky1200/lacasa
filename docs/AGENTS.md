@@ -1,3 +1,7 @@
+# LaCasa — rules for every task
+
+**Current (26 Nov 2026):** the site is a Cloudflare Worker (repo ky1200/lacasa). Start from the project handover doc `claude/lacasa-handover.md` and README.md. Most of the October rules below (ChatGPT Sites, voting, the item workflow) describe the archived voting pages at /earlier and no longer apply to the current pages.
+
 # LaCasa Showcase — rules for every task
 
 ## Current access — K changed this on 23 October 2026

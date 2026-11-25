@@ -16,6 +16,6 @@ test('compare: quotes are checked and sorted with online prices', () => {
  assert.equal(cmpLog({[CMP_KEY]: 'x'}).length, 0);
  assert.equal(cmpTarget(), 5061);
  for (const i of CMP_ITEMS) assert.ok(i.p.length);
- assert.match(dayPage({}), /id="price-check"/);
+ assert.doesNotMatch(dayPage({}), /id="price-check"/);
  assert.doesNotMatch(comparePage({}, true), /Add a shop price/);
 });

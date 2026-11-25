@@ -18,7 +18,7 @@ test('progress: step states from ticks and dates', () => {
  assert.equal(stepState({date: '2026-12-05', auto: true}, {}, '2026-12-06'), 'done');
  const a = progressSummary({}, '2026-11-25'), b = progressSummary({'t:quote2': '1'}, '2026-11-25');
  assert.equal(b.done, a.done + 1);
- assert.equal(b.upcoming[0].st, 'now');
+ assert.equal(b.upcoming[0].st, 'next');
 });
 test('progress: updates are checked and newest first', () => {
  assert.ok(validUpdate({w: 'KY', t: 'Deposit paid'}));

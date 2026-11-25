@@ -9,13 +9,15 @@ const DOOR_H = 2100;
 // Windows: [wall index, from, to (along the wall), sill height, head height]
 const WINDOWS = [[1, 800, 1950, 1000, 2100], [3, 2950, 5450, 500, 2300], [5, 5700, 8550, 500, 2300], [9, 9200, 12300, 400, 2400], [14, 5900, 7800, 500, 2300], [20, 9100, 10300, 1000, 2100]];
 // Door openings cut into a wall: [wall index, from, to]
-const GAPS = [[30, 11050, 12160]];
+const GAPS = [[30, 11120, 12200]];
 // Walls that are really door leaves on the plan
 const NOT_WALLS = new Set([8]);
 // Door leaves shown open: [hinge x, hinge y, end x, end y, kind]
-const DOORS = [[5477, 4100, 5477, 3330, 'room'], [5850, 4170, 5850, 4960, 'room'], [4704, 5342, 4704, 6150, 'room'], [6800, 6235, 6800, 7020, 'room'], [2117, 4060, 2117, 3260, 'room'], [7594, 9000, 7594, 9780, 'steel'], [12163, 11650, 12163, 10620, 'main']];
+const DOORS = [[5477, 4100, 5477, 3330, 'room'], [5850, 4170, 5850, 4960, 'room'], [4704, 5342, 4704, 6150, 'room'], [6800, 6235, 6800, 7020, 'room'], [2117, 4060, 2117, 3260, 'room'], [7594, 9000, 7594, 9780, 'steel'], [12200, 11285, 12200, 10205, 'main']];
 // Built-in kitchen and yard counters: [x1, y1, x2, y2, height]
-const COUNTERS = [[7620, 10230, 10350, 10840, 900], [8870, 8400, 10950, 9000, 900], [6300, 10230, 6950, 10840, 850]];
+// Kitchen (galley): sink run against the dining wall, hob run along the bottom wall (ends where the fridge space starts),
+// tall store cabinet (ST) by the entrance, yard counter by the washer.
+const COUNTERS = [[7650, 10160, 9660, 10780, 900], [8890, 8310, 10960, 9047, 900], [6300, 10230, 6950, 10780, 850], [10600, 10050, 10960, 10780, 2100]];
 // Where to stand when walking into each room: [x, y, look at x, look at y]
 const SPAWN = {all: [11700, 10300, 10500, 4000], living: [10500, 5900, 10600, 2000], dining: [11900, 8700, 10300, 7200], kitchen: [10700, 9500, 8300, 10300], ky: [5000, 3950, 3000, 1600], ks: [7000, 4700, 7000, 1500], kx: [4300, 4400, 1200, 6800]};
 const FLOOR = {ky: 'oak', ks: 'oak', kx: 'oak', 'master-bath': 'bath', 'common-bath': 'bath', yard: 'bath', hs: 'plain'};
@@ -99,16 +101,18 @@ function chairSimple(g, x, z, rot, seatCol, legCol) {
 function build(it, s, colour) {
  const g = new T.Group(), w = m(s.w), d = m(s.d), k = it.kind;
  if (k === 'bed') {
-  box(g, w + 0.08, 0.36, d + 0.06, 0, 0, 0.02, mat(C.bed, {rough: 1}));
-  box(g, w, 0.32, d, 0, 0.36, 0.02, mat(C.linen, {rough: 0.95}));
-  box(g, w + 0.02, 0.05, d * 0.62, 0, 0.66, d * 0.2, mat('#d9d3c8', {rough: 1}));
-  box(g, w + 0.16, 1.15, 0.1, 0, 0, -d / 2 - 0.05, mat(C.bed, {rough: 1}));
+  // Dunlopillo storage frame 41 cm high + the ordered mattress (30 or 38 cm); headboard only where ordered.
+  const fh = 0.41, mh = m(it.mattress ?? 300), top = fh + mh;
+  box(g, w + 0.08, fh, d + 0.06, 0, 0, 0.02, mat(C.bed, {rough: 1}));
+  box(g, w, mh, d, 0, fh, 0.02, mat(C.linen, {rough: 0.95}));
+  box(g, w + 0.02, 0.05, d * 0.62, 0, top - 0.02, d * 0.2, mat('#d9d3c8', {rough: 1}));
+  if (it.headboard !== false) box(g, w + 0.16, 1.15, 0.1, 0, 0, -d / 2 - 0.05, mat(C.bed, {rough: 1}));
   const pw = w > 1.3 ? (w - 0.2) / 2 : w - 0.12;
-  for (const px of (w > 1.3 ? [-(pw / 2 + 0.04), pw / 2 + 0.04] : [0])) box(g, pw, 0.13, 0.4, px, 0.68, -d / 2 + 0.28, mat('#ffffff', {rough: 1}));
+  for (const px of (w > 1.3 ? [-(pw / 2 + 0.04), pw / 2 + 0.04] : [0])) box(g, pw, 0.13, 0.4, px, top, -d / 2 + 0.28, mat('#ffffff', {rough: 1}));
  } else if (k === 'sofa') {
-  const f = s.flip ? -1 : 1, arm = 0.23, back = 0.24, fab = mat(colour, {rough: 1});
+  const f = s.flip ? -1 : 1, arm = 0.23, back = 0.24, fab = mat(colour, {rough: 1}), bh = m(it.h ?? 850) - 0.42;
   box(g, w, 0.42, d, 0, 0, 0, fab);
-  box(g, w - arm, 0.4, back, -f * arm / 2, 0.42, -d / 2 + back / 2, fab);
+  box(g, w - arm, bh, back, -f * arm / 2, 0.42, -d / 2 + back / 2, fab);
   box(g, arm, 0.24, d, f * (w / 2 - arm / 2), 0.42, 0, fab);
   const seats = 5, sw = (w - arm) / seats;
   for (let i = 0; i < seats; i++) box(g, sw - 0.02, 0.06, d - back - 0.04, -f * (w / 2 - sw * i - sw / 2), 0.42, back / 2, fab);
@@ -153,10 +157,12 @@ function build(it, s, colour) {
   const bowl = cyl(g, w / 2 - 0.02, 0.4, 0, 0, d * 0.1, mat(C.white, {rough: 0.2}), 28);
   bowl.scale.z = (d * 0.75) / (w - 0.04);
  } else if (k === 'basin') {
-  box(g, w, 0.45, d, 0, 0.4, 0, mat(C.vanity, {rough: 0.6}));
-  box(g, w + 0.01, 0.04, d + 0.01, 0, 0.85, 0, mat(C.white, {rough: 0.15}));
-  box(g, 0.03, 0.2, 0.03, 0, 0.89, -d / 2 + 0.06, mat('#c9c9c9', {metal: 0.9, rough: 0.2}));
-  box(g, w * 0.9, 0.7, 0.12, 0, 1.25, -d / 2 + 0.06, mat('#dfe7ea', {rough: 0.05, metal: 0.6}));
+  // Wall-hung vanity; basin rim height from the plan data (common 89 cm, master 80 cm). Gunmetal tap.
+  const rim = m(it.rim ?? 850);
+  box(g, w, 0.45, d, 0, rim - 0.45, 0, mat(C.vanity, {rough: 0.6}));
+  box(g, w + 0.01, 0.04, d + 0.01, 0, rim, 0, mat(C.white, {rough: 0.15}));
+  box(g, 0.03, 0.2, 0.03, 0, rim + 0.04, -d / 2 + 0.06, mat('#4a4846', {metal: 0.9, rough: 0.25}));
+  box(g, w * 0.9, 0.7, 0.12, 0, rim + 0.4, -d / 2 + 0.06, mat('#dfe7ea', {rough: 0.05, metal: 0.6}));
  } else if (k === 'mjtable') {
   const t = m(Math.min(s.t ?? 800, s.w, s.d));
   box(g, t, 0.03, t, 0, 0.73, 0, mat('#2f6b4a', {rough: 1}));
@@ -176,7 +182,7 @@ function build(it, s, colour) {
   for (let i = 1; i < n; i++) box(g, 0.012, 0.45, 0.02, -w / 2 + t + (w - t) * i / n, 1.0, -d / 2 + t + 0.01, mat(C.black, {metal: 0.6}), false);
   box(g, w - t, 0.02, 0.01, t / 2, 2.62, -d / 2 + t + 0.006, mat('#fff6dc', {glow: '#8a7a50'}), false);
  } else if (k === 'fridge') {
-  box(g, w, 1.77, d, 0, 0, 0, mat(C.steelApp, {metal: 0.6, rough: 0.35}));
+  box(g, w, m(s.h ?? 1770), d, 0, 0, 0, mat(C.steelApp, {metal: 0.6, rough: 0.35}));
   box(g, w - 0.02, 0.006, 0.004, 0, 1.1, d / 2 + 0.002, mat('#7b7f82'), false);
   for (const y of [0.75, 1.25]) box(g, 0.02, 0.35, 0.03, w / 2 - 0.06, y, d / 2 + 0.02, mat('#8a8e91', {metal: 0.8}), false);
  } else if (k === 'dispenser') {
@@ -295,7 +301,7 @@ export function open(D, items) {
   };
   if (t === 'g') { // the new kitchen glass sliding door: black slim frame, fluted glass
    seg(a0, a1, 0, ceil - 0.04, fluted, 0.02, false);
-   for (let i = 0; i <= 3; i++) {const p = a0 + (a1 - a0) * i / 3; seg(p - 15, p + 15, 0, ceil, frameMat, 0.05);}
+   const n = Math.max(1, Math.round((a1 - a0) / 450)); for (let i = 0; i <= n; i++) {const p = a0 + (a1 - a0) * i / n; seg(p - 15, p + 15, 0, ceil, frameMat, 0.05);}
    seg(a0, a1, ceil - 0.04, ceil, frameMat, 0.05);
    return;
   }
@@ -335,7 +341,7 @@ export function open(D, items) {
  // Built-in counters
  for (const [x1, y1, x2, y2, h] of COUNTERS) {
   box(scene, m(x2 - x1), m(h) - 0.04, m(y2 - y1), m((x1 + x2) / 2), 0, m((y1 + y2) / 2), mat(C.cabinet, {rough: 0.6}));
-  box(scene, m(x2 - x1) + 0.01, 0.04, m(y2 - y1) + 0.01, m((x1 + x2) / 2), m(h) - 0.04, m((y1 + y2) / 2), mat(C.counter, {rough: 0.3}));
+  if (h < 1500) box(scene, m(x2 - x1) + 0.01, 0.04, m(y2 - y1) + 0.01, m((x1 + x2) / 2), m(h) - 0.04, m((y1 + y2) / 2), mat(C.counter, {rough: 0.3}));
  }
 
  // Furniture
@@ -397,9 +403,11 @@ export function open(D, items) {
    walk.yaw = Math.atan2(-(lx - x), -(ly - y)); walk.pitch = -0.1; walk.eye = 1.6;
   } else {
    orbit.target.set(m(b[0] + b[2] / 2), 0.4, m(b[1] + b[3] / 2));
-   orbit.dist = Math.max(5, m(Math.max(b[2], b[3])) * (id === 'all' ? 1.05 : 1.9));
-   orbit.pitch = id === 'all' ? 0.95 : 0.85;
-   orbit.yaw = 0.5;
+   orbit.dist = Math.max(5.5, m(Math.max(b[2], b[3])) * (id === 'all' ? 1.05 : 2.1));
+   // Whole home starts square to the 2D plan (top of the plan = far side), so the two views line up.
+   // Room views look down steeply so the near walls don't hide the room.
+   orbit.pitch = id === 'all' ? 1.2 : 1.12;
+   orbit.yaw = id === 'all' ? 0 : 0.35;
   }
   place();
  };

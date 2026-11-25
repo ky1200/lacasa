@@ -22,27 +22,30 @@ export const PLAN = {
   {id: 'ks', name: 'KS room (bedroom 2)', short: 'KS', boxes: [[5600,1520,3000,3530]]},
   {id: 'kx', name: 'KX room (main bedroom)', short: 'KX', boxes: [[540,4120,4210,1630],[2510,5750,2240,2300]]},
   {id: 'living', name: 'Living room', short: 'Living', boxes: [[8640,2010,3800,4060]]},
-  {id: 'dining', name: 'Dining', short: 'Dining', boxes: [[8860,6070,3580,2930]]},
-  {id: 'kitchen', name: 'Kitchen', short: 'Kitchen', boxes: [[7480,9020,3500,1800]]},
+  {id: 'dining', name: 'Dining', short: 'Dining', boxes: [[8860,6070,3580,2180]]},
+  {id: 'kitchen', name: 'Kitchen', short: 'Kitchen', boxes: [[7480,9020,3520,1800],[8860,8270,2140,750]]},
   {id: 'yard', name: 'Yard', short: 'Yard', boxes: [[5930,9020,1550,1800]]},
   {id: 'common-bath', name: 'Common bathroom', short: 'Common bath', boxes: [[4790,6250,2020,1750]]},
   {id: 'master-bath', name: 'Master bathroom', short: 'Master bath', boxes: [[380,1360,1840,2650]]},
   {id: 'hall', name: 'Hallway', short: 'Hall', boxes: [[4790,5090,3850,1140]]},
   {id: 'hs', name: 'Household shelter', short: 'Shelter', boxes: [[6960,6250,1850,2730]]},
-  {id: 'entrance', name: 'Entrance', short: 'Entrance', boxes: [[11000,9020,1440,2610]]},
+  {id: 'entrance', name: 'Entrance', short: 'Entrance', boxes: [[11040,8270,1400,3040]]},
  ],
  // Walls for the Wi-Fi estimate and the gap-to-wall lines: [x1, y1, x2, y2, type].
- // c = concrete or brick wall, p = new partition (board + rockwool), h = household shelter (thick concrete), g = glass / half wall.
+ // c = concrete or brick wall, p = new partition (board + rockwool), h = household shelter (thick concrete), g = glass (the new kitchen sliding door).
+ // Kitchen (checked 26 Nov against the plan): galley kitchen, sink counter backs onto the dining wall; the only way in is the ~0.9 m gap
+ // beside the entrance, where the new glass sliding door (E2) goes. The main door sits at y 11285 (the recess below it is outside the flat).
  walls: [
   [380,1360,380,5750,'c'],[380,1360,2220,1360,'c'],[2280,1360,2280,4120,'c'],[2280,1460,5580,1460,'c'],
   [5580,870,5580,5310,'c'],[5580,1500,8620,1500,'c'],[8620,1980,8620,5070,'c'],[6610,5070,8620,5070,'c'],[5850,4170,5850,5090,'c'],
-  [8620,1980,12470,1980,'c'],[12470,1980,12470,11650,'c'],
+  [8620,1980,12470,1980,'c'],[12470,1980,12470,11285,'c'],
   [2280,4100,4820,4100,'p'],[4770,4100,4770,5310,'p'],
   [380,5750,2490,5750,'c'],[2490,5040,2490,8080,'c'],[2490,8080,4770,8080,'c'],[4770,6180,4770,8080,'c'],
   [4770,6230,5960,6230,'c'],[6830,6230,6830,8020,'c'],[4770,8020,6830,8020,'c'],[5910,8020,5910,10840,'c'],
   [6940,6230,8830,6230,'h'],[8830,6230,8830,9000,'h'],[6940,9000,8830,9000,'h'],[6940,6230,6940,9000,'h'],
-  [8830,9000,11000,9000,'g'],[5910,10840,11000,10840,'c'],[11000,9000,11000,10840,'c'],[5910,9000,6940,9000,'c'],
-  [10790,10840,10790,11650,'c'],[10790,11650,12470,11650,'c'],[380,4060,1190,4060,'c'],
+  [8830,8250,11020,8250,'c'],[5910,10840,11020,10840,'c'],[11020,8250,11020,9047,'c'],[5910,9000,6940,9000,'c'],
+  [11020,9940,11020,11285,'c'],[11020,11285,12470,11285,'c'],[380,4060,1190,4060,'c'],
+  [11020,9047,11020,9940,'g'],
  ],
  // Furniture and devices. w = width (x), d = depth (y) before rotation. r = rotation in degrees (0, 90, 180, 270).
  // sizes: choices the family can switch between on /plan. buy: to-buy items (prices and picks come from /buy).
@@ -51,7 +54,7 @@ export const PLAN = {
  // Prices seen 21 Nov 2026. A family member can also type a custom size on /plan.
  items: [
   // ---------- KY room (bedroom 3) ----------
-  {id: 'ky-bed', name: 'KY bed', room: 'ky', kind: 'bed', x: 4800, y: 2420, r: 0, sizes: [{n: 'Queen mattress 152 × 190.5', w: 1520, d: 1905}, {n: 'Queen storage frame, about 160 × 200 (estimate)', w: 1600, d: 2000}], buy: ['ky-bed', 'ky-mattress'], research: 'beds', note: 'Dunlopillo Carlton 30 cm on a Dunlopillo storage frame with KHJ60 headboard (delivery 22 Dec). Frame outside size not confirmed yet: pick the frame size to check space. Tip: with the head against the top wall, the desk chair gets about 95 cm of space.'},
+  {id: 'ky-bed', name: 'KY bed', room: 'ky', mattress: 300, kind: 'bed', x: 4800, y: 2420, r: 0, sizes: [{n: 'Queen mattress 152 × 190.5', w: 1520, d: 1905}, {n: 'Queen storage frame, about 160 × 200 (estimate)', w: 1600, d: 2000}], buy: ['ky-bed', 'ky-mattress'], research: 'beds', note: 'Dunlopillo Carlton 30 cm on a Dunlopillo storage frame with KHJ60 headboard (delivery 22 Dec). Frame outside size not confirmed yet: pick the frame size to check space. Tip: with the head against the top wall, the desk chair gets about 95 cm of space.'},
   {id: 'ky-desk', name: 'KY desk (Secretlab MAGNUS Pro)', room: 'ky', kind: 'desk', x: 2690, y: 3110, r: 270, sizes: [
    {n: 'XL 177 × 80 (current desk size)', w: 1770, d: 800, price: 'From S$999 (was S$1,118)', href: 'https://secretlab.sg/products/magnus-pro', img: '/images/research/secretlab-magnus-pro.webp'},
    {n: 'XXL 196.8 × 80', w: 1968, d: 800, price: 'From S$1,249', href: 'https://secretlab.sg/products/magnus-pro', img: '/images/research/secretlab-magnus-pro.webp'},
@@ -66,7 +69,7 @@ export const PLAN = {
    {n: 'IKEA KLEPPSTAD 2-door 79 × 55', w: 790, d: 550, price: 'S$149', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-2-doors-white-10437237/', img: '/images/research/ikea-kleppstad-2-door.webp', note: '176 cm tall. Some owners say it feels cheap; fix it to the wall.'},
   ], research: 'rooms', note: 'Small wardrobe because the room is tight. Doors need about 50 cm in front to open.', buy: ['ky-wardrobe']},
   // ---------- KS room (bedroom 2) ----------
-  {id: 'ks-bed', name: 'KS bed', room: 'ks', kind: 'bed', x: 7620, y: 2500, r: 90, sizes: [{n: 'Queen mattress 152 × 190.5', w: 1520, d: 1905}, {n: 'Queen storage frame, about 160 × 200 (estimate)', w: 1600, d: 2000}], buy: ['ks-bed', 'ks-mattress'], research: 'beds', note: 'Dunlopillo Richmond 38 cm on a Dunlopillo storage frame with KHJ44 headboard (delivery 22 Dec). Frame outside size not confirmed yet. The I-Niche platform bed (D3, on hold, likely dropped) would be 110 × 282.5 cm along the window wall.'},
+  {id: 'ks-bed', name: 'KS bed', room: 'ks', mattress: 380, kind: 'bed', x: 7620, y: 2500, r: 90, sizes: [{n: 'Queen mattress 152 × 190.5', w: 1520, d: 1905}, {n: 'Queen storage frame, about 160 × 200 (estimate)', w: 1600, d: 2000}], buy: ['ks-bed', 'ks-mattress'], research: 'beds', note: 'Dunlopillo Richmond 38 cm on a Dunlopillo storage frame with KHJ44 headboard (delivery 22 Dec). Frame outside size not confirmed yet. The I-Niche platform bed (D3, on hold, likely dropped) would be 110 × 282.5 cm along the window wall.'},
   {id: 'ks-desk', name: 'KS study desk', room: 'ks', kind: 'desk', x: 8320, y: 3800, r: 90, s: 1, sizes: [
    {n: 'IKEA ALEX 100 × 48', w: 1000, d: 480, price: 'S$179', href: 'https://www.ikea.com/sg/en/p/alex-desk-white-30473559/', img: '/images/research/ikea-alex-desk-100.webp'},
    {n: 'IKEA LAGKAPTEN/ALEX 120 × 60', w: 1200, d: 600, price: 'S$178.90', href: 'https://www.ikea.com/sg/en/p/lagkapten-alex-desk-white-stained-oak-effect-white-s89416963/', img: '/images/research/ikea-lagkapten-alex-120.webp'},
@@ -85,7 +88,7 @@ export const PLAN = {
    {n: 'IKEA KLEPPSTAD 2-door 79 × 55', w: 790, d: 550, price: 'S$149', href: 'https://www.ikea.com/sg/en/p/kleppstad-wardrobe-with-2-doors-white-10437237/', img: '/images/research/ikea-kleppstad-2-door.webp', note: '176 cm tall.'},
   ], research: 'rooms', note: 'KS is removing the old built-in wardrobe and wants IKEA (24 Nov). Measure the wall on 3 Dec after hacking.', buy: ['ks-wardrobe']},
   // ---------- KX room (main bedroom) ----------
-  {id: 'kx-bed', name: 'KX bed', room: 'kx', kind: 'bed', x: 3760, y: 7150, r: 90, sizes: [{n: 'Queen mattress 152 × 190.5', w: 1520, d: 1905}, {n: 'Queen storage frame, about 160 × 200 (estimate)', w: 1600, d: 2000}], buy: ['kx-bed', 'kx-mattress'], research: 'beds', note: 'Dunlopillo Richmond 38 cm on a Dunlopillo storage frame, no headboard (delivery 22 Dec). Frame outside size not confirmed yet: pick the frame size to check space.'},
+  {id: 'kx-bed', name: 'KX bed', room: 'kx', mattress: 380, headboard: false, kind: 'bed', x: 3760, y: 7150, r: 90, sizes: [{n: 'Queen mattress 152 × 190.5', w: 1520, d: 1905}, {n: 'Queen storage frame, about 160 × 200 (estimate)', w: 1600, d: 2000}], buy: ['kx-bed', 'kx-mattress'], research: 'beds', note: 'Dunlopillo Richmond 38 cm on a Dunlopillo storage frame, no headboard (delivery 22 Dec). Frame outside size not confirmed yet: pick the frame size to check space.'},
   {id: 'common-toilet', name: 'Common bathroom toilet', room: 'common-bath', kind: 'toilet', x: 5560, y: 6800, r: 270, est: true, sizes: [
    {n: 'RIGEL Gallant one-piece R-WO9030FA-HKM (pick, S$525): about 70 × 38 cm', w: 380, d: 700},
    {n: 'RIGEL slim-tank one-piece R-WO8056F (S$525): about 66 × 37 cm', w: 370, d: 660},
@@ -93,7 +96,7 @@ export const PLAN = {
    {n: 'Short one-piece (compact models): about 62 × 36 cm', w: 360, d: 620},
    {n: 'Wall-hung bowl + concealed cistern R-WH9030BP (S$885): bowl about 52 × 36 cm, frame needs a boxed-out wall', w: 360, d: 520},
   ], buy: ['common-bath-rigel-gallant-one-piece'], research: 'bathroom', note: 'Same spot as now (floor outlet stays). Keep at least 60 cm clear in front (dashed) and about 20 cm from the bowl to each side wall. The setting-out (wall to outlet centre) is measured on 3 Dec; the model must fit that number. Size is an estimate (RIGEL does not publish drawings online): check the spec sheet at the showroom on Wed 25 Nov.'},
-  {id: 'common-vanity', name: 'Common bathroom vanity', room: 'common-bath', kind: 'basin', x: 6450, y: 7745, r: 180, sizes: [
+  {id: 'common-vanity', name: 'Common bathroom vanity', room: 'common-bath', rim: 890, kind: 'basin', x: 6450, y: 7745, r: 180, sizes: [
    {n: 'RIGEL R-BC7437, 70 cm, 2 drawers (pick, S$760): 70 × 50 cm', w: 700, d: 500},
    {n: 'RIGEL R-BC0201, 70 cm, 2 drawers (S$620): 70 × 45 cm', w: 700, d: 450},
    {n: 'RIGEL R-BC1260, 60 cm, 1 drawer (S$500): 60 × 45 cm', w: 600, d: 450},
@@ -107,7 +110,7 @@ export const PLAN = {
    {n: 'Short one-piece (compact models): about 62 × 36 cm', w: 360, d: 620},
    {n: 'Wall-hung bowl + concealed cistern R-WH9030BP (S$885): bowl about 52 × 36 cm, frame needs a boxed-out wall', w: 360, d: 520},
   ], buy: ['master-bath-rigel-gallant-one-piece'], research: 'bathroom', note: 'Same spot as now. The door swings in near the basin, so a shorter toilet leaves more room. Keep 60 cm clear in front (dashed). Setting-out measured on 3 Dec. Size is an estimate (RIGEL does not publish drawings online): check the spec sheet at the showroom on Wed 25 Nov.'},
-  {id: 'master-basin', name: 'Master bathroom vanity', room: 'master-bath', kind: 'basin', x: 806, y: 3574, r: 270, sizes: [
+  {id: 'master-basin', name: 'Master bathroom vanity', room: 'master-bath', rim: 800, kind: 'basin', x: 806, y: 3574, r: 270, sizes: [
    {n: 'RIGEL R-BC1260, 60 cm, dark brown (pick, S$500): 60 × 45 cm', w: 600, d: 450},
    {n: 'RIGEL R-BC1407, 60 cm (S$560): 59 × 44.5 cm', w: 590, d: 445},
    {n: 'RIGEL R-BC0201, 60 cm, 2 drawers (S$620): 59 × 44.5 cm', w: 590, d: 445},
@@ -130,7 +133,7 @@ export const PLAN = {
   ], research: 'rooms', buy: ['kx-stool']},
   // ---------- Living, dining ----------
   // New id (21 Nov evening) so the new default applies: back on the bedroom 2 wall, facing the TV, open end by the window.
-  {id: 'living-sofa-l', name: 'V Haus sofa (one armrest, open end)', room: 'living', kind: 'sofa', x: 9420, y: 3320, r: 270, sizes: [{n: 'Open end by the window (268 × 135)', w: 2680, d: 1350, flip: true}, {n: 'Open end to the dining side (268 × 135)', w: 2680, d: 1350}], buy: ['living-l-shape-4-seat'], research: 'vhaus', note: 'V Haus 2233A, ordered 22 Nov: a straight sofa with the armrest on one end only; the other end has no armrest and an extra seat cushion instead, so it is open to sit or lie on from the side. Real size from V Haus (23 Nov): 268 × 135 cm.'},
+  {id: 'living-sofa-l', name: 'V Haus sofa (one armrest, open end)', room: 'living', h: 1070, kind: 'sofa', x: 9420, y: 3320, r: 270, sizes: [{n: 'Open end by the window (268 × 135)', w: 2680, d: 1350, flip: true}, {n: 'Open end to the dining side (268 × 135)', w: 2680, d: 1350}], buy: ['living-l-shape-4-seat'], research: 'vhaus', note: 'V Haus 2233A, ordered 22 Nov: a straight sofa with the armrest on one end only; the other end has no armrest and an extra seat cushion instead, so it is open to sit or lie on from the side. Real size from V Haus (23 Nov): 268 × 135 cm.'},
   {id: 'living-coffee-table', name: 'Coffee table (undecided)', room: 'living', kind: 'ctable', add: true, x: 10340, y: 3700, r: 90, s: 3, sizes: [
    {n: 'IKEA LACK 90 × 55', w: 900, d: 550, price: 'S$39.90', href: 'https://www.ikea.com/sg/en/p/lack-coffee-table-black-brown-20352987/', img: '/images/research/ikea-lack-coffee-90.webp'},
    {n: 'IKEA HOLMERUD 90 × 55', w: 900, d: 550, price: 'S$79.90', href: 'https://www.ikea.com/sg/en/p/holmerud-coffee-table-dark-brown-80541419/', img: '/images/research/ikea-holmerud-coffee.webp', note: 'Shelf underneath.'},
@@ -161,13 +164,13 @@ export const PLAN = {
   ], buy: ['living-lg-oled-evo-c6'], research: 'tv-kitchen', note: 'Screen width without stand. The D1 feature wall is 210 cm long.'},
   {id: 'dining-table', name: 'LINO dining table + 6 chairs', room: 'dining', kind: 'table', x: 10500, y: 7400, r: 90, sizes: [{n: 'Table 160 × 90 cm', w: 1600, d: 900}], buy: ['dining-v-haus-lino-dining'], research: 'vhaus', note: 'LINO table 160 × 90 cm, 6 C9060 walnut chairs (ordered 22 Nov; chair size to check). With chairs pulled out it needs about 240 × 230 cm.'},
   // ---------- Kitchen and yard ----------
-  {id: 'kitchen-fridge', name: 'Fridge', room: 'kitchen', kind: 'fridge', x: 10640, y: 10480, r: 180, sizes: [
-   {n: 'Hitachi R-VX480PMS9 68 × 72', w: 680, d: 720, price: 'S$989 (COURTS)', img: '/images/buy/hitachi-407-l-2-door-fridge-inverter-6308ca.webp', note: '407 L, 177 cm tall. Current pick.'},
-   {n: 'Panasonic NR-BX471CPSS 68.6 × 69.5', w: 686, d: 695, price: 'S$989 (COURTS)', img: '/images/buy/panasonic-405-l-freezer-at-bottom-a21c97.webp', note: '179 cm tall, freezer at the bottom.'},
-   {n: 'Toshiba GR-RT559WE 70 × 69.1', w: 700, d: 691, price: 'S$999 (Electromart)', img: '/images/buy/toshiba-411-l-white-glass-70-cm-wide-no-gap-in-our-space-850c60.webp', note: '172.3 cm tall. 70 cm wide: no side gap.'},
+  {id: 'kitchen-fridge', name: 'Fridge', room: 'kitchen', kind: 'fridge', x: 10020, y: 10400, r: 180, sizes: [
+   {n: 'Hitachi R-VX480PMS9 68 × 72', w: 680, d: 720, price: 'S$989 (COURTS)', img: '/images/buy/hitachi-407-l-2-door-fridge-inverter-6308ca.webp', h: 1770, note: '407 L, 177 cm tall. Current pick.'},
+   {n: 'Panasonic NR-BX471CPSS 68.6 × 69.5', w: 686, d: 695, price: 'S$989 (COURTS)', img: '/images/buy/panasonic-405-l-freezer-at-bottom-a21c97.webp', h: 1790, note: '179 cm tall, freezer at the bottom.'},
+   {n: 'Toshiba GR-RT559WE 70 × 69.1', w: 700, d: 691, h: 1723, price: 'S$929 (COURTS, in store 25 Nov)', img: '/images/buy/toshiba-411-l-white-glass-70-cm-wide-no-gap-in-our-space-850c60.webp', note: '172.3 cm tall. 70 cm wide: no side gap.'},
    {n: 'Mitsubishi HGS 69.9 × 72', w: 699, d: 720, price: 'S$1,799 (COURTS)', img: '/images/buy/mitsubishi-423-l-freezer-at-bottom-69-9-cm-wide-no-gap-231015.webp', note: 'Size of the same HGS body (421 L); check the SG 423 L model.'},
   ], buy: ['fridge'], research: 'tv-kitchen', note: 'The fridge space measured 75 W × 75 D × 183 H cm. Placed at the marked fridge spot; move it if the spot is different.'},
-  {id: 'kitchen-water', name: 'LG PuriCare WD518AN water dispenser (bought)', room: 'kitchen', kind: 'dispenser', x: 9700, y: 10560, r: 180, sizes: [{n: 'WD518AN 16.8 × 48.5', w: 168, d: 485, img: '/images/research/lg-wd518an.webp', note: 'On the countertop. 16.8 cm wide, 41.8 cm tall, 48.5 cm deep with the drip tray (COURTS); LG lists 40 cm deep without it. Needs a water inlet and a power point nearby.'}], research: 'tv-kitchen'},
+  {id: 'kitchen-water', name: 'LG PuriCare WD518AN water dispenser (bought)', room: 'kitchen', kind: 'dispenser', x: 9300, y: 10470, r: 180, sizes: [{n: 'WD518AN 16.8 × 48.5', w: 168, d: 485, img: '/images/research/lg-wd518an.webp', note: 'On the countertop. 16.8 cm wide, 41.8 cm tall, 48.5 cm deep with the drip tray (COURTS); LG lists 40 cm deep without it. Needs a water inlet and a power point nearby.'}], research: 'tv-kitchen'},
   {id: 'kitchen-fan', name: 'Fanco Dono corner fan', room: 'kitchen', kind: 'cfan', free: true, x: 7650, y: 9200, r: 315, est: true, sweep: 90, reach: 4000, sizes: [{n: '16" corner fan (about 45 cm)', w: 450, d: 450, img: '/images/buy/fanco-dc-dono-16-corner-fan-wall-or-ceiling-mount-remote-837335.webp', note: 'Mounted high in a corner (wall or ceiling). Size not listed by the shop; drawn as the 16" blade.'}], buy: ['kitchen-fan'], research: 'tv-kitchen', note: 'Swings 90° side to side (Electromart listing). The shop does not give how far the air reaches; the fan-shaped area is drawn to about 4 m as an estimate. Use Aim to point it.'},
   {id: 'robot-dock', name: 'Robot vacuum dock', room: 'yard', kind: 'dock', x: 6300, y: 9500, r: 0, sizes: [{n: 'Dock', w: 420, d: 460}], buy: ['kitchen-robot-vacuum-mop'], note: 'Docks on the list are up to 42 × 46 × 59 cm. Near the yard water points and floor drain.'},
   // ---------- Wi-Fi (see research: fibre comes in at the DB box by the entrance) ----------
@@ -234,12 +237,12 @@ export const DESIGNER = {
   'ks-bed': '7580,2410,90,1', 'ks-desk': '5860,3400,270,0', 'ks-chair': '6420,3560,90,0', 'ks-wardrobe': '7830,4755,180,0,1',
   'kx-bed': '3750,6970,90,1', 'kx-vhaus-wardrobe': '1500,5180,270,0', 'kx-vanity': '3700,4340,0,0', 'kx-stool': '3700,4800,0,0',
   'living-sofa-l': '9335,3450,270,0', 'living-coffee-table': '10810,3450,0,6,1', 'living-tv': '12360,3400,90,4',
-  'living-recliner': '10700,5450,270,0,0', 'living-mahjong': '11300,3700,0,0,0', 'dining-table': '10500,7400,90,0',
+  'living-recliner': '10700,5450,270,0,0', 'living-mahjong': '11300,3700,0,0,0', 'dining-table': '10500,7250,90,0', 'kitchen-fridge': '10020,10400,180,0',
  },
  points: {
-  light: '10100,2800;11650,2800;10100,4150;11650,4150;10100,5450;11650,5450;9500,7400;11500,7400;5900,5650;7700,5650;11700,9600;8300,10000;9300,10000;10300,10000;6700,9700;5800,7100;1300,2200;1300,3300;2850,3150;4300,3700;3200,2000;5950,3400;7300,3750;1800,4700;3700,4850;3700,5950',
-  fan: '4150,2400;7200,2410;3300,6970;10650,3450;10500,7400',
-  socket: '2340,2600;2340,3700;5520,3270;5620,3150;8580,3270;4730,7830;4730,6100;3700,4160;12420,3000;12420,3850;8680,4900;8680,2150;12420,7400;8400,10790;9750,10790;10640,10810;6450,10800;6000,9300;11500,9250',
+  light: '10100,2800;11650,2800;10100,4150;11650,4150;10100,5450;11650,5450;9500,7250;11500,7250;5900,5650;7700,5650;11700,9600;8300,10000;9300,10000;10300,10000;6700,9700;5800,7100;1300,2200;1300,3300;2850,3150;4300,3700;3200,2000;5950,3400;7300,3750;1800,4700;3700,4850;3700,5950',
+  fan: '4150,2400;7200,2410;3300,6970;10650,3450;10500,7250',
+  socket: '2340,2600;2340,3700;5520,3270;5620,3150;8580,3270;4730,7830;4730,6100;3700,4160;12420,3000;12420,3850;8680,4900;8680,2150;12420,7400;8400,10790;9750,10790;10020,10810;6450,10800;6000,9300;11500,9250',
   switch: '4790,3980;5540,3340;6320,5000;8580,3340;4720,5200;4730,7900;8700,5700;11050,11300;8600,9100',
   lan: '2340,3200;12420,3450',
   tp: '11150,9400',

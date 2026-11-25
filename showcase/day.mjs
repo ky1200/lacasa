@@ -2,7 +2,6 @@
 // Times shift for everyone: the family taps "Arrived" / "Left" and the rest of the day re-plans.
 // Saved as one JSON value under the visit_notes key "day:1125" (PUT /api/day/log, GET /api/day/log).
 import {DAY_ROUTES} from './day-routes.mjs';
-import {comparePage} from './compare.mjs';
 
 const h = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 export const DAY_KEY = 'day:1125';
@@ -112,7 +111,7 @@ const SHOPS = {
 };
 
 // SVG helpers (simple drawings, no photos)
-const svgHeights = `<svg class="day-svg" viewBox="0 0 360 250" role="img" aria-label="Basin and shower heights for 150, 165 and 190 cm">
+export const svgHeights = `<svg class="day-svg" viewBox="0 0 360 250" role="img" aria-label="Basin and shower heights for 150, 165 and 190 cm">
 <g font-size="11" fill="#45423b">
 <line x1="20" y1="230" x2="350" y2="230" stroke="#77736a"/>
 ${[[60, 150, 'KX 150'], [160, 165, 'KY 165'], [260, 190, 'KS 190']].map(([x, cm, n]) => {const top = 230 - cm; return `<circle cx="${x}" cy="${top + 10}" r="10" fill="#cdbca5"/><rect x="${x - 9}" y="${top + 21}" width="18" height="${cm - 21}" rx="8" fill="#cdbca5"/><text x="${x}" y="246" text-anchor="middle">${n}</text>`;}).join('')}
@@ -121,16 +120,16 @@ ${[[60, 150, 'KX 150'], [160, 165, 'KY 165'], [260, 190, 'KS 190']].map(([x, cm,
 <line x1="20" y1="${230 - 210}" x2="350" y2="${230 - 210}" stroke="#3f6a4e" stroke-dasharray="4 3"/><text x="150" y="${230 - 214}" fill="#3f6a4e">common rain head 210+</text>
 <line x1="20" y1="${230 - 198}" x2="140" y2="${230 - 198}" stroke="#8e6a40" stroke-dasharray="4 3"/><text x="22" y="${230 - 202}" fill="#8e6a40">master 195–200</text>
 </g></svg>`;
-const svgToilets = `<svg class="day-svg" viewBox="0 0 360 152" role="img" aria-label="One-piece, two-piece and wall-hung toilets from the side">
+export const svgToilets = `<svg class="day-svg" viewBox="0 0 360 152" role="img" aria-label="One-piece, two-piece and wall-hung toilets from the side">
 <g font-size="11" fill="#45423b"><line x1="5" y1="128" x2="355" y2="128" stroke="#77736a"/><line x1="10" y1="10" x2="10" y2="128" stroke="#77736a"/><line x1="130" y1="10" x2="130" y2="128" stroke="#77736a"/><line x1="250" y1="10" x2="250" y2="128" stroke="#77736a"/>
 <path d="M12 40 h22 q8 0 10 20 l4 20 h50 q8 0 8 10 q0 20 -28 22 l-6 16 h-30 l-4 -16 q-18 -2 -26 -18z" fill="#fff" stroke="#24221e"/><text x="68" y="143" text-anchor="middle" font-weight="700">One-piece</text>
 <path d="M132 38 h30 v36 h-30z" fill="#fff" stroke="#24221e"/><path d="M134 76 h82 q8 0 8 10 q0 20 -28 22 l-6 20 h-30 l-4 -20 q-22 -4 -22 -32z" fill="#fff" stroke="#24221e"/><circle cx="148" cy="75" r="5" fill="none" stroke="#b3261e" stroke-width="2"/><text x="190" y="143" text-anchor="middle" font-weight="700">Two-piece (seam)</text>
 <rect x="250" y="30" width="16" height="70" fill="#ecebe6" stroke="#77736a" stroke-dasharray="3 2"/><path d="M266 70 h66 q8 0 8 10 q0 18 -26 20 l-6 8 h-30 q-12 -6 -12 -38z" fill="#fff" stroke="#24221e"/><text x="303" y="143" text-anchor="middle" font-weight="700">Wall-hung</text></g></svg>`;
 const sw = (x, id, a, b, name, note) => `<defs><linearGradient id="${id}" x1="0" x2="1"><stop offset="0" stop-color="${a}"/><stop offset=".5" stop-color="${b}"/><stop offset="1" stop-color="${a}"/></linearGradient></defs><rect x="${x}" y="8" width="78" height="70" rx="10" fill="url(#${id})" stroke="#dcd9d1"/><text x="${x + 39}" y="94" text-anchor="middle" font-weight="700">${name}</text><text x="${x + 39}" y="110" text-anchor="middle">${note}</text>`;
-const svgFinish = `<svg class="day-svg" viewBox="0 0 360 120" role="img" aria-label="Tap finish colours"><g font-size="12" fill="#45423b">
+export const svgFinish = `<svg class="day-svg" viewBox="0 0 360 120" role="img" aria-label="Tap finish colours"><g font-size="12" fill="#45423b">
 ${sw(4, 'fc', '#c9ccd0', '#f6f7f8', 'Chrome', 'toughest')}${sw(94, 'fn', '#a9a59c', '#d4d0c7', 'Nickel', 'hides spots')}${sw(184, 'fg', '#4b4d50', '#7a7c7f', 'Gunmetal', 'PVD only')}${sw(274, 'fb', '#1d1d1d', '#2e2e2e', 'Matt black', 'marks show')}</g></svg>`;
 
-const list = a => `<ul>${a.map(x => `<li>${x}</li>`).join('')}</ul>`;
+export const list = a => `<ul>${a.map(x => `<li>${x}</li>`).join('')}</ul>`;
 
 export function dayPage(v = {}, ro = false) {
  const log = dayLog(v), times = dayTimes(log), saved = !!v[DAY_KEY];
@@ -144,70 +143,23 @@ export function dayPage(v = {}, ro = false) {
 <p class="day-wait" data-wait${t.wait > 0 ? '' : ' hidden'}>${t.wait > 0 ? `${t.wait} min spare before this` : ''}</p>
 ${ro ? '' : `<div class="day-acts"><button type="button" data-act="a">${log.a[s.id] ? (s.btn ?? 'Arrived') + ' ' + h(label12(log.a[s.id])) : (s.btn ?? 'Arrived') + ' now'}</button>${s.stay ? `<button type="button" data-act="l">${log.l[s.id] ? 'Left ' + h(label12(log.l[s.id])) : 'Left now'}</button>` : ''}${s.opt ? `<button type="button" data-act="skip">${t.skip ? 'Add back' : 'Skip'}</button>` : ''}</div>`}
 <div class="day-links">${ro ? '' : `<button type="button" class="day-edit" data-act="edit" aria-label="Type the times for ${h(s.n)}">Edit times</button>`}${s.nonav ? '' : nav(s)}</div>
-${s.todo || g ? `<details class="day-more"><summary>${g ? 'What to look at and ask' : 'Checklist'}</summary>${s.todo ? list(s.todo.map(h)) : ''}${g ? `<p><a class="text-link" href="#price-check">Add prices from this shop ↓</a></p><p><b>Focus:</b> ${h(g.focus)}</p><h4>Look at</h4>${list(g.look.map(h))}<h4>Ask</h4>${list(g.ask.map(h))}` : ''}</details>` : ''}
+${s.todo || g ? `<details class="day-more"><summary>${g ? 'What to look at and ask' : 'Checklist'}</summary>${s.todo ? list(s.todo.map(h)) : ''}${g ? `<p><a class="text-link" href="/bathrooms#price-check">Prices from the shops →</a></p><p><b>Focus:</b> ${h(g.focus)}</p><h4>Look at</h4>${list(g.look.map(h))}<h4>Ask</h4>${list(g.ask.map(h))}` : ''}</details>` : ''}
 </div></li>`;
  };
  const pts = DAY_STOPS.map((s, i) => ({id: s.id, n: s.n, at: s.at, i: i + 1, route: s.route ?? null}));
  return `<section class="day-page" data-day-page${ro ? ' data-ro' : ''}>
-<header class="day-head"><p class="eyebrow">Wed 25 Nov · Singapore</p><h1>Deposit, bank + lawyer, bathroom shops</h1>
+<header class="day-head"><p class="eyebrow">Wed 25 Nov · Singapore · done</p><h1>25 Nov day plan (done)</h1>
+<p class="day-done">This day is over: MCST deposit paid (receipt 9071), bank and lawyer visited, RIGEL, COURTS and Heritage prices collected (now on <a class="text-link" href="/bathrooms">Bathrooms</a>). Kept here as a record.</p>
 <p class="muted">Times move for everyone. Tap <b>Arrived now</b> and <b>Left now</b> at each stop (or Edit times to type one); every later stop re-plans. Drive times are estimates with weekday traffic; check Waze for the live one.</p></header>
 <p class="day-km muted">Driving in Singapore today: about <b>${Object.values(DAY_ROUTES).reduce((a, r) => a + r.km, 0).toFixed(0)} km</b> (checkpoint to checkpoint), about ${Math.round(Object.values(DAY_ROUTES).reduce((a, r) => a + r.min, 0) / 60 * 10) / 10} hours without traffic.</p>
 <div class="day-sum" data-sum><div><small>Now</small><b data-now>–</b></div><div><small>Next</small><b data-next>–</b></div><div><small>Against plan</small><b data-late>–</b></div></div>
-<nav class="day-jump" aria-label="On this page"><a href="#price-check">Price check and shop notes</a><a href="#bathroom-guide">Bathroom guide</a></nav>
 <div class="day-map" id="day-map" role="img" aria-label="Map of the day's stops and drives"></div>
 <p class="day-mapnote muted">Map: OneMap © Singapore Land Authority. Lines follow the roads (OSRM).</p>
 ${ro ? '' : `<div class="day-tools"><span class="day-status" data-day-status>${saved ? 'Saved times shown' : 'No times saved yet'}</span><button type="button" class="day-reset" data-reset>Clear all times</button></div>`}
 <form class="day-form" data-day-form hidden><h2 data-form-title>Times</h2><div class="day-2"><label>Arrived <input type="time" name="a"></label><label>Left <input type="time" name="l"></label></div><label>Planned stay (min) <input name="d" inputmode="numeric" pattern="\\d{1,3}"></label><p class="day-err" data-day-err hidden></p><div class="day-form-acts"><button type="submit" class="button primary">Save</button><button type="button" class="button secondary" data-cancel>Cancel</button></div></form>
 <ol class="day-list">${DAY_STOPS.map(stopHTML).join('')}</ol>
 
-${comparePage(v, ro)}
-<section class="day-guide" id="bathroom-guide"><h2>Bathroom guide for the shops</h2><p class="muted">Research done 24 Nov. One pick per question, reasons underneath.</p>
-<details><summary>Tomorrow: choose and get prices, pay later</summary>
-<p><b>No full payment tomorrow.</b> The toilet must match the floor pipe position, which is only measured on 3 Dec (keys). Get a written package quote valid to mid-December. Pay a deposit only if it is refundable or allows model and size changes, written on the receipt.</p>
-<p>Also ask John (I-Niche) <b>which day the plumber needs the fittings on site</b>. That date is the real buying deadline.</p></details>
-<details><summary>Toilet: one-piece, rimless, floor-standing (keep)</summary>${svgToilets}
-<ul><li><b>One-piece</b> (pick): tank and bowl are one ceramic piece, so no seam where grime collects. RIGEL Gallant R-WO9030FA, S$525.</li><li><b>Two-piece</b>: cheaper (Gallant R-WC9030F S$380) but the joint between tank and bowl needs scrubbing and can leak.</li><li><b>Wall-hung</b>: easiest floor cleaning, but the tank goes inside a new wall frame (more hacking, S$885+ and harder repairs). Not worth it here.</li>
-<li><b>Rimless</b> + smooth glaze: no hidden rim for dirt. <b>Quick-release soft-close seat</b>: lifts off to clean.</li>
-<li><b>Size for the body:</b> slim builds fit any standard seat; seat width is not the issue. Height matters more: bowl about 40–43 cm. KS (190) is more comfortable on a taller bowl, KX (150) needs feet flat on the floor. Sit test in the shop.</li>
-<li><b>Fit:</b> the "setting-out" (wall to pipe centre) on the drawing must match the 3 Dec measurement. One-piece toilets only come in fixed setting-outs.</li></ul></details>
-<details><summary>Bidet: hand spray now (pick), bidet seat optional later</summary>
-<ul><li><b>Hand spray</b> (pick, RIGEL R-SA8200 S$125 each): cheap, metal, lasts, also rinses the bowl and floor. Already on the list.</li>
-<li><b>Non-electric bidet seat</b> (≈ S$130–200): replaces the toilet seat, uses a knob, cold water only. Nozzle still needs a manual clean; the plastic seat is the part that wears out. It can be added later if the seat fits the bowl: ask RIGEL which bidet seat fits the Gallant.</li>
-<li><b>Electric washlet</b> (≈ S$600+ for a seat): warm water and drying, but needs a <b>socket beside the toilet</b>. If there is any chance of one later, ask I-Niche on 3 Dec for a waterproof socket behind each toilet now; adding it after tiling is messy.</li>
-<li>A toilet with a "built-in" manual bidet is not cheaper than a toilet + spray, and when its valve fails the seat is replaced anyway.</li></ul></details>
-<details><summary>Finish: gunmetal only if PVD, else chrome</summary>${svgFinish}
-<p>"Gunmetal" = dark metallic grey (between chrome and black). Brushed gunmetal hides water spots and fingerprints better than chrome or matt black.</p>
-<ul><li><b>Durability depends on how the colour is made.</b> PVD (vapour-deposited metal) is hard and does not peel; painted or powder-coated dark taps chip and fade in wet areas. A flat, fully matt black that looks painted usually is.</li>
-<li><b>All gunmetal pieces from one brand and series</b>: shades differ between brands (a GROHE tap next to a RIGEL shower will not match).</li>
-<li><b>Cleaning:</b> mild soap and a microfibre cloth. No abrasive pads, cream cleansers or acid descalers on coloured finishes. Chrome tolerates harsh cleaners best.</li>
-<li><b>Pick:</b> RIGEL gunmetal if the shop confirms PVD and a finish warranty, for every visible metal piece in a bathroom (tap, shower set, spray, accessories). If not PVD, chrome. RIGEL has gunmetal basin mixers (MXB721101 GM ≈ S$210, MXB8614 GUN ≈ S$215) and a gunmetal thermostatic bath mixer (TSME14258 GM ≈ S$355) at other sellers.</li></ul></details>
-<details><summary>Heights for KX 150, KY 165, KS 190</summary>${svgHeights}
-<ul><li><b>Common basin rim: 88–90 cm</b> (shared by 165 and 190). A rough rule is half the body height (165 → 82, 190 → 95); 88–90 splits it. Standard 80–85 cm makes KS bend.</li>
-<li><b>Master basin rim: 80 cm</b> (KX 150).</li>
-<li>Both vanities are wall-hung, so the height is free: <b>tell I-Niche the rim heights before the plumber sets the pipes.</b></li>
-<li><b>Shower:</b> mixer 105–110 cm common, ≈100 cm master. Rain head about 20 cm above the tallest user: ≥210 cm common, 195–200 cm master. Check the bathroom ceiling height on 3 Dec; the RIGEL set's rail height decides where the mixer goes.</li>
-<li>Mirror centre ≈155 cm common, ≈145 cm master. Towel bar ≈115 cm. Toilet roll holder ≈65 cm high, beside the front of the bowl. Spray holder on the side of the hand used.</li></ul></details>
-<details><summary>Budget: is S$3,000 enough for both bathrooms?</summary>
-<p>Tight. The RIGEL list is ≈ S$3,410 at eStore prices (2 toilets, 2 vanities, 2 shower sets, 2 sprays). Add towel bars, hooks, roll holders, a soap shelf (≈ S$150–300) and any mirror cabinet (IKEA ENHET S$170). <b>Plan S$3,600–4,000.</b> S$3,000 works only with a package discount, chrome instead of gunmetal, or the 2-in-1 shower set in the master.</p></details>
-<details><summary>Shop or Shopee?</summary>
-<ul><li>Same official RIGEL products. Earlier check: Gallant one-piece S$569–603 on RIGEL's official Lazada store vs S$525 at the RIGEL eStore, so online is not automatically cheaper.</li>
-<li>The 12.12 sale (Sat 12 Dec) comes after measuring on 3 Dec: compare the shop quote with the official store then.</li>
-<li>Buy only from the official RIGEL store online (warranty). Shopee "gifts" are usually small accessories.</li>
-<li>The shop wins on: one package price, swapping a model if the pipe does not fit, a fixed delivery date for the plumber.</li></ul></details>
-<details><summary>What Singapore owners regret (bathrooms)</summary>
-<ul><li><b>Waterproofing skipped or weak.</b> The I-Niche quote has no waterproofing for the new half-height wall (F4). Ask for it and a 24-hour ponding test before tiling.</li>
-<li><b>Glass screens</b> look good clean but need wiping after every shower: keep a squeegee in each bathroom; ask about a nano coating.</li>
-<li><b>Dark or black basin tops</b> show white water stains: check the R-BC1260 dark top in person.</li>
-<li><b>No storage:</b> no vanity drawers, no niche, too few hooks. Count hooks for 3 adults.</li>
-<li><b>Power points in the wrong places</b>: decide now on sockets for a lit mirror or washlet.</li>
-<li><b>Ventilation:</b> the quote adds a fan in the common bathroom only. Ask whether the master bathroom has a window that is enough.</li>
-<li><b>Above-counter (vessel) basins</b> are hard to clean around: integrated basin tops (current picks) avoid this.</li>
-<li><b>Cheap black taps peeling</b> within a year or two: the reason for "PVD only".</li>
-<li><b>Slippery floor tiles</b> when wet: anti-slip mat or R10+ tiles if tiles change.</li></ul></details>
-<details><summary>Also missing from the plan</summary>
-<ul><li>The <b>plumber's date for fittings</b> on site (ask John).</li><li><b>Basin and shower heights</b> written to I-Niche before plumbing.</li><li><b>Accessories</b> (hooks, bars, roll holders, soap shelf) in the same finish.</li><li><b>Fire insurance</b> for the bank loan before completion (ask the lawyer).</li><li><b>Toilet setting-out</b> measured on 3 Dec (already on the checklist).</li></ul></details>
-<p class="day-sources muted">Sources: RIGEL, Gain City, PH Bathroom, Lazada (prices); Geberit and Roca height guides; Hometrust, Renodots, Uchify and Lemon8 Singapore owner stories; Qanvast non-electric bidet seat review; PVD guides (ABI, Greens). Prices change: confirm in the shop.</p>
-</section>
+<p class="day-moved"><b>Bathroom prices, shop quotes and the bathroom guide</b> now live on their own page: <a class="text-link" href="/bathrooms">Bathrooms</a>.</p>
 <link rel="stylesheet" href="/vendor/leaflet-1.9.4/leaflet.css">
 <script id="day-data" type="application/json">${JSON.stringify({stops: DAY_STOPS.map(({id, n, at, plan, stay, drive, notBefore, by, close, opt, route, btn}) => ({id, n, at, plan, stay, drive, notBefore, by, close, opt, route, btn})), routes: Object.fromEntries(Object.entries(DAY_ROUTES).map(([k, r]) => [k, r.line])), log, pts: pts.length}).replace(/</g, '\\u003c')}</script>
 </section>`;

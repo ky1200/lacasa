@@ -41,10 +41,22 @@ test('day: saved values are checked', () => {
 test('day page: stops, guide, no unit number, neutral wording', () => {
  const html = dayPage({});
  for (const s of DAY_STOPS) assert.ok(html.includes(`data-stop="${s.id}"`));
- assert.match(html, /Bathroom guide for the shops/);
+ assert.match(html, /href="\/bathrooms"/);
  assert.match(html, /Arrived now/);
  assert.doesNotMatch(html, /#\d{2}-\d{3}\b/);
  const text = html.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ');
  assert.doesNotMatch(text, /\byou\b|\byour\b|perfect|amazing/i);
  assert.doesNotMatch(dayPage({}, true), /data-act="a"/);
+});
+
+test('bathrooms page: split plan, price check, guide, neutral wording', async () => {
+ const {bathroomsPage, BATH_SG, bathSum} = await import('../../showcase/bathrooms.mjs');
+ const html = bathroomsPage({});
+ assert.match(html, /id="price-check"/);
+ assert.match(html, /id="bathroom-guide"/);
+ assert.match(html, /id="split"/);
+ assert.equal(bathSum(BATH_SG), 2961);
+ const text = html.replace(/<script[\s\S]*?<\/script>/g, '').replace(/<[^>]+>/g, ' ');
+ assert.doesNotMatch(text, /\byou\b|\byour\b|perfect|amazing/i);
+ assert.doesNotMatch(bathroomsPage({}, true), /Add a shop price/);
 });

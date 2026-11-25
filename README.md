@@ -1,25 +1,30 @@
 # LaCasa
 
-Private family site for choosing furniture and appliances for the LaCasa flat: compare models, vote, and see the shopping list total.
+Private family site for the La Casa move-in: what to buy, the floor plan (2D + 3D), payments, bathrooms, documents and progress. One shared view for the whole family (no name picker).
 
-Runs on a free Cloudflare Worker with a D1 database. Moved from ChatGPT Sites on 30 Oct 2026.
+Live: https://lacasa.kayikkwong.workers.dev · Cloudflare Workers + D1 · auto-deploys from `main` in about a minute.
 
-## What's where
-- `lacasa.json`: all real content (rooms, items, options, prices, photos, videos). Editing this file is how items get added or changed.
-- `public/images/`: photos used by the site.
-- `showcase/`: page rendering, voting rules and shopping-list maths.
-- `src/worker.mjs`: the Worker (routing, owner sign-in).
-- `migrations/`: database tables (votes and final decisions only).
-- `docs/`: rules for whoever edits the site (AGENTS.md), research standards, progress log.
+## Pages and where their code lives
+| Page | What it is | Data | Page code |
+|---|---|---|---|
+| `/` | Home: days to keys, progress, page cards, next to-dos | — | `showcase/home.mjs` |
+| `/progress` | Steps by stage, what's next, family update feed | `showcase/progress.mjs` (STAGES) | same + `public/progress.js` |
+| `/buy` | To-buy list by room, to-dos, 3 Dec checklist, contractor quote | `showcase/buy-plan.mjs` | `showcase/buy.mjs`, photos `showcase/buy-images.mjs` |
+| `/plan` | Floor plan, layouts (Family, Designer's pick, KY/KX/KS), 3D view | `showcase/plan-data.mjs` | `showcase/plan.mjs`, `public/plan.js`, `public/plan3d.js` |
+| `/bathrooms` | Split plan (SG vs MY), shop price check, bathroom guide | `showcase/bathrooms.mjs`, `showcase/compare.mjs` | same + `public/compare.js` |
+| `/pay` | Every deposit, payment and balance (family-editable) | `showcase/pay.mjs` | `public/pay.js` |
+| `/docs` | Every document with a summary; originals in the private Drive folder | `showcase/docs.mjs` | same |
+| `/research` | Research topics with picks and sources | `showcase/research.mjs` | `researchPage()` in `showcase/plan.mjs` |
+| `/look` | Mood board | `showcase/look-data.mjs` | `showcase/look.mjs` |
+| `/earlier` | Archive: old voting pages, 11 Nov visit, 25 Nov day plan (`/day`) | `lacasa.json`, `showcase/day.mjs` | `showcase/render.mjs` |
 
-## Owner sign-in
-Locks, final decisions and exports need the owner password (secret `OWNER_PASSWORD`, set in Cloudflare) with KY selected. Family members just pick their name.
+Styles: `public/lacasa-theme.css` (loaded last). Shared family data is stored in D1 table `visit_notes` (keys `b:`, `p:`, `t:`, `l:`, `pay:log`, `prog:log`, `cmp:log`, `day:1125`).
 
-## Deploying (Cloudflare Workers Builds, connected to this repository)
-- Build command: `npm install`
-- Deploy command: `npx wrangler d1 migrations apply DB --remote && npx wrangler deploy`
-- Set `database_id` in `wrangler.jsonc` to the D1 database's ID.
-- Add the secret `OWNER_PASSWORD` under the Worker's Settings → Variables and Secrets.
+## Working on it
+- `npm test` before every push; `npm run assets` after any CSS/JS change (updates the cache version).
+- Never save test choices on the live site. Live writes only with K's OK.
+- No address, unit number, IC or bank numbers anywhere on the site.
+- The project notes (handover) live in the claude.ai project "LACASA HOME PROJECT", doc `claude/lacasa-handover.md`. `docs/STATE.md` has the short change log.
 
-## Checks
-`npm test` runs the voting, list, compare and API tests (97).
+## Deploying
+Cloudflare Workers Builds, connected to this repository. Build `npm install`; deploy `npx wrangler d1 migrations apply DB --remote && npx wrangler deploy`. Secret `OWNER_PASSWORD` for owner sign-in.

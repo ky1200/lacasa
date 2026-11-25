@@ -13,7 +13,7 @@ export const MOVE_IN_LABEL = 'January 2027';
 export const STAGES = [
  {id: 'flat', n: 'Buying the flat', steps: [
   {t: 'Offer, loan and option to purchase', done: true},
-  {t: 'Bank and lawyer: final papers and cashier\'s orders', date: '2026-11-25', todo: 'bath-shops'},
+  {t: 'Bank and lawyer visit (25 Nov)', done: true},
   {t: 'Collect the keys', date: '2026-12-03', todo: 'keys'}]},
  {id: 'reno', n: 'Renovation (I-Niche)', steps: [
   {t: 'Quote fixes sent to John', date: '2026-11-24', todo: 'quote2'},
@@ -24,7 +24,8 @@ export const STAGES = [
   {t: 'Hacking (3, 4 and 7 Dec)', date: '2026-12-07', auto: true},
   {t: 'Works finished by 31 Dec (end of the management permit), defects checked', date: '2026-12-31'}]},
  {id: 'bath', n: 'Bathrooms', steps: [
-  {t: 'See and price fittings (RIGEL, LIXIL, Heritage)', date: '2026-11-25', todo: 'bath-shops'},
+  {t: 'See and price fittings at RIGEL, COURTS and Heritage (25 Nov; gunmetal chosen)', done: true},
+  {t: 'Heritage written quote + split plan (Singapore vs Malaysia)', date: '2026-11-30', todo: 'bath-quote'},
   {t: 'Buy the sanitary fittings', date: '2026-12-05', todo: 'sanitary'},
   {t: 'Buy switches and sockets', date: '2026-12-05', todo: 'switches'}]},
  {id: 'furniture', n: 'Furniture', steps: [
@@ -39,7 +40,7 @@ export const STAGES = [
   {t: 'Black Friday orders (washer, vacuums, robot)', date: '2026-11-27', todo: 'black-friday'},
   {t: 'Confirm the TV', date: '2026-11-30', todo: 'tv-decide'},
   {t: 'Order the aircon', date: '2026-11-30', todo: 'aircon'},
-  {t: 'Fridge (space measured 75 × 75 × 183 cm)', tbc: 'Black Friday'}]},
+  {t: 'Fridge: Hitachi R-VX480 or Toshiba S$929 (space 75 × 75 × 183 cm)', date: '2026-11-27', todo: 'black-friday'}]},
  {id: 'movein', n: 'Moving in', steps: [
   {t: 'Electricity and water on', date: '2026-12-05', todo: 'sp'},
   {t: 'Fibre broadband', date: '2026-12-03', todo: 'fibre'},

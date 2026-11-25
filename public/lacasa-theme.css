@@ -10,7 +10,7 @@
   --linen:#fbfaf7;       /* raised surfaces */
   --sumi:#24221e;        /* headings and prices */
   --body:#45423b;        /* running text */
-  --muted:#77736a;       /* secondary text */
+  --muted:#67635a;       /* secondary text (4.9:1 on plaster) */
   --line:#dcd9d1;        /* hairlines */
   --oak:#b9915f;         /* wood swatches */
   --oak-dark:#8e6a40;
@@ -786,7 +786,7 @@ dialog.viewer::backdrop{background:rgba(18,16,14,.6)}
 @media (min-width:980px){
  .plan-page{display:grid;grid-template-columns:minmax(0,1fr) 380px;column-gap:22px;align-items:start}
  .plan-page>*{grid-column:1}
- .plan-page>.plan-sheet{grid-column:2;grid-row:1/span 6;position:sticky;top:76px;margin-top:22px;max-height:calc(100vh - 96px);overflow:auto}
+ .plan-page>.plan-sheet{grid-column:2;grid-row:1/span 9;position:sticky;top:76px;margin-top:22px;max-height:calc(100vh - 96px);overflow:auto}
  .plan-page>.plan-sheet[hidden]{display:block;visibility:hidden}
 }
 @media (max-width:520px){.plan-stage{height:66vh;border-radius:16px}.plan-modes span{padding:7px 10px;font-size:13px;min-height:38px}.sheet-opt{grid-template-columns:auto 48px 1fr;}.sheet-opt strong{grid-column:3;text-align:left}.sheet-opt img,.sheet-noimg{width:48px;height:48px}}
@@ -1442,7 +1442,7 @@ details.buy-note:not([open])>summary{color:var(--muted)}
 .plan-fold>summary::-webkit-details-marker{display:none}.plan-fold>summary h2{margin:0}
 .plan-fold>summary::after{content:'▾';color:var(--muted)}.plan-fold[open]>summary::after{content:'▴'}
 .hq-hero h1.hq-keys b{font-size:inherit;font-weight:700}
-@media (min-width:900px){.hq-grid{grid-template-columns:repeat(4,1fr)}}
+@media (min-width:900px){.hq-grid{grid-template-columns:repeat(3,1fr)}}
 /* /progress (25 Nov) */
 .pg-page{max-width:760px;margin:0 auto;padding:8px 14px 40px}
 .pg-head h1{font-size:clamp(28px,7vw,36px);margin:4px 0 10px}
@@ -1523,3 +1523,31 @@ button.pg-tick{cursor:pointer}button.pg-tick:active{background:var(--plaster)}
 .cmp-bar{grid-column:2/-1;height:6px;border-radius:3px;background:var(--linen);overflow:hidden}.cmp-bar i{display:block;height:100%;border-radius:3px;background:#c9c2b4}
 .is-low .cmp-bar i{background:var(--moss)}.is-quote .cmp-bar i{background:#d9a35f}
 .cmp-row.is-alt{opacity:.62}.cmp-row.is-tag{background:#f4f1ec}
+
+/* Bathrooms page (/bathrooms, 26 Nov) */
+.bath-page{max-width:980px;margin:0 auto;padding:8px 16px 72px}
+.page-head{margin:18px 0 18px}.page-head h1{font-size:clamp(34px,6vw,52px);margin:2px 0 8px}
+.lead{font-size:17px;line-height:1.55;color:var(--body);max-width:62ch;margin:0}
+.bath-status{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 18px}
+.bath-status>div{background:var(--linen);border:1px solid var(--line);border-radius:16px;padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.bath-status small{font-size:13px;color:var(--muted)}.bath-status b{font-size:22px;color:var(--sumi);font-variant-numeric:tabular-nums}.bath-status span{font-size:13px;color:var(--muted)}
+.bath-card{background:var(--linen);border:1px solid var(--line);border-top:4px solid var(--indigo);border-radius:20px;padding:16px 18px;margin:0 0 18px}
+.bath-card h2{font-size:24px;margin:0 0 6px}.bath-card h3{font-size:17px;margin:6px 0 4px}
+.bath-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:10px}
+.bath-table{width:100%;border-collapse:collapse;font-size:15px}
+.bath-table td{padding:9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.bath-table td:last-child{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;padding-left:10px;color:var(--sumi)}
+.bath-table small{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.bath-total td{font-weight:700;color:var(--sumi);border-bottom:0}
+.bath-notes{margin:12px 0 0;padding-left:20px;font-size:15px;line-height:1.55}.bath-notes li{margin:4px 0}
+.bath-guide{border-top-color:var(--moss)}
+.bath-guide details{border-top:1px solid var(--line);padding:4px 0}
+.bath-guide summary{cursor:pointer;font-weight:700;color:var(--sumi);min-height:44px;display:flex;align-items:center;font-size:16px}
+.bath-guide ul{padding-left:20px;line-height:1.55}.bath-guide p{line-height:1.55}
+.bath-sources{font-size:13px;margin-top:12px}
+.bath-page .cmp{margin:0 0 18px}
+.day-done{background:var(--moss-soft);border-radius:12px;padding:10px 12px;color:var(--sumi);font-size:15px}
+.day-moved{background:var(--indigo-soft);border-radius:12px;padding:12px 14px;margin:18px 0;font-size:15px}
+.archive-links{margin-top:10px;font-size:15px}
+@media (max-width:700px){.bath-cols{grid-template-columns:1fr}.bath-status{grid-template-columns:1fr 1fr}.bath-status>div:last-child{grid-column:1/-1}}
+.hq-card.hq-bath{background:#e8eef1;border-color:#cfdde3}.hq-card.hq-docs{background:#f1ede4;border-color:#e2d9c6}
