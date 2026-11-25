@@ -218,10 +218,11 @@ export const BUY = {
    ]},
   ]},
   {id: 'entrance', name: 'Entrance', items: [
-   {id: 'entrance-aqara-u400-smart-lock', name: 'Aqara U400 smart lock, lock only (contractor fits)', qty: 1, price: 469, cur: 'SGD', shop: 'Harvey Norman', type: 'Shop + online', href: 'https://www.harveynorman.com.sg/smart-tech-and-phones/smart-home/smart-security/aqara-u400-smart-door-lock-silver-dl-d16e.html', date: '2026-12-12', when: 'Install at the end of renovation', note: 'La Casa main doors (neighbour photo) look like a pull-handle door with a mortise-type lock, not a round-hole knob lock. The U400 is a round-hole deadbolt lock, so it needs door conversion. Check our door edge on 3 Dec before buying. If it is mortise, the D100 or A100 below fits directly.', alts: [
+   {id: 'entrance-aqara-u400-smart-lock', name: 'Aqara U400 smart lock, lock only (contractor fits)', qty: 1, price: 469, cur: 'SGD', shop: 'Harvey Norman', type: 'Shop + online', href: 'https://www.harveynorman.com.sg/smart-tech-and-phones/smart-home/smart-security/aqara-u400-smart-door-lock-silver-dl-d16e.html', date: '2026-12-12', when: 'Install at the end of renovation', note: 'Door photo 25 Nov: timber door, long pull bar, euro key cylinder in a round plate = mortise lock, not the round-hole deadbolt the U400 needs. The U400 only fits after drilling a new 54 mm hole (installer conversion). No drilling: U200 fits over the existing cylinder. Whole lock swap: D100 or A100. Check with management first: main doors are often fire-rated and drilling may not be allowed.', alts: [
     {name: 'Aqara U400 with installation + 24-month onsite warranty', price: 649, cur: 'SGD', shop: 'Passion Home', type: 'Online', href: 'https://passionhome.sg/product/aqara-smart-door-lock-u400/'},
     {name: 'Aqara D100 push-pull mortise lock, fire-rated, installed (40–80 mm doors)', price: 869, cur: 'SGD', shop: 'Passion Home', type: 'Online', href: 'https://passionhome.sg/product/aqara-smart-door-lock-d100-official-with-installation/'},
     {name: 'Aqara A100 mortise lock, BCA fire-rated, installed', price: 669, cur: 'SGD', shop: 'Passion Home', type: 'Online', href: 'https://passionhome.sg/product/aqara-smart-door-lock-a100/'},
+    {name: 'Aqara U200, fits over the existing euro cylinder (no drilling), with installation', price: 419, cur: 'SGD', shop: 'Harvey Norman', type: 'Shop + online', href: 'https://www.harveynorman.com.sg/smart-tech-and-phones/smart-home/smart-security/aqara-u200-smart-door-lock-with-installation-black-el-d02d.html'},
    ]},
    {id: 'entrance-retractable-insect-mesh-door', name: 'Retractable insect mesh door', qty: 1, price: 600, cur: 'SGD', est: true, shop: 'Mozziefy / Oleno', type: 'Online', href: 'https://www.mozziefy.com/products/door-screens/', date: '2026-12-20', when: 'After MCST approval'},
   ]},
@@ -262,8 +263,8 @@ export const BUY = {
  // Amounts in the shop's currency incl. GST. est: true = date is a guess, not fixed by the shop.
  orders: [
   {id: 'dunlopillo', name: 'Dunlopillo beds and mattresses (ANZ Home Furniture, JB)', what: '3 queen storage frames + 3 mattresses (KY Carlton 30 cm, KX and KS Richmond 38 cm)', total: 19999, cur: 'MYR', href: '/research#r-beds',
-   paid: [{date: '2026-11-22', amount: 8000, t: 'Deposit at the JB fair'}],
-   due: [{date: '2026-12-19', amount: 11999, t: 'Full balance, at least 3 days before delivery (by Sat 19 Dec)'}],
+   paid: [{date: '2026-11-22', amount: 7999, t: 'Deposit at the JB fair (bank transfer)'}],
+   due: [{date: '2026-12-19', amount: 12000, t: 'Full balance, at least 3 days before delivery (by Sat 19 Dec)'}],
    steps: [{date: '2026-12-22', s: 'Beds delivered', t: 'Delivery to Singapore, Tue 22 Dec: 3 frames + 3 mattresses. Check hydraulics and mattress labels before signing'}]},
   {id: 'vhaus', name: 'V Haus Living (JB), order 03460', what: 'LINO dining set + 6 chairs, KX L-shape wardrobe (custom), 2233A sofa', total: 14516.62, cur: 'MYR', href: '/research#r-vhaus',
    paid: [{date: '2026-11-22', amount: 4355, t: '30% deposit'}],
@@ -295,7 +296,7 @@ export const BUY = {
   {id: 'sanitary', date: '2026-12-05', t: 'Buy the sanitary fittings', n: 'Common bathroom: RIGEL R-BC7437 vanity (ask Heritage to beat RIGEL e-store S$760), Grohe Eurosmart tap. Both: toilets, RIGEL stainless bidet sprays (no American Standard), showers, Grohe Essentials towel sets, mirror cabinets. The family supplies them; I-Niche fits them (C1). Toilet and vanity size after 3 Dec.', href: '/research#r-bathroom'},
   {id: 'switches', date: '2026-12-05', t: 'Buy switches and sockets', n: 'After the count on 3 Dec, before the electrician starts.', href: '#it-contractor-switches-sockets'},
   {id: 'vhaus-wardrobe', date: '2026-12-08', t: 'V Haus measures the KX L-shaped wardrobe (Tue 8 Dec)', n: 'After the hacking (3, 4 and 7 Dec). Choose body and door colours (mood board) and the inside layout. About 1 month rush to make, aiming for end-December delivery.', href: '/look#look-wardrobe'},
-  {id: 'dunlopillo-pay', date: '2026-12-19', t: 'Pay Dunlopillo (ANZ) the full balance RM11,999', n: 'At least 3 days before the Tue 22 Dec delivery. Deposit RM8,000 paid 22 Nov. Keep the receipt.', href: '/pay'},
+  {id: 'dunlopillo-pay', date: '2026-12-19', t: 'Pay Dunlopillo (ANZ) the full balance RM12,000', n: 'At least 3 days before the Tue 22 Dec delivery. Deposit RM7,999 paid 22 Nov (sales order 155571). Keep the receipt.', href: '/pay'},
   {id: 'beds', date: '2026-12-22', t: 'Dunlopillo beds delivered (Tue 22 Dec)', n: 'KY: Carlton 30 cm + KHJ60 headboard (PLE 007). KX: Richmond 38 cm, no headboard (Picco PC 151-14). KS: Richmond 38 cm + KHJ44 headboard (311-15). Check the hydraulics and every mattress label before signing.', href: '/pay'},
  ],
  // To check on 3 Dec (keys) or after, then buy.
@@ -306,7 +307,7 @@ export const BUY = {
   {t: 'Fibre point and LAN ports', n: 'Find the fibre point (TP) and ask management if the old owner’s line is still active. Plug a laptop into each LAN port with a cable: if it gets internet from the router, the port works. A cheap LAN cable tester (about RM20) also works. Dead ports are fixed by the electrician, not the internet company.'},
   {t: 'Toilet bowls', n: 'For both toilets, measure the setting-out: from the wall behind the toilet to the middle of the floor pipe. It decides which model fits. Compare with the toilet sizes on the Floor plan.'},
   {t: 'Common toilet', n: 'Confirm the basin size and the final half-wall size with the glass panel on top.'},
-  {t: 'Main door edge', n: 'Photo it to choose the smart lock (mortise or not).'},
+  {t: 'Main door edge + inside', n: 'Photo the door edge (lock plate) and the inside (thumb-turn or key) to confirm the smart lock. Ask management if the door is fire-rated and if drilling is allowed.'},
   {t: 'Fridge niche and basin walls', n: 'Fridge space: width (70 cm?), depth and height, and what is above it (fridges want about 3 to 5 cm on top). Then buy the fridge. Also the walls for the mirror cabinets.'},
   {t: 'KS wardrobe wall', n: 'After the old built-in wardrobe is hacked away: measure the wall width, ceiling height and any pipe or trunking, for the new wardrobe.'},
   {t: 'Ceiling height', n: 'Measure in the living room and one bedroom (the plan assumes 2.6 m). It sets the fan and light spread.'},

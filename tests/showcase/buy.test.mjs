@@ -116,7 +116,7 @@ test('to-buy: to-do list near the top with shared ticks; clear file cards; vinyl
 test('payments: exact paid and left per order and due dates; /buy links to /pay instead of repeating it',async()=>{
  const {orderSums}=await import('../../showcase/buy.mjs');
  const d=BUY.orders.find(o=>o.id==='dunlopillo'),v=BUY.orders.find(o=>o.id==='vhaus');
- assert.deepEqual(orderSums(d),{paid:8000,left:11999});assert.deepEqual(orderSums(v),{paid:4355,left:10161.62});
+ assert.deepEqual(orderSums(d),{paid:7999,left:12000});assert.deepEqual(orderSums(v),{paid:4355,left:10161.62});
  assert.equal(d.due[0].date,'2026-12-19');assert.ok(v.steps.some(x=>x.date==='2026-12-08'));
  const s={...visitorState(content,samples,{code:'FAMILY',name:'Family'},[],[],false),visit:{}},html=renderPage(s,'https://lacasa.test/buy').html;
  assert.doesNotMatch(html,/id="buy-pay"/);assert.match(html,/href="\/pay"/);

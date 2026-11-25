@@ -112,6 +112,9 @@ export const IMG = {
  "entrance-aqara-u400-smart-lock#3": {
   "src": "/images/buy/aqara-a100-mortise-lock-bca-fire-rated-installed-bec6fa.webp"
  },
+ "entrance-aqara-u400-smart-lock#4": {
+  "src": "/images/buy/aqara-u200-retrofit-euro-cylinder-installed.webp"
+ },
  "entrance-retractable-insect-mesh-door#0": {
   "ex": true,
   "src": "/images/buy/retractable-insect-mesh-door-5ec5dd.webp"
