@@ -51,7 +51,7 @@ export const STAGES = [
   {t: 'Fridge: Hitachi R-VX480 or Toshiba S$929 (space 75 × 75 × 183 cm)', date: '2026-11-27', todo: 'black-friday'}]},
  {id: 'movein', n: 'Moving in', steps: [
   {t: 'Electricity and water on', date: '2026-12-05', todo: 'sp'},
-  {t: 'Fibre broadband', date: '2026-12-03', todo: 'fibre'},
+  {t: 'Fibre broadband: sign up at COURTS (free eGift card), install before move-in', date: '2026-11-30', todo: 'fibre'},
   {t: 'Move in', tbc: MOVE_IN_LABEL}]},
 ];
 
