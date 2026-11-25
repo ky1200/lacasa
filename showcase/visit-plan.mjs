@@ -77,7 +77,7 @@ export const VISIT = {
  {id:'kitchen', name:'Kitchen', minutes:10,
   show:[{item:'YA05'},{item:'KT-WATER'}],
   measure:[
-   {id:'fridge-space', title:'Fridge space', shape:'box', fields:{L:'Width',W:'Depth',H:'Height'}, need:{L:{min:70},W:{min:72},H:{min:180}}, needText:'Widest fridge on the list is 70 cm; tallest 179 cm. Leave a little air gap.', item:'kitchen/fridge', space:{decisions:['KT01'],map:{width:'L',depth:'W'}}},
+   {id:'fridge-space', title:'Fridge space', shape:'box', fields:{L:'Width',W:'Depth',H:'Height'}, need:{L:{min:70},W:{min:72},H:{min:180}}, needText:'Measured: 75 W × 75 D × 183 H cm. Widest fridge on the list is 70 cm; tallest 179 cm. Leave a little air gap.', item:'kitchen/fridge', space:{decisions:['KT01'],map:{width:'L',depth:'W'}}},
    {id:'counter', title:'Counter for small appliances', shape:'floor', fields:{L:'Free counter length',W:'Counter depth'}, needText:'Microwave, kettle, rice cooker, air fryer, portable cooker, water dispenser.'},
    {id:'dispenser-spot', title:'Water dispenser spot on the counter', shape:'box', fields:{L:'Width',W:'Depth',H:'Height up to the wall cabinet'}, need:{L:{min:26},W:{min:49},H:{min:44}}, needText:'Toshiba / Midea dispensers are 26 × 49 × 44 cm.', item:'kitchen/water-dispenser-tap'},
    {id:'kitchen-fan-spot', title:'Kitchen fan spot', shape:'height', fields:{H:'Floor to ceiling'}, needText:'Kitchen fans hang about 50–63 cm down; keep clear of cabinet doors and the hob.', item:'kitchen/fan'},

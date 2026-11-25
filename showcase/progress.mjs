@@ -39,7 +39,7 @@ export const STAGES = [
   {t: 'Black Friday orders (washer, vacuums, robot)', date: '2026-11-27', todo: 'black-friday'},
   {t: 'Confirm the TV', date: '2026-11-30', todo: 'tv-decide'},
   {t: 'Order the aircon', date: '2026-11-30', todo: 'aircon'},
-  {t: 'Fridge, after measuring the niche', tbc: 'after 3 Dec'}]},
+  {t: 'Fridge (space measured 75 × 75 × 183 cm)', tbc: 'Black Friday'}]},
  {id: 'movein', n: 'Moving in', steps: [
   {t: 'Electricity and water on', date: '2026-12-05', todo: 'sp'},
   {t: 'Fibre broadband', date: '2026-12-03', todo: 'fibre'},
