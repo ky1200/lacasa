@@ -1,0 +1,21 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {validQuote, addQuote, cmpLog, comparePage, cmpTarget, CMP_KEY, CMP_ITEMS} from '../../showcase/compare.mjs';
+import {dayPage} from '../../showcase/day.mjs';
+test('compare: quotes are checked and sorted with online prices', () => {
+ assert.ok(validQuote({w: 'KY', item: 'toilet', shop: 'Heritage Bathroom Gallery', price: 480, note: ''}));
+ assert.ok(validQuote({w: 'Mum', item: 'general', shop: 'RIGEL Experience Centre', price: null, note: 'Package 10% off'}));
+ assert.ok(!validQuote({w: 'KY', item: 'toilet', shop: 'X', price: null, note: ''}));
+ assert.ok(!validQuote({w: 'Bob', item: 'toilet', shop: 'X', price: 1, note: ''}));
+ assert.ok(!validQuote({w: 'KY', item: 'nope', shop: 'X', price: 1, note: ''}));
+ const l = addQuote([], {w: 'KY', item: 'toilet', shop: 'Heritage Bathroom Gallery', price: 480, note: 'cash'});
+ const html = comparePage({[CMP_KEY]: JSON.stringify(l)});
+ const card = html.slice(html.indexOf('data-cmp-item="toilet"'), html.indexOf('data-cmp-item="toilet-slim"'));
+ assert.ok(card.indexOf('S$480') < card.indexOf('S$525'));
+ assert.match(card, /is-quote is-low/);
+ assert.equal(cmpLog({[CMP_KEY]: 'x'}).length, 0);
+ assert.equal(cmpTarget(), 4058);
+ for (const i of CMP_ITEMS) assert.ok(i.p.length);
+ assert.match(dayPage({}), /id="price-check"/);
+ assert.doesNotMatch(comparePage({}, true), /Add a shop price/);
+});

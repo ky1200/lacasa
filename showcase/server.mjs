@@ -6,6 +6,7 @@ import {lookKeys,validLookValue} from './look-data.mjs';
 import {PAY_KEY,validPayLog} from './pay.mjs';
 import {DAY_KEY,validDayLog} from './day.mjs';
 import {PROG_KEY,validUpdate,progLog,addUpdate} from './progress.mjs';
+import {CMP_KEY,validQuote,cmpLog,addQuote} from './compare.mjs';
 import {stateFor} from './domain.mjs';
 const VISIT_KEYS=visitKeys(),BUY_KEYS=buyKeys(),LOOK_KEYS=lookKeys();
 export class AppError extends Error {constructor(status,message){super(message);this.status=status;}}
@@ -56,6 +57,22 @@ export async function api(request,env,content,samples){try{
   if(value)await env.DB.prepare('INSERT INTO visit_notes (key,value,code,updated_at) VALUES (?,?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,code=excluded.code,updated_at=excluded.updated_at').bind(key,value,who.code,new Date().toISOString()).run();
   else await env.DB.prepare('DELETE FROM visit_notes WHERE key=?').bind(key).run();
   return json({ok:true});
+ }
+ if(path.startsWith('/api/compare/')){
+  if(!env.DB)throw new AppError(503,'The private database is not ready yet.');
+  const read=async()=>{const r=await env.DB.prepare('SELECT value FROM visit_notes WHERE key=?').bind(CMP_KEY).first();return cmpLog({[CMP_KEY]:r?.value??''});};
+  const write=list=>env.DB.prepare('INSERT INTO visit_notes (key,value,code,updated_at) VALUES (?,?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,code=excluded.code,updated_at=excluded.updated_at').bind(CMP_KEY,JSON.stringify(list),who.code,new Date().toISOString()).run();
+  if(method==='GET'&&path==='/api/compare/state')return json({log:await read()});
+  if(method==='POST'&&path==='/api/compare/add'){
+   const body=await bodyJSON(request,4000);
+   if(!validQuote(body))throw new AppError(422,'Add a price or a note (2 to 280 characters).');
+   const list=addQuote(await read(),body);await write(list);return json({ok:true,log:list});
+  }
+  if(method==='POST'&&path==='/api/compare/remove'){
+   const body=await bodyJSON(request,1000),list=await read();
+   if(typeof body.id!=='string'||!list.some(x=>x.id===body.id))throw new AppError(404,'That entry is already gone.');
+   const next=list.filter(x=>x.id!==body.id);await write(next);return json({ok:true,log:next});
+  }
  }
  if(path.startsWith('/api/progress/')){
   if(!env.DB)throw new AppError(503,'The private database is not ready yet.');

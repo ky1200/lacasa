@@ -2,6 +2,7 @@
 // Times shift for everyone: the family taps "Arrived" / "Left" and the rest of the day re-plans.
 // Saved as one JSON value under the visit_notes key "day:1125" (PUT /api/day/log, GET /api/day/log).
 import {DAY_ROUTES} from './day-routes.mjs';
+import {comparePage} from './compare.mjs';
 
 const h = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 export const DAY_KEY = 'day:1125';
@@ -143,7 +144,7 @@ export function dayPage(v = {}, ro = false) {
 <p class="day-wait" data-wait${t.wait > 0 ? '' : ' hidden'}>${t.wait > 0 ? `${t.wait} min spare before this` : ''}</p>
 ${ro ? '' : `<div class="day-acts"><button type="button" data-act="a">${log.a[s.id] ? (s.btn ?? 'Arrived') + ' ' + h(label12(log.a[s.id])) : (s.btn ?? 'Arrived') + ' now'}</button>${s.stay ? `<button type="button" data-act="l">${log.l[s.id] ? 'Left ' + h(label12(log.l[s.id])) : 'Left now'}</button>` : ''}${s.opt ? `<button type="button" data-act="skip">${t.skip ? 'Add back' : 'Skip'}</button>` : ''}</div>`}
 <div class="day-links">${ro ? '' : `<button type="button" class="day-edit" data-act="edit" aria-label="Type the times for ${h(s.n)}">Edit times</button>`}${s.nonav ? '' : nav(s)}</div>
-${s.todo || g ? `<details class="day-more"><summary>${g ? 'What to look at and ask' : 'Checklist'}</summary>${s.todo ? list(s.todo.map(h)) : ''}${g ? `<p><b>Focus:</b> ${h(g.focus)}</p><h4>Look at</h4>${list(g.look.map(h))}<h4>Ask</h4>${list(g.ask.map(h))}` : ''}</details>` : ''}
+${s.todo || g ? `<details class="day-more"><summary>${g ? 'What to look at and ask' : 'Checklist'}</summary>${s.todo ? list(s.todo.map(h)) : ''}${g ? `<p><a class="text-link" href="#price-check">Add prices from this shop ↓</a></p><p><b>Focus:</b> ${h(g.focus)}</p><h4>Look at</h4>${list(g.look.map(h))}<h4>Ask</h4>${list(g.ask.map(h))}` : ''}</details>` : ''}
 </div></li>`;
  };
  const pts = DAY_STOPS.map((s, i) => ({id: s.id, n: s.n, at: s.at, i: i + 1, route: s.route ?? null}));
@@ -152,12 +153,14 @@ ${s.todo || g ? `<details class="day-more"><summary>${g ? 'What to look at and a
 <p class="muted">Times move for everyone. Tap <b>Arrived now</b> and <b>Left now</b> at each stop (or Edit times to type one); every later stop re-plans. Drive times are estimates with weekday traffic; check Waze for the live one.</p></header>
 <p class="day-km muted">Driving in Singapore today: about <b>${Object.values(DAY_ROUTES).reduce((a, r) => a + r.km, 0).toFixed(0)} km</b> (checkpoint to checkpoint), about ${Math.round(Object.values(DAY_ROUTES).reduce((a, r) => a + r.min, 0) / 60 * 10) / 10} hours without traffic.</p>
 <div class="day-sum" data-sum><div><small>Now</small><b data-now>–</b></div><div><small>Next</small><b data-next>–</b></div><div><small>Against plan</small><b data-late>–</b></div></div>
+<nav class="day-jump" aria-label="On this page"><a href="#price-check">Price check and shop notes</a><a href="#bathroom-guide">Bathroom guide</a></nav>
 <div class="day-map" id="day-map" role="img" aria-label="Map of the day's stops and drives"></div>
 <p class="day-mapnote muted">Map: OneMap © Singapore Land Authority. Lines follow the roads (OSRM).</p>
 ${ro ? '' : `<div class="day-tools"><span class="day-status" data-day-status>${saved ? 'Saved times shown' : 'No times saved yet'}</span><button type="button" class="day-reset" data-reset>Clear all times</button></div>`}
 <form class="day-form" data-day-form hidden><h2 data-form-title>Times</h2><div class="day-2"><label>Arrived <input type="time" name="a"></label><label>Left <input type="time" name="l"></label></div><label>Planned stay (min) <input name="d" inputmode="numeric" pattern="\\d{1,3}"></label><p class="day-err" data-day-err hidden></p><div class="day-form-acts"><button type="submit" class="button primary">Save</button><button type="button" class="button secondary" data-cancel>Cancel</button></div></form>
 <ol class="day-list">${DAY_STOPS.map(stopHTML).join('')}</ol>
 
+${comparePage(v, ro)}
 <section class="day-guide" id="bathroom-guide"><h2>Bathroom guide for the shops</h2><p class="muted">Research done 24 Nov. One pick per question, reasons underneath.</p>
 <details><summary>Tomorrow: choose and get prices, pay later</summary>
 <p><b>No full payment tomorrow.</b> The toilet must match the floor pipe position, which is only measured on 3 Dec (keys). Get a written package quote valid to mid-December. Pay a deposit only if it is refundable or allows model and size changes, written on the receipt.</p>
