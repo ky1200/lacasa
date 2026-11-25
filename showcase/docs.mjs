@@ -29,14 +29,28 @@ export const DOCS = [
  ]},
 ];
 
+// La Casa renovation rules (from the management form + receipt + office notice). Unknowns are marked "ask".
+export const RULES = [
+ ['Permit', 'Renovation approved 3 Dec to 31 Dec 2026 (deposit receipt). Works past 31 Dec need an extension from management before then.'],
+ ['Work hours', 'Mon–Fri 9am–6pm. Sat 9am–1pm. No work on Sundays or public holidays.'],
+ ['Hacking (noisy work)', 'Confirmed 3, 4 and 7 Dec only.'],
+ ['Works list', 'All works listed on the form with drawings. New works not on the form: tell management first.'],
+ ['Deposit', 'S$1,000 cash, paid 25 Nov (receipt S/N 9071). Refunded after the works pass the management check: keep the receipt.'],
+ ['After the works', 'Submit the moving-in form to management after completion.'],
+ ['Main door', 'Ask before drilling or changing the main door (it may be fire-rated).'],
+ ['Office', 'Mon–Fri 9am–6pm, Sat 9am–1pm, lunch 1–2pm, closed Sun and public holidays. Tel 6469 7405, info@la-casa.com.sg.'],
+ ['Ask management', 'Lift padding and booking for deliveries, debris disposal, contractor passes and parking, corridor protection.'],
+];
+
 export function docsPage() {
  const n = DOCS.reduce((a, g) => a + g.items.length, 0);
  const row = d => `<li><a class="doc-row" href="${h(d.href)}" target="_blank" rel="noopener"><span class="doc-kind">${h(d.kind)}</span><span class="doc-text"><b>${h(d.t)}</b><small>${h(dayLabel(d.date))} · ${h(d.s)}</small></span><span class="doc-open" aria-hidden="true">↗</span></a></li>`;
  return `<section class="doc-page">
-<header class="doc-head"><p class="eyebrow">${n} documents</p><h1>Documents</h1>
+<header class="doc-head"><p class="eyebrow">${n} documents</p><h1>Documents and rules</h1>
 <p class="muted">Receipts, orders, quotes and photos in one place. Photos and receipts open from the family Google Drive folder (only for people it is shared with); quotes and plans open here.</p>
 <a class="button primary doc-folder" href="${DOCS_FOLDER}" target="_blank" rel="noopener">Open the Drive folder ↗</a>
 <p class="doc-add muted">To add one: put the photo or PDF in the Drive folder (name it "date + what"), then post it on Progress so everyone knows.</p></header>
+<section class="doc-rules" id="rules" aria-labelledby="rules-h"><h2 id="rules-h">Renovation rules</h2><dl>${RULES.map(([k, v]) => `<div><dt>${h(k)}</dt><dd>${h(v)}</dd></div>`).join('')}</dl></section>
 ${DOCS.map(g => `<section class="doc-group"><h2>${h(g.g)}</h2><ol class="doc-list">${g.items.map(row).join('')}</ol></section>`).join('')}
 </section>`;
 }

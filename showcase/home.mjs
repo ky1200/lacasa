@@ -41,7 +41,7 @@ ${dayOn ? `<a class="hq-today" href="/day"><span><small>${today === DAY_DATE ? '
 <section class="hq-next" aria-labelledby="hq-next-title"><div class="hq-next-head"><h2 id="hq-next-title">Next up</h2><span>${done} of ${todo.length} done</span></div>
  <ol class="hq-todo">${next.slice(0, 4).map(x => `<li><span class="buy-chip${x.date ? (x.date < today ? ' is-late' : '') : ' is-now'}">${x.date ? h(dayLabel(x.date)) : 'Now'}</span><span class="hq-todo-text"><b>${h(x.t)}</b></span></li>`).join('')}</ol>
  <a class="text-link" href="/buy#buy-todo">All to-dos and ticks</a></section>
-<nav class="hq-quick" aria-label="Checklists and files"><a href="/docs">Documents</a><a href="/buy#buy-measure">3 Dec checklist</a><a href="/buy#buy-qa">Quote checks</a><a href="/buy#buy-decisions">Reno decisions</a><a href="/buy#buy-files">Contractor files</a><a href="/plan?layout=designer#designer">Designer’s pick</a><a href="/research">Research</a></nav>
+<nav class="hq-quick" aria-label="Checklists and files"><a href="/docs#rules">Reno rules</a><a href="/docs">Documents</a><a href="/buy#buy-measure">3 Dec checklist</a><a href="/buy#buy-qa">Quote checks</a><a href="/buy#buy-decisions">Reno decisions</a><a href="/buy#buy-files">Contractor files</a><a href="/plan?layout=designer#designer">Designer’s pick</a><a href="/research">Research</a></nav>
 <p class="hq-foot"><a class="text-link" href="/earlier">Archive</a>${isOwner || audit ? '' : ' · <a class="text-link" href="/owner">Owner sign-in</a>'}</p>
 </article>`;
 }
