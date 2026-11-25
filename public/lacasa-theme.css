@@ -1522,3 +1522,4 @@ button.pg-tick{cursor:pointer}button.pg-tick:active{background:var(--plaster)}
 .cmp-tag{display:grid;place-items:center;font-size:12px;font-weight:600;color:var(--muted);background:var(--linen)}.is-quote .cmp-tag{color:#8e6a40;background:#fdf0dc}
 .cmp-bar{grid-column:2/-1;height:6px;border-radius:3px;background:var(--linen);overflow:hidden}.cmp-bar i{display:block;height:100%;border-radius:3px;background:#c9c2b4}
 .is-low .cmp-bar i{background:var(--moss)}.is-quote .cmp-bar i{background:#d9a35f}
+.cmp-row.is-alt{opacity:.62}.cmp-row.is-tag{background:#f4f1ec}

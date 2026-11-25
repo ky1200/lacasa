@@ -23,8 +23,23 @@ export const IMG = {
  "common-bath-basin-cabinet-304-stainless#2": {
   "src": "/images/buy/rigel-bc0201.webp"
  },
- "common-bath-basin-mixer-tap#0": {
+ "common-bath-basin-mixer-tap#4": {
   "src": "/images/buy/grohe-eurosmart-23922003.webp"
+ },
+ "master-bath-basin-mixer-tap#2": {
+  "src": "/images/buy/grohe-eurosmart-23922003.webp"
+ },
+ "common-bath-rigel-3-in-1#5": {
+  "src": "/images/buy/rigel-3-in-1-thermostatic-rain-shower-set-chrome-48c082.webp"
+ },
+ "master-bath-rigel-thermostatic-exposed-shower#3": {
+  "src": "/images/buy/rigel-hand-shower-rail.webp"
+ },
+ "master-bath-accessories-for-both-bathrooms#4": {
+  "src": "/images/buy/grohe-essentials-3in1.webp"
+ },
+ "common-bath-basin-mixer-tap#0": {
+  "src": "/images/buy/rigel-mxb721101-gun-showroom.webp"
  },
  "common-bath-basin-mixer-tap#1": {
   "src": "/images/buy/rigel-mxb2003.webp"
@@ -36,13 +51,13 @@ export const IMG = {
   "src": "/images/buy/hansgrohe-rebris-s-110.webp"
  },
  "common-bath-bidet-spray#0": {
-  "src": "/images/buy/rigel-sa8200-chrome.webp"
+  "src": "/images/buy/rigel-sa8200-gun.webp"
  },
  "common-bath-bidet-spray#1": {
   "src": "/images/buy/grohe-tempesta-f-27513001.webp"
  },
  "common-bath-bidet-spray#2": {
-  "src": "/images/buy/rigel-sa8200-gun.webp"
+  "src": "/images/buy/rigel-sa8200-chrome.webp"
  },
  "common-bath-ceiling-light-wet-area#0": {
   "ex": true,
@@ -363,7 +378,7 @@ export const IMG = {
   "ex": true
  },
  "master-bath-accessories-for-both-bathrooms#0": {
-  "src": "/images/buy/grohe-essentials-3in1.webp"
+  "src": "/images/buy/rigel-tb6908.webp"
  },
  "master-bath-accessories-for-both-bathrooms#1": {
   "src": "/images/buy/grohe-essentials-4in1.webp"
@@ -375,19 +390,19 @@ export const IMG = {
   "src": "/images/buy/rigel-tb6908.webp"
  },
  "master-bath-basin-mixer-tap#0": {
-  "src": "/images/buy/grohe-eurosmart-23922003.webp"
+  "src": "/images/buy/rigel-mxb721101-gun-showroom.webp"
  },
  "master-bath-basin-mixer-tap#1": {
   "src": "/images/buy/rigel-mxb2003.webp"
  },
  "master-bath-bidet-spray#0": {
-  "src": "/images/buy/rigel-sa8200-chrome.webp"
+  "src": "/images/buy/rigel-sa8200-gun.webp"
  },
  "master-bath-bidet-spray#1": {
   "src": "/images/buy/grohe-tempesta-f-27513001.webp"
  },
  "master-bath-bidet-spray#2": {
-  "src": "/images/buy/rigel-sa8200-gun.webp"
+  "src": "/images/buy/rigel-sa8200-chrome.webp"
  },
  "master-bath-rigel-gallant-one-piece#0": {
   "src": "/images/buy/rigel-gallant-one-piece-rimless-toilet-with-whirlwash-cd2f69.webp"
