@@ -2,6 +2,15 @@
 
 Current state (26 Nov 2026): site on Cloudflare Workers + D1 at https://lacasa.kayikkwong.workers.dev (moved from ChatGPT Sites on 30 Oct). The full working notes are the project handover doc `claude/lacasa-handover.md` in the claude.ai project; this file is a short change log only. The table and notes from October below are history.
 
+## 26 November 2026 — 3D upgrade
+- 3D view rebuilt for realism: image-based light (RoomEnvironment), PBR Neutral tone mapping (true product colours), soft shadows, ambient occlusion + SMAA drawn when the view rests, rounded furniture, dark skirting, pleated curtains, dining pendant, light-wood TV console.
+- New three.js bundle `public/vendor/three-0.187.0-c.js` (adds PMREM, RoomEnvironment, RoundedBoxGeometry, RectAreaLight, EffectComposer, GTAO, SMAA, Output). Old -b bundle removed.
+- "Floor, paint, lights" sheet: 19 XingFloors vinyls (Floorlux, Ultraclick, waterproof; colours sampled from XingFloors' swatch photos, procedural 122 × 18 cm planks), 4 Nippon whites, 5 light scenes (day, 3000K, 4000K, 6500K compare, coves + lamps) with lighting tips. Picks remembered on the device only.
+- KY and KS bay windows: glass about 56 cm out from the inner wall over a 50 cm high ledge, cushions + pillows (toggle), warm LED strip under the window head. "Window seat" view. Found: KY bed head sits against the KY ledge.
+- Photo button saves a PNG of the view. Deep links for checks: /plan#3d=nook&scene=1&vinyl=wheat-oak.
+- Mood board: vinyl board now XingFloors (Camel Brown pick); new Window seat board; measure list: KY/KS ledges.
+- Still open: John's updated floor plan (not received here) → doors to recheck once K sends it.
+
 ## 26 November 2026 — tidy-up
 - New page /bathrooms: split plan (Singapore water items vs Malaysia), the shop price check (moved from /day) and the bathroom guide updated for gunmetal. Nav: Day plan removed; /day kept in the Archive, marked done.
 - Home: 6 cards (adds Bathrooms and Documents). Desktop /plan: no more big gaps between the control rows.
