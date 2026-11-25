@@ -17,12 +17,12 @@ export const STAGES = [
   {t: 'Collect the keys', date: '2026-12-03', todo: 'keys'}]},
  {id: 'reno', n: 'Renovation (I-Niche)', steps: [
   {t: 'Quote fixes sent to John', date: '2026-11-24', todo: 'quote2'},
-  {t: 'Reno form + S$1,000 deposit at management', date: '2026-11-26', todo: 'reno-form'},
+  {t: 'Reno form + S$1,000 deposit at management (paid 25 Nov, receipt 9071)', date: '2026-11-26', todo: 'reno-form'},
   {t: 'Sign the quote, pay 10%', date: '2026-11-28', todo: 'sign'},
   {t: 'Kitchen glass door design to I-Niche', todo: 'kitchen-door'},
   {t: 'Site check on 3 Dec, results to I-Niche', date: '2026-12-04', todo: 'tell-iniche'},
-  {t: 'Hacking (3 to 5 Dec)', date: '2026-12-05', auto: true},
-  {t: 'Works finished, defects checked', tbc: 'date from I-Niche'}]},
+  {t: 'Hacking (3, 4 and 7 Dec)', date: '2026-12-07', auto: true},
+  {t: 'Works finished by 31 Dec (end of the management permit), defects checked', date: '2026-12-31'}]},
  {id: 'bath', n: 'Bathrooms', steps: [
   {t: 'See and price fittings (RIGEL, LIXIL, Heritage)', date: '2026-11-25', todo: 'bath-shops'},
   {t: 'Buy the sanitary fittings', date: '2026-12-05', todo: 'sanitary'},

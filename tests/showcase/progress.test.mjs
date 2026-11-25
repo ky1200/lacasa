@@ -8,7 +8,7 @@ test('progress: every step links to a real to-do or is fixed/dated', () => {
  const ids = new Set(BUY.todo.map(t => t.id));
  for (const g of STAGES) for (const s of g.steps) {
   if (s.todo) assert.ok(ids.has(s.todo), s.todo);
-  else assert.ok(s.done || s.tbc || s.auto, s.t);
+  else assert.ok(s.done || s.tbc || s.auto || s.date, s.t);
  }
 });
 test('progress: step states from ticks and dates', () => {

@@ -269,7 +269,7 @@ export const BUY = {
    paid: [{date: '2026-11-22', amount: 4355, t: '30% deposit'}],
    due: [{date: null, amount: 10161.62, t: 'Balance before delivery. Ask V Haus if it is paid per delivery (wardrobe, sofa, dining set) or all before the first one'}],
    steps: [
-    {date: '2026-12-08', s: 'Wardrobe measured', t: 'V Haus measures the KX L-shape wardrobe (Tue 8 Dec, after the 3 to 5 Dec hacking)'},
+    {date: '2026-12-08', s: 'Wardrobe measured', t: 'V Haus measures the KX L-shape wardrobe (Tue 8 Dec, after the hacking on 3, 4 and 7 Dec)'},
     {date: '2026-12-31', est: true, label: 'End of Dec', s: 'Wardrobe delivered', t: 'Wardrobe: about 1 month rush to make, delivery and install aimed at end of December'},
     {date: null, est: true, label: 'Dec?', s: 'Sofa delivered', t: 'Sofa: delivery date to confirm, maybe within December'},
     {date: '2027-01-20', est: true, label: 'Mid–end Jan', s: 'Dining set delivered', t: 'LINO dining set + 6 chairs: January stock, delivery mid to end January'},
@@ -294,7 +294,7 @@ export const BUY = {
   {id: 'sp', date: '2026-12-05', t: 'SP Services: electricity and water on (from 5 Dec)', n: 'Account already applied; 5 Dec was the earliest turn-on slot. Submit the management form request beforehand.'},
   {id: 'sanitary', date: '2026-12-05', t: 'Buy the sanitary fittings', n: 'Common bathroom: RIGEL R-BC7437 vanity (ask Heritage to beat RIGEL e-store S$760), Grohe Eurosmart tap. Both: toilets, RIGEL stainless bidet sprays (no American Standard), showers, Grohe Essentials towel sets, mirror cabinets. The family supplies them; I-Niche fits them (C1). Toilet and vanity size after 3 Dec.', href: '/research#r-bathroom'},
   {id: 'switches', date: '2026-12-05', t: 'Buy switches and sockets', n: 'After the count on 3 Dec, before the electrician starts.', href: '#it-contractor-switches-sockets'},
-  {id: 'vhaus-wardrobe', date: '2026-12-08', t: 'V Haus measures the KX L-shaped wardrobe (Tue 8 Dec)', n: 'After the 3 to 5 Dec hacking. Choose body and door colours (mood board) and the inside layout. About 1 month rush to make, aiming for end-December delivery.', href: '/look#look-wardrobe'},
+  {id: 'vhaus-wardrobe', date: '2026-12-08', t: 'V Haus measures the KX L-shaped wardrobe (Tue 8 Dec)', n: 'After the hacking (3, 4 and 7 Dec). Choose body and door colours (mood board) and the inside layout. About 1 month rush to make, aiming for end-December delivery.', href: '/look#look-wardrobe'},
   {id: 'dunlopillo-pay', date: '2026-12-19', t: 'Pay Dunlopillo (ANZ) the full balance RM11,999', n: 'At least 3 days before the Tue 22 Dec delivery. Deposit RM8,000 paid 22 Nov. Keep the receipt.', href: '/pay'},
   {id: 'beds', date: '2026-12-22', t: 'Dunlopillo beds delivered (Tue 22 Dec)', n: 'KY: Carlton 30 cm + KHJ60 headboard (PLE 007). KX: Richmond 38 cm, no headboard (Picco PC 151-14). KS: Richmond 38 cm + KHJ44 headboard (311-15). Check the hydraulics and every mattress label before signing.', href: '/pay'},
  ],

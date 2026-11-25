@@ -51,7 +51,7 @@ export const RESEARCH = [
   answer: 'Ordered at V Haus Living, Mutiara Rini (JB) on 22 Nov, sales order 03460: RM14,516.62 with 9% GST for the LINO dining set with 6 chairs, the custom L-shape wardrobe for KX room and the sofa (about S$4,580). 30% deposit RM4,355 paid. Balance RM10,161.62 before delivery. V Haus measures the wardrobe on Tue 8 Dec; wardrobe about end of December, sofa maybe December, dining set mid to end January. The sofa has the armrest on the left only; the right end is open with an extra seat cushion.',
   decide: [
    'Sofa size confirmed by V Haus (23 Nov): 268 × 135 cm (order sheet said 270 × 130). Colour can still change for now: pick it on the mood board (/look). Model name still to ask.',
-   'Wardrobe: body colour, door colour and inside layout when V Haus measures after the 3 to 5 Dec hacking. Also the board brand and thickness, hinge and runner brands, swing or sliding doors.',
+   'Wardrobe: body colour, door colour and inside layout when V Haus measures after the hacking (3, 4 and 7 Dec). Also the board brand and thickness, hinge and runner brands, swing or sliding doors.',
    'Delivery to Singapore: cost and install. Dates so far: measure 8 Dec, wardrobe about end of December, sofa maybe December, dining set mid to end January. Ask if the balance is paid per delivery.',
    'Coffee table: still maybe, not in this order.',
   ],
