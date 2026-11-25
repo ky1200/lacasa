@@ -5,6 +5,7 @@ import {planKey,validPlanValue} from './plan-data.mjs';
 import {lookKeys,validLookValue} from './look-data.mjs';
 import {PAY_KEY,validPayLog} from './pay.mjs';
 import {DAY_KEY,validDayLog} from './day.mjs';
+import {PROG_KEY,validUpdate,progLog,addUpdate} from './progress.mjs';
 import {stateFor} from './domain.mjs';
 const VISIT_KEYS=visitKeys(),BUY_KEYS=buyKeys(),LOOK_KEYS=lookKeys();
 export class AppError extends Error {constructor(status,message){super(message);this.status=status;}}
@@ -55,6 +56,25 @@ export async function api(request,env,content,samples){try{
   if(value)await env.DB.prepare('INSERT INTO visit_notes (key,value,code,updated_at) VALUES (?,?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,code=excluded.code,updated_at=excluded.updated_at').bind(key,value,who.code,new Date().toISOString()).run();
   else await env.DB.prepare('DELETE FROM visit_notes WHERE key=?').bind(key).run();
   return json({ok:true});
+ }
+ if(path.startsWith('/api/progress/')){
+  if(!env.DB)throw new AppError(503,'The private database is not ready yet.');
+  const read=async()=>{const r=await env.DB.prepare('SELECT value FROM visit_notes WHERE key=?').bind(PROG_KEY).first();return progLog({[PROG_KEY]:r?.value??''});};
+  const write=list=>env.DB.prepare('INSERT INTO visit_notes (key,value,code,updated_at) VALUES (?,?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,code=excluded.code,updated_at=excluded.updated_at').bind(PROG_KEY,JSON.stringify(list),who.code,new Date().toISOString()).run();
+  if(method==='GET'&&path==='/api/progress/state'){
+   const rows=(await env.DB.prepare("SELECT key,value FROM visit_notes WHERE key LIKE 't:%'").all()).results??[];
+   return json({log:await read(),ticks:Object.fromEntries(rows.map(r=>[r.key.slice(2),r.value]))});
+  }
+  if(method==='POST'&&path==='/api/progress/update'){
+   const body=await bodyJSON(request,4000);
+   if(!validUpdate(body))throw new AppError(422,'Pick a name and write 2 to 280 characters.');
+   const list=addUpdate(await read(),body);await write(list);return json({ok:true,log:list});
+  }
+  if(method==='POST'&&path==='/api/progress/remove'){
+   const body=await bodyJSON(request,1000),list=await read();
+   if(typeof body.id!=='string'||!list.some(x=>x.id===body.id))throw new AppError(404,'That update is already gone.');
+   const next=list.filter(x=>x.id!==body.id);await write(next);return json({ok:true,log:next});
+  }
  }
  if(path==='/api/day/log'&&method==='GET'){
   if(!env.DB)throw new AppError(503,'The private database is not ready yet.');

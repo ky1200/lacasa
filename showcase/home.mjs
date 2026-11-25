@@ -5,6 +5,7 @@ import {PLAN} from './plan-data.mjs';
 import {palette} from './look.mjs';
 import {payList, payTotals} from './pay.mjs';
 import {DAY_DATE} from './day.mjs';
+import {progressCard} from './progress.mjs';
 const h = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
 const sgd = n => 'S$' + Math.round(n).toLocaleString('en-SG');
 const KEYS = '2026-12-03', MOVE_IN = 'January 2027';
@@ -29,6 +30,7 @@ export function homePage(v = {}, today = sgToday(), {isOwner = false, audit = fa
  <p class="hq-kicker">Move-in by ${MOVE_IN}</p>
  <h1 class="hq-keys">${days > 0 ? `<b>${days}</b> ${days === 1 ? 'day' : 'days'} to the keys` : days === 0 ? '<b>Keys today</b>' : '<b>Keys collected</b>'}</h1><p class="hq-keydate">${h(dayLabel(KEYS))}</p>
 </header>
+${progressCard(v, today)}
 ${dayOn ? `<a class="hq-today" href="/day"><span><small>${today === DAY_DATE ? 'Today' : h(dayLabel(DAY_DATE))}</small><b>Singapore day: deposit, bank, bathroom shops</b></span><span aria-hidden="true">›</span></a>` : ''}
 <nav class="hq-grid" aria-label="Main pages">
  <a class="hq-card hq-buy" href="/buy"><small>To-buy list</small><strong class="hq-big">${sgd(t.before)}</strong><span>before move-in · ${items} items</span></a>
