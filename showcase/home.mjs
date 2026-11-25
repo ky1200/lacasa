@@ -40,7 +40,7 @@ ${dayOn ? `<a class="hq-today" href="/day"><span><small>${today === DAY_DATE ? '
  <a class="hq-card hq-plan" href="/plan"><small>Floor plan</small>${preview}</a>
  <a class="hq-card hq-look" href="/look"><small>Mood board</small>${palette(v)}</a>
  <a class="hq-card hq-bath" href="/bathrooms"><small>Bathrooms</small><strong>${sgd(cmpTarget())}</strong><span>gunmetal, all in SG · shop quotes</span></a>
- <a class="hq-card hq-docs" href="/docs"><small>Documents</small><strong>${DOCS.length}</strong><span>receipts, orders, forms</span></a>
+ <a class="hq-card hq-docs" href="/docs"><small>Documents</small><strong>${DOCS.reduce((n, g) => n + g.items.length, 0)}</strong><span>receipts, orders, forms</span></a>
 </nav>
 <section class="hq-next" aria-labelledby="hq-next-title"><div class="hq-next-head"><h2 id="hq-next-title">Next up</h2><span>${done} of ${todo.length} done</span></div>
  <ol class="hq-todo">${next.slice(0, 4).map(x => `<li><span class="buy-chip${x.date ? (x.date < today ? ' is-late' : '') : ' is-now'}">${x.date ? h(dayLabel(x.date)) : 'Now'}</span><span class="hq-todo-text"><b>${h(x.t)}</b></span></li>`).join('')}</ol>

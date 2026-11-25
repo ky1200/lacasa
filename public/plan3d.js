@@ -403,7 +403,7 @@ export function open(D, items) {
    walk.yaw = Math.atan2(-(lx - x), -(ly - y)); walk.pitch = -0.1; walk.eye = 1.6;
   } else {
    orbit.target.set(m(b[0] + b[2] / 2), 0.4, m(b[1] + b[3] / 2));
-   orbit.dist = Math.max(5.5, m(Math.max(b[2], b[3])) * (id === 'all' ? 1.05 : 2.1));
+   orbit.dist = Math.max(5.5, m(Math.max(b[2], b[3])) * (id === 'all' ? (camera.aspect < 1 ? 0.88 : 1.05) : 2.1));
    // Whole home starts square to the 2D plan (top of the plan = far side), so the two views line up.
    // Room views look down steeply so the near walls don't hide the room.
    orbit.pitch = id === 'all' ? 1.2 : 1.12;
