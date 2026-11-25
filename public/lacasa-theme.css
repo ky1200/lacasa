@@ -1488,3 +1488,13 @@ button.pg-tick{cursor:pointer}button.pg-tick:active{background:var(--plaster)}
 .hq-progress-next{font-size:14.5px;color:var(--sumi);line-height:1.4}.hq-progress-last{font-size:13.5px;color:var(--muted);line-height:1.4}
 .hq-progress-go{font-size:14.5px;font-weight:700;color:var(--moss)}
 .day-km{margin:8px 0 0;font-size:14px}.day-km b{color:var(--sumi)}
+/* /docs */
+.doc-page{max-width:760px;margin:0 auto;padding:8px 14px 40px}
+.doc-head h1{font-size:clamp(28px,7vw,36px);margin:4px 0 8px}.doc-head .eyebrow{margin:0;font-size:13px;color:var(--moss);font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.doc-folder{display:inline-flex;align-items:center;min-height:44px;margin:4px 0 6px}.doc-add{font-size:13.5px}
+.doc-group{margin-top:18px}.doc-group h2{font-size:18px;margin:0 0 8px}
+.doc-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.doc-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:start;min-height:56px;padding:12px;border-radius:14px;background:var(--linen);border:1px solid var(--line);color:var(--body);text-decoration:none}
+.doc-kind{display:grid;place-items:center;min-width:56px;height:26px;padding:0 6px;border-radius:8px;background:var(--indigo-soft);color:var(--indigo);font-size:12px;font-weight:700}
+.doc-text{display:grid;gap:2px}.doc-text b{font-size:15.5px;color:var(--sumi);line-height:1.35}.doc-text small{font-size:13.5px;color:var(--muted);line-height:1.45}
+.doc-open{color:var(--indigo);font-size:18px}
