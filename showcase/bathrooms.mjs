@@ -20,6 +20,18 @@ export const BATH_MY = [
  ['Towel bar, roll holder, hook ×2', 'Compare the gunmetal shade with a RIGEL sample', 766],
 ];
 export const bathSum = rows => rows.reduce((a, r) => a + r[2], 0);
+// Malaysia prices checked 26 Nov 2026 (RIGEL Malaysia eStore rigel-estore.com, IKEA Malaysia), at RM3.17 = S$1.
+// [item, RM, S$ equivalent, Singapore price, note]
+export const BATH_JB = [
+ ['RIGEL towel bar TB6908 gunmetal', 468, 148, 169, 'RIGEL eStore SG'],
+ ['RIGEL roll holder PH9401T gunmetal', 492, 155, 159, 'RIGEL eStore SG'],
+ ['RIGEL robe hook RH6901 gunmetal', 159, 50, 55, 'RIGEL eStore SG'],
+ ['RIGEL mirror cabinet BC5628 gunmetal 60 cm', 1281, 404, 399, 'RIGEL eStore SG'],
+ ['RIGEL vanity BC1260 dark brown, cabinet only (no basin top)', 1023, 323, 489, 'Heritage, with basin top'],
+ ['IKEA ENHET mirror cabinet, 2 doors, 60 cm', 475, 150, 155, 'IKEA SG'],
+ ['RIGEL basin tap MXB721101', 1080, 341, 188, 'Heritage, gunmetal'],
+ ['RIGEL Quatré shower TSME2031 gunmetal', 2613, 824, 758, 'Heritage'],
+];
 
 export function bathroomsPage(v = {}, ro = false) {
  const row = ([what, pick, p]) => `<tr><td><b>${what}</b><small>${pick}</small></td><td>${sgd(p)}</td></tr>`;
@@ -29,21 +41,26 @@ export function bathroomsPage(v = {}, ro = false) {
 
 <div class="bath-status">
 <div><small>All in Singapore (eStore)</small><b>${sgd(cmpTarget())}</b><span>+ mirror cabinets ≈ S$800</span></div>
-<div><small>Split plan: Singapore part</small><b>${sgd(bathSum(BATH_SG))}</b><span>water items only</span></div>
+<div><small>Malaysia checked 26 Nov</small><b>No saving</b><span>buy all in Singapore</span></div>
 <div><small>Next step</small><b>Measure 3 Dec</b><span>toilet setting-out, basin walls</span></div>
 </div>
 
 <section class="bath-card" id="split"><h2>Buy where: the split plan</h2>
-<p class="muted">K's idea (25 Nov): buying everything in Singapore is too expensive, so buy the water items here and the rest in Malaysia. Not decided yet.</p>
+<p class="muted">K's idea (25 Nov): buy the water items in Singapore and the rest in Malaysia. <b>Checked 26 Nov: for the same real brands, Malaysia is not cheaper</b> (table below). Recommendation: buy everything in Singapore and push for a package price at Heritage instead.</p>
 <div class="bath-cols">
 <div><h3>Singapore: connects to water</h3><p class="muted">Taps, toilets, showers and bidet sprays need PUB WELS approval; a bidet spray next to a toilet also needs a check valve (SS 636).</p>
 <table class="bath-table"><tbody>${BATH_SG.map(row).join('')}<tr class="bath-total"><td>Total</td><td>${sgd(bathSum(BATH_SG))}</td></tr></tbody></table></div>
 <div><h3>Malaysia: no water connection</h3><p class="muted">Singapore value shown. Worth it only if Johor Bahru is clearly cheaper (about 30% or more) for real brands.</p>
 <table class="bath-table"><tbody>${BATH_MY.map(row).join('')}<tr class="bath-total"><td>Singapore value</td><td>${sgd(bathSum(BATH_MY))}</td></tr></tbody></table></div>
 </div>
-<ul class="bath-notes"><li><b>Customs:</b> a day trip (under 48 hours) only gets S$100 GST relief. Declare the full value and pay 9% GST on the rest; not declaring can cost about 10× the GST.</li>
+<h3>Johor Bahru prices (checked 26 Nov)</h3>
+<p class="muted">RIGEL Malaysia eStore and IKEA Malaysia, at RM3.17 = S$1, before the 9% GST owed at the checkpoint.</p>
+<table class="bath-table bath-jb"><tbody>${BATH_JB.map(([n, rm, s1, sg, where]) => `<tr><td><b>${n}</b><small>RM${rm.toLocaleString('en-SG')} ≈ ${sgd(s1)} · Singapore ${sgd(sg)} (${where})</small></td><td class="${s1 < sg ? 'jb-lower' : 'jb-higher'}">${s1 < sg ? '−' + sgd(sg - s1) : '+' + sgd(s1 - sg)}</td></tr>`).join('')}</tbody></table>
+<ul class="bath-notes"><li><b>What this means:</b> the RIGEL accessories are about S$30 cheaper per bathroom in Malaysia, which the 9% GST cancels. Mirror cabinets cost the same. RIGEL taps and showers cost much more in Malaysia. The Malaysian vanity price is for the cabinet only; the basin top is extra, so it is no cheaper than Heritage's S$489 set.</li>
+<li><b>Cheaper Malaysian sets</b> (aluminium or PVC cabinets around RM400 on Lazada) are unbranded: they fail the real-brand rule.</li>
+<li><b>Customs:</b> a day trip (under 48 hours) only gets S$100 GST relief. Declare the full value and pay 9% GST on the rest; not declaring can cost about 10× the GST.</li>
 <li><b>Not from Malaysia:</b> the ceiling fan with light (wired in, needs the Singapore Safety Mark), and basin taps (WELS).</li>
-<li><b>Still open:</b> Heritage written quote valid to mid-Dec; which GROHE toilet Heritage quoted (or switch to RIGEL Gallant); JB prices for vanities, mirrors and accessories.</li></ul>
+<li><b>Still open:</b> Heritage written quote valid to mid-Dec, with the missing lines; GROHE 39997000 or RIGEL Gallant for the toilets.</li></ul>
 </section>
 
 ${comparePage(v, ro)}
@@ -54,6 +71,7 @@ ${comparePage(v, ro)}
 <p>Ask John (I-Niche) <b>which day the plumber needs the fittings on site</b>. That date is the real buying deadline.</p></details>
 <details><summary>Toilet: one-piece, rimless, floor-standing</summary>${svgToilets}
 <ul><li><b>One-piece</b> (pick): no seam between tank and bowl where grime collects. RIGEL Gallant 9030FA: 65 × 37 × 75 cm, 4 L / 3 L flush, S-trap 75–250 mm or P-trap 180 mm (RIGEL Centre tag). eStore S$525, Shopee RIGEL official S$554.</li>
+<li><b>Heritage's quote: GROHE Bau Ceramic 39997000</b> at S$639 each (other shops list it at S$799): rimless one-piece, 72 × 37.2 cm, 4.5 / 3 L flush, S-trap 125–250 mm only (no P-trap), soft-close seat, Heritage gives 5 years on-site warranty. Against the Gallant: S$114 more per toilet and 7 cm longer (less knee room in the bathroom). Pick: the <b>Gallant</b> unless Heritage matches its price; the GROHE is a fine second choice.</li>
 <li><b>Two-piece</b>: cheaper (Gallant R-WC9030F S$380) but the joint needs scrubbing and can leak.</li>
 <li><b>Wall-hung</b>: needs a concealed tank in a new wall frame (S$885+, more hacking). Not worth it here.</li>
 <li><b>Quick-release soft-close seat</b>: lifts off to clean. Bowl about 40–43 cm high: KS (190) on a taller bowl, KX (150) feet flat. Sit test in the shop.</li></ul></details>

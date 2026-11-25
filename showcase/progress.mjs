@@ -16,13 +16,21 @@ export const STAGES = [
   {t: 'Bank and lawyer visit (25 Nov)', done: true},
   {t: 'Collect the keys', date: '2026-12-03', todo: 'keys'}]},
  {id: 'reno', n: 'Renovation (I-Niche)', steps: [
-  {t: 'Quote fixes sent to John', date: '2026-11-24', todo: 'quote2'},
+  {t: 'Amendment list sent to John (before signing)', date: '2026-11-27', todo: 'quote2'},
   {t: 'Reno form + S$1,000 deposit at management (paid 25 Nov, receipt 9071)', date: '2026-11-26', todo: 'reno-form'},
   {t: 'Sign the quote, pay 10%', date: '2026-11-28', todo: 'sign'},
-  {t: 'Kitchen glass door design to I-Niche', todo: 'kitchen-door'},
   {t: 'Site check on 3 Dec, results to I-Niche', date: '2026-12-04', todo: 'tell-iniche'},
   {t: 'Hacking (3, 4 and 7 Dec)', date: '2026-12-07', auto: true},
   {t: 'Works finished by 31 Dec (end of the management permit), defects checked', date: '2026-12-31'}]},
+ {id: 'choose', n: 'Choices for John (by 4 Dec)', steps: [
+  {t: 'Kitchen glass sliding door', date: '2026-12-04', todo: 'kitchen-door'},
+  {t: 'Common bathroom half-wall tiles + grout colour', date: '2026-12-04', todo: 'pick-tiles'},
+  {t: 'Common bathroom door design', date: '2026-12-04', todo: 'pick-bath-door'},
+  {t: 'Shower glass + frosted film', date: '2026-12-04', todo: 'pick-glass'},
+  {t: 'Paint colours', date: '2026-12-04', todo: 'pick-paint'},
+  {t: 'Bedroom vinyl colour, skirting, thresholds', date: '2026-12-04', todo: 'pick-vinyl'},
+  {t: 'TV feature wall design', date: '2026-12-04', todo: 'pick-tvwall'},
+  {t: 'Living room lights + bathroom fan model', date: '2026-12-04', todo: 'pick-lights'}]},
  {id: 'bath', n: 'Bathrooms', steps: [
   {t: 'See and price fittings at RIGEL, COURTS and Heritage (25 Nov; gunmetal chosen)', done: true},
   {t: 'Heritage written quote + split plan (Singapore vs Malaysia)', date: '2026-11-30', todo: 'bath-quote'},

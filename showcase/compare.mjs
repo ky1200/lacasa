@@ -13,7 +13,8 @@ export const CMP_ITEMS = [
   ['RIGEL eStore', 525, 'Usual S$770', E + 'one-piece-rimless-water-closet-with-whirlwash-r-wo9030fa-hkm/'],
   ['Lazada RIGEL official', 569, 'S$569–603 seen', 'https://www.lazada.sg/trending/Toilet-Bowls-Top-Repurchased/1157654737'],
   ['Gain City', 580, '', 'https://www.gaincity.com/rigel-water-closet-one-piece-wo9030fa-hkm-t0167035'],
-  ['RIGEL Centre tag (list price)', 770, 'W2 and W3 versions both S$770 on the tag']]},
+  ['RIGEL Centre tag (list price)', 770, 'W2 and W3 versions both S$770 on the tag'],
+  ['GROHE Bau Ceramic 39997000 (the toilet on Heritage\'s quote)', 799, 'Heritage quoted S$639. 72 × 37.2 cm, S-trap 125–250 mm, 5-yr on-site warranty at Heritage', 'https://heritagebathroomgallery.com.sg/products/grohe-39997000-one-piece-toilet-bowl-rimless-flush']]},
  {id: 'toilet-slim', n: 'Toilet option: RIGEL 9030F back-to-wall (R-WO9030FA) or slim tank (R-WO8056F)', qty: 2, img: '/images/buy/rigel-one-piece-rimless-slim-tank-3b3179.webp', look: '9030F back-to-wall: 65 × 37 cm, 80 cm high, closes the gap behind the toilet (no dust trap). Same S$525.', p: [
   ['RIGEL eStore: 9030F back-to-wall', 525, 'Usual S$770', E + 'one-piece-rimless-back-to-wall-water-closet-r-wo9030fa/'],
   ['RIGEL eStore: slim tank R-WO8056F', 525, 'Usual S$770', E + 'one-piece-rimless-slim-tank-water-closet-r-wo8056f/']]},

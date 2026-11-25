@@ -1552,3 +1552,4 @@ button.pg-tick{cursor:pointer}button.pg-tick:active{background:var(--plaster)}
 @media (max-width:700px){.bath-cols{grid-template-columns:1fr}.bath-status{grid-template-columns:1fr 1fr}.bath-status>div:last-child{grid-column:1/-1}}
 .hq-card.hq-bath{background:#e8eef1;border-color:#cfdde3}.hq-card.hq-docs{background:#f1ede4;border-color:#e2d9c6}
 .doc-btns{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.bath-jb td.jb-lower{color:var(--moss)}.bath-jb td.jb-higher{color:#9a3b1e}
