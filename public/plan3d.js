@@ -3,7 +3,7 @@
 // Realism: image-based light (RoomEnvironment), Khronos PBR Neutral tone mapping (true product colours),
 // soft shadows, procedural vinyl/tile textures from real XingFloors swatch colours, and an ambient-occlusion
 // pass (GTAO + SMAA) drawn whenever the view stops moving.
-import * as T from '/vendor/three-0.187.0-c.js';
+import * as T from '/vendor/three-0.187.0-d.js';
 
 const m = v => v / 1000;
 const DOOR_H = 2100;
@@ -333,6 +333,26 @@ const store = {
  set(k, v) {try {localStorage.setItem('p3d:' + k, v);} catch {}},
 };
 
+// Real 3D models made from the product photos (Microsoft TRELLIS.2, 26 Nov 2026; meshopt + webp, ~0.5 MB each).
+// The drawn shape shows first; the model replaces it once loaded, scaled to the item's real width, depth and height.
+const MODELS = {sofa: {url: '/models/vhaus-2233a-sofa.glb', h: it => m(it.h ?? 850), tint: '#fff1df', lift: 1.25, mirror: true}};
+let gltf = null;
+function swapModel(g, it, s) {
+ const spec = MODELS[it.kind];
+ gltf ??= (() => {const l = new T.GLTFLoader(); l.setMeshoptDecoder(T.MeshoptDecoder); return l;})();
+ gltf.loadAsync(spec.url).then(res => {
+  const obj = res.scene, b = new T.Box3().setFromObject(obj), size = b.getSize(new T.Vector3()), mid = b.getCenter(new T.Vector3());
+  // V Haus photo: armrest on the viewer's left. The drawn sofa puts the arm at +x unless flipped, so mirror to match.
+  const sx = m(s.w) / size.x * (spec.mirror && !s.flip ? -1 : 1);
+  obj.position.set(-mid.x * sx, -b.min.y * spec.h(it) / size.y, -mid.z * m(s.d) / size.z);
+  obj.scale.set(sx, spec.h(it) / size.y, m(s.d) / size.z);
+  obj.traverse(o => {if (o.isMesh) {o.castShadow = o.receiveShadow = true; o.userData.item = it; o.material = o.material.clone(); o.material.metalness = 0; o.material.metalnessMap = null; o.material.roughness = 0.95; if (spec.tint) o.material.color.set(spec.tint).multiplyScalar(spec.lift ?? 1);}});
+  for (const c of [...g.children]) {g.remove(c); c.geometry?.dispose();}
+  g.add(obj);
+  g.userData.redraw?.();
+ }).catch(() => {});
+}
+
 let ui = null;
 
 export function open(D, items) {
@@ -604,6 +624,8 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   g.traverse(o => {if (o.isMesh) {o.userData.item = it; if (o.userData.pendant) pendants.push(o);} if (o.userData?.cove) coveMeshes.push(o);});
   scene.add(g);
   pick.push(g);
+  g.userData.redraw = () => draw();
+  if (MODELS[it.kind] && !it.c) swapModel(g, it, s);
  }
  scene.traverse(o => {if (o.userData?.cove && !coveMeshes.includes(o)) coveMeshes.push(o);});
  // Dining pendant light
