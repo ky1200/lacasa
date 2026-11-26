@@ -22,25 +22,41 @@ export const BUY = {
   {date: '2026-12-12', name: '12.12 sale (Shopee, Lazada, brand stores, Malaysia shops)'},
   {date: '2026-12-26', name: 'Year-end sales in Singapore stores'},
  ],
+ // Paid outside the room list (shown inside the contractor card and in Money plan → Already paid).
+ paidExtra: [{name: 'MCST renovation deposit (refundable)', amount: 1000, date: '2026-11-25'}],
  rooms: [
-  {id: 'contractor', name: 'Contractor (I-Niche) and admin', items: [
-   {id: 'contractor-i-niche-renovation-quote', split: [['now', 0.1, '10% deposit on signing'], ['dec', 0.8, '2 × 40% during the works'], ['dec', 0.1, '10% at handover (about 18 Dec)']], name: 'I-Niche revised quote (2nd quotation, 23 Nov), as given', qty: 1, price: 19035, cur: 'SGD', shop: 'The I-Niche Design', type: 'Contractor', href: '/files/iniche-quotation-2026-11-23.pdf', date: '2026-11-28', when: 'Sign by 28 Nov after John answers the quote checks. 10% deposit (about S$1,904) on signing', note: 'Replaces the 13 Nov quote (S$24,100). A hacking S$2,810, B partition and ceiling S$2,340, C plumbing S$1,030, D TV wall S$840, E glass and doors S$3,350, F painting, vinyl, bathrooms S$7,540, G electrical S$1,125. Payments 10/40/40/10, 1-year workmanship warranty, not refundable if cancelled. See "Quote checks" for what to fix before signing.'},
-   {id: 'contractor-platform-bed-d3', tag: 'maybe', name: 'D3 platform bed, drawers and bedhead, KS bedroom (optional, likely drop)', qty: 1, price: 2090, cur: 'SGD', shop: 'I-Niche', type: 'Contractor', date: '2026-12-03', when: 'Decide on 3 Dec. Optional line in the revised quote', note: 'Platform S$1,260 + drawer storage S$280 (new) + bedhead S$550. KS has a Dunlopillo storage bed coming on 22 Dec, so this is likely not needed.'},
-   {id: 'contractor-f2-vinyl-3-bedrooms', decided: true, name: 'Vinyl flooring, 3 bedrooms: XingFloors 5 mm, about 380 sq ft at S$4.50 (in the quote)', qty: 1, price: 0, cur: 'SGD', shop: 'I-Niche', type: 'Contractor', date: '2026-12-05', when: 'Laid before the beds go in (22 Dec)', note: 'Already counted in the quote above: F2 S$1,710 + remove old skirting S$280 + trim 3 doors S$180 = S$2,170. New skirting in a similar colour is included. Floor patching is NOT included, and thresholds/trims are not named: ask. Bill by the measured area (the plan shows about 335 sq ft).'},
-   {id: 'contractor-door-swap', name: 'Door swap instead of E1: aluminium slide and swing bathroom door, old bathroom door moved to bedroom 3', qty: 1, price: -20, cur: 'SGD', shop: 'I-Niche (optional lines 3 + 4)', type: 'Contractor', date: '2026-12-05', when: 'Tell John to take E1 out and move optional lines 3 + 4 into the total', note: 'The quote still has E1 new veneer door S$580 in the total, and our swap only as optional lines (S$480 + S$80 = S$560). Swap = S$20 less.'},
-   {id: 'contractor-common-bath-waterproofing', name: 'Waterproofing for the common bathroom half-height wall (not in the quote)', qty: 1, price: 0, cur: 'SGD', est: true, shop: 'I-Niche', type: 'Contractor', date: '2026-12-05', when: 'Ask John for the price before signing', note: 'F4 says waterproofing is not included. Ask for a membrane on the new wall base and the floor around it, how high it goes, and a water test before tiling.'},
-   {id: 'contractor-g3-electrical', name: 'G3 sockets, switches and light points (labour, not in the quote yet)', qty: 1, price: 1200, cur: 'SGD', est: true, shop: 'I-Niche electrician', type: 'Contractor', date: '2026-12-05', when: 'Count on 3 Dec, then get the price (quote line G4: to confirm on site)', note: 'Estimate only: about 10 new or moved points at S$80 to S$150 each. Also: Cat6 DB box to KY room, water and power for the WD518AN, KX wardrobe LED point, a point for a heated towel rail if wanted. The switch plates themselves are the next item.'},
-   {id: 'contractor-mcst-renovation-deposit-refundable', paid: '2026-11-25', name: 'MCST renovation deposit (refundable)', qty: 1, price: 1000, cur: 'SGD', shop: 'La Casa management', type: 'Shop', date: '2026-11-26', when: 'With the renovation form, 7 days before work (3 Dec start = by Thu 26 Nov)', note: 'Cash or cheque only, paid by us. Refunded at the management office after we sign the refund form when works finish.'},
-   {id: 'contractor-switches-sockets', name: 'New switches and sockets, whole house (Schneider AvatarOn, white)', model: 'e.g. E8315 13A switched socket', qty: 30, price: 21.15, cur: 'SGD', est: true, shop: 'Schneider Electric SG eShop / SG electrical shops', type: 'Online', href: 'https://eshop.se.com/sg/e8315-wg-g2-avataron-switched-socket-3p-13a-250v-wine-gold.html', date: '2026-12-05', when: 'Count points on 3 Dec, then buy before the electrician starts', note: 'Estimate: about 30 points at S$19.40 + GST each (twin sockets about S$33). Has the Singapore SAFETY Mark, which wall switches and sockets must carry to be sold here. Ask I-Niche if their electrical price already includes switches.', alts: [
-    {name: 'Schneider Vivace, white (simple, cheaper, from JB)', model: 'Vivace KB15 / KB31 series', price: 19, cur: 'MYR', est: true, shop: 'Tampoi Lighting / JB electrical shops', type: 'Shop', href: 'https://mall.lapasar.com/products/155110', note: 'About RM13 to RM25 a piece in Malaysia. The Malaysian stock has SIRIM, not the Singapore SAFETY Mark, so ask the electrician before buying: some will not fit it.'},
-    {name: 'Legrand Mallia or Panasonic, white (other good brands)', price: 22, cur: 'SGD', est: true, shop: 'SG electrical shops', type: 'Shop', note: 'Same price range. Pick one brand for the whole house so plates match.'},
-   ]},
+  {id: 'contractor', name: 'Contractor (I-Niche)', items: [
+   {id: 'contractor-i-niche-renovation-quote', noQty: true, split: [['now', 0.1, '10% deposit on signing'], ['dec', 0.8, '2 × 40% during the works'], ['dec', 0.1, '10% at handover (about 18 Dec)']], name: 'I-Niche renovation (one quote)', model: 'Revised quote 23 Nov. Waiting for John\'s corrected quote', qty: 1, price: 19035, cur: 'SGD', shop: 'The I-Niche Design', type: 'Contractor', href: '/files/iniche-quotation-2026-11-23.pdf', date: '2026-11-28', when: 'Sign by 28 Nov after John sends the corrected quote. 10% deposit (about S$1,904) on signing', note: 'One price for the whole job. Tap "What is inside" for each section. Extras John has not priced yet are listed apart and are not in the total until his new quote comes.',
+    parts: [
+     ['A', 'Hacking and removal', 2810, 'Master wardrobes S$350, display cabinet + study table S$350, living mirror cabinet S$180, 2 bathrooms\' fittings S$600, partition S$350, main gate S$120, protection S$380, debris S$480'],
+     ['B', 'New wall and ceiling', 2340, '75 mm partition S$980 + rockwool S$420 + 2 door frames S$480, patch ceiling holes S$280, plywood backing S$180'],
+     ['C', 'Plumbing', 1030, 'Fitting the toilets, showers, basins and taps (family buys the fittings)'],
+     ['D', 'TV wall', 840, 'D1 TV feature wall'],
+     ['E', 'Glass and doors', 3350, 'E1 veneer door S$580 (to swap), E2 kitchen glass door S$1,180, E3 common bathroom glass S$380, E4 master shower screen S$890, E5 frosted film S$320'],
+     ['F', 'Paint, vinyl, bathrooms', 7540, 'Paint S$1,680 + sealer S$450 + anti-mould S$300; vinyl 3 bedrooms (XingFloors 5 mm, about 380 sq ft × S$4.50) S$1,710 + skirting S$250 + remove old skirting S$280 + trim 3 doors S$180; master floor polish S$800; half-height wall S$980; regrouting 2 × S$280; cleaning S$350'],
+     ['G', 'Electrical', 1125, 'Living lights S$350, bathroom fan S$550 + wiring S$45, move heater switch S$180'],
+    ],
+    waiting: [
+     {t: 'Door swap instead of E1 (aluminium bathroom door + old door to bedroom 3)', amount: -20},
+     {t: 'Extra sockets, switches, light points, Cat6 (count on 3 Dec)', amount: 1200, est: true},
+     {t: 'Waterproofing + water test, common bathroom half wall', amount: null},
+     {t: 'Hacking the KS built-in wardrobe', amount: null},
+     {t: 'Coveless cove recess in the false ceiling', amount: null},
+     {t: 'Floor patching, thresholds and trims', amount: null},
+     {t: 'Optional: D3 platform bed for KS (likely drop)', amount: 2090},
+    ]},
   ]},
   {id: 'aircon', name: 'Aircon (3 old units)', items: [
    {id: 'aircon-mitsubishi-starmex-system-3', name: 'Mitsubishi Starmex System 3 (3 × 9,000 BTU), 5 ticks, installed with new piping', model: 'MXY-3H28VG + 3 × MSXY-FP10VG', qty: 1, price: 3510, cur: 'SGD', shop: 'Mega Discount Store', type: 'Online', href: 'https://megadiscountstore.com.sg/products/starmex-system3-aircon-9kx3', src: 'https://www.misslobang.com/article/best-system-3-aircon-singapore-2026', date: '2026-11-28', when: 'Order by 30 Nov with code 7NV0. Install about 10 Dec, before painting', note: 'Listed S$3,580 with free installation (new copper piping, 1-year workmanship). Code 7NV0 takes S$70 off until 30 Nov. Ask about any condo surcharge.', alts: [
     {name: 'Same Mitsubishi set at Gain City, installed (50 ft piping included)', price: 4019, cur: 'SGD', shop: 'Gain City', type: 'Shop + online', href: 'https://www.gaincity.com/product/108519/sku', note: 'Big store with 12 outlets.'},
     {name: 'Same Mitsubishi set, no installation shown', price: 3674, cur: 'SGD', shop: 'COURTS', type: 'Shop + online', href: 'https://www.courts.com.sg/mitselec-mitsubishi-starmex-28k-condenser-system-39000btu-x-3-mxy-3h28vg%2B-msxy-fp10vg-sg3-x-3-IP219176.html'},
     {name: 'Daikin iSmile Eco+ System 3 (3 × 9,000 BTU), 5 ticks', price: 4020, cur: 'SGD', shop: 'COURTS', type: 'Shop + online', href: 'https://www.courts.com.sg/daikin-daikin-7.5kwh-condenser-ismile-eco+-series-system-3-9000btu-x-3-mkm75zvmg+-ctkm25zvmg-x3-IP210313.html'},
+   ]},
+  ]},
+  {id: 'house', name: 'Whole house: switches', items: [
+   {id: 'contractor-switches-sockets', name: 'New switches and sockets, whole house (Schneider AvatarOn, white)', model: 'e.g. E8315 13A switched socket', qty: 30, price: 21.15, cur: 'SGD', est: true, shop: 'Schneider Electric SG eShop / SG electrical shops', type: 'Online', href: 'https://eshop.se.com/sg/e8315-wg-g2-avataron-switched-socket-3p-13a-250v-wine-gold.html', date: '2026-12-05', when: 'Count points on 3 Dec, then buy before the electrician starts', note: 'Estimate: about 30 points at S$19.40 + GST each (twin sockets about S$33). Has the Singapore SAFETY Mark, which wall switches and sockets must carry to be sold here. Ask I-Niche if their electrical price already includes switches.', alts: [
+    {name: 'Schneider Vivace, white (simple, cheaper, from JB)', model: 'Vivace KB15 / KB31 series', price: 19, cur: 'MYR', est: true, shop: 'Tampoi Lighting / JB electrical shops', type: 'Shop', href: 'https://mall.lapasar.com/products/155110', note: 'About RM13 to RM25 a piece in Malaysia. The Malaysian stock has SIRIM, not the Singapore SAFETY Mark, so ask the electrician before buying: some will not fit it.'},
+    {name: 'Legrand Mallia or Panasonic, white (other good brands)', price: 22, cur: 'SGD', est: true, shop: 'SG electrical shops', type: 'Shop', note: 'Same price range. Pick one brand for the whole house so plates match.'},
    ]},
   ]},
   {id: 'living', name: 'Living room', items: [
@@ -320,7 +336,7 @@ export const BUY = {
   {id: 'tv-decide', date: '2026-11-30', t: 'TV: confirm 77" by 30 Nov for Black Friday prices', n: 'Pick: LG OLED B5 77" at Electromart S$3,254 (same price as the 65" C6). Brightest: C6 77" S$5,985. Ask for delivery after 3 Dec.', href: '/research#r-tv-kitchen'},
   {id: 'ks-wardrobe-pick', date: '2026-12-04', t: 'KS: choose the IKEA wardrobe', n: 'IKEA options with photos and prices on To-buy (KS wardrobe) and here. Try the sizes on the floor plan (KS layout) once the wall is measured on 3 Dec.', href: '/research#r-rooms'},
   {id: 'sign', date: '2026-11-28', t: 'Sign the I-Niche revised quote and pay the 10% deposit', n: 'Only after John sends the corrected quote. S$19,035 now, about S$1,904 deposit. Payments 10/40/40/10.', href: '#it-contractor-i-niche-renovation-quote'},
-  {id: 'reno-form', date: '2026-11-26', t: 'Renovation form to La Casa management + S$1,000 deposit', n: 'Done 25 Nov: the owner emailed management, S$1,000 cash paid (receipt 9071, works 3 to 31 Dec). Work hours: weekdays 9am–6pm, Sat 9am–1pm, no Sun or public holidays.', href: '#it-contractor-mcst-renovation-deposit-refundable'},
+  {id: 'reno-form', date: '2026-11-26', t: 'Renovation form to La Casa management + S$1,000 deposit', n: 'Done 25 Nov: the owner emailed management, S$1,000 cash paid (receipt 9071, works 3 to 31 Dec). Work hours: weekdays 9am–6pm, Sat 9am–1pm, no Sun or public holidays.', href: '#it-contractor-i-niche-renovation-quote'},
   {id: 'aircon', date: '2026-11-30', t: 'Order the aircon with code 7NV0', n: 'Code price S$3,510 ends 30 Nov. Check the Gain City price in store first. When ordering, book piping + install for about 7 Dec: before the false ceiling (7–8 Dec) and painting (9 Dec).', href: '#it-aircon-mitsubishi-starmex-system-3'},
   {id: 'keys', date: '2026-12-03', t: 'Collect the keys and do the 3 Dec checklist', href: '#buy-measure'},
   {id: 'tell-iniche', date: '2026-12-04', t: 'Tell I-Niche the 3 Dec results and the choices', n: 'Coveless cove lighting in living-dining, KY, KX, KS: John must build the recess with the false ceiling (7–8 Dec) and plan driver access. Send the choices too (kitchen door, tiles + grout, bathroom door, shower glass, paint, vinyl, TV wall, lights): see the "Choose with John" to-dos. Start from the Designer’s pick on the Floor plan (Sockets and switches layer). Send: socket, switch and light count (G3), Cat6 to the KY desk and TV, fan points, toilet setting-out, common bathroom wall and glass sizes, drop or keep D3, the WD518AN water and power point, the KX wardrobe LED point.'},
@@ -388,14 +404,17 @@ export const autoPay=(i,tag)=>tag==='after'?'later':!i.date?'dec':i.date<='2026-
 export function payOf(i,v={}){const c=choiceOf(i,v),saved=v[`b:${i.id}:pay`],auto=autoPay(i,c.tag),mode=PAYS.includes(saved)?saved:'';
  const m=mode||auto,months=m[0]==='i'?Number(m.slice(1)):0;return {mode,auto,use:m,months,split:!mode&&i.split?i.split:null};}
 export function moneyPlan(plan=BUY,v={}){
- const b={paid:[],now:[],dec:[],later:[],inst:[]},conv=(n,cur)=>cur==='MYR'?n/plan.rate:n;
- for(const r of plan.rooms)for(const i of r.items){if(i.ordered)continue;const c=choiceOf(i,v);if(c.off)continue;const amt=fullSGD(i,v,plan.rate),p=payOf(i,v),name=c.opt.name;
-  if(i.paid){b.paid.push({id:i.id,name,amount:amt});continue;}
-  if(p.months)b.inst.push({id:i.id,name,amount:amt,months:p.months,monthly:amt/p.months});
-  else if(p.split)for(const [k,f,t] of p.split)b[k].push({id:i.id,name:`${name}: ${t}`,amount:amt*f});
-  else b[p.use].push({id:i.id,name,amount:amt});}
- for(const o of plan.orders??[]){for(const x of o.paid??[])b.paid.push({name:`${o.name.split(' (')[0]}: ${x.t}`,amount:conv(x.amount,o.cur)});
-  for(const x of o.due??[]){const k=!x.date?'dec':x.date<='2026-11-30'?'now':x.date<='2026-12-31'?'dec':'later';b[k].push({name:`${o.name.split(' (')[0]}: ${x.t}`,amount:conv(x.amount,o.cur),fixed:true,tbc:!x.date});}}
+ const b={paid:[],now:[],dec:[],later:[],inst:[]},conv=(n,cur)=>cur==='MYR'?n/plan.rate:n,S=n=>'S$'+Math.round(n).toLocaleString('en-SG'),R=n=>'RM'+Number(n).toLocaleString('en-SG',{maximumFractionDigits:2});
+ // how = why the amount is what it is (quantity, RM conversion, share of a total).
+ const howOf=(o,qty)=>[qty>1?`${qty} × ${o.cur==='MYR'?R(o.price):S(o.price)}`:'',o.cur==='MYR'?`${qty>1?'':R(o.price)+' '}at RM${plan.rate} = S$1`:''].filter(Boolean).join(', ');
+ for(const r of plan.rooms)for(const i of r.items){if(i.ordered)continue;const c=choiceOf(i,v);if(c.off)continue;const amt=fullSGD(i,v,plan.rate),p=payOf(i,v),name=c.opt.name,how=howOf(c.opt,c.qty);
+  if(i.paid){b.paid.push({id:i.id,name,amount:amt,how});continue;}
+  if(p.months)b.inst.push({id:i.id,name,amount:amt,months:p.months,monthly:amt/p.months,how});
+  else if(p.split)for(const [k,f,t] of p.split)b[k].push({id:i.id,name:`${name}: ${t}`,amount:amt*f,how:`${Math.round(f*100)}% of ${S(amt)}`});
+  else b[p.use].push({id:i.id,name,amount:amt,how});}
+ for(const x of plan.paidExtra??[])b.paid.push({name:x.name,amount:x.amount,how:x.date?`Paid ${x.date.slice(8)}/${x.date.slice(5,7)}`:''});
+ for(const o of plan.orders??[]){const n=o.name.split(' (')[0],how=x=>o.cur==='MYR'?`${R(x.amount)} at RM${plan.rate} = S$1`:'';for(const x of o.paid??[])b.paid.push({name:`${n}: ${x.t}`,amount:conv(x.amount,o.cur),how:how(x)});
+  for(const x of o.due??[]){const k=!x.date?'dec':x.date<='2026-11-30'?'now':x.date<='2026-12-31'?'dec':'later';b[k].push({name:`${n}: ${x.t}`,amount:conv(x.amount,o.cur),fixed:true,tbc:!x.date,how:how(x)});}}
  const sum=l=>l.reduce((s,x)=>s+x.amount,0);
  return {...b,sums:{paid:sum(b.paid),now:sum(b.now),dec:sum(b.dec),later:sum(b.later),inst:sum(b.inst),monthly:b.inst.reduce((s,x)=>s+x.monthly,0)}};
 }

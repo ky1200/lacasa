@@ -2,6 +2,11 @@
 
 Current state (26 Nov 2026): site on Cloudflare Workers + D1 at https://lacasa.kayikkwong.workers.dev (moved from ChatGPT Sites on 30 Oct). The full working notes are the project handover doc `claude/lacasa-handover.md` in the claude.ai project; this file is a short change log only. The table and notes from October below are history.
 
+## 26 November 2026 (night) — /buy: money breakdown, one contractor card, SG/JB filter
+- Money plan tiles are buttons: tap one to open its list with the reason for each amount (qty × price, RM at the rate, % of the quote). `moneyPlan` lines carry `how`; `BUY.paidExtra` holds the MCST S$1,000 deposit.
+- Contractor room = ONE card (I-Niche quote S$19,035, `noQty`). Inside (folded `.ct-sub`): What is inside (`parts` A–G, adds to the price), Waiting for John (`waiting`, not in the total: door swap −20, extra electrical ~1,200, waterproofing, KS wardrobe hacking, cove recess, floor patching, D3 optional), Paid separately, Files (#buy-files), Reno decisions (#buy-decisions), Quote checks (#buy-qa). Removed items: D3, vinyl line, door swap, waterproofing, G3, MCST. Switches moved to room `house` (same id).
+- Filters: When (All/Before/After/Maybe) + Buy in (All/Singapore/JB, from the picked option's currency or `where`); rooms with nothing shown hide; summary line shows count and S$ (RM part).
+
 ## 26 November 2026 (later) — Money plan, fans, confirmed dates
 - /buy Money plan (`moneyPanel` in buy.mjs, `moneyPlan`/`payOf`/`autoPay`/`PAYS` in buy-plan.mjs, live update in showcase.js `totals()`, CSS `.money-*` `.buy-pay`, test `tests/showcase/money.test.mjs`): tiles By 30 Nov / December / After move-in / Instalments (S$ a month) + already paid. New per-item key `b:<id>:pay` = '' (auto from buy date; tag After = after move-in) | now | dec | later | i6 | i12 | i24. Item `split` (I-Niche 10% now, rest Dec) and `paid` (MCST deposit). Ordered items use `orders` balances (no double count). CSV has a "Pay when" column.
 - Hacking confirmed 4, 7, 8 Dec everywhere (schedule a4/a4b, docs, progress, research, V Haus to-dos). Fans on site by 9 Dec (fitted 10 Dec), lights + sanitary by 11–12 Dec, aircon piping ~7 Dec (schedule c1, aircon to-do).

@@ -1612,13 +1612,20 @@ button.pg-tick{cursor:pointer}button.pg-tick:active{background:var(--plaster)}
 .money h2{margin:0 0 10px;font-size:1.15rem}
 .money-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
 @media (max-width:640px){.money-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.money-tile{display:flex;flex-direction:column;gap:2px;padding:12px;border-radius:14px;background:var(--linen,#f4f1ea);min-width:0}
+.money-tile{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:12px;border-radius:14px;background:var(--linen,#f4f1ea);min-width:0;border:2px solid transparent;font:inherit;color:inherit;text-align:left;cursor:pointer;min-height:44px}
+.money-tile[aria-expanded="true"]{border-color:var(--indigo)}.money-tile:focus-visible,.money-paid:focus-visible,.money-close:focus-visible{outline:2px solid var(--indigo);outline-offset:2px}
+.money-tap{font-style:normal;font-size:.75rem;font-weight:600;color:var(--indigo);margin-top:2px}.money-tile[aria-expanded="true"] .money-tap{visibility:hidden}
 .money-tile>span{font-size:.82rem;font-weight:600}
 .money-tile>b{font-size:1.3rem;font-variant-numeric:tabular-nums}
 .money-tile>b small{font-size:.75rem;font-weight:500}
 .money-tile>small{font-size:.75rem;color:#6b665c;line-height:1.3}
 .money-tile.is-now{background:#fbe9e2}.money-tile.is-inst{background:#e6ecf6}
-.money-paid{margin:10px 0 0;font-size:.9rem}
+.money-paid{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;width:100%;margin:10px 0 0;padding:8px 0;min-height:44px;border:0;background:none;font:inherit;font-size:.9rem;color:inherit;text-align:left;cursor:pointer}.money-paid[aria-expanded="true"] .money-tap{visibility:hidden}
+.money h2 small{font-size:.75rem;font-weight:500}
+.money-break{margin-top:10px;padding:12px;border-radius:14px;border:1px solid var(--line);background:#fcfbf8}
+.money-sec h3{display:flex;justify-content:space-between;gap:10px;font-size:.95rem;margin:0 0 6px}.money-sec p{font-size:.8rem;margin:0 0 6px}
+.money-list li small{display:block;font-size:.75rem;color:#6b665c;margin-top:1px}
+.money-close{display:block;margin:10px 0 0 auto;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:#fff;font:inherit;font-weight:600;color:var(--indigo);cursor:pointer}
 .money-more{margin-top:8px}.money-more summary{cursor:pointer;font-weight:600;padding:6px 0}
 .money-more h3{font-size:.9rem;margin:12px 0 4px}
 .money-list{list-style:none;margin:0;padding:0}
@@ -1647,3 +1654,20 @@ button.pg-tick{cursor:pointer}button.pg-tick:active{background:var(--plaster)}
 .sch-filters>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font-size:14px;font-weight:600;color:#56607a}
 .sch-chip{padding-right:52px}
 .sch-edit{position:absolute;top:2px;right:2px;margin:0;min-height:30px;padding:0 9px}
+
+/* /buy filters: When + Buy in, one tidy block */
+.buy-filters{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:center;margin:4px 0 10px}.buy-filters .buy-show{margin:0}
+.buy-filters .buy-show span{min-height:44px}
+.buy-filter-sum{flex-basis:100%;margin:2px 0 0;font-size:13px;color:var(--muted)}
+.buy-item.is-filtered,.buy-room[hidden]{display:none}
+/* Contractor: one card, details folded inside */
+.ct-inside{margin-top:10px;display:grid;gap:6px}
+.ct-sub{border:1px solid var(--line);border-radius:12px;background:#fcfbf8}
+.ct-sub>summary{min-height:44px;display:flex;align-items:center;gap:8px;padding:0 12px;cursor:pointer;font-weight:700;font-size:14px;color:var(--indigo)}
+.ct-sub>summary b{margin-left:auto;color:var(--ink,#222);font-variant-numeric:tabular-nums}.ct-sub>summary small{font-weight:500;color:var(--muted)}
+.ct-body{padding:0 12px 12px}
+.ct-parts{list-style:none;margin:0;padding:0}
+.ct-parts li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:1px solid var(--line);font-size:14px}
+.ct-parts li span{min-width:0;overflow-wrap:anywhere}.ct-parts li small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.4}
+.ct-parts li>b{white-space:nowrap;font-variant-numeric:tabular-nums}.ct-parts .ct-sum{font-weight:700}
+.ct-body>p{font-size:13px;margin:0 0 4px}

@@ -18,7 +18,8 @@ test('money plan: auto by date, instalments and splits add up', () => {
  assert.ok(Math.abs(all(m.sums) - all(base.sums)) < 1e-6, 'moving an item does not change the total');
  const dep = base.now.find(x => x.id === 'contractor-i-niche-renovation-quote');
  assert.ok(dep && Math.abs(dep.amount - 1903.5) < 0.01, 'I-Niche: only the 10% deposit is due now');
- assert.ok(base.paid.some(x => x.id === 'contractor-mcst-renovation-deposit-refundable'));
+ assert.ok(base.paid.some(x => /MCST/.test(x.name) && x.amount === 1000));
+ assert.ok(base.paid.every(x => typeof x.how === 'string') && base.now.every(x => typeof x.how === 'string'), 'every line says why');
  assert.ok(!moneyPlan(BUY, {'b:washer:tag': 'maybe'}).now.some(x => x.id === 'washer'), 'maybe items are left out');
 });
 
