@@ -2,6 +2,11 @@
 
 Current state (26 Nov 2026): site on Cloudflare Workers + D1 at https://lacasa.kayikkwong.workers.dev (moved from ChatGPT Sites on 30 Oct). The full working notes are the project handover doc `claude/lacasa-handover.md` in the claude.ai project; this file is a short change log only. The table and notes from October below are history.
 
+## 27 November 2026 (5–6am) — full price check of the to-buy list
+- COURTS Black Friday: up to 22% off in the cart (no code) till 30 Nov. Updated: KDK F40GP S$326.04 (3 fan items, main option), E48GP S$357.24 (alt), Aqara U400 S$365.82 supply / S$506.22 installed, Shark S$310.78, Mitsubishi fridge S$1,600; Hitachi fridge main option S$979 at COURTS; Toshiba S$919 online.
+- Notes added: TV warranty check (Electromart not an LG partner; Audio House S$4,499 safe pick), aircon condo surcharge + skip 'Replacement' piping, IKEA colour savings (PAX dark grey S$565, LAGKAPTEN white S$149.80), IKEA curtain DIY route for KX, washer still best in COURTS store S$1,489.
+- Research 'deals' section updated (27 Nov). Black Friday to-do rewritten. Default total −S$395.
+
 ## 27 November 2026 — Apple TV + HomePods: where to buy
 - /buy Apple items (Apple TV 4K 4th gen, 2 × HomePod, 2 × HomePod mini 2 = S$1,795): Apple Store, one bill, 0% instalments (12/24 months, DBS/UOB/OCBC/HSBC/SCB, min S$500, in store or Telesales). Buy date 12 Dec (after the TV wall). New item field `payAuto` (default Pay when the family has not chosen); set to `i12` on these three → Money plan shows S$149.58/month.
 - Research (Prices): same price at Apple, Challenger, Switch; Apple's Black Friday gift cards exclude Apple TV.

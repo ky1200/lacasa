@@ -112,7 +112,7 @@ export const RESEARCH = [
   ],
  },
  {
-  id: 'tv-kitchen', tone: 'moss', short: 'TV and kitchen', title: 'TV sizes and kitchen appliances', rooms: ['living', 'kitchen'], status: 'Shortlist', updated: '2026-11-24',
+  id: 'tv-kitchen', tone: 'moss', short: 'TV and kitchen', title: 'TV sizes and kitchen appliances', rooms: ['living', 'kitchen'], status: 'Shortlist', updated: '2026-11-27',
   chat: 'La Casa main chat', plan: ['living-tv', 'kitchen-fridge', 'kitchen-water'],
   answer: 'TV: 77" recommended (24 Nov). At 3.2 m from the sofa a 77" fills about 30° of view (the usual guide); a 65" fills about 25°. The 210 cm feature wall takes a 77" (172 to 173 cm wide) with about 18 cm each side. Best value: LG OLED B5 77" at Electromart, S$3,254, the same price as the 65" C6; it is LG\'s dimmer entry OLED, so the C6 77" (S$5,985) is the one for a sunny room. LG has no 75" OLED; the 75" QNED86B is Mini LED. Kitchen: the fridge space is 75 W × 75 D × 183 H cm; all four fridges on the list fit (the Panasonic only 4 cm under the top). The LG PuriCare WD518AN water dispenser (bought) sits on the countertop: 16.8 cm wide, 48.5 cm deep with the drip tray.',
   decide: [
@@ -221,7 +221,7 @@ export const RESEARCH = [
   ],
  },
  {
-  id: 'deals', tone: 'coral', short: 'Black Friday', title: 'Black Friday plan: what to buy where (checked 24 Nov)', rooms: ['living', 'kitchen'], status: 'Shortlist', updated: '2026-11-24',
+  id: 'deals', tone: 'coral', short: 'Black Friday', title: 'Black Friday plan: what to buy where (checked 27 Nov)', rooms: ['living', 'kitchen'], status: 'Shortlist', updated: '2026-11-27',
   chat: 'La Casa main chat',
   answer: 'Buy by 30 Nov: the aircon at Mega S$3,510 (code 7NV0), the LG 12 kg washer at COURTS (S$1,489 quoted in store 25 Nov; S$1,599 in the online cart), the Dreame X50 Ultra with water kit from Dreame (about S$1,234) and the Shark stick vacuum at COURTS S$379 (about S$311 with code BF2026 while it lasts). Fridge: the space is measured (75 × 75 × 183 cm): the Hitachi R-VX480 or the Toshiba GR-RT559WE (S$929 in store at COURTS, fits easiest). TV: 77" recommended, the LG OLED B5 77" at Electromart S$3,254 (same price as the 65" C6); confirm by 30 Nov (12.12 is the next sale). COURTS codes skip items marked "Online Exclusive Deal" or "More Discount", so check the cart total. Prices checked on the shop sites on 24 Nov; Harvey Norman\'s sale ends 26 Nov.',
   decide: [
@@ -255,13 +255,18 @@ export const RESEARCH = [
    'Dreame (dreame.sg): Black Friday vouchers by spend: S$10 off S$240, S$22 off S$450, S$35 off S$750, S$50 off S$1,000, S$65 off S$1,250, S$110 off S$2,000, plus a stackable voucher (up to S$80 off).',
    'Steigen: Black Friday gives a free S$299 extended warranty on the Halo models only (code BLACK555, till 30 Nov); the Solar Mini stays S$899.',
    'Same price everywhere on 24 Nov: Apple TV 4K S$399, HomePod S$499, HomePod mini S$199, KDK F40GP fan S$418 (was S$558), Aqara U400 lock S$469.',
+   'Full price check 27 Nov (5am): COURTS Black Friday takes up to 22% off in the cart with no code (ends 30 Nov): KDK F40GP S$326.04, KDK E48GP S$357.24, Aqara U400 S$365.82 (S$506.22 with installation), Shark EvoPower FIT S$310.78, Mitsubishi 423 L fridge S$1,600. Not discounted: Toshiba fridge S$919, Dreame X50 S$1,249 (no water kit), Tineco Y2 S$149, LG washer S$1,599 online (S$1,489 in store).',
+   'TV check 27 Nov: LG B5 77" is S$4,499 at Audio House (members also get S$880 eCashback), S$5,499 at COURTS, Harvey Norman and Best Denki, and S$3,254 at Electromart. Electromart is not an LG partner, and LG Singapore\'s warranty covers TVs bought from its authorised partners only, so confirm in writing that Electromart\'s set carries LG Singapore\'s 3-year warranty before paying.',
+   'Aircon check 27 Nov: Mega\'s S$3,580 (S$3,510 with 7NV0) is an HDB price; condos cost extra (ask). Its S$3,150 Replacement option reuses old piping: skip it for 20-year-old pipes.',
+   'IKEA check 27 Nov: PAX/FORSAND 150 × 60 × 201 is S$565 in dark grey vs S$610 white; LAGKAPTEN/ALEX 120 × 60 is S$149.80 in white vs S$178.90 oak; IKEA Family price on MALM dressing table S$99 ends 30 Nov. ENHET, GURSKEN, MARKUS, KYRRE, ÖRTRÄSK unchanged.',
+   'RIGEL eStore 27 Nov: no Black Friday cut. Gunmetal costs more than chrome on every piece (3-in-1 shower set S$660 vs S$450, basin mixer S$225 vs S$165, bidet set S$195 vs S$125). Heritage quote is still cheaper for the Quatré shower (S$758) and the gunmetal mixer (S$188).',
    'Apple TV + HomePods (27 Nov): same price at Apple, Challenger and Switch (Apple TV 4K S$399, HomePod S$499, HomePod mini 2 S$199; S$1,795 for the set). Best place: an Apple Store, one bill, 0% for 12 or 24 months with DBS, UOB, OCBC, HSBC or Standard Chartered cards (min S$500, in store or by phone, not online checkout). Apple\'s Black Friday gift cards skip Apple TV; holiday returns open till 8 Jan 2027.',
    'Gain City and Audio House block automatic price checks; 23 Nov: Gain City C6 65" about S$3,729 after its discounts, aircon set S$4,019.',
    'Changed during 24 Nov: the S$299 Shark CleanSense IQ at COURTS sold out (S$699 at Shark\'s own store), and the Hitachi fridge at COURTS shows out of stock (clearance).',
   ],
  },
  {
-  id: 'vacuums', tone: 'moss', short: 'Vacuums', title: 'Handheld and wet & dry vacuums', rooms: ['living', 'kitchen'], status: 'Shortlist', updated: '2026-11-24',
+  id: 'vacuums', tone: 'moss', short: 'Vacuums', title: 'Handheld and wet & dry vacuums', rooms: ['living', 'kitchen'], status: 'Shortlist', updated: '2026-11-27',
   chat: 'La Casa main chat',
   answer: 'Pick: Shark EvoPower System FIT (LC100SMGY), S$379 at COURTS, about S$311 with code BF2026 while it lasts. The floors are all hard (tiles and vinyl, no rugs) and the robot vacuums and mops every day, so one light cordless stick that turns into a handheld covers the rest: the fabric sofa, beds, curtains, walls, ceiling corners and quick spills. The Shark is light at 1.67 kg (easy to lift to the ceiling), runs up to 30 minutes, has a brushless head and dirt sensing, with a 2-year warranty. Optional: Shark\'s S$29.99 motorised hand tool for the sofa and mattresses. Wet & dry floor washer (yes, 24 Nov): Tineco iFloor Y2 at COURTS online, S$149 (was S$899): fine for spills between robot runs; take the roller out to dry after use.',
   decide: [
