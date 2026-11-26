@@ -2,6 +2,11 @@
 
 Current state (26 Nov 2026): site on Cloudflare Workers + D1 at https://lacasa.kayikkwong.workers.dev (moved from ChatGPT Sites on 30 Oct). The full working notes are the project handover doc `claude/lacasa-handover.md` in the claude.ai project; this file is a short change log only. The table and notes from October below are history.
 
+## 26 November 2026 (later) — Money plan, fans, confirmed dates
+- /buy Money plan (`moneyPanel` in buy.mjs, `moneyPlan`/`payOf`/`autoPay`/`PAYS` in buy-plan.mjs, live update in showcase.js `totals()`, CSS `.money-*` `.buy-pay`, test `tests/showcase/money.test.mjs`): tiles By 30 Nov / December / After move-in / Instalments (S$ a month) + already paid. New per-item key `b:<id>:pay` = '' (auto from buy date; tag After = after move-in) | now | dec | later | i6 | i12 | i24. Item `split` (I-Niche 10% now, rest Dec) and `paid` (MCST deposit). Ordered items use `orders` balances (no double count). CSV has a "Pay when" column.
+- Hacking confirmed 4, 7, 8 Dec everywhere (schedule a4/a4b, docs, progress, research, V Haus to-dos). Fans on site by 9 Dec (fitted 10 Dec), lights + sanitary by 11–12 Dec, aircon piping ~7 Dec (schedule c1, aircon to-do).
+- Fans: K12UC / K15UC (Tampoi Lighting Centre, JB, Malaysian models) and E48GP (SG twin, COURTS S$458) added as options 1–3 on the 3 F40GP items; Philips 3-colour downlights RM35 (120 mm) / RM39 (150 mm) appended to the downlight items. New to-do `lights-fans`.
+
 ## 26 November 2026 — Schedule page
 - New /schedule (`showcase/schedule.mjs`, `public/schedule.js`, CSS `.sch-*`, PUT `/api/schedule/log`, D1 key `sch:log`, test `tests/showcase/schedule.test.mjs`): week-by-week calendar (Mon–Sun, Sundays off) seeded from John's "LaCasa Schedule" PDF (26 Nov) + V Haus measure 8 Dec, ANZ beds 22 Dec, keys 3 Dec 4–6pm, SP 5 Dec, family deadlines; "Date to confirm" list; filter by party; "Who we work with" cards (`PARTIES`). Family adds/edits entries. Nav: desktop after Home, phone under More.
 

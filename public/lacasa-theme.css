@@ -1606,3 +1606,29 @@ button.pg-tick{cursor:pointer}button.pg-tick:active{background:var(--plaster)}
  .sch-day.is-empty:not(.is-sun),.sch-day.is-filtered-empty:not(.is-sun){display:none}
  .sch-dh{margin:0}
 }
+
+/* Money plan on /buy */
+.money{margin:14px 0 18px;padding:16px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.money h2{margin:0 0 10px;font-size:1.15rem}
+.money-tiles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+@media (max-width:640px){.money-tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.money-tile{display:flex;flex-direction:column;gap:2px;padding:12px;border-radius:14px;background:var(--linen,#f4f1ea);min-width:0}
+.money-tile>span{font-size:.82rem;font-weight:600}
+.money-tile>b{font-size:1.3rem;font-variant-numeric:tabular-nums}
+.money-tile>b small{font-size:.75rem;font-weight:500}
+.money-tile>small{font-size:.75rem;color:#6b665c;line-height:1.3}
+.money-tile.is-now{background:#fbe9e2}.money-tile.is-inst{background:#e6ecf6}
+.money-paid{margin:10px 0 0;font-size:.9rem}
+.money-more{margin-top:8px}.money-more summary{cursor:pointer;font-weight:600;padding:6px 0}
+.money-more h3{font-size:.9rem;margin:12px 0 4px}
+.money-list{list-style:none;margin:0;padding:0}
+.money-list li{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-top:1px solid var(--line);font-size:.85rem}
+.money-list li span{min-width:0;overflow-wrap:anywhere}.money-list li em{font-style:normal;color:#6b665c}
+.money-list li b{white-space:nowrap;font-variant-numeric:tabular-nums}
+.money-list:empty::after{content:"Nothing yet";font-size:.8rem;color:#6b665c}
+.money-how{font-size:.8rem;margin:10px 0 0}
+.buy-pay{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0 0;font-size:.85rem}
+.buy-pay>span{font-weight:600}
+.buy-pay select{min-height:40px;max-width:100%;padding:6px 10px;border:1px solid var(--line);border-radius:10px;background:#fff;font:inherit}
+.buy-pay small{color:#2c4f8a;font-weight:600}
+.buy-pay.is-ordered{color:#6b665c}

@@ -1,4 +1,4 @@
-import {BUY,TAGS,TAG_NAMES,buyTotals,choiceOf,fullSGD,optionsOf,toSGD} from './buy-plan.mjs';
+import {BUY,TAGS,TAG_NAMES,PAYS,PAY_NAMES,buyTotals,choiceOf,fullSGD,autoPay,moneyPlan,optionsOf,payOf,toSGD} from './buy-plan.mjs';
 import {IMG} from './buy-images.mjs';
 import {secAttrs,secClose,dock} from './sections.mjs';
 const h=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -27,12 +27,15 @@ function item(i,rate,v,ro,pics=true){
  const c=choiceOf(i,v),o=c.opt,opts=optionsOf(i),dis=ro?' disabled':'',unpicked=!!i.choose&&(v[`b:${i.id}:pick`]==null||v[`b:${i.id}:pick`]==='');
  const data=opts.map((x,k)=>({u:Math.round(toSGD(x,rate)*100)/100,p:cash(x.price,x.cur),myr:x.cur==='MYR',est:!!(x.est??(k===0&&i.est))}));
  const list=opts.length>1?`<details class="buy-alts"><summary>Pick: <span data-f="pickname">${c.pick?`Option ${c.pick}`:i.choose?(unpicked?`${h(i.choose)} chooses`:'First option'):'Recommended'}</span> <span class="buy-count">${opts.length} choices</span></summary><fieldset data-lightbox-group><legend class="sr-only">Choose one for ${h(i.name)}</legend>${opts.map((x,k)=>`<label class="buy-opt" data-name="${h(x.name)}" data-model="${h(x.model??'')}"><input type="radio" name="pick-${h(i.id)}" value="${k}" data-b="pick"${k===c.pick&&!unpicked?' checked':''}${dis}>${pics?photo(photoOf(i.id,k),x.name,'opt'):''}<span class="buy-opt-text"><b>${k||i.choose?'':'<span class="buy-rec">Recommended</span> '}${h(x.name)}</b>${x.model?`<small>${h(x.model)}</small>`:''}<small class="buy-opt-shop">${shopLine(x)}</small>${k&&x.note?`<small>${h(x.note)}</small>`:''}</span><strong>${cash(x.price,x.cur)}</strong></label>`).join('')}</fieldset></details>`:'';
+ const p=payOf(i,v);
+ const payCtl=i.paid?`<p class="buy-pay is-ordered">Paid ${h(dayLabel(i.paid))}</p>`:i.ordered?`<p class="buy-pay is-ordered">Pay: deposit paid, balance in the Money plan</p>`:`<label class="buy-pay"><span>Pay</span><select data-b="pay"${dis}><option value=""${p.mode?'':' selected'}>Auto: ${h(i.split?'deposit now, rest in Dec':PAY_NAMES[p.auto])}</option>${PAYS.map(x=>`<option value="${x}"${p.mode===x?' selected':''}>${h(PAY_NAMES[x])}</option>`).join('')}</select><small data-f="monthly"${p.months?'':' hidden'}>${p.months?`${sgd(fullSGD(i,v,rate)/p.months)} a month`:''}</small></label>`;
  const legacyOff=v[`b:${i.id}:off`]==='1'&&!v[`b:${i.id}:tag`];
- return `<article class="buy-item${c.off?' is-off':''}${c.tag==='after'?' is-after':''}${data[c.pick].est?' is-est':''}" id="it-${h(i.id)}" data-buy="${h(i.id)}" data-tag="${c.tag}" data-tag0="${i.tag??'before'}"${i.choose?` data-choose="${h(i.choose)}"${unpicked?'':' data-chosen="1"'}`:''}${legacyOff?' data-off="1"':''} data-qty0="${i.qty??1}" data-o="${h(JSON.stringify(data))}">
+ return `<article class="buy-item${c.off?' is-off':''}${c.tag==='after'?' is-after':''}${data[c.pick].est?' is-est':''}" id="it-${h(i.id)}" data-buy="${h(i.id)}" data-tag="${c.tag}" data-tag0="${i.tag??'before'}"${i.choose?` data-choose="${h(i.choose)}"${unpicked?'':' data-chosen="1"'}`:''}${legacyOff?' data-off="1"':''} data-qty0="${i.qty??1}"${i.ordered||i.paid?' data-ordered="1"':` data-pay0="${autoPay(i,'before')}"${i.split?` data-split="${h(JSON.stringify(i.split.map(([k,f,t])=>[k,f,t])))}"`:''}`} data-o="${h(JSON.stringify(data))}">
 <div class="buy-item-top${pics?'':' no-photo'}">${pics?photo(photoOf(i.id,c.pick),o.name,'main'):''}<div class="buy-item-head">${i.ordered?'<span class="buy-decided is-ordered">Ordered, deposit paid</span>':i.decided?'<span class="buy-decided">Decided</span>':''}<h3 data-f="name">${h(o.name)}</h3><p class="buy-model" data-f="model"${o.model?'':' hidden'}>${h(o.model??'')}</p></div><strong class="buy-line" data-f="line">${sgd(fullSGD(i,v,rate))}</strong></div>
 <p class="buy-math"${c.qty>1||o.cur==='MYR'||data[c.pick].est?'':' hidden'}><span data-f="math">${math(o,c.qty,rate)}</span> <span class="buy-badge" data-f="est"${data[c.pick].est?'':' hidden'}>Estimate</span></p>
 <div class="buy-ctrl"><fieldset class="buy-tag"><legend class="sr-only">When to pay for ${h(i.name)}</legend>${TAGS.map(t=>`<label class="buy-tag-${t}"><input type="radio" name="tag-${h(i.id)}" value="${t}" data-b="tag"${c.tag===t?' checked':''}${dis}><span>${t==='before'?'Before':t==='after'?'After':'Maybe'}</span></label>`).join('')}</fieldset>
 <div class="buy-qty" role="group" aria-label="Quantity"><button type="button" data-b="minus" aria-label="One less"${dis}>−</button><output data-f="qty" aria-live="polite">${c.qty}</output><button type="button" data-b="plus" aria-label="One more"${dis}>+</button></div></div>
+${payCtl}
 <p class="buy-shop" data-f="shop">${shopLine(o)}</p>
 ${i.date?`<p class="buy-date"><a class="buy-chip" href="#day-${h(i.date)}">${h(dayLabel(i.date))}</a>${h(i.when??'')}</p>`:''}
 ${i.note?`<details class="buy-note" data-f="note"${c.pick?' hidden':''}><summary><span>${h(i.note)}</span></summary></details>`:''}${list}</article>`;
@@ -56,6 +59,16 @@ function calendar(plan,today){
 const money=(n,cur)=>(cur==='MYR'?'RM':'S$')+Number(n).toLocaleString('en-SG',{minimumFractionDigits:Number.isInteger(Number(n))?0:2,maximumFractionDigits:2});
 // Payments and deliveries for each order (BUY.orders): exact amounts paid, what is left, when.
 export const orderSums=o=>{const paid=(o.paid??[]).reduce((a,x)=>a+x.amount,0);return {paid,left:Math.round((o.total-paid)*100)/100};};
+// Money plan: what is due now, in December, after move-in, and each month on instalments. Updated live by showcase.js.
+function moneyPanel(plan,v){const m=moneyPlan(plan,v),fixed={now:0,dec:0,later:0};for(const k of ['now','dec','later'])fixed[k]=m[k].filter(x=>x.fixed).reduce((s,x)=>s+x.amount,0);
+ const li=x=>`<li${x.fixed?' class="is-fixed"':''}><span>${h(x.name)}${x.tbc?' <em>(date to confirm)</em>':''}${x.months?` <em>${x.months} × ${sgd(x.monthly)}</em>`:''}</span><b>${sgd(x.amount)}</b></li>`;
+ const fixedLi=k=>m[k].filter(x=>x.fixed).map(li).join('');
+ const tile=(k,label,sub)=>`<div class="money-tile is-${k}"><span>${label}</span><b data-m="${k}">${sgd(m.sums[k])}</b><small>${sub}</small></div>`;
+ return `<section class="money" id="buy-money" data-money data-fixed="${h(JSON.stringify(fixed))}" aria-labelledby="money-h"><h2 id="money-h">Money plan</h2>
+<div class="money-tiles">${tile('now','Pay by 30 Nov','Black Friday buys, I-Niche deposit')}${tile('dec','Pay in December','Works, lights, fittings, bed balance')}${tile('later','After move-in','January on')}<div class="money-tile is-inst"><span>Instalments</span><b><span data-m="monthly">${sgd(m.sums.monthly)}</span><small> a month</small></b><small><span data-m="inst">${sgd(m.sums.inst)}</span> spread over <span data-m="instn">${m.inst.length===1?'1 item':m.inst.length+' items'}</span></small></div></div>
+<p class="money-paid">Already paid (deposits): <b>${sgd(m.sums.paid)}</b></p>
+<details class="money-more"><summary>See what is in each</summary>${[['now','By 30 Nov'],['dec','December'],['later','After move-in'],['inst','Instalments']].map(([k,t])=>`<h3>${t}</h3><ul class="money-list" data-ml="${k}">${k==='inst'?'':fixedLi(k)}${m[k].filter(x=>!x.fixed).map(li).join('')}</ul>`).join('')}<h3>Already paid</h3><ul class="money-list">${m.paid.map(li).join('')}</ul></details>
+<p class="muted money-how">Set "Pay" on any item to move it. Pick 12-month instalments for big COURTS buys: the monthly amount shows here. "Maybe" items are left out. Ordered items (beds, V Haus) use their own balances.</p></section>`;}
 export function paymentsPanel(plan=BUY){const os=plan.orders??[];if(!os.length)return '';const conv=(n,cur)=>cur==='MYR'?n/plan.rate:n;
  const paidAll=os.reduce((a,o)=>a+orderSums(o).paid,0),leftAll=os.reduce((a,o)=>a+orderSums(o).left,0),cur=os[0].cur,same=os.every(o=>o.cur===cur);
  const next=os.flatMap(o=>(o.due??[]).filter(x=>x.date).map(x=>({...x,o}))).sort((a,b)=>a.date.localeCompare(b.date))[0];
@@ -86,9 +99,10 @@ export function buyPage(v={},ro=false,plan=BUY,today=sgToday()){
 <p class="muted">Tap a room to open it. Tag each item Before, After or Maybe; changes save for the family.</p></header>
 <div class="buy-bar" data-stick><div class="buy-bar-top"><span class="buy-bar-label">Before move-in</span><strong class="buy-total" data-buy-before>${sgd(t.before)}</strong></div>
 <div class="buy-bar-meta"><span class="buy-after">After move-in: <b data-buy-after>${sgd(t.after)}</b></span><span>Both: <b data-buy-total>${sgd(t.total)}</b></span><span class="buy-off" data-buy-offwrap${t.removed?'':' hidden'}>Maybe, not in total: <b data-buy-off>${sgd(t.offTotal)}</b> (<span data-buy-removed>${t.removed===1?'1 item':t.removed+' items'}</span>)</span><span>Estimates in total: <b data-buy-est>${sgd(t.est)}</b></span><span class="buy-status" data-buy-status>${ro?'View only':'Saved'}</span></div></div>
+${moneyPanel(plan,v)}
 <fieldset class="buy-show"><legend>Show</legend>${['all',...TAGS].map(x=>`<label><input type="radio" name="buy-show" value="${x}" data-show${x==='all'?' checked':''}><span>${x==='all'?'All':x==='before'?'Before':x==='after'?'After':'Maybe'}</span></label>`).join('')}</fieldset>
 <p class="muted buy-rate">S$. RM at RM${plan.rate} = S$1 (${out(plan.rateSource,'rate')}). "Estimate" = no exact price yet. <a href="/buy.csv" download>Download CSV</a></p>
-<nav class="buy-jump" aria-label="On this page"><a href="#buy-todo">To do</a><a href="#buy-measure">3 Dec checklist</a><a href="#buy-dates">Dates</a><a href="#buy-qa">Quote checks</a><a href="#buy-files">Files</a><a href="/pay">Payments ›</a></nav>
+<nav class="buy-jump" aria-label="On this page"><a href="#buy-money">Money plan</a><a href="#buy-todo">To do</a><a href="#buy-measure">3 Dec checklist</a><a href="#buy-dates">Dates</a><a href="#buy-qa">Quote checks</a><a href="#buy-files">Files</a><a href="/pay">Payments ›</a></nav>
 ${todoList(plan,v,ro)}
 ${fold('buy-files','tone-sand',`Contractor files <small class="buy-fold-meta">${plan.files.length} PDFs</small>`,`<p class="muted">Tap a file to open it.</p>${fileList}`,false,true,'Contractor files')}
 ${rooms}

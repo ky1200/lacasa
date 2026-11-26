@@ -459,5 +459,56 @@ export const IMG = {
  },
  "washer#4": {
   "src": "/images/buy/bosch-series-6-9-kg-i-dos-efbe74.webp"
+ },
+ "dining-kdk-f40gp-100-cm#1": {
+  "src": "/images/buy/kdk-k12uc-nodoka-jr-ceiling-fan.webp"
+ },
+ "dining-kdk-f40gp-100-cm#2": {
+  "src": "/images/buy/kdk-k15uc-nodoka-ceiling-fan.webp"
+ },
+ "dining-kdk-f40gp-100-cm#3": {
+  "src": "/images/buy/kdk-e48gp-ceiling-fan.webp"
+ },
+ "ky-kdk-f40gp-100-cm#1": {
+  "src": "/images/buy/kdk-k12uc-nodoka-jr-ceiling-fan.webp"
+ },
+ "ky-kdk-f40gp-100-cm#2": {
+  "src": "/images/buy/kdk-k15uc-nodoka-ceiling-fan.webp"
+ },
+ "ky-kdk-f40gp-100-cm#3": {
+  "src": "/images/buy/kdk-e48gp-ceiling-fan.webp"
+ },
+ "kx-kdk-f40gp-100-cm#1": {
+  "src": "/images/buy/kdk-k12uc-nodoka-jr-ceiling-fan.webp"
+ },
+ "kx-kdk-f40gp-100-cm#2": {
+  "src": "/images/buy/kdk-k15uc-nodoka-ceiling-fan.webp"
+ },
+ "kx-kdk-f40gp-100-cm#3": {
+  "src": "/images/buy/kdk-e48gp-ceiling-fan.webp"
+ },
+ "living-philips-meson-5-13w#2": {
+  "ex": true,
+  "src": "/images/buy/philips-eridani-sceneswitch-downlight.webp"
+ },
+ "living-philips-meson-5-13w#3": {
+  "ex": true,
+  "src": "/images/buy/philips-eridani-sceneswitch-downlight.webp"
+ },
+ "ky-philips-meson-5-downlight#1": {
+  "ex": true,
+  "src": "/images/buy/philips-eridani-sceneswitch-downlight.webp"
+ },
+ "ky-philips-meson-5-downlight#2": {
+  "ex": true,
+  "src": "/images/buy/philips-eridani-sceneswitch-downlight.webp"
+ },
+ "kx-philips-meson-5-downlight#1": {
+  "ex": true,
+  "src": "/images/buy/philips-eridani-sceneswitch-downlight.webp"
+ },
+ "kx-philips-meson-5-downlight#2": {
+  "ex": true,
+  "src": "/images/buy/philips-eridani-sceneswitch-downlight.webp"
  }
 };
