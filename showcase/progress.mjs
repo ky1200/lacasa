@@ -20,7 +20,7 @@ export const STAGES = [
   {t: 'Reno form + S$1,000 deposit at management (paid 25 Nov, receipt 9071)', date: '2026-11-26', todo: 'reno-form'},
   {t: 'Sign the quote, pay 10%', date: '2026-11-28', todo: 'sign'},
   {t: 'Site check on 3 Dec, results to I-Niche', date: '2026-12-04', todo: 'tell-iniche'},
-  {t: 'Hacking (3, 4 and 7 Dec)', date: '2026-12-07', auto: true},
+  {t: 'Hacking (3, 4, 7 Dec; asked to move to 4, 7, 8 Dec)', date: '2026-12-07', auto: true},
   {t: 'Works finished by 31 Dec (end of the management permit), defects checked', date: '2026-12-31'}]},
  {id: 'choose', n: 'Choices for John (by 4 Dec)', steps: [
   {t: 'Kitchen glass sliding door', date: '2026-12-04', todo: 'kitchen-door'},

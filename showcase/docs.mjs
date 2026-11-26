@@ -35,7 +35,7 @@ export const DOCS = [
 export const RULES = [
  ['Permit', 'Renovation approved 3 Dec to 31 Dec 2026 (deposit receipt). Works past 31 Dec need an extension from management before then.'],
  ['Work hours', 'Mon–Fri 9am–6pm. Sat 9am–1pm. No work on Sundays or public holidays.'],
- ['Hacking (noisy work)', 'Confirmed 3, 4 and 7 Dec only.'],
+ ['Hacking (noisy work)', 'Confirmed 3, 4 and 7 Dec. Asked management on 26 Nov to move it to 4, 7 and 8 Dec (waiting for reply).'],
  ['Works list', 'All works listed on the form with drawings. New works not on the form: tell management first.'],
  ['Deposit', 'S$1,000 cash, paid 25 Nov (receipt S/N 9071). Refunded after the works pass the management check: keep the receipt.'],
  ['After the works', 'Submit the moving-in form to management after completion.'],

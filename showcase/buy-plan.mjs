@@ -71,7 +71,7 @@ export const BUY = {
    ]},
   ]},
   {id: 'dining', name: 'Dining', items: [
-   {id: 'dining-v-haus-lino-dining', ordered: true, name: 'V Haus LINO dining table 160 × 90 cm, walnut + 6 C9060 walnut chairs', qty: 1, price: 2330.89, cur: 'MYR', shop: 'V Haus Living, Mutiara Rini (JB)', type: 'Shop', date: '2026-11-22', when: 'Ordered 22 Nov (30% deposit paid); January stock, delivery mid to end January', note: 'Table RM2,299 before GST and discount, 6 chairs included. Sold out now; delivery mid to end January. Check chair pull-out space. Part of V Haus order 03460: RM14,516.62 incl. GST for dining set, wardrobe and sofa. Deposit RM4,355 paid; balance RM10,161.62 before delivery. Custom items cannot be cancelled.'},
+   {id: 'dining-v-haus-lino-dining', ordered: true, name: 'V Haus LINO dining table 160 × 90 cm, sintered stone top, walnut-colour legs + 6 C9060 walnut chairs (4 at the table)', qty: 1, price: 2330.89, cur: 'MYR', shop: 'V Haus Living, Mutiara Rini (JB)', type: 'Shop', date: '2026-11-22', when: 'Ordered 22 Nov (30% deposit paid); January stock, delivery mid to end January', note: 'Table RM2,299 before GST and discount, 6 chairs included. Sold out now; delivery mid to end January. Check chair pull-out space. Part of V Haus order 03460: RM14,516.62 incl. GST for dining set, wardrobe and sofa. Deposit RM4,355 paid; balance RM10,161.62 before delivery. Custom items cannot be cancelled.'},
    {id: 'dining-kdk-f40gp-100-cm', name: 'KDK F40GP 100 cm Wi-Fi DC ceiling fan with LED light', qty: 1, price: 418, cur: 'SGD', shop: 'KDK Singapore', type: 'Online', href: 'https://www.kdk.sg/products/ceiling-fan-f40gp', date: '2026-12-05', when: 'Buy before electrician. JB KDK dealers may be cheaper', note: 'KDK Bundle D (2 × F40GP) is S$788. Check clearance to walls.'},
   ]},
   {id: 'kitchen', name: 'Kitchen and yard', items: [
@@ -275,7 +275,7 @@ export const BUY = {
    paid: [{date: '2026-11-22', amount: 4355, t: '30% deposit'}],
    due: [{date: null, amount: 10161.62, t: 'Balance before delivery. Ask V Haus if it is paid per delivery (wardrobe, sofa, dining set) or all before the first one'}],
    steps: [
-    {date: '2026-12-08', s: 'Wardrobe measured', t: 'V Haus measures the KX L-shape wardrobe (Tue 8 Dec, after the hacking on 3, 4 and 7 Dec)'},
+    {date: '2026-12-08', s: 'Wardrobe measured', t: 'V Haus measures the KX L-shape wardrobe (Tue 8 Dec; if the hacking moves to 4, 7 and 8 Dec, move this to 9 Dec or later)'},
     {date: '2026-12-31', est: true, label: 'End of Dec', s: 'Wardrobe delivered', t: 'Wardrobe: about 1 month rush to make, delivery and install aimed at end of December'},
     {date: null, est: true, label: 'Dec?', s: 'Sofa delivered', t: 'Sofa: delivery date to confirm, maybe within December'},
     {date: '2027-01-20', est: true, label: 'Mid–end Jan', s: 'Dining set delivered', t: 'LINO dining set + 6 chairs: January stock, delivery mid to end January'},
@@ -307,7 +307,7 @@ export const BUY = {
   {id: 'sp', date: '2026-12-05', t: 'SP Services: electricity and water on (from 5 Dec)', n: 'Account already applied; 5 Dec was the earliest turn-on slot. Submit the management form request beforehand.'},
   {id: 'sanitary', date: '2026-12-05', t: 'Buy the sanitary fittings', n: 'All in gunmetal (family choice 25 Nov). Common: RIGEL R-BC7437 vanity. Both: RIGEL toilets, MXB721101 gunmetal taps, gunmetal bidet sprays, showers and accessory sets, mirror cabinets. Ask RIGEL to match the e-store (about S$5,061 for the set). I-Niche fits them (C1). Toilet and vanity size after 3 Dec.', href: '/bathrooms'},
   {id: 'switches', date: '2026-12-05', t: 'Buy switches and sockets', n: 'After the count on 3 Dec, before the electrician starts.', href: '#it-contractor-switches-sockets'},
-  {id: 'vhaus-wardrobe', date: '2026-12-08', t: 'V Haus measures the KX L-shaped wardrobe (Tue 8 Dec)', n: 'After the hacking (3, 4 and 7 Dec). Choose body and door colours (mood board) and the inside layout. About 1 month rush to make, aiming for end-December delivery.', href: '/look#look-wardrobe'},
+  {id: 'vhaus-wardrobe', date: '2026-12-08', t: 'V Haus measures the KX L-shaped wardrobe (Tue 8 Dec)', n: 'After the hacking (3, 4, 7 Dec; asked to move to 4, 7, 8 Dec: if so, V Haus must come after 8 Dec). Choose body and door colours (mood board) and the inside layout. About 1 month rush to make, aiming for end-December delivery.', href: '/look#look-wardrobe'},
   {id: 'dunlopillo-pay', date: '2026-12-19', t: 'Pay Dunlopillo (ANZ) the full balance RM12,000', n: 'At least 3 days before the Tue 22 Dec delivery. Deposit RM7,999 paid 22 Nov (sales order 155571). Keep the receipt.', href: '/pay'},
   {id: 'beds', date: '2026-12-22', t: 'Dunlopillo beds delivered (Tue 22 Dec)', n: 'KY: Carlton 30 cm + KHJ60 headboard (PLE 007). KX: Richmond 38 cm, no headboard (Picco PC 151-14). KS: Richmond 38 cm + KHJ44 headboard (311-15). Check the hydraulics and every mattress label before signing.', href: '/pay'},
  ],

@@ -260,8 +260,8 @@ function build(it, s, colour) {
   soft(g, 2.1, 0.35, 0.42, 0, 0.2, -m(s.d) / 2 - 0.025 + 0.21, mat('#c9a77d', {rough: 0.55}), 0.01);
   for (let i = 1; i < 4; i++) box(g, 0.004, 0.33, 0.004, -1.05 + 2.1 * i / 4, 0.21, -m(s.d) / 2 - 0.025 + 0.422, mat('#a88760'), false);
  } else if (k === 'table') {
-  // LINO T160: 160 × 90 cm top, 75 cm high, on two walnut slab pedestals (order photo). 4 chairs, as the family uses it.
-  soft(g, w, 0.04, d, 0, 0.71, 0, mat(C.walnut, {rough: 0.4}), 0.012);
+  // LINO T160: 160 × 90 cm sintered stone top, 75 cm high, on two walnut-colour slab legs (order photo). 6 chairs ordered, 4 at the table.
+  soft(g, w, 0.04, d, 0, 0.71, 0, mat('#d9d3c9', {rough: 0.3}), 0.012);
   for (const sx of [-1, 1]) {soft(g, 0.16, 0.69, d * 0.62, sx * w * 0.27, 0.02, 0, mat(C.walnut, {rough: 0.45}), 0.01); box(g, 0.24, 0.02, d * 0.66, sx * w * 0.27, 0, 0, mat('#3d271c', {rough: 0.5}));}
   for (const cx of [-w * 0.25, w * 0.25]) {chairC9060(g, cx, -d / 2 - 0.295, 0); chairC9060(g, cx, d / 2 + 0.295, Math.PI);}
   // pendant over the table

@@ -6,7 +6,7 @@
 export const FIXED = [
  {name: 'Floor tiles (living, dining, kitchen): staying', note: 'Glossy light cream-beige tiles, seen in the house video (23 Nov). Not changing.', sw: ['#e2d6c6'], img: '/images/look/home-now-floor-doors.webp'},
  {name: 'Doors and frames: staying', note: 'Deep red-brown (mahogany look) with dark skirting. The strongest colour in the home.', sw: ['#6a2a20']},
- {name: 'LINO dining set (ordered)', note: 'V Haus LINO T160 table + 6 C9060 chairs, walnut', sw: ['#5b3a29'], img: '/images/buy/v-haus-lino-dining-table-4-chairs-no-side-chairs-12fa73.webp'},
+ {name: 'LINO dining set (ordered)', note: 'V Haus LINO T160: sintered stone top, walnut-colour legs + 6 C9060 walnut chairs (4 at the table)', sw: ['#5b3a29'], img: '/images/buy/v-haus-lino-dining-table-4-chairs-no-side-chairs-12fa73.webp'},
  {name: 'Sofa (ordered)', note: 'V Haus 2233A, 268 × 135 cm, one armrest and an open end. Colour can still change.', sw: [], img: '/images/buy/v-haus-2233a-sofa-ordered.webp'},
 ];
 
