@@ -2,6 +2,9 @@
 
 Current state (26 Nov 2026): site on Cloudflare Workers + D1 at https://lacasa.kayikkwong.workers.dev (moved from ChatGPT Sites on 30 Oct). The full working notes are the project handover doc `claude/lacasa-handover.md` in the claude.ai project; this file is a short change log only. The table and notes from October below are history.
 
+## 26 November 2026 — Schedule page
+- New /schedule (`showcase/schedule.mjs`, `public/schedule.js`, CSS `.sch-*`, PUT `/api/schedule/log`, D1 key `sch:log`, test `tests/showcase/schedule.test.mjs`): week-by-week calendar (Mon–Sun, Sundays off) seeded from John's "LaCasa Schedule" PDF (26 Nov) + V Haus measure 8 Dec, ANZ beds 22 Dec, keys 3 Dec 4–6pm, SP 5 Dec, family deadlines; "Date to confirm" list; filter by party; "Who we work with" cards (`PARTIES`). Family adds/edits entries. Nav: desktop after Home, phone under More.
+
 ## 26 November 2026 — 3D upgrade
 - 2:40pm (K's references): coveless LED cove round all walls of living + dining, KY, KS, KX (glowing line + additive wall wash, no extra lights; skips window glass; fills the room through the hemisphere light); TV console from the I-Niche plan (210 × 42 cm, 35 cm high floating 20 cm, assumed); dining shows 4 chairs (K: "we use 4"), C9060 chair and LINO pedestal table redrawn from the order photo; Top view button (`#3d=top`); CC0 Poly Haven plants + vase as styling (Plants toggle, `public/models/decor/`); bundle -e adds AdditiveBlending.
 - 2pm speed fix (K: "so laggy"): frames drawn at most once per screen refresh (was once per mouse/touch event), moving frames at 1× pixel density and the sharp AO frame only when the view rests, sun shadows only redrawn when the scene changes, downlights grouped to 1–2 lights per room (was 20), lights that are off are removed from the shader. Headless test: day drag 1.3 → 4.8 fps on a CPU renderer (real GPUs much faster).

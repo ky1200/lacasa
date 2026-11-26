@@ -4,6 +4,7 @@ import {buyKeys,validBuyValue} from './buy-plan.mjs';
 import {planKey,validPlanValue} from './plan-data.mjs';
 import {lookKeys,validLookValue} from './look-data.mjs';
 import {PAY_KEY,validPayLog} from './pay.mjs';
+import {SCH_KEY,validSchLog} from './schedule.mjs';
 import {DAY_KEY,validDayLog} from './day.mjs';
 import {PROG_KEY,validUpdate,progLog,addUpdate} from './progress.mjs';
 import {CMP_KEY,validQuote,cmpLog,addQuote} from './compare.mjs';
@@ -112,6 +113,14 @@ export async function api(request,env,content,samples){try{
   if(!validPayLog(value))throw new AppError(422,'Check each payment has who it is to and an amount.');
   if(value)await env.DB.prepare('INSERT INTO visit_notes (key,value,code,updated_at) VALUES (?,?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,code=excluded.code,updated_at=excluded.updated_at').bind(PAY_KEY,value,who.code,new Date().toISOString()).run();
   else await env.DB.prepare('DELETE FROM visit_notes WHERE key=?').bind(PAY_KEY).run();
+  return json({ok:true});
+ }
+ if(method==='PUT'&&path==='/api/schedule/log'){
+  if(!env.DB)throw new AppError(503,'The private database is not ready yet.');
+  const body=await bodyJSON(request,100000),value=typeof body.value==='string'?body.value:'';
+  if(!validSchLog(value))throw new AppError(422,'Check each entry has who, what and a valid date.');
+  if(value)await env.DB.prepare('INSERT INTO visit_notes (key,value,code,updated_at) VALUES (?,?,?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,code=excluded.code,updated_at=excluded.updated_at').bind(SCH_KEY,value,who.code,new Date().toISOString()).run();
+  else await env.DB.prepare('DELETE FROM visit_notes WHERE key=?').bind(SCH_KEY).run();
   return json({ok:true});
  }
  if(method==='PUT'&&path.startsWith('/api/look/')){
