@@ -213,6 +213,9 @@ const shape = (it, g) => {
  } else if (it.kind === 'cfan') {
   mk('circle', {cx: 0, cy: 0, r: w / 2, class: 'fanring', ...ns}, g);
   for (let a = 0; a < 3; a++) {const t = a * 2 * Math.PI / 3; mk('ellipse', {cx: Math.cos(t) * w * .22, cy: Math.sin(t) * w * .22, rx: w * .2, ry: w * .08, transform: `rotate(${t * 180 / Math.PI} ${Math.cos(t) * w * .22} ${Math.sin(t) * w * .22})`, class: 'blade'}, g);}
+ } else if (it.kind === 'washer') {
+  mk('rect', {x, y, width: w, height: d, rx: 20, class: 'appliance', ...ns}, g);
+  mk('circle', {cx: 0, cy: 0, r: Math.min(w, d) * .3, class: 'fanring', ...ns}, g);
  } else if (it.kind === 'dock') {
   mk('rect', {x, y, width: w, height: d, rx: 40, class: 'dock', ...ns}, g);
  } else if (it.kind === 'wifi') {

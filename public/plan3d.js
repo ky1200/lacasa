@@ -12,27 +12,31 @@ const DOOR_H = 2100;
 // Windows: [wall index, from, to (along the wall), sill height, head height]
 // KY (bedroom 3) and KS (bedroom 2) have bay windows: the glass sits about 56 cm out from the inner wall,
 // over a solid ledge at sill height. Those are drawn by bay() below, not cut into the wall.
-const WINDOWS = [[1, 800, 1950, 1000, 2100], [9, 9200, 12300, 400, 2400], [14, 5900, 7800, 500, 2300], [20, 9100, 10300, 1000, 2100]];
-// Bay windows: [wall index, from x, to x, glass line y, inner wall line y, ledge top, window head, room]
-const BAYS = [[3, 3062, 5520, 950, 1460, 500, 2300, 'ky'], [5, 5640, 8560, 950, 1500, 500, 2300, 'ks']];
+const WINDOWS = [[1, 800, 1950, 1000, 2100], [9, 9200, 12300, 400, 2400], [20, 9100, 10300, 1000, 2100]];
+// Bay windows: [wall index, from, to (along the wall), glass line, inner wall line, ledge top, window head, room, vertical wall?]
+// KX (main bedroom) has the same ledge on its side wall (K, 27 Nov): glass about 54 cm out from the inner wall.
+const BAYS = [[3, 3062, 5520, 950, 1460, 500, 2300, 'ky'], [5, 5640, 8560, 950, 1500, 500, 2300, 'ks'], [14, 5900, 7700, 1950, 2490, 500, 2300, 'kx', true]];
 // Door openings cut into a wall: [wall index, from, to]
 const GAPS = [[30, 11120, 12200]];
 // Walls that are really door leaves on the plan
 const NOT_WALLS = new Set([8]);
 // Short wall pieces the plan shows but the wall list leaves out: [x1, y1, x2, y2]
-const EXTRA_WALLS = [[2990, 870, 2990, 1400], [8620, 870, 8620, 1980]];
+const EXTRA_WALLS = [[2990, 870, 2990, 1400], [8620, 870, 8620, 1980], [1890, 5840, 2490, 5840], [1890, 7760, 2490, 7760]];
+// Kitchen–dining wall (K's photo, 27 Nov): a low white wall with clear glass above, so the kitchen looks into the dining.
+// [wall index, low wall height mm, glass top mm]
+const GLASS_ABOVE = [[25, 1050, 2400]];
 // Door leaves shown open: [hinge x, hinge y, end x, end y, kind]
 // KY door (updated plan, 26 Nov): at the bottom of the 745 mm passage, hinged by KS's wall, opening into the passage.
-const DOORS = [[5450, 5090, 5450, 4420, 'room'], [5850, 4170, 5850, 4960, 'room'], [4704, 5342, 4704, 6150, 'room'], [6800, 6235, 6800, 7020, 'room'], [2117, 4060, 2117, 3260, 'room'], [7594, 9000, 7594, 9780, 'steel'], [12200, 11285, 12200, 10205, 'main']];
+const DOORS = [[5450, 5090, 5450, 4420, 'room'], [5850, 4170, 5850, 4960, 'room'], [4704, 5342, 3804, 5342, 'room'], [6800, 6235, 6800, 7020, 'room'], [2117, 4060, 2117, 3260, 'room'], [7594, 9000, 7594, 9780, 'steel'], [12200, 11285, 12200, 10205, 'main']];
 // Built-in kitchen and yard counters: [x1, y1, x2, y2, height]
 // Kitchen (galley): sink run against the dining wall, hob run along the bottom wall (ends where the fridge space starts),
 // tall store cabinet (ST) by the entrance, yard counter by the washer.
-const COUNTERS = [[7650, 10160, 9660, 10780, 900], [8890, 8310, 10960, 9047, 900], [6300, 10230, 6950, 10780, 850], [10600, 10050, 10960, 10780, 2100]];
+const COUNTERS = [[7650, 10160, 9660, 10780, 900], [8890, 8310, 10960, 9047, 900], [5940, 10260, 6650, 10780, 850], [10600, 10050, 10960, 10780, 2100]];
 // Where to stand when walking into each room: [x, y, look at x, look at y]
-const SPAWN = {all: [11700, 10300, 10500, 4000], living: [10500, 5900, 10600, 2000], dining: [11900, 8700, 10300, 7200], kitchen: [10700, 9500, 8300, 10300], ky: [5100, 4250, 3400, 2300], ks: [7000, 4700, 7000, 1200], kx: [4300, 4400, 1200, 6800]};
+const SPAWN = {all: [11700, 10300, 10500, 4000], living: [10500, 5900, 10600, 2000], dining: [11300, 6350, 9800, 9300], kitchen: [10700, 9500, 8300, 10300], ky: [5100, 4250, 3400, 2300], ks: [7000, 4700, 7000, 1200], kx: [3600, 4500, 2300, 6900]};
 const FLOOR = {ky: 'vinyl', ks: 'vinyl', kx: 'vinyl', 'master-bath': 'bath', 'common-bath': 'bath', yard: 'bath', hs: 'plain'};
 const ROOMS = [['all', 'Whole home'], ['living', 'Living'], ['dining', 'Dining'], ['kitchen', 'Kitchen'], ['ky', 'KY'], ['ks', 'KS'], ['kx', 'KX']];
-const C = {door: '#6a2a20', main: '#4a2a1c', steel: '#9aa0a3', fabric: '#cdbca5', bed: '#bdb4a8', linen: '#f4f1ea', oak: '#d6b98f', walnut: '#5b3a29', black: '#1e1e1e', white: '#f6f6f3', stone: '#d8d2c6', steelApp: '#c9ccce', vanity: '#4b3426', glass: '#cfe3ea', curtain: '#d9ccb6', sheer: '#f7f5f0', counter: '#3b3b3b', cabinet: '#ece7dd', skirting: '#3a2620', ledge: '#e4ddd2'};
+const C = {door: '#6a2a20', main: '#4a2a1c', steel: '#9aa0a3', fabric: '#cdbca5', bed: '#bdb4a8', linen: '#f4f1ea', oak: '#d6b98f', walnut: '#5b3a29', black: '#1e1e1e', white: '#f6f6f3', stone: '#d8d2c6', steelApp: '#c9ccce', vanity: '#4b3426', glass: '#cfe3ea', curtain: '#d9ccb6', sheer: '#f7f5f0', counter: '#e4e0d8', cabinet: '#ece7dd', skirting: '#3a2620', ledge: '#e4ddd2'};
 
 // ---- XingFloors vinyl (colours sampled from XingFloors' own swatch photos, Nov 2026: [mid, dark, light]) ----
 // FLOORLUX vinyl click: 5 mm, 0.3 mm wear layer, planks 1220 × 180 mm (the range in the I-Niche quote, F2).
@@ -189,6 +193,25 @@ function cyl(g, r, h, x, y, z, material, seg = 24, r2 = r) {
  g.add(mesh);
  return mesh;
 }
+// KDK F40GP (picked on /buy): 100 cm, three wide swept blades, small matte dark-brown body, round LED light in the middle.
+function kdkFan(g, top) {
+ const brown = mat('#4a403b', {rough: 0.6, metal: 0.1}), y0 = top - 0.03;
+ cyl(g, 0.07, 0.03, 0, y0, 0, brown, 32);
+ cyl(g, 0.018, 0.08, 0, y0 - 0.08, 0, brown, 12);
+ const pts = [[0, 0], [0.12, 0], [0.135, 0.03], [0.14, 0.07], [0.125, 0.1], [0.09, 0.115], [0, 0.118]].map(([r, y]) => new T.Vector2(r, y));
+ const hub = new T.Mesh(new T.LatheGeometry(pts, 40), brown);
+ hub.position.y = y0 - 0.2; hub.castShadow = true; g.add(hub);
+ const led = cyl(g, 0.095, 0.012, 0, y0 - 0.212, 0, mat('#fffaf0', {glow: '#fff3df', glowI: 0.9, rough: 0.4}), 40);
+ led.castShadow = false;
+ const sh = new T.Shape();
+ sh.moveTo(0.1, -0.035); sh.bezierCurveTo(0.22, -0.11, 0.38, -0.12, 0.49, -0.05); sh.bezierCurveTo(0.52, -0.02, 0.5, 0.02, 0.46, 0.03); sh.bezierCurveTo(0.34, 0.05, 0.2, 0.06, 0.1, 0.035); sh.lineTo(0.1, -0.035);
+ const bg = new T.ExtrudeGeometry(sh, {depth: 0.008, bevelEnabled: true, bevelThickness: 0.002, bevelSize: 0.004, bevelSegments: 2, curveSegments: 24});
+ bg.rotateX(Math.PI / 2);
+ for (let a = 0; a < 3; a++) {
+  const b = new T.Mesh(bg, brown); b.position.y = y0 - 0.13; b.rotation.set(0, a * 2.0944, 0); b.rotateX(0.12); b.castShadow = true; g.add(b);
+ }
+ return g;
+}
 function legs(g, w, d, h, inset, r, material) {
  for (const sx of [-1, 1]) for (const sz of [-1, 1]) cyl(g, r, h, sx * (w / 2 - inset), 0, sz * (d / 2 - inset), material, 10);
 }
@@ -264,10 +287,7 @@ function build(it, s, colour) {
   soft(g, w, 0.04, d, 0, 0.71, 0, mat('#d9d3c9', {rough: 0.3}), 0.012);
   for (const sx of [-1, 1]) {soft(g, 0.16, 0.69, d * 0.62, sx * w * 0.27, 0.02, 0, mat(C.walnut, {rough: 0.45}), 0.01); box(g, 0.24, 0.02, d * 0.66, sx * w * 0.27, 0, 0, mat('#3d271c', {rough: 0.5}));}
   for (const cx of [-w * 0.25, w * 0.25]) {chairC9060(g, cx, -d / 2 - 0.295, 0); chairC9060(g, cx, d / 2 + 0.295, Math.PI);}
-  // pendant over the table
-  cyl(g, 0.004, 0.9, 0, 1.7, 0, mat('#222222'), 6);
-  const sh = cyl(g, 0.22, 0.16, 0, 1.55, 0, mat('#e8dcc6', {rough: 0.9, glow: '#ffd9a8', glowI: 0, double: true}), 32, 0.08);
-  sh.userData.pendant = true;
+  // No dining pendant (K, 27 Nov): the KDK fan with its LED light is the dining light.
  } else if (k === 'desk') {
   soft(g, w, 0.03, d, 0, 0.72, 0, mat(C.black, {rough: 0.5}), 0.005);
   for (const sx of [-1, 1]) box(g, 0.06, 0.72, d - 0.1, sx * (w / 2 - 0.1), 0, 0, mat('#2a2a2a', {metal: 0.4, rough: 0.5}));
@@ -312,6 +332,31 @@ function build(it, s, colour) {
   soft(g, w, m(s.h ?? 1770), d, 0, 0, 0, mat(C.steelApp, {metal: 0.6, rough: 0.3}), 0.02);
   box(g, w - 0.02, 0.006, 0.004, 0, 1.1, d / 2 + 0.002, mat('#7b7f82'), false);
   for (const y of [0.75, 1.25]) box(g, 0.02, 0.35, 0.03, w / 2 - 0.06, y, d / 2 + 0.02, mat('#8a8e91', {metal: 0.8}), false);
+ } else if (k === 'washer') {
+  // LG FX1412S2KA (picked on /buy): 60 × 56.5 × 85 cm, dark body, big round door with a chrome ring, panel along the top.
+  const h = m(s.h ?? 850), body = mat('#2c2e31', {rough: 0.35, metal: 0.25}), fz = d / 2;
+  soft(g, w, h - 0.02, d, 0, 0.02, 0, body, 0.012);
+  for (const sx of [-1, 1]) for (const sz of [-1, 1]) cyl(g, 0.02, 0.02, sx * (w / 2 - 0.05), 0, sz * (d / 2 - 0.05), mat('#111111'), 10);
+  box(g, w - 0.02, 0.1, 0.006, 0, h - 0.13, fz + 0.002, mat('#1b1c1e', {rough: 0.2}), false);
+  box(g, 0.2, 0.06, 0.006, -w / 2 + 0.13, h - 0.11, fz + 0.005, mat('#3a3c40', {rough: 0.3}), false);
+  box(g, 0.09, 0.03, 0.004, 0.06, h - 0.1, fz + 0.006, mat('#0a0a0a', {glow: '#ff6a3d', glowI: 0.6}), false);
+  cyl(g, 0.025, 0.012, w / 2 - 0.12, h - 0.11, fz + 0.004, mat('#bfc3c7', {metal: 0.9, rough: 0.25}), 20).rotation.x = Math.PI / 2;
+  const ring = new T.Mesh(new T.TorusGeometry(0.215, 0.022, 14, 48), mat('#b9bdc2', {metal: 0.9, rough: 0.22}));
+  ring.position.set(0, h * 0.47, fz + 0.012); ring.castShadow = true; g.add(ring);
+  const door = new T.Mesh(new T.CircleGeometry(0.2, 48), mat('#1d2a33', {opacity: 0.85, rough: 0.05, metal: 0.3}));
+  door.position.set(0, h * 0.47, fz + 0.014); g.add(door);
+  box(g, 0.12, 0.08, 0.004, w / 2 - 0.11, 0.05, fz + 0.002, mat('#25272a', {rough: 0.4}), false);
+ } else if (k === 'dock') {
+  // Dreame X50 Ultra (picked on /buy): tall black base station with a dark bronze band, ramp in front, robot parked on it.
+  const black = mat('#141516', {rough: 0.35, metal: 0.2}), tw = Math.min(w, 0.34), td = 0.32, th = 0.59;
+  box(g, tw + 0.02, 0.012, d, 0, 0, 0, mat('#1c1d1f', {rough: 0.5}));
+  soft(g, tw, th, td, 0, 0.012, -d / 2 + td / 2, black, 0.02);
+  box(g, tw + 0.002, 0.12, td + 0.002, 0, 0.27, -d / 2 + td / 2, mat('#6d6458', {metal: 0.7, rough: 0.35}), false);
+  box(g, tw - 0.04, 0.02, 0.004, 0, 0.32, -d / 2 + td + 0.002, mat('#a89a85', {metal: 0.8, rough: 0.3}), false);
+  const bot = cyl(g, 0.175, 0.1, 0, 0.014, d / 2 - 0.19, mat('#1e1f21', {rough: 0.3, metal: 0.2}), 40);
+  cyl(g, 0.165, 0.004, 0, 0.114, d / 2 - 0.19, mat('#2a2b2d', {rough: 0.15, metal: 0.3}), 40);
+  cyl(g, 0.012, 0.004, 0.06, 0.118, d / 2 - 0.19, mat('#c9b68f', {metal: 0.8, rough: 0.3}), 16);
+  void bot;
  } else if (k === 'dispenser') {
   soft(g, w, 0.45, d, 0, 0.9, 0, mat('#e8e6e1', {rough: 0.3}), 0.01);
  } else if (k === 'cfan') {
@@ -350,12 +395,6 @@ const store = {
 // The drawn shape shows first; the model replaces it once loaded, scaled to the item's real width, depth and height.
 const MODELS = {sofa: {url: '/models/vhaus-2233a-sofa.glb', h: it => m(it.h ?? 850), tint: '#fff1df', lift: 1.25, mirror: true}};
 let gltf = null;
-// Styling only (not bought): free CC0 models from Poly Haven, to make rooms feel lived-in. Can be switched off.
-const DECOR = [
- {url: '/models/decor/potted_plant_01.glb', x: 12120, y: 4950, r: 20, h: 1.3},
- {url: '/models/decor/potted_plant_02.glb', x: 9080, y: 6380, r: 40, h: 0.85},
- {url: '/models/decor/ceramic_vase_01.glb', x: 10500, y: 7400, r: 0, h: 0.3, at: 0.75},
-];
 const loader = () => gltf ??= (() => {const l = new T.GLTFLoader(); l.setMeshoptDecoder(T.MeshoptDecoder); return l;})();
 function swapModel(g, it, s) {
  const spec = MODELS[it.kind];
@@ -395,7 +434,7 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
 <section><h3>Window seats (KY and KS)</h3><div class="p3d-row"><button type="button" data-cushion aria-pressed="true">Custom cushions on the ledge</button></div><p class="p3d-note">The bay ledge is about 56 cm deep and 50 cm high: a seat. A 6 to 8 cm cushion made to measure, with a removable, washable cover, plus 2 or 3 back pillows against the side walls.</p></section>
 </div></div>
 <div class="p3d-ctrl"><div class="p3d-row">${ROOMS.map(([id, n], k) => `<button type="button" data-room="${id}"${k ? '' : ' aria-pressed="true"'}>${n}</button>`).join('')}</div>
-<div class="p3d-row"><button type="button" data-finish aria-pressed="false">Floor, paint, lights</button><button type="button" data-walk aria-pressed="false">Walk inside</button><button type="button" data-sofa>Sit on the sofa</button><button type="button" data-nook>Window seat</button><button type="button" data-top>Top view</button><button type="button" data-low aria-pressed="false">Low walls</button><button type="button" data-decor aria-pressed="true">Plants</button></div>
+<div class="p3d-row"><button type="button" data-finish aria-pressed="false">Floor, paint, lights</button><button type="button" data-walk aria-pressed="false">Walk inside</button><button type="button" data-sofa>Sit on the sofa</button><button type="button" data-nook>Window seat</button><button type="button" data-top>Top view</button><button type="button" data-low aria-pressed="false">Low walls</button></div>
 <p class="p3d-help" data-help>Drag to turn, pinch or scroll to zoom. Tap furniture for its photo and size.</p></div>`;
  document.body.append(box3);
  const prevFocus = document.activeElement;
@@ -465,7 +504,8 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   floors.push(f);
  }
  // Ceiling, downlights and ceiling fans (ceiling shown when walking inside)
- const ceiling = new T.Group();
+ const ceiling = new T.Group(), fans = new T.Group();
+ scene.add(fans);
  for (const r of D.rooms) for (const [x, y, w, h] of r.boxes) {
   const c = new T.Mesh(new T.PlaneGeometry(m(w) + 0.06, m(h) + 0.06), mat('#fbfaf7', {rough: 1}));
   c.rotation.x = Math.PI / 2;
@@ -501,12 +541,9 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   }
  }
  for (const [x, y] of D.points?.fan ?? []) {
-  const f = new T.Group();
-  cyl(f, 0.09, 0.12, 0, -0.12, 0, mat(C.black), 16);
-  cyl(f, 0.012, 0.25, 0, -0.25, 0, mat(C.black), 6);
-  for (let a = 0; a < 3; a++) {const b = box(f, 0.55, 0.012, 0.11, Math.cos(a * 2.094) * 0.32, -0.08, Math.sin(a * 2.094) * 0.32, mat(C.black, {rough: 0.5}), false); b.rotation.y = -a * 2.094;}
+  const f = kdkFan(new T.Group(), 0);
   f.position.set(m(x), ceil, m(y));
-  ceiling.add(f);
+  fans.add(f); // fans stay visible in every view (the ceiling itself only shows when walking)
  }
  ceiling.visible = false;
  scene.add(ceiling);
@@ -531,6 +568,16 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
    seg(a0, a1, 0, ceil - 0.04, fluted, 0.02, false);
    const n = Math.max(1, Math.round((a1 - a0) / 450)); for (let i = 0; i <= n; i++) {const p = a0 + (a1 - a0) * i / n; seg(p - 15, p + 15, 0, ceil, frameMat, 0.05);}
    seg(a0, a1, ceil - 0.04, ceil, frameMat, 0.05);
+   return;
+  }
+  const ga = GLASS_ABOVE.find(x => x[0] === idx);
+  if (ga) { // low wall + clear glass panels in slim frames up to the bulkhead
+   const lo = m(ga[1]), hi = m(ga[2]);
+   seg(a0 - 60, a1 + 60, 0, lo, wallMat); seg(a0 - 60, a1 + 60, 0, 0.08, skirt, thick + 0.016, false);
+   seg(a0 - 60, a1 + 60, lo, lo + 0.03, sillMat, thick + 0.02);
+   seg(a0, a1, lo + 0.03, hi, glassMat, 0.012, false);
+   const n = Math.max(2, Math.round((a1 - a0) / 800)); for (let i = 0; i <= n; i++) {const p = a0 + (a1 - a0) * i / n; seg(p - 12, p + 12, lo + 0.03, hi, mat('#d9d9d6', {metal: 0.6, rough: 0.35}), 0.03, false);}
+   seg(a0 - 60, a1 + 60, hi, ceil, wallMat);
    return;
   }
   let at = a0 - (t === 'p' ? 37 : 60);
@@ -561,30 +608,31 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
  scene.add(cushions);
  const cushionOn = store.get('cushion', '1') === '1';
  cushions.visible = cushionOn;
- for (const [, x0, x1, gy, wy, top, head, room] of BAYS) {
-  const face = wy + 60, w = m(x1 - x0), cx = m((x0 + x1) / 2), depth = m(face - gy);
-  box(walls, w, m(top) - 0.03, depth, cx, 0, m((gy + face) / 2), wallMat);
-  box(walls, w, 0.08, depth + 0.01, cx, 0, m((gy + face) / 2) + 0.005, skirt, false);
-  box(walls, w + 0.01, 0.03, depth + 0.03, cx, m(top) - 0.03, m((gy + face) / 2) + 0.015, ledgeMat);
-  box(walls, w, ceil - m(head), depth + 0.07, cx, m(head), m((gy - 70 + face) / 2), wallMat);
+// Bay boxes in "along / across" terms so the same code draws horizontal (KY, KS) and vertical (KX) walls.
+ for (const [, x0, x1, gy, wy, top, head, room, vert] of BAYS) {
+  const B = (g, al, h, ac, ca, y, cc, mt, sh) => vert ? box(g, ac, h, al, m(cc * 1000), y, m(ca * 1000), mt, sh) : box(g, al, h, ac, m(ca * 1000), y, m(cc * 1000), mt, sh);
+  const face = wy + 60, w = m(x1 - x0), ca = (x0 + x1) / 2000, depth = m(face - gy), cc = (gy + face) / 2000;
+  B(walls, w, m(top) - 0.03, depth, ca, 0, cc, wallMat);
+  B(walls, w, 0.08, depth + 0.01, ca, 0, cc + 0.005, skirt, false);
+  B(walls, w + 0.01, 0.03, depth + 0.03, ca, m(top) - 0.03, cc + 0.015, ledgeMat);
+  B(walls, w, ceil - m(head), depth + 0.07, ca, m(head), (gy - 70 + face) / 2000, wallMat);
   // glass and slim frames
-  box(walls, w, m(head) - m(top), 0.012, cx, m(top), m(gy), glassMat, false);
+  B(walls, w, m(head) - m(top), 0.012, ca, m(top), gy / 1000, glassMat, false);
   const panes = Math.max(2, Math.round((x1 - x0) / 900));
-  for (let i = 0; i <= panes; i++) box(walls, 0.04, m(head) - m(top), 0.05, m(x0 + (x1 - x0) * i / panes), m(top), m(gy), frameMat);
-  box(walls, w, 0.04, 0.05, cx, m(head) - 0.04, m(gy), frameMat);
-  box(walls, w, 0.03, 0.05, cx, m(top), m(gy), frameMat);
+  for (let i = 0; i <= panes; i++) B(walls, 0.04, m(head) - m(top), 0.05, (x0 + (x1 - x0) * i / panes) / 1000, m(top), gy / 1000, frameMat);
+  B(walls, w, 0.04, 0.05, ca, m(head) - 0.04, gy / 1000, frameMat);
+  B(walls, w, 0.03, 0.05, ca, m(top), gy / 1000, frameMat);
   // custom seat cushion + back pillows
-  const fab = mat(room === 'ky' ? '#cfc6b8' : '#c9cdc4', {rough: 1}), seatD = depth - 0.06;
-  soft(cushions, w - 0.04, 0.08, seatD, cx, m(top), m(gy) + 0.03 + seatD / 2, fab, 0.035);
-  soft(cushions, 0.45, 0.42, 0.14, m(x0) + 0.1, m(top) + 0.09, m(gy) + seatD / 2 + 0.03, mat('#eee8dd', {rough: 1}), 0.07).rotation.y = Math.PI / 2 - 0.25;
-  soft(cushions, 0.45, 0.42, 0.14, m(x1) - 0.1, m(top) + 0.09, m(gy) + seatD / 2 + 0.03, mat('#eee8dd', {rough: 1}), 0.07).rotation.y = -Math.PI / 2 + 0.25;
-  soft(cushions, 0.38, 0.36, 0.12, m(x1) - 0.32, m(top) + 0.08, m(gy) + seatD / 2 + 0.05, mat(room === 'ky' ? '#a98e6c' : '#8b9a8c', {rough: 1}), 0.06).rotation.y = -Math.PI / 2 + 0.6;
+  const fab = mat(room === 'ky' ? '#cfc6b8' : room === 'kx' ? '#d6cbbd' : '#c9cdc4', {rough: 1}), seatD = depth - 0.06, turn = vert ? -Math.PI / 2 : 0;
+  const S = (al, h, ac, ca2, y, cc2, mt, r, rot) => {const o = vert ? soft(cushions, al, h, ac, cc2, y, ca2, mt, r) : soft(cushions, al, h, ac, ca2, y, cc2, mt, r); o.rotation.y = (rot ?? 0) + turn; return o;};
+  S(w - 0.04, 0.08, seatD, ca, m(top), gy / 1000 + 0.03 + seatD / 2, fab, 0.035);
+  S(0.45, 0.42, 0.14, x0 / 1000 + 0.1, m(top) + 0.09, gy / 1000 + seatD / 2 + 0.03, mat('#eee8dd', {rough: 1}), 0.07, Math.PI / 2 - 0.25);
+  S(0.45, 0.42, 0.14, x1 / 1000 - 0.1, m(top) + 0.09, gy / 1000 + seatD / 2 + 0.03, mat('#eee8dd', {rough: 1}), 0.07, -Math.PI / 2 + 0.25);
   // warm LED strip hidden under the window head (reading light)
-  const strip = box(walls, w - 0.1, 0.012, 0.02, cx, m(head) - 0.02, m(gy) + 0.12, mat('#fff6dc', {glow: '#ffd9a8', glowI: 0}), false);
+  const strip = B(walls, w - 0.1, 0.012, 0.02, ca, m(head) - 0.02, gy / 1000 + 0.12, mat('#fff6dc', {glow: '#ffd9a8', glowI: 0}), false);
   strip.userData.cove = true;
-  const ra = new T.RectAreaLight(0xffd9a8, 0, w - 0.1, 0.04);
-  ra.position.set(cx, m(head) - 0.03, m(gy) + 0.14);
-  ra.lookAt(cx, 0, m(gy) + 0.3);
+  const ra = new T.RectAreaLight(0xffd9a8, 0, w - 0.1, 0.04), P = (a, c) => vert ? [c, a] : [a, c];
+  {const [px, pz] = P(ca, gy / 1000 + 0.14); ra.position.set(px, m(head) - 0.03, pz); const [lx, lz] = P(ca, gy / 1000 + 0.3); ra.lookAt(lx, 0, lz);}
   ra.userData.base = 60;
   scene.add(ra);
   nookLamps.push(ra);
@@ -658,11 +706,19 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   soft(scene, m(x2 - x1), m(h) - 0.04, m(y2 - y1), m((x1 + x2) / 2), 0, m((y1 + y2) / 2), mat(C.cabinet, {rough: 0.5}), 0.005);
   if (h < 1500) box(scene, m(x2 - x1) + 0.01, 0.04, m(y2 - y1) + 0.01, m((x1 + x2) / 2), m(h) - 0.04, m((y1 + y2) / 2), mat(C.counter, {rough: 0.25}));
  }
+ // Kitchen as in the listing photo: light worktop, wood-look wall cabinets over the hob run, sink facing the dining glass.
+ const wood = mat('#a8825c', {rough: 0.55});
+ soft(scene, m(9660 - 7650), 0.72, 0.35, m((7650 + 9660) / 2), 1.5, m(10780) - 0.175, wood, 0.006);
+ for (let x = 7650 + 500; x < 9660; x += 500) box(scene, 0.004, 0.7, 0.004, m(x), 1.51, m(10780) - 0.35, mat('#7d5f42'), false);
+ soft(scene, 0.6, 0.12, 0.45, m(8600), 1.38, m(10780) - 0.225, mat('#c9ccce', {metal: 0.7, rough: 0.3}), 0.01);
+ box(scene, 0.6, 0.012, 0.5, m(8600), 0.9, m(10470), mat('#151515', {rough: 0.1}), false);
+ box(scene, 0.48, 0.012, 0.4, m(9800), 0.895, m(8650), mat('#9a9ea1', {metal: 0.85, rough: 0.3}), false);
+ cyl(scene, 0.015, 0.3, m(9800), 0.9, m(8420), mat('#c7cacc', {metal: 0.9, rough: 0.2}), 12);
 
  // Furniture
  const pick = [], pendants = [], coveMeshes = [];
  for (const it of items) {
-  if (it.on === false || it.kind === 'wifi' || it.kind === 'dock') continue;
+  if (it.on === false || it.kind === 'wifi') continue;
   const s = sizeOf(it);
   if (!s) continue;
   const g = build(it, s, it.kind === 'sofa' ? C.fabric : (D.colours[it.room] ?? '#8a8f9a'));
@@ -679,26 +735,6 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
  const pend = pendants[0] ? new T.PointLight(0xffd9a8, 0, 0, 2) : null;
  if (pend) {pendants[0].getWorldPosition(pend.position); pend.position.y -= 0.12; scene.add(pend);}
 
- // Plants and a vase (styling only)
- const decor = new T.Group();
- scene.add(decor);
- let decorOn = store.get('decor', '1') === '1', decorLoaded = false;
- const loadDecor = () => {
-  if (decorLoaded) return;
-  decorLoaded = true;
-  for (const d of DECOR) loader().loadAsync(d.url).then(res => {
-   const o = res.scene, b = new T.Box3().setFromObject(o), k = d.h / b.getSize(new T.Vector3()).y;
-   o.scale.setScalar(k);
-   o.position.set(m(d.x), (d.at ?? 0) - b.min.y * k, m(d.y));
-   o.rotation.y = d.r * Math.PI / 180;
-   o.traverse(x => {if (x.isMesh) x.castShadow = x.receiveShadow = true;});
-   decor.add(o);
-   changed();
-  }).catch(() => {});
- };
- decor.visible = decorOn;
- if (decorOn) loadDecor();
- $('[data-decor]').setAttribute('aria-pressed', String(decorOn));
 
  // ---- Light scenes ----
  let sceneIdx = Math.min(SCENES.length - 1, +store.get('scene', 0) || 0);
@@ -937,14 +973,7 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   orbit.dist = m(Math.max(D.W, D.H)) * (camera.aspect < 1 ? 1.5 : 1.12);
   place();
  };
- $('[data-decor]').onclick = e => {
-  decorOn = !decorOn;
-  e.currentTarget.setAttribute('aria-pressed', String(decorOn));
-  decor.visible = decorOn;
-  store.set('decor', decorOn ? '1' : '0');
-  if (decorOn) loadDecor();
-  changed();
- };
+
  $('[data-low]').onclick = e => {
   const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
   e.currentTarget.setAttribute('aria-pressed', String(on));

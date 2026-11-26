@@ -2,6 +2,14 @@
 
 Current state (26 Nov 2026): site on Cloudflare Workers + D1 at https://lacasa.kayikkwong.workers.dev (moved from ChatGPT Sites on 30 Oct). The full working notes are the project handover doc `claude/lacasa-handover.md` in the claude.ai project; this file is a short change log only. The table and notes from October below are history.
 
+## 27 November 2026 — 3D closer to the real flat
+- Removed styling extras: Poly Haven plants + vase (`DECOR`, Plants button, public/models/decor) and the dining pendant (no pendant planned; the KDK fan with LED is the dining light).
+- Ceiling fans = KDK F40GP shape (`kdkFan`: 3 swept matte-brown blades, small body, round LED in the middle), in their own always-visible group `fans`.
+- KX window = bay ledge like KY/KS (`BAYS` row 3, vertical wall 14, glass at x 1950; side walls in `EXTRA_WALLS`). KX door drawn open (hinge 4704,5342 → 3804,5342).
+- Kitchen–dining wall (wall 25) = low white wall 105 cm + clear glass to 2.4 m (`GLASS_ABOVE`), matching the listing photo. Light worktop, wood-look wall cabinets over the hob run, hob, sink facing the glass.
+- New plan item `yard-washer` (LG FX1412S2KA 60 × 56.5 × 85, W/M spot) + 3D washer; robot dock now drawn (Dreame X50 Ultra) at the yard wall; yard counter moved to the X box (5940–6650).
+- Cameras: dining looks toward the kitchen glass and main door (like the photo); KX spawn clear of the open door.
+
 ## 26 November 2026 (night) — /buy: money breakdown, one contractor card, SG/JB filter
 - Money plan tiles are buttons: tap one to open its list with the reason for each amount (qty × price, RM at the rate, % of the quote). `moneyPlan` lines carry `how`; `BUY.paidExtra` holds the MCST S$1,000 deposit.
 - Contractor room = ONE card (I-Niche quote S$19,035, `noQty`). Inside (folded `.ct-sub`): What is inside (`parts` A–G, adds to the price), Waiting for John (`waiting`, not in the total: door swap −20, extra electrical ~1,200, waterproofing, KS wardrobe hacking, cove recess, floor patching, D3 optional), Paid separately, Files (#buy-files), Reno decisions (#buy-decisions), Quote checks (#buy-qa). Removed items: D3, vinyl line, door swap, waterproofing, G3, MCST. Switches moved to room `house` (same id).
