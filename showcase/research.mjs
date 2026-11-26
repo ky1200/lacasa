@@ -255,6 +255,7 @@ export const RESEARCH = [
    'Dreame (dreame.sg): Black Friday vouchers by spend: S$10 off S$240, S$22 off S$450, S$35 off S$750, S$50 off S$1,000, S$65 off S$1,250, S$110 off S$2,000, plus a stackable voucher (up to S$80 off).',
    'Steigen: Black Friday gives a free S$299 extended warranty on the Halo models only (code BLACK555, till 30 Nov); the Solar Mini stays S$899.',
    'Same price everywhere on 24 Nov: Apple TV 4K S$399, HomePod S$499, HomePod mini S$199, KDK F40GP fan S$418 (was S$558), Aqara U400 lock S$469.',
+   'Apple TV + HomePods (27 Nov): same price at Apple, Challenger and Switch (Apple TV 4K S$399, HomePod S$499, HomePod mini 2 S$199; S$1,795 for the set). Best place: an Apple Store, one bill, 0% for 12 or 24 months with DBS, UOB, OCBC, HSBC or Standard Chartered cards (min S$500, in store or by phone, not online checkout). Apple\'s Black Friday gift cards skip Apple TV; holiday returns open till 8 Jan 2027.',
    'Gain City and Audio House block automatic price checks; 23 Nov: Gain City C6 65" about S$3,729 after its discounts, aircon set S$4,019.',
    'Changed during 24 Nov: the S$299 Shark CleanSense IQ at COURTS sold out (S$699 at Shark\'s own store), and the Hitachi fridge at COURTS shows out of stock (clearance).',
   ],

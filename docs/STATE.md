@@ -2,6 +2,10 @@
 
 Current state (26 Nov 2026): site on Cloudflare Workers + D1 at https://lacasa.kayikkwong.workers.dev (moved from ChatGPT Sites on 30 Oct). The full working notes are the project handover doc `claude/lacasa-handover.md` in the claude.ai project; this file is a short change log only. The table and notes from October below are history.
 
+## 27 November 2026 — Apple TV + HomePods: where to buy
+- /buy Apple items (Apple TV 4K 4th gen, 2 × HomePod, 2 × HomePod mini 2 = S$1,795): Apple Store, one bill, 0% instalments (12/24 months, DBS/UOB/OCBC/HSBC/SCB, min S$500, in store or Telesales). Buy date 12 Dec (after the TV wall). New item field `payAuto` (default Pay when the family has not chosen); set to `i12` on these three → Money plan shows S$149.58/month.
+- Research (Prices): same price at Apple, Challenger, Switch; Apple's Black Friday gift cards exclude Apple TV.
+
 ## 27 November 2026 (fix) — common bathroom layout
 - Half-height wall (1.1 m, niche on the shower side, glass on top) moved BESIDE THE VANITY (K): runs from the bottom wall at x 6180, y 7060–7960, between the vanity and the shower. The earlier wall under the toilet is gone; bidet spray now on the wall behind the toilet, paper holder on the alcove wall.
 - Window = one small window (K: about the fan-panel size): wall 19, x 5140–5620, all frosted acrylic with the KDK window fan.
