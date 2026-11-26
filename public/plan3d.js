@@ -22,13 +22,14 @@ const NOT_WALLS = new Set([8]);
 // Short wall pieces the plan shows but the wall list leaves out: [x1, y1, x2, y2]
 const EXTRA_WALLS = [[2990, 870, 2990, 1400], [8620, 870, 8620, 1980]];
 // Door leaves shown open: [hinge x, hinge y, end x, end y, kind]
-const DOORS = [[5477, 4100, 5477, 3330, 'room'], [5850, 4170, 5850, 4960, 'room'], [4704, 5342, 4704, 6150, 'room'], [6800, 6235, 6800, 7020, 'room'], [2117, 4060, 2117, 3260, 'room'], [7594, 9000, 7594, 9780, 'steel'], [12200, 11285, 12200, 10205, 'main']];
+// KY door (updated plan, 26 Nov): at the bottom of the 745 mm passage, hinged by KS's wall, opening into the passage.
+const DOORS = [[5450, 5090, 5450, 4420, 'room'], [5850, 4170, 5850, 4960, 'room'], [4704, 5342, 4704, 6150, 'room'], [6800, 6235, 6800, 7020, 'room'], [2117, 4060, 2117, 3260, 'room'], [7594, 9000, 7594, 9780, 'steel'], [12200, 11285, 12200, 10205, 'main']];
 // Built-in kitchen and yard counters: [x1, y1, x2, y2, height]
 // Kitchen (galley): sink run against the dining wall, hob run along the bottom wall (ends where the fridge space starts),
 // tall store cabinet (ST) by the entrance, yard counter by the washer.
 const COUNTERS = [[7650, 10160, 9660, 10780, 900], [8890, 8310, 10960, 9047, 900], [6300, 10230, 6950, 10780, 850], [10600, 10050, 10960, 10780, 2100]];
 // Where to stand when walking into each room: [x, y, look at x, look at y]
-const SPAWN = {all: [11700, 10300, 10500, 4000], living: [10500, 5900, 10600, 2000], dining: [11900, 8700, 10300, 7200], kitchen: [10700, 9500, 8300, 10300], ky: [4300, 3950, 3600, 1200], ks: [7000, 4700, 7000, 1200], kx: [4300, 4400, 1200, 6800]};
+const SPAWN = {all: [11700, 10300, 10500, 4000], living: [10500, 5900, 10600, 2000], dining: [11900, 8700, 10300, 7200], kitchen: [10700, 9500, 8300, 10300], ky: [5100, 4250, 3400, 2300], ks: [7000, 4700, 7000, 1200], kx: [4300, 4400, 1200, 6800]};
 const FLOOR = {ky: 'vinyl', ks: 'vinyl', kx: 'vinyl', 'master-bath': 'bath', 'common-bath': 'bath', yard: 'bath', hs: 'plain'};
 const ROOMS = [['all', 'Whole home'], ['living', 'Living'], ['dining', 'Dining'], ['kitchen', 'Kitchen'], ['ky', 'KY'], ['ks', 'KS'], ['kx', 'KX']];
 const C = {door: '#6a2a20', main: '#4a2a1c', steel: '#9aa0a3', fabric: '#cdbca5', bed: '#bdb4a8', linen: '#f4f1ea', oak: '#d6b98f', walnut: '#5b3a29', black: '#1e1e1e', white: '#f6f6f3', stone: '#d8d2c6', steelApp: '#c9ccce', vanity: '#4b3426', glass: '#cfe3ea', curtain: '#d9ccb6', sheer: '#f7f5f0', counter: '#3b3b3b', cabinet: '#ece7dd', skirting: '#3a2620', ledge: '#e4ddd2'};

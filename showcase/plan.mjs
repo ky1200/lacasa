@@ -49,7 +49,7 @@ ${secClose('Designer’s pick')}</div></details></section>`;
 export function planPage(v = {}, ro = false, rawLayout = '') {
  const layout = layoutOf(rawLayout), data = planData(v, ro, layout), lay = LAYOUTS.find(l => l.id === layout);
  return `<article class="plan-page" data-plan-page>
-<header class="plan-head"><span class="eyebrow">I-Niche proposed plan, 13 Nov · drawn to scale</span><h1>Floor plan</h1>
+<header class="plan-head"><span class="eyebrow">I-Niche updated plan (26 Nov) · drawn to scale</span><h1>Floor plan</h1>
 <p class="plan-lede">Tap a room to zoom in, tap a bed, sofa, TV or router for its size and choices. <b>Move</b> drags things, <b>Measure</b> takes any distance, <b>Night</b> shows where the light falls. Changes are shared with the family.</p></header>
 <nav class="plan-layouts" aria-label="Layouts"><span class="plan-rowlabel">Layout:</span>${LAYOUTS.map(l => `<a href="/plan${l.id ? `?layout=${l.id}` : ''}"${l.id === layout ? ' aria-current="page"' : ''}${l.id === 'designer' ? ' class="is-designer"' : ''}>${l.id === 'designer' ? '<i aria-hidden="true">★</i>' : ''}${h(l.short)}</a>`).join('')}</nav>
 ${layoutNote(layout, lay, ro)}

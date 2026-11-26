@@ -1,7 +1,9 @@
 // LaCasa floor plan (/plan). All positions and sizes are in millimetres (mm).
 // Origin (0,0) = top-left corner of the plan image. x goes right, y goes down.
-// The image is the I-Niche PROPOSED layout plan (13 Nov 2026, 1:100), page 2 of
-// public/files/iniche-floor-plan-2026-11-13.pdf, cropped to the drawing only (no title block, no address).
+// The image is John's UPDATED I-Niche proposed layout plan (sent by K on 26 Nov 2026; the title block still says
+// 13 Nov), registered onto the 13 Nov drawing (same walls; 4.58 × upscale, cleaned) and cropped to the drawing
+// only (no title block, no address). Change from 13 Nov: KY's door moved from the top of the 745 mm passage
+// (beside KS's wall) to its bottom, so the passage is now part of KY; the main bedroom gets a study desk.
 // Scale: measured from the plan's own dimension lines at 300 dpi:
 //   1650 mm = 303 px, 3150 = 581, 2825 = 522, 3680 = 678, 9150 = 1691, 1450 = 269, 2800 = 515, 1275 = 234
 //   => 5.42 mm per pixel (all within ±0.5%). The contractor notes "actual dimension to be verified on site".
@@ -12,13 +14,13 @@
 import {BUY} from './buy-plan.mjs';
 
 export const PLAN = {
- img: '/images/plan/iniche-proposed-2026-11-13.webp',
+ img: '/images/plan/iniche-plan-updated-2026-11-26.webp',
  imgW: 2480, imgH: 2280, mmPerPx: 5.42, // => 13,442 × 12,358 mm
- source: 'I-Niche proposed layout plan, 13 Nov 2026 (scale 1:100). The scale is set from the plan’s own dimension lines, so sizes are good to about ±5 cm. The contractor’s note: actual sizes to be checked on site (3 Dec).',
+ source: 'John’s updated I-Niche layout plan (received 26 Nov 2026, scale 1:100): KY’s door is now at the end of the short passage by KS’s wall. The scale is set from the plan’s own dimension lines, so sizes are good to about ±5 cm. The contractor’s note: actual sizes to be checked on site (3 Dec).',
  // Room boxes (x, y, width, height). A room can have more than one box (L-shaped rooms).
  // Room owners confirmed by K on 21 Nov: KY = bedroom 3, KS = bedroom 2, KX = main bedroom.
  rooms: [
-  {id: 'ky', name: 'KY room (bedroom 3)', short: 'KY', boxes: [[2300,1490,3260,2590]]},
+  {id: 'ky', name: 'KY room (bedroom 3)', short: 'KY', boxes: [[2300,1490,3260,2590],[4790,4100,730,980]]},
   {id: 'ks', name: 'KS room (bedroom 2)', short: 'KS', boxes: [[5600,1520,3000,3530]]},
   {id: 'kx', name: 'KX room (main bedroom)', short: 'KX', boxes: [[540,4120,4210,1630],[2510,5750,2240,2300]]},
   {id: 'living', name: 'Living room', short: 'Living', boxes: [[8640,2010,3800,4060]]},

@@ -9,7 +9,7 @@ Current state (26 Nov 2026): site on Cloudflare Workers + D1 at https://lacasa.k
 - KY and KS bay windows: glass about 56 cm out from the inner wall over a 50 cm high ledge, cushions + pillows (toggle), warm LED strip under the window head. "Window seat" view. Found: KY bed head sits against the KY ledge.
 - Photo button saves a PNG of the view. Deep links for checks: /plan#3d=nook&scene=1&vinyl=wheat-oak.
 - Mood board: vinyl board now XingFloors (Camel Brown pick); new Window seat board; measure list: KY/KS ledges.
-- Still open: John's updated floor plan (not received here) → doors to recheck once K sends it.
+- 12:50pm: John's updated plan received → new background `public/images/plan/iniche-plan-updated-2026-11-26.webp` (registered on the 13 Nov drawing, title block and address cropped off; old image removed). Only structural change: KY's door moved to the bottom of the 745 mm passage (hinge by KS's wall, y ≈ 5090), passage is now KY floor (room box added). Other doors unchanged. Designer now shows a study desk in the main bedroom and the dining table turned (furniture only).
 
 ## 26 November 2026 — tidy-up
 - New page /bathrooms: split plan (Singapore water items vs Malaysia), the shop price check (moved from /day) and the bathroom guide updated for gunmetal. Nav: Day plan removed; /day kept in the Archive, marked done.
