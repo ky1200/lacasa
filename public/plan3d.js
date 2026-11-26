@@ -385,8 +385,10 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
  const canvas = $('canvas'), stage = $('.p3d-stage'), card = $('[data-card]'), help = $('[data-help]'), tag = $('[data-tag]');
 
  const renderer = new T.WebGLRenderer({canvas, antialias: true, preserveDrawingBuffer: true});
- renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 2));
+ renderer.setPixelRatio(Math.min(devicePixelRatio || 1, 1));
  renderer.shadowMap.enabled = true;
+ renderer.shadowMap.autoUpdate = false;
+ renderer.shadowMap.needsUpdate = true;
  renderer.shadowMap.type = T.PCFSoftShadowMap;
  renderer.toneMapping = T.NeutralToneMapping;
  renderer.toneMappingExposure = 1;
@@ -460,13 +462,24 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   const l = new T.Mesh(new T.CylinderGeometry(0.045, 0.045, 0.01, 20), bulbMat);
   l.position.set(m(x), ceil - 0.006, m(y));
   ceiling.add(l);
-  const room = roomAt(x, y), small = ['master-bath', 'common-bath', 'yard', 'hall', 'entrance'].includes(room);
-  const s = new T.SpotLight(0xffdcb6, 0, 0, 1.05, 0.85, 2);
-  s.position.set(m(x), ceil - 0.02, m(y));
-  s.target.position.set(m(x), 0, m(y));
-  s.userData.base = small ? 0.7 : 1;
-  scene.add(s, s.target);
-  downs.push(s);
+ }
+ // Real light sources: one or two per room (every light costs time on each pixel, so 20 separate
+ // downlights made the view slow). Each stands for that room's downlights together.
+ const byRoom = new Map();
+ for (const [x, y] of lightPts) {const r = roomAt(x, y) ?? 'other'; if (!byRoom.has(r)) byRoom.set(r, []); byRoom.get(r).push([x, y]);}
+ for (const [room, pts] of byRoom) {
+  const small = ['master-bath', 'common-bath', 'yard', 'hall', 'entrance'].includes(room);
+  const sorted = [...pts].sort((a, b) => a[0] - b[0] || a[1] - b[1]), groups = pts.length > 3 ? [sorted.slice(0, sorted.length >> 1), sorted.slice(sorted.length >> 1)] : [sorted];
+  for (const g of groups) {
+   const x = g.reduce((a, p) => a + p[0], 0) / g.length, y = g.reduce((a, p) => a + p[1], 0) / g.length;
+   const sp = new T.SpotLight(0xffdcb6, 0, 0, 1.2, 0.9, 2);
+   sp.position.set(m(x), ceil - 0.02, m(y));
+   sp.target.position.set(m(x), 0, m(y));
+   sp.userData.base = (small ? 0.7 : 1) * Math.sqrt(g.length) * 1.1;
+   sp.visible = false;
+   scene.add(sp, sp.target);
+   downs.push(sp);
+  }
  }
  for (const [x, y] of D.points?.fan ?? []) {
   const f = new T.Group();
@@ -624,7 +637,7 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   g.traverse(o => {if (o.isMesh) {o.userData.item = it; if (o.userData.pendant) pendants.push(o);} if (o.userData?.cove) coveMeshes.push(o);});
   scene.add(g);
   pick.push(g);
-  g.userData.redraw = () => draw();
+  g.userData.redraw = () => changed();
   if (MODELS[it.kind] && !it.c) swapModel(g, it, s);
  }
  scene.traverse(o => {if (o.userData?.cove && !coveMeshes.includes(o)) coveMeshes.push(o);});
@@ -642,18 +655,18 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   scene.environmentIntensity = S.env;
   scene.background = S.sun ? skyDay : skyNight;
   renderer.toneMappingExposure = S.exp;
-  for (const s of downs) {s.color.copy(col); s.intensity = S.down * 20 * s.userData.base;}
+  for (const s of downs) {s.color.copy(col); s.intensity = S.down * 20 * s.userData.base; s.visible = S.down > 0;}
   bulbMat.emissive.copy(S.down ? col : new T.Color('#fff1dc')); bulbMat.emissiveIntensity = S.down ? 6 : 0.2;
   const coveCol = S.k >= 4000 ? col : warm;
-  for (const r of coves) {r.color.copy(coveCol); r.intensity = S.cove * r.userData.base;}
-  for (const r of nookLamps) {r.color.copy(warm); r.intensity = S.lamp * r.userData.base;}
+  for (const r of coves) {r.color.copy(coveCol); r.intensity = S.cove * r.userData.base; r.visible = S.cove > 0;}
+  for (const r of nookLamps) {r.color.copy(warm); r.intensity = S.lamp * r.userData.base; r.visible = S.lamp > 0;}
   for (const o of coveMeshes) {o.material.emissive.copy(coveCol); o.material.emissiveIntensity = (S.cove || S.lamp) ? 3 : 0;}
-  if (pend) {pend.color.copy(warm); pend.intensity = S.lamp * 1.2; pendants[0].material.emissiveIntensity = S.lamp ? 0.8 : 0;}
+  if (pend) {pend.color.copy(warm); pend.intensity = S.lamp * 1.2; pend.visible = S.lamp > 0; pendants[0].material.emissiveIntensity = S.lamp ? 0.8 : 0;}
   $$('[data-scene]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.scene === i)));
   $('[data-scene-tip]').textContent = S.tip;
   store.set('scene', i);
   tagLine();
-  draw();
+  changed();
  };
  const applyVinyl = i => {
   vinylPick = i;
@@ -766,13 +779,30 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
    composer.addPass(new T.SMAAPass());
   } catch {composer = null;}
  };
+ // Phones have 2-3× pixel density: draw moving frames at 1×, then the sharp ambient-occlusion frame once the view rests.
+ const hiDpr = Math.min(devicePixelRatio || 1, 2), loDpr = Math.min(devicePixelRatio || 1, 1);
+ let queued = false;
  function draw() {
-  if (!alive) return;
-  renderer.render(scene, camera);
-  clearTimeout(aoTimer);
-  aoTimer = setTimeout(() => {if (!alive) return; if (!composer) makeComposer(); if (composer) {sizeComposer(); composer.render();}}, 350);
+  if (!alive || queued) return;
+  queued = true;
+  requestAnimationFrame(() => {
+   queued = false;
+   if (!alive) return;
+   if (renderer.getPixelRatio() !== loDpr) renderer.setPixelRatio(loDpr);
+   renderer.render(scene, camera);
+   clearTimeout(aoTimer);
+   aoTimer = setTimeout(rest, 400);
+  });
  }
- const sizeComposer = () => {if (composer) {const s = renderer.getSize(new T.Vector2()); composer.setPixelRatio(renderer.getPixelRatio()); composer.setSize(s.x, s.y);}};
+ function rest() {
+  if (!alive || ptrs.size || holdDir) return;
+  if (renderer.getPixelRatio() !== hiDpr) renderer.setPixelRatio(hiDpr);
+  if (!composer) makeComposer();
+  if (composer) {sizeComposer(); composer.render();} else renderer.render(scene, camera);
+ }
+ const sizeComposer = () => {if (composer) {const sz = renderer.getSize(new T.Vector2()); composer.setPixelRatio(Math.min(hiDpr, 1.5)); composer.setSize(sz.x, sz.y);}};
+ // Sun shadows only change when something in the scene changes, not when the camera moves.
+ const changed = () => {renderer.shadowMap.needsUpdate = true; draw();};
 
  // Pointer input
  const ptrs = new Map();
@@ -846,7 +876,7 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
   e.currentTarget.setAttribute('aria-pressed', String(on));
   walls.children.forEach(w => {w.visible = !on || w.position.y < 0.7;});
-  draw();
+  changed();
  };
  $('[data-finish]').onclick = e => {
   const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
@@ -860,10 +890,11 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   cushions.visible = !cushions.visible;
   e.currentTarget.setAttribute('aria-pressed', String(cushions.visible));
   store.set('cushion', cushions.visible ? '1' : '0');
-  draw();
+  changed();
  };
  $('[data-photo]').onclick = () => {
   clearTimeout(aoTimer);
+  if (renderer.getPixelRatio() !== hiDpr) renderer.setPixelRatio(hiDpr);
   if (!composer) makeComposer();
   if (composer) {sizeComposer(); composer.render();} else renderer.render(scene, camera);
   const a = document.createElement('a');
