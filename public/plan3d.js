@@ -3,7 +3,7 @@
 // Realism: image-based light (RoomEnvironment), Khronos PBR Neutral tone mapping (true product colours),
 // soft shadows, procedural vinyl/tile textures from real XingFloors swatch colours, and an ambient-occlusion
 // pass (GTAO + SMAA) drawn whenever the view stops moving.
-import * as T from '/vendor/three-0.187.0-d.js';
+import * as T from '/vendor/three-0.187.0-e.js';
 
 const m = v => v / 1000;
 const DOOR_H = 2100;
@@ -202,6 +202,22 @@ function chairSimple(g, x, z, rot, seatCol, legCol) {
  g.add(c);
 }
 
+// V Haus C9060 dining chair (from the order photo): walnut frame with splayed tapered legs, light upholstered seat,
+// oval upholstered back pad on a curved walnut rail. Size estimated (to check at V Haus): 46 × 50 cm, seat 46 cm, back 80 cm.
+function chairC9060(g, x, z, rot) {
+ const c = new T.Group(), wood = mat(C.walnut, {rough: 0.45}), fab = mat('#d9d1c4', {rough: 1});
+ for (const sx of [-1, 1]) for (const sz of [-1, 1]) {const l = cyl(c, 0.017, 0.44, sx * 0.19, 0, sz * 0.2, wood, 10, 0.012); l.rotation.set(sz * 0.06, 0, -sx * 0.06);}
+ for (const sz of [-1, 1]) box(c, 0.4, 0.04, 0.025, 0, 0.36, sz * 0.2, wood);
+ for (const sx of [-1, 1]) box(c, 0.025, 0.04, 0.4, sx * 0.19, 0.36, 0, wood);
+ soft(c, 0.46, 0.06, 0.48, 0, 0.4, 0.01, fab, 0.025);
+ for (const sx of [-1, 1]) {const p = box(c, 0.03, 0.4, 0.03, sx * 0.19, 0.44, -0.215, wood); p.rotation.x = -0.12;}
+ const rail = box(c, 0.44, 0.04, 0.03, 0, 0.66, -0.25, wood); rail.rotation.x = -0.12;
+ const back = soft(c, 0.44, 0.22, 0.07, 0, 0.62, -0.235, fab, 0.035); back.rotation.x = -0.14; back.scale.x = 1.04;
+ c.position.set(x, 0, z);
+ c.rotation.y = rot;
+ g.add(c);
+}
+
 // ---- One builder per kind of furniture ----
 function build(it, s, colour) {
  const g = new T.Group(), w = m(s.w), d = m(s.d), k = it.kind;
@@ -240,17 +256,14 @@ function build(it, s, colour) {
   const hgt = w * 0.5625;
   soft(g, w, hgt, 0.03, 0, 0.75, 0, mat('#0b0b0d', {rough: 0.25, metal: 0.2}), 0.006);
   box(g, w - 0.012, hgt - 0.012, 0.002, 0, 0.756, 0.016, mat('#10141c', {rough: 0.06, metal: 0.1}), false);
-  // light wood TV console under the screen (mood board), floating
-  soft(g, Math.max(1.8, w + 0.3), 0.32, 0.4, 0, 0.2, -0.2, mat('#c9a77d', {rough: 0.55}), 0.01);
+  // TV console as drawn on the I-Niche plan: about 210 × 42 cm, against the TV wall; 35 cm high, floating 20 cm up (assumed)
+  soft(g, 2.1, 0.35, 0.42, 0, 0.2, -m(s.d) / 2 - 0.025 + 0.21, mat('#c9a77d', {rough: 0.55}), 0.01);
+  for (let i = 1; i < 4; i++) box(g, 0.004, 0.33, 0.004, -1.05 + 2.1 * i / 4, 0.21, -m(s.d) / 2 - 0.025 + 0.422, mat('#a88760'), false);
  } else if (k === 'table') {
-  soft(g, w, 0.04, d, 0, 0.71, 0, mat(C.walnut, {rough: 0.45}), 0.015);
-  legs(g, w, d, 0.71, 0.08, 0.025, mat(C.walnut, {rough: 0.5}));
-  const per = w >= 1.5 ? 3 : 2;
-  for (let i = 0; i < per; i++) {
-   const cx = -w / 2 + w * (i + 0.5) / per;
-   chairSimple(g, cx, -d / 2 - 0.25, 0, '#d8cdbb', C.walnut);
-   chairSimple(g, cx, d / 2 + 0.25, Math.PI, '#d8cdbb', C.walnut);
-  }
+  // LINO T160: 160 × 90 cm top, 75 cm high, on two walnut slab pedestals (order photo). 4 chairs, as the family uses it.
+  soft(g, w, 0.04, d, 0, 0.71, 0, mat(C.walnut, {rough: 0.4}), 0.012);
+  for (const sx of [-1, 1]) {soft(g, 0.16, 0.69, d * 0.62, sx * w * 0.27, 0.02, 0, mat(C.walnut, {rough: 0.45}), 0.01); box(g, 0.24, 0.02, d * 0.66, sx * w * 0.27, 0, 0, mat('#3d271c', {rough: 0.5}));}
+  for (const cx of [-w * 0.25, w * 0.25]) {chairC9060(g, cx, -d / 2 - 0.295, 0); chairC9060(g, cx, d / 2 + 0.295, Math.PI);}
   // pendant over the table
   cyl(g, 0.004, 0.9, 0, 1.7, 0, mat('#222222'), 6);
   const sh = cyl(g, 0.22, 0.16, 0, 1.55, 0, mat('#e8dcc6', {rough: 0.9, glow: '#ffd9a8', glowI: 0, double: true}), 32, 0.08);
@@ -337,10 +350,16 @@ const store = {
 // The drawn shape shows first; the model replaces it once loaded, scaled to the item's real width, depth and height.
 const MODELS = {sofa: {url: '/models/vhaus-2233a-sofa.glb', h: it => m(it.h ?? 850), tint: '#fff1df', lift: 1.25, mirror: true}};
 let gltf = null;
+// Styling only (not bought): free CC0 models from Poly Haven, to make rooms feel lived-in. Can be switched off.
+const DECOR = [
+ {url: '/models/decor/potted_plant_01.glb', x: 12120, y: 4950, r: 20, h: 1.3},
+ {url: '/models/decor/potted_plant_02.glb', x: 9080, y: 6380, r: 40, h: 0.85},
+ {url: '/models/decor/ceramic_vase_01.glb', x: 10500, y: 7400, r: 0, h: 0.3, at: 0.75},
+];
+const loader = () => gltf ??= (() => {const l = new T.GLTFLoader(); l.setMeshoptDecoder(T.MeshoptDecoder); return l;})();
 function swapModel(g, it, s) {
  const spec = MODELS[it.kind];
- gltf ??= (() => {const l = new T.GLTFLoader(); l.setMeshoptDecoder(T.MeshoptDecoder); return l;})();
- gltf.loadAsync(spec.url).then(res => {
+ loader().loadAsync(spec.url).then(res => {
   const obj = res.scene, b = new T.Box3().setFromObject(obj), size = b.getSize(new T.Vector3()), mid = b.getCenter(new T.Vector3());
   // V Haus photo: armrest on the viewer's left. The drawn sofa puts the arm at +x unless flipped, so mirror to match.
   const sx = m(s.w) / size.x * (spec.mirror && !s.flip ? -1 : 1);
@@ -376,7 +395,7 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
 <section><h3>Window seats (KY and KS)</h3><div class="p3d-row"><button type="button" data-cushion aria-pressed="true">Custom cushions on the ledge</button></div><p class="p3d-note">The bay ledge is about 56 cm deep and 50 cm high: a seat. A 6 to 8 cm cushion made to measure, with a removable, washable cover, plus 2 or 3 back pillows against the side walls.</p></section>
 </div></div>
 <div class="p3d-ctrl"><div class="p3d-row">${ROOMS.map(([id, n], k) => `<button type="button" data-room="${id}"${k ? '' : ' aria-pressed="true"'}>${n}</button>`).join('')}</div>
-<div class="p3d-row"><button type="button" data-finish aria-pressed="false">Floor, paint, lights</button><button type="button" data-walk aria-pressed="false">Walk inside</button><button type="button" data-sofa>Sit on the sofa</button><button type="button" data-nook>Window seat</button><button type="button" data-low aria-pressed="false">Low walls</button></div>
+<div class="p3d-row"><button type="button" data-finish aria-pressed="false">Floor, paint, lights</button><button type="button" data-walk aria-pressed="false">Walk inside</button><button type="button" data-sofa>Sit on the sofa</button><button type="button" data-nook>Window seat</button><button type="button" data-top>Top view</button><button type="button" data-low aria-pressed="false">Low walls</button><button type="button" data-decor aria-pressed="true">Plants</button></div>
 <p class="p3d-help" data-help>Drag to turn, pinch or scroll to zoom. Tap furniture for its photo and size.</p></div>`;
  document.body.append(box3);
  const prevFocus = document.activeElement;
@@ -584,31 +603,46 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   }
   box(scene, m(lw[2] - lw[1]) + 0.8, 0.03, 0.18, m((lw[1] + lw[2]) / 2), ceil - 0.06, y + 0.03, mat('#e9e4da'));
  }
- // Living room cove: hidden LED strip along the ceiling over the TV wall and the window
- const coves = [];
- const coveStrip = (x, z, len, alongX, face) => {
-  const s = box(scene, alongX ? len : 0.02, 0.012, alongX ? 0.02 : len, x, ceil - 0.12, z, mat('#fff6dc', {glow: '#ffd9a8', glowI: 0}), false);
-  s.userData.cove = true;
-  const ra = new T.RectAreaLight(0xffd9a8, 0, alongX ? len : 0.05, alongX ? 0.05 : len);
-  ra.position.set(x, ceil - 0.1, z);
-  ra.lookAt(x + face[0] * 0.5, 0, z + face[1] * 0.5);
-  ra.userData.base = 20;
-  scene.add(ra);
-  coves.push(ra);
-  box(scene, alongX ? len : 0.3, 0.1, alongX ? 0.3 : len, x - face[0] * 0.12, ceil - 0.1, z - face[1] * 0.12, mat('#fbfaf7', {rough: 1}));
- };
- coveStrip(m(12470 - 60) - 0.16, m(4050), m(3900), false, [-1, 0]);
- coveStrip(m(10600), m(1980 + 60) + 0.16, m(3600), true, [0, 1]);
- // KX wardrobe strip light
- const kxw = items.find(i => i.kind === 'lwardrobe' && i.on !== false);
- if (kxw) {
-  const ra = new T.RectAreaLight(0xffd9a8, 0, 1.6, 0.05);
-  ra.position.set(m(kxw.x), 2.58, m(kxw.y));
-  ra.lookAt(m(kxw.x), 0, m(kxw.y));
-  ra.userData.base = 3;
-  scene.add(ra);
-  coves.push(ra);
+ // Coveless cove: an LED profile recessed in the ceiling right at the wall line, round every wall of the room.
+ // Drawn as a thin glowing line plus a soft wash fading down the walls (glow, not real lights, so it stays fast).
+ const coves = [], COVE_ROOMS = [['living', 'dining'], ['ky'], ['ks'], ['kx']], WASH_H = 0.8;
+ const washTex = canvasTex((g, w, h) => {const gr = g.createLinearGradient(0, 0, 0, h); gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(0.05, 'rgba(255,255,255,0.8)'); gr.addColorStop(0.22, 'rgba(255,255,255,0.38)'); gr.addColorStop(0.55, 'rgba(255,255,255,0.1)'); gr.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = gr; g.fillRect(0, 0, w, h);}, 4, 256);
+ const washMat = new T.MeshBasicMaterial({map: washTex, color: '#ffd9a8', transparent: true, opacity: 0, blending: T.AdditiveBlending, depthWrite: false});
+ const coveGroup = new T.Group(), washes = new T.Group();
+ scene.add(coveGroup, washes);
+ const coveLineMat = mat('#f1ece3', {glow: '#ffd9a8', glowI: 0});
+ for (const ids of COVE_ROOMS) {
+  const boxes = ids.flatMap(id => D.rooms.find(r => r.id === id)?.boxes ?? []);
+  for (const b of boxes) {
+   const [bx, by, bw, bh] = b;
+   for (const [x1, y1, x2, y2, nx, ny] of [[bx, by, bx + bw, by, 0, 1], [bx, by + bh, bx + bw, by + bh, 0, -1], [bx, by, bx, by + bh, 1, 0], [bx + bw, by, bx + bw, by + bh, -1, 0]]) {
+    const horiz = y1 === y2;
+    let segs = [[horiz ? x1 : y1, horiz ? x2 : y2]];
+    // leave out stretches that open into another part of the same room
+    for (const o of boxes) if (o !== b) {
+     const [ox, oy, ow, oh] = o, onLine = horiz ? y1 >= oy - 30 && y1 <= oy + oh + 30 : x1 >= ox - 30 && x1 <= ox + ow + 30, [c0, c1] = horiz ? [ox, ox + ow] : [oy, oy + oh];
+     if (onLine) segs = segs.flatMap(([a, z]) => [[a, Math.min(z, c0)], [Math.max(a, c1), z]].filter(([p, q]) => q - p > 150));
+    }
+    // no wash over window glass
+    for (const [wi, from, to] of [...WINDOWS, ...BAYS]) {
+     const [wx1, wy1, wx2, wy2] = W[wi], wh = Math.abs(wy2 - wy1) < Math.abs(wx2 - wx1), fixed = wh ? (wy1 + wy2) / 2 : (wx1 + wx2) / 2;
+     if (wh === horiz && Math.abs(fixed - (horiz ? y1 : x1)) < 250) segs = segs.flatMap(([a, z]) => [[a, Math.min(z, from - 60)], [Math.max(a, to + 60), z]].filter(([p, q]) => q - p > 150));
+    }
+    for (const [a, z] of segs) {
+     const len = m(z - a), mid = m((a + z) / 2), inset = 0.05;
+     const px = horiz ? mid : m(x1) + nx * inset, pz = horiz ? m(y1) + ny * inset : mid;
+     const wash = new T.Mesh(new T.PlaneGeometry(len, WASH_H), washMat);
+     wash.position.set(px, ceil - WASH_H / 2 - 0.004, pz);
+     wash.rotation.y = horiz ? (ny > 0 ? 0 : Math.PI) : (nx > 0 ? Math.PI / 2 : -Math.PI / 2);
+     wash.renderOrder = 2;
+     washes.add(wash);
+     const line = box(coveGroup, horiz ? len : 0.025, 0.012, horiz ? 0.025 : len, px, ceil - 0.012, pz, coveLineMat, false);
+     line.userData.cove = true;
+    }
+   }
+  }
  }
+ washes.visible = false;
 
  // Doors (shown open), with a frame strip at the hinge
  for (const [hx, hy, ex, ey, kind] of DOORS) {
@@ -645,22 +679,44 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
  const pend = pendants[0] ? new T.PointLight(0xffd9a8, 0, 0, 2) : null;
  if (pend) {pendants[0].getWorldPosition(pend.position); pend.position.y -= 0.12; scene.add(pend);}
 
+ // Plants and a vase (styling only)
+ const decor = new T.Group();
+ scene.add(decor);
+ let decorOn = store.get('decor', '1') === '1', decorLoaded = false;
+ const loadDecor = () => {
+  if (decorLoaded) return;
+  decorLoaded = true;
+  for (const d of DECOR) loader().loadAsync(d.url).then(res => {
+   const o = res.scene, b = new T.Box3().setFromObject(o), k = d.h / b.getSize(new T.Vector3()).y;
+   o.scale.setScalar(k);
+   o.position.set(m(d.x), (d.at ?? 0) - b.min.y * k, m(d.y));
+   o.rotation.y = d.r * Math.PI / 180;
+   o.traverse(x => {if (x.isMesh) x.castShadow = x.receiveShadow = true;});
+   decor.add(o);
+   changed();
+  }).catch(() => {});
+ };
+ decor.visible = decorOn;
+ if (decorOn) loadDecor();
+ $('[data-decor]').setAttribute('aria-pressed', String(decorOn));
+
  // ---- Light scenes ----
  let sceneIdx = Math.min(SCENES.length - 1, +store.get('scene', 0) || 0);
  const applyScene = i => {
   sceneIdx = i;
   const S = SCENES[i], col = new T.Color(KELVIN[S.k] ?? '#ffffff'), warm = new T.Color(KELVIN[2700]);
   sun.intensity = S.sun; sun.visible = S.sun > 0;
-  hemi.intensity = S.sky * (walk.on ? 2 : 1);
   scene.environmentIntensity = S.env;
   scene.background = S.sun ? skyDay : skyNight;
   renderer.toneMappingExposure = S.exp;
   for (const s of downs) {s.color.copy(col); s.intensity = S.down * 20 * s.userData.base; s.visible = S.down > 0;}
   bulbMat.emissive.copy(S.down ? col : new T.Color('#fff1dc')); bulbMat.emissiveIntensity = S.down ? 6 : 0.2;
   const coveCol = S.k >= 4000 ? col : warm;
-  for (const r of coves) {r.color.copy(coveCol); r.intensity = S.cove * r.userData.base; r.visible = S.cove > 0;}
+  washMat.color.copy(coveCol); washMat.opacity = Math.min(1, 0.8 * S.cove); washes.visible = S.cove > 0;
+  // light bounced off the washed walls fills the room a little
+  hemi.color.set(S.sun ? '#fff8ee' : coveCol); hemi.intensity = S.sky * (walk.on ? 2 : 1) + (S.sun ? 0 : 0.35 * S.cove);
   for (const r of nookLamps) {r.color.copy(warm); r.intensity = S.lamp * r.userData.base; r.visible = S.lamp > 0;}
-  for (const o of coveMeshes) {o.material.emissive.copy(coveCol); o.material.emissiveIntensity = (S.cove || S.lamp) ? 3 : 0;}
+  for (const o of coveMeshes) {o.material.emissive.copy(coveCol); o.material.emissiveIntensity = (S.cove || S.lamp) ? 4 : 0;}
   if (pend) {pend.color.copy(warm); pend.intensity = S.lamp * 1.2; pend.visible = S.lamp > 0; pendants[0].material.emissiveIntensity = S.lamp ? 0.8 : 0;}
   $$('[data-scene]').forEach(b => b.setAttribute('aria-pressed', String(+b.dataset.scene === i)));
   $('[data-scene-tip]').textContent = S.tip;
@@ -702,7 +758,7 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
    camera.position.set(walk.pos.x, walk.eye, walk.pos.z);
    camera.lookAt(walk.pos.x - Math.sin(walk.yaw) * Math.cos(walk.pitch), walk.eye + Math.sin(walk.pitch), walk.pos.z - Math.cos(walk.yaw) * Math.cos(walk.pitch));
   } else {
-   orbit.pitch = Math.max(0.12, Math.min(1.45, orbit.pitch));
+   orbit.pitch = Math.max(0.12, Math.min(1.56, orbit.pitch));
    orbit.dist = Math.max(1, Math.min(30, orbit.dist));
    camera.position.set(orbit.target.x + orbit.dist * Math.cos(orbit.pitch) * Math.sin(orbit.yaw), orbit.target.y + orbit.dist * Math.sin(orbit.pitch), orbit.target.z + orbit.dist * Math.cos(orbit.pitch) * Math.cos(orbit.yaw));
    camera.lookAt(orbit.target);
@@ -720,7 +776,7 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
  const setWalk = on => {
   walk.on = on;
   ceiling.visible = on;
-  hemi.intensity = SCENES[sceneIdx].sky * (on ? 2 : 1);
+  {const S = SCENES[sceneIdx]; hemi.intensity = S.sky * (on ? 2 : 1) + (S.sun ? 0 : 0.35 * S.cove);}
   $('[data-walk]').setAttribute('aria-pressed', String(on));
   $('[data-move]').hidden = !on;
   help.textContent = on ? 'Drag to look around. Hold ▲ ▼ to walk. Tap furniture for its photo and size.' : 'Drag to turn, pinch or scroll to zoom. Tap furniture for its photo and size.';
@@ -872,6 +928,23 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
  $('[data-walk]').onclick = () => {setWalk(!walk.on); goRoom(room);};
  $('[data-sofa]').onclick = () => {pressRoom('living'); room = 'living'; sofaView();};
  $('[data-nook]').onclick = nookView;
+ // Straight down on the whole flat, like a drawn floor plan (ceiling off)
+ $('[data-top]').onclick = () => {
+  if (walk.on) setWalk(false);
+  room = 'all'; pressRoom('all');
+  orbit.target.set(m(D.W / 2), 0, m(D.H / 2));
+  orbit.yaw = 0; orbit.pitch = 1.56;
+  orbit.dist = m(Math.max(D.W, D.H)) * (camera.aspect < 1 ? 1.5 : 1.12);
+  place();
+ };
+ $('[data-decor]').onclick = e => {
+  decorOn = !decorOn;
+  e.currentTarget.setAttribute('aria-pressed', String(decorOn));
+  decor.visible = decorOn;
+  store.set('decor', decorOn ? '1' : '0');
+  if (decorOn) loadDecor();
+  changed();
+ };
  $('[data-low]').onclick = e => {
   const on = e.currentTarget.getAttribute('aria-pressed') !== 'true';
   e.currentTarget.setAttribute('aria-pressed', String(on));
@@ -935,5 +1008,6 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
  if (q.get('vinyl')) applyVinyl(Math.max(0, VINYL.findIndex(v => v.id === q.get('vinyl'))));
  if (q.get('3d') === 'nook') nookView();
  else if (q.get('3d') === 'sofa') $('[data-sofa]').click();
+ else if (q.get('3d') === 'top') $('[data-top]').click();
  else if (q.get('3d') && SPAWN[q.get('3d')]) {if (q.get('walk')) setWalk(true); pressRoom(q.get('3d')); goRoom(q.get('3d'));}
 }
