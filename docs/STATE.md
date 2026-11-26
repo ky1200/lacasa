@@ -2,6 +2,12 @@
 
 Current state (26 Nov 2026): site on Cloudflare Workers + D1 at https://lacasa.kayikkwong.workers.dev (moved from ChatGPT Sites on 30 Oct). The full working notes are the project handover doc `claude/lacasa-handover.md` in the claude.ai project; this file is a short change log only. The table and notes from October below are history.
 
+## 27 November 2026 (fix) — common bathroom layout
+- Half-height wall (1.1 m, niche on the shower side, glass on top) moved BESIDE THE VANITY (K): runs from the bottom wall at x 6180, y 7060–7960, between the vanity and the shower. The earlier wall under the toilet is gone; bidet spray now on the wall behind the toilet, paper holder on the alcove wall.
+- Window = one small window (K: about the fan-panel size): wall 19, x 5140–5620, all frosted acrylic with the KDK window fan.
+- Ceiling fan with LED light (K's product photo) at one of the two bathroom light points: `BATH_FAN_LIGHTS` [5950, 6750] (dry zone between toilet and door); the other default light point moved over the shower (5400, 7550).
+- KY passage partition end trimmed to 5250 (+ half thickness ≈ 5287, as on John's plan); the short wall ends at the passage mouth are on the plan.
+
 ## 27 November 2026 (later) — 3D models from product photos, common bathroom, yard sink
 - Models redrawn from the /buy photos: Dunlopillo frame (mauve-grey) + Carlton/Richmond mattress (charcoal top, grey sides), GURSKEN (KY) and PAX/FORSAND (KS) wardrobes, ALTO with full-height doors and long black bar handles, RIGEL Gallant one-piece toilet, RIGEL vanity (dark brown drawers, cream integrated top, gunmetal mixer) + IKEA ENHET mirror cabinet, LG OLED B5 thin panel, ÖRTRÄSK oval table, Hitachi white 2-door fridge, LG WD518AN dispenser, Fanco Dono (black + wood blades), LAGKAPTEN/ALEX desk, MALM dressing table, office chairs (5-star base, mesh back, headrest), KYRRE stool.
 - Common bathroom: service duct (X box), half-height tiled wall 1.1 m with a 30 × 30 niche on the shower side + clear glass on top, RIGEL gunmetal thermostatic shower set on the left wall, bidet spray, paper holder, towel bar, high frosted window (wall 19) with a frosted acrylic panel + KDK window ventilation fan (left pane).

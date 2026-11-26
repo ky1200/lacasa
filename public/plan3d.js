@@ -13,8 +13,8 @@ const DOOR_H = 2100;
 // KY (bedroom 3) and KS (bedroom 2) have bay windows: the glass sits about 56 cm out from the inner wall,
 // over a solid ledge at sill height. Those are drawn by bay() below, not cut into the wall.
 // A 6th value 'frost' = frosted glass (bathrooms). Common bathroom (wall 19): high window over the shower; its left pane
-// becomes a frosted acrylic panel with a KDK window-mount ventilation fan (K, 27 Nov).
-const WINDOWS = [[1, 800, 1950, 1000, 2100, 'frost'], [9, 9200, 12300, 400, 2400], [20, 9100, 10300, 1000, 2100], [19, 4900, 5860, 1500, 2100, 'frost']];
+// is one small window (about fan-panel size, K): a frosted acrylic panel with a KDK window ventilation fan.
+const WINDOWS = [[1, 800, 1950, 1000, 2100, 'frost'], [9, 9200, 12300, 400, 2400], [20, 9100, 10300, 1000, 2100], [19, 5140, 5620, 1500, 2100, 'frost']];
 // Bay windows: [wall index, from, to (along the wall), glass line, inner wall line, ledge top, window head, room, vertical wall?]
 // KX (main bedroom) has the same ledge on its side wall (K, 27 Nov): glass about 54 cm out from the inner wall.
 const BAYS = [[3, 3062, 5520, 950, 1460, 500, 2300, 'ky'], [5, 5640, 8560, 950, 1500, 500, 2300, 'ks'], [14, 5900, 7700, 1950, 2490, 500, 2300, 'kx', true]];
@@ -27,6 +27,8 @@ const EXTRA_WALLS = [[2990, 870, 2990, 1400], [8620, 870, 8620, 1980], [1890, 58
 // Kitchen–dining wall (K's photo, 27 Nov): a low white wall with clear glass above, so the kitchen looks into the dining.
 // [wall index, low wall height mm, glass top mm]
 const GLASS_ABOVE = [[25, 1050, 2400]];
+// Common bathroom ceiling fan with LED light (one of its two light points): [x, y] mm
+const BATH_FAN_LIGHTS = [[5950, 6750]];
 // Door leaves shown open: [hinge x, hinge y, end x, end y, kind]
 // KY door (updated plan, 26 Nov): at the bottom of the 745 mm passage, hinged by KS's wall, opening into the passage.
 const DOORS = [[5450, 5090, 5450, 4420, 'room'], [5850, 4170, 5850, 4960, 'room'], [4704, 5342, 3804, 5342, 'room'], [6800, 6235, 6800, 7020, 'room'], [2117, 4060, 2117, 3260, 'room'], [7594, 9000, 7594, 9780, 'steel'], [12200, 11285, 12200, 10205, 'main']];
@@ -614,6 +616,22 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   f.position.set(m(x), ceil, m(y));
   fans.add(f); // fans stay visible in every view (the ceiling itself only shows when walking)
  }
+ // Common bathroom: one of its two light points gets a flush ceiling fan with LED light (K's product photo, 27 Nov):
+ // round champagne housing with a glowing LED ring, soft LED centre and three wide blades. Put in the dry zone between the
+ // toilet and the door, away from the shower spray; the other point stays a plain light over the shower.
+ for (const [x, y] of BATH_FAN_LIGHTS) {
+  const f = new T.Group(), shell = mat('#cfc8bf', {rough: 0.45, metal: 0.2}), blade = mat('#bdb5ab', {rough: 0.5, metal: 0.25});
+  cyl(f, 0.26, 0.07, 0, -0.07, 0, shell, 48, 0.25);
+  const ring = new T.Mesh(new T.TorusGeometry(0.235, 0.012, 8, 64), mat('#fff6e6', {glow: '#fff1d6', glowI: 1.2})); ring.rotation.x = Math.PI / 2; ring.position.y = -0.072; f.add(ring);
+  const glow = cyl(f, 0.12, 0.006, 0, -0.078, 0, mat('#fffaf0', {glow: '#fff3df', glowI: 0.9, rough: 0.6}), 32); glow.scale.z = 0.85; glow.castShadow = false;
+  cyl(f, 0.04, 0.05, 0, -0.13, 0, blade, 24);
+  const sh = new T.Shape();
+  sh.moveTo(0.035, -0.03); sh.bezierCurveTo(0.08, -0.09, 0.17, -0.1, 0.2, -0.04); sh.bezierCurveTo(0.22, 0.0, 0.2, 0.05, 0.16, 0.06); sh.bezierCurveTo(0.1, 0.07, 0.06, 0.05, 0.035, 0.03); sh.lineTo(0.035, -0.03);
+  const bg = new T.ExtrudeGeometry(sh, {depth: 0.006, bevelEnabled: true, bevelThickness: 0.002, bevelSize: 0.003, bevelSegments: 2, curveSegments: 20}); bg.rotateX(Math.PI / 2);
+  for (let a = 0; a < 3; a++) {const b = new T.Mesh(bg, blade); b.position.y = -0.11; b.rotation.set(0, a * 2.0944, 0); b.rotateX(0.15); b.castShadow = true; f.add(b);}
+  f.position.set(m(x), ceil, m(y));
+  fans.add(f);
+ }
  ceiling.visible = false;
  scene.add(ceiling);
 
@@ -782,16 +800,16 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   const tile = mat('#d8c8b0', {rough: 0.45}), gun = mat('#4d4a47', {metal: 0.85, rough: 0.3}), Y = v => m(v);
   // service duct (the X box on the plan)
   box(scene, Y(5097 - 4835), ceil, Y(7058 - 6344), Y((4835 + 5097) / 2), 0, Y((6344 + 7058) / 2), wallMat);
-  // half wall 1.1 m with a 30 × 30 cm niche on the shower side
-  const x0 = 5180, x1 = 5910, yc = 7140, th = 0.1, hw = 1.1, nx0 = 5400, nx1 = 5700, nb = 0.6, nt = 0.9, nd = 0.07;
-  const wallPart = (a, b, y0, y1, depth, zc) => box(scene, Y(b - a), y1 - y0, depth, Y((a + b) / 2), y0, zc, tile);
-  wallPart(x0, x1, 0, nb, th, Y(yc)); wallPart(x0, x1, nt, hw, th, Y(yc));
-  wallPart(x0, nx0, nb, nt, th, Y(yc)); wallPart(nx1, x1, nb, nt, th, Y(yc));
-  wallPart(nx0, nx1, nb, nt, th - nd, Y(yc) - nd / 2);
-  box(scene, Y(x1 - x0) + 0.02, 0.02, th + 0.02, Y((x0 + x1) / 2), hw, Y(yc), mat('#efe9df', {rough: 0.3}));
-  // clear glass panel on top, slim U-channel
-  box(scene, Y(x1 - x0), 0.92, 0.01, Y((x0 + x1) / 2), hw + 0.02, Y(yc), glassMat, false);
-  box(scene, Y(x1 - x0), 0.03, 0.03, Y((x0 + x1) / 2), hw + 0.02, Y(yc), mat('#c9ccce', {metal: 0.85, rough: 0.25}), false);
+  // half wall 1.1 m BESIDE THE VANITY (K, 27 Nov), between the vanity and the shower, with a 30 × 30 cm niche on the
+  // shower side and clear glass on top (like K's reference picture). Runs out from the bottom wall.
+  const xc = 6180, y0 = 7060, y1 = 7960, th = 0.1, hw = 1.1, ny0 = 7360, ny1 = 7660, nb = 0.6, nt = 0.9, nd = 0.07, yc = 7140;
+  const part = (a, b, h0, h1, depth, xcen) => box(scene, depth, h1 - h0, Y(b - a), xcen, h0, Y((a + b) / 2), tile);
+  part(y0, y1, 0, nb, th, Y(xc)); part(y0, y1, nt, hw, th, Y(xc));
+  part(y0, ny0, nb, nt, th, Y(xc)); part(ny1, y1, nb, nt, th, Y(xc));
+  part(ny0, ny1, nb, nt, th - nd, Y(xc) + nd / 2);
+  box(scene, th + 0.02, 0.02, Y(y1 - y0) + 0.02, Y(xc), hw, Y((y0 + y1) / 2), mat('#efe9df', {rough: 0.3}));
+  box(scene, 0.01, 0.92, Y(y1 - y0), Y(xc), hw + 0.02, Y((y0 + y1) / 2), glassMat, false);
+  box(scene, 0.03, 0.03, Y(y1 - y0), Y(xc), hw + 0.02, Y((y0 + y1) / 2), mat('#c9ccce', {metal: 0.85, rough: 0.25}), false);
   // shower set on the left wall (inner face x ≈ 4835) at y 7636: thermostatic bar, riser, rain head, hand shower
   const wx = Y(4835), sy = Y(7636);
   box(scene, 0.07, 0.07, 0.34, wx + 0.05, 1.02, sy, gun);
@@ -802,17 +820,16 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   box(scene, 0.04, 0.05, 0.05, wx + 0.06, 1.55, sy - 0.05, gun);
   const hs = cyl(scene, 0.016, 0.24, wx + 0.1, 1.42, sy - 0.05, gun, 12); hs.rotation.z = 0.15;
   cyl(scene, 0.045, 0.015, wx + 0.12, 1.66, sy - 0.05, gun, 20).rotation.z = 1.4;
-  // bidet spray + holder and paper holder on the half wall's toilet side; towel bar by the door
-  box(scene, 0.04, 0.06, 0.03, Y(5320), 0.62, Y(yc) - th / 2 - 0.015, gun);
-  cyl(scene, 0.014, 0.16, Y(5320), 0.5, Y(yc) - th / 2 - 0.04, gun, 10);
-  box(scene, 0.16, 0.01, 0.1, Y(5720), 0.7, Y(yc) - th / 2 - 0.05, gun);
-  cyl(scene, 0.055, 0.11, Y(5720), 0.64, Y(yc) - th / 2 - 0.06, mat('#ffffff', {rough: 0.9}), 20).rotation.z = Math.PI / 2;
+  // bidet spray beside the toilet (wall behind it), paper holder on the alcove wall; towel bar by the door
+  box(scene, 0.03, 0.06, 0.04, Y(5180) + 0.015, 0.62, Y(7020), gun);
+  cyl(scene, 0.014, 0.16, Y(5180) + 0.04, 0.5, Y(7020), gun, 10);
+  box(scene, 0.16, 0.01, 0.1, Y(5700), 0.7, Y(6290) + 0.05, gun);
+  cyl(scene, 0.055, 0.11, Y(5700), 0.64, Y(6290) + 0.06, mat('#ffffff', {rough: 0.9}), 20).rotation.z = Math.PI / 2;
   box(scene, 0.02, 0.02, 0.6, Y(6770) - 0.06, 1.15, Y(7400), gun);
   for (const dz of [-0.28, 0.28]) box(scene, 0.06, 0.03, 0.02, Y(6770) - 0.03, 1.145, Y(7400) + dz, gun);
-  // KDK window ventilation fan in a frosted acrylic panel (left pane of the high window, wall 19 at y 8020)
-  const wy = Y(8020) - 0.03, fx = Y(5100);
-  box(scene, 0.4, 0.58, 0.012, fx, 1.52, wy, mat('#f1f2f0', {opacity: 0.88, rough: 0.5}), false);
-  box(scene, 0.03, 0.6, 0.05, Y(5300), 1.51, wy, frameMat);
+  // The common bathroom window is one small window (K): the whole opening is a frosted acrylic panel with the KDK fan.
+  const wy = Y(8020) - 0.03, fx = Y(5380);
+  box(scene, 0.48, 0.58, 0.012, fx, 1.52, wy, mat('#f1f2f0', {opacity: 0.9, rough: 0.5}), false);
   const ring = new T.Mesh(new T.TorusGeometry(0.13, 0.025, 14, 40), mat('#f4f3ef', {rough: 0.35}));
   ring.position.set(fx, 1.81, wy - 0.02); scene.add(ring);
   const back = new T.Mesh(new T.CircleGeometry(0.115, 40), mat('#8d9093', {rough: 0.8})); back.position.set(fx, 1.81, wy - 0.012); back.rotation.y = Math.PI; scene.add(back);
