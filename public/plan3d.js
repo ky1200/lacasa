@@ -12,7 +12,9 @@ const DOOR_H = 2100;
 // Windows: [wall index, from, to (along the wall), sill height, head height]
 // KY (bedroom 3) and KS (bedroom 2) have bay windows: the glass sits about 56 cm out from the inner wall,
 // over a solid ledge at sill height. Those are drawn by bay() below, not cut into the wall.
-const WINDOWS = [[1, 800, 1950, 1000, 2100], [9, 9200, 12300, 400, 2400], [20, 9100, 10300, 1000, 2100]];
+// A 6th value 'frost' = frosted glass (bathrooms). Common bathroom (wall 19): high window over the shower; its left pane
+// becomes a frosted acrylic panel with a KDK window-mount ventilation fan (K, 27 Nov).
+const WINDOWS = [[1, 800, 1950, 1000, 2100, 'frost'], [9, 9200, 12300, 400, 2400], [20, 9100, 10300, 1000, 2100], [19, 4900, 5860, 1500, 2100, 'frost']];
 // Bay windows: [wall index, from, to (along the wall), glass line, inner wall line, ledge top, window head, room, vertical wall?]
 // KX (main bedroom) has the same ledge on its side wall (K, 27 Nov): glass about 54 cm out from the inner wall.
 const BAYS = [[3, 3062, 5520, 950, 1460, 500, 2300, 'ky'], [5, 5640, 8560, 950, 1500, 500, 2300, 'ks'], [14, 5900, 7700, 1950, 2490, 500, 2300, 'kx', true]];
@@ -30,10 +32,10 @@ const GLASS_ABOVE = [[25, 1050, 2400]];
 const DOORS = [[5450, 5090, 5450, 4420, 'room'], [5850, 4170, 5850, 4960, 'room'], [4704, 5342, 3804, 5342, 'room'], [6800, 6235, 6800, 7020, 'room'], [2117, 4060, 2117, 3260, 'room'], [7594, 9000, 7594, 9780, 'steel'], [12200, 11285, 12200, 10205, 'main']];
 // Built-in kitchen and yard counters: [x1, y1, x2, y2, height]
 // Kitchen (galley): sink run against the dining wall, hob run along the bottom wall (ends where the fridge space starts),
-// tall store cabinet (ST) by the entrance, yard counter by the washer.
-const COUNTERS = [[7650, 10160, 9660, 10780, 900], [8890, 8310, 10960, 9047, 900], [5940, 10260, 6650, 10780, 850], [10600, 10050, 10960, 10780, 2100]];
+// tall store cabinet (ST) by the entrance. The yard has a small wall-hung sink (K's photo), robot dock under it.
+const COUNTERS = [[7650, 10160, 9660, 10780, 900], [8890, 8310, 10960, 9047, 900], [10600, 10050, 10960, 10780, 2100]];
 // Where to stand when walking into each room: [x, y, look at x, look at y]
-const SPAWN = {all: [11700, 10300, 10500, 4000], living: [10500, 5900, 10600, 2000], dining: [11300, 6350, 9800, 9300], kitchen: [10700, 9500, 8300, 10300], ky: [5100, 4250, 3400, 2300], ks: [7000, 4700, 7000, 1200], kx: [3600, 4500, 2300, 6900]};
+const SPAWN = {all: [11700, 10300, 10500, 4000], living: [10500, 5900, 10600, 2000], dining: [11300, 6350, 9800, 9300], kitchen: [10700, 9500, 8300, 10300], ky: [5100, 4250, 3400, 2300], ks: [7000, 4700, 7000, 1200], kx: [3600, 4500, 2300, 6900], 'common-bath': [6550, 6500, 5100, 7900], yard: [7250, 9350, 6250, 10700]};
 const FLOOR = {ky: 'vinyl', ks: 'vinyl', kx: 'vinyl', 'master-bath': 'bath', 'common-bath': 'bath', yard: 'bath', hs: 'plain'};
 const ROOMS = [['all', 'Whole home'], ['living', 'Living'], ['dining', 'Dining'], ['kitchen', 'Kitchen'], ['ky', 'KY'], ['ks', 'KS'], ['kx', 'KX']];
 const C = {door: '#6a2a20', main: '#4a2a1c', steel: '#9aa0a3', fabric: '#cdbca5', bed: '#bdb4a8', linen: '#f4f1ea', oak: '#d6b98f', walnut: '#5b3a29', black: '#1e1e1e', white: '#f6f6f3', stone: '#d8d2c6', steelApp: '#c9ccce', vanity: '#4b3426', glass: '#cfe3ea', curtain: '#d9ccb6', sheer: '#f7f5f0', counter: '#e4e0d8', cabinet: '#ece7dd', skirting: '#3a2620', ledge: '#e4ddd2'};
@@ -245,14 +247,21 @@ function chairC9060(g, x, z, rot) {
 function build(it, s, colour) {
  const g = new T.Group(), w = m(s.w), d = m(s.d), k = it.kind;
  if (k === 'bed') {
-  // Dunlopillo storage frame 41 cm high + the ordered mattress (30 or 38 cm); headboard only where ordered.
-  const fh = 0.41, mh = m(it.mattress ?? 300), top = fh + mh;
-  soft(g, w + 0.08, fh, d + 0.06, 0, 0, 0.02, mat(C.bed, {rough: 1}), 0.03);
-  soft(g, w, mh, d, 0, fh, 0.02, mat(C.linen, {rough: 0.95}), 0.06);
-  soft(g, w + 0.04, 0.06, d * 0.6, 0, top - 0.03, d * 0.2, mat('#d9d3c8', {rough: 1}), 0.03);
-  if (it.headboard !== false) soft(g, w + 0.16, 1.15, 0.1, 0, 0, -d / 2 - 0.05, mat(C.bed, {rough: 1}), 0.04);
+  // Dunlopillo storage frame (photo: mauve-grey fabric, 41 cm, hydraulic lift) + Carlton / Richmond Signature mattress
+  // (photo: dark charcoal top panel, grey quilted sides). Headboard only where ordered (KX has none).
+  const fh = 0.41, mh = m(it.mattress ?? 300), top = fh + mh, fab = mat('#7a6e74', {rough: 1});
+  soft(g, w + 0.08, fh - 0.03, d + 0.06, 0, 0.03, 0.02, fab, 0.03);
+  box(g, w, 0.03, d, 0, 0, 0.02, mat('#3a3436', {rough: 0.8}), false);
+  soft(g, w + 0.1, 0.05, d + 0.08, 0, fh - 0.05, 0.02, mat('#6e6268', {rough: 1}), 0.02);
+  soft(g, w, mh - 0.05, d, 0, fh, 0.02, mat('#8b8789', {rough: 0.95}), 0.05);
+  soft(g, w - 0.01, 0.06, d - 0.01, 0, top - 0.06, 0.02, mat('#38363a', {rough: 0.9}), 0.05);
+  box(g, 0.2, 0.05, 0.004, w * 0.25, fh + mh * 0.4, d / 2 + 0.022, mat('#c06a2a', {rough: 0.6}), false);
+  if (it.headboard !== false) {
+   soft(g, w + 0.16, 1.15, 0.1, 0, 0, -d / 2 - 0.05, fab, 0.04);
+   soft(g, w + 0.02, 0.6, 0.04, 0, top + 0.05, -d / 2 + 0.005, mat('#857880', {rough: 1}), 0.03);
+  }
   const pw = w > 1.3 ? (w - 0.2) / 2 : w - 0.12;
-  for (const px of (w > 1.3 ? [-(pw / 2 + 0.04), pw / 2 + 0.04] : [0])) soft(g, pw, 0.14, 0.42, px, top - 0.01, -d / 2 + 0.29, mat('#ffffff', {rough: 1}), 0.06);
+  for (const px of (w > 1.3 ? [-(pw / 2 + 0.04), pw / 2 + 0.04] : [0])) soft(g, pw, 0.13, 0.42, px, top - 0.01, -d / 2 + 0.29, mat('#f4f2ee', {rough: 1}), 0.06);
  } else if (k === 'sofa') {
   const f = s.flip ? -1 : 1, arm = 0.23, back = 0.24, fab = mat(colour, {rough: 1}), bh = m(it.h ?? 850) - 0.42;
   soft(g, w, 0.3, d, 0, 0.1, 0, fab, 0.04);
@@ -274,11 +283,19 @@ function build(it, s, colour) {
    cyl(g, w / 2 - 0.03, 0.02, 0, 0.41, 0, mat(C.oak, {rough: 0.5}), 48);
    cyl(g, w / 2 - 0.08, 0.01, 0, 0.12, 0, mat(C.oak, {rough: 0.5}), 48);
    for (let a = 0; a < 3; a++) cyl(g, 0.018, 0.42, Math.cos(a * 2.094) * (w / 2 - 0.08), 0, Math.sin(a * 2.094) * (w / 2 - 0.08), mat(C.oak), 8);
-  } else {soft(g, w, 0.05, d, 0, 0.37, 0, mat(C.walnut, {rough: 0.45}), 0.01); box(g, w - 0.1, 0.02, d - 0.1, 0, 0.12, 0, mat(C.walnut, {rough: 0.5})); legs(g, w, d, 0.37, 0.025, 0.025, mat(C.walnut, {rough: 0.5}));}
+  } else { // IKEA ÖRTRÄSK (photo): soft oval brown-ash top on four thick round legs
+   const ash = mat('#6f4b33', {rough: 0.65}), sh = new T.Shape(), rx = w / 2, rz = d / 2, rr = rz * 0.95;
+   sh.moveTo(-rx + rr, -rz); sh.lineTo(rx - rr, -rz); sh.absarc(rx - rr, 0, rz, -Math.PI / 2, Math.PI / 2, false); sh.lineTo(-rx + rr, rz); sh.absarc(-rx + rr, 0, rz, Math.PI / 2, Math.PI * 1.5, false);
+   const tg = new T.ExtrudeGeometry(sh, {depth: 0.03, bevelEnabled: true, bevelThickness: 0.006, bevelSize: 0.006, bevelSegments: 3, curveSegments: 40}); tg.rotateX(Math.PI / 2);
+   const top = new T.Mesh(tg, ash); top.position.y = 0.45; top.castShadow = top.receiveShadow = true; g.add(top);
+   for (const sx of [-1, 1]) for (const sz of [-1, 1]) cyl(g, 0.038, 0.42, sx * (w / 2 - 0.2), 0, sz * (d / 2 - 0.14), ash, 20);
+  }
  } else if (k === 'tv') {
+  // LG OLED B5 (photo): very thin dark panel, slim bezel, deeper box low on the back.
   const hgt = w * 0.5625;
-  soft(g, w, hgt, 0.03, 0, 0.75, 0, mat('#0b0b0d', {rough: 0.25, metal: 0.2}), 0.006);
-  box(g, w - 0.012, hgt - 0.012, 0.002, 0, 0.756, 0.016, mat('#10141c', {rough: 0.06, metal: 0.1}), false);
+  soft(g, w, hgt, 0.012, 0, 0.75, 0.01, mat('#1a1a1c', {rough: 0.3, metal: 0.4}), 0.003);
+  box(g, w * 0.55, hgt * 0.4, 0.035, 0, 0.78, -0.012, mat('#202022', {rough: 0.5}), false);
+  box(g, w - 0.01, hgt - 0.012, 0.002, 0, 0.756, 0.017, mat('#06070a', {rough: 0.05, metal: 0.2}), false);
   // TV console as drawn on the I-Niche plan: about 210 × 42 cm, against the TV wall; 35 cm high, floating 20 cm up (assumed)
   soft(g, 2.1, 0.35, 0.42, 0, 0.2, -m(s.d) / 2 - 0.025 + 0.21, mat('#c9a77d', {rough: 0.55}), 0.01);
   for (let i = 1; i < 4; i++) box(g, 0.004, 0.33, 0.004, -1.05 + 2.1 * i / 4, 0.21, -m(s.d) / 2 - 0.025 + 0.422, mat('#a88760'), false);
@@ -289,49 +306,92 @@ function build(it, s, colour) {
   for (const cx of [-w * 0.25, w * 0.25]) {chairC9060(g, cx, -d / 2 - 0.295, 0); chairC9060(g, cx, d / 2 + 0.295, Math.PI);}
   // No dining pendant (K, 27 Nov): the KDK fan with its LED light is the dining light.
  } else if (k === 'desk') {
-  soft(g, w, 0.03, d, 0, 0.72, 0, mat(C.black, {rough: 0.5}), 0.005);
-  for (const sx of [-1, 1]) box(g, 0.06, 0.72, d - 0.1, sx * (w / 2 - 0.1), 0, 0, mat('#2a2a2a', {metal: 0.4, rough: 0.5}));
-  soft(g, 0.6, 0.35, 0.03, 0, 0.88, -d / 2 + 0.15, mat('#111111', {rough: 0.3}), 0.005);
+  if (it.id === 'ks-desk') { // IKEA LAGKAPTEN / ALEX (photo): white-stained oak top, ALEX drawer unit left, white legs right
+   const wht = mat('#f4f4f1', {rough: 0.5});
+   soft(g, w, 0.025, d, 0, 0.71, 0, mat('#d8c3a0', {rough: 0.6}), 0.004);
+   soft(g, 0.36, 0.7, d - 0.02, -w / 2 + 0.19, 0, 0, wht, 0.004);
+   for (let i = 1; i < 5; i++) box(g, 0.34, 0.004, 0.003, -w / 2 + 0.19, 0.7 * i / 5, d / 2 - 0.008, mat('#d6d6d2'), false);
+   for (const sz of [-1, 1]) cyl(g, 0.018, 0.71, w / 2 - 0.05, 0, sz * (d / 2 - 0.05), wht, 12);
+  } else if (it.id === 'kx-vanity') { // IKEA MALM dressing table (photo): white, panel legs, slim drawer
+   const wht = mat('#f6f6f4', {rough: 0.4});
+   soft(g, w, 0.04, d, 0, 0.74, 0, wht, 0.004);
+   for (const sx of [-1, 1]) box(g, 0.04, 0.74, d, sx * (w / 2 - 0.02), 0, 0, wht);
+   box(g, w - 0.08, 0.1, d - 0.02, 0, 0.64, 0, wht);
+  } else { // KY's own Secretlab MAGNUS Pro: black metal desk, monitor
+   soft(g, w, 0.03, d, 0, 0.72, 0, mat(C.black, {rough: 0.5}), 0.005);
+   for (const sx of [-1, 1]) box(g, 0.06, 0.72, d - 0.1, sx * (w / 2 - 0.1), 0, 0, mat('#2a2a2a', {metal: 0.4, rough: 0.5}));
+   soft(g, 0.6, 0.35, 0.03, 0, 0.88, -d / 2 + 0.15, mat('#111111', {rough: 0.3}), 0.005);
+  }
  } else if (k === 'chair') {
-  const r = Math.min(w, d) / 2;
-  cyl(g, r * 0.9, 0.04, 0, 0.06, 0, mat('#222222'), 20);
-  cyl(g, 0.03, 0.4, 0, 0.06, 0, mat('#444444', {metal: 0.5}), 8);
-  soft(g, r * 1.5, 0.08, r * 1.3, 0, 0.46, 0.03, mat('#2b2b2b', {rough: 0.9}), 0.03);
-  soft(g, r * 1.4, 0.65, 0.06, 0, 0.55, -r * 0.7, mat('#2b2b2b', {rough: 0.9}), 0.03);
+  // Office chair (IKEA MARKUS for KS, KY's own SIHOO M57): 5-star base on castors, mesh back with headrest, armrests.
+  const blk = mat('#232323', {rough: 0.7}), mesh = mat('#1b1b1b', {rough: 0.9, opacity: 0.92});
+  for (let a = 0; a < 5; a++) {const l = box(g, 0.3, 0.025, 0.04, Math.cos(a * 1.2566) * 0.15, 0.06, Math.sin(a * 1.2566) * 0.15, blk); l.rotation.y = -a * 1.2566; cyl(g, 0.025, 0.05, Math.cos(a * 1.2566) * 0.3, 0.01, Math.sin(a * 1.2566) * 0.3, blk, 12);}
+  cyl(g, 0.025, 0.36, 0, 0.08, 0, mat('#555555', {metal: 0.7, rough: 0.3}), 12);
+  soft(g, 0.5, 0.08, 0.48, 0, 0.44, 0.02, blk, 0.03);
+  const back = soft(g, 0.46, 0.62, 0.04, 0, 0.56, -0.23, mesh, 0.02); back.rotation.x = -0.12;
+  soft(g, 0.3, 0.14, 0.05, 0, 1.2, -0.29, blk, 0.02).rotation.x = -0.12;
+  for (const sx of [-1, 1]) {box(g, 0.03, 0.2, 0.03, sx * 0.25, 0.48, 0, blk); soft(g, 0.06, 0.03, 0.24, sx * 0.25, 0.68, 0.02, blk, 0.01);}
  } else if (k === 'toilet') {
-  soft(g, w, 0.4, d * 0.28, 0, 0.38, -d / 2 + d * 0.14, mat(C.white, {rough: 0.15}), 0.04);
-  const bowl = cyl(g, w / 2 - 0.02, 0.4, 0, 0, d * 0.1, mat(C.white, {rough: 0.15}), 32, w / 2 - 0.06);
-  bowl.scale.z = (d * 0.75) / (w - 0.04);
+  // RIGEL Gallant one-piece rimless (photo): smooth rounded cistern joined to the bowl, soft-close lid, glossy white.
+  const wh = mat('#fbfbf9', {rough: 0.12}), cw = Math.min(w, 0.36);
+  const foot = cyl(g, w / 2 - 0.05, 0.33, 0, 0, d * 0.02, wh, 40, w / 2 - 0.08); foot.scale.z = (d * 0.62) / (w - 0.1);
+  const bowl = cyl(g, w / 2 - 0.08, 0.08, 0, 0.33, d * 0.06, wh, 40, w / 2 - 0.02); bowl.scale.z = (d * 0.72) / (w - 0.04);
+  const lid = cyl(g, w / 2 - 0.015, 0.03, 0, 0.41, d * 0.07, wh, 40); lid.scale.z = (d * 0.7) / (w - 0.03);
+  soft(g, cw, 0.36, d * 0.3, 0, 0.36, -d / 2 + d * 0.15, wh, 0.06);
+  soft(g, cw - 0.03, 0.05, d * 0.28, 0, 0.72, -d / 2 + d * 0.15, wh, 0.03);
+  cyl(g, 0.022, 0.006, 0, 0.77, -d / 2 + d * 0.15, mat('#c7cacc', {metal: 0.9, rough: 0.2}), 20);
  } else if (k === 'basin') {
-  // Wall-hung vanity; basin rim height from the plan data (common 89 cm, master 80 cm). Gunmetal tap.
-  const rim = m(it.rim ?? 850);
-  soft(g, w, 0.45, d, 0, rim - 0.45, 0, mat(C.vanity, {rough: 0.55}), 0.01);
-  soft(g, w + 0.01, 0.04, d + 0.01, 0, rim, 0, mat(C.white, {rough: 0.12}), 0.01);
-  box(g, 0.03, 0.2, 0.03, 0, rim + 0.04, -d / 2 + 0.06, mat('#4a4846', {metal: 0.9, rough: 0.25}));
-  box(g, w * 0.9, 0.7, 0.12, 0, rim + 0.4, -d / 2 + 0.06, mat('#dfe7ea', {rough: 0.03, metal: 0.85}));
+  // RIGEL vanity (photo BC7437 / BC1260): dark brown wall-hung cabinet with drawers, thick cream integrated basin top,
+  // gunmetal single-lever mixer; IKEA ENHET mirror cabinet (white, 2 mirror doors, 75 cm high) above it.
+  const rim = m(it.rim ?? 850), brown = mat('#4a3328', {rough: 0.5}), drawers = w > 0.65 ? 2 : 1, ch = 0.45;
+  soft(g, w, ch, d - 0.02, 0, rim - 0.07 - ch, -0.01, brown, 0.008);
+  for (let i = 1; i < drawers; i++) box(g, w - 0.01, 0.006, 0.004, 0, rim - 0.07 - ch * i / drawers, d / 2 - 0.008, mat('#2c1f18'), false);
+  box(g, w * 0.5, 0.012, 0.01, 0, rim - 0.1, d / 2 - 0.012, mat('#2c1f18', {rough: 0.6}), false);
+  soft(g, w + 0.01, 0.07, d + 0.01, 0, rim - 0.07, 0, mat('#efe7da', {rough: 0.2}), 0.012);
+  const bowl = box(g, w * 0.62, 0.005, d * 0.55, 0, rim - 0.002, 0.03, mat('#e3d9ca', {rough: 0.15}), false); bowl.receiveShadow = true;
+  box(g, 0.035, 0.18, 0.035, 0, rim, -d / 2 + 0.07, mat('#4d4a47', {metal: 0.85, rough: 0.3}));
+  box(g, 0.025, 0.025, 0.12, 0, rim + 0.155, -d / 2 + 0.12, mat('#4d4a47', {metal: 0.85, rough: 0.3}));
+  const cw = Math.min(0.6, w), cab = mat('#f4f4f2', {rough: 0.5});
+  box(g, cw, 0.75, 0.17, 0, rim + 0.3, -d / 2 + 0.085, cab);
+  for (const sx of [-1, 1]) box(g, cw / 2 - 0.006, 0.73, 0.004, sx * cw / 4, rim + 0.31, -d / 2 + 0.172, mat('#dfe8ec', {rough: 0.03, metal: 0.9}), false);
  } else if (k === 'mjtable') {
   const t = m(Math.min(s.t ?? 800, s.w, s.d));
   box(g, t, 0.03, t, 0, 0.73, 0, mat('#2f6b4a', {rough: 1}));
   legs(g, t, t, 0.73, 0.04, 0.015, mat('#555555', {metal: 0.5}));
   for (let a = 0; a < 4; a++) chairSimple(g, Math.sin(a * Math.PI / 2) * (t / 2 + 0.25), Math.cos(a * Math.PI / 2) * (t / 2 + 0.25), a * Math.PI / 2 + Math.PI, '#9c9890', '#555555');
  } else if (k === 'stool') {
-  cyl(g, Math.min(w, d) / 2, 0.45, 0, 0, 0, mat(colour, {rough: 1}), 24);
+  // IKEA KYRRE (photo): birch, rounded-triangle seat, three bent legs.
+  const birch = mat('#e1c9a3', {rough: 0.5}), r = Math.min(w, d) / 2;
+  const seat = cyl(g, r, 0.025, 0, 0.43, 0, birch, 3); seat.geometry = new T.CylinderGeometry(r, r, 0.025, 48); seat.scale.set(1, 1, 0.92);
+  for (let a = 0; a < 3; a++) {const l = box(g, 0.04, 0.44, 0.03, Math.cos(a * 2.094 + 0.5) * r * 0.62, 0, Math.sin(a * 2.094 + 0.5) * r * 0.62, birch); l.rotation.y = -(a * 2.094 + 0.5); l.rotation.z = 0.08;}
  } else if (k === 'wardrobe') {
-  soft(g, w, 2.0, d, 0, 0, 0, mat(C.white, {rough: 0.5}), 0.008);
-  const doors = w > 0.9 ? 3 : w > 0.6 ? 2 : 1;
-  for (let i = 1; i < doors; i++) box(g, 0.004, 1.96, 0.004, -w / 2 + w * i / doors, 0.02, d / 2 + 0.002, mat('#b8b3ab'), false);
-  for (let i = 0; i < doors; i++) box(g, 0.015, 0.25, 0.02, -w / 2 + w * (i + 0.5) / doors + 0.05, 0.95, d / 2 + 0.01, mat('#9d9d9d', {metal: 0.8, rough: 0.3}), false);
+  if (it.id === 'ky-wardrobe') { // IKEA GURSKEN (photo): one beige door, small round knob, low legs
+   const beige = mat('#e6e0d0', {rough: 0.55});
+   soft(g, w, 1.84, d, 0, 0.05, 0, beige, 0.006);
+   legs(g, w, d, 0.05, 0.04, 0.012, mat('#d8d2c2'));
+   cyl(g, 0.012, 0.02, w / 2 - 0.06, 1.05, d / 2 + 0.008, mat('#cfc9b9'), 16).rotation.x = Math.PI / 2;
+  } else { // IKEA PAX / FORSAND (photo): white, 201 cm, flat doors without handles (push-open)
+   soft(g, w, 2.01, d, 0, 0, 0, mat('#f5f5f2', {rough: 0.5}), 0.004);
+   const doors = Math.max(1, Math.round(w / 0.375 / 2) * 2) || 2;
+   for (let i = 1; i < doors; i++) box(g, 0.003, 1.99, 0.003, -w / 2 + w * i / doors, 0.01, d / 2 + 0.002, mat('#d6d6d2'), false);
+  }
  } else if (k === 'lwardrobe') {
-  const t = m(s.t ?? 600), body = mat(C.stone, {rough: 0.55}), hgt = 2.7, n = Math.max(2, Math.round((w - t) / 0.5));
+  const t = m(s.t ?? 600), body = mat('#cfc8bc', {rough: 0.5}), hgt = 2.7, n = Math.max(2, Math.round((w - t) / 0.5));
   box(g, w, hgt, t, 0, 0, -d / 2 + t / 2, body);
   box(g, t, hgt, d - t, -w / 2 + t / 2, 0, t / 2, body);
-  for (let i = 1; i < n; i++) box(g, 0.012, 0.45, 0.02, -w / 2 + t + (w - t) * i / n, 1.0, -d / 2 + t + 0.01, mat(C.black, {metal: 0.6}), false);
+  // V Haus ALTO (photo): full-height greige doors, long slim black bar handles
+  for (let i = 1; i < n; i++) box(g, 0.003, hgt - 0.02, 0.003, -w / 2 + t + (w - t) * i / n, 0.01, -d / 2 + t + 0.002, mat('#9a948a'), false);
+  for (let i = 1; i < n; i += 2) for (const dx of [-0.03, 0.03]) box(g, 0.012, 1.2, 0.02, -w / 2 + t + (w - t) * i / n + dx, 0.55, -d / 2 + t + 0.012, mat('#151515', {metal: 0.5, rough: 0.4}), false);
+  for (let i = 1; i < 4; i++) box(g, 0.003, hgt - 0.02, 0.003, t / 2 + 0.002, 0.01, -d / 2 + t + (d - t) * i / 4, mat('#9a948a'), false);
   const strip = box(g, w - t, 0.02, 0.01, t / 2, 2.62, -d / 2 + t + 0.006, mat('#fff6dc', {glow: '#ffd9a8', glowI: 1}), false);
   strip.userData.cove = true;
  } else if (k === 'fridge') {
-  soft(g, w, m(s.h ?? 1770), d, 0, 0, 0, mat(C.steelApp, {metal: 0.6, rough: 0.3}), 0.02);
-  box(g, w - 0.02, 0.006, 0.004, 0, 1.1, d / 2 + 0.002, mat('#7b7f82'), false);
-  for (const y of [0.75, 1.25]) box(g, 0.02, 0.35, 0.03, w / 2 - 0.06, y, d / 2 + 0.02, mat('#8a8e91', {metal: 0.8}), false);
+  // Hitachi 2-door (photo): glossy white, freezer door on top, recessed side grips.
+  const fh = m(s.h ?? 1770), wht = mat('#f3f3f1', {rough: 0.15, metal: 0.05});
+  soft(g, w, fh, d - 0.04, 0, 0, -0.02, mat('#e2e2df', {rough: 0.3}), 0.01);
+  soft(g, w - 0.004, fh * 0.29 - 0.006, 0.05, 0, fh * 0.71, d / 2 - 0.03, wht, 0.012);
+  soft(g, w - 0.004, fh * 0.71 - 0.016, 0.05, 0, 0.01, d / 2 - 0.03, wht, 0.012);
+  for (const [y0, hh] of [[fh * 0.73, 0.2], [fh * 0.45, 0.3]]) box(g, 0.012, hh, 0.012, w / 2 - 0.012, y0, d / 2 - 0.004, mat('#c9c9c6'), false);
  } else if (k === 'washer') {
   // LG FX1412S2KA (picked on /buy): 60 × 56.5 × 85 cm, dark body, big round door with a chrome ring, panel along the top.
   const h = m(s.h ?? 850), body = mat('#2c2e31', {rough: 0.35, metal: 0.25}), fz = d / 2;
@@ -358,11 +418,20 @@ function build(it, s, colour) {
   cyl(g, 0.012, 0.004, 0.06, 0.118, d / 2 - 0.19, mat('#c9b68f', {metal: 0.8, rough: 0.3}), 16);
   void bot;
  } else if (k === 'dispenser') {
-  soft(g, w, 0.45, d, 0, 0.9, 0, mat('#e8e6e1', {rough: 0.3}), 0.01);
+  // LG PuriCare WD518AN (photo): slim silver-white tower on the counter, dark touch panel, swivel nozzle.
+  const sil = mat('#dcdcda', {rough: 0.3, metal: 0.4}), top = 0.9;
+  soft(g, w, 0.38, d, 0, top, 0, sil, 0.03);
+  box(g, w - 0.02, 0.1, 0.004, 0, top + 0.26, d / 2 + 0.002, mat('#1c1d20', {rough: 0.1}), false);
+  box(g, 0.04, 0.04, 0.12, 0, top + 0.2, d / 2 + 0.06, sil);
+  box(g, w * 0.8, 0.01, 0.16, 0, top, d / 2 - 0.08, mat('#9a9a98', {metal: 0.6}), false);
  } else if (k === 'cfan') {
-  const r = w / 2;
-  cyl(g, 0.05, 0.08, 0, 2.3, 0, mat(C.white), 16);
-  for (let a = 0; a < 3; a++) {const b = box(g, r * 0.9, 0.01, 0.08, Math.cos(a * 2.094) * r * 0.45, 2.3, Math.sin(a * 2.094) * r * 0.45, mat(C.white), false); b.rotation.y = -a * 2.094;}
+  // Fanco DC Dono 16" (photo): black mount + motor, three wood-grain blades, tilted down from high on the wall.
+  const blk = mat('#151515', {rough: 0.4}), wood = mat('#6e4a32', {rough: 0.6}), y = 2.25;
+  box(g, 0.1, 0.06, 0.1, 0, y + 0.12, -d / 2 + 0.05, blk);
+  const arm = new T.Mesh(new T.TorusGeometry(0.1, 0.012, 8, 24, Math.PI), blk); arm.position.set(0, y, -d / 2 + 0.12); arm.rotation.y = Math.PI / 2; g.add(arm);
+  const head = new T.Group(); head.position.set(0, y, -d / 2 + 0.16); head.rotation.x = 0.45; g.add(head);
+  cyl(head, 0.07, 0.12, 0, -0.06, 0, blk, 24).rotation.x = Math.PI / 2;
+  for (let a = 0; a < 3; a++) {const b = soft(head, 0.11, 0.18, 0.012, 0, 0.12, 0.07, wood, 0.05); b.geometry.translate(0, 0, 0); const pv = new T.Group(); pv.add(b); b.position.set(0, 0.13, 0.07); pv.rotation.z = a * 2.094; head.add(pv);}
  } else {
   box(g, w, 0.8, d, 0, 0, 0, mat(colour));
  }
@@ -562,7 +631,7 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   if (NOT_WALLS.has(idx)) return;
   const horiz = Math.abs(y2 - y1) < Math.abs(x2 - x1), a0 = Math.min(horiz ? x1 : y1, horiz ? x2 : y2), a1 = Math.max(horiz ? x1 : y1, horiz ? x2 : y2);
   const fixed = horiz ? (y1 + y2) / 2 : (x1 + x2) / 2, thick = m(t === 'p' ? 75 : t === 'g' ? 50 : 120);
-  const cuts = [...WINDOWS.filter(w => w[0] === idx).map(w => ({from: w[1], to: w[2], sill: w[3], head: w[4]})), ...BAYS.filter(b => b[0] === idx).map(b => ({from: b[1], to: b[2], bay: true})), ...GAPS.filter(g => g[0] === idx).map(g => ({from: g[1], to: g[2], sill: 0, head: DOOR_H}))].sort((p, q) => p.from - q.from);
+  const cuts = [...WINDOWS.filter(w => w[0] === idx).map(w => ({from: w[1], to: w[2], sill: w[3], head: w[4], frost: w[5] === 'frost'})), ...BAYS.filter(b => b[0] === idx).map(b => ({from: b[1], to: b[2], bay: true})), ...GAPS.filter(g => g[0] === idx).map(g => ({from: g[1], to: g[2], sill: 0, head: DOOR_H}))].sort((p, q) => p.from - q.from);
   const seg = (from, to, yb, yt, material, th = thick, shadow = true) => segBox(horiz, fixed, from, to, yb, yt, material, th, shadow);
   if (t === 'g') { // the new kitchen glass sliding door: black slim frame, fluted glass
    seg(a0, a1, 0, ceil - 0.04, fluted, 0.02, false);
@@ -589,7 +658,7 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
    if (c.sill > 0) {seg(c.from, c.to, 0, m(c.sill), wallMat); seg(c.from - 20, c.to + 20, m(c.sill), m(c.sill) + 0.03, sillMat, thick + 0.12);}
    seg(c.from, c.to, m(c.head), ceil, wallMat);
    if (c.sill > 0) {
-    seg(c.from, c.to, m(c.sill) + 0.03, m(c.head), glassMat, 0.012, false);
+    seg(c.from, c.to, m(c.sill) + 0.03, m(c.head), c.frost ? fluted : glassMat, 0.012, false);
     const panes = Math.max(2, Math.round((c.to - c.from) / 900));
     for (let i = 0; i <= panes; i++) {const p = c.from + (c.to - c.from) * i / panes; seg(p - 20, p + 20, m(c.sill) + 0.03, m(c.head), frameMat, 0.05);}
     seg(c.from, c.to, m(c.head) - 0.04, m(c.head), frameMat, 0.05);
@@ -706,6 +775,61 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   soft(scene, m(x2 - x1), m(h) - 0.04, m(y2 - y1), m((x1 + x2) / 2), 0, m((y1 + y2) / 2), mat(C.cabinet, {rough: 0.5}), 0.005);
   if (h < 1500) box(scene, m(x2 - x1) + 0.01, 0.04, m(y2 - y1) + 0.01, m((x1 + x2) / 2), m(h) - 0.04, m((y1 + y2) / 2), mat(C.counter, {rough: 0.25}));
  }
+ // ---- Common bathroom (K's reference, 27 Nov): half-height tiled wall with a niche and clear glass on top between the
+ // toilet and the shower, RIGEL gunmetal thermostatic shower set on the side wall, bidet spray, paper holder, towel bar,
+ // service duct beside the toilet, and the high window with a KDK ventilation fan in a frosted acrylic panel.
+ {
+  const tile = mat('#d8c8b0', {rough: 0.45}), gun = mat('#4d4a47', {metal: 0.85, rough: 0.3}), Y = v => m(v);
+  // service duct (the X box on the plan)
+  box(scene, Y(5097 - 4835), ceil, Y(7058 - 6344), Y((4835 + 5097) / 2), 0, Y((6344 + 7058) / 2), wallMat);
+  // half wall 1.1 m with a 30 × 30 cm niche on the shower side
+  const x0 = 5180, x1 = 5910, yc = 7140, th = 0.1, hw = 1.1, nx0 = 5400, nx1 = 5700, nb = 0.6, nt = 0.9, nd = 0.07;
+  const wallPart = (a, b, y0, y1, depth, zc) => box(scene, Y(b - a), y1 - y0, depth, Y((a + b) / 2), y0, zc, tile);
+  wallPart(x0, x1, 0, nb, th, Y(yc)); wallPart(x0, x1, nt, hw, th, Y(yc));
+  wallPart(x0, nx0, nb, nt, th, Y(yc)); wallPart(nx1, x1, nb, nt, th, Y(yc));
+  wallPart(nx0, nx1, nb, nt, th - nd, Y(yc) - nd / 2);
+  box(scene, Y(x1 - x0) + 0.02, 0.02, th + 0.02, Y((x0 + x1) / 2), hw, Y(yc), mat('#efe9df', {rough: 0.3}));
+  // clear glass panel on top, slim U-channel
+  box(scene, Y(x1 - x0), 0.92, 0.01, Y((x0 + x1) / 2), hw + 0.02, Y(yc), glassMat, false);
+  box(scene, Y(x1 - x0), 0.03, 0.03, Y((x0 + x1) / 2), hw + 0.02, Y(yc), mat('#c9ccce', {metal: 0.85, rough: 0.25}), false);
+  // shower set on the left wall (inner face x ≈ 4835) at y 7636: thermostatic bar, riser, rain head, hand shower
+  const wx = Y(4835), sy = Y(7636);
+  box(scene, 0.07, 0.07, 0.34, wx + 0.05, 1.02, sy, gun);
+  for (const dz of [-0.17, 0.17]) cyl(scene, 0.028, 0.06, wx + 0.05, 1.025, sy + dz, gun, 16).rotation.x = Math.PI / 2;
+  cyl(scene, 0.012, 1.0, wx + 0.06, 1.09, sy - 0.05, gun, 12);
+  box(scene, 0.3, 0.018, 0.018, wx + 0.06 + 0.15, 2.09, sy - 0.05, gun);
+  box(scene, 0.25, 0.012, 0.25, wx + 0.33, 2.06, sy - 0.05, gun);
+  box(scene, 0.04, 0.05, 0.05, wx + 0.06, 1.55, sy - 0.05, gun);
+  const hs = cyl(scene, 0.016, 0.24, wx + 0.1, 1.42, sy - 0.05, gun, 12); hs.rotation.z = 0.15;
+  cyl(scene, 0.045, 0.015, wx + 0.12, 1.66, sy - 0.05, gun, 20).rotation.z = 1.4;
+  // bidet spray + holder and paper holder on the half wall's toilet side; towel bar by the door
+  box(scene, 0.04, 0.06, 0.03, Y(5320), 0.62, Y(yc) - th / 2 - 0.015, gun);
+  cyl(scene, 0.014, 0.16, Y(5320), 0.5, Y(yc) - th / 2 - 0.04, gun, 10);
+  box(scene, 0.16, 0.01, 0.1, Y(5720), 0.7, Y(yc) - th / 2 - 0.05, gun);
+  cyl(scene, 0.055, 0.11, Y(5720), 0.64, Y(yc) - th / 2 - 0.06, mat('#ffffff', {rough: 0.9}), 20).rotation.z = Math.PI / 2;
+  box(scene, 0.02, 0.02, 0.6, Y(6770) - 0.06, 1.15, Y(7400), gun);
+  for (const dz of [-0.28, 0.28]) box(scene, 0.06, 0.03, 0.02, Y(6770) - 0.03, 1.145, Y(7400) + dz, gun);
+  // KDK window ventilation fan in a frosted acrylic panel (left pane of the high window, wall 19 at y 8020)
+  const wy = Y(8020) - 0.03, fx = Y(5100);
+  box(scene, 0.4, 0.58, 0.012, fx, 1.52, wy, mat('#f1f2f0', {opacity: 0.88, rough: 0.5}), false);
+  box(scene, 0.03, 0.6, 0.05, Y(5300), 1.51, wy, frameMat);
+  const ring = new T.Mesh(new T.TorusGeometry(0.13, 0.025, 14, 40), mat('#f4f3ef', {rough: 0.35}));
+  ring.position.set(fx, 1.81, wy - 0.02); scene.add(ring);
+  const back = new T.Mesh(new T.CircleGeometry(0.115, 40), mat('#8d9093', {rough: 0.8})); back.position.set(fx, 1.81, wy - 0.012); back.rotation.y = Math.PI; scene.add(back);
+  for (let a = 0; a < 5; a++) {const b = box(scene, 0.065, 0.1, 0.008, fx, 1.81, wy - 0.03, mat('#fbfaf6', {rough: 0.4}), false); b.position.set(fx + Math.cos(a * 1.2566) * 0.06, 1.76 + Math.sin(a * 1.2566) * 0.06, wy - 0.03); b.rotation.z = a * 1.2566 + 0.5;}
+  cyl(scene, 0.035, 0.02, fx, 1.8, wy - 0.035, mat('#f7f6f2', {rough: 0.4}), 20).rotation.x = Math.PI / 2;
+  box(scene, 0.002, 0.42, 0.002, fx, 1.27, wy - 0.03, mat('#e8e8e8'), false);
+ }
+ // ---- Yard (K's photo): small wall-hung ceramic sink on the yard wall, the robot dock sits under it.
+ {
+  const sx = m(6290), sz = m(10780) - 0.2, white = mat('#f6f6f3', {rough: 0.12}), chrome = mat('#c7cacc', {metal: 0.9, rough: 0.2});
+  const bowl = cyl(scene, 0.24, 0.15, sx, 0.7, sz, white, 40, 0.2); bowl.scale.z = 0.85;
+  const inner = cyl(scene, 0.2, 0.01, sx, 0.846, sz + 0.01, mat('#e9eae8', {rough: 0.1}), 40); inner.scale.z = 0.78;
+  box(scene, 0.44, 0.05, 0.06, sx, 0.8, m(10780) - 0.03, white);
+  cyl(scene, 0.015, 0.14, sx - 0.08, 0.85, m(10780) - 0.06, chrome, 12);
+  box(scene, 0.012, 0.012, 0.1, sx - 0.08, 0.98, m(10780) - 0.1, chrome);
+  cyl(scene, 0.018, 0.2, sx, 0.5, m(10780) - 0.08, chrome, 12);
+ }
  // Kitchen as in the listing photo: light worktop, wood-look wall cabinets over the hob run, sink facing the dining glass.
  const wood = mat('#a8825c', {rough: 0.55});
  soft(scene, m(9660 - 7650), 0.72, 0.35, m((7650 + 9660) / 2), 1.5, m(10780) - 0.175, wood, 0.006);
@@ -724,6 +848,12 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
   const g = build(it, s, it.kind === 'sofa' ? C.fabric : (D.colours[it.room] ?? '#8a8f9a'));
   g.position.set(m(it.x), 0, m(it.y));
   g.rotation.y = -(it.r || 0) * Math.PI / 180;
+  if (it.kind === 'dock') { // a dock always stands with its back to the nearest wall (saved plans may face it the wrong way)
+   const dist = (dx, dy) => {let best = 1e9; for (const [x1, y1, x2, y2] of W) {if (dx && Math.abs(x1 - x2) < 1 && Math.min(y1, y2) <= it.y && it.y <= Math.max(y1, y2)) {const d0 = (x1 - it.x) * dx; if (d0 > 0) best = Math.min(best, d0);} if (dy && Math.abs(y1 - y2) < 1 && Math.min(x1, x2) <= it.x && it.x <= Math.max(x1, x2)) {const d0 = (y1 - it.y) * dy; if (d0 > 0) best = Math.min(best, d0);}} return best;};
+   // back direction for r = 0, 90, 180, 270 is -y, +x, +y, -x (front = local +z)
+   const opts = [[0, dist(0, -1)], [90, dist(1, 0)], [180, dist(0, 1)], [270, dist(-1, 0)]].sort((p, q) => p[1] - q[1]);
+   g.rotation.y = -opts[0][0] * Math.PI / 180;
+  }
   g.traverse(o => {if (o.isMesh) {o.userData.item = it; if (o.userData.pendant) pendants.push(o);} if (o.userData?.cove) coveMeshes.push(o);});
   scene.add(g);
   pick.push(g);

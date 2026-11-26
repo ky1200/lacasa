@@ -2,6 +2,12 @@
 
 Current state (26 Nov 2026): site on Cloudflare Workers + D1 at https://lacasa.kayikkwong.workers.dev (moved from ChatGPT Sites on 30 Oct). The full working notes are the project handover doc `claude/lacasa-handover.md` in the claude.ai project; this file is a short change log only. The table and notes from October below are history.
 
+## 27 November 2026 (later) — 3D models from product photos, common bathroom, yard sink
+- Models redrawn from the /buy photos: Dunlopillo frame (mauve-grey) + Carlton/Richmond mattress (charcoal top, grey sides), GURSKEN (KY) and PAX/FORSAND (KS) wardrobes, ALTO with full-height doors and long black bar handles, RIGEL Gallant one-piece toilet, RIGEL vanity (dark brown drawers, cream integrated top, gunmetal mixer) + IKEA ENHET mirror cabinet, LG OLED B5 thin panel, ÖRTRÄSK oval table, Hitachi white 2-door fridge, LG WD518AN dispenser, Fanco Dono (black + wood blades), LAGKAPTEN/ALEX desk, MALM dressing table, office chairs (5-star base, mesh back, headrest), KYRRE stool.
+- Common bathroom: service duct (X box), half-height tiled wall 1.1 m with a 30 × 30 niche on the shower side + clear glass on top, RIGEL gunmetal thermostatic shower set on the left wall, bidet spray, paper holder, towel bar, high frosted window (wall 19) with a frosted acrylic panel + KDK window ventilation fan (left pane).
+- Yard: counter removed; small wall-hung ceramic sink at the X box (K's photo); robot dock default under it; docks auto-face away from the nearest wall in 3D (the family's saved dock faced the wall).
+- New deep links `#3d=common-bath`, `#3d=yard`.
+
 ## 27 November 2026 — 3D closer to the real flat
 - Removed styling extras: Poly Haven plants + vase (`DECOR`, Plants button, public/models/decor) and the dining pendant (no pendant planned; the KDK fan with LED is the dining light).
 - Ceiling fans = KDK F40GP shape (`kdkFan`: 3 swept matte-brown blades, small body, round LED in the middle), in their own always-visible group `fans`.
