@@ -41,7 +41,7 @@ export function bathroomsPage(v = {}, ro = false) {
  const row = ([what, pick, p]) => `<tr><td><b>${what}</b><small>${pick}</small></td><td>${sgd(p)}</td></tr>`;
  return `<section class="bath-page">
 <header class="page-head"><p class="eyebrow">Both bathrooms · finish chosen 25 Nov: gunmetal</p><h1>Bathrooms</h1>
-<p class="lead">Where to buy each piece, the shop quotes so far, and the guide for heights, toilets and finishes.</p></header>
+<p class="lead">Tap a section to open it.</p></header>
 
 <div class="bath-status">
 <div><small>All in Singapore (eStore)</small><b>${sgd(cmpTarget())}</b><span>+ mirror cabinets ≈ S$800</span></div>
@@ -49,7 +49,7 @@ export function bathroomsPage(v = {}, ro = false) {
 <div><small>Next step</small><b>Measure 3 Dec</b><span>toilet setting-out, basin walls</span></div>
 </div>
 
-<section class="bath-card" id="split"><h2>Buy where: the split plan</h2>
+<details class="bath-card sec-fold" id="split"><summary><h2>Buy where: Singapore or JB</h2><small>checked 26 Nov</small></summary>
 <p class="muted"><b>K's plan (26 Nov):</b> buy the toilets, shower sets, bidet sprays and basin mixers in Singapore (all need PUB WELS), and the vanity/basin, mirror cabinets, towel bars, roll holders and hooks from a real brand in Johor Bahru. Checked 26 Nov: the same RIGEL items are <b>not</b> cheaper in Malaysia, but a Malaysian brand (Sorento) and IKEA Malaysia are.</p>
 <div class="bath-cols">
 <div><h3>Singapore: connects to water</h3><p class="muted">Taps, toilets, showers and bidet sprays need PUB WELS approval; a bidet spray next to a toilet also needs a check valve (SS 636).</p>
@@ -65,11 +65,11 @@ export function bathroomsPage(v = {}, ro = false) {
 <li><b>Vanities:</b> no clear saving found yet. RIGEL Malaysia sells the cabinet without the basin top; IKEA ENHET/TVÄLLEN 64 cm is about the same price on both sides (and too wide for the 60 cm master wall). Ask Sorento or Johnson Suisse dealers in JB for a 60 cm and a 70 cm wall-hung PVC cabinet with basin after measuring on 3 Dec; compare with Heritage's S$489 RIGEL set.</li>
 <li><b>Unbranded sets</b> (aluminium or PVC cabinets around RM400 on Lazada) fail the real-brand rule.</li>
 <li><b>Customs:</b> a day trip (under 48 hours) only gets S$100 GST relief. Declare the full value and pay 9% GST on the rest; not declaring can cost about 10× the GST.</li>
-<li><b>Not from Malaysia:</b> the ceiling fan with light (wired in, needs the Singapore Safety Mark), and basin taps (WELS).</li>
+<li><b>Not from Malaysia:</b> basin taps and anything that connects to water (WELS). Ceiling fans from JB have no Singapore Safety Mark and only a Malaysian warranty: see the fan options on To-buy.</li>
 <li><b>Still open:</b> Heritage written quote (toilets, showers, bidets, 2 basin mixers) valid to mid-Dec; vanity source after measuring.</li></ul>
-</section>
+</details>
 
-${comparePage(v, ro)}
+<details class="bath-card sec-fold"><summary><h2>Shop price check</h2><small>quotes and tags</small></summary>${comparePage(v, ro)}</details>
 
 <section class="bath-card bath-guide" id="bathroom-guide"><h2>Bathroom guide</h2><p class="muted">Research 24 Nov, updated 26 Nov for gunmetal. One pick per question, reasons underneath.</p>
 <details><summary>Buying: choose now, pay after measuring</summary>

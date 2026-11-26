@@ -100,7 +100,8 @@ export function progressPage(v = {}, ro = false, today = sgToday()) {
  };
  const stage = g => {
   const d = g.steps.filter(s => stepState(s, v, today) === 'done').length, all = d === g.steps.length;
-  return `<details class="pg-stage${all ? ' is-complete' : ''}"${all ? '' : ' open'}><summary><span><b>${h(g.n)}</b><small>${d} of ${g.steps.length} done</small></span><span class="pg-mini" aria-hidden="true"><i style="width:${Math.round(d / g.steps.length * 100)}%"></i></span></summary><ol class="pg-steps">${g.steps.map(stepRow).join('')}</ol></details>`;
+  const first = !all && STAGES.find(x => x.steps.some(st => stepState(st, v, today) !== 'done')) === g;
+  return `<details class="pg-stage${all ? ' is-complete' : ''}"${first ? ' open' : ''}><summary><span><b>${h(g.n)}</b><small>${d} of ${g.steps.length} done</small></span><span class="pg-mini" aria-hidden="true"><i style="width:${Math.round(d / g.steps.length * 100)}%"></i></span></summary><ol class="pg-steps">${g.steps.map(stepRow).join('')}</ol></details>`;
  };
  const item = s => `<li><span class="buy-chip${s.st === 'late' ? ' is-late' : ''}">${h(dayLabel(s.date))}</span><span>${h(s.t)}</span></li>`;
  return `<section class="pg-page" data-progress-page${ro ? ' data-ro' : ''}>

@@ -37,7 +37,7 @@ function item(i,rate,v,ro,pics=true){
 <div class="buy-qty" role="group" aria-label="Quantity"><button type="button" data-b="minus" aria-label="One less"${dis}>−</button><output data-f="qty" aria-live="polite">${c.qty}</output><button type="button" data-b="plus" aria-label="One more"${dis}>+</button></div></div>
 ${payCtl}
 <p class="buy-shop" data-f="shop">${shopLine(o)}</p>
-${i.date?`<p class="buy-date"><a class="buy-chip" href="#day-${h(i.date)}">${h(dayLabel(i.date))}</a>${h(i.when??'')}</p>`:''}
+${i.date?`<p class="buy-date">${i.date>=sgToday()?`<a class="buy-chip" href="#day-${h(i.date)}">${h(dayLabel(i.date))}</a>`:''}${h(i.when??'')}</p>`:''}
 ${i.note?`<details class="buy-note" data-f="note"${c.pick?' hidden':''}><summary><span>${h(i.note)}</span></summary></details>`:''}${list}</article>`;
 }
 
@@ -45,11 +45,11 @@ ${i.note?`<details class="buy-note" data-f="note"${c.pick?' hidden':''}><summary
 function calendar(plan,today){
  const events={};const add=(d,k,x)=>{(events[d]??={sales:[],items:[],pay:[]})[k].push(x);};
  plan.sales.forEach(s=>add(s.date,'sales',s));(plan.orders??[]).forEach(o=>{(o.due??[]).forEach(x=>x.date&&add(x.date,'pay',`Pay ${o.name.split(' (')[0]}: ${money(x.amount,o.cur)}`));(o.steps??[]).forEach(x=>x.date&&add(x.date,'pay',`${x.label?`${x.label} (estimate): `:''}${x.t}`));});plan.rooms.forEach(r=>r.items.forEach(i=>i.date&&add(i.date,'items',{i,r})));
- const dates=Object.keys(events).sort(),first=dates[0].slice(0,7),last=dates.at(-1).slice(0,7),months=[];
+ const dates=Object.keys(events).filter(d=>d>=today).sort();if(!dates.length)return '<p class="muted">No dates left.</p>';const first=dates[0].slice(0,7),last=dates.at(-1).slice(0,7),months=[];
  for(let [y,m]=first.split('-').map(Number);`${y}-${String(m).padStart(2,'0')}`<=last;m===12?(y++,m=1):m++)months.push([y,m]);
  const grid=([y,m])=>{const lead=(new Date(Date.UTC(y,m-1,1)).getUTCDay()+6)%7,n=new Date(Date.UTC(y,m,0)).getUTCDate(),cells=[...Array(lead).fill(null),...Array.from({length:n},(_,k)=>k+1)];while(cells.length%7)cells.push(null);
   const rows=[];for(let k=0;k<cells.length;k+=7)rows.push(cells.slice(k,k+7));
-  return `<div class="buy-month"><h3>${MONTHS_FULL[m-1]} ${y}</h3><table class="buy-cal"><thead><tr>${['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].map(d=>`<th scope="col"><abbr title="${d}">${d[0]}</abbr></th>`).join('')}</tr></thead><tbody>${rows.map(w=>`<tr>${w.map(d=>{if(!d)return '<td></td>';const iso=`${y}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`,e=events[iso],cls=['buy-day',e?.sales.length?'sale':'',e?.items.length||e?.pay.length?'buy':'',iso===today?'today':'',iso<today?'past':''].filter(Boolean).join(' ');
+  return `<div class="buy-month"><h3>${MONTHS_FULL[m-1]} ${y}</h3><table class="buy-cal"><thead><tr>${['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].map(d=>`<th scope="col"><abbr title="${d}">${d[0]}</abbr></th>`).join('')}</tr></thead><tbody>${rows.map(w=>`<tr>${w.map(d=>{if(!d)return '<td></td>';const iso=`${y}-${String(m).padStart(2,'0')}-${String(d).padStart(2,'0')}`,e=iso<today?null:events[iso],cls=['buy-day',e?.sales.length?'sale':'',e?.items.length||e?.pay.length?'buy':'',iso===today?'today':'',iso<today?'past':''].filter(Boolean).join(' ');
    const label=`${dayLabel(iso)}${iso===today?', today':''}${e?.sales.length?', sale':''}${e?.items.length?`, ${e.items.length} to buy`:''}`;
    return `<td>${e?`<a class="${cls}" href="#day-${iso}" aria-label="${h(label)}">${d}</a>`:`<span class="${cls}" aria-label="${h(label)}">${d}</span>`}</td>`;}).join('')}</tr>`).join('')}</tbody></table></div>`;};
  const list=dates.map(d=>{const e=events[d];return `<li id="day-${d}" class="buy-dayrow${e.sales.length?' has-sale':''}"><span class="buy-chip">${h(dayLabel(d))}</span><div>${e.sales.map(s=>`<p class="buy-sale-name">${h(s.name)}</p>`).join('')}${e.pay.map(x=>`<p class="buy-day-pay">${h(x)}</p>`).join('')}${e.items.length?`<p class="buy-day-items">${e.items.map(({i,r})=>{const short=i.name.split(/,| \(/)[0],dup=e.items.filter(x=>x.i.name.split(/,| \(/)[0]===short).length>1;return `<a href="#it-${h(i.id)}" style="--rc:${roomColour(r.id)}">${dup?`${h(r.name.replace(/ bedroom| bathroom/,''))}: `:''}${h(short)}</a>`;}).join('')}</p>`:''}</div></li>`;}).join('');

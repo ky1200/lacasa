@@ -122,17 +122,18 @@ export function schedulePage(v = {}, ro = false, today = sgToday()) {
  const week = w => {
   const days = Array.from({length: 7}, (_, k) => addDays(w, k));
   const busy = days.some(d => byDay.has(d));
-  return `<section class="sch-week${days.at(-1) < today ? ' is-past' : ''}"><h2>${h(short(days[0]))} – ${h(short(days[6]))}</h2><ol class="sch-days">${days.map((d, k) => {
+  const n = days.reduce((c, d) => c + (byDay.get(d)?.length ?? 0), 0), open = weeks.indexOf(w) < 1;
+  return `<details class="sch-week sec-fold"${open ? ' open' : ''}><summary><h2>${h(short(days[0]))} – ${h(short(days[6]))}</h2><small>${n} ${n === 1 ? 'entry' : 'entries'}</small></summary><ol class="sch-days">${days.map((d, k) => {
    const items = (byDay.get(d) ?? []).sort((a, b) => a.e.who.localeCompare(b.e.who));
    return `<li class="sch-day${k === 6 ? ' is-sun' : ''}${d === today ? ' is-today' : ''}${items.length ? '' : ' is-empty'}"><div class="sch-dh"><b>${DAY[k]}</b> ${+d.slice(8)}${d === today ? ' <em>today</em>' : ''}</div>${items.length ? `<ul>${items.map(chip).join('')}</ul>` : `<p class="sch-none">${k === 6 ? 'Off day' : busy ? '–' : ''}</p>`}</li>`;
-  }).join('')}</ol></section>`;
+  }).join('')}</ol></details>`;
  };
  const undated = list.filter(e => !e.date);
  const nextFor = id => list.filter(e => e.who === id && e.date && (e.end || e.date) >= today).sort((a, b) => a.date < b.date ? -1 : 1)[0];
  return `<section class="sch-page" data-sch-page${ro ? ' data-ro' : ''}>
-<header class="sch-head"><h1>Schedule</h1><p class="muted">Week by week: who comes to the flat and when. Starts from John’s schedule (I-Niche, 26 Nov). Anyone in the family can add or change an entry; it saves for everyone.</p></header>
-<div class="sch-legend" aria-label="Colour key">${KINDS.map(([k, n]) => `<span class="sch-key k-${k}">${n}</span>`).join('')}</div>
-<div class="sch-filter" role="group" aria-label="Show">${['all', ...PARTIES.map(p => p.id)].filter(id => id === 'all' || list.some(e => e.who === id)).map(id => `<button type="button" data-show="${id}" aria-pressed="${id === 'all'}"${id === 'all' ? '' : ` style="--pc:${party[id].c}"`}>${id === 'all' ? 'Everyone' : h(party[id].n)}</button>`).join('')}</div>
+<header class="sch-head"><h1>Schedule</h1><p class="muted">Who comes to the flat and when. Tap a week to open it. Edits save for everyone.</p></header>
+<details class="sch-filters"><summary>Filter by who · colour key</summary><div class="sch-legend" aria-label="Colour key">${KINDS.map(([k, n]) => `<span class="sch-key k-${k}">${n}</span>`).join('')}</div>
+<div class="sch-filter" role="group" aria-label="Show">${['all', ...PARTIES.map(p => p.id)].filter(id => id === 'all' || list.some(e => e.who === id)).map(id => `<button type="button" data-show="${id}" aria-pressed="${id === 'all'}"${id === 'all' ? '' : ` style="--pc:${party[id].c}"`}>${id === 'all' ? 'Everyone' : h(party[id].n)}</button>`).join('')}</div></details>
 ${ro ? '' : `<div class="sch-tools"><button type="button" class="pay-add" data-add>+ Add to the schedule</button><span class="pay-status" data-sch-status>${saved ? 'Saved' : 'Starting list: edits save for everyone'}</span></div>`}
 ${ro ? '' : `<form class="pay-form sch-form" data-sch-form hidden>
  <h2 data-form-title>Add to the schedule</h2>
@@ -146,7 +147,7 @@ ${ro ? '' : `<form class="pay-form sch-form" data-sch-form hidden>
 </form>`}
 ${weeks.map(week).join('')}
 ${undated.length ? `<section class="sch-week"><h2>Date to confirm</h2><ul class="sch-undated">${undated.map(e => chip({e, i: 0, n: 1})).join('')}</ul></section>` : ''}
-<section class="sch-people"><h2>Who we work with</h2><ul>${PARTIES.map(p => {const nx = nextFor(p.id); return `<li style="--pc:${p.c}"><b>${h(p.full)}</b><small>${h(p.who)}</small><span>${h(p.does)}</span>${nx ? `<small class="sch-next">Next: ${h(short(nx.date))} · ${h(nx.t)}</small>` : ''}</li>`;}).join('')}</ul></section>
+<details class="sch-people sec-fold"><summary><h2>Who we work with</h2><small>${PARTIES.length} contacts</small></summary><ul>${PARTIES.map(p => {const nx = nextFor(p.id); return `<li style="--pc:${p.c}"><b>${h(p.full)}</b><small>${h(p.who)}</small><span>${h(p.does)}</span>${nx ? `<small class="sch-next">Next: ${h(short(nx.date))} · ${h(nx.t)}</small>` : ''}</li>`;}).join('')}</ul></details>
 <script id="sch-data" type="application/json">${JSON.stringify({list}).replace(/</g, '\\u003c')}</script>
 </section>`;
 }
