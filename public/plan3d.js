@@ -189,6 +189,12 @@ function box(g, w, h, d, x, y, z, material, shadow = true, round = 0) {
  return mesh;
 }
 const soft = (g, w, h, d, x, y, z, material, r = 0.04) => box(g, w, h, d, x, y, z, material, true, r);
+// V Haus extra free-standing 2233 armrest (ordered 27 Nov): stands against the open end so both ends look the same.
+const freeArm = (g, s, d, fab) => {
+ const f = s.flip ? -1 : 1, arm = 0.23, w = m(s.w);
+ box(g, arm - 0.04, 0.1, d - 0.1, -f * (w / 2 + arm / 2 + 0.01), 0, 0, mat('#3a3029', {rough: 0.6}), false);
+ soft(g, arm, 0.56, d, -f * (w / 2 + arm / 2 + 0.01), 0.08, 0, fab, 0.08);
+};
 function cyl(g, r, h, x, y, z, material, seg = 24, r2 = r) {
  const mesh = new T.Mesh(new T.CylinderGeometry(r, r2, h, seg), material);
  mesh.position.set(x, y + h / 2, z);
@@ -274,6 +280,7 @@ function build(it, s, colour) {
   for (let i = 0; i < seats; i++) soft(g, sw - 0.015, 0.14, d - back - 0.03, -f * (w / 2 - sw * i - sw / 2), 0.36, back / 2, fab, 0.06);
   soft(g, 0.45, 0.42, 0.14, -f * (w / 2 - arm - 0.4), 0.5, -d / 2 + back + 0.09, mat('#e9e2d6', {rough: 1}), 0.07).rotation.x = -0.18;
   soft(g, 0.45, 0.42, 0.14, -f * (w / 2 - arm - 0.95), 0.5, -d / 2 + back + 0.09, mat('#cdbfae', {rough: 1}), 0.07).rotation.x = -0.18;
+  freeArm(g, s, d, fab);
  } else if (k === 'recliner') {
   const fab = mat('#4d4a47', {rough: 1});
   soft(g, w, 0.45, d, 0, 0, 0, fab, 0.06);
@@ -478,6 +485,7 @@ function swapModel(g, it, s) {
   obj.traverse(o => {if (o.isMesh) {o.castShadow = o.receiveShadow = true; o.userData.item = it; o.material = o.material.clone(); o.material.metalness = 0; o.material.metalnessMap = null; o.material.roughness = 0.95; if (spec.tint) o.material.color.set(spec.tint).multiplyScalar(spec.lift ?? 1);}});
   for (const c of [...g.children]) {g.remove(c); c.geometry?.dispose();}
   g.add(obj);
+  if (it.kind === 'sofa') {const fab = mat(spec.tint, {rough: 0.95}).clone(); fab.color.multiplyScalar(spec.lift ?? 1); freeArm(g, s, m(s.d), fab);}
   g.userData.redraw?.();
  }).catch(() => {});
 }

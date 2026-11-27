@@ -22,6 +22,7 @@ export const DOCS = [
  ]},
  {g: 'Furniture orders', items: [
   {date: '2026-11-22', t: 'Dunlopillo (ANZ Home Furniture) sales order 155571', s: '3 queen mattresses + 3 storage frames, RM19,999. Deposit RM7,999 by bank transfer 22 Nov; balance RM12,000 before delivery (22 Dec). Free: 3 Sleepwell pillows, 3 iCool pillows, 3 protectors. Not cancellable.', href: D('1iNeUFjTV0CBeTosfoG6v0LAizBTBGGa8'), kind: 'Photo'},
+  {date: '2026-11-27', t: 'V Haus armrest deposit receipt', s: 'RM100 by Public Bank transfer to V Haus Living, 27 Nov 11:17am, ref 335558.', href: D('1hjGrFARRhGWz0EnUdfuPcjT7SXtgUpo-'), kind: 'Photo'},
   {date: '2026-11-27', t: 'V Haus sales order 03460, updated 27 Nov', s: 'Adds a free-standing 2233 armrest in RU002 (RM300 before GST). New total RM14,843.62 incl. GST. Paid RM4,355 (22 Nov) + RM100 armrest deposit (27 Nov); balance RM10,388.62 before delivery.', href: D('1rZ-lLrnOkggP3GgWkfCev8qOd6jxTE3C'), kind: 'PDF'},
   {date: '2026-11-21', t: 'V Haus sales order 03460, page 1', s: 'LINO table + 6 chairs, ALTO L-shape wardrobe (KX), sofa 2233A in RU002, 2 small pillows. RM14,516.62 incl. GST. Delivery date TBC. Replaced by the 27 Nov update below.', href: D('1TwTh-verNuY1WcE2dIhsoCmk7rCvp_KI'), kind: 'Photo'},
   {date: '2026-11-21', t: 'V Haus sales order 03460, page 2 (terms)', s: 'Deposit non-refundable; full payment before delivery; defects within 3 days of delivery; storage charges after 14 days.', href: D('1PTjicya4RgQih0LloDY0TGhRSNB8XVt3'), kind: 'Photo'},
