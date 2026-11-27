@@ -1671,3 +1671,53 @@ button.pg-tick{cursor:pointer}button.pg-tick:active{background:var(--plaster)}
 .ct-parts li span{min-width:0;overflow-wrap:anywhere}.ct-parts li small{display:block;font-size:12.5px;color:var(--muted);margin-top:2px;line-height:1.4}
 .ct-parts li>b{white-space:nowrap;font-variant-numeric:tabular-nums}.ct-parts .ct-sum{font-weight:700}
 .ct-body>p{font-size:13px;margin:0 0 4px}
+
+/* ===== /plan (28 Nov): speakers, sofa back table, pick-then-drag, nudge arrows, undo; phone tool row with drop-downs ===== */
+.plan-item .spk{fill:#f4f2ee;stroke:#24221e;stroke-width:1.6}
+.plan-item .spk-halo{fill:rgba(39,60,102,.07);stroke:#273c66;stroke-width:1;stroke-dasharray:3 3}
+.spk-tag{font-size:.78em;font-weight:800;fill:#273c66;stroke-width:3px}
+.spkline{stroke:#273c66;stroke-width:1;stroke-opacity:.55;stroke-dasharray:1 4}
+.spklabel{font-size:.82em;font-weight:700;fill:#273c66;text-anchor:middle;paint-order:stroke;stroke:#fbfaf7;stroke-width:4px;pointer-events:none}
+.plan-stage.is-night .spklabel,.plan-stage.is-night .spk-tag{fill:#c9d6f2;stroke:#161b27}
+.plan-undo{position:absolute;left:10px;top:10px;font:inherit;font-size:14px;font-weight:700;min-height:44px;padding:8px 16px;border-radius:12px;border:1px solid var(--sumi);background:rgba(251,250,247,.96);color:var(--sumi);cursor:pointer;box-shadow:0 1px 2px rgba(36,34,30,.12)}
+.plan-undo[hidden]{display:none}
+.plan-undo:focus-visible,.nudge button:focus-visible,.sheet-makeroom:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
+.sheet-move{margin:10px 0 4px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sheet-move-tip{margin:0;font-size:13.5px;color:var(--muted);flex:1 1 140px}
+.nudge{display:grid;grid-template-columns:repeat(3,46px);grid-template-rows:repeat(3,38px);gap:3px}
+.nudge button{font:inherit;font-size:18px;font-weight:800;border-radius:10px;border:1px solid var(--line);background:#fff;color:var(--sumi);cursor:pointer;touch-action:none;user-select:none;-webkit-user-select:none;min-height:0}
+.nudge button:active{background:var(--linen)}
+.nudge [data-nudge-xy="0,-50"]{grid-column:2;grid-row:1}
+.nudge [data-nudge-xy="-50,0"]{grid-column:1;grid-row:2}
+.nudge [data-nudge-xy="50,0"]{grid-column:3;grid-row:2}
+.nudge [data-nudge-xy="0,50"]{grid-column:2;grid-row:3}
+.sheet-makeroom{font:inherit;font-size:14px;font-weight:700;min-height:44px;padding:9px 16px;margin:2px 0 6px;border-radius:12px;border:0;background:var(--indigo);color:#fff;cursor:pointer}
+.plan-addbox>summary{display:none}
+.plan-addbox>summary::-webkit-details-marker{display:none}
+@media (max-width:640px){
+ .plan-zoomlabel,.plan-layouts .plan-rowlabel{display:none}
+ .plan-layouts{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin:8px 0 2px}
+ .plan-layouts::-webkit-scrollbar{display:none}
+ .plan-layouts a{flex:none}
+ .plan-toolrow{position:relative;display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 8px}
+ .plan-toolrow .plan-modes{display:contents}
+ .plan-toolrow .plan-layerbox{margin:0;position:static}
+ .plan-drop>summary{display:inline-flex;align-items:center;gap:6px;list-style:none;cursor:pointer;padding:8px 13px;min-height:44px;border-radius:12px;border:1px solid var(--line);background:var(--linen);font-size:14px;font-weight:700;color:var(--sumi)}
+ .plan-drop>summary::after{content:'';width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin:-3px 0 0 4px;transition:transform .15s}
+ .plan-drop[open]>summary::after{transform:rotate(-135deg);margin-top:3px}
+ .plan-drop>summary small{font-weight:400;color:var(--muted,#6b6559)}
+ .plan-drop>summary:focus-visible{outline:3px solid var(--indigo);outline-offset:2px}
+ .plan-drop[open]>summary{background:var(--sumi);color:var(--linen);border-color:var(--sumi)}
+ .plan-drop[open]>summary small{color:#d8d3c8}
+ .plan-drop>.plan-layers,.plan-drop>.plan-addables{position:absolute;left:0;right:0;top:52px;z-index:30;margin:0;padding:10px;border-radius:14px;background:var(--linen);border:1px solid var(--line);box-shadow:0 12px 30px rgba(20,24,40,.18);display:flex;flex-wrap:wrap;gap:6px}
+ .plan-drop>.plan-addables>span{display:none}
+ .plan-layerbox .plan-layer span{font-size:13.5px;padding:8px 12px;min-height:44px}
+ .plan-modes span,.plan-3d-btn{min-height:44px}
+ .plan-stage{height:calc(100svh - 168px);min-height:420px}
+ .plan-undo{top:auto;bottom:44px;left:10px}
+ .sheet-move{gap:8px}
+}
+/* One-choice items have no radio: keep the photo and text in their own columns */
+.sheet-opt:not(:has(input)){grid-template-columns:56px 1fr auto}
+@media (max-width:520px){.sheet-opt:not(:has(input)){grid-template-columns:48px 1fr}.sheet-opt:not(:has(input)) strong{grid-column:2}}
+@media (max-width:640px){.plan-head .eyebrow{display:none}.plan-head{padding-top:8px}.plan-head h1{font-size:28px;margin:0 0 4px}}

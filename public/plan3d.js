@@ -281,6 +281,28 @@ function build(it, s, colour) {
   soft(g, 0.45, 0.42, 0.14, -f * (w / 2 - arm - 0.4), 0.5, -d / 2 + back + 0.09, mat('#e9e2d6', {rough: 1}), 0.07).rotation.x = -0.18;
   soft(g, 0.45, 0.42, 0.14, -f * (w / 2 - arm - 0.95), 0.5, -d / 2 + back + 0.09, mat('#cdbfae', {rough: 1}), 0.07).rotation.x = -0.18;
   freeArm(g, s, d, fab);
+ } else if (k === 'speaker') {
+  // HomePod (2nd gen): 14.2 cm wide, 16.8 cm tall mesh cylinder with a glass touch top. HomePod mini 2: 9.8 cm sphere cut flat, 8.4 cm tall.
+  const y0 = m(it.y0 ?? it.elev ?? 0), mesh = mat('#efede8', {rough: 0.95}), top = mat('#1b1c1f', {rough: 0.15, metal: 0.2});
+  if (it.model === 'mini') {
+   const b = new T.Mesh(new T.SphereGeometry(0.049, 32, 20), mesh); b.scale.y = 0.86; b.position.y = y0 + 0.042; b.castShadow = true; g.add(b);
+   cyl(g, 0.03, 0.004, 0, y0 + 0.083, 0, top, 32);
+  } else {
+   cyl(g, 0.071, 0.15, 0, y0 + 0.008, 0, mesh, 40); cyl(g, 0.064, 0.008, 0, y0, 0, mesh, 40);
+   const cap = new T.Mesh(new T.SphereGeometry(0.071, 40, 12, 0, Math.PI * 2, 0, Math.PI / 2), mesh); cap.scale.y = 0.14; cap.position.y = y0 + 0.158; g.add(cap);
+   cyl(g, 0.045, 0.003, 0, y0 + 0.166, 0, top, 32);
+  }
+  if (it.shelf) { // small wall shelf under a rear speaker (IKEA BURHULT style), long side along the wall
+   const [sw, sd] = it.shelf === 'x' ? [0.3, 0.2] : [0.2, 0.3];
+   box(g, sw, 0.018, sd, it.shelfOff?.[0] ?? 0, y0 - 0.018, it.shelfOff?.[1] ?? 0, mat('#efe9dd', {rough: 0.7}));
+  }
+ } else if (k === 'console') {
+  // Sofa back table (K's photo): light oak top just under the sofa back, slab ends, cable holes.
+  const hh = m(s.h ?? 1000), oak = mat('#c8a27a', {rough: 0.55});
+  soft(g, w, 0.025, d, 0, hh - 0.025, 0, oak, 0.004);
+  for (const sx of [-1, 1]) soft(g, 0.025, hh - 0.025, d, sx * (w / 2 - 0.0125), 0, 0, oak, 0.003);
+  box(g, w - 0.05, 0.12, 0.018, 0, hh - 0.145, -d / 2 + 0.02, oak);
+  for (const sx of [-1, 1]) cyl(g, 0.03, 0.002, sx * (w / 2 - 0.26), hh, 0, mat('#2a2622', {rough: 0.6}), 24);
  } else if (k === 'recliner') {
   const fab = mat('#4d4a47', {rough: 1});
   soft(g, w, 0.45, d, 0, 0, 0, fab, 0.06);
@@ -866,8 +888,16 @@ ${groups.map(gname => `<h4>${gname}</h4><div class="p3d-sws">${VINYL.map((v, i) 
 
  // Furniture
  const pick = [], pendants = [], coveMeshes = [];
- for (const it of items) {
-  if (it.on === false || it.kind === 'wifi') continue;
+ const sofaTable = items.find(i => i.kind === 'console' && i.on !== false);
+ const overTable = it => {if (!sofaTable) return false; const sz = sizeOf(sofaTable), q = (sofaTable.r || 0) % 180 ? [sz.d, sz.w] : [sz.w, sz.d]; return Math.abs(it.x - sofaTable.x) <= q[0] / 2 && Math.abs(it.y - sofaTable.y) <= q[1] / 2;};
+ const nearWall = it => {let best = null; for (const [x1, y1, x2, y2] of W) {if (Math.abs(x1 - x2) < 1 && Math.min(y1, y2) <= it.y && it.y <= Math.max(y1, y2)) {const d0 = Math.abs(x1 - it.x); if (!best || d0 < best.d) best = {d: d0, dir: 'y', off: [m(x1 - it.x) > 0 ? m(x1 - it.x) - 0.1 : m(x1 - it.x) + 0.1, 0]};} if (Math.abs(y1 - y2) < 1 && Math.min(x1, x2) <= it.x && it.x <= Math.max(x1, x2)) {const d0 = Math.abs(y1 - it.y); if (!best || d0 < best.d) best = {d: d0, dir: 'x', off: [0, m(y1 - it.y) > 0 ? m(y1 - it.y) - 0.1 : m(y1 - it.y) + 0.1]};}} return best;};
+ for (const it0 of items) {
+  if (it0.on === false || it0.kind === 'wifi') continue;
+  let it = it0;
+  if (it0.kind === 'speaker') {
+   if (overTable(it0)) it = {...it0, y0: sizeOf(sofaTable).h ?? 1000};
+   else if ((it0.elev ?? 0) >= 900) {const wl = nearWall(it0); it = wl && wl.d < 400 ? {...it0, shelf: wl.dir, shelfOff: wl.off} : it0;}
+  }
   const s = sizeOf(it);
   if (!s) continue;
   const g = build(it, s, it.kind === 'sofa' ? C.fabric : (D.colours[it.room] ?? '#8a8f9a'));

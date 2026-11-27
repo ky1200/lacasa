@@ -48,6 +48,18 @@ const flush = async () => {
 const save = (key, value) => {if (D.ro) return; const p = pending(); p[key] = value; keep(p); say('Saving…'); clearTimeout(timer); timer = setTimeout(flush, 400);};
 const P = D.prefix || 'p:';
 const saveItem = it => save(`${P}i:${it.id}`, `${Math.round(it.x)},${Math.round(it.y)},${it.r},${it.c ? `c${it.c.w}x${it.c.d}` : it.s}${it.add ? `,${it.on ? 1 : 0}` : ''}`);
+// Undo: the last few item changes (move, turn, size, add/remove), newest last.
+const undoStack = [];
+const snap = it => ({id: it.id, x: it.x, y: it.y, r: it.r, s: it.s, c: it.c ? {...it.c} : null, on: it.on});
+const remember = (...its) => {undoStack.push(its.map(snap)); if (undoStack.length > 30) undoStack.shift(); paintUndo();};
+const paintUndo = () => root.querySelectorAll('[data-undo]').forEach(b => {b.hidden = !undoStack.length; b.disabled = !undoStack.length;});
+const undo = () => {
+ const last = undoStack.pop(); if (!last) return;
+ for (const st of last) {const it = items.find(i => i.id === st.id); if (!it) continue; Object.assign(it, st); saveItem(it);}
+ const it = items.find(i => i.id === last[0].id); paintUndo(); paintChips?.(); drawAll(); drawCart?.();
+ if (it && it.on !== false) openItem(it, true); else closeSheet();
+ say('Undone');
+};
 const savePoints = t => save(`${P}pts:${t}`, points[t].length ? points[t].map(p => p.map(Math.round).join(',')).join(';') : 'none');
 // Apply anything not yet uploaded from this phone.
 for (const [k0, v] of Object.entries(pending())) {
@@ -218,6 +230,16 @@ const shape = (it, g) => {
   mk('circle', {cx: 0, cy: 0, r: Math.min(w, d) * .3, class: 'fanring', ...ns}, g);
  } else if (it.kind === 'dock') {
   mk('rect', {x, y, width: w, height: d, rx: 40, class: 'dock', ...ns}, g);
+ } else if (it.kind === 'speaker') {
+  // HomePod / HomePod mini from above: a round speaker; drawn a little bigger than life so a finger can find it.
+  const r = Math.max(w / 2, 120);
+  mk('circle', {cx: 0, cy: 0, r: r + 60, class: 'spk-halo', ...ns}, g);
+  mk('circle', {cx: 0, cy: 0, r, class: 'body spk', ...ns}, g);
+  mk('circle', {cx: 0, cy: 0, r: r * .45, class: 'back', ...ns}, g);
+ } else if (it.kind === 'console') {
+  // Slim table behind the sofa: long top, cable hole near each end.
+  mk('rect', {x, y, width: w, height: d, rx: 15, class: 'body', ...ns}, g);
+  for (const cx of [x + 260, x + w - 260]) mk('circle', {cx, cy: 0, r: 35, class: 'dot'}, g);
  } else if (it.kind === 'wifi') {
   mk('circle', {cx: 0, cy: 0, r: 230, class: 'wifi', ...ns}, g);
   for (const rr of [90, 150]) mk('path', {d: `M${-rr * .7},${-rr * .25}A${rr},${rr} 0 0 1 ${rr * .7},${-rr * .25}`, class: 'wave', ...ns}, g);
@@ -226,7 +248,7 @@ const shape = (it, g) => {
 };
 const layerOfItem = it => it.on === false ? 'none' : it.wifi ? 'net' : 'furniture';
 // Does an item run into another one or through a wall? (chairs and stools may tuck under desks; fans hang high)
-const SOFT = new Set(['chair', 'stool', 'cfan', 'wifi']);
+const SOFT = new Set(['chair', 'stool', 'cfan', 'wifi', 'speaker']);
 const clashes = it => {
  if (SOFT.has(it.kind)) return [];
  const pad = 15, out = [], hit = (a, b) => a.x1 + pad < b.x2 && a.x2 - pad > b.x1 && a.y1 + pad < b.y2 && a.y2 - pad > b.y1;
@@ -259,6 +281,7 @@ const drawLabels = () => {
  for (const it of items) {
   if (!layers.has(layerOfItem(it))) continue;
   const {w, d, s} = sizeOf(it), px = Math.max(w, d) / k, sel = selected?.id === it.id;
+  if (it.kind === 'speaker') {mk('text', {x: it.x, y: it.y, dy: '0.35em', class: 'plan-itemlabel spk-tag'}, gLabels).textContent = it.tag ?? ''; continue;}
   if (px < 70 && !sel) continue;
   const short = it.name.replace(/ \(.*\)$/, '').replace(/^Linksys /, '').replace(/ \+ 4 chairs$/, '');
   const t = mk('text', {x: it.x, y: it.wifi ? it.y + 380 : it.y, class: 'plan-itemlabel'}, gLabels);
@@ -344,6 +367,12 @@ const drawTv = () => {
  mk('circle', {cx: vx, cy: vy, r: 110, class: 'tvhead'}, gTv);
  const ang = tvMath(W, dist);
  mk('text', {x: vx, y: vy + 420, class: 'tvlabel'}, gTv).textContent = `${(dist / 1000).toFixed(1)} m · screen fills ${Math.round(ang)}°`;
+ // Speakers: a thin line from the head to each one, with its angle off the line to the screen (fronts about 20 to 30°, rears about 100 to 120°).
+ for (const sp of items.filter(i => i.kind === 'speaker' && i.on !== false)) {
+  const dx = sp.x - vx, dy = sp.y - vy, cos = -(dx * nx + dy * ny) / (Math.hypot(dx, dy) || 1), a = Math.round(Math.acos(Math.max(-1, Math.min(1, cos))) * 180 / Math.PI);
+  mk('line', {x1: vx, y1: vy, x2: sp.x, y2: sp.y, class: 'spkline', ...ns}, gTv);
+  mk('text', {x: vx + dx * .55, y: vy + dy * .55, class: 'spklabel'}, gTv).textContent = `${sp.tag} ${a}°`;
+ }
 };
 // Gaps from the selected item to the nearest wall on each side (axis-aligned walls only).
 const drawMeasure = () => {
@@ -432,7 +461,7 @@ const zoomRoom = id => {
  const x1 = Math.min(...boxes.map(b => b[0])), y1 = Math.min(...boxes.map(b => b[1])), x2 = Math.max(...boxes.map(b => b[0] + b[2])), y2 = Math.max(...boxes.map(b => b[1] + b[3]));
  fitTo(x1, y1, x2 - x1, y2 - y1, 350);
 };
-root.querySelectorAll('[data-zoom]').forEach(b => b.addEventListener('click', () => zoomRoom(b.dataset.zoom)));
+root.querySelectorAll('[data-zoom]').forEach(b => b.addEventListener('click', () => {zoomRoom(b.dataset.zoom); if (phone() && stage.getBoundingClientRect().top > innerHeight * .35) stage.scrollIntoView({block: 'start', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});}));
 root.querySelector('[data-z="in"]').addEventListener('click', () => zoomAt(.7, view.x + view.w / 2, view.y + view.h / 2));
 root.querySelector('[data-z="out"]').addEventListener('click', () => zoomAt(1 / .7, view.x + view.w / 2, view.y + view.h / 2));
 root.querySelector('[data-z="fit"]').addEventListener('click', () => zoomRoom('all'));
@@ -445,10 +474,10 @@ svg.addEventListener('pointerdown', e => {
  svg.setPointerCapture?.(e.pointerId);
  if (ptrs.size === 2) {const [a, b] = [...ptrs.values()]; pinch = {d: Math.hypot(a.x - b.x, a.y - b.y), view: {...view}}; drag = null; return;}
  const p = toPlan(e), itemEl = e.target.closest('[data-item]'), ptEl = e.target.closest('[data-pt]');
- const can = moveOn && !D.ro;
+ const canItem = id => !D.ro && (moveOn || selected?.id === id), canPt = (t, k) => !D.ro && (moveOn || (selected?.pt === t && selected.k === k));
  if (tapeOn) drag = {type: 'pan', sx: e.clientX, sy: e.clientY, view: {...view}, moved: false};
- else if (itemEl) {const it = items.find(i => i.id === itemEl.dataset.item); drag = {type: 'item', it, dx: p.x - it.x, dy: p.y - it.y, sx: e.clientX, sy: e.clientY, moved: false, can};}
- else if (ptEl) {const t = ptEl.dataset.pt, k = +ptEl.dataset.k; drag = {type: 'pt', t, k, dx: p.x - points[t][k][0], dy: p.y - points[t][k][1], sx: e.clientX, sy: e.clientY, moved: false, can};}
+ else if (itemEl) {const it = items.find(i => i.id === itemEl.dataset.item); drag = {type: 'item', it, dx: p.x - it.x, dy: p.y - it.y, sx: e.clientX, sy: e.clientY, moved: false, can: canItem(it.id)};}
+ else if (ptEl) {const t = ptEl.dataset.pt, k = +ptEl.dataset.k; drag = {type: 'pt', t, k, dx: p.x - points[t][k][0], dy: p.y - points[t][k][1], sx: e.clientX, sy: e.clientY, moved: false, can: canPt(t, k)};}
  else drag = {type: 'pan', sx: e.clientX, sy: e.clientY, view: {...view}, moved: false};
 });
 svg.addEventListener('pointermove', e => {
@@ -464,6 +493,7 @@ svg.addEventListener('pointermove', e => {
  if (drag.type === 'pan') {if (!drag.moved) return; const r = svg.getBoundingClientRect(), k = drag.view.w / r.width; setView({x: drag.view.x - (e.clientX - drag.sx) * k, y: drag.view.y - (e.clientY - drag.sy) * k, w: drag.view.w}); return;}
  if (!drag.can) {if (drag.moved) {const r = svg.getBoundingClientRect(), k = view.w / r.width; drag = {type: 'pan', sx: e.clientX, sy: e.clientY, view: {...view}, moved: true}; void k;} return;}
  if (!drag.moved) return;
+ if (!dragging && drag.type === 'item') remember(drag.it);
  dragging = true; const p = toPlan(e), snap = v => Math.round(v / 10) * 10;
  const x = Math.min(Math.max(snap(p.x - drag.dx), 0), D.W), y = Math.min(Math.max(snap(p.y - drag.dy), 0), D.H);
  if (drag.type === 'item') {drag.it.x = x; drag.it.y = y; selected = {id: drag.it.id}; drawItems(); drawMeasure(); drawTv(); drawAir(); if (drag.it.wifi) queueHeat();}
@@ -545,27 +575,54 @@ function dock(x, y, recenter = true) {
  return true;
 }
 const undock = () => {document.body.classList.remove('plan-sheet-open'); sheet.classList.remove('is-full');};
+// Press once to nudge; hold to keep going. step(true) on the first step, done() when let go.
+function holdRepeat(b, step, done) {
+ let t = null, n = 0;
+ const stop = () => {if (t == null) return; clearTimeout(t); t = null; done();};
+ b.addEventListener('pointerdown', e => {e.preventDefault(); n = 0; const go = () => {step(n === 0); n++; t = setTimeout(go, n === 1 ? 420 : 90);}; go();});
+ ['pointerup', 'pointerleave', 'pointercancel'].forEach(ev => b.addEventListener(ev, stop));
+ b.addEventListener('keydown', e => {if (e.key === 'Enter' || e.key === ' ') {e.preventDefault(); step(true); done();}});
+}
+// The sofa back table needs the sofa pulled off the wall: one tap moves the sofa just clear of it (undo puts it back).
+const sofaOf = () => items.find(i => i.kind === 'sofa');
+function roomFor(it) {
+ if (it.kind !== 'console') return '';
+ const so = sofaOf(); if (!so || it.on === false) return '';
+ const a = boxOf(it), b = boxOf(so), hit = a.x1 < b.x2 && a.x2 > b.x1 && a.y1 < b.y2 && a.y2 > b.y1;
+ return hit ? `<p class="sheet-clash">It sits where the sofa is now.</p><button type="button" class="sheet-makeroom" data-makeroom>Make room: pull the sofa off the wall</button>` : `<p class="sheet-note">The sofa is clear of it${viewer() ? `: about ${(viewer().dist / 1000).toFixed(1)} m from the screen now` : ''}. Undo puts the sofa back.</p>`;
+}
+function makeRoom(t) {
+ const so = sofaOf(); if (!so) return;
+ const a = boxOf(t), b = boxOf(so), gap = 20; remember(so, t);
+ // Push the sofa away from the table along the short side of the table, so it ends up 2 cm clear.
+ if (a.x2 - a.x1 < a.y2 - a.y1) {if (so.x >= t.x) so.x += a.x2 + gap - b.x1; else so.x -= b.x2 - (a.x1 - gap);}
+ else {if (so.y >= t.y) so.y += a.y2 + gap - b.y1; else so.y -= b.y2 - (a.y1 - gap);}
+ so.x = Math.round(so.x / 10) * 10; so.y = Math.round(so.y / 10) * 10; saveItem(so); saveItem(t); drawAll(); openItem(t, true);
+ const v = viewer(); say(v ? `Sofa moved: ${(v.dist / 1000).toFixed(1)} m from the screen now` : 'Sofa moved');
+}
 function openItem(it, quiet = false) {
  selected = {id: it.id}; sheet.classList.remove('is-empty'); const {s} = sizeOf(it), room = roomById[it.room];
  sheet.innerHTML = `<div class="sheet-head"><div><span class="eyebrow">${esc(room?.name ?? '')}</span><h3>${esc(it.name)}</h3></div><button type="button" class="sheet-close" data-close aria-label="Close">×</button></div>
 ${sizeList(it)}
 <p class="sheet-dims"><b>${it.est && !it.c ? 'About ' : ''}${cm(s.w)} × ${cm(s.d)} cm</b>${s.custom ? ' (custom)' : ''}${it.wifi ? '' : ' · gaps to the nearest wall or furniture are drawn on the plan (red when under 60 cm)'}</p>
 ${clashes(it).length ? `<p class="sheet-clash" role="status">Runs into ${esc([...new Set(clashes(it))].join(', '))}. Move, turn or pick a smaller size.</p>` : ''}
-${it.wifi || D.ro ? '' : `<form class="sheet-custom" data-custom><span>Custom size</span><label>Width <input type="number" inputmode="numeric" min="10" max="400" step="0.5" name="w" value="${cm(s.w)}" required> cm</label><label>Depth <input type="number" inputmode="numeric" min="10" max="400" step="0.5" name="d" value="${cm(s.d)}" required> cm</label><button type="submit">Use this size</button></form>`}
+${it.wifi || it.kind === 'speaker' || D.ro ? '' : `<form class="sheet-custom" data-custom><span>Custom size</span><label>Width <input type="number" inputmode="numeric" min="10" max="400" step="0.5" name="w" value="${cm(s.w)}" required> cm</label><label>Depth <input type="number" inputmode="numeric" min="10" max="400" step="0.5" name="d" value="${cm(s.d)}" required> cm</label><button type="submit">Use this size</button></form>`}
 ${it.note ? `<p class="sheet-note">${esc(it.note)}</p>` : ''}
 ${it.free && !D.ro ? angleDial(it) : ''}
-${D.ro ? '' : `<div class="sheet-actions">${it.free ? '' : '<button type="button" data-rotate>Turn 90°</button>'}${moveOn ? '' : '<button type="button" data-movehint>Move it</button>'}${it.add ? '<button type="button" class="sheet-remove" data-unplace>Remove from plan</button>' : ''}</div>`}
+${D.ro ? '' : `${roomFor(it)}<div class="sheet-move" role="group" aria-label="Move ${esc(it.name)}"><p class="sheet-move-tip">Drag it on the plan, or nudge 5 cm:</p><div class="nudge"><button type="button" data-nudge-xy="0,-50" aria-label="Move up 5 cm">↑</button><button type="button" data-nudge-xy="-50,0" aria-label="Move left 5 cm">←</button><button type="button" data-nudge-xy="50,0" aria-label="Move right 5 cm">→</button><button type="button" data-nudge-xy="0,50" aria-label="Move down 5 cm">↓</button></div></div><div class="sheet-actions">${it.free || it.kind === 'speaker' ? '' : '<button type="button" data-rotate>Turn 90°</button>'}<button type="button" data-undo${undoStack.length ? '' : ' hidden'}>Undo</button>${it.add ? '<button type="button" class="sheet-remove" data-unplace>Remove from plan</button>' : ''}</div>`}
 ${it.kind === 'tv' ? tvTable(it) : ''}${(it.buy ?? []).map(buyBlock).join('')}${it.research ? researchBlock(it.research) : ''}${it.wifi && D.research.fibre ? researchBlock('fibre') : ''}`;
  sheet.hidden = false; drawItems(); drawMeasure(); drawTv(); drawAir();
  if (!dock(it.x, it.y, !quiet) && !quiet) sheet.scrollIntoView?.({block: 'nearest', behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'});
  sheet.querySelector('[data-close]').onclick = closeSheet;
- sheet.querySelectorAll('[data-size]').forEach(b => b.onclick = () => {it.s = +b.dataset.size; it.c = null; saveItem(it); openItem(it, true); queueHeat(); drawCart();});
+ sheet.querySelectorAll('[data-size]').forEach(b => b.onclick = () => {remember(it); it.s = +b.dataset.size; it.c = null; saveItem(it); openItem(it, true); queueHeat(); drawCart();});
  const cf = sheet.querySelector('[data-custom]');
- if (cf) cf.onsubmit = ev => {ev.preventDefault(); const w = Math.round(parseFloat(cf.w.value) * 10), d = Math.round(parseFloat(cf.d.value) * 10); if (!(w >= 100 && w <= 4000 && d >= 100 && d <= 4000)) {say('Size must be 10 to 400 cm'); return;} it.c = {w, d}; saveItem(it); openItem(it, true);};
- const rot = sheet.querySelector('[data-rotate]'); if (rot) rot.onclick = () => {it.r = (it.r + 90) % 360; saveItem(it); openItem(it, true); drawAir(); drawTv();};
+ if (cf) cf.onsubmit = ev => {ev.preventDefault(); const w = Math.round(parseFloat(cf.w.value) * 10), d = Math.round(parseFloat(cf.d.value) * 10); if (!(w >= 100 && w <= 4000 && d >= 100 && d <= 4000)) {say('Size must be 10 to 400 cm'); return;} remember(it); it.c = {w, d}; saveItem(it); openItem(it, true);};
+ const rot = sheet.querySelector('[data-rotate]'); if (rot) rot.onclick = () => {remember(it); it.r = (it.r + 90) % 360; saveItem(it); openItem(it, true); drawAir(); drawTv();};
  const dial = sheet.querySelector('[data-dial]'); if (dial) wireDial(it, dial);
  const up = sheet.querySelector('[data-unplace]'); if (up) up.onclick = () => setOn(it, false);
- const mh = sheet.querySelector('[data-movehint]'); if (mh) mh.onclick = () => {setMove(true); openItem(it, true);};
+ sheet.querySelectorAll('[data-nudge-xy]').forEach(b => holdRepeat(b, first => {const [dx, dy] = b.dataset.nudgeXy.split(',').map(Number); if (first) remember(it); it.x = Math.min(Math.max(it.x + dx, 0), D.W); it.y = Math.min(Math.max(it.y + dy, 0), D.H); drawItems(); drawMeasure(); drawTv(); drawAir(); if (it.wifi) queueHeat();}, () => {saveItem(it); openItem(it, true);}));
+ sheet.querySelectorAll('[data-undo]').forEach(b => b.onclick = undo);
+ const fit = sheet.querySelector('[data-makeroom]'); if (fit) fit.onclick = () => makeRoom(it);
  sheet.querySelectorAll('[data-pick]').forEach(r => r.onchange = () => {const id = r.dataset.pick, k = +r.value; D.buy[id].pick = k; save(`b:${id}:pick`, k ? String(k) : ''); openItem(it, true); drawCart();});
 }
 // ---------- any-angle turning (recliner, corner fan): drag round the dial, or nudge 5° ----------
@@ -643,7 +700,12 @@ const nightBox = root.querySelector('[data-night]');
 nightBox?.addEventListener('change', () => {stage.classList.toggle('is-night', nightBox.checked); if (nightBox.checked && !layers.has('lights')) {layers.add('lights'); root.querySelector('[data-layer="lights"]').checked = true; drawAll();}});
 addBar.querySelectorAll('input[name="plan-add"]').forEach(r => r.addEventListener('change', () => {addType = r.value; if (addType && !layers.has(typeLayer[addType])) {layers.add(typeLayer[addType]); const c = root.querySelector(`[data-layer="${typeLayer[addType]}"]`); if (c) c.checked = true; drawAll();}}));
 const wifiBar = root.querySelector('[data-wifi-bar]');
-{const lb = root.querySelector('[data-layerbox]'); if (lb && phone()) lb.open = false;}
+// On phones Layers and Add are small drop-downs: start closed, close when tapping elsewhere, one open at a time.
+const drops = [...root.querySelectorAll('.plan-drop')];
+if (phone()) drops.forEach(d => d.open = false);
+drops.forEach(d => d.addEventListener('toggle', () => {if (d.open && phone()) drops.forEach(o => {if (o !== d) o.open = false;});}));
+document.addEventListener('pointerdown', e => {if (phone() && !e.target.closest('.plan-drop')) drops.forEach(d => d.open = false);});
+root.querySelector('.plan-stage [data-undo]')?.addEventListener('click', undo);
 const layerCount = () => {const c = root.querySelector('[data-layer-count]'); if (c) c.textContent = `${root.querySelectorAll('[data-layer]:checked').length} on`;};
 root.querySelectorAll('[data-layer]').forEach(c => c.addEventListener('change', layerCount));
 root.querySelectorAll('[data-layer]').forEach(c => c.addEventListener('change', () => {
@@ -657,9 +719,11 @@ addEventListener('resize', () => setView({...view}));
 
 // ---------- add or remove furniture (mahjong table, recliner, coffee table) ----------
 const chips = root.querySelector('[data-addables]');
-const paintChips = () => chips?.querySelectorAll('[data-toggle]').forEach(b => {const it = items.find(i => i.id === b.dataset.toggle); if (!it) return; b.setAttribute('aria-pressed', String(it.on !== false)); b.querySelector('i').textContent = it.on !== false ? '✓' : '+';});
+const paintChips = () => {chips?.querySelectorAll('[data-toggle]').forEach(b => {const it = items.find(i => i.id === b.dataset.toggle); if (!it) return; b.setAttribute('aria-pressed', String(it.on !== false)); b.querySelector('i').textContent = it.on !== false ? '✓' : '+';}); const c = root.querySelector('[data-add-count]'); if (c) c.textContent = `${items.filter(i => i.add && i.on !== false).length} on`;};
 function setOn(it, on) {
- if (D.ro) return; it.on = on; saveItem(it); paintChips(); drawCart();
+ if (D.ro) return; remember(it);
+ if (on && it.kind === 'console') {const so = sofaOf(); if (so) {const b = boxOf(so), {d} = sizeOf(it); if (so.r % 180) {it.y = so.y; it.x = so.r === 270 ? b.x1 + d / 2 : b.x2 - d / 2; it.r = so.r;} else {it.x = so.x; it.y = so.r === 0 ? b.y1 + d / 2 : b.y2 - d / 2; it.r = so.r;}}}
+ it.on = on; saveItem(it); paintChips(); drawCart();
  if (on) {if (!layers.has('furniture')) {layers.add('furniture'); const c = root.querySelector('[data-layer="furniture"]'); if (c) c.checked = true;} zoomRoom(it.room === 'yard' ? 'kitchen' : it.room); openItem(it, true); say('Added: drag it into place with Move');}
  else {closeSheet(); say('Removed from the plan');}
  drawAll();

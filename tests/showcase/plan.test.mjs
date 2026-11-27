@@ -137,7 +137,7 @@ test('floor plan: Designer’s pick layout, person layouts and copying',async()=
  for(const pts of Object.values(st.points))for(const [x,y] of pts)assert.ok(PLAN.rooms.some(r=>inRoom(x,y,r)),'point '+x+','+y);
  // No furniture overlaps (the Wi-Fi node sits on the desk on purpose).
  const box=i=>{const s=i.c??i.sizes[i.s],r=i.r%180!==0,w=r?s.d:s.w,d=r?s.w:s.d;return [i.x-w/2,i.y-d/2,i.x+w/2,i.y+d/2];};
- const solid=on.filter(i=>!i.wifi);
+ const solid=on.filter(i=>!i.wifi&&i.kind!=='speaker');
  for(let a=0;a<solid.length;a++)for(let b=a+1;b<solid.length;b++){const A=box(solid[a]),B=box(solid[b]);assert.ok(!(A[0]<B[2]&&B[0]<A[2]&&A[1]<B[3]&&B[1]<A[3]),solid[a].id+' overlaps '+solid[b].id);}
  assert.ok(on.some(i=>i.id==='ks-wardrobe'),'KS gets a new wardrobe (old built-in hacked away)');
  assert.ok(st.points.fan.length>=5&&st.points.socket.length&&st.points.switch.length&&st.points.lan.length);
@@ -173,4 +173,18 @@ test('floor plan: free angles for the recliner and corner fan; toilets and basin
  assert.ok(it('common-toilet').buy.includes('common-bath-rigel-gallant-one-piece')&&it('common-vanity').buy.includes('common-bath-basin-cabinet-304-stainless'));
  assert.equal(it('common-vanity').sizes[0].w,700);assert.equal(it('common-vanity').sizes[0].d,500);
  assert.match(it('common-toilet').note,/estimate/);
+});
+
+test('floor plan: HomePod surround speakers, sofa back table idea, phone tools (28 Nov)',()=>{
+ const it=id=>PLAN.items.find(i=>i.id===id);
+ for(const id of ['living-homepod-l','living-homepod-r','living-mini-l','living-mini-r']){const s=it(id);assert.equal(s.kind,'speaker',id);assert.ok(s.buy.every(b=>buyItemById(b)),id+' links to the to-buy list');assert.ok(['homepod','mini'].includes(s.model));}
+ assert.equal(it('living-homepod-l').sizes[0].w,142,'HomePod (2nd gen) is 14.2 cm wide');assert.equal(it('living-mini-l').sizes[0].h,84,'HomePod mini 2 is 8.4 cm tall');
+ const t=it('living-sofa-table');assert.equal(t.kind,'console');assert.ok(t.add&&t.on===false,'the sofa back table is an idea the family adds');
+ assert.ok(validPlanValue({kind:'item',id:'living-sofa-table'},'8740,3450,270,0,1'));
+ const html=planPage({});
+ assert.match(html,/class="plan-toolrow"/);assert.match(html,/data-addbox/);assert.match(html,/class="plan-undo" data-undo hidden/);assert.match(html,/drag it/);
+ const js=readFileSync(new URL('../../public/plan.js',import.meta.url),'utf8');
+ assert.match(js,/data-nudge-xy/);assert.match(js,/function makeRoom/);assert.match(js,/selected\?\.id === id/,'a picked item drags without the Move switch');
+ const css=readFileSync(new URL('../../public/lacasa-theme.css',import.meta.url),'utf8');
+ assert.match(css,/\.plan-drop>\.plan-layers/);assert.match(css,/\.nudge button/);
 });

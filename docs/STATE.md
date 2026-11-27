@@ -3,6 +3,7 @@
 Current state (26 Nov 2026): site on Cloudflare Workers + D1 at https://lacasa.kayikkwong.workers.dev (moved from ChatGPT Sites on 30 Oct). The full working notes are the project handover doc `claude/lacasa-handover.md` in the claude.ai project; this file is a short change log only. The table and notes from October below are history.
 
 ## 27 November 2026 (5–6am) — full price check of the to-buy list
+- 28 Nov: /plan speakers (HomePod L/R on the TV console, HomePod mini RL/RR behind the sofa; kind `speaker`, angles drawn in the TV layer), sofa back table idea (kind `console`, add chip, "Make room" pulls the sofa off the wall), phone tool row (Layers and Add as drop-downs), pick-then-drag (no Move switch needed), nudge arrows (5 cm, hold to repeat), Undo (sheet + on the plan). 3D: HomePod/mini models, wall shelves for rears, sofa back table.
 - COURTS Black Friday: up to 22% off in the cart (no code) till 30 Nov. Updated: KDK F40GP S$326.04 (3 fan items, main option), E48GP S$357.24 (alt), Aqara U400 S$365.82 supply / S$506.22 installed, Shark S$310.78, Mitsubishi fridge S$1,600; Hitachi fridge main option S$979 at COURTS; Toshiba S$919 online.
 - Notes added: TV warranty check (Electromart not an LG partner; Audio House S$4,499 safe pick), aircon condo surcharge + skip 'Replacement' piping, IKEA colour savings (PAX dark grey S$565, LAGKAPTEN white S$149.80), IKEA curtain DIY route for KX, washer still best in COURTS store S$1,489.
 - Research 'deals' section updated (27 Nov). Black Friday to-do rewritten. Default total −S$395.
