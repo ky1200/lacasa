@@ -12,8 +12,9 @@ export const PAY_HOW = ['Cash', 'Card', 'Bank transfer', 'PayNow', 'Other'];
 export const PAY_SEED = [
  {id: 's1', date: '2026-11-22', status: 'paid', to: 'Dunlopillo (ANZ Home Furniture, JB)', what: 'Deposit: 3 beds + 3 mattresses (total RM19,999)', amt: 7999, cur: 'MYR', by: '', how: 'Bank transfer', back: false, note: 'Sales order 155571.'},
  {id: 's2', date: '2026-12-19', status: 'due', to: 'Dunlopillo (ANZ Home Furniture, JB)', what: 'Balance, at least 3 days before the 22 Dec delivery', amt: 12000, cur: 'MYR', by: '', how: '', back: false, note: ''},
- {id: 's3', date: '2026-11-22', status: 'paid', to: 'V Haus Living (JB), order 03460', what: '30% deposit: dining set, KX wardrobe, sofa (total RM14,516.62)', amt: 4355, cur: 'MYR', by: '', how: '', back: false, note: ''},
- {id: 's4', date: '', status: 'due', to: 'V Haus Living (JB), order 03460', what: 'Balance before delivery (ask if per delivery)', amt: 10161.62, cur: 'MYR', by: '', how: '', back: false, note: ''},
+ {id: 's3', date: '2026-11-22', status: 'paid', to: 'V Haus Living (JB), order 03460', what: '30% deposit: dining set, KX wardrobe, sofa (order then RM14,516.62)', amt: 4355, cur: 'MYR', by: '', how: '', back: false, note: ''},
+ {id: 's4', date: '', status: 'due', to: 'V Haus Living (JB), order 03460', what: 'Balance before delivery (ask if per delivery)', amt: 10388.62, cur: 'MYR', by: '', how: '', back: false, note: 'Order updated 27 Nov to RM14,843.62 (extra armrest).'},
+ {id: 's7', date: '2026-11-27', status: 'paid', to: 'V Haus Living (JB), order 03460', what: 'Deposit for the extra free-standing armrest (RM300 + GST added; order now RM14,843.62)', amt: 100, cur: 'MYR', by: '', how: '', back: false, note: ''},
  {id: 's5', date: '2026-11-25', status: 'paid', to: 'La Casa management (MCST)', what: 'Renovation deposit, cash at the office', amt: 1000, cur: 'SGD', by: '', how: 'Cash', back: true, note: 'Official receipt S/N 9071. Covers works 3 to 31 Dec 2026. Refunded after the works pass inspection.'},
  {id: 's6', date: '2026-11-28', status: 'due', to: 'I-Niche Design', what: '10% on signing (estimate on the S$19,035 quote)', amt: 1903.5, cur: 'SGD', by: '', how: '', back: false, note: 'Update the amount once the corrected quote is signed.'},
 ];
